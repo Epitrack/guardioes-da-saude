@@ -46,6 +46,11 @@ angular
         controller: 'DashboardCtrl',
         controllerAs: 'dashboard'
       })
+      .when('/survey', {
+        templateUrl: 'views/survey.html',
+        controller: 'SurveyCtrl',
+        controllerAs: 'survey'
+      })
       .otherwise({
         redirectTo: '/'
       });
