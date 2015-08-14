@@ -53,7 +53,7 @@
     "Chart.js": "~1.0.2",
     "mjolnic-bootstrap-colorpicker": "~2.3.0",
     "bootstrap-combobox": "https://github.com/danielfarrell/bootstrap-combobox.git#~1.1.6",
-    "ckeditor": "~4.5.2",
+    "ckeditor": "*",
     "Flot": "https://github.com/flot/flot.git#~0.8.3",
     "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git#~4.4.0",
     "jquery.cookie": "https://github.com/carhartl/jquery-cookie.git#~1.4.1"
