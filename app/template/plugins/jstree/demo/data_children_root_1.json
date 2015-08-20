@@ -8,7 +8,10 @@
         "state": {
             "disabled": true
         }
-    }] 
+    }],
+    "state": {
+        "opened": true
+    }
 },{ 
     "id": "demo_root_1_child_3", 
     "text": "Root #1 Child 2", 
@@ -26,7 +29,10 @@
         "state": {
             "disabled": true
         }
-    }] 
+    }],
+    "state": {
+        "opened": true
+    }
 },{ 
     "id": "demo_root_1_child_6", 
     "text": "Root #1 Child 3", 
@@ -39,5 +45,8 @@
         "text": "Custom Icons", 
         "type": "folder",
         "icon":  "fa fa-briefcase fa-lg text-inverse"
-    }] 
+    }],
+    "state": {
+        "opened": true
+    }
 }]

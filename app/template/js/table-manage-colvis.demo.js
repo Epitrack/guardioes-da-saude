@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -20,11 +20,7 @@ var TableManageColVis = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/DataTables/js/jquery.dataTables.js').done(function() {
-                $.getScript('assets/plugins/DataTables/js/dataTables.colVis.js').done(function() {
-                    handleDataTableColVis();
-                });
-            });
+            handleDataTableColVis();
         }
     };
 }();

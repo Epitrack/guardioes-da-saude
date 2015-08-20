@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -304,37 +304,13 @@ var Dashboard = function () {
     return {
         //main function
         init: function () {
-    
-            $.getScript('assets/plugins/gritter/js/jquery.gritter.js').done(function() {
-                handleDashboardGritterNotification();
-            });
-            
-            $.getScript('assets/plugins/flot/jquery.flot.min.js').done(function() {
-                $.getScript('assets/plugins/flot/jquery.flot.time.min.js').done(function() {
-                    $.getScript('assets/plugins/flot/jquery.flot.resize.min.js').done(function() {
-                        $.getScript('assets/plugins/flot/jquery.flot.pie.min.js').done(function() {
-                            handleInteractiveChart();
-                            handleDonutChart();
-                        });
-                    });
-                });
-            });
-            
-            $.getScript('assets/plugins/sparkline/jquery.sparkline.js').done(function() {
-                handleDashboardSparkline();
-            });
-            
-            $.getScript('assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js').done(function() {
-                $.getScript('assets/plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js').done(function() {
-                    handleVectorMap();
-                });
-            });
-            
-            $.getScript('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js').done(function() {
-                handleDashboardDatepicker();
-            });
-            
+            handleDashboardGritterNotification();
+            handleInteractiveChart();
+            handleDashboardSparkline();
+            handleDonutChart();
             handleDashboardTodolist();
+            handleVectorMap();
+            handleDashboardDatepicker();
         }
     };
 }();

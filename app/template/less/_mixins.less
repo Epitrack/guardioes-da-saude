@@ -1,5 +1,7 @@
 /* Mixins */
 
+@import "bootstrap/mixins.less";
+
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
@@ -30,7 +32,7 @@
         color: #fff;
         background: @defaultColor;
         border-color: @defaultColor;
-        
+
         &:hover,
         &:focus,
         &:active,
@@ -38,7 +40,7 @@
             background: @hoverColor;
             border-color: @hoverColor;
         }
-        
+
     }
     .open .dropdown-toggle.@{buttonClassName} {
         background: @hoverColor;

@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -7,7 +7,7 @@ Website: http://www.seantheme.com/color-admin-v1.8/admin/
 
 var handleSelectAll = function () {
 	"use strict";
-    $('[data-click=email-select-all]').live('click', function(e) {
+    $('[data-click=email-select-all]').click(function(e) {
         e.preventDefault();
         if ($(this).closest('tr').hasClass('active')) {
             $('.table-email tr').removeClass('active');
@@ -19,7 +19,7 @@ var handleSelectAll = function () {
 
 var handleSelectSingle = function () {
 	"use strict";
-    $('[data-click=email-select-single]').live('click', function(e) { 
+    $('[data-click=email-select-single]').click(function(e) { 
         e.preventDefault();
         var targetRow = $(this).closest('tr');
         if ($(targetRow).hasClass('active')) {
@@ -32,7 +32,7 @@ var handleSelectSingle = function () {
 
 var handleEmailRemove = function () {
 	"use strict";
-    $('[data-click=email-remove]').live('click', function(e) { 
+    $('[data-click=email-remove]').click(function(e) { 
         e.preventDefault();
         var targetRow = $(this).closest('tr');
         $(targetRow).fadeOut().remove();
@@ -41,7 +41,7 @@ var handleEmailRemove = function () {
 
 var handleEmailHighlight = function () {
 	"use strict";
-    $('[data-click=email-highlight]').live('click', function(e) { 
+    $('[data-click=email-highlight]').click(function(e) { 
         e.preventDefault();
         if ($(this).hasClass('text-danger')) {
             $(this).removeClass('text-danger');

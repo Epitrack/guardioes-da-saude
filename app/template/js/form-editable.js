@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -210,32 +210,8 @@ var FormEditable = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/bootstrap3-editable/js/bootstrap-editable.min.js').done(function() {
-                $.getScript('assets/plugins/bootstrap3-editable/inputs-ext/address/address.js').done(function() {
-                    $.getScript('assets/plugins/bootstrap3-editable/inputs-ext/typeaheadjs/lib/typeahead.js').done(function() {
-                        $.getScript('assets/plugins/bootstrap3-editable/inputs-ext/typeaheadjs/typeaheadjs.js').done(function() {
-                            $.getScript('assets/plugins/bootstrap3-editable/inputs-ext/wysihtml5/wysihtml5.js').done(function() {
-                                $.getScript('assets/plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js').done(function() {
-                                    $.getScript('assets/plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js').done(function() {
-                                        $.getScript('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js').done(function() {
-                                            $.getScript('assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js').done(function() {
-                                                $.getScript('assets/plugins/select2/select2.min.js').done(function() {
-                                                    $.getScript('assets/plugins/mockjax/jquery.mockjax.js').done(function() {
-                                                        $.getScript('assets/plugins/moment/moment.min.js').done(function() {
-                                                            handleEditableFieldConstruct();
-                                                            handleEditableFormAjaxCall();
-                                                        });
-                                                    });
-                                                });
-                                            });
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
+            handleEditableFieldConstruct();
+            handleEditableFormAjaxCall();
         }
     };
 }();

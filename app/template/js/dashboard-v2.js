@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -232,26 +232,11 @@ var DashboardV2 = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/morris/raphael.min.js').done(function() {
-                $.getScript('assets/plugins/morris/morris.js').done(function() {
-                    handleVisitorsLineChart();
-                    handleVisitorsDonutChart();
-                });
-            });
-            
-            $.getScript('assets/plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js').done(function() {
-                $.getScript('assets/plugins/jquery-jvectormap/jquery-jvectormap-world-merc-en.js').done(function() {
-                    handleVisitorsVectorMap();
-                });
-            });
-            
-            $.getScript('assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js').done(function() {
-                handleScheduleCalendar();
-            });
-            
-            $.getScript('assets/plugins/gritter/js/jquery.gritter.js').done(function() {
-                handleDashboardGritterNotification();
-            });
+            handleVisitorsLineChart();
+            handleVisitorsDonutChart();
+            handleVisitorsVectorMap();
+            handleScheduleCalendar();
+            handleDashboardGritterNotification();
         }
     };
 }();

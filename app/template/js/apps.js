@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -28,22 +28,18 @@ Website: http://www.seantheme.com/color-admin-v1.8/admin/
     13. Handle Save Panel Position Function - added in V1.5
     14. Handle Draggable Panel Local Storage Function - added in V1.5
     15. Handle Reset Local Storage - added in V1.5
-    16. Handle Ajax Page Load - added in V1.5
-    17. Handle Ajax Page Load Url - added in V1.5
-    18. Handle Ajax Sidebar Toggle Content - added in V1.5
-    19. Handle Url Hash Change - added in V1.5
-    20. Handle Pace Page Loading Plugins - added in V1.5
     
     <!-- ======== Added in V1.6 ======== -->
-    21. Handle IE Full Height Page Compatibility - added in V1.6
-    22. Handle Unlimited Nav Tabs - added in V1.6
-        
+    16. Handle IE Full Height Page Compatibility - added in V1.6
+    17. Handle Unlimited Nav Tabs - added in V1.6
+    
     <!-- ======== Added in V1.7 ======== -->
-    23. Handle Mobile Sidebar Scrolling Feature - added in V1.7
+    18. Handle Mobile Sidebar Scrolling Feature - added in V1.7
 	
     <!-- ======== APPLICATION SETTING ======== -->
     Application Controller
 */
+
 
 
 /* 01. Handle Scrollbar
@@ -194,7 +190,7 @@ var handleSidebarMinify = function() {
             }
         } else {
             $(targetContainer).addClass(sidebarClass);
-            
+    
             if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 if ($(targetContainer).hasClass('page-sidebar-fixed')) {
                     $('#sidebar [data-scrollbar="true"]').slimScroll({destroy: true});
@@ -202,7 +198,6 @@ var handleSidebarMinify = function() {
                 }
                 $('#sidebar [data-scrollbar=true]').trigger('mouseover');
             } else {
-                $('#sidebar [data-scrollbar="true"]').css('margin-top','0');
                 $('#sidebar [data-scrollbar="true"]').css('overflow', 'visible');
             }
         }
@@ -674,84 +669,11 @@ var handleResetLocalStorage = function() {
             localStorageName = localStorageName[0];
         localStorage.removeItem(localStorageName);
         window.location.href = document.URL;
-        location.reload();
     });
 };
 
 
-/* 16. Handle Ajax Page Load - added in V1.5
------------------------------------------------- */
-var default_content = '<div class="p-t-40 p-b-40 text-center f-s-20 content"><i class="fa fa-warning fa-lg text-muted m-r-5"></i> <span class="f-w-600 text-inverse">Error 404! Page not found.</span></div>';
-
-var handleLoadPage = function(hash) {
-    Pace.restart();
-    var targetUrl = hash.replace('#','');
-    $('.jvectormap-label, .jvector-label, .AutoFill_border ,#gritter-notice-wrapper, .ui-autocomplete, .colorpicker, .FixedHeader_Header, .FixedHeader_Cloned .lightboxOverlay, .lightbox').remove();
-    $.ajax({
-        type: 'POST',
-        url: targetUrl,	//with the page number as a parameter
-        dataType: 'html',	//expect html to be returned
-        success: function(data) {
-            $('#ajax-content').html(data);
-            $('html, body').animate({
-                scrollTop: $("body").offset().top
-            }, 250);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            $('#ajax-content').html(default_content);
-        }
-    });
-};
-
-
-/* 17. Handle Ajax Page Load Url - added in V1.5
------------------------------------------------- */
-var handleCheckPageLoadUrl = function(hash) {
-    hash = (hash) ? hash : '#ajax/index_v2.html';
-    
-    if (hash === '') {
-        $('#ajax-content').html(default_content);
-    } else {
-        $('.sidebar [href="'+hash+'"][data-toggle=ajax]').trigger('click');
-        handleLoadPage(hash);
-    }
-};
-
-
-/* 18. Handle Ajax Sidebar Toggle Content - added in V1.5
------------------------------------------------- */
-var handleSidebarAjaxClick = function() {
-    $('.sidebar [data-toggle=ajax]').click(function() {
-        var targetLi = $(this).closest('li');
-        var targetParentLi = $(this).parents();
-        $('.sidebar li').not(targetLi).not(targetParentLi).removeClass('active');
-        $(targetLi).addClass('active');
-        $(targetParentLi).addClass('active');
-    });
-};
-
-
-/* 19. Handle Url Hash Change - added in V1.5
------------------------------------------------- */
-var handleHashChange = function() {
-    $(window).hashchange(function() {
-        if (window.location.hash) {
-            handleLoadPage(window.location.hash);
-        }
-    });
-};
-
-
-/* 20. Handle Pace Page Loading Plugins - added in V1.5
------------------------------------------------- */
-var handlePaceLoadingPlugins = function() {
-    Pace.on('hide', function(){
-        $('.pace').addClass('hide');
-    });
-};
-
-
-/* 21. Handle IE Full Height Page Compatibility - added in V1.6
+/* 16. Handle IE Full Height Page Compatibility - added in V1.6
 ------------------------------------------------ */
 var handleIEFullHeightContent = function() {
     var userAgent = window.navigator.userAgent;
@@ -767,7 +689,7 @@ var handleIEFullHeightContent = function() {
 };
 
 
-/* 22. Handle Unlimited Nav Tabs - added in V1.6
+/* 17. Handle Unlimited Nav Tabs - added in V1.6
 ------------------------------------------------ */
 var handleUnlimitedTabsRender = function() {
     
@@ -900,7 +822,7 @@ var handleUnlimitedTabsRender = function() {
 };
 
 
-/* 23. Handle Mobile Sidebar Scrolling Feature - added in V1.7
+/* 18. Handle Mobile Sidebar Scrolling Feature - added in V1.7
 ------------------------------------------------ */
 var handleMobileSidebar = function() {
     "use strict";
@@ -964,66 +886,37 @@ var App = function () {
 	return {
 		//main function
 		init: function () {
-		    
+		
 		    // draggable panel & local storage
 			handleDraggablePanel();
-			handleLocalStorage();
-			handleResetLocalStorage();
+		    handleLocalStorage();
+		    handleResetLocalStorage();
 		
 			// slimscroll
 			handleSlimScroll();
 			
-			// panel
-			handlePanelAction();
+			// sidebar
+			handleSidebarMenu();
+			handleMobileSidebarToggle();
+			handleSidebarMinify();
+			handleMobileSidebar();
 			
-			// tooltip
-			handelTooltipPopoverActivation();
+			// theme configuration
+			handleThemePageStructureControl();
+			handleThemePanelExpand();
 			
-			// page load
-			handlePageContentView();
 			handleAfterPageLoadAddClass();
-			handlePaceLoadingPlugins();
 			
-			// scroll to top
+			handlePanelAction();
+			handelTooltipPopoverActivation();
 			handleScrollToTopButton();
-			
-            // sidebar
-            handleSidebarMenu();
-            handleMobileSidebarToggle();
-            handleSidebarMinify();
-            handleMobileSidebar();
-        
-            // theme configuration
-            handleThemePageStructureControl();
-            handleThemePanelExpand();
-            
-            // ajax
-            handleSidebarAjaxClick();
-            handleCheckPageLoadUrl(window.location.hash);
-			handleHashChange();
+			handlePageContentView();
 			
 			// IE Compatibility
 			handleIEFullHeightContent();
 			
 			// unlimited nav tabs
 			handleUnlimitedTabsRender();
-			
-			// ajax cache setup
-			$.ajaxSetup({
-                cache: true
-            });
-		},
-		setPageTitle: function(pageTitle) {
-		    document.title = pageTitle;
-		},
-		restartGlobalFunction: function() {
-			handleDraggablePanel();
-			handleLocalStorage();
-			handleSlimScroll();
-			handlePanelAction();
-			handelTooltipPopoverActivation();
-			handleAfterPageLoadAddClass();
-			handleUnlimitedTabsRender();
 		}
-    };
+  };
 }();

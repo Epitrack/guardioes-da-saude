@@ -188,12 +188,10 @@ var TreeView = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/jstree/dist/jstree.min.js').done(function() {
-                handleJstreeDefault();
-                handleJstreeCheckable();
-                handleJstreeDragAndDrop();
-                handleJstreeAjax();
-            });
+            handleJstreeDefault();
+            handleJstreeCheckable();
+            handleJstreeDragAndDrop();
+            handleJstreeAjax();
         }
     };
 }();

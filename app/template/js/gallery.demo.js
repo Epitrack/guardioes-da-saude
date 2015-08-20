@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -18,48 +18,50 @@ function calculateDivider() {
 }
 var handleIsotopesGallery = function() {
 	"use strict";
-    var container = $('#gallery');
-    var dividerValue = calculateDivider();
-    var containerWidth = $(container).width() - 20;
-    var columnWidth = containerWidth / dividerValue;
-    $(container).isotope({
-        resizable: true,
-        masonry: {
-            columnWidth: columnWidth
-        }
-    });
-    
-    $(window).smartresize(function() {
-        var dividerValue = calculateDivider();
-        var containerWidth = $(container).width() - 20;
-        var columnWidth = containerWidth / dividerValue;
-        $(container).isotope({
-            masonry: { 
-                columnWidth: columnWidth 
-            }
-        });
-    });
-    
-    var $optionSets = $('#options .gallery-option-set'),
-    $optionLinks = $optionSets.find('a');
-    
-    $optionLinks.click( function(){
-        var $this = $(this);
-        if ($this.hasClass('active')) {
-            return false;
-        }
-        var $optionSet = $this.parents('.gallery-option-set');
-        $optionSet.find('.active').removeClass('active');
-        $this.addClass('active');
-    
-        var options = {};
-        var key = $optionSet.attr('data-option-key');
-        var value = $this.attr('data-option-value');
-            value = value === 'false' ? false : value;
-            options[ key ] = value;
-        $(container).isotope( options );
-        return false;
-    });
+	$(window).load(function() {
+		var container = $('#gallery');
+		var dividerValue = calculateDivider();
+		var containerWidth = $(container).width() - 20;
+		var columnWidth = containerWidth / dividerValue;
+		$(container).isotope({
+			resizable: true,
+			masonry: {
+				columnWidth: columnWidth
+			}
+		});
+		
+		$(window).smartresize(function() {
+			var dividerValue = calculateDivider();
+            var containerWidth = $(container).width() - 20;
+            var columnWidth = containerWidth / dividerValue;
+			$(container).isotope({
+				masonry: { 
+				    columnWidth: columnWidth 
+				}
+			});
+		});
+		
+		var $optionSets = $('#options .gallery-option-set'),
+		$optionLinks = $optionSets.find('a');
+		
+		$optionLinks.click( function(){
+			var $this = $(this);
+			if ($this.hasClass('active')) {
+				return false;
+			}
+			var $optionSet = $this.parents('.gallery-option-set');
+			$optionSet.find('.active').removeClass('active');
+			$this.addClass('active');
+		
+			var options = {};
+			var key = $optionSet.attr('data-option-key');
+			var value = $this.attr('data-option-value');
+				value = value === 'false' ? false : value;
+				options[ key ] = value;
+			$(container).isotope( options );
+			return false;
+		});
+	});
 };
 
 
@@ -68,11 +70,7 @@ var Gallery = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/lightbox/js/lightbox-2.6.min.js');
-            
-            $.getScript('assets/plugins/isotope/jquery.isotope.min.js').done(function() {
-                handleIsotopesGallery();
-            });
+            handleIsotopesGallery();
         }
     };
 }();

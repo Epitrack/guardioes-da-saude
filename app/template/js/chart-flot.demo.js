@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -503,28 +503,14 @@ var Chart = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/flot/jquery.flot.min.js').done(function() {
-                $.getScript('assets/plugins/flot/jquery.flot.time.min.js').done(function() {
-                    $.getScript('assets/plugins/flot/jquery.flot.resize.min.js').done(function() {
-                        $.getScript('assets/plugins/flot/jquery.flot.pie.min.js').done(function() {
-                            $.getScript('assets/plugins/flot/jquery.flot.stack.min.js').done(function() {
-                                $.getScript('assets/plugins/flot/jquery.flot.crosshair.min.js').done(function() {
-                                    $.getScript('assets/plugins/flot/jquery.flot.categories.js').done(function() {
-                                        handleBasicChart();
-                                        handleStackedChart();
-                                        handleTrackingChart();
-                                        handleBarChart();
-                                        handleInteractivePieChart();
-                                        handleDonutChart();
-                                        handleInteractiveChart();
-                                        handleLiveUpdatedChart();
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
+            handleBasicChart();
+            handleStackedChart();
+            handleTrackingChart();
+            handleBarChart();
+            handleInteractivePieChart();
+            handleDonutChart();
+            handleInteractiveChart();
+            handleLiveUpdatedChart();
         }
     };
 }();

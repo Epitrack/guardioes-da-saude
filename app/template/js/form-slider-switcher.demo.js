@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -84,16 +84,12 @@ var FormSliderSwitcher = function () {
     return {
         //main function
         init: function () {
-            $.getScript('assets/plugins/switchery/switchery.min.js').done(function() {
-                // switchery
-                renderSwitcher();
-                checkSwitcherState();
-            });
+            // switchery
+            renderSwitcher();
+            checkSwitcherState();
             
-            $.getScript('assets/plugins/powerange/powerange.min.js').done(function() {
-                // powerange slider
-                renderPowerRangeSlider();
-            });
+            // powerange slider
+            renderPowerRangeSlider();
         }
     };
 }();

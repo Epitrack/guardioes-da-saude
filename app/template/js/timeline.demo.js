@@ -1,4 +1,4 @@
-/*
+/*   
 Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
 Version: 1.8.0
 Author: Sean Ngu
@@ -20,27 +20,16 @@ var handleGoogleMapSetting = function() {
 		mapDefault = new google.maps.Map(document.getElementById('google-map'), mapOptions);
         mapDefault.setOptions({styles: cobaltStyles});
 	}
-	initialize();
+	google.maps.event.addDomListener(window, 'load', initialize);
 	
 };
-
-var handleGoogleMapLoaded = function() {
-    $(window).trigger("googleMapLoaded");
-};
-
-var handleLoadGoogleMap = function() {
-    $.getScript("http://maps.google.com/maps/api/js?sensor=false&callback=handleGoogleMapLoaded");
-};
-
 
 var Timeline = function () {
 	"use strict";
     return {
         //main function
         init: function () {
-            $(window).unbind('googleMapLoaded');
-            $(window).bind('googleMapLoaded', handleGoogleMapSetting);
-            handleLoadGoogleMap();
+            handleGoogleMapSetting();
         }
     };
 }();
