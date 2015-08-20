@@ -8,7 +8,10 @@
  * Controller of the guardioesDaSaudeApp
  */
 angular.module('guardioesDaSaudeApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl', function ($scope) {
+    $scope.screen = {
+        showAbout: false
+    };
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

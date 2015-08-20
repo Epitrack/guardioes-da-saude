@@ -1,4 +1,9 @@
-<div class="jumbotron">
+<div class="" ng-include="'views/about.html'" ng-if="screen.showAbout">
+
+</div>
+
+
+<div ng-click="screen.showAbout=!screen.showAbout" class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
