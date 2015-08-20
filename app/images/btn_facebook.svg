@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="52px" viewBox="0 0 28 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>btn_facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Smartphone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="botoes-sociais" sketch:type="MSLayerGroup" transform="translate(-40.000000, -19.000000)" fill="#FFFFFF">
+            <g id="default" sketch:type="MSShapeGroup">
+                <g id="btn_facebook_default">
+                    <path d="M57.6895074,70.542732 L57.6895074,47.0318086 L65.7246761,47.0318086 L66.9274153,37.8690202 L57.6895074,37.8690202 L57.6895074,32.0189847 C57.6895074,29.3661437 58.4394534,27.558381 62.3128619,27.558381 L67.2530558,27.5561063 L67.2530558,19.3610066 C66.3981915,19.2495427 63.466037,19 60.0542228,19 C52.9318204,19 48.0555502,23.2699777 48.0555502,31.111805 L48.0555502,37.8690202 L40,37.8690202 L40,47.0318086 L48.0555502,47.0318086 L48.0555502,70.542732 L57.6895074,70.542732" id="btn_facebook"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
