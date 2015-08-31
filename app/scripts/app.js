@@ -22,9 +22,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/home/index.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -50,6 +50,11 @@ angular
         templateUrl: 'views/survey.html',
         controller: 'SurveyCtrl',
         controllerAs: 'survey'
+      })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
       })
       .otherwise({
         redirectTo: '/'

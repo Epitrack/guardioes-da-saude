@@ -37,6 +37,10 @@ module.exports = function(grunt) {
 		less: {
 			development: {
 				options: {
+					sourceMap: true,
+				//	sourceMapFileInline: true,
+					outputSourceFiles: true,
+					sourceMapURL: "style.css.map",
 					paths: ["<%= yeoman.app %>/template/less"]
 				},
 				files: {
@@ -45,7 +49,8 @@ module.exports = function(grunt) {
 			},
 			production: {
 				options: {
-					paths: ["assets/css"],
+					sourceMapBasepath: "/",
+					paths: ["<%= yeoman.app %>/template/less"],
 					plugins: [
 						new require('less-plugin-autoprefix')({
 							browsers: ["last 2 versions"]
@@ -82,10 +87,14 @@ module.exports = function(grunt) {
 			},
 			jsTest: {
 				files: ['test/spec/{,*/}*.js'],
-				tasks: ['newer:jshint:test', 'karma']
+				tasks: []//['newer:jshint:test', 'karma']
 			},
 			compass: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+				//config: "config/config.rb",
+				files: [
+					'<%= yeoman.app %>/styles/{,*/}*.{scss,sass}',
+					'<%= yeoman.app %>/styles/{,*/}/{,*/}*.{scss,sass}'
+				],
 				tasks: ['compass:server', 'autoprefixer:server']
 			},
 			gruntfile: {
@@ -97,7 +106,10 @@ module.exports = function(grunt) {
 				},
 				files: [
 					'<%= yeoman.app %>/{,*/}*.html',
+					'<%= yeoman.app %>/{,*/}/{,*/}*.html',
 					'.tmp/styles/{,*/}*.css',
+					'.tmp/styles/{,*/}/{,*/}*.css',
+					'<%= yeoman.app %>/template/css_less/{,*/}*.css',
 					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
@@ -228,6 +240,10 @@ module.exports = function(grunt) {
 			app: {
 				src: ['<%= yeoman.app %>/index.html'],
 				ignorePath: /\.\.\//
+			},
+
+			components: {
+				src: ['<%= yeoman.app %>/styles/style.scss'],
 			},
 			test: {
 				devDependencies: true,
@@ -518,8 +534,8 @@ module.exports = function(grunt) {
 		'wiredep',
 		'concurrent:test',
 		'autoprefixer',
-		'connect:test',
-		'karma'
+		'connect:test'
+		//,'karma'
 	]);
 
 	grunt.registerTask('build', [
@@ -542,7 +558,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', [
 		'newer:jshint',
-		'test',
+	//	'test',
 		'build'
 	]);
 };

@@ -17,11 +17,10 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 
-	<!-- build:css(.tmp) styles/main.css -->
+	<!-- build:css(.tmp) styles/main2.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="template/css_less/style.css" />
-	<link rel="stylesheet" href="template/css/style-responsive.css" />
-	<link rel="stylesheet" href="template/css/theme/blue.css" />
+	<link rel="stylesheet" href="styles/style.css">
 	<!-- endbuild -->
 
 	<!-- ================== BEGIN BASE JS ================== -->
@@ -42,13 +41,9 @@
 	<div id="page-container" class="">
 		<!-- begin #header -->
 		<!-- Add your site or application content here -->
-		<header-navbar></header-navbar>
 
-		<div class="container">
-			<div ng-view=""></div>
-		</div>
 
-		<footer-navbar></footer-navbar>
+	<div ng-view=""></div>
 
 	</div>
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -101,8 +96,7 @@
 	<script src="scripts/controllers/dashboard.js"></script>
 	<script src="scripts/controllers/survey.js"></script>
 	<script src="template/js/apps.js"></script>
-	<script src="scripts/directives/header-navbar.js"></script>
-	<script src="scripts/directives/footer-navbar.js"></script>
+<script src="scripts/controllers/home.js"></script>
 	<!-- endbuild -->
 
 
