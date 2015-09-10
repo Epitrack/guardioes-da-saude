@@ -2,16 +2,13 @@
 
 /**
  * @ngdoc function
- * @name guardioesDaSaudeApp.controller:MainCtrl
+ * @name gdsApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the guardioesDaSaudeApp
+ * Controller of the gdsApp
  */
-angular.module('guardioesDaSaudeApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.screen = {
-        showAbout: false
-    };
+angular.module('gdsApp')
+  .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

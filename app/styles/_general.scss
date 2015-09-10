@@ -1,0 +1,57 @@
+// —————————————————————————
+//     General
+// —————————————————————————
+
+::-moz-selection {
+  background: $link-menu;
+  color: $border-primary;
+  text-shadow: none;
+}
+
+::selection {
+  background: $link-menu;
+  color: $border-primary;
+  text-shadow: none;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  font-size: $fs-root;
+  font-family: $ff-regular;
+}
+
+.nopadding { padding: 0; }
+
+.no-margin { margin: 0; }
+
+// ===
+
+
+
+//
+// Settings
+//
+
+// ===
+
+
+
+//
+// Media queries
+//
+
+// iPads
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

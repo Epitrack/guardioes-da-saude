@@ -1,3 +1,265 @@
-body {
-    
+// ——————————————————————————————————————————————————————————————————————————
+//               Base: Variables, Mixins & Utilities
+// ——————————————————————————————————————————————————————————————————————————
+
+// ——————————————
+//     Colors
+// ——————————————
+
+// Hexadecimals
+$blue-primary:                    #3f6f92; // link menu
+$blue-lighten:                    #4FC4F6; // background-tab
+$blue-think:                      #E0E9F6; // background-figure
+$blue-cleaner:                    #5FA9DD; // background-twitter
+$blue-secondary:                  #428BCA; // news link
+$white-light:                     #D7E0EF; // background pages
+$blue-clean:                      #E7EFFA; // background twiiter
+$blue-dark:                       #3A5898; // background button
+$blue-other:                      #244C68; // some text
+$white-primary:                   #EEEEEE; // hover-menu | background-nav
+$red-primary:                     #D33041; // button
+$gray-primary:                    #C6C6C6; // border
+$brown-primary:                   #898989; // some text
+$brown-secondary:                 #595959; // some text
+
+// RGB
+$blue-primary-rgb:                rgb(63,111,146);
+$blue-lighten-rgb:                rgb(79,196,246);
+$blue-think-rgb:                  rgb(224,233,246);
+$blue-cleaner-rgb:                rgb(231,239,250);
+$white-primary-rgb:               rgb(238,238,238);
+$red-primary-rgb:                 rgb(211,48,65);
+$gray-primary-rgb:                rgb(198,198,198);
+$white-light-rgb:                 rgb(215,224,239);
+$blue-clean-rgb:                  rgb(231,239,250);
+$blue-dark-rgb:                   rgb(58,88,152);
+$blue-other-rgb:                  rgb(36,76,104);
+$brown-primary-rgb:               rgb(137,137,137);
+$brown-secondary-rgb:             rgb(89,89,89);
+$blue-secondary-rgb:              rgb(66,139,202);
+
+// Names
+$link-menu:                        $blue-primary;
+$bg-tab:                           $blue-lighten;
+$bg-figure:                        $blue-think;
+$bg-twitter:                       $blue-cleaner;
+$bg-nav:                           $white-primary;
+$btn-primary:                      $red-primary;
+$border-primary:                   $gray-primary;
+$bg-primary:                       $white-light;
+$bg-secondary:                     $blue-clean;
+$bg-button:                        $blue-dark;
+$text-primary:                     $blue-other;
+$text-secondary:                   $brown-primary;
+$text-other:                       $brown-secondary;
+$news-link:                        $blue-secondary;
+
+
+// ——————————————————————
+//     Mixins
+// ——————————————————————
+
+
+//
+// Gradient
+//
+
+// Background Images
+@mixin path ($rulers...) {
+  background-image: url("../images/"+$rulers);
+}
+
+@mixin rgba ($color, $alpha) {
+  background-color: rgba($color, $alpha);
+}
+
+@mixin linear-gradient ($angle, $startColor, $endColor) {
+  background-color: $startColor;
+  background-image: -webkit-linear-gradient($angle, $startColor, $endColor);
+  background-image:    -moz-linear-gradient($angle, $startColor, $endColor);
+  background-image:     -ms-linear-gradient($angle, $startColor, $endColor);
+  background-image:      -o-linear-gradient($angle, $startColor, $endColor);
+  background-image:         linear-gradient($angle, $startColor, $endColor);
+}
+
+@mixin linear-gradient-control($angle, $colour, $position, $colour2, $position2) {
+ background-color:  $colour;
+ background-image:  -webkit-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:    -moz-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:     -ms-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:      -o-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:          linear-gradient($angle, $colour $position, $colour2 $position2);
+}
+
+// Text Truncate
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Transition
+@mixin transition($property, $time, $method, $delay){
+  -webkit-transition: $property $time $method $delay;
+     -moz-transition: $property $time $method $delay;
+      -ms-transition: $property $time $method $delay;
+       -o-transition: $property $time $method $delay;
+          transition: $property $time $method $delay;
+}
+
+// Border-Radius
+@mixin bdr($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//
+// Shadow
+//
+
+// box-shadow
+@mixin bsd($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+     -moz-box-shadow: $x $y $blur $color;
+      -ms-box-shadow: $x $y $blur $color;
+       -o-box-shadow: $x $y $blur $color;
+          box-shadow: $x $y $blur $color;
+}
+
+@mixin bsd-multiples($rulers...) {
+  -webkit-box-shadow: $rulers;
+     -moz-box-shadow: $rulers;
+      -ms-box-shadow: $rulers;
+       -o-box-shadow: $rulers;
+          box-shadow: $rulers;
+}
+
+// text-shadow
+@mixin tsd($x, $y, $blur, $color) {
+  -webkit-text-shadow: $x $y $blur $color;
+     -moz-text-shadow: $x $y $blur $color;
+      -ms-text-shadow: $x $y $blur $color;
+       -o-text-shadow: $x $y $blur $color;
+          text-shadow: $x $y $blur $color;
+}
+
+//
+// Translate
+//
+
+// translateY
+@mixin translateY($value) {
+  -webkit-transform: translateY($value);
+     -moz-transform: translateY($value);
+      -ms-transform: translateY($value);
+       -o-transform: translateY($value);
+          transform: translateY($value);
+}
+
+// translateX
+@mixin translateX($value) {
+  -webkit-transform: translateX($value);
+     -moz-transform: translateX($value);
+      -ms-transform: translateX($value);
+       -o-transform: translateX($value);
+          transform: translateX($value);
+}
+
+// translate3d
+@mixin translate3d($valueX, $valueY, $valueZ) {
+  -webkit-transform: translate3d($valueX, $valueY, $valueZ);
+     -moz-transform: translate3d($valueX, $valueY, $valueZ);
+      -ms-transform: translate3d($valueX, $valueY, $valueZ);
+       -o-transform: translate3d($valueX, $valueY, $valueZ);
+          transform: translate3d($valueX, $valueY, $valueZ);
+}
+
+// skew
+@mixin skew($rulers...) {
+  -webkit-transform: skew($rulers);
+     -moz-transform: skew($rulers);
+      -ms-transform: skew($rulers);
+       -o-transform: skew($rulers);
+          transform: skew($rulers);
+}
+
+// rotate
+@mixin rotate($value) {
+  -webkit-transform: rotate($value);
+     -moz-transform: rotate($value);
+      -ms-transform: rotate($value);
+       -o-transform: rotate($value);
+          transform: rotate($value);
+}
+
+// transform-origin
+@mixin origin($value) {
+  -webkit-transform-origin: $value;
+     -moz-transform-origin: $value;
+      -ms-transform-origin: $value;
+       -o-transform-origin: $value;
+          transform-origin: $value;
+}
+
+// scale
+@mixin scale3d($scaleX, $scaleY, $scaleZ) {
+  -webkit-transform: scale($scaleX, $scaleY, $scaleZ);
+     -moz-transform: scale($scaleX, $scaleY, $scaleZ);
+      -ms-transform: scale($scaleX, $scaleY, $scaleZ);
+       -o-transform: scale($scaleX, $scaleY, $scaleZ);
+          transform: scale($scaleX, $scaleY, $scaleZ);
+}
+
+// animation
+@mixin animation($rulers...){
+  -webkit-animation: $rulers;
+     -moz-animation: $rulers;
+      -ms-animation: $rulers;
+       -o-animation: $rulers;
+          animation: $rulers;
+}
+
+// appearance
+@mixin apr($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+       -o-appearance: $value;
+          appearance: $value;
+}
+
+
+//
+// Organizes
+//
+
+%social {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  background-color: #FFFFFF;
+  margin-right: 0;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center center;
+  text-indent: -9999px;
+  @include bdr(100%);
+}
+
+@mixin social ($type) {
+  @extend %social;
+
+  @if $type == 'facebook' {
+    @include path('icon-facebook.svg');
+  }
+  @else if $type == 'twitter' {
+    @include path('icon-twitter.svg');
+  }
+  @else if $type == 'google-plus' {
+    @include path('icon-google-plus.svg');
+  }
 }

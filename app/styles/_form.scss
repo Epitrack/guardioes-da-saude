@@ -1,0 +1,48 @@
+// —————————————————————————
+//     Forms
+// —————————————————————————
+
+::-webkit-input-placeholder { color: $text-other; }
+
+:-moz-placeholder { color: $text-other; }
+
+::-moz-placeholder { color: $text-other; }
+
+:-ms-input-placeholder { color: $text-other; }
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  outline: none;
+  border: none;
+  font-size: ($fs-normal)+.2;
+  color: $link-menu;
+  padding: 10px;
+}
+
+select {
+  &.select-primary {
+    display: block;
+    margin: 10px 0;
+    height: 35px;
+    border: none;
+    outline: none;
+    @include apr(none);
+    @include bdr(0);
+    @include path('icon-arrow.svg');
+    background-color: #FFFFFF;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: 90% 12px;
+  }
+}
+
+// ===
+
+// iPad
+@media (min-width: 768px) {}
+
+// Desktop
+@media (min-width: 992px) {}

@@ -2,18 +2,16 @@
 
 /**
  * @ngdoc overview
- * @name guardioesDaSaudeApp
+ * @name gdsApp
  * @description
- * # guardioesDaSaudeApp
+ * # gdsApp
  *
  * Main module of the application.
  */
 angular
-  .module('guardioesDaSaudeApp', [
+  .module('gdsApp', [
     'ngAnimate',
-    'ngAria',
     'ngCookies',
-    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
@@ -22,39 +20,14 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home/index.html',
-        controller: 'HomeCtrl',
-        controllerAs: 'home'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl',
-        controllerAs: 'contact'
-      })
-      .when('/noticias', {
-        templateUrl: 'views/noticias.html',
-        controller: 'NoticiasCtrl',
-        controllerAs: 'noticias'
-      })
-      .when('/dashboard', {
-        templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl',
-        controllerAs: 'dashboard'
-      })
-      .when('/survey', {
-        templateUrl: 'views/survey.html',
-        controller: 'SurveyCtrl',
-        controllerAs: 'survey'
-      })
-      .when('/home', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl',
-        controllerAs: 'home'
       })
       .otherwise({
         redirectTo: '/'
