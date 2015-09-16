@@ -18,6 +18,7 @@ $ff-regular:       'OpenSansRegular';
 $ff-bold:          'OpenSansBold';
 $ff-light:         'OpenSansLight';
 $foco-light:       'foco_lightregular';
+$foco-regular:     'focoregular';
 $foco-bold:        'focobold';
 // ==
 
@@ -70,6 +71,18 @@ $fw-semi-bold:      600;
          url('../fonts/foco_lt-webfont.woff') format('woff'),
          url('../fonts/foco_lt-webfont.ttf') format('truetype'),
          url('../fonts/foco_lt-webfont.svg#foco_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'focoregular';
+    src: url('../foco_std_rg-webfont.eot');
+    src: url('../foco_std_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../foco_std_rg-webfont.woff2') format('woff2'),
+         url('../foco_std_rg-webfont.woff') format('woff'),
+         url('../foco_std_rg-webfont.ttf') format('truetype'),
+         url('../foco_std_rg-webfont.svg#focoregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
