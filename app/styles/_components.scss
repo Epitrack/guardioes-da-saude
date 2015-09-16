@@ -62,4 +62,52 @@
 	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
 	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
 }
+
+.btn-signup:hover {
+	color: $blue-dark;
+}
+
+//==
+
+// 04 login social
+.social-signin {
+	margin: 0 0 20px 0;
+}
+.social {
+	height: 38px;
+	font-family: $ff-light;
+	font-size: 18px;
+	background: #fff;
+	color: $blue-dark;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+}
+
+.login-facebook {
+	color: #fff;
+  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
+  background-size: 16.7px 31.7px;
+}
+
+.login-google {
+	color: #fff;
+  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
+  background-size: 16.3px 24.5px;
+}
+
+.login-facebook:hover, .login-google:hover{
+	color: #fff;
+}
+
+.login-twitter {
+	color: #5e9fca;
+  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
+  background-size: 25.3px 20.9px;
+}
+
+.login-twitter:hover {
+	color: #5e9fca;
+}
+
 //==
