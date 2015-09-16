@@ -5,10 +5,10 @@
 
 // 01 home search
 .search-home {
-	font-family: $foco-light;
+	font-family: $ff-light;
 	font-size: $fs-medium;
 	text-align: center;
-	background: url('../images/icon_search.svg') no-repeat 6.5%;
+	background: url('../images/icon_search.svg') #fff no-repeat 6.5%;
 	background-size: 32.5px 32.6px;
 	border: 1px solid #ccc;
 	@include bdr(5px);
@@ -19,3 +19,47 @@
 }
 //==
 
+// 03 cadastro email 
+.mainform {
+	border: 2px solid #fff;
+	border-radius: 5px; 
+}
+
+.mainform-input {
+	font-family: $ff-light;
+	font-size: 18px;
+	color: #a4cae6;
+	background: none;
+	border-bottom: 2px solid #fff;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	box-shadow: none;
+	text-align: left;
+	height: 42px;
+	padding: 0 0 0 15px;
+	border-radius: 0;
+}
+
+.mainform input:first-child {
+	border: 0 0 2px 0;
+}
+
+.mainform input:last-child {
+	border: 0;
+}
+
+.mainform .select, .mainform .select {
+	background: url("../images/icon_arrowdown.svg") no-repeat 96.8% 15px;
+}
+
+.btn-signup {
+	font-family: $ff-light;
+	font-size: 18px;
+	background: #fff;
+	color: $blue-dark;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+}
+//==

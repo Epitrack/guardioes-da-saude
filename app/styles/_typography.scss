@@ -8,18 +8,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 // Size
 $fs-root:           62.5%;
-$fs-normal:         1.2rem;
+$fs-normal:         1.0rem;
 $fs-medium:         3.0rem;
 $fs-large:          5.0rem;
 // ==
 
 // Family
-$ff-regular:       'OpenSansRegular';
-$ff-bold:          'OpenSansBold';
-$ff-light:         'OpenSansLight';
-$foco-light:       'foco_lightregular';
-$foco-regular:     'focoregular';
-$foco-bold:        'focobold';
+$ff-light:       'foco_lightregular';
+$ff-regular:     'focoregular';
+$ff-bold:        'focobold';
 // ==
 
 // Style
@@ -33,36 +30,6 @@ $fw-semi-bold:      600;
 // ==
 
 // Custom Font Face
-@font-face {
-  font-family: 'OpenSansRegular';
-  src: url('../fonts/OpenSansRegular.eot');
-  src: url('../fonts/OpenSansRegular.eot') format('embedded-opentype'),
-  url('../fonts/OpenSansRegular.woff2') format('woff2'),
-  url('../fonts/OpenSansRegular.woff') format('woff'),
-  url('../fonts/OpenSansRegular.ttf') format('truetype'),
-  url('../fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
-}
-
-@font-face {
-  font-family: 'OpenSansBold';
-  src: url('../fonts/OpenSansBold.eot');
-  src: url('../fonts/OpenSansBold.eot') format('embedded-opentype'),
-  url('../fonts/OpenSansBold.woff2') format('woff2'),
-  url('../fonts/OpenSansBold.woff') format('woff'),
-  url('../fonts/OpenSansBold.ttf') format('truetype'),
-  url('../fonts/OpenSansBold.svg#OpenSansBold') format('svg');
-}
-
-@font-face {
-  font-family: 'OpenSansLight';
-  src: url('../fonts/OpenSansLight.eot');
-  src: url('../fonts/OpenSansLight.eot') format('embedded-opentype'),
-  url('../fonts/OpenSansLight.woff2') format('woff2'),
-  url('../fonts/OpenSansLight.woff') format('woff'),
-  url('../fonts/OpenSansLight.ttf') format('truetype'),
-  url('../fonts/OpenSansLight.svg#OpenSansLight') format('svg');
-}
-
 @font-face {
     font-family: 'foco_lightregular';
     src: url('../fonts/foco_lt-webfont.eot');

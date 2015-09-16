@@ -2,13 +2,13 @@
 //     Forms
 // —————————————————————————
 
-::-webkit-input-placeholder { color: $text-other; }
+::-webkit-input-placeholder { color: $text-primary; }
 
-:-moz-placeholder { color: $text-other; }
+:-moz-placeholder { color: $text-primary; }
 
-::-moz-placeholder { color: $text-other; }
+::-moz-placeholder { color: $text-primary; }
 
-:-ms-input-placeholder { color: $text-other; }
+:-ms-input-placeholder { color: $text-primary; }
 
 textarea {
   resize: vertical;
