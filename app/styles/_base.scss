@@ -7,52 +7,47 @@
 // ——————————————
 
 // Hexadecimals
-$blue-primary:                    #3f6f92; // link menu
-$blue-lighten:                    #4FC4F6; // background-tab
-$blue-think:                      #E0E9F6; // background-figure
-$blue-cleaner:                    #5FA9DD; // background-twitter
-$blue-secondary:                  #428BCA; // news link
-$white-light:                     #D7E0EF; // background pages
-$blue-clean:                      #E7EFFA; // background twiiter
-$blue-dark:                       #3A5898; // background button
-$blue-other:                      #244C68; // some text
-$white-primary:                   #EEEEEE; // hover-menu | background-nav
-$red-primary:                     #D33041; // button
-$gray-primary:                    #C6C6C6; // border
-$brown-primary:                   #898989; // some text
-$brown-secondary:                 #595959; // some text
+$blue-dark:                          #01579B; // header
+$blue-light:                         #1E88E5; // some fonts
+$blue-transparent:                   #90CAF9; // some fonts (survey title)
+$blue-darker:                        #395185; // facebook button
+$blue-acqua:                         #5879F4; // google button
+$white:                              #FFFFFF; // some fonts
+$gray:                               #CCCCCC; // some border
+$gray-light:                         #979797; // some border
+$gray-clean:                         #D9E0E7; // internal background
+$black-clean:                        #7E7E7E; // background when modal is open
+$black-light:                        #4C4C4C; // some fonts
+$black-ligthen:                      #D7D7D7; // some backgrounds
 
 // RGB
-$blue-primary-rgb:                rgb(63,111,146);
-$blue-lighten-rgb:                rgb(79,196,246);
-$blue-think-rgb:                  rgb(224,233,246);
-$blue-cleaner-rgb:                rgb(231,239,250);
-$white-primary-rgb:               rgb(238,238,238);
-$red-primary-rgb:                 rgb(211,48,65);
-$gray-primary-rgb:                rgb(198,198,198);
-$white-light-rgb:                 rgb(215,224,239);
-$blue-clean-rgb:                  rgb(231,239,250);
-$blue-dark-rgb:                   rgb(58,88,152);
-$blue-other-rgb:                  rgb(36,76,104);
-$brown-primary-rgb:               rgb(137,137,137);
-$brown-secondary-rgb:             rgb(89,89,89);
-$blue-secondary-rgb:              rgb(66,139,202);
+$blue-dark-rgb:                      rgb(1,87,155);
+$blue-light-rgb:                     rgb(30,136,229);
+$blue-transparent-rgb:               rgb(144,202,249);
+$blue-darker-rgb:                    rgb(57,81,133);
+$blue-acqua-rgb:                     rgb(88,121,244);
+$white-rgb:                          rgb(255,255,255);
+$gray-rgb:                           rgb(204,204,204);
+$gray-light-rgb:                     rgb(151,151,151);
+$gray-clean-rgb:                     rgb(217,224,231);
+$black-clean-rgb:                    rgb(126,126,126);
+$black-light-rgb:                    rgb(76,76,76);
+$black-ligthen-rgb:                  rgb(215,215,215);
 
 // Names
-$link-menu:                        $blue-primary;
-$bg-tab:                           $blue-lighten;
-$bg-figure:                        $blue-think;
-$bg-twitter:                       $blue-cleaner;
-$bg-nav:                           $white-primary;
-$btn-primary:                      $red-primary;
-$border-primary:                   $gray-primary;
-$bg-primary:                       $white-light;
-$bg-secondary:                     $blue-clean;
-$bg-button:                        $blue-dark;
-$text-primary:                     $blue-other;
-$text-secondary:                   $brown-primary;
-$text-other:                       $brown-secondary;
-$news-link:                        $blue-secondary;
+$header:                             $blue-dark;
+$btn-primary:                        $blue-light;
+$survey-title:                       $blue-transparent;
+$btn-facebook:                       $blue-darker;
+$btn-google:                         $blue-acqua;
+$link-primary:                       $white;
+$border-secondary:                   $gray;
+$border-primary:                     $gray-light;
+$bg-section:                         $gray-clean;
+$bg-modal:                           $black-clean;
+$font-primary:                       $black-light;
+$bg-secondary:                       $black-ligthen;
+
 
 
 // ——————————————————————
