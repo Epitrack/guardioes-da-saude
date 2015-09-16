@@ -24,10 +24,20 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/cadastro', {
+        templateUrl: 'views/cadastro.html',
+        controller: 'CadastroCtrl',
+        controllerAs: 'cadastro'
+      })
+      .when('/login-email', {
+        templateUrl: 'views/login-email.html',
+        controller: 'LoginEmailCtrl',
+        controllerAs: 'loginEmail'
       })
       .otherwise({
         redirectTo: '/'

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name gdsApp.controller:AboutCtrl
+ * @name gdsApp.controller:CadastroCtrl
  * @description
- * # AboutCtrl
+ * # CadastroCtrl
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('AboutCtrl', function () {
+  .controller('CadastroCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
