@@ -17,6 +17,8 @@ $fs-large:          5.0rem;
 $ff-regular:       'OpenSansRegular';
 $ff-bold:          'OpenSansBold';
 $ff-light:         'OpenSansLight';
+$foco-light:       'foco_lightregular';
+$foco-bold:        'focobold';
 // ==
 
 // Style
@@ -58,5 +60,29 @@ $fw-semi-bold:      600;
   url('../fonts/OpenSansLight.woff') format('woff'),
   url('../fonts/OpenSansLight.ttf') format('truetype'),
   url('../fonts/OpenSansLight.svg#OpenSansLight') format('svg');
+}
+
+@font-face {
+    font-family: 'foco_lightregular';
+    src: url('../fonts/foco_lt-webfont.eot');
+    src: url('../fonts/foco_lt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/foco_lt-webfont.woff2') format('woff2'),
+         url('../fonts/foco_lt-webfont.woff') format('woff'),
+         url('../fonts/foco_lt-webfont.ttf') format('truetype'),
+         url('../fonts/foco_lt-webfont.svg#foco_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'focobold';
+    src: url('../fonts/foco_std_bd-webfont.eot');
+    src: url('../fonts/foco_std_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/foco_std_bd-webfont.woff2') format('woff2'),
+         url('../fonts/foco_std_bd-webfont.woff') format('woff'),
+         url('../fonts/foco_std_bd-webfont.ttf') format('truetype'),
+         url('../fonts/foco_std_bd-webfont.svg#focobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 // ==
