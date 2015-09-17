@@ -66,48 +66,48 @@
 .btn-signup:hover {
 	color: $blue-dark;
 }
-
 //==
 
 // 04 login social
 .social-signin {
 	margin: 0 0 20px 0;
-}
-.social {
-	height: 38px;
-	font-family: $ff-light;
-	font-size: 18px;
-	background: #fff;
-	color: $blue-dark;
-	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-}
 
-.login-facebook {
-	color: #fff;
-  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
-  background-size: 16.7px 31.7px;
-}
+	.social {
+		height: 38px;
+		font-family: $ff-light;
+		font-size: 18px;
+		background: #fff;
+		color: $blue-dark;
+		-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+		-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+		box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	}
 
-.login-google {
-	color: #fff;
-  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
-  background-size: 16.3px 24.5px;
-}
+	.login-facebook {
+		color: #fff;
+	  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
+	  background-size: 16.7px 31.7px;
+	}
 
-.login-facebook:hover, .login-google:hover{
-	color: #fff;
-}
+	.login-google {
+		color: #fff;
+	  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
+	  background-size: 16.3px 24.5px;
+	}
 
-.login-twitter {
-	color: #5e9fca;
-  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
-  background-size: 25.3px 20.9px;
-}
+	.login-facebook:hover, .login-google:hover{
+		color: #fff;
+	}
 
-.login-twitter:hover {
-	color: #5e9fca;
+	.login-twitter {
+		color: #5e9fca;
+	  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
+	  background-size: 25.3px 20.9px;
+	}
+
+	.login-twitter:hover {
+		color: #5e9fca;
+	}
 }
 //==
 
@@ -128,7 +128,6 @@
 }
 
 .weekly-users {
-	
 	background: url("../images/icon_participations.svg") no-repeat 1px 3px;
   padding: 0 0 0 60px;
 
@@ -137,14 +136,13 @@
 		font-size: 18px;
 		color: #4c4c4c;
 	}
-
-}
-
-.total-weekly {
-	font-family: $ff-bold;
-	font-size: 24px;
-	float: left;
-	width: 100%;
+	
+	.total-weekly {
+		font-family: $ff-bold;
+		font-size: 24px;
+		float: left;
+		width: 100%;
+	}
 }
 
 .icon-small {
@@ -155,43 +153,43 @@
 .metrics {
 	width: 140px;
   height: auto;
-}
 
-.metrics img {
-	margin: 0px 30% 10% 30%;
-}
+	img {
+		margin: 0px 30% 10% 30%;
+	}
 
-.metrics .light {
-	font-family: $ff-light;
-}
+	.light {
+		font-family: $ff-light;
+	}
 
-.icon-medium {
-	width: 59.7px;
-	height: 59.7px;
-}
+	.icon-medium {
+		width: 59.7px;
+		height: 59.7px;
+	}
 
-.good, .bad {
-  border-radius: 30px;
-	webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-	box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
-}
+	.good, .bad {
+	  border-radius: 30px;
+		webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
+	}
 
-.total-percentage {
-  font-family: $ff-bold;
-  font-size: 24px;
-  float: left;
-  color: #4c4c4c;
-  text-align: center;
-  width: 100%;
-}
+	.total-percentage {
+	  font-family: $ff-bold;
+	  font-size: 24px;
+	  float: left;
+	  color: #4c4c4c;
+	  text-align: center;
+	  width: 100%;
+	}
 
-.total-users {
-	font-family: $ff-light;
-  font-size: 16px;
-  color: #1e88e5;
-  width: 100%;
-  float: left;
+	.total-users {
+		font-family: $ff-light;
+	  font-size: 16px;
+	  color: #1e88e5;
+	  width: 100%;
+	  float: left;
+	}
 }
 
 .progress-container {
@@ -202,32 +200,37 @@
   background-size: 22px 22px;
   padding: 0 0 0 30px;
   width: 100%;
-}
 
-.sickness-info {
-	font-family: $ff-light;
-  font-size: 14px;
-  color: #4c4c4c;
-}
+	  .sickness-info {
+		font-family: $ff-light;
+	  font-size: 14px;
+	  color: #4c4c4c;
+	}
 
-.sickness-name {
-  float: left;
-}
+	.sickness-name {
+	  float: left;
+	}
 
-.progress-percentage {
-  float: right;
-}
+	.progress-percentage {
+	  float: right;
+	}
 
-.progress-status {
-	background: #078ade;
-}
+	.progress-status {
+		background: #078ade;
+	}
 
-.sickness {
-	height: 4.4px;
-  background: #d7d7d7;
-  bottom: 0px;
-  width: 100%;
-  margin-bottom: 0;
-  border-radius: 0;
+	.sickness {
+		height: 4.4px;
+	  background: #d7d7d7;
+	  bottom: 0px;
+	  width: 100%;
+	  margin-bottom: 0;
+	  border-radius: 0;
+	}
 }
+//==
+
+// 07 quem vai participar
+
+
 //==
