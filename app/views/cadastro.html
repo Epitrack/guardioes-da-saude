@@ -1,5 +1,33 @@
-<section class="container-fluid no-padding not-logged">
+<div class="wrapper-internal not-logged">
   <div class="container">
-    <h2 class="title-primary">Veja como está a saúde perto de você</h2>
+    <div class="row">
+      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
+        <h2 class="title-primary">Veja como está a saúde perto de você</h2>
+
+        <form name="form-search-home" class="form-search-home">
+          <fieldset class="input-group">
+            <input type="text" class="search-home" placeholder="Pesquise pela sua cidade">
+          </fieldset>
+        </form>
+
+        <div class="last-cities">
+          <h4>Cidades mais acessadas</h4>
+          <ul>
+            <li><a ng-href="#/">Recife</a></li>
+            <li><a ng-href="#/">Fortaleza</a></li>
+            <li><a ng-href="#/">São Paulo</a></li>
+            <li><a ng-href="#/">Rio de Janeiro</a></li>
+            <li><a ng-href="#/">Campinas</a></li>
+          </ul>
+        </div>
+
+        <div class="goto-dashboard">
+          <p>Para uma busca mais detalhada, <br> <a ng-href="#/" title="Vá para o painel de controle">acesse o painel de controle</a>.</p>
+        </div>
+      </section>
+    </div>
   </div>
-</section>
+</div>
+
+<!-- How it works -->
+<div ng-include src="'views/partials/how-it-works.html'"></div>

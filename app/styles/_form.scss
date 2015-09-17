@@ -2,47 +2,51 @@
 //     Forms
 // —————————————————————————
 
-::-webkit-input-placeholder { color: $text-other; }
+::-webkit-input-placeholder { color: $bg-modal; }
 
-:-moz-placeholder { color: $text-other; }
+:-moz-placeholder { color: $bg-modal; }
 
-::-moz-placeholder { color: $text-other; }
+::-moz-placeholder { color: $bg-modal; }
 
-:-ms-input-placeholder { color: $text-other; }
+:-ms-input-placeholder { color: $bg-modal; }
 
-textarea {
-  resize: vertical;
+
+
+//
+// Search home
+//
+
+.search-home {
+  font-family: $ff-light;
+  font-size: $fs-medium;
+  text-align: center;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  background-color: $link-primary;
+  background-size: 32px;
+  border: 1px solid $border-secondary;
+  height: 75px;
+  padding: 0 10px 0 50px;
   width: 100%;
-  min-height: 100px;
-  height: auto;
-  outline: none;
-  border: none;
-  font-size: ($fs-normal)+.2;
-  color: $link-menu;
-  padding: 10px;
-}
-
-select {
-  &.select-primary {
-    display: block;
-    margin: 10px 0;
-    height: 35px;
-    border: none;
-    outline: none;
-    @include apr(none);
-    @include bdr(0);
-    @include path('icon-arrow.svg');
-    background-color: #FFFFFF;
-    background-size: 12px;
-    background-repeat: no-repeat;
-    background-position: 90% 12px;
-  }
+  @include path('icon-search.svg');
+  @include bdr(5px);
 }
 
 // ===
 
 // iPad
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  // Search home
+  .search-home {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  // ====
+}
 
 // Desktop
 @media (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

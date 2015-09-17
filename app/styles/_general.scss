@@ -27,9 +27,6 @@ html {
   -ms-text-rendering: optimizeLegibility !important;
   -o-text-rendering: optimizeLegibility !important;
   text-rendering: optimizeLegibility !important;
-
-  // -webkit-font-smoothing: antialiased !important;
-  // font-smoothing: antialiased !important;
 }
 
 body {
@@ -42,6 +39,10 @@ body {
 
 .no-margin { margin: 0; }
 
+.main {
+  display: block;
+}
+
 // ===
 
 
@@ -50,10 +51,19 @@ body {
 // Header
 //
 
-.header-primary { height: 70px; }
+.navbar-toggle {
+  margin-top: 20px;
+  border-color: $link-primary;
 
-.navbar-header {
-  @extend .header-primary;
+  &:hover,
+  &:focus,
+  &:visited {
+    background-color: $btn-primary !important;
+  }
+}
+
+.icon-bar {
+  background-color: $link-primary !important;
 }
 
 .logo-primary {
@@ -75,6 +85,9 @@ body {
 }
 
 .navbar-default {
+  margin-bottom: 0;
+  border-color: $link-primary;
+
   &.not-logged {
     background-color: $bg-header;
     border: none;
@@ -104,19 +117,175 @@ body {
 //
 
 .title-primary {
+  color: $link-primary;
+  font-size: ($fs-medium)+1;
+  font-family: $ff-light;
+  text-align: center;
   margin: 0;
-  padding: 0;
 }
 
-.container-fluid {
+.title-secondary {
+  @extend .title-primary;
+  color: $btn-primary;
+}
+
+.wrapper-internal {
+  width: 100%;
+  padding: 0;
+
   &.not-logged {
-    min-height: 600px;
-    background-repeat: no-repeat;
+    height: 600px;
+    background-repeat: repeat;
     background-size: 100%;
     @include path('bg-not-logged.svg');
   }
 }
 
+.register-box {
+  .title-primary {
+    margin: 80px auto 40px auto;
+    text-align: center;
+  }
+}
+
+.form-search-home { margin-bottom: 35px; }
+
+.last-cities {
+  text-align: center;
+  margin-bottom: 35px;
+
+  h4 {
+    color: $link-primary;
+    font-family: $ff-light;
+    font-size: ($fs-medium + $fs-normal) + .4;
+  }
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: ($fs-normal) + .4;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 5px;
+      height: 1px;
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top: 10px;
+      right: -12px;
+      background-color: $link-primary;
+    }
+
+    &:last-child {
+      &::before { background-color: transparent; }
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: underline;
+    color: $link-primary;
+  }
+}
+
+.goto-dashboard {
+  color: $link-primary;
+  font-family: $ff-light;
+  font-size: $fs-medium;
+  text-align: center;
+
+  a {
+    text-decoration: underline;
+    color: $link-primary;
+  }
+}
+
+// How It Works
+.wrapper-how-it-works {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $link-primary;
+  @include path('bg-how-it-works.svg');
+}
+
+.how-it-works {
+  position: relative;
+  min-height: 600px;
+  height: 100%;
+
+  .title-primary {
+    margin: 25px auto;
+  }
+}
+
+.video {
+  height: 320px;
+  margin-bottom: 50px;
+  position: relative;
+  background-color: black;
+}
+
+.step-box {
+  min-height: 200px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.step-title {
+  font-size: ($fs-medium)+.4;
+  color: $btn-primary;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.step-text {
+  color: $font-primary;
+  font-size: ($fs-normal)+.2;
+  font-family: $ff-light;
+  text-align: justify;
+}
+
+.footer-primary {
+  width: 100%;
+  height: 170px;
+  text-align: center;
+  background-color: $link-primary;
+}
+
+.nav-secondary {
+  min-height: 50px;
+  background-color: $bg-header;
+
+  li {
+    display: block;
+    line-height: 50px;
+    margin: 0 10px;
+    position: relative;
+  }
+
+  a {
+    display: block;
+    font-size: ($fs-medium)-.2;
+    color: $link-primary;
+  }
+}
+
+.logo-ministerio {
+  @extend .col-xs-12;
+  @extend .col-sm-6;
+  @extend .col-sm-offset-2;
+  @extend .col-md-6;
+  @extend .col-md-offset-3;
+
+  img {
+    width: 90%;
+    margin: 20px 0;
+  }
+}
 // ===
 
 
@@ -126,10 +295,65 @@ body {
 //
 
 // iPads
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  // Header
+  .navbar-nav {
+    float: right;
+  }
+  // ====
+
+  // How it Works
+  .title-primary { font-size: ($fs-large)+1; }
+
+  .video {
+    min-height: 315px;
+    height: 500px;
+  }
+
+  .nav-secondary {
+    li {
+      display: inline-block;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 1px;
+        background-color: $btn-primary;
+        height: 20px;
+        position: absolute;
+        top: 15px;
+        right: -10px;
+      }
+
+      &:last-child {
+        &::before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .logo-ministerio {
+    margin-top: 20px;
+
+    img {
+      margin: 0;
+    }
+  }
+  // ====
+}
 
 // Desktops
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+  // How it Works
+  .step-title { font-size: ($fs-medium + $fs-normal)+.4; }
+
+  .logo-ministerio {
+    img { width: 60%; }
+  }
+  //  ====
+}
 
 // Large Desktops
 @media screen and (min-width: 1200px) {}
