@@ -65,7 +65,7 @@
     <!-- Add your site or application content here -->
     <header class="header-primary">
       <div class="navbar navbar-default not-logged" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -80,17 +80,31 @@
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul class="nav navbar-nav">
+            <!-- visible when user not logged -->
+            <!-- <ul class="nav navbar-nav">
               <li><a class="nav-link" ng-href="#/cadastro">Cadastre-se</a></li>
               <li><a class="nav-link" ng-href="#/login">Entrar</a></li>
+            </ul> -->
+
+            <!-- visible when user is logged -->
+            <ul class="nav navbar-nav">
+              <li><figure class="mini-avatar-user"><img src="images/avatar/avatar-01.svg" alt="avatar 01"></figure></li>
+              <li><button ng-href="#/survey" class="btn-survey">Participe Agora!</button></li>
             </ul>
+
+            <!-- sidebar just show when user is logged and mobile -->
+            <div class="hidden-sm hidden-md hidden-lg">
+              <div ng-include src="'views/partials/nav-primary.html'"></div>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <main class="main">
-      <div ng-view=""></div>
+    <main class="container-fluid">
+      <div class="row">
+        <div ng-view=""></div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -109,7 +123,7 @@
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -131,6 +145,12 @@
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/cadastro.js"></script>
         <script src="scripts/controllers/login-email.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/profile.js"></script>
+        <script src="scripts/controllers/health-daily.js"></script>
+        <script src="scripts/controllers/health-tips.js"></script>
+        <script src="scripts/controllers/news.js"></script>
+        <script src="scripts/controllers/help.js"></script>
         <!-- endbuild -->
 </body>
 </html>

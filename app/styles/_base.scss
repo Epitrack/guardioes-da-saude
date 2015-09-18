@@ -55,9 +55,6 @@ $bg-secondary:                       $black-ligthen;
 // ——————————————————————
 
 
-//
-// Gradient
-//
 
 // Background Images
 @mixin path ($rulers...) {
@@ -67,6 +64,10 @@ $bg-secondary:                       $black-ligthen;
 @mixin rgba ($color, $alpha) {
   background-color: rgba($color, $alpha);
 }
+
+//
+// Gradient
+//
 
 @mixin linear-gradient ($angle, $startColor, $endColor) {
   background-color: $startColor;

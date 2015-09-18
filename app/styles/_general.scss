@@ -22,6 +22,8 @@
 }
 
 html {
+  position: relative;
+  height: 100%;
   -webkit-text-rendering: optimizeLegibility !important;
   -moz-text-rendering: optimizeLegibility !important;
   -ms-text-rendering: optimizeLegibility !important;
@@ -33,6 +35,8 @@ body {
   padding: 0;
   font-size: $fs-root;
   font-family: $ff-regular;
+  position: relative;
+  height: 100%;
 }
 
 .no-padding { padding: 0; }
@@ -41,6 +45,14 @@ body {
 
 .main {
   display: block;
+  position: relative;
+  height: 100%;
+}
+
+.content-internal {
+  background-color: $bg-section;
+  height: auto;
+  min-height: 700px;
 }
 
 // ===
@@ -106,6 +118,55 @@ body {
   &:hover,
   &:visited,
   &:focus { background-color: $btn-primary !important; }
+}
+
+.btn-survey {
+  height: 30px;
+  background-color: $link-primary;
+  border: 1px solid $link-primary;
+  font-size: ($fs-normal)+.2;
+  color: $btn-primary;
+  position: relative;
+  padding: 0 15px;
+  @include bdr(3px);
+  @include apr(none);
+  @include transition(all, .2s, 0s, linear);
+
+  &::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    @include path('icon-btn-survey.svg');
+    // @include transition(background, .2s, 0s, linear);
+  }
+
+  &:hover {
+    background-color: $bg-header;
+    border: 1px solid $link-primary;
+    color: $link-primary;
+    &::before {
+      @include path('icon-btn-survey-hover.svg');
+    }
+  }
+}
+
+.mini-avatar-user {
+  width: 40px;
+  height: 40px;
+  margin: 15px 30px 0 0;
+  overflow: hidden;
+  @include bdr(100%);
+
+  img {
+    max-width: 100%;
+  }
 }
 
 // ===
@@ -308,15 +369,116 @@ body {
 
 
 //
+// Nav primary
+//
+
+.sidebar {
+  height: auto;
+  position: relative;
+  z-index: 1;
+  @include bsd(2px, 2px, 6px, rgba(0, 0, 0, .3));
+  @include linear-gradient(-60deg, #1976D2, $bg-header);
+}
+
+.nav-primary {
+  a {
+    display: block;
+    padding: 20px 15px;
+    color: $link-primary;
+    font-family: $ff-bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    font-size: ($fs-normal)+.2;
+    @include transition(all, .2s, 0s, linear);
+
+    &:hover,
+    &.active {
+      text-decoration: none;
+      background-color: $btn-primary;
+    }
+
+    &::before {
+      content: '';
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+      margin: 0 15px 0 10px;
+    }
+
+    &.dashboard {
+      &::before { @include path('nav/icon-dashboard.svg'); }
+    }
+
+    &.profile {
+      &::before { @include path('nav/icon-profile.svg'); }
+    }
+
+    &.health-daily {
+      &::before { @include path('nav/icon-health-daily.svg'); }
+    }
+
+    &.health-tips {
+      &::before {
+        height: 42px;
+        @include path('nav/icon-health-tips.svg');
+       }
+    }
+
+    &.news {
+      &::before { @include path('nav/icon-news.svg'); }
+    }
+
+    &.help {
+      &::before { @include path('nav/icon-help.svg'); }
+    }
+
+    &.logout {
+      &::before { @include path('nav/icon-logout.svg'); }
+    }
+  }
+}
+
+// ====
+
+
+
+//
+// Content internal
+//
+
+.section-title {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: ($fs-medium)+.6;
+  color: $font-primary;
+
+  span {
+    font-family: $ff-light;
+    font-size: ($fs-normal)+.6;
+  }
+}
+
+// ====
+
+//
 // Media queries
 //
 
 // iPads
 @media screen and (min-width: 768px) {
   // Header
-  .navbar-nav {
-    float: right;
-  }
+  .navbar-nav { float: right; }
+  .btn-survey { margin-top: 20px; }
+  // ====
+
+  // Nav primary
+  .sidebar { min-height: 700px; }
+  .nav-primary { margin-top: 20px; }
   // ====
 
   // How it Works
@@ -354,9 +516,7 @@ body {
   .logo-ministerio {
     margin-top: 20px;
 
-    img {
-      margin: 0;
-    }
+    img { margin: 0; }
   }
   // ====
 
@@ -364,6 +524,13 @@ body {
   .register-box {
     .title-primary { font-size: $fs-large; }
   }
+  // ====
+
+  // Content internal
+  .section-title {
+    margin-top: 20px;
+    padding-top: 0;
+   }
   // ====
 }
 

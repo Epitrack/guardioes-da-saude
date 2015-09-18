@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Perfil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="13---diario-da-saude" sketch:type="MSArtboardGroup" transform="translate(-15.000000, -144.000000)" fill="#FFFFFF">
+            <g id="menu" sketch:type="MSLayerGroup" transform="translate(0.000000, 62.000000)">
+                <g id="Menu" transform="translate(0.000000, 22.000000)" sketch:type="MSShapeGroup">
+                    <g id="Perfil" transform="translate(0.000000, 45.000000)">
+                        <path d="M30,30.0003309 L15,30.0003309 L15,28.2129701 L20.0004412,25.0002206 L20.0004412,23.7498621 C19.6917393,23.7498621 19.4065292,23.4401676 19.1441491,22.8191243 C18.8811073,22.198081 18.7500827,21.6749752 18.7500827,21.2501379 L18.7500827,18.7500827 C18.7500827,17.717106 19.1170178,16.8336826 19.850557,16.1001434 C20.5837653,15.3675968 21.466527,15 22.5001654,15 C23.5331422,15 24.4165656,15.3675968 25.1501048,16.1001434 C25.8829822,16.8336826 26.2499173,17.717106 26.2499173,18.7500827 L26.2499173,21.2501379 C26.2499173,21.6749752 26.1188927,22.198081 25.8565126,22.8191243 C25.5938017,23.4401676 25.3085916,23.7498621 25.0002206,23.7498621 L25.0002206,25.0002206 L30,28.2129701 L30,30.0003309 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
