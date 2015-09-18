@@ -292,6 +292,18 @@
 	
 	.panel-body {
 		padding: 0;
+
+		.modal-options {
+			padding: 10px;
+    	border-top: 1px solid #ccc;
+
+			a {
+				float: right;
+				font-family: $ff-light;
+				font-size: 14px;
+				margin: 0 0 0 15px;
+			}
+		}
 	}
 }
 
@@ -422,14 +434,9 @@
 			}
 		}
 	
-		.third-data {
-
-			a {
-				float: right;
-				font-family: $ff-light;
-				font-size: 14px;
-				margin: 0 0 0 15px;
-			}
+		.modal-options {
+			border: none;
+			padding: 0;
 
 			.save-data {	
 				color: #fff;
@@ -483,9 +490,7 @@
     	padding: 0 0 0 10px;
     }
 
-		.third-data {
-			padding: 10px;
-    	border-top: 1px solid #ccc;
+		.modal-options {
 
     	a {
     		float: right;
@@ -496,6 +501,55 @@
 }
 //==
 
+// 09.2 survey & 09.3
+.thanks {
+	.form-user {
+		width: 100%;
+    padding: 70px 0 0 0;
+    border-top: 1px solid #ccc;
+	
+		.all-done {
+			width: 111.9px;
+			height: 111.9px;
+			margin: 0 auto;
+			margin-bottom: 20.8px;
+			display: inherit;
+		}
+
+		.social-signin {
+		  width: 213px;
+		  margin: 0 20px 22px 0;
+		  display: inline-block;
+		}
+
+		.social-signin:first-child {
+			margin-left: 19%;
+		}
+
+    p, h3 {
+    	width: 419px;
+    	margin: 0 auto;
+    	font-family: $ff-light;
+    	font-size: 18px;
+    	color: #4c4c4c;
+    	text-align: center;
+    }
+
+    h3 {
+    	width: 328px;
+    	margin: 30.5px auto 20px auto;
+    }
+
+		.modal-options {
+
+    	a {
+    		margin: 0 0 0 10px;
+    	}
+		}
+	}
+}
+//==
+//==
 
 
 
