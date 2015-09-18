@@ -430,14 +430,36 @@
 				}
 			}
 		}
-
-
 	}
 }
 //==
 
+// 08 como esta sua saude
+.choose-status {
+	float: left;
+	width: 212.2px;
+	a {
+		text-decoration: none;
+	}
+	
+	:hover{
+		color: #fff;
+	}
 
+	img {
+		width: 100%;
+		height: 212.2px;
+	}
 
+	h3 {
+		font-family: $ff-light;
+		font-size: 35.8px;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+	}
+}
+//==
 
 
 
