@@ -141,7 +141,7 @@ body {
   }
 }
 
-.register-box {
+.near-you-box {
   .title-primary {
     margin: 80px auto 40px auto;
     text-align: center;
@@ -286,6 +286,23 @@ body {
     margin: 20px 0;
   }
 }
+
+
+// Register home
+.register-box {
+  @extend .near-you-box;
+}
+
+.form-register-home {
+  text-align: center;
+
+  h3 {
+    color: $link-primary;
+    font-size: $fs-medium;
+    font-family: $ff-light;
+  }
+}
+
 // ===
 
 
@@ -340,6 +357,12 @@ body {
     img {
       margin: 0;
     }
+  }
+  // ====
+
+  // Register box
+  .register-box {
+    .title-primary { font-size: $fs-large; }
   }
   // ====
 }

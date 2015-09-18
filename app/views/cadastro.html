@@ -2,28 +2,31 @@
   <div class="container">
     <div class="row">
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
-        <h2 class="title-primary">Veja como está a saúde perto de você</h2>
+        <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
 
-        <form name="form-search-home" class="form-search-home">
-          <fieldset class="input-group">
-            <input type="text" class="search-home" placeholder="Pesquise pela sua cidade">
+        <form class="form-register-home" name="form-register-home">
+          <h3>Por favor, preencha o formulário abaixo:</h3>
+
+          <input class="input-secondary" type="text" placeholder="Apelido">
+          <input class="input-secondary" type="number" placeholder="Data de nascimento (dd/mm/aaaa)">
+
+          <select class="select-secondary" name="cor">
+            <option value="">Cor/Raça</option>
+          </select>
+
+          <select class="select-secondary" name="sexo">
+            <option value="">Sexo</option>
+          </select>
+
+          <input class="input-secondary" type="password" placeholder="Senha">
+
+          <button class="btn-secondary">Cadastrar-se</button>
+
+          <fieldset>
+            <input type="checkbox" id="register-agree" class="register-agree">
+            <label for="register-agree">Concordo com os <a href="#/">Termos de Uso</a>.</label>
           </fieldset>
         </form>
-
-        <div class="last-cities">
-          <h4>Cidades mais acessadas</h4>
-          <ul>
-            <li><a ng-href="#/">Recife</a></li>
-            <li><a ng-href="#/">Fortaleza</a></li>
-            <li><a ng-href="#/">São Paulo</a></li>
-            <li><a ng-href="#/">Rio de Janeiro</a></li>
-            <li><a ng-href="#/">Campinas</a></li>
-          </ul>
-        </div>
-
-        <div class="goto-dashboard">
-          <p>Para uma busca mais detalhada, <br> <a ng-href="#/" title="Vá para o painel de controle">acesse o painel de controle</a>.</p>
-        </div>
       </section>
     </div>
   </div>
