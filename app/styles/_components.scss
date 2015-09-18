@@ -311,6 +311,7 @@
 		.modal-options {
 			padding: 10px;
     	border-top: 1px solid #ccc;
+			clear: both;
 
 			a {
 				float: right;
@@ -354,6 +355,45 @@
 				font-family: $ff-light;
 				font-size: 14px;
 				color: #4c4c4c;
+			}
+		}
+		
+		.radio-list {
+			float: left;
+			position: relative;
+			margin: 3px 0 0 0;
+			
+			label[for=sex] {
+				position: absolute;
+				top: -30px;
+			}
+
+			li {
+				display: inline-block;
+		    position: relative;
+		    width: 79px;
+		    height: 12px;
+		    margin: 0 14px 0 0;
+
+				input[type=radio] {
+		    	float: left;
+		    	width: 16px;
+		    	height: 16px;
+		    }
+
+		    .sex {
+		    	float: right;
+		    	display: block;
+		    	background: #1e88e5;
+		    	border-radius: 3px;
+		    	color: #fff;
+		    	font-size: 11px;
+		    	width: 56px;
+		    	height: 18px;
+		    	text-align: center;
+		    	padding: 1px 0 0 0;
+		    	margin: 3px 0 0 0;
+		    }
 			}
 		}
 
@@ -404,46 +444,6 @@
 					}
 				}
 			}
-
-			.radio-list {
-				float: left;
-				position: relative;
-				margin: 3px 0 0 0;
-				
-				label[for=sex] {
-					position: absolute;
-					top: -30px;
-				}
-
-				li {
-					display: inline-block;
-			    position: relative;
-			    width: 79px;
-			    height: 12px;
-			    margin: 0 14px 0 0;
-
-					input[type=radio] {
-			    	float: left;
-			    	width: 16px;
-			    	height: 16px;
-			    }
-
-			    .sex {
-			    	float: right;
-			    	display: block;
-			    	background: #1e88e5;
-			    	border-radius: 3px;
-			    	color: #fff;
-			    	font-size: 11px;
-			    	width: 56px;
-			    	height: 18px;
-			    	text-align: center;
-			    	padding: 1px 0 0 0;
-			    	margin: 3px 0 0 0;
-			    }
-				}
-			}
-
 		}
 	
 		.modal-options {
@@ -693,9 +693,88 @@
 		}
 	}
 }
-
 //==
 
+// 11.1 perfil usuario
+.edit-avatar {
+	
+	.panel-body {
+	
+		.form-user {
+
+			.avatars {
+				float: left;
+				width: 100%;
+				position: relative;
+		    padding: 0 0 15px 15px;
+
+				h4, span {
+					font-family: $ff-light;
+					font-size: 14px;
+					color: #999;
+				}
+				
+				span {
+					position: absolute;
+			    top: 138px;
+			    left: 55%;
+				}
+
+				.choose-avatar {
+					float: left;
+					width: 320px;
+
+					li {
+						float: left;
+						margin: 0 12px 11px 0;
+			
+						img {
+							width: 68px;
+							height: 68px;
+							border-radius: 33px;
+						}
+					}
+				}
+				
+				.choose-photo {
+					float: right;
+    			padding: 0 37px 0 0;
+
+					h4 {
+						padding: 0 0 0 23px;
+					}
+
+					img {
+						float: right;
+						width: 179px;
+						height: 179px;
+						border-radius: 88px;
+						margin: 0 0 10px 0;
+					}
+
+					.modal-options {
+						border: none;
+						
+						.save-data {
+							width: 179px;
+							height: 32px;
+							background: #078ade;
+						}
+
+						.cancel-data {
+							background: url('../images/icon_upload.svg') no-repeat;
+							border: none;
+					    width: 37px;
+					    height: 35px;
+						}
+					}
+				}
+
+			}		
+		}
+	}	
+}
+//==
 
 
 

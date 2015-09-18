@@ -138,7 +138,7 @@
     		<label for="nickname">Apelido</label>
 				<input type="text" class="form-control nickname" name="nickname" placeholder="">
 			
-        <ul>
+        <ul class="radio-list">
         	<label for="sex">Sexo</label>
         	<li><input type="radio" name="male"><label class="sex" for="male">Male</label></li>
         	<li><input type="radio" name="female"><label class="sex" for="female">Female</label></li>
@@ -230,7 +230,6 @@
 				Continue informando diariamente como está sua saúde.
 			</p>
 			<h3>Convide seus amigos para serem Guardiões!</h3>
-	
 			<ul>
 				<li class="social-signin">
 					<fieldset class="btn-group btn-group-justified" role="group">
@@ -247,8 +246,6 @@
 					</fieldset>
 				</li>
 			</ul>
-
-
 			<fieldset class="input-group modal-options">
 				<a href="#" class="btn btn-primary save-data" role="button">OK</a>
 			</fieldset>
@@ -270,7 +267,6 @@
 				Continue informando diariamente como está sua saúde.
 			</p>
 			<h3>Convide seus amigos para serem Guardiões!</h3>
-	
 			<ul>
 				<li class="social-signin">
 					<fieldset class="btn-group btn-group-justified" role="group">
@@ -287,7 +283,6 @@
 					</fieldset>
 				</li>
 			</ul>
-
 			<fieldset class="input-group modal-options">
 				<a href="#" class="btn btn-primary save-data" role="button">OK</a>
 			</fieldset>
@@ -329,8 +324,10 @@
 		        </ul>
 					</li>
 					<li>
-						<label for="email">Email</label>
-						<input type="text" class="form-control email" name="email" placeholder="">
+						<fieldset>
+							<label for="email">Email</label>
+							<input type="text" class="form-control email" name="email" placeholder="">
+						</fieldset>
 					</li>
 					<li>
 						<label for="race">Raça/Cor</label>
@@ -350,6 +347,48 @@
 				<a href="#" class="btn btn-primary save-data" role="button">Salvar alterações</a>
 				<a href="#" class="btn btn-default cancel-data" role="button">Cancelar</a>
 			</fieldset>
+    </form>
+  </div>
+</div>
+
+<!-- Compenents for 11.1 perfil usuario -->
+<h3 style="clear: both; float: left; width: 100%;">11.1 perfil usuario</h3>
+<div class="panel panel-default main-modal edit-avatar">
+  <div class="panel-heading">
+    <h3 class="panel-title">Editar foto</h3>
+  </div>
+  <div class="panel-body">
+    <form class="form-user">
+				
+				<div class="avatars">
+					<ul class="choose-avatar">
+						<h4>Escolha seu avatar</h4>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+						<li><a href=""><img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Avatar"></a></li>
+					</ul>
+				
+					<span>OU</span>
+
+					<div class="choose-photo">
+						<h4>Escolha uma foto</h4>
+						<img class="icon-shadow" src="images/img_profile_avatar_01.svg" alt="Your photo">
+
+						<fieldset class="input-group modal-options">
+							<a href="#" class="btn btn-primary save-data" role="button">Salvar foto</a>
+							<a href="#" class="btn btn-default cancel-data" role="button"></a>
+						</fieldset>
+					</div>
+				</div>
     </form>
   </div>
 </div>
