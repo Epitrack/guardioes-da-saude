@@ -53,7 +53,7 @@
 	background: url("../images/icon_arrowdown.svg") no-repeat 96.8% 15px;
 }
 
-.btn-signup {
+.btn-signup, .btn-confirm {
 	font-family: $ff-light;
 	font-size: 18px;
 	background: #fff;
@@ -148,6 +148,23 @@
 .icon-small {
 	width: 29.9px;
 	height: 29.9px;
+	border-radius: 14px;
+}
+
+.icon-medium {
+	width: 59.7px;
+	height: 59.7px;
+	border-radius: 30px;
+}
+
+.icon-large {
+	border-radius: 110px;
+}
+
+.icon-shadow {
+	webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+	box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
 }
 
 .metrics {
@@ -160,18 +177,6 @@
 
 	.light {
 		font-family: $ff-light;
-	}
-
-	.icon-medium {
-		width: 59.7px;
-		height: 59.7px;
-	}
-
-	.good, .bad {
-	  border-radius: 30px;
-		webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-		-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
-		box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
 	}
 
 	.total-percentage {
@@ -441,7 +446,7 @@
 	a {
 		text-decoration: none;
 	}
-	
+
 	:hover{
 		color: #fff;
 	}
@@ -461,8 +466,9 @@
 }
 //==
 
+// 09 como esta sua saude
 
-
+//==
 
 
 
