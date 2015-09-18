@@ -288,7 +288,6 @@
 				</li>
 			</ul>
 
-
 			<fieldset class="input-group modal-options">
 				<a href="#" class="btn btn-primary save-data" role="button">OK</a>
 			</fieldset>
@@ -296,4 +295,61 @@
   </div>
 </div>
 
+<!-- Compenents for 11 perfil usuario -->
+<h3 style="clear: both; float: left; width: 100%;">11 perfil usuario</h3>
+<div class="panel panel-default main-modal profile-general">
+  <div class="panel-heading">
+    <h3 class="panel-title">Geral</h3>
+  </div>
+  <div class="panel-body">
+    <div class="avatar-user">
+    	<a href="">
+    		<img src="images/img_profile_avatar_01.svg" alt="">
+    		<!-- <button type="button" class="edit-user">Editar</button> -->
+    	</a>
+    </div>
+    <form class="form-user">
+    	<fieldset class="input-group first-data">
+    		<label for="nickname">Apelido</label>
+				<input type="text" class="form-control nickname" name="nickname" placeholder="">
+			</fieldset>
 
+			<fieldset class="input-group second-data">
+				<ul>
+					<li>
+						<label for="birth">Data de nascimento</label>
+						<input type="text" class="form-control birth" name="birth" placeholder="">
+						<button class="open-calendar" type="button"></button>
+					</li>
+					<li>
+						<ul class="radio-list">
+		        	<label for="sex">Sexo</label>
+		        	<li><input type="radio" name="male"><label class="sex" for="male">Male</label></li>
+		        	<li><input type="radio" name="female"><label class="sex" for="female">Female</label></li>
+		        </ul>
+					</li>
+					<li>
+						<label for="email">Email</label>
+						<input type="text" class="form-control email" name="email" placeholder="">
+					</li>
+					<li>
+						<label for="race">Raça/Cor</label>
+						<input type="text" class="form-control race" name="race" placeholder="">
+					</li>
+					<li>
+						<label for="password">Senha</label>
+						<input type="text" class="form-control password" name="password" placeholder="">
+					</li>
+					<li>
+						<label for="repeat-password">Repetir senha</label>
+						<input type="text" class="form-control repeat-password" name="repeat-password" placeholder="">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset class="input-group modal-options">
+				<a href="#" class="btn btn-primary save-data" role="button">Salvar alterações</a>
+				<a href="#" class="btn btn-default cancel-data" role="button">Cancelar</a>
+			</fieldset>
+    </form>
+  </div>
+</div>
