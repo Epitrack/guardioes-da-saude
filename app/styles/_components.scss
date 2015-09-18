@@ -231,6 +231,227 @@
 //==
 
 // 07 quem vai participar
+.member, .add-member {
+	float: left;
+	text-align: center;
+	
+	img {
+		margin: 0 0 15px 0;
+		width: 130px;
+		height: 130px;	
+		webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
+		border-radius: 65px;
+	}
 
+	h3, .age {
+		font-family: $ff-bold;
+		font-size: 24px;
+		color: #fff;
+		margin: 0;
+	}
 
+	.age {
+		font-family: $ff-light;
+	}
+
+}
+
+.add-member {
+
+	h3 {
+		font-family: $ff-light;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
 //==
+
+// 07.1 quem vai participar
+.modal-add-member {
+	float: left;
+	width: 100%;
+	border: none;
+	
+	.panel-heading {
+		background: #1e88e5;
+		height: 40px;
+	
+		h3 {
+			font-family: $ff-light;
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+
+	.panel-body {
+		padding: 0;
+		
+		.avatar-user {
+			position: relative;
+			float: left;
+			padding: 37px 41px 0 41px;
+
+			img {
+				width: 168.9px;
+				height: 181.9px
+			}
+
+			.edit-user {
+				width: 179.9px;
+				height: 43px;
+				background: url('../images/bg_edit_user_button.svg') no-repeat;
+			}
+		}
+
+		.form-user {
+			float: left;
+    	padding: 35px 0 0 0px;
+    	width: 56%;		
+	
+			fieldset {
+				margin: 0 0 15px 0;
+
+				label {
+					float: left;
+					font-family: $ff-light;
+					font-size: 14px;
+					color: #4c4c4c;
+				}
+
+				input {
+					border: 1px solid #979797;
+					border-radius: 5px;
+				}
+			}
+
+			.first-data {
+			
+				.nickname {
+					float: left;
+					clear: both;
+					width: 50%;
+					height: 34px;
+					margin: 0 14px 0 0;
+					border-radius: 5px;
+					border: 1px solid #979797;
+					webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+					-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+					box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+				}
+		
+				ul {
+					float: left;
+					position: relative;
+					margin: 3px 0 0 0;
+					
+					label[for=sex] {
+						position: absolute;
+						top: -30px;
+					}
+
+					li {
+						display: inline-block;
+				    position: relative;
+				    width: 79px;
+				    height: 12px;
+				    margin: 0 14px 0 0;
+
+						input[type=radio] {
+				    	float: left;
+				    	width: 16px;
+				    	height: 16px;
+				    }
+
+				    .sex {
+				    	float: right;
+				    	display: block;
+				    	background: #1e88e5;
+				    	border-radius: 3px;
+				    	color: #fff;
+				    	font-size: 11px;
+				    	width: 56px;
+				    	height: 18px;
+				    	text-align: center;
+				    	padding: 1px 0 0 0;
+				    	margin: 3px 0 0 0;
+				    }
+					}
+				}
+			}
+
+			.second-data {
+				width: 600px;
+				ul {
+
+					li {
+						float: left;
+						margin: 0 11px 35px 0px;
+						width: 36%;
+						height: 34px;
+
+						.birth {
+							width: 77%;
+    					margin: 0px 2px 0 0;
+    					border-radius: 5px;
+						}
+
+						.open-calendar {
+							float: left;
+							width: 20%;
+							height: 34px;
+							background: url('../images/icon_calendar.svg') no-repeat;
+							border: none;
+						}
+
+						.race {
+							width: 100%;
+							background: url('../images/icon_select_modal_add_member.svg') no-repeat 96% center;
+						}
+					}
+				}
+			}
+		
+			.third-data {
+				padding: 0 77px 0 0;
+
+				a {
+					float: right;
+					font-family: $ff-light;
+					font-size: 14px;
+					margin: 0 0 0 15px;
+				}
+
+				.save-data {	
+					color: #fff;
+				}
+				.cancel-data {
+					color: #4c4c4c;
+				}
+			}
+		}
+
+
+	}
+}
+//==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
