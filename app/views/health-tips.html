@@ -3,5 +3,34 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Dicas de saúde <span>/ Aninha</span></h2>
+  <h2 class="section-title">Dicas de Saúde</h2>
+
+  <aside class="col-xs-12 col-md-4 no-padding list-tips">
+    <button ng-click="loadUpas()" class="btn-tip upas">Upas</button>
+    <button ng-click="loadFarmacias()" class="btn-tip pharmacy">Farmácias</button>
+    <button ng-click="loadVacinas()" class="btn-tip vaccine">Vacina</button>
+    <button ng-click="loadTelefonesUteis()" class="btn-tip telephones">Telefones Úteis</button>
+    <button ng-click="loadCuidadosBasicos()" class="btn-tip caution">Cuidados Básicos</button>
+    <button ng-click="loadPrevencoes()" class="btn-tip prevention">Prevenção</button>
+  </aside>
+
+  <aside class="col-xs-12 col-md-7 card">
+    <div id="map" class="map"></div>
+
+    <!-- <div class="map-info">
+      <h5>Título aqui</h5>
+      <h6>Descrição ou endereço</h6>
+    </div> -->
+  </aside>
+
+  <!-- hide when click in any button -->
+  <!-- <aside class="col-xs-12 col-md-7 card health-tips-default">
+    <figure>
+      <img src="images/icon-health-tips.svg" alt="">
+    </figure>
+
+    <h4>Bem vindo ao Dicas de Saúde</h4>
+    <p>Aqui você poderá pesquisar informações importantes para o seu bem estar.</p>
+  </aside> -->
+
 </section>

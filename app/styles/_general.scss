@@ -23,7 +23,9 @@
 
 html {
   position: relative;
+  min-height: 100%;
   height: 100%;
+
   -webkit-text-rendering: optimizeLegibility !important;
   -moz-text-rendering: optimizeLegibility !important;
   -ms-text-rendering: optimizeLegibility !important;
@@ -36,6 +38,7 @@ body {
   font-size: $fs-root;
   font-family: $ff-regular;
   position: relative;
+  min-height: 100%;
   height: 100%;
 }
 
@@ -51,8 +54,8 @@ body {
 
 .content-internal {
   background-color: $bg-section;
-  height: auto;
   min-height: 700px;
+  height: auto;
 }
 
 // ===
@@ -373,9 +376,9 @@ body {
 //
 
 .sidebar {
+  z-index: 1;
   height: auto;
   position: relative;
-  z-index: 1;
   @include bsd(2px, 2px, 6px, rgba(0, 0, 0, .3));
   @include linear-gradient(-60deg, #1976D2, $bg-header);
 }
@@ -383,6 +386,7 @@ body {
 .nav-primary {
   a {
     display: block;
+    cursor: pointer;
     padding: 20px 15px;
     color: $link-primary;
     font-family: $ff-bold;
@@ -408,6 +412,13 @@ body {
       background-position: center center;
       background-size: 100%;
       margin: 0 15px 0 10px;
+    }
+
+    &.dropdown {
+      background-repeat: no-repeat;
+      background-position: 95% center;
+      background-size: 5%;
+      @include path('nav/icon-dropdown.svg');
     }
 
     &.dashboard {
@@ -463,7 +474,217 @@ body {
   }
 }
 
+.card {
+  min-height: 300px;
+  background-color: $link-primary;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  @include bdr(3px);
+  @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+
+  &.half { margin-right: 20px;}
+}
+
+.card-avatar-image {
+  min-height: 250px;
+  text-align: center;
+
+  img { max-width: 100%; }
+
+  figcaption {
+    font-size: ($fs-medium)+.8;
+    color: $font-primary;
+
+    span {
+      font-size: ($fs-normal)+.6;
+      display: block;
+    }
+  }
+}
+
+.card-avatar-content {
+  min-height: 250px;
+  background-color: black;
+}
+
+.sub-nav {
+  background-color: $bg-header;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    width: 5px;
+    height: 110px;
+    position: absolute;
+    left: 38px;
+    top: 0;
+    background-color: #00457C;
+    z-index: 1;
+  }
+
+  a {
+    font-size: $fs-normal;
+
+    &::before {
+      z-index: 2;
+      width: 10px;
+      height: 10px;
+      margin-left: 20px;
+      @include bdr(100%);
+      border: 2px solid #90CAF9;
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: transparent !important;
+
+      &::before { background-color: $link-primary; }
+    }
+  }
+}
+
+.list-tips {
+  height: 100%;
+  min-height: 100px;
+}
+
+.btn-tip {
+  outline: none;
+  min-height: 20px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  display: block;
+  text-align: right;
+  font-size: ($fs-medium)-.2;
+  @extend .card;
+  @include apr(none);
+  @include transition(all, .2s, 0s, linear);
+
+  &:hover {
+    color: $link-primary;
+    background-color: $btn-primary;
+
+    &.upas {
+      &::before { @include path('nav/icon-upas-hover.svg'); }
+    }
+
+    &.pharmacy {
+      &::before { @include path('nav/icon-pharmacy-hover.svg'); }
+    }
+
+    &.vaccine {
+      &::before { @include path('nav/icon-vaccine-hover.svg'); }
+    }
+
+    &.telephones {
+      &::before { @include path('nav/icon-telephones-hover.svg'); }
+    }
+
+    &.caution {
+      &::before { @include path('nav/icon-caution-hover.svg'); }
+    }
+
+    &.prevention {
+      &::before { @include path('nav/icon-prevention-hover.svg'); }
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+  }
+
+  &.upas {
+    &::before { @include path('nav/icon-upas.svg'); }
+  }
+
+  &.pharmacy {
+    &::before { @include path('nav/icon-pharmacy.svg'); }
+  }
+
+  &.vaccine {
+    &::before {
+      background-size: 50%;
+      @include path('nav/icon-vaccine.svg');
+    }
+  }
+
+  &.telephones {
+    &::before { @include path('nav/icon-telephones.svg'); }
+  }
+
+  &.caution {
+    &::before { @include path('nav/icon-caution.svg'); }
+  }
+
+  &.prevention {
+    &::before { @include path('nav/icon-prevention.svg'); }
+  }
+}
+
+.health-tips-default {
+  text-align: center;
+
+  figure {
+    margin: 70px auto 40px auto;
+    position: relative;
+
+    img { max-width: 100%; }
+  }
+
+  h4 {
+    color: $btn-primary;
+    font-size: ($fs-medium)+.6;
+    font-family: $ff-bold;
+  }
+
+  p {
+    font-size: ($fs-normal)+.2;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 620px;
+}
+
+.map-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 9999;
+  background-color: $link-primary;
+  @include bsd(0, -3px, 3px, rgba(0, 0, 0, .3));
+
+  h5 {
+    font-family: $ff-bold;
+    font-size: ($fs-medium)-.2;
+    color: $btn-primary;
+    margin-bottom: 10px;
+  }
+
+  h6 {
+    font-family: $ff-light;
+    font-size: ($fs-normal)+.4;
+    color: $font-primary;
+  }
+}
+
 // ====
+
+
 
 //
 // Media queries
@@ -477,7 +698,10 @@ body {
   // ====
 
   // Nav primary
-  .sidebar { min-height: 700px; }
+  .sidebar {
+    min-height: 700px;
+    height: 100%;
+  }
   .nav-primary { margin-top: 20px; }
   // ====
 
@@ -530,7 +754,9 @@ body {
   .section-title {
     margin-top: 20px;
     padding-top: 0;
-   }
+  }
+
+  .list-tips { margin-right: 30px; }
   // ====
 }
 

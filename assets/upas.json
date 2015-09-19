@@ -1,0 +1,3982 @@
+[
+  {
+    "name":"UPA 24 HORAS DO 2 DISTRITO",
+    "latitude":-9.96641,
+    "longitude":-67.81928,
+    "logradouro":"RODOVIA BR 364 KM 125",
+    "numero":"20",
+    "bairro":"LOTEAMENTO SANTA HEL",
+    "cep":69908768,
+    "telefone":"(68) 3221 6775"
+  },
+  {
+    "name":"UPA II ANTONIO DE JESUS",
+    "latitude":-10.1811324340565,
+    "longitude":-36.5942573547363,
+    "logradouro":"RUA EUTIQUIO LOPES",
+    "numero":"S/N",
+    "bairro":"SANTA LUZIA",
+    "cep":57200000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR DEVID DISRAELI TORRES",
+    "latitude":-9.371,
+    "longitude":-36.241,
+    "logradouro":"RUA PEDRO BARRETO",
+    "numero":"20",
+    "bairro":"CENTRO",
+    "cep":57700000,
+    "telefone":"32831279"
+  },
+  {
+    "name":"UPA 24H BOM JESUS DA LAPA",
+    "latitude":-13.2575,
+    "longitude":-43.41591,
+    "logradouro":"RUA L",
+    "numero":"244",
+    "bairro":"SAO MIGUEL",
+    "cep":47600000,
+    "telefone":"77 3481 7907"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE CAETITE",
+    "latitude":-14.06207,
+    "longitude":-42.50154,
+    "logradouro":"RODOVIA CAETITE GUANAMBI",
+    "numero":"S/N",
+    "bairro":"RANCHO ALEGRE",
+    "cep":46400000,
+    "telefone":"(77)34548061"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-12.668,
+    "longitude":-38.5509,
+    "logradouro":"RUA DOS TRES PODERES",
+    "numero":"1",
+    "bairro":"OURO NEGRO",
+    "cep":43805380,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO CAPIM GROSSO",
+    "latitude":-11.381,
+    "longitude":-40.013,
+    "logradouro":"AV JOAO DAMASCENDO",
+    "numero":"S/N",
+    "bairro":"NOVO OESTE",
+    "cep":44695000,
+    "telefone":"36511509"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO 24H UPA I",
+    "latitude":-12.6634696442797,
+    "longitude":-39.1145384609536,
+    "logradouro":"AVENIDA CARMELITO BARBOSA ALVES",
+    "numero":"110",
+    "bairro":"ITAPICURU",
+    "cep":44380000,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24 HORAS ROSA MARIA OLIVEIRA BASTOS",
+    "latitude":-11.304,
+    "longitude":-41.856,
+    "logradouro":"RUA RIO SOLIMOES",
+    "numero":"9995",
+    "bairro":"ASA SUL",
+    "cep":44900000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24 HORAS",
+    "latitude":-15.249,
+    "longitude":-40.248,
+    "logradouro":"AVENIDA GERSON DE OLIVEIRA",
+    "numero":"S/N",
+    "bairro":"NOVA ITAPETINGA",
+    "cep":45700000,
+    "telefone":""
+  },
+  {
+    "name":"UPA DR JOAO OLIVEIRA",
+    "latitude":-9.4234,
+    "longitude":-40.50223,
+    "logradouro":"RODOVIA LOMANTO JUNIOR",
+    "numero":"S/N",
+    "bairro":"CASTELO BRANCO",
+    "cep":48904060,
+    "telefone":"7436134288"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-12.084278667153,
+    "longitude":-45.8036749887466,
+    "logradouro":"RUA ARNALDO HORACIO FERREIRA",
+    "numero":"165",
+    "bairro":"MIMOSO DO OESTE",
+    "cep":47850000,
+    "telefone":"36285885"
+  },
+  {
+    "name":"UPA DE ROMA",
+    "latitude":-12.97038,
+    "longitude":-38.51238,
+    "logradouro":"R BARAO DE COTEGIPE",
+    "numero":"1153",
+    "bairro":"ROMA",
+    "cep":40411900,
+    "telefone":"(71) 3316-8600"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO 24 HORAS FREI CALIXTO",
+    "latitude":-16.4265766012579,
+    "longitude":-39.0703225135803,
+    "logradouro":"RUA DA MATA",
+    "numero":"S/N",
+    "bairro":"MERCADO DO POVO",
+    "cep":45810000,
+    "telefone":"(73) 3268-2032"
+  },
+  {
+    "name":"UPA 24 HORAS PRADO",
+    "latitude":-17.341,
+    "longitude":-39.221,
+    "logradouro":"RODOVIA PRADO ITAMARAJU QUADRA 17 LOTE 7 A 12",
+    "numero":"S/N",
+    "bairro":"PORTAL DO PRADO",
+    "cep":45980000,
+    "telefone":""
+  },
+  {
+    "name":"UPA DO SUBURBIO",
+    "latitude":-12.97038,
+    "longitude":-38.51238,
+    "logradouro":"LADEIRA DA TEREZINHA",
+    "numero":"S/N",
+    "bairro":"ESCADA",
+    "cep":40720460,
+    "telefone":"71 3401-8585"
+  },
+  {
+    "name":"UPA 24H PROF ADROALDO ALBERGARIA",
+    "latitude":-12.86939,
+    "longitude":-38.46792,
+    "logradouro":"RUA DAS PEDRINHAS",
+    "numero":"S/N",
+    "bairro":"PERIPERI",
+    "cep":41200020,
+    "telefone":"(71) 3611-5708/5718"
+  },
+  {
+    "name":"UPA 24 HORAS SANTA MARIA DA VITORIA",
+    "latitude":-13.37309,
+    "longitude":-44.19038,
+    "logradouro":"RUA JEREMIAS RODRIGUES DA SILVA",
+    "numero":"S/N",
+    "bairro":"AABB",
+    "cep":47640000,
+    "telefone":"77 3483 4884"
+  },
+  {
+    "name":"UPA 24H DE SEABRA JORGE ALVES DE OLIVEIRA",
+    "latitude":-12.4119647034078,
+    "longitude":-41.7749065160751,
+    "logradouro":"RUA EDVALDO SANTOS",
+    "numero":"S/N",
+    "bairro":"TAMBORIL",
+    "cep":46900000,
+    "telefone":"7533313919"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE VERA CRUZ",
+    "latitude":-12.96,
+    "longitude":-38.609,
+    "logradouro":"AVENIDA JUVENAL JOAO VINAGRE",
+    "numero":"S/N",
+    "bairro":"MAR GRANDE",
+    "cep":44470000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE CAUCAIA",
+    "latitude":-3.73302950355954,
+    "longitude":-38.6568117141724,
+    "logradouro":"GERONIMO AMARAL",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":61600135,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO AUTRAN NUNES",
+    "latitude":-3.74539,
+    "longitude":-38.51367,
+    "logradouro":"AV FERNANDES TAVORA",
+    "numero":"S/N",
+    "bairro":"AUTRAN NUNES",
+    "cep":60526642,
+    "telefone":"32168314"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO PRAIA DO FUTURO",
+    "latitude":-3.73498,
+    "longitude":-38.52014,
+    "logradouro":"AV SENADOR CARLOS JEREISSATI",
+    "numero":"S/N",
+    "bairro":"PRAIA DO FUTURO",
+    "cep":60182425,
+    "telefone":"85 32168316"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO CANINDEZINHO",
+    "latitude":-3.80735,
+    "longitude":-38.50838,
+    "logradouro":"RUA 15",
+    "numero":"S/N",
+    "bairro":"PLANALTO VITORIO",
+    "cep":60871790,
+    "telefone":"85 32168316"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO MESSEJANA",
+    "latitude":-3.7618,
+    "longitude":-38.54732,
+    "logradouro":"RUA MIGUEL GURGEL",
+    "numero":"S/N",
+    "bairro":"MESSEJANA",
+    "cep":60871790,
+    "telefone":"85 32168314"
+  },
+  {
+    "name":"UPA 24HS MARANGUAPE",
+    "latitude":-3.89066,
+    "longitude":-38.68187,
+    "logradouro":"RODOVIA SENADOR ALMIR PINTO",
+    "numero":"0",
+    "bairro":"NOVO MARANGUAPE",
+    "cep":61940145,
+    "telefone":"8533415088"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO NUCLEO BANDEIRANTE",
+    "latitude":-15.7958,
+    "longitude":-47.88586,
+    "logradouro":"DF 075 KM 180 PLACA DAS MERCEDES",
+    "numero":"180",
+    "bairro":"NUCLEO BANDEIRANTE",
+    "cep":71732010,
+    "telefone":"33866619"
+  },
+  {
+    "name":"UPA RECANTO DAS EMAS",
+    "latitude":-15.78,
+    "longitude":-47.93,
+    "logradouro":"EQ 400 600 AREA ESPECIAL RECANTO DAS EMAS",
+    "numero":"1",
+    "bairro":"RECANTO DAS EMAS",
+    "cep":72630250,
+    "telefone":""
+  },
+  {
+    "name":"UPA SAMAMBAIA",
+    "latitude":-15.88708,
+    "longitude":-48.11108,
+    "logradouro":"QS 107 CONJUNTO 04 AE",
+    "numero":"9",
+    "bairro":"SUL",
+    "cep":72322700,
+    "telefone":"61-33590734"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE SAO SEBASTIAO",
+    "latitude":-15.86048,
+    "longitude":-48.0735,
+    "logradouro":"QD 102 CJ 1 LT 1",
+    "numero":"1",
+    "bairro":"RESIDENCIAL OESTE",
+    "cep":71692101,
+    "telefone":"6133396426"
+  },
+  {
+    "name":"UPA II DR JOAO BATISTA DE ALMEIDA NETO",
+    "latitude":-20.67684,
+    "longitude":-40.5057,
+    "logradouro":"RUA CACHOEIRO DO ITAPEMIRIM",
+    "numero":"S/N",
+    "bairro":"IPIRANGA",
+    "cep":29216600,
+    "telefone":"(27)3362 8325"
+  },
+  {
+    "name":"UPA 24 HORAS CARAPINA",
+    "latitude":-20.1358916261146,
+    "longitude":-40.31982421875,
+    "logradouro":"AVENIDA NORTE SUL",
+    "numero":"S/N",
+    "bairro":"MANOEL PLAZA",
+    "cep":29160415,
+    "telefone":"3341-1171"
+  },
+  {
+    "name":"UPA 24 HORAS SERRA",
+    "latitude":-20.1290317103849,
+    "longitude":-40.3080010414124,
+    "logradouro":"AVENIDA JONES DOS SANTOS NEVES",
+    "numero":"S/N",
+    "bairro":"CENTRO SERRA",
+    "cep":29176060,
+    "telefone":"32,918,837"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-16.82468,
+    "longitude":-49.24249,
+    "logradouro":"RUA DAS ACASIA",
+    "numero":"S/N",
+    "bairro":"RESIDENCIAL BRASICON",
+    "cep":74975390,
+    "telefone":"3545 9953"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-17.7440424316921,
+    "longitude":-48.6257712543011,
+    "logradouro":"RUA PROFESSOR JOSINO BRETAS ESQ C R",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":75690000,
+    "telefone":"(64) 3453-0022"
+  },
+  {
+    "name":"UPA II DR JAIR DINOAH DE ARAUJO",
+    "latitude":-15.30508,
+    "longitude":-49.59248,
+    "logradouro":"AV BERNARDO SAYAO",
+    "numero":"1425",
+    "bairro":"CENTRO",
+    "cep":76300000,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-15.54311,
+    "longitude":-47.33929,
+    "logradouro":"VIA 26 A",
+    "numero":"S/N",
+    "bairro":"SETOR SUL",
+    "cep":73801110,
+    "telefone":"61 3631-7681"
+  },
+  {
+    "name":"UPA DR JOSE POVOA MENDES",
+    "latitude":-17.795112005178,
+    "longitude":-50.9319305419922,
+    "logradouro":"RUA AUGUSTA BASTOS",
+    "numero":"1900",
+    "bairro":"JARDIM GOIAS",
+    "cep":75901970,
+    "telefone":"6436202040"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE SENADOR CANEDO",
+    "latitude":-16.6882692720066,
+    "longitude":-49.1173759155274,
+    "logradouro":"RUA BV 15 ESQ AV GERONIMO VIEIRA",
+    "numero":"S/N",
+    "bairro":"RESIDENCILA BOA VIST",
+    "cep":75250000,
+    "telefone":""
+  },
+  {
+    "name":"UPA CODO",
+    "latitude":-4.45494,
+    "longitude":-43.87886,
+    "logradouro":"RUA SANTA RITA",
+    "numero":"S/N",
+    "bairro":"SANTA TEREZINHA",
+    "cep":65400000,
+    "telefone":""
+  },
+  {
+    "name":"UPA COROATA",
+    "latitude":-4.12516,
+    "longitude":-44.13041,
+    "logradouro":"AVENIDA DA BANDEIRA",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":65415000,
+    "telefone":""
+  },
+  {
+    "name":"UPA IMPERATRIZ",
+    "latitude":-5.5208,
+    "longitude":-47.47267,
+    "logradouro":"AVENIDA BERNARDO SAYAO",
+    "numero":"968",
+    "bairro":"NOV IMPERATRIZ",
+    "cep":65907000,
+    "telefone":""
+  },
+  {
+    "name":"UPA SAO JOAO DOS PATOS",
+    "latitude":-6.495,
+    "longitude":-43.702,
+    "logradouro":"RUA SAO JORGE",
+    "numero":"1",
+    "bairro":"SANTIAGO",
+    "cep":65665000,
+    "telefone":""
+  },
+  {
+    "name":"UPA ARACAGY",
+    "latitude":-2.562,
+    "longitude":-44.054,
+    "logradouro":"AV DOS HOLANDESES",
+    "numero":"S/N",
+    "bairro":"ARACAGY",
+    "cep":65110000,
+    "telefone":""
+  },
+  {
+    "name":"UPA ITAQUI BACANGA",
+    "latitude":-2.55194,
+    "longitude":-44.30782,
+    "logradouro":"AVENIDA DOS PORTUGUESES",
+    "numero":"S/N",
+    "bairro":"ITAQUI BACANGA",
+    "cep":65052100,
+    "telefone":"(98)32720346"
+  },
+  {
+    "name":"UPA DA VILA LUIZAO",
+    "latitude":-2.54548,
+    "longitude":-44.22728,
+    "logradouro":"RUA SAO PAULO",
+    "numero":"S/N",
+    "bairro":"VILA LUIZAO",
+    "cep":65057420,
+    "telefone":"(098) 3233-0665"
+  },
+  {
+    "name":"UPA CIDADE OPERARIA",
+    "latitude":-2.53,
+    "longitude":-44.303,
+    "logradouro":"AV PRICIPAL AV OESTE",
+    "numero":"S/N",
+    "bairro":"CIDADE OPERARIA",
+    "cep":65052100,
+    "telefone":"(098)32474558"
+  },
+  {
+    "name":"UPA TIMON",
+    "latitude":-5.09944,
+    "longitude":-42.82399,
+    "logradouro":"RUA SAO SEBASTIAO",
+    "numero":"S/N",
+    "bairro":"SANTO ANTONIO",
+    "cep":65636340,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO NORDESTE",
+    "latitude":-19.88421,
+    "longitude":-43.93079,
+    "logradouro":"RUA ITAMARACA",
+    "numero":"535",
+    "bairro":"CONCORDIA",
+    "cep":30130007,
+    "telefone":"(31)32776646"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO CENTRO SUL",
+    "latitude":-19.92235,
+    "longitude":-43.92537,
+    "logradouro":"RUA DOMINGOS VIEIRA",
+    "numero":"488",
+    "bairro":"SANTA EFIGENIA",
+    "cep":31150000,
+    "telefone":"32385900"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO VENDA NOVA",
+    "latitude":-19.81775,
+    "longitude":-43.95405,
+    "logradouro":"RUA PADRE PEDRO PINTO",
+    "numero":"322",
+    "bairro":"VENDA NOVA",
+    "cep":31515000,
+    "telefone":"(31)32775438"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO OESTE",
+    "latitude":-19.92744,
+    "longitude":-43.97755,
+    "logradouro":"AV BARAO HOMEM DE MELO",
+    "numero":"1710",
+    "bairro":"JARDIM AMERICA",
+    "cep":30130007,
+    "telefone":"(31)32777044"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO BARREIRO",
+    "latitude":-19.98497,
+    "longitude":-44.03565,
+    "logradouro":"AV AURELIO LOPES",
+    "numero":"20",
+    "bairro":"DIAMANTE",
+    "cep":30626002,
+    "telefone":"(31)32775821"
+  },
+  {
+    "name":"UNIDADE A I ALEXANDRE SILVA A DINIZ ALTEROSAS",
+    "latitude":-19.95012,
+    "longitude":-44.15644,
+    "logradouro":"AVENIDA CAMPOS DE OURIQUE",
+    "numero":"520",
+    "bairro":"JARDIM ALTEROSAS",
+    "cep":32670778,
+    "telefone":"(31)35922933"
+  },
+  {
+    "name":"UNIDADE A I NILDA MOREIRA DO A ANDRADE GUANABARA",
+    "latitude":-19.97988,
+    "longitude":-44.14801,
+    "logradouro":"RUA JOVELINO GREGORIO DA SILVA",
+    "numero":"225",
+    "bairro":"GUANABARA",
+    "cep":32667005,
+    "telefone":"(31)35922930"
+  },
+  {
+    "name":"UNIDADE A I SETE DE SETEMBRO",
+    "latitude":-19.96376,
+    "longitude":-44.18887,
+    "logradouro":"AVENIDA BANDEIRANTES",
+    "numero":"441",
+    "bairro":"CHACARA",
+    "cep":32670295,
+    "telefone":"(31)3531.3930"
+  },
+  {
+    "name":"UAI TERESOPOLIS",
+    "latitude":-19.94906,
+    "longitude":-44.12244,
+    "logradouro":"AVENIDA BELO HORIZONTE",
+    "numero":"154",
+    "bairro":"JARDIM TERESOPOLIS",
+    "cep":32681505,
+    "telefone":"(31)3597.8273/8270"
+  },
+  {
+    "name":"UPA VALDEMAR DE ASSIS BARCELOS",
+    "latitude":-20.143,
+    "longitude":-44.2,
+    "logradouro":"MG 040",
+    "numero":"30",
+    "bairro":"KM30",
+    "cep":35460000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO VARGEM DAS FLORES UPA",
+    "latitude":-19.96417,
+    "longitude":-44.05302,
+    "logradouro":"RUA RETIRO DOS IMIGRANTES",
+    "numero":"80",
+    "bairro":"RETIRO",
+    "cep":32050310,
+    "telefone":"(31)39117419"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UNIDADE XVI UPA XVI",
+    "latitude":-19.91056,
+    "longitude":-44.08074,
+    "logradouro":"JOAQUIM CAMARGO",
+    "numero":"47",
+    "bairro":"CENTRO",
+    "cep":32041440,
+    "telefone":"33987036"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO RESSACA UPA",
+    "latitude":-19.88522,
+    "longitude":-44.03045,
+    "logradouro":"PRACA 21 DE ABRIL GUANABARA",
+    "numero":"S/N",
+    "bairro":"GUANABARA",
+    "cep":32115260,
+    "telefone":"3357-6002"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO PETROLANDIA UPA",
+    "latitude":-19.9304,
+    "longitude":-44.114,
+    "logradouro":"RUA REFINARIA UNIAO",
+    "numero":"137",
+    "bairro":"PETROLANDIA",
+    "cep":32072180,
+    "telefone":"(31)3352-3312/5692"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO GERALDO PINTO VIEIRA UPA GPV",
+    "latitude":-19.94012,
+    "longitude":-44.03532,
+    "logradouro":"RUA MARECHAL COSTA E SILVA",
+    "numero":"310",
+    "bairro":"JK",
+    "cep":32310210,
+    "telefone":"(31)3395-4677"
+  },
+  {
+    "name":"UNIDADE MUNICIPAL DE PRONTO ATENDIMENTO DE IBIRITE",
+    "latitude":-20.01841,
+    "longitude":-44.06751,
+    "logradouro":"RUA NELSON PINHEIRO",
+    "numero":"S/N",
+    "bairro":"MACAUBAS",
+    "cep":32400000,
+    "telefone":"(31)35336110"
+  },
+  {
+    "name":"UPA NORTE",
+    "latitude":-21.76277,
+    "longitude":-43.34941,
+    "logradouro":"AVENIDA PRESIDENTE JUSCELINO KUBITSCHEK",
+    "numero":"6145",
+    "bairro":"NOVA ERA",
+    "cep":36090000,
+    "telefone":"(32)3222-0430"
+  },
+  {
+    "name":"UPA SAO PEDRO",
+    "latitude":-21.77431,
+    "longitude":-43.38468,
+    "logradouro":"RUA MAJOR LINO LIMA",
+    "numero":"129",
+    "bairro":"SAO PEDRO",
+    "cep":36037430,
+    "telefone":"(32)3250-1400"
+  },
+  {
+    "name":"UPA SANTA LUZIA",
+    "latitude":-21.788,
+    "longitude":-43.35271,
+    "logradouro":"RUA IBITIGUAIA",
+    "numero":"1130",
+    "bairro":"SANTA LUZIA",
+    "cep":36031000,
+    "telefone":"(32)2102-0898"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-20.23128,
+    "longitude":-42.16765,
+    "logradouro":"RUA FREDERICO DOLABELA",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":36900000,
+    "telefone":"33 3332 3310"
+  },
+  {
+    "name":"MATEUS LEME UPA 24 HORAS TIAGO CARDOSO SANTOS",
+    "latitude":-19.9908396237658,
+    "longitude":-44.428,
+    "logradouro":"RUA LEVINDO DA SILVA",
+    "numero":"15",
+    "bairro":"VALE VERDE",
+    "cep":35670000,
+    "telefone":""
+  },
+  {
+    "name":"UPA ANTONIO JOSE DOS SANTOS",
+    "latitude":-19.9018275928861,
+    "longitude":-44.9596240844727,
+    "logradouro":"RUA PADRE JOSE LUIZ",
+    "numero":"440",
+    "bairro":"SAO MARIOS",
+    "cep":35519000,
+    "telefone":"037-3226.6166"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-20.73101,
+    "longitude":-46.6086,
+    "logradouro":"RUA BARAO DE PASSOS",
+    "numero":"1629",
+    "bairro":"SANTA LUZIA",
+    "cep":37900001,
+    "telefone":"(35)3522 7171"
+  },
+  {
+    "name":"UPA ACRIZIO MENEZES",
+    "latitude":-19.76593,
+    "longitude":-44.08702,
+    "logradouro":"AVENIDA DENISE CRISTINA DA ROCHA",
+    "numero":"600",
+    "bairro":"CEREJEIRAS",
+    "cep":33940010,
+    "telefone":"3136381833"
+  },
+  {
+    "name":"SABARA UPA III 24 HORAS PADRE LAZARO PEREIRA CRISPIM",
+    "latitude":-19.8771631120984,
+    "longitude":-43.8694059848785,
+    "logradouro":"RODOVIA MGT 262 KM 07",
+    "numero":"7000",
+    "bairro":"NACOES UNIDAS",
+    "cep":34590390,
+    "telefone":"31 35081962"
+  },
+  {
+    "name":"UPA SAO JOAO DEL REI",
+    "latitude":-21.1336,
+    "longitude":-44.26209,
+    "logradouro":"R MARECHAL CIRO ESPIRITO SANTO CARDOSO",
+    "numero":"173",
+    "bairro":"CAIEIRAS",
+    "cep":36307048,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24 HORAS",
+    "latitude":-17.85211,
+    "longitude":-41.51409,
+    "logradouro":"AVENIDA GETULIO VARGAS",
+    "numero":"1284",
+    "bairro":"CENTRO",
+    "cep":39800015,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DR HUMBERTO FERREIRA",
+    "latitude":-19.748,
+    "longitude":-47.932,
+    "logradouro":"AV LEOPOLDINO DE OLIVEIRA",
+    "numero":"534",
+    "bairro":"PARQUE DO MIRANTE",
+    "cep":38081000,
+    "telefone":"34 3332-0209"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO SAO BENEDITO",
+    "latitude":-19.75274,
+    "longitude":-47.94003,
+    "logradouro":"R MAJOR EUSTAQUIO",
+    "numero":"1030",
+    "bairro":"SAO BENEDITO",
+    "cep":38022000,
+    "telefone":"(34)33332900"
+  },
+  {
+    "name":"UPA FRANCISCO CORREA DE CARVALHO",
+    "latitude":-21.551,
+    "longitude":-45.43,
+    "logradouro":"AVENIDA FARMACEUTICO JAIR SANTANA",
+    "numero":"113",
+    "bairro":"PADRE VITOR",
+    "cep":37048360,
+    "telefone":""
+  },
+  {
+    "name":"VESPASIANO UPA 24 HORAS PREFEITO LUIZ ISSA",
+    "latitude":-19.68639,
+    "longitude":-43.926,
+    "logradouro":"AV PREFEITO SEBASTIAO FERNANDES",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":33200000,
+    "telefone":""
+  },
+  {
+    "name":"UPA APARECIDA GONCALVES SARAIVA UNIVERSITARIO",
+    "latitude":-20.51967,
+    "longitude":-54.59871,
+    "logradouro":"AVENIDA GUAICURUS ESQ COM AV GURY MARQUES",
+    "numero":"S/N",
+    "bairro":"UNIVERSITARIO",
+    "cep":79063500,
+    "telefone":"33045601 // 33045606"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE JUINA DR SANTOS",
+    "latitude":-11.378,
+    "longitude":-58.741,
+    "logradouro":"RUA DAS ANDORINHAS",
+    "numero":"S/N",
+    "bairro":"MODULO 04",
+    "cep":78320000,
+    "telefone":"66-3566-2009"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE SINOP",
+    "latitude":-11.8233386198286,
+    "longitude":-55.5102601647377,
+    "logradouro":"AVENIDA ANDRE MAGGI",
+    "numero":"S/N",
+    "bairro":"JARDIM DAS ACACIAS",
+    "cep":78553252,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO SARA AKEMI ICHICAVA",
+    "latitude":-12.54657,
+    "longitude":-55.7278,
+    "logradouro":"AV PORTO ALEGRE",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":78890000,
+    "telefone":"35445989"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA II",
+    "latitude":-1.33542863241511,
+    "longitude":-48.4101222367287,
+    "logradouro":"ESTRADA DO ICUI GUAJARA",
+    "numero":"S/N",
+    "bairro":"ICUI GUAJARA",
+    "cep":67125060,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA III",
+    "latitude":-1.36840257509825,
+    "longitude":-48.4081320376396,
+    "logradouro":"CIDADE NOVA II WE 16",
+    "numero":"S/N",
+    "bairro":"COQUEIRO",
+    "cep":67145750,
+    "telefone":"32730281"
+  },
+  {
+    "name":"UPA DAICO",
+    "latitude":-1.31610745181998,
+    "longitude":-48.454647354126,
+    "logradouro":"RODOVIA AUGUSTO MONTENEGRO KM 11",
+    "numero":"0",
+    "bairro":"PARQUE GUAJARA",
+    "cep":66623590,
+    "telefone":"(091) 3247-8334"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO JOSIEL RODRIGUES MARTINS",
+    "latitude":-1.23380661119923,
+    "longitude":-47.1867942810059,
+    "logradouro":"RUA LAUDELINO VALENTE",
+    "numero":"S/N",
+    "bairro":"SAO CRISTOVAO",
+    "cep":68700005,
+    "telefone":"(91)34622155"
+  },
+  {
+    "name":"UPA 24HS TUCURUI EROSTACIO CORREA FILOCREAO IOIO",
+    "latitude":-3.7864349230254,
+    "longitude":-49.6790832500458,
+    "logradouro":"RUA 06",
+    "numero":"S/N",
+    "bairro":"SANTA MONICA",
+    "cep":68459000,
+    "telefone":"94 3787 3289"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE XINGUARA",
+    "latitude":-7.10724352179621,
+    "longitude":-49.9376046857834,
+    "logradouro":"BR 155 ESQUINA COM AVENIDA HERMES DANTAS",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":68555280,
+    "telefone":"34264736"
+  },
+  {
+    "name":"UPA 24 HORAS DR MAIA",
+    "latitude":-7.231,
+    "longitude":-35.881,
+    "logradouro":"AV MANOEL TAVARES",
+    "numero":"S/N",
+    "bairro":"ALTO BRANCO",
+    "cep":58402548,
+    "telefone":"83 33412079"
+  },
+  {
+    "name":"LABORATORIO DE ANALISES CLINICAS DE GUARABIRA BURITI",
+    "latitude":-6.85551,
+    "longitude":-35.49012,
+    "logradouro":"RUA JOSE EPAMINONDAS",
+    "numero":"S/N",
+    "bairro":"NOVO",
+    "cep":58200000,
+    "telefone":"(83) 3271-8889"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO OCEANIA",
+    "latitude":-7.09752,
+    "longitude":-34.83943,
+    "logradouro":"AV GOV FLAVIO RIBEIRO COUTINHO",
+    "numero":"70",
+    "bairro":"AEROCLUBE",
+    "cep":58037000,
+    "telefone":"3218-9896"
+  },
+  {
+    "name":"UPA JOAQUINA PIRES BARBOSA HENRIQUE",
+    "latitude":-7.89774055537478,
+    "longitude":-37.1104162931442,
+    "logradouro":"LOTEAMENTO RESIDENCE ALTIPLANO",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":58500000,
+    "telefone":"83 88298453"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE POMBAL",
+    "latitude":-6.76885,
+    "longitude":-37.79572,
+    "logradouro":"RUA JAIRO VIEIRA FEITOSA",
+    "numero":"S/N",
+    "bairro":"PEREIROS",
+    "cep":58840000,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-7.15296,
+    "longitude":-34.96524,
+    "logradouro":"RUA PITIMBU",
+    "numero":"S/N",
+    "bairro":"TIBIRI II",
+    "cep":58302460,
+    "telefone":"83 32175535"
+  },
+  {
+    "name":"UPA CAXANGA",
+    "latitude":-8.02541,
+    "longitude":-34.96145,
+    "logradouro":"AV CAXANGA",
+    "numero":"S/N",
+    "bairro":"VARZEA",
+    "cep":50980580,
+    "telefone":"81 31844355"
+  },
+  {
+    "name":"UPA IMBIRIBEIRA",
+    "latitude":-8.1145,
+    "longitude":-34.91293,
+    "logradouro":"AV MASCARENHAS DE MORAES",
+    "numero":"4223",
+    "bairro":"IMBIRIBEIRA",
+    "cep":51150004,
+    "telefone":"81 31844328"
+  },
+  {
+    "name":"UPA CABO DE SANTO AGOSTINHO",
+    "latitude":-8.28109,
+    "longitude":-35.03284,
+    "logradouro":"RUA 27",
+    "numero":"S/N",
+    "bairro":"COHAB",
+    "cep":54520580,
+    "telefone":"81 31844543"
+  },
+  {
+    "name":"UPA CARUARU",
+    "latitude":-8.30264,
+    "longitude":-35.96166,
+    "logradouro":"AVENIDA JOSE MARQUES FONTES",
+    "numero":"S/N",
+    "bairro":"INDIANOPOLIS",
+    "cep":55026530,
+    "telefone":"8737277814"
+  },
+  {
+    "name":"UPA VASSOURAL",
+    "latitude":-8.27833,
+    "longitude":-35.93743,
+    "logradouro":"RUA LUIZ GONZAGA",
+    "numero":"0",
+    "bairro":"VASSOURAL",
+    "cep":55030170,
+    "telefone":""
+  },
+  {
+    "name":"UPA IGARASSU",
+    "latitude":-7.83437,
+    "longitude":-34.90635,
+    "logradouro":"RODOVIA BR 101 NORTE KM 47",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":53640000,
+    "telefone":"(81) 31844278/4280"
+  },
+  {
+    "name":"UPA CURADO",
+    "latitude":-8.07656578678475,
+    "longitude":-35.0053596496582,
+    "logradouro":"RUA LEONARDO DA VINCE",
+    "numero":"68",
+    "bairro":"CURADO II",
+    "cep":54220000,
+    "telefone":"81 31844465"
+  },
+  {
+    "name":"UPA ENGENHO VELHO",
+    "latitude":-8.10929,
+    "longitude":-35.00392,
+    "logradouro":"AVENIDA MANOEL RABELO",
+    "numero":"S/N",
+    "bairro":"ENGENHO VELHO",
+    "cep":54160000,
+    "telefone":"8131844520"
+  },
+  {
+    "name":"UPA BARRA DE JANGADA",
+    "latitude":-8.2188,
+    "longitude":-34.93426,
+    "logradouro":"RUA CRUZ ALTA",
+    "numero":"S/N",
+    "bairro":"BARRA DE JANGADA",
+    "cep":54270100,
+    "telefone":"81 31844494"
+  },
+  {
+    "name":"UPA OLINDA",
+    "latitude":-8.0205,
+    "longitude":-34.8535,
+    "logradouro":"RODOVIA PE 15 AVENIDA JOAQUIM NABUCO",
+    "numero":"S/N",
+    "bairro":"CIDADE TABAJARA",
+    "cep":53350005,
+    "telefone":"(81) 31844309"
+  },
+  {
+    "name":"UPA PAULISTA",
+    "latitude":-7.91846,
+    "longitude":-34.89042,
+    "logradouro":"ESTRADA DO FRIO",
+    "numero":"10000",
+    "bairro":"AURORA",
+    "cep":53401030,
+    "telefone":"(81) 31844253"
+  },
+  {
+    "name":"UPA NOVA DESCOBERTA",
+    "latitude":-7.99769,
+    "longitude":-34.92512,
+    "logradouro":"AVENIDA VEREADOR OTACILIO DE AZEVEDO",
+    "numero":"S/N",
+    "bairro":"BREJO DA GUABIRABA",
+    "cep":52191000,
+    "telefone":""
+  },
+  {
+    "name":"UPA IBURA",
+    "latitude":-8.12692,
+    "longitude":-34.8996,
+    "logradouro":"RUA VALE DO TAJAI",
+    "numero":"S/N",
+    "bairro":"IBURA",
+    "cep":51320180,
+    "telefone":"81 31844595"
+  },
+  {
+    "name":"UPA TORROES",
+    "latitude":-8.06259,
+    "longitude":-34.91405,
+    "logradouro":"AV ABDIAS DE CARVALHOS",
+    "numero":"1455",
+    "bairro":"TORROES",
+    "cep":50720635,
+    "telefone":"81 - 31844440"
+  },
+  {
+    "name":"UPA SAO LOURENCO DA MATA",
+    "latitude":-7.99136,
+    "longitude":-35.04746,
+    "logradouro":"AVENIDA SR FRANCISCO CORREIA",
+    "numero":"2009",
+    "bairro":"PIXETE",
+    "cep":54725000,
+    "telefone":"8131844378"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE APUCARANA PR",
+    "latitude":-23.5639871284512,
+    "longitude":-51.4572143554688,
+    "logradouro":"RUA CLOTARIO PORTUGAL",
+    "numero":"1755",
+    "bairro":"CENTRO",
+    "cep":86800020,
+    "telefone":"4339011058"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE ARAUCARIA",
+    "latitude":-25.593,
+    "longitude":-49.41,
+    "logradouro":"RUA AUGUSTO RIBEIRO DOS SANTOS",
+    "numero":"1",
+    "bairro":"COSTEIRA",
+    "cep":83709145,
+    "telefone":"39056313"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MOACIR ELIAS FADEL",
+    "latitude":-24.78745,
+    "longitude":-49.9947,
+    "logradouro":"PROLONGAMENTO DA RUA ANTONIO MENARIM",
+    "numero":"S/N",
+    "bairro":"RIO BRANCO",
+    "cep":84172390,
+    "telefone":"4239062288"
+  },
+  {
+    "name":"UPA I UNIDADE DE PRONTO ATENDIMENTO DE CORONEL VIVIDA",
+    "latitude":-25.98027,
+    "longitude":-52.56869,
+    "logradouro":"RUA ROMARIO MARTINS",
+    "numero":"154",
+    "bairro":"CENTRO",
+    "cep":85550000,
+    "telefone":""
+  },
+  {
+    "name":"UPA PINHEIRINHO",
+    "latitude":-25.51528,
+    "longitude":-49.3026,
+    "logradouro":"RUA LEON NICOLAS",
+    "numero":"S/N",
+    "bairro":"CAPAO RASO",
+    "cep":81150140,
+    "telefone":"041-32121470"
+  },
+  {
+    "name":"UPA CAMPO COMPRIDO",
+    "latitude":-25.44207,
+    "longitude":-49.33896,
+    "logradouro":"RUA MONS IVO ZANLORENZI",
+    "numero":"3495",
+    "bairro":"CAMPO COMPRIDO",
+    "cep":81210000,
+    "telefone":"(41)3373-1332"
+  },
+  {
+    "name":"UPA FAZENDINHA",
+    "latitude":-25.47624,
+    "longitude":-49.32043,
+    "logradouro":"RUA CARLOS KLEMTZ",
+    "numero":"S/N",
+    "bairro":"FAZENDINHA",
+    "cep":81320000,
+    "telefone":"3329-4324"
+  },
+  {
+    "name":"UPA BOA VISTA",
+    "latitude":-25.38533,
+    "longitude":-49.23285,
+    "logradouro":"AVN PARANA",
+    "numero":"3654",
+    "bairro":"BOA VISTA",
+    "cep":82510000,
+    "telefone":"041- 32511010"
+  },
+  {
+    "name":"UPA CIDADE INDUSTRIAL",
+    "latitude":-25.49764,
+    "longitude":-49.3402,
+    "logradouro":"RUA SENADOR ACCIOLY FILHO",
+    "numero":"3370",
+    "bairro":"CIC",
+    "cep":81350200,
+    "telefone":"041-32496899"
+  },
+  {
+    "name":"UPA SITIO CERCADO",
+    "latitude":-25.52866,
+    "longitude":-49.26863,
+    "logradouro":"RUA LEVY BUQUERA",
+    "numero":"158",
+    "bairro":"SITIO CERCADO",
+    "cep":81925320,
+    "telefone":"041-3378-6405"
+  },
+  {
+    "name":"UPA CAJURU",
+    "latitude":-25.46917,
+    "longitude":-49.20422,
+    "logradouro":"RUA ENGENHEIRO BENEDITO MARIO DA SILVA",
+    "numero":"S/N",
+    "bairro":"CAJURU",
+    "cep":82970000,
+    "telefone":"041-32264069"
+  },
+  {
+    "name":"UPA BOQUEIRAO",
+    "latitude":-25.49342,
+    "longitude":-49.24547,
+    "logradouro":"RUA PROFA MARIA ASSUMPCAO",
+    "numero":"2590",
+    "bairro":"BOQUEIRAO",
+    "cep":81670040,
+    "telefone":"41- 3217-1201"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO JOAO SAMEK",
+    "latitude":-25.4947857403074,
+    "longitude":-54.5435678958893,
+    "logradouro":"RUA IACANGA ESQUINA COM AVENIDA AMERICO SASDELI",
+    "numero":"S/N",
+    "bairro":"JARDIM PALMEIRA",
+    "cep":85869755,
+    "telefone":"45-3521-9500"
+  },
+  {
+    "name":"UPA DR DARCY COSTA",
+    "latitude":-25.7673333087893,
+    "longitude":-49.7278660926819,
+    "logradouro":"AVENIDA JUSCELINO KUBITSCHEK OLIVEIRA",
+    "numero":"515",
+    "bairro":"VILA DO PRINCIPE",
+    "cep":83750000,
+    "telefone":"41 39111030"
+  },
+  {
+    "name":"UPA SABARA",
+    "latitude":-23.3150397752813,
+    "longitude":-51.2096847419739,
+    "logradouro":"AV ARTHUR THOMAS",
+    "numero":"2390",
+    "bairro":"NOVO SABARA",
+    "cep":86066000,
+    "telefone":"43 3372 3900"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA ZONA SUL",
+    "latitude":-23.42564,
+    "longitude":-51.94586,
+    "logradouro":"AVENIDA NILDO RIBEIRO DA ROCHA",
+    "numero":"865",
+    "bairro":"JARDIM IPANEMA",
+    "cep":87053270,
+    "telefone":"32214812"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA ZONA NORTE",
+    "latitude":-23.3973296730671,
+    "longitude":-51.9133186340332,
+    "logradouro":"AV SOPHIA RASGULAEFF X R HIPOCRATESX R ANA NERI",
+    "numero":"S/N",
+    "bairro":"JARDIM ALVORADA",
+    "cep":87035260,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-23.43665,
+    "longitude":-51.87697,
+    "logradouro":"JOSE MUNHOZ",
+    "numero":"286",
+    "bairro":"JD CASTELO",
+    "cep":87112610,
+    "telefone":"(44) 3042-0506"
+  },
+  {
+    "name":"UPA 24 HS ANGRA DOS REIS",
+    "latitude":-22.98432,
+    "longitude":-44.29617,
+    "logradouro":"RUA FRANCELINO ALVES DE LIMA",
+    "numero":"S/N",
+    "bairro":"JAPUIBA",
+    "cep":23933005,
+    "telefone":"2433671667"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE ARARUAMA",
+    "latitude":-22.86663,
+    "longitude":-42.3332,
+    "logradouro":"AV GETULIO VARGAS",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":28970000,
+    "telefone":"26657300"
+  },
+  {
+    "name":"SES RJ UPA 24H ENGENHO NOVO AP 32",
+    "latitude":-22.89956,
+    "longitude":-43.26387,
+    "logradouro":"RUA SOUZA BARROS",
+    "numero":"70",
+    "bairro":"ENGENHO NOVO",
+    "cep":20961150,
+    "telefone":"2332-2349"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO EM BARRA MANSA RJ UPA",
+    "latitude":-22.54535,
+    "longitude":-44.16984,
+    "logradouro":"RUA LUIZ PONCE",
+    "numero":"263",
+    "bairro":"CENTRO",
+    "cep":27345030,
+    "telefone":"2433229298"
+  },
+  {
+    "name":"UPA 24H BOM PASTOR BELFORD ROXO",
+    "latitude":-22.75852,
+    "longitude":-43.36849,
+    "logradouro":"ESTR DE BELFORD ROXO",
+    "numero":"S/N",
+    "bairro":"BOM PASTOR",
+    "cep":26110010,
+    "telefone":"25617578"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA II",
+    "latitude":-22.87722,
+    "longitude":-42.01312,
+    "logradouro":"AV AMARAL PEIXOTO KM 136",
+    "numero":"136",
+    "bairro":"SAMBURA",
+    "cep":28927000,
+    "telefone":"22 26461736"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-22.8897,
+    "longitude":-42.04381,
+    "logradouro":"AV VITOR ROCHA",
+    "numero":"10",
+    "bairro":"PARQUE BURLE",
+    "cep":28905000,
+    "telefone":"2226489679"
+  },
+  {
+    "name":"SES RJ UPA 24H MARECHAL HERMES",
+    "latitude":-22.86855,
+    "longitude":-43.37668,
+    "logradouro":"RUA XAVIER CURADO",
+    "numero":"S/N",
+    "bairro":"MAL HERMES",
+    "cep":21610330,
+    "telefone":"30165844"
+  },
+  {
+    "name":"SMS COORD DE EMERGENCIA REGIONAL CER BARRA AP 40",
+    "latitude":-22.9947619300282,
+    "longitude":-43.3653143048286,
+    "logradouro":"AVENIDA AYRTON SENNA",
+    "numero":"2000",
+    "bairro":"BARRA DA TIJUCA",
+    "cep":22793000,
+    "telefone":"35507060"
+  },
+  {
+    "name":"SES RJ UPA 24H CAMPOS DOS GOYTACAZES",
+    "latitude":-21.70481,
+    "longitude":-41.30985,
+    "logradouro":"SOUZA MOTA",
+    "numero":"200",
+    "bairro":"PARQUE VERA CRUZ",
+    "cep":28060001,
+    "telefone":""
+  },
+  {
+    "name":"SES RJ UPA 24H DUQUE DE CAXIAS",
+    "latitude":-22.78614,
+    "longitude":-43.32451,
+    "logradouro":"RUA JOAQUIM PECANHA",
+    "numero":"1532",
+    "bairro":"PQ LAFAIETE",
+    "cep":25025095,
+    "telefone":"27827211"
+  },
+  {
+    "name":"SES RJ UPA 24H SARAPUI",
+    "latitude":-22.74952,
+    "longitude":-43.29879,
+    "logradouro":"RUA REPUBLICA DO PARAGUAI",
+    "numero":"S/N",
+    "bairro":"VILA SARAPUI",
+    "cep":25050100,
+    "telefone":"27719717"
+  },
+  {
+    "name":"SMS UPA 24H MAGALHAES BASTOS AP 51",
+    "latitude":-22.8925929242695,
+    "longitude":-43.4175349026918,
+    "logradouro":"ESTRADA MANOEL NOGUEIRA DE SA",
+    "numero":"S/N",
+    "bairro":"MAGALHAES BASTOS",
+    "cep":21745290,
+    "telefone":"35507080"
+  },
+  {
+    "name":"SMS COORD DE EMERGENCIA REGIONAL CER CENTRO AP 10",
+    "latitude":-22.9094956175679,
+    "longitude":-43.1907796114683,
+    "logradouro":"RUA FREI CANECA",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":20211030,
+    "telefone":"21-25071311"
+  },
+  {
+    "name":"SES UPA 24H MARE AP 31",
+    "latitude":-22.87776,
+    "longitude":-43.24091,
+    "logradouro":"AV BRASIL",
+    "numero":"4880",
+    "bairro":"MANGUINHOS",
+    "cep":21040361,
+    "telefone":"2334-7830 2334-7832"
+  },
+  {
+    "name":"SES RJ UPA 24 H ITABORAI",
+    "latitude":-22.744,
+    "longitude":-42.859,
+    "logradouro":"RODOVIA BR 493",
+    "numero":"S/N",
+    "bairro":"MONTE VERDE",
+    "cep":24800013,
+    "telefone":"26359169"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA ITAGUAI",
+    "latitude":-22.86236,
+    "longitude":-43.77795,
+    "logradouro":"AVENIDA DEPUTADO OTAVIO CABRAL",
+    "numero":"0",
+    "bairro":"JARDIM AMERICA",
+    "cep":23810301,
+    "telefone":"26879794"
+  },
+  {
+    "name":"UPA ITAPERUNA",
+    "latitude":-21.20652,
+    "longitude":-41.88956,
+    "logradouro":"RUA E",
+    "numero":"1",
+    "bairro":"CIDADE NOVA",
+    "cep":28300000,
+    "telefone":"22 38224657"
+  },
+  {
+    "name":"SES RJ UPA 24H BANGU",
+    "latitude":-22.87133,
+    "longitude":-43.45795,
+    "logradouro":"RUA FIGUEIREDO CAMARGO",
+    "numero":"S/N",
+    "bairro":"BANGU",
+    "cep":21870210,
+    "telefone":"24195816"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO BARRA",
+    "latitude":-22.36942,
+    "longitude":-41.78033,
+    "logradouro":"AV AMARAL PEIXOTO",
+    "numero":"S/N",
+    "bairro":"BARRA DE MACAE",
+    "cep":27910000,
+    "telefone":"22 27623260"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO LAGOMAR",
+    "latitude":-22.37172,
+    "longitude":-41.78572,
+    "logradouro":"AVENIDA JOSE FERREIRA MACHADO",
+    "numero":"S/N",
+    "bairro":"LAGOMAR",
+    "cep":27910000,
+    "telefone":"22 27961279"
+  },
+  {
+    "name":"SES RJ UPA 24H JACAREPAGUA",
+    "latitude":-22.92353,
+    "longitude":-43.36905,
+    "logradouro":"RUA ANDRE ROCHA",
+    "numero":"20",
+    "bairro":"TAQUARA",
+    "cep":22730522,
+    "telefone":"23336536"
+  },
+  {
+    "name":"SES RJ UPA 24H MESQUITA",
+    "latitude":-22.7815,
+    "longitude":-43.42869,
+    "logradouro":"RUA COSTA E SILVA",
+    "numero":"S/N",
+    "bairro":"EDSON PASSOS",
+    "cep":26584001,
+    "telefone":"21-26257807"
+  },
+  {
+    "name":"UPA NILOPOLIS",
+    "latitude":-22.81168,
+    "longitude":-43.41399,
+    "logradouro":"RUA ANTONIO PEREIRA",
+    "numero":"S/N",
+    "bairro":"CABUIS",
+    "cep":26540005,
+    "telefone":""
+  },
+  {
+    "name":"SES RJ UPA 24 H FONSECA",
+    "latitude":-22.883,
+    "longitude":-43.104,
+    "logradouro":"RUA SA BARRETO",
+    "numero":"107",
+    "bairro":"FONSECA",
+    "cep":24120297,
+    "telefone":"21-26257807"
+  },
+  {
+    "name":"UPA 24 HORAS NOVA FRIBURGO",
+    "latitude":-22.2852,
+    "longitude":-42.53157,
+    "logradouro":"AVENIDA GOVERNADOR ROBERTO SILVEIRA",
+    "numero":"3456",
+    "bairro":"CONSELHEIRO PAULINO",
+    "cep":28635000,
+    "telefone":"22 25277750"
+  },
+  {
+    "name":"SES RJ UPA NOVA IGUACU II",
+    "latitude":-22.75976,
+    "longitude":-43.45155,
+    "logradouro":"ESTRADA DE ADRIANOPOLIS",
+    "numero":"S/N",
+    "bairro":"TRES CORACOES",
+    "cep":26090005,
+    "telefone":"26572996"
+  },
+  {
+    "name":"SES RJ UPA 24H CABUCU",
+    "latitude":-22.76021,
+    "longitude":-43.47169,
+    "logradouro":"AVENIDA ABELIO AUGUSTO TAVORA",
+    "numero":"1600",
+    "bairro":"CABUCU",
+    "cep":26291000,
+    "telefone":"27794497"
+  },
+  {
+    "name":"UPA CASCATINHA",
+    "latitude":-22.51924,
+    "longitude":-43.19359,
+    "logradouro":"RUA BERNARDO PROENCA",
+    "numero":"500",
+    "bairro":"CASCATINHA",
+    "cep":25710082,
+    "telefone":"2246-8932"
+  },
+  {
+    "name":"UPA CENTRO",
+    "latitude":-22.50474,
+    "longitude":-43.17804,
+    "logradouro":"RUA WASHINGTON LUIZ",
+    "numero":"600",
+    "bairro":"CENTRO",
+    "cep":25655006,
+    "telefone":"2243-6706"
+  },
+  {
+    "name":"SES RJ UPA 24H QUEIMADOS RJ",
+    "latitude":-22.7131,
+    "longitude":-43.56864,
+    "logradouro":"RUA MARIO FERREIRA DOS REIS",
+    "numero":"S/N",
+    "bairro":"NOSSA SENHORA DA GLO",
+    "cep":26311020,
+    "telefone":"26656955"
+  },
+  {
+    "name":"UPA 24 HS RESENDE",
+    "latitude":-22.46966,
+    "longitude":-44.45747,
+    "logradouro":"AVENIDA ADAUTO EMILIANO SOARES",
+    "numero":"S/N",
+    "bairro":"COMERCIAL NOVA RESEN",
+    "cep":27521750,
+    "telefone":"(24) 3354-5075"
+  },
+  {
+    "name":"SMS UPA 24H CIDADE DE DEUS AP 40",
+    "latitude":-22.9495041757149,
+    "longitude":-43.3591579645872,
+    "logradouro":"RUA EDGAR WERNECK",
+    "numero":"S/N",
+    "bairro":"CIDADES DE DEUS",
+    "cep":22763010,
+    "telefone":"21 22323173"
+  },
+  {
+    "name":"SMS UPA 24H COSTA BARROS AP 33",
+    "latitude":-22.8218102791267,
+    "longitude":-43.3688072115183,
+    "logradouro":"EST BOTAFOGO",
+    "numero":"S/N",
+    "bairro":"COSTA BARROS",
+    "cep":21532200,
+    "telefone":"25086990"
+  },
+  {
+    "name":"SMS UPA 24 H ENGENHO DE DENTRO AP 32",
+    "latitude":-22.90297668041,
+    "longitude":-43.3003746718168,
+    "logradouro":"RUA BERNARDO",
+    "numero":"S/N",
+    "bairro":"ENGENHO DE DENTRO",
+    "cep":20745270,
+    "telefone":""
+  },
+  {
+    "name":"SMS UPA 24H MADUREIRA AP 33",
+    "latitude":-22.8816807849146,
+    "longitude":-43.3492552489042,
+    "logradouro":"PRACA DOS LAVRADORES",
+    "numero":"S/N",
+    "bairro":"MADUREIRA",
+    "cep":21310190,
+    "telefone":"2133582994"
+  },
+  {
+    "name":"SMS UPA 24 H JOAO XXIII AP 53",
+    "latitude":-22.9068962490198,
+    "longitude":-43.7038560211658,
+    "logradouro":"AV JOAO XXIII",
+    "numero":"S/N",
+    "bairro":"SANTA CRUZ",
+    "cep":23570000,
+    "telefone":"24165719/31575411"
+  },
+  {
+    "name":"SES UPA 24H IRAJA AP 33",
+    "latitude":-22.8493,
+    "longitude":-43.32547,
+    "logradouro":"AV MONSENHOR FELIX",
+    "numero":"380",
+    "bairro":"IRAJA",
+    "cep":21235110,
+    "telefone":"23339823"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA RIO BONITO",
+    "latitude":-22.71044,
+    "longitude":-42.64882,
+    "logradouro":"RODOVIA BR 101",
+    "numero":"S/N",
+    "bairro":"PRACA CRUZEIRO",
+    "cep":28800000,
+    "telefone":"2127349818"
+  },
+  {
+    "name":"SMS UPA 24H SENADOR CAMARA AP 51",
+    "latitude":-22.8825135583532,
+    "longitude":-43.4832704812288,
+    "logradouro":"AVENIDA SANTA CRUZ",
+    "numero":"6486",
+    "bairro":"SENADOR CAMARA",
+    "cep":21830264,
+    "telefone":"21-38393226"
+  },
+  {
+    "name":"SES UPA 24H ILHA DO GOVERNADOR AP 31",
+    "latitude":-22.90353,
+    "longitude":-43.20958,
+    "logradouro":"PARQUE POETA MANUEL BANDEIRA",
+    "numero":"S/N",
+    "bairro":"COCOTA ILHA DO GOVER",
+    "cep":21910296,
+    "telefone":"23346346"
+  },
+  {
+    "name":"SMS UPA 24H MANGUINHOS AP 31",
+    "latitude":-22.88575,
+    "longitude":-43.25177,
+    "logradouro":"AV DOM HELDER CAMARA",
+    "numero":"1390",
+    "bairro":"BENFICA",
+    "cep":20973011,
+    "telefone":"2332-2405"
+  },
+  {
+    "name":"SMS UPA 24 H SEPETIBA AP 53",
+    "latitude":-22.92296,
+    "longitude":-43.67113,
+    "logradouro":"RUA RAFAEL FERREIRA",
+    "numero":"S/N",
+    "bairro":"SEPETIBA",
+    "cep":23535050,
+    "telefone":""
+  },
+  {
+    "name":"SMS UPA 24 H PACIENCIA AP 53",
+    "latitude":-22.93932,
+    "longitude":-43.34236,
+    "logradouro":"ESTRADA SANTA EUGENIA",
+    "numero":"S/N",
+    "bairro":"PACIENCIA",
+    "cep":23585130,
+    "telefone":""
+  },
+  {
+    "name":"SES RJ UPA 24H RICARDO DE ALBUQUERQUE",
+    "latitude":-22.82395,
+    "longitude":-43.4042,
+    "logradouro":"ESTR MAL ALENCASTRO",
+    "numero":"S/N",
+    "bairro":"RICARDO DE ALBUQUERQ",
+    "cep":21625000,
+    "telefone":"33394819"
+  },
+  {
+    "name":"SES UPA 24H PENHA AP 31",
+    "latitude":-22.83169,
+    "longitude":-43.27917,
+    "logradouro":"AVENIDA LOBO JUNIOR",
+    "numero":"S/N",
+    "bairro":"PENHA",
+    "cep":21070061,
+    "telefone":"2334-7859"
+  },
+  {
+    "name":"SES RJ UPA 24H CAMPO GRANDE",
+    "latitude":-22.86162,
+    "longitude":-43.54198,
+    "logradouro":"ESTR DO MENDANHA",
+    "numero":"S/N",
+    "bairro":"CAMPO GRANDE",
+    "cep":23087286,
+    "telefone":"34051069"
+  },
+  {
+    "name":"SMS UPA 24H ROCHA MIRANDA AP 33",
+    "latitude":-22.851375524685,
+    "longitude":-43.3465924859047,
+    "logradouro":"ESTRADA DO BARRO VERMELHO",
+    "numero":"S/N",
+    "bairro":"ROCHA MIRANDA",
+    "cep":21540500,
+    "telefone":"35141487"
+  },
+  {
+    "name":"SES RJ UPA 24H CAMPO GRANDE II",
+    "latitude":-22.89346,
+    "longitude":-43.53738,
+    "logradouro":"AVENIDA CESARIO DE MELO",
+    "numero":"S/N",
+    "bairro":"CAMPO GRANDE",
+    "cep":23055002,
+    "telefone":"24150665"
+  },
+  {
+    "name":"SES RJ UPA 24H BOTAFOGO",
+    "latitude":-22.95158,
+    "longitude":-43.19509,
+    "logradouro":"RUA SAO CLEMENTE",
+    "numero":"S/N",
+    "bairro":"BOTAFOGO",
+    "cep":22260000,
+    "telefone":"23344011"
+  },
+  {
+    "name":"SMS UPA 24H COMPLEXO DO ALEMAO AP 31",
+    "latitude":-22.86453,
+    "longitude":-43.26675,
+    "logradouro":"ESTRADA DO ITARARE",
+    "numero":"221",
+    "bairro":"BONSUCESSO",
+    "cep":21061600,
+    "telefone":""
+  },
+  {
+    "name":"SMS UPA 24H VILA KENNEDY AP 51",
+    "latitude":-22.90353,
+    "longitude":-43.20958,
+    "logradouro":"PRACA DOLOMITAS",
+    "numero":"S/N",
+    "bairro":"VILA KENNEDY",
+    "cep":20211901,
+    "telefone":"21 2405-0303"
+  },
+  {
+    "name":"SES RJ UPA 24H TIJUCA",
+    "latitude":-22.93017,
+    "longitude":-43.23752,
+    "logradouro":"RUA CONDE DE BONFIM",
+    "numero":"S/N",
+    "bairro":"TIJUCA",
+    "cep":20520054,
+    "telefone":"23341921"
+  },
+  {
+    "name":"SES RJ UPA 24H REALENGO",
+    "latitude":-22.87418,
+    "longitude":-43.43149,
+    "logradouro":"RUA MARECHAL JOAQUIM INACIO",
+    "numero":"S/N",
+    "bairro":"REALENGO",
+    "cep":21735320,
+    "telefone":"24019382"
+  },
+  {
+    "name":"SMS UPA 24H ROCINHA AP 21",
+    "latitude":-22.99731,
+    "longitude":-43.2639,
+    "logradouro":"ESTRADA DA GAVEA",
+    "numero":"522",
+    "bairro":"ROCINHA",
+    "cep":22451265,
+    "telefone":"33227039"
+  },
+  {
+    "name":"SES RJ UPA 24H SANTA CRUZ",
+    "latitude":-22.93348,
+    "longitude":-43.66196,
+    "logradouro":"AV CESARIO DE MELO",
+    "numero":"13655",
+    "bairro":"STA CRUZ",
+    "cep":23590060,
+    "telefone":"33139218"
+  },
+  {
+    "name":"SES RJ UPA 24H COPACABANA",
+    "latitude":-22.93916,
+    "longitude":-43.34183,
+    "logradouro":"RUA SIQUEIRA CAMPOS",
+    "numero":"129",
+    "bairro":"COPACABANA",
+    "cep":22031071,
+    "telefone":"23339289"
+  },
+  {
+    "name":"SES RJ UPA 24H SAO GONCALO I",
+    "latitude":-22.827,
+    "longitude":-43.054,
+    "logradouro":"RODOVIA AMARAL PEIXOTO",
+    "numero":"S/N",
+    "bairro":"COLUMBANDE",
+    "cep":24753560,
+    "telefone":"27017397"
+  },
+  {
+    "name":"SES RJ UPA 24H SAO GONCALO II",
+    "latitude":-22.8278,
+    "longitude":-43.05591,
+    "logradouro":"AVENIDA BISPO DOM JOAO DA MATA",
+    "numero":"S/N",
+    "bairro":"SAO GONCALO",
+    "cep":24722525,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24H JARDIM IRIS",
+    "latitude":-22.77563,
+    "longitude":-43.35563,
+    "logradouro":"AVENIDA COMENDADOR TELES",
+    "numero":"S/N",
+    "bairro":"JARDIM IRIS",
+    "cep":25561162,
+    "telefone":"21 3757-3176"
+  },
+  {
+    "name":"UPA 24HS UNIDADE DE PRONTO ATENDIMENTO NATHAN GARCIA LEITAO",
+    "latitude":-22.41676,
+    "longitude":-42.97096,
+    "logradouro":"RUA TENENTE LUIZ MEIRELLES",
+    "numero":"S/N",
+    "bairro":"VARZEA",
+    "cep":25955000,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24 HS",
+    "latitude":-22.11827,
+    "longitude":-43.20953,
+    "logradouro":"AV ZOELLO SOLA",
+    "numero":"2100",
+    "bairro":"TRIANGULO",
+    "cep":25820180,
+    "telefone":"024 22551998"
+  },
+  {
+    "name":"UPA 24 HS VOLTA REDONDA",
+    "latitude":-22.4887,
+    "longitude":-44.07017,
+    "logradouro":"RUA MIL E DEZESSETE",
+    "numero":"660",
+    "bairro":"STO AGOSTINHO",
+    "cep":27210240,
+    "telefone":"2433384576"
+  },
+  {
+    "name":"UPA CONCHECITA CIARLINI",
+    "latitude":-5.18404,
+    "longitude":-37.34573,
+    "logradouro":"RUA SEIS DE JANEIRO",
+    "numero":"289",
+    "bairro":"SANTO ANTONIO",
+    "cep":59607140,
+    "telefone":""
+  },
+  {
+    "name":"UPA TARCISIO DE VASCONCELOS MAIA",
+    "latitude":-5.20973,
+    "longitude":-37.3376,
+    "logradouro":"RUA MARIAZINHA MENDES",
+    "numero":"S/N",
+    "bairro":"SAO MANOEL",
+    "cep":59631220,
+    "telefone":"84 3315-4745"
+  },
+  {
+    "name":"UPA 24H DE PAJUCARA",
+    "latitude":-5.72269065145066,
+    "longitude":-35.2427405118942,
+    "logradouro":"RUA MOEMIA TINOCO DA CUNHA LIMA",
+    "numero":"S/N",
+    "bairro":"PAJUCARA",
+    "cep":59132390,
+    "telefone":"843614 5280"
+  },
+  {
+    "name":"UPA ZONA SUL",
+    "latitude":-8.78761741466712,
+    "longitude":-63.8779503107071,
+    "logradouro":"RUA URTIGA VERMELHA COM JATUARANA",
+    "numero":"S/N",
+    "bairro":"COHAB FLORESTA",
+    "cep":76820739,
+    "telefone":"(69)2271083"
+  },
+  {
+    "name":"UPA ZONA LESTE",
+    "latitude":-8.76318488986646,
+    "longitude":-63.8439399003983,
+    "logradouro":"AV MAMORE COM RIO DE JANEIRO",
+    "numero":"S/N",
+    "bairro":"TANCREDO NEVES",
+    "cep":76820739,
+    "telefone":"(69)2261135"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-29.49119,
+    "longitude":-51.35844,
+    "logradouro":"RUA JOAO DE BARRO",
+    "numero":"S/N",
+    "bairro":"PARAISO DO VALE",
+    "cep":95765000,
+    "telefone":"51 3634 1191"
+  },
+  {
+    "name":"UPA 24 HORAS RIO BRANCO",
+    "latitude":-29.918,
+    "longitude":-51.184,
+    "logradouro":"CAIRU",
+    "numero":"500",
+    "bairro":"RIO BRANCO",
+    "cep":92110060,
+    "telefone":"(51)3415-4500"
+  },
+  {
+    "name":"UPA 24 HORAS CANUDOS NH IRMAO ANTONIO BORTOLINI",
+    "latitude":-29.68951,
+    "longitude":-51.13254,
+    "logradouro":"RUA BARTOLOMEU DE GUSMAO",
+    "numero":"12",
+    "bairro":"CANUDOS",
+    "cep":93542000,
+    "telefone":"51 30971317"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO ZONA NORTE MOACYR SCLIAR",
+    "latitude":-30.0079,
+    "longitude":-51.1465,
+    "logradouro":"JERONYMO ZELMANOVITZ",
+    "numero":"1",
+    "bairro":"SAO SEBASTIAO",
+    "cep":91060135,
+    "telefone":"51 33681626"
+  },
+  {
+    "name":"UPA 24 H SANTA MARIA RS",
+    "latitude":-29.67172,
+    "longitude":-53.80643,
+    "logradouro":"RUA ARY LAGRANHA DOMINGUES",
+    "numero":"188",
+    "bairro":"PERPETUO SOCORRO",
+    "cep":97045060,
+    "telefone":"5530261900"
+  },
+  {
+    "name":"UPA 24 HORAS VACARIA",
+    "latitude":-28.49955,
+    "longitude":-50.94264,
+    "logradouro":"RUA CAMPOS SALES",
+    "numero":"1100",
+    "bairro":"GLORIA",
+    "cep":95200000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24HS",
+    "latitude":-27.4946090935179,
+    "longitude":-48.6580599365234,
+    "logradouro":"RUA QUINTINO BOCAIUVA",
+    "numero":"S/N",
+    "bairro":"FUNDOS",
+    "cep":88161750,
+    "telefone":"48-30398460"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA SUL DA ILHA",
+    "latitude":-27.597,
+    "longitude":-48.549,
+    "logradouro":"RODOVIA SC 405",
+    "numero":"682",
+    "bairro":"FAZENDA DO RIO TAVAR",
+    "cep":88065000,
+    "telefone":"(48) 32391701"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA NORTE DA ILHA",
+    "latitude":-27.44014,
+    "longitude":-48.38723,
+    "logradouro":"ROD FRANCISCO FAUSTINO MARTINS",
+    "numero":"0",
+    "bairro":"CANASVIEIRAS",
+    "cep":88052800,
+    "telefone":"(48) 32610614"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24H",
+    "latitude":-26.90941,
+    "longitude":-48.67497,
+    "logradouro":"RUA ENEDINA DAVILA FERREIRA",
+    "numero":"S/N",
+    "bairro":"CORDEIROS",
+    "cep":88301000,
+    "telefone":"4732495500"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-26.23098,
+    "longitude":-48.58288,
+    "logradouro":"RODOVIA DUQUE DE CAXIAS",
+    "numero":"S/N",
+    "bairro":"UBATUBA",
+    "cep":89240000,
+    "telefone":"47-34446277"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO LEONARDO WESSHEIMER",
+    "latitude":-26.7245110749509,
+    "longitude":-53.539627790451,
+    "logradouro":"RUA OIAPOC",
+    "numero":"1",
+    "bairro":"AGOSTINI",
+    "cep":89900000,
+    "telefone":"(49) 3621-2991"
+  },
+  {
+    "name":"UNIDADE MISTA DR BERNARDINO MITIDIERI",
+    "latitude":-11.14446,
+    "longitude":-37.61606,
+    "logradouro":"AV ANTONIO FERNANDES VIANA DE ASSIS",
+    "numero":"280",
+    "bairro":"CENTRO",
+    "cep":49360000,
+    "telefone":"(79)3645-2248"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO ZULMIRA SOARES",
+    "latitude":-9.79847,
+    "longitude":-37.69028,
+    "logradouro":"RUA ALTO DO GADO MANSO",
+    "numero":"S/N",
+    "bairro":"LIDIA SOUZA CRUZ",
+    "cep":49810000,
+    "telefone":"7933371415"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO 24 H DR FRANCISCO ROLLEMBERG",
+    "latitude":-9.90948,
+    "longitude":-37.278,
+    "logradouro":"PRACA ANTONIO PINTO DE REZENDE",
+    "numero":"226",
+    "bairro":"CENTRO",
+    "cep":49800000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PROTO ATENDIMENTO 24 H PEDRO VALADARES",
+    "latitude":-10.73227,
+    "longitude":-37.81446,
+    "logradouro":"RUA JULIO MANOEL DE OLIVEIRA",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":49480000,
+    "telefone":"(079)3611-2221"
+  },
+  {
+    "name":"UPA DR ANTONIO ALONSO MARTINEZ VILA XAVIER",
+    "latitude":-21.78586,
+    "longitude":-48.15989,
+    "logradouro":"RUA JOSE DO PATROCINIO",
+    "numero":"660",
+    "bairro":"VILA XAVIER",
+    "cep":14810150,
+    "telefone":""
+  },
+  {
+    "name":"UPA CENTRAL AMELIA BERNARDINI CUTRALE",
+    "latitude":-21.78706,
+    "longitude":-48.17213,
+    "logradouro":"AVENIDA MARIA ANTONIA CAMARGO DE OLIVEIRA",
+    "numero":"S/N",
+    "bairro":"VILA FERROVIARIA",
+    "cep":14802330,
+    "telefone":"016 33011010"
+  },
+  {
+    "name":"UPA PORTE II 24HS JD CEREJEIRAS ATIBAIA",
+    "latitude":-23.117,
+    "longitude":-46.55,
+    "logradouro":"PRACA ORIENTAL",
+    "numero":"50",
+    "bairro":"JD CEREJEIRAS",
+    "cep":12951006,
+    "telefone":"11 4412-2969"
+  },
+  {
+    "name":"UPA 24H BATATAIS JOSE ANTONIO DA SILVA NETO",
+    "latitude":-20.89163,
+    "longitude":-47.58564,
+    "logradouro":"AV MOACIR DIAS DE MORAIS",
+    "numero":"525",
+    "bairro":"JOAQUIM MARINHEIRO",
+    "cep":14300000,
+    "telefone":"(16) 37619499"
+  },
+  {
+    "name":"UPA IPIRANGA",
+    "latitude":-22.35017,
+    "longitude":-49.10343,
+    "logradouro":"RUA JOSE MIGUEL",
+    "numero":"11",
+    "bairro":"VILA NIPONICA",
+    "cep":17052170,
+    "telefone":"3106-1121"
+  },
+  {
+    "name":"UPA BELA VISTA",
+    "latitude":-22.3087,
+    "longitude":-49.08925,
+    "logradouro":"RUA MARCAL DE ARRUDA CAMPOS",
+    "numero":"4",
+    "bairro":"VILA LEMOS",
+    "cep":17063060,
+    "telefone":"3109-2460"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-23.3382194378987,
+    "longitude":-46.8390539288521,
+    "logradouro":"RUA ALFREDO DELL VIGNA",
+    "numero":"253",
+    "bairro":"JORDANESIA",
+    "cep":7776395,
+    "telefone":"(11)44474058"
+  },
+  {
+    "name":"PRONTO ATENDIMENTO DR SERGIO AROUCA CAMPO GRANDE",
+    "latitude":-22.9071,
+    "longitude":-47.06323,
+    "logradouro":"R DIRCE DE OLIVEIRA SANTOS",
+    "numero":"280",
+    "bairro":"CAMPO GRANDE",
+    "cep":13058002,
+    "telefone":"32218505"
+  },
+  {
+    "name":"UPA JARDIM PAINEIRAS",
+    "latitude":-23.69041,
+    "longitude":-46.62692,
+    "logradouro":"RUA JAVARI",
+    "numero":"635",
+    "bairro":"JARDIM PAINEIRAS",
+    "cep":9932210,
+    "telefone":"40915467"
+  },
+  {
+    "name":"UPA 24 HS UNIDADE DE PRONTO ATENDIMENTO DR MARIO NUNES MIRAN",
+    "latitude":-22.211,
+    "longitude":-49.656,
+    "logradouro":"RUA DR ORLANDO THIAGO DOS SANTOS",
+    "numero":"120",
+    "bairro":"WILLIANS",
+    "cep":17400000,
+    "telefone":"14-3406.4564"
+  },
+  {
+    "name":"UPA ENSEADA PAULO FLAVIO AFONSO PIASENTI GUARUJA",
+    "latitude":-23.9763322636666,
+    "longitude":-46.2224864959717,
+    "logradouro":"AVENIDA D PEDRO I",
+    "numero":"S/N",
+    "bairro":"ENSEADA",
+    "cep":11450000,
+    "telefone":"33513661"
+  },
+  {
+    "name":"UPA DE VICENTE DE CARVALHO GUARUJA",
+    "latitude":-23.95025,
+    "longitude":-46.2882,
+    "logradouro":"AV SAO JOAO",
+    "numero":"111",
+    "bairro":"PAE CARA",
+    "cep":11410070,
+    "telefone":"(13)33426176"
+  },
+  {
+    "name":"UPA SAO JOAO LAVRAS",
+    "latitude":-23.4050390775484,
+    "longitude":-46.4468259887695,
+    "logradouro":"ESTRADA GUARULHOS NAZARE",
+    "numero":"4130",
+    "bairro":"CIDADE SOBERANA",
+    "cep":7162000,
+    "telefone":"1122292240"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA PORTE 1",
+    "latitude":-23.987170794015,
+    "longitude":-48.8772311339378,
+    "logradouro":"PRACA ESPIRIDIAO LUCIO MARTINS",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":18400020,
+    "telefone":"15 35213242"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO 24HS DE ITATIBA",
+    "latitude":-23.006,
+    "longitude":-46.839,
+    "logradouro":"RUA BENEDITA CARRA CORRADINE",
+    "numero":"S/N",
+    "bairro":"PQ EMPRESARIAL",
+    "cep":13257570,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE JALES",
+    "latitude":-20.2668386402149,
+    "longitude":-50.5431595406532,
+    "logradouro":"RUA SEBASTIAO MARTINS",
+    "numero":"2373",
+    "bairro":"JD SAMAMBAIA",
+    "cep":15700202,
+    "telefone":"17-3632-8765"
+  },
+  {
+    "name":"UPA ZAIRA",
+    "latitude":-23.6508140728052,
+    "longitude":-46.4361190795898,
+    "logradouro":"AVENIDA WASHINGTON LUIZ",
+    "numero":"1952",
+    "bairro":"JARDIM ZAIRA",
+    "cep":9390140,
+    "telefone":"(11)4519-4533"
+  },
+  {
+    "name":"UPA MAGINI CENTRO",
+    "latitude":-23.6599338533124,
+    "longitude":-46.4508819580078,
+    "logradouro":"WASHINGTON LUIS",
+    "numero":"3890",
+    "bairro":"VILA MAGINI",
+    "cep":9390140,
+    "telefone":"(11)4518-1988"
+  },
+  {
+    "name":"UPA VILA ASSIS",
+    "latitude":-23.6936557909735,
+    "longitude":-46.4705801010132,
+    "logradouro":"AVENIDA DOM JOSE GASPAR",
+    "numero":"2129",
+    "bairro":"JARDIM ANCHIETA",
+    "cep":9360470,
+    "telefone":"(11)4513-1613"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE OLIMPIA",
+    "latitude":-20.737,
+    "longitude":-48.915,
+    "logradouro":"AVENIDA WALDEMAR LOPES FERRAZ",
+    "numero":"288",
+    "bairro":"CENTRO",
+    "cep":15400000,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO OURINHOS",
+    "latitude":-22.979,
+    "longitude":-49.871,
+    "logradouro":"RUA CELESTINO LOPES BAHIA",
+    "numero":"545",
+    "bairro":"VILA SAO LUIZ",
+    "cep":19911205,
+    "telefone":"1433262494"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE PERUIBE UPA24H",
+    "latitude":-24.32,
+    "longitude":-46.998,
+    "logradouro":"AVENIDADE TEREZINHA RODRIGUES KALLIL",
+    "numero":"S/N",
+    "bairro":"PARQUE DAVILLE",
+    "cep":11750000,
+    "telefone":"13 34541589"
+  },
+  {
+    "name":"UPA PIRACICAMIRIM DR FORTUNATO LOSSO NETO PIRACICABA",
+    "latitude":-22.73946,
+    "longitude":-47.62742,
+    "logradouro":"RUA RIO GRANDE DO NORTE",
+    "numero":"135",
+    "bairro":"VILA PRUDENTE",
+    "cep":13420500,
+    "telefone":"(19) 3426-5973"
+  },
+  {
+    "name":"UPA VILA CRISTINA FREI SIGRIST PIRACICABA",
+    "latitude":-22.74587,
+    "longitude":-47.66133,
+    "logradouro":"AVENIDA RAPOSO TAVARES",
+    "numero":"1737",
+    "bairro":"VILA CRISTINA",
+    "cep":13401530,
+    "telefone":"(19) 3434-2296"
+  },
+  {
+    "name":"UPA VILA REZENDE DR ALFREDO J DE C NEVES PIRACICABA",
+    "latitude":-22.70447,
+    "longitude":-47.65828,
+    "logradouro":"AVENIDA CONCEICAO",
+    "numero":"350",
+    "bairro":"VILA REZENDE",
+    "cep":13405280,
+    "telefone":"(19) 3421-1439"
+  },
+  {
+    "name":"UPA VILA SONIA NESTOR LONGATTO PIRACICABA",
+    "latitude":-22.67106,
+    "longitude":-47.69336,
+    "logradouro":"RUA BRIGADEIRO EDUARDO GOMES",
+    "numero":"106",
+    "bairro":"VILA SONIA",
+    "cep":13408212,
+    "telefone":"(19) 3425-3284"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DOUTOR CHARLES ANTUNES BECHARA",
+    "latitude":-24.0390028059028,
+    "longitude":-46.5212738513947,
+    "logradouro":"AV MARGINAL",
+    "numero":"4000",
+    "bairro":"SAMAMBAIA",
+    "cep":11712400,
+    "telefone":""
+  },
+  {
+    "name":"UPA SANTA LUZIA",
+    "latitude":-23.711,
+    "longitude":-46.413,
+    "logradouro":"ESTRADA DA COLONIA",
+    "numero":"2959",
+    "bairro":"SANTA LUZIA",
+    "cep":9405390,
+    "telefone":"48228000"
+  },
+  {
+    "name":"UPA DR LUIS ATILIO LOSI VIANA RIBEIRAO PRETO",
+    "latitude":-21.1762192348755,
+    "longitude":-47.7910528755188,
+    "logradouro":"AVENIDA TREZE DE MAIO",
+    "numero":"353",
+    "bairro":"JARDIM PAULISTANO",
+    "cep":14090270,
+    "telefone":"16 39722868"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24 HS RIO CLARO",
+    "latitude":-22.411,
+    "longitude":-47.561,
+    "logradouro":"AV 29",
+    "numero":"1313",
+    "bairro":"ESTADIO",
+    "cep":13501104,
+    "telefone":"(19) 3524-9577"
+  },
+  {
+    "name":"UPA DR FABIO AUGUSTO CARMO ZACURA SCRPARDO",
+    "latitude":-22.899,
+    "longitude":-49.633,
+    "logradouro":"R GASTAO VIDIGAL ESQ C FRANCISCO DE ABREU SODRE",
+    "numero":"S/N",
+    "bairro":"ESTACAO",
+    "cep":18900000,
+    "telefone":"(014)3332-2790"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA I SANTA ISABEL",
+    "latitude":-23.316,
+    "longitude":-46.221,
+    "logradouro":"RUA PRESIDENTE CASTELO BRANCO",
+    "numero":"320",
+    "bairro":"JAGUARI",
+    "cep":7500000,
+    "telefone":""
+  },
+  {
+    "name":"UPA SACADURA CABRAL",
+    "latitude":-23.6564528754624,
+    "longitude":-46.5577732448578,
+    "logradouro":"RUA LAURO MULLER",
+    "numero":"354",
+    "bairro":"SACADURA CABRAL",
+    "cep":9061260,
+    "telefone":"44211224"
+  },
+  {
+    "name":"UPA CENTRO",
+    "latitude":-23.6631303340258,
+    "longitude":-46.5261660938263,
+    "logradouro":"RUA AGENOR DE CARMARGO",
+    "numero":"129",
+    "bairro":"CENTRO",
+    "cep":9020220,
+    "telefone":"49947651"
+  },
+  {
+    "name":"UPA JARDIM SANTO ANDRE",
+    "latitude":-23.7073162891516,
+    "longitude":-46.4957927589417,
+    "logradouro":"RUA DOS DOMINICANOS",
+    "numero":"2011",
+    "bairro":"JARDIM SANTO ANDRE",
+    "cep":9132150,
+    "telefone":"4451-2689"
+  },
+  {
+    "name":"UPA RIACHO GRANDE",
+    "latitude":-23.7820145090025,
+    "longitude":-46.5299864435196,
+    "logradouro":"RUA MARCILIO CONRADO",
+    "numero":"333",
+    "bairro":"RIACHO GRANDE",
+    "cep":9830291,
+    "telefone":"11-41018264"
+  },
+  {
+    "name":"UPA BAETA NEVES",
+    "latitude":-23.6999411981585,
+    "longitude":-46.5440465831757,
+    "logradouro":"RUA DOS VIANAS",
+    "numero":"933",
+    "bairro":"BAETA NEVES",
+    "cep":9760001,
+    "telefone":"4125-2100/4125-9139"
+  },
+  {
+    "name":"UPA DEMARCHI BATISTINI",
+    "latitude":-23.7445713538472,
+    "longitude":-46.5641765618324,
+    "logradouro":"RUA VALDOMIRO LUIZ",
+    "numero":"303",
+    "bairro":"DEMARCHI",
+    "cep":9820340,
+    "telefone":"4368-4333"
+  },
+  {
+    "name":"UPA PAULICEIA TABOAO",
+    "latitude":-23.6709891219505,
+    "longitude":-46.583013715744,
+    "logradouro":"RUA PEDRO DE TOLEDO",
+    "numero":"326",
+    "bairro":"PAULICEIA",
+    "cep":9692060,
+    "telefone":"4178-4309"
+  },
+  {
+    "name":"UPA RUDGE RAMOS",
+    "latitude":-23.6555144352873,
+    "longitude":-46.5740873241425,
+    "logradouro":"RUA ANGELA TOME",
+    "numero":"256",
+    "bairro":"RUDGE RAMOS",
+    "cep":9624070,
+    "telefone":"4368-1222"
+  },
+  {
+    "name":"UPA SAO PEDRO",
+    "latitude":-23.7187601657234,
+    "longitude":-46.5269394540787,
+    "logradouro":"DOM PEDRO DE ALCANTARA",
+    "numero":"273",
+    "bairro":"VILA SAO PEDRO",
+    "cep":9771281,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIAO ALVARENGA",
+    "latitude":-23.740657771544,
+    "longitude":-46.5982701206207,
+    "logradouro":"ESTRADA DOS ALVARENGA",
+    "numero":"5779",
+    "bairro":"ALVARENGA",
+    "cep":9850550,
+    "telefone":"11 4129-2744"
+  },
+  {
+    "name":"UPA ALVES DIAS ASSUNCAO",
+    "latitude":-23.7242557841612,
+    "longitude":-46.5769841098785,
+    "logradouro":"AV HUMBERTO DE ALENCAR CASTELO BRANCO",
+    "numero":"4220",
+    "bairro":"ALVES DIAS",
+    "cep":9851000,
+    "telefone":"4104-4018"
+  },
+  {
+    "name":"UPA SILVINA",
+    "latitude":-23.7272564217479,
+    "longitude":-46.5487082624435,
+    "logradouro":"AVENIDA DR JOSE FORNARI",
+    "numero":"509",
+    "bairro":"FERRAZOPOLIS",
+    "cep":9790400,
+    "telefone":"11 43388536"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-22.01269,
+    "longitude":-47.89116,
+    "logradouro":"AVENIDA GRECIA",
+    "numero":"229",
+    "bairro":"VILA PRADO",
+    "cep":13574140,
+    "telefone":"16-33712100"
+  },
+  {
+    "name":"UPA JAGUARE",
+    "latitude":-20.7772234001358,
+    "longitude":-49.3664043464661,
+    "logradouro":"AVENIDA DANILO GALEAZZI",
+    "numero":"2450",
+    "bairro":"JARDIM JAGUARE",
+    "cep":15051000,
+    "telefone":"17-32151192"
+  },
+  {
+    "name":"UPA REGIAO NORTE",
+    "latitude":-20.78085,
+    "longitude":-49.41049,
+    "logradouro":"R MANOEL MORENO ESQ R JOSEPHA VOLTARELLI SANFELICE",
+    "numero":"130",
+    "bairro":"JARDIM ANTUNES",
+    "cep":15047050,
+    "telefone":"17-32375315"
+  },
+  {
+    "name":"UPA DR GERALDO C P REIS",
+    "latitude":-21.208098872715,
+    "longitude":-47.6026439666748,
+    "logradouro":"GABRIEL JOSE DO VALE",
+    "numero":"235",
+    "bairro":"JD ROMULO MONTANARI",
+    "cep":14150000,
+    "telefone":"(16) 3987-1513"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA TUPA",
+    "latitude":-21.94069,
+    "longitude":-50.51305,
+    "logradouro":"RUA IPIRANGA",
+    "numero":"S/N",
+    "bairro":"JARDIM PAULISTA",
+    "cep":17605400,
+    "telefone":"14 3441-4292"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-23.03,
+    "longitude":-46.975,
+    "logradouro":"AVENIDA AURELIO JOSE FREDIANI",
+    "numero":"45",
+    "bairro":"JARDIM SANTA ROSA",
+    "cep":13280000,
+    "telefone":"(19) 3886-4472"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR DIORANDI FIGUEIRA DA COSTA",
+    "latitude":-20.42034,
+    "longitude":-49.97829,
+    "logradouro":"RUA JOAO RODRIGUES AGOSTINHO",
+    "numero":"2701",
+    "bairro":"PARQUE VILA SAUDE",
+    "cep":15502327,
+    "telefone":"(17)34051446"
+  },
+  {
+    "name":"UPA ANATOLIO DIAS CARNEIRO ARAGUAINA",
+    "latitude":-7.1926886339806,
+    "longitude":-48.1857588887215,
+    "logradouro":"RUA DOS PINHEIROS",
+    "numero":"S/N",
+    "bairro":"ARAGUAINA SUL",
+    "cep":77804970,
+    "telefone":""
+  },
+  {
+    "name":"UPA DR MARCIA MUCKY",
+    "latitude":-11.7266211598972,
+    "longitude":-49.0848755836487,
+    "logradouro":"AVENIDA FERNANDO DE NORONHA",
+    "numero":"99",
+    "bairro":"JARDIM SAO LUCAS",
+    "cep":77405140,
+    "telefone":"(63)3315-0027"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO NORTE",
+    "latitude":-10.16889,
+    "longitude":-48.33171,
+    "logradouro":"103 NORTE RUA NE 07 LT 12 14",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":77001032,
+    "telefone":"(63) 2185110"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO SUL",
+    "latitude":-10.16889,
+    "longitude":-48.33171,
+    "logradouro":"RUA PERIMENTRAL 2",
+    "numero":"4",
+    "bairro":"AURENY II",
+    "cep":77270000,
+    "telefone":"(63)32185569"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MACAIBA",
+    "latitude":-5.86330513994496,
+    "longitude":-35.3476524353027,
+    "logradouro":"AVENIDA JUNDIAI",
+    "numero":"100",
+    "bairro":"ESTRADA DE JUNDIAI",
+    "cep":59280000,
+    "telefone":"(84)3271-4204"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO CONJUNTO CEARA",
+    "latitude":-3.717,
+    "longitude":-38.543,
+    "logradouro":"RUA 860",
+    "numero":"S/N",
+    "bairro":"CONJUNTO CEARA",
+    "cep":60532400,
+    "telefone":"3216 8316"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO SILVIA MANTOVANI",
+    "latitude":-23.2769461378304,
+    "longitude":-51.2783433227539,
+    "logradouro":"RUA CARAJAS",
+    "numero":"479",
+    "bairro":"JD TUPI",
+    "cep":86183080,
+    "telefone":"3174-0552"
+  },
+  {
+    "name":"UPA GEISEL",
+    "latitude":-22.315,
+    "longitude":-49.061,
+    "logradouro":"RUA ANTONIO MANOEL DA COSTA",
+    "numero":"S/N",
+    "bairro":"AVENIDA HIPODROMO",
+    "cep":17033841,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA DE MOGI GUACU",
+    "latitude":-22.3355876754236,
+    "longitude":-46.9524121284485,
+    "logradouro":"RUA ORLANDA PEREIRA BUENO",
+    "numero":"S/N",
+    "bairro":"JARDIM SANTA MARTA",
+    "cep":13846575,
+    "telefone":"1938185556"
+  },
+  {
+    "name":"PA LESTE 24 HORAS AVENTUREIRO",
+    "latitude":-26.24315,
+    "longitude":-48.81985,
+    "logradouro":"RUA MAFALDA LAURINDO",
+    "numero":"0",
+    "bairro":"AVENTUREIRO",
+    "cep":89204360,
+    "telefone":"4734354221"
+  },
+  {
+    "name":"UPA 24 HORAS IRMA DULCE MARECHAL DEODORO AL",
+    "latitude":-9.7741937355274,
+    "longitude":-35.8506712317467,
+    "logradouro":"RUA CORIMA",
+    "numero":"S/N",
+    "bairro":"FRANCES",
+    "cep":57160000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE EUSEBIO",
+    "latitude":-3.89355752440029,
+    "longitude":-38.4496834874153,
+    "logradouro":"RUA IRMA AMBROSINA",
+    "numero":"395",
+    "bairro":"CENTRO",
+    "cep":61760000,
+    "telefone":"32605303"
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO JOSE WALTER",
+    "latitude":-3.717,
+    "longitude":-38.543,
+    "logradouro":"AV PRESIDENTE COSTA E SILVA",
+    "numero":"S/N",
+    "bairro":"JOSE WALTER",
+    "cep":60750022,
+    "telefone":"85 32168316"
+  },
+  {
+    "name":"UPA DE HORIZONTE",
+    "latitude":-4.08486,
+    "longitude":-38.65085,
+    "logradouro":"RUA CIRO BILHAR",
+    "numero":"1285",
+    "bairro":"CENTRO",
+    "cep":62880000,
+    "telefone":"8533366043"
+  },
+  {
+    "name":"UPA DE PENTECOSTE",
+    "latitude":-3.78936303923511,
+    "longitude":-39.257937669754,
+    "logradouro":"RUA GONCALO SALES PESSOA",
+    "numero":"14",
+    "bairro":"SAO FRANCISCO",
+    "cep":62640000,
+    "telefone":"85 33522619"
+  },
+  {
+    "name":"UPA DR JOAO BATISTA DE SOUSA JUNIOR",
+    "latitude":-16.7808708227935,
+    "longitude":-49.3686532974243,
+    "logradouro":"AVENIDA RIO VERMELHO",
+    "numero":"S/N",
+    "bairro":"RESIDENCIAL ITAIPU",
+    "cep":74356002,
+    "telefone":"062 - 32884522"
+  },
+  {
+    "name":"UPA DR WALFRIDO ARRUDA CORONEL ANTONINO",
+    "latitude":-20.4322,
+    "longitude":-54.60354,
+    "logradouro":"RUA DR MEIRELES",
+    "numero":"S/N",
+    "bairro":"CORONEL ANTONINO",
+    "cep":79011060,
+    "telefone":"33144191 // 33144195"
+  },
+  {
+    "name":"UPA DR ALESSANDRO MARTINS DE SOUZA E SILVA VILA ALMEIDA",
+    "latitude":-20.44372,
+    "longitude":-54.6553,
+    "logradouro":"RUA MINISTRO JOSE LINHARES",
+    "numero":"S/N",
+    "bairro":"VILA PALMIRA",
+    "cep":79112190,
+    "telefone":"33147324 // 33147323"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MORADA DO OURO",
+    "latitude":-15.5698331144356,
+    "longitude":-56.0551146240234,
+    "logradouro":"RUA 17",
+    "numero":"S/N",
+    "bairro":"MORADA DO OURO",
+    "cep":78080000,
+    "telefone":"3645 - 5700"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO 24 HORAS",
+    "latitude":-25.4345169991531,
+    "longitude":-49.192098777771,
+    "logradouro":"RUA WANDA DOS SANTOS MALLMANN",
+    "numero":"710",
+    "bairro":"CENTRO",
+    "cep":83323390,
+    "telefone":"(41)30599292"
+  },
+  {
+    "name":"UPA 24 HORAS GUAJUVIRAS",
+    "latitude":-29.918,
+    "longitude":-51.184,
+    "logradouro":"AVENIDA BOQUEIRAO",
+    "numero":"2901",
+    "bairro":"ESTANCIA VELHA",
+    "cep":92032420,
+    "telefone":"51 21021129"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE FRANCO DA ROCHA UPA II",
+    "latitude":-23.33272,
+    "longitude":-46.72746,
+    "logradouro":"NELSON RODRIGUES",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":7850331,
+    "telefone":"(11)4819-6011"
+  },
+  {
+    "name":"UPA BARAO DE MAUA",
+    "latitude":-23.6694109439843,
+    "longitude":-46.4246392250048,
+    "logradouro":"AV BARAO DE MAUA",
+    "numero":"3567",
+    "bairro":"JARDIM MARINGA",
+    "cep":9340440,
+    "telefone":"(11)4546-2872"
+  },
+  {
+    "name":"UPA VILA MENCK",
+    "latitude":-23.4971705129348,
+    "longitude":-46.7684180183411,
+    "logradouro":"RUA DR ALBERT JACKSON BYNGTON",
+    "numero":"822",
+    "bairro":"VILA MENCK",
+    "cep":6273050,
+    "telefone":"36831725 - 3683-1847"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE SAO BENEDITO",
+    "latitude":-4.04265,
+    "longitude":-40.85915,
+    "logradouro":"AVENIDA TABAJARA",
+    "numero":"S/N",
+    "bairro":"CORRENTE",
+    "cep":62370000,
+    "telefone":""
+  },
+  {
+    "name":"UPA PADRE HONORINO JOAO MURARO",
+    "latitude":-31.322003962093,
+    "longitude":-54.0913152694702,
+    "logradouro":"RUA FELIX CONTREIRA RODRIGUES",
+    "numero":"S/N",
+    "bairro":"GETULIO VARGAS",
+    "cep":96400050,
+    "telefone":"53 32475733"
+  },
+  {
+    "name":"UPA DR MARIO RUIVO DE CUBATAO",
+    "latitude":-23.9247039310726,
+    "longitude":-46.4165966391564,
+    "logradouro":"AV JOEL GONCALVES DE OLIVEIRA",
+    "numero":"222",
+    "bairro":"PQ SAO LUIZ",
+    "cep":11533480,
+    "telefone":"13-3361.6388"
+  },
+  {
+    "name":"UPA JAD MORADA DO SOL INDAIATUBA",
+    "latitude":-23.12484,
+    "longitude":-47.23618,
+    "logradouro":"AVENIDA ENG FABIO ROBERTO BARNABE",
+    "numero":"6020",
+    "bairro":"JAD MORADA DO SOL",
+    "cep":13346490,
+    "telefone":"(19)38354900"
+  },
+  {
+    "name":"UPA MARICA 24H",
+    "latitude":-22.919,
+    "longitude":-42.819,
+    "logradouro":"RUA EUCLIDES DE PAULO DA SILVA",
+    "numero":"S/N",
+    "bairro":"INOA",
+    "cep":24942375,
+    "telefone":"21-26367228"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24HS ARACOIABA",
+    "latitude":-4.36859321138593,
+    "longitude":-38.8052478432655,
+    "logradouro":"AV DA INDEPENDENCIA",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":62750000,
+    "telefone":"85 33375517"
+  },
+  {
+    "name":"UPA IRMA JUDITE DINIZ",
+    "latitude":-4.35542,
+    "longitude":-39.30712,
+    "logradouro":"RUA PEDRO MOREIRA",
+    "numero":"1496",
+    "bairro":"SANTA LUZIA",
+    "cep":62700000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE CRATEUS",
+    "latitude":-5.17378,
+    "longitude":-40.67327,
+    "logradouro":"RUA JOELSON SILVA BARROS",
+    "numero":"S/N",
+    "bairro":"CIDADE NOVA",
+    "cep":63700000,
+    "telefone":"88-36912019"
+  },
+  {
+    "name":"UPA DRA LEILA MARIA ALEXANDRINO CIDRAO FEITOSA",
+    "latitude":-6.00186,
+    "longitude":-40.28909,
+    "logradouro":"AV CHERMONN ALVES DE OLIVEIRA",
+    "numero":"494",
+    "bairro":"NOVA ALDEOTA",
+    "cep":63660000,
+    "telefone":"(88)34372016"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MANOEL FRANCISCO DE AGUIAR",
+    "latitude":-4.00934248259906,
+    "longitude":-49.4599700317383,
+    "logradouro":"AV BELEM",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":68488000,
+    "telefone":"94737860788"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24H",
+    "latitude":-27.096,
+    "longitude":-52.618,
+    "logradouro":"RUA SETE DE SETEMBRO",
+    "numero":"S/N",
+    "bairro":"PRESIDENTE MEDICE",
+    "cep":89801500,
+    "telefone":""
+  },
+  {
+    "name":"UPA PARQUE IRACEMA",
+    "latitude":-21.148051631999,
+    "longitude":-48.9492570858002,
+    "logradouro":"AVENIDA THEODORO ROSA FILHO",
+    "numero":"1500",
+    "bairro":"PARQUE IRACEMA",
+    "cep":15809007,
+    "telefone":"17-35252665"
+  },
+  {
+    "name":"UPA DR JOSE ROBERTO LOPES FERRAZ",
+    "latitude":-20.214562665916,
+    "longitude":-50.928298830986,
+    "logradouro":"RUA UM",
+    "numero":"800",
+    "bairro":"CENTRO",
+    "cep":15775000,
+    "telefone":"17- 36311015"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO 24H TABATINGA UPA TABATINGA",
+    "latitude":-4.049983,
+    "longitude":-69.7644353,
+    "logradouro":"RUA CORONEL BERG",
+    "numero":"S/N",
+    "bairro":"VILAPARAISO",
+    "cep":69640000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO ITAPERI",
+    "latitude":-3.71701,
+    "longitude":-38.53926,
+    "logradouro":"RUA BETEL",
+    "numero":"S/N",
+    "bairro":"ITAPERI",
+    "cep":60110110,
+    "telefone":"32952768"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE RUSSAS",
+    "latitude":-4.94627543485279,
+    "longitude":-37.9692649841309,
+    "logradouro":"RUA PROJETADA",
+    "numero":"S/N",
+    "bairro":"PLANALTO",
+    "cep":62900000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE SAO GONCALO DO AMARANTE",
+    "latitude":-3.60441,
+    "longitude":-38.96768,
+    "logradouro":"RUA DO CAJUEIRO",
+    "numero":"S/N",
+    "bairro":"PECEM",
+    "cep":62675000,
+    "telefone":"(85)3315-1111"
+  },
+  {
+    "name":"UPA D ZILDA ARNS",
+    "latitude":-16.1100036116407,
+    "longitude":-47.9746797680855,
+    "logradouro":"PRACA KATIA ENTREQUADRAS 25 26 PARQUE MARAJO",
+    "numero":"5",
+    "bairro":"PARQUE MARAJO",
+    "cep":72874218,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO 24H",
+    "latitude":-20.7541876212059,
+    "longitude":-51.6796875,
+    "logradouro":"RUA IRMAOS SPINELLI",
+    "numero":"1855",
+    "bairro":"PARQUE SAO CARLOS",
+    "cep":79621140,
+    "telefone":"67 3929-1254"
+  },
+  {
+    "name":"UPA 24 HORAS TIMBAUBA PE",
+    "latitude":-7.50322,
+    "longitude":-35.31768,
+    "logradouro":"BR 408 KM 29",
+    "numero":"S/N",
+    "bairro":"ARARUNA",
+    "cep":55870000,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE PRONTO ATENDIMENTO DE FAZENDA RIO GRANDE",
+    "latitude":-25.65457,
+    "longitude":-49.30491,
+    "logradouro":"RUA RIO TEJO",
+    "numero":"515",
+    "bairro":"SANTA TEREZINHA",
+    "cep":83829000,
+    "telefone":""
+  },
+  {
+    "name":"UPA INFANTIL WALTER GARCIA",
+    "latitude":-22.7947999147779,
+    "longitude":-43.3079834282398,
+    "logradouro":"RUA GENERAL ARGOLO",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":25070260,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24H ESPERANCA",
+    "latitude":-5.82457254272579,
+    "longitude":-35.2366733551025,
+    "logradouro":"AVENIDA PARAIBA",
+    "numero":"S/N",
+    "bairro":"CIDADE DA ESPERANCA",
+    "cep":59070200,
+    "telefone":"32322378"
+  },
+  {
+    "name":"UPA SAO JOSE",
+    "latitude":-22.7633146503151,
+    "longitude":-47.3414767084122,
+    "logradouro":"AV DE CILLO",
+    "numero":"2310",
+    "bairro":"JD SAO JOSE",
+    "cep":13467000,
+    "telefone":"19 34612517"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO 24H BRAGANCA PAULISTA",
+    "latitude":-22.95119,
+    "longitude":-46.53859,
+    "logradouro":"RUA SEBASTIAO CICERO FRANCO",
+    "numero":"S/N",
+    "bairro":"VILA DAVID",
+    "cep":12908040,
+    "telefone":"11-40316223"
+  },
+  {
+    "name":"UPA JD AMANDA PASTOR ENEAS DE CASTRO GAMA",
+    "latitude":-22.89716389324,
+    "longitude":-47.2405671787262,
+    "logradouro":"RUA WASHINGTOM LUIS",
+    "numero":"1066",
+    "bairro":"JD AMANDA",
+    "cep":13188100,
+    "telefone":"(19)38974485"
+  },
+  {
+    "name":"UPA JD ROSOLEM JOSE PEREIRA DE AMORIM",
+    "latitude":-22.898248597962,
+    "longitude":-47.1746948075295,
+    "logradouro":"RUA ORLANDO PAVAN",
+    "numero":"395",
+    "bairro":"JD ROSOLEM",
+    "cep":13185300,
+    "telefone":"19-38456104"
+  },
+  {
+    "name":"UPA DR AKIRA TADA",
+    "latitude":-23.6153797921568,
+    "longitude":-46.7780464677811,
+    "logradouro":"ESTRADA SAO FRANCISCO",
+    "numero":"2400",
+    "bairro":"JARDIM HENRIQUETA",
+    "cep":6765290,
+    "telefone":"47873020 / 47018153"
+  },
+  {
+    "name":"UPA 24 HORAS",
+    "latitude":-21.40373,
+    "longitude":-48.50288,
+    "logradouro":"AV VICENTE JOSE PARISE",
+    "numero":"2100",
+    "bairro":"CENTRO",
+    "cep":15900000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24 HORAS",
+    "latitude":-22.9505689339012,
+    "longitude":-46.9809722900391,
+    "logradouro":"AV GESSY LEVER",
+    "numero":"550",
+    "bairro":"LENHEIRO",
+    "cep":13270005,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO DE PORTO NACIONAL",
+    "latitude":-10.6903310707249,
+    "longitude":-48.4036050481797,
+    "logradouro":"RUA MARIA ANGELICA DA SILVA PRADO",
+    "numero":"S/N",
+    "bairro":"NOVA CAPITAL",
+    "cep":77500000,
+    "telefone":""
+  },
+  {
+    "name":"UPA JOSE ISABEL DE NASCIMENTO",
+    "latitude":-19.46768,
+    "longitude":-42.53537,
+    "logradouro":"AVENIDA GERASA",
+    "numero":"820",
+    "bairro":"CANAA",
+    "cep":35164200,
+    "telefone":""
+  },
+  {
+    "name":"UPA I CEILANDIA SOL NASCENTE",
+    "latitude":-15.77463,
+    "longitude":-47.92463,
+    "logradouro":"QNN 27 AREA ESPECIAL D",
+    "numero":"1",
+    "bairro":"CEILANDIA",
+    "cep":72225270,
+    "telefone":"34719000"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO PALMEIRA DOS INDIOS",
+    "latitude":-9.40441,
+    "longitude":-36.62328,
+    "logradouro":"RUA BRAULIO MONTINEGRO",
+    "numero":"S/N",
+    "bairro":"VILA MARIA",
+    "cep":57607520,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24H VALERIA",
+    "latitude":-12.8709875950571,
+    "longitude":-38.429417930603,
+    "logradouro":"RUA DO LAVRADOR",
+    "numero":"S/N",
+    "bairro":"VALERIA",
+    "cep":41300470,
+    "telefone":"(71) 3500-2600"
+  },
+  {
+    "name":"UPA SIMOES FILHO",
+    "latitude":-12.78401,
+    "longitude":-38.40237,
+    "logradouro":"AVENIDA ELMO SEREJO DE FARIAS",
+    "numero":"S/N",
+    "bairro":"CIA I",
+    "cep":43700000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO JANGURUSSU",
+    "latitude":-3.71701,
+    "longitude":-38.53926,
+    "logradouro":"AV CONTORNO SUL",
+    "numero":"S/N",
+    "bairro":"JANGURUSSU",
+    "cep":60875205,
+    "telefone":"32952768"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE IGUATU UPA",
+    "latitude":-6.35576,
+    "longitude":-39.29265,
+    "logradouro":"RUA 25 DE MARCO",
+    "numero":"S/N",
+    "bairro":"PARANA",
+    "cep":63500595,
+    "telefone":""
+  },
+  {
+    "name":"UPA PORTE III CASTANHAL GOVERNADOR ALMIR GABRIEL",
+    "latitude":-1.29662203603212,
+    "longitude":-47.9459452629089,
+    "logradouro":"BR 316",
+    "numero":"S/N",
+    "bairro":"CRISTO REDENTOR",
+    "cep":68745000,
+    "telefone":"91-889 9843"
+  },
+  {
+    "name":"SES RJ UPA 24 H SAO PEDRO DA ALDEIA",
+    "latitude":-22.83689,
+    "longitude":-42.10169,
+    "logradouro":"RODOVIA AMARAL PEIXOTO",
+    "numero":"S/N",
+    "bairro":"SAO PEDRO DA ALEDIA",
+    "cep":28940000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-24.5037235475537,
+    "longitude":-47.8517623128891,
+    "logradouro":"RUA NELSON BRIHI BADUR",
+    "numero":"605",
+    "bairro":"JARDIM SAO NICOLAU",
+    "cep":11900000,
+    "telefone":"13 38213155"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE LAJEADO UPA 24H",
+    "latitude":-29.4611226340212,
+    "longitude":-52.0050716400146,
+    "logradouro":"RUA CARLOS SPOHR FILHO",
+    "numero":"3480",
+    "bairro":"MOINHOS DAGUA",
+    "cep":95900000,
+    "telefone":"(51) 3982-1473"
+  },
+  {
+    "name":"UPA CAMPO LIMPO",
+    "latitude":-23.54198,
+    "longitude":-46.63503,
+    "logradouro":"TEREZA MOUCO DE OLIVEIRA",
+    "numero":"121",
+    "bairro":"CAMPO LIMPO",
+    "cep":5835005,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA LIMOEIRO",
+    "latitude":-7.20796,
+    "longitude":-39.30932,
+    "logradouro":"CAPITAO DOMINGOS",
+    "numero":"S/N",
+    "bairro":"LIMOEIRO",
+    "cep":63010010,
+    "telefone":"8835124696"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO 24H DR ANTONIO MAGALHAES",
+    "latitude":-4.95867709358722,
+    "longitude":-39.0340496599674,
+    "logradouro":"RUA DOS VOLUNTARIOS",
+    "numero":"S/N",
+    "bairro":"RENASCER",
+    "cep":63901150,
+    "telefone":""
+  },
+  {
+    "name":"SECRETARIA MUNICIPAL DE SAUDE",
+    "latitude":-20.67564,
+    "longitude":-40.49939,
+    "logradouro":"RUA ADAMASTOR ANTONIO DA SILVA",
+    "numero":"S/N",
+    "bairro":"MUQUICABA",
+    "cep":29215020,
+    "telefone":"(27)32615686"
+  },
+  {
+    "name":"UPA 24 HORAS PADRE ROBERTO CORDEIRO MARTINS",
+    "latitude":-20.1568623639037,
+    "longitude":-44.8624348640442,
+    "logradouro":"RUA NILO MACIEL",
+    "numero":"241",
+    "bairro":"PONTE FUNDA",
+    "cep":35500485,
+    "telefone":"37-32213662"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE SAO BENEDITO",
+    "latitude":-19.7844418391488,
+    "longitude":-43.9328020105362,
+    "logradouro":"RUA SENHOR DO BONFIM",
+    "numero":"1052",
+    "bairro":"SAO BENEDITO",
+    "cep":33105000,
+    "telefone":"(31)36371992"
+  },
+  {
+    "name":"UPA 24H BATEL",
+    "latitude":-25.3987120316991,
+    "longitude":-51.4762551145553,
+    "logradouro":"RUA BARAO DO CAPANEMA",
+    "numero":"1701",
+    "bairro":"BATEL",
+    "cep":85015314,
+    "telefone":"42 36239719"
+  },
+  {
+    "name":"SES RJ UPA 24H MAGE",
+    "latitude":-22.65169,
+    "longitude":-43.03774,
+    "logradouro":"RUA A",
+    "numero":"S/N",
+    "bairro":"PIABETA",
+    "cep":25900000,
+    "telefone":""
+  },
+  {
+    "name":"UPA EUGENIO DE MELO",
+    "latitude":-23.13786,
+    "longitude":-45.78352,
+    "logradouro":"RUA CORONEL EUGENIO AUGUSTO DE MELO",
+    "numero":"101",
+    "bairro":"EUGENIO DE MELO",
+    "cep":12247190,
+    "telefone":"1239052152"
+  },
+  {
+    "name":"UPA 24 HORAS ALTO DA PONTE",
+    "latitude":-23.15325,
+    "longitude":-45.90132,
+    "logradouro":"RUA ALZIRO LEBRAO",
+    "numero":"70",
+    "bairro":"ALTO DA PONTE",
+    "cep":12212500,
+    "telefone":"12 35193700"
+  },
+  {
+    "name":"UPA CAMPO DOS ALEMAES",
+    "latitude":-23.27458,
+    "longitude":-45.89961,
+    "logradouro":"RUA JOAO DE OLIVEIRA E SILVA",
+    "numero":"S/N",
+    "bairro":"CAMPO DOS ALEMAES",
+    "cep":12239290,
+    "telefone":"(12) 39661108/39662357"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MACARENKO UPA 24H",
+    "latitude":-22.81972,
+    "longitude":-47.26096,
+    "logradouro":"RUA VINICIUS DE MORAES",
+    "numero":"380",
+    "bairro":"JARDIM MACARENKO",
+    "cep":13171817,
+    "telefone":"19 33996100"
+  },
+  {
+    "name":"UPA 24H SAN MARTIN",
+    "latitude":-12.9430146277881,
+    "longitude":-38.4841820597649,
+    "logradouro":"RUA DO FORNO",
+    "numero":"S/N",
+    "bairro":"SAN MARTIN",
+    "cep":40010010,
+    "telefone":"(71) 3481-8033"
+  },
+  {
+    "name":"UPA PREFEITO OSVALDO CANDIDO DE QUEIROZ",
+    "latitude":-20.06887,
+    "longitude":-44.30102,
+    "logradouro":"RUA SANTOS DUMONT",
+    "numero":"690",
+    "bairro":"MARECHAL RONDON",
+    "cep":32900000,
+    "telefone":"31 - 3534-1648"
+  },
+  {
+    "name":"UPA 24 HORAS VENANCIO AIRES",
+    "latitude":-29.6039,
+    "longitude":-52.18859,
+    "logradouro":"VOLUNTARIOS DA PATRIA",
+    "numero":"2500",
+    "bairro":"CRUZEIRO",
+    "cep":95800000,
+    "telefone":"5137932100"
+  },
+  {
+    "name":"HOSPITAL GERAL DE CLINICAS DE RIO BRANCO",
+    "latitude":-9.96591,
+    "longitude":-67.81424,
+    "logradouro":"AV NACOES UNIDAS",
+    "numero":"700",
+    "bairro":"BOSQUE",
+    "cep":69900970,
+    "telefone":"(68) 3223 3080"
+  },
+  {
+    "name":"UPA DA CIDADE DO POVO DR EDILBERTO PARIGOT DE SOUZA FILHO",
+    "latitude":-9.98000901344787,
+    "longitude":-67.8261566162109,
+    "logradouro":"AVENIDA 1",
+    "numero":"S/N",
+    "bairro":"CIDADE DO POVO",
+    "cep":69900970,
+    "telefone":"68 3215 4231"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DE CORURIPE",
+    "latitude":-10.12209,
+    "longitude":-36.17209,
+    "logradouro":"RUA EDGAR CASSIANO DOS SANTOS",
+    "numero":"152",
+    "bairro":"ZEQUINHA AZEVEDO",
+    "cep":57230000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE PRONTO ATENDIMENTO CRISTO REDENTOR",
+    "latitude":-3.71701,
+    "longitude":-38.53926,
+    "logradouro":"AV PRESIDENTE CASTELO BRANCO",
+    "numero":"S/N",
+    "bairro":"JACARECANGA",
+    "cep":60312060,
+    "telefone":"31952768"
+  },
+  {
+    "name":"UPA III DR ALAIR MAFRA ANAPOLIS GOIAS",
+    "latitude":-16.32277,
+    "longitude":-48.95169,
+    "logradouro":"RUA 29 DE DEZEMBRO",
+    "numero":"S/N",
+    "bairro":"VILA ESPERANCA",
+    "cep":75133450,
+    "telefone":""
+  },
+  {
+    "name":"UPA POCOS DE CALDAS",
+    "latitude":-21.7856986919544,
+    "longitude":-46.5508639812469,
+    "logradouro":"RUA BANDEIRA DO SUL",
+    "numero":"0",
+    "bairro":"JOSE CARLOS",
+    "cep":37701000,
+    "telefone":"3536975398"
+  },
+  {
+    "name":"UPA DR JUVENAL PAIVA",
+    "latitude":-19.4705321842322,
+    "longitude":-44.212594628334,
+    "logradouro":"AV TONICO REIS",
+    "numero":"1700",
+    "bairro":"VAPABUCU",
+    "cep":35701877,
+    "telefone":"31 37748140"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA 24 HORAS",
+    "latitude":-2.44758099912498,
+    "longitude":-54.7018182277679,
+    "logradouro":"AV CURUA UNA",
+    "numero":"S/N",
+    "bairro":"SAO JOSE OPERARIO",
+    "cep":68020650,
+    "telefone":""
+  },
+  {
+    "name":"UPA ATALAIA DRA RITA DE CASSIA SORIO",
+    "latitude":-23.606778606524,
+    "longitude":-46.922607421875,
+    "logradouro":"ESTRADA DO MORRO GRANDE",
+    "numero":"623",
+    "bairro":"ATALAIA",
+    "cep":6700650,
+    "telefone":"1146164055"
+  },
+  {
+    "name":"UPA MANOEL GEORGINO LOPES",
+    "latitude":-22.858,
+    "longitude":-47.22,
+    "logradouro":"RUA JOSE MARTIM DOS ANJOS",
+    "numero":"185",
+    "bairro":"JD NOVA HORTOLANDIA",
+    "cep":13183612,
+    "telefone":""
+  },
+  {
+    "name":"SECRETARIA MUNICIPAL DE SAUDE DE ITANHAEM",
+    "latitude":-24.18117,
+    "longitude":-46.78998,
+    "logradouro":"ESTRADA GENTIL PEREZ",
+    "numero":"260",
+    "bairro":"UMUARAMA",
+    "cep":11740000,
+    "telefone":""
+  },
+  {
+    "name":"UPA PUTIM",
+    "latitude":-23.2450872367633,
+    "longitude":-45.8324101567268,
+    "logradouro":"AVENIDA JOAO RODOLFO CASTELLI",
+    "numero":"1035",
+    "bairro":"PUTIM",
+    "cep":12228000,
+    "telefone":"012 39291019"
+  },
+  {
+    "name":"SECRETARIA MUNICIPAL DE SAUDE",
+    "latitude":-16.0513,
+    "longitude":-48.03188,
+    "logradouro":"QD 470",
+    "numero":"1",
+    "bairro":"PEDREGAL",
+    "cep":72860470,
+    "telefone":"6136281077"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA",
+    "latitude":-20.89181,
+    "longitude":-45.27311,
+    "logradouro":"AVENIDA PREFEITO WANDERLEY LUIS MAIA",
+    "numero":"105",
+    "bairro":"CIDADE MONTESA",
+    "cep":37270000,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24 HORAS SANTA ROSA",
+    "latitude":-27.8676567269003,
+    "longitude":-54.486219578743,
+    "logradouro":"RUA CAXIAS",
+    "numero":"1011",
+    "bairro":"CENTRO",
+    "cep":98900000,
+    "telefone":""
+  },
+  {
+    "name":"UPA SADAKO SEDOGUTI",
+    "latitude":-23.4383459603564,
+    "longitude":-46.3223205308914,
+    "logradouro":"RUA DOS CAJUEIROS",
+    "numero":"453",
+    "bairro":"RESIDENCIAL FLAMBOYA",
+    "cep":8588050,
+    "telefone":"(11)4647-0212"
+  },
+  {
+    "name":"UPA PORTE II",
+    "latitude":-3.50691015103334,
+    "longitude":-39.5712089538574,
+    "logradouro":"AV ESAU ALVES",
+    "numero":"S/N",
+    "bairro":"FAZENDINHA",
+    "cep":62500000,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO",
+    "latitude":-23.4063977673336,
+    "longitude":-51.4679453125,
+    "logradouro":"TICO TICO REI",
+    "numero":"S/N",
+    "bairro":"JARDIM CARAVELLE",
+    "cep":86702666,
+    "telefone":"43 39021238"
+  },
+  {
+    "name":"UPA VENEZA",
+    "latitude":-24.9701,
+    "longitude":-53.48721,
+    "logradouro":"RUA CAFE FILHO",
+    "numero":"1460",
+    "bairro":"JARDIM VENEZA",
+    "cep":85818130,
+    "telefone":"(45) 39022587"
+  },
+  {
+    "name":"UPA I SOBRADINHO",
+    "latitude":-15.77463,
+    "longitude":-47.92463,
+    "logradouro":"DF 420 KM2 COMPLEXO DE SAUDE",
+    "numero":"1",
+    "bairro":"SOBRADINHO II",
+    "cep":73080050,
+    "telefone":""
+  },
+  {
+    "name":"ITABIRITO UPA CELSO MATOS SILVA",
+    "latitude":-20.2641195102064,
+    "longitude":-43.7819793820381,
+    "logradouro":"RODOVIA DOS INCONFIDENTES KM 55 BR 356",
+    "numero":"S/N",
+    "bairro":"SANTA EFIGENIA",
+    "cep":35450000,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO UPA SANTA PAULA",
+    "latitude":-25.1022868551971,
+    "longitude":-50.2015894050598,
+    "logradouro":"RUA NICOLAU KLUPPEL NETO",
+    "numero":"S/N",
+    "bairro":"SANTA PAULA",
+    "cep":84051000,
+    "telefone":"42-32363339"
+  },
+  {
+    "name":"SECRETARIA MUNICIPAL DE SAUDE DE DELMIRO GOUVEIA",
+    "latitude":-9.38639,
+    "longitude":-37.99683,
+    "logradouro":"RUA LUIZ LUNA TORRES",
+    "numero":"291",
+    "bairro":"BAIRRO NOVO",
+    "cep":57480000,
+    "telefone":"8236411804"
+  },
+  {
+    "name":"UPA DA MANGABEIRA JAIRO DE JESUS SANTOS",
+    "latitude":-12.26667,
+    "longitude":-38.96667,
+    "logradouro":"LOTEAMENTO JARDIM DOS NAMORADOS",
+    "numero":"12",
+    "bairro":"MANGABEIRA",
+    "cep":44033095,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24H VILOBALDO MACEDO",
+    "latitude":-14.5253938987911,
+    "longitude":-40.374908080101,
+    "logradouro":"RUA SANTO ANTONIO",
+    "numero":"590",
+    "bairro":"INDAIA",
+    "cep":45260000,
+    "telefone":"7734315818"
+  },
+  {
+    "name":"UPA DO CABULA",
+    "latitude":-12.95658,
+    "longitude":-38.45121,
+    "logradouro":"ESTRADA SABOEIRO",
+    "numero":"S/N",
+    "bairro":"SABOEIRO",
+    "cep":41180900,
+    "telefone":"(71)33873404"
+  },
+  {
+    "name":"UPA VINHAIS",
+    "latitude":-2.53073,
+    "longitude":-44.30682,
+    "logradouro":"AVENIDA 02",
+    "numero":"S/N",
+    "bairro":"VINHAIS",
+    "cep":65070000,
+    "telefone":"(98) 2367535"
+  },
+  {
+    "name":"UPA III",
+    "latitude":-18.6092826911963,
+    "longitude":-46.5081938438416,
+    "logradouro":"RUA PELUZO",
+    "numero":"288",
+    "bairro":"JARDIM PELUZZO",
+    "cep":38700971,
+    "telefone":"34 3822-9641"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO EM BARRA MANSA RJ UPA",
+    "latitude":-22.5588230620341,
+    "longitude":-44.1660915575027,
+    "logradouro":"ANTONIO VINTURELLI NETTO",
+    "numero":"123",
+    "bairro":"BOA VISTA I",
+    "cep":27345030,
+    "telefone":"2433409813"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO REMI A MASCARELLO",
+    "latitude":-27.1817757008706,
+    "longitude":-51.5012374520302,
+    "logradouro":"RUA SANTOS DUMONT",
+    "numero":"1400",
+    "bairro":"SAO VICENTE",
+    "cep":89610000,
+    "telefone":"4935227432"
+  },
+  {
+    "name":"UPA ELISA S FRANCHOZZA ARARAS",
+    "latitude":-22.3514228280613,
+    "longitude":-47.3349206149578,
+    "logradouro":"AVENIDA IRINEU CARROCCI",
+    "numero":"400",
+    "bairro":"JOSE OMETTO II",
+    "cep":13606414,
+    "telefone":"35435112"
+  },
+  {
+    "name":"SECRETARIA MUNICIPAL DE SAUDE DE SALVADOR",
+    "latitude":-12.97269,
+    "longitude":-38.51376,
+    "logradouro":"RUA DA GRECIA",
+    "numero":"3",
+    "bairro":"COMERCIO",
+    "cep":40010010,
+    "telefone":"(71) 3186-1000/1074"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DRA VALERIA MACAMBIRA GUEDES",
+    "latitude":-6.88409972508888,
+    "longitude":-38.5535681247711,
+    "logradouro":"RUA DR JOSE MOREIRA",
+    "numero":"1",
+    "bairro":"CENTRO",
+    "cep":58900000,
+    "telefone":""
+  },
+  {
+    "name":"UPA 24H MUNICIPAL DE COMENDADOR SOARES",
+    "latitude":-22.7440031829046,
+    "longitude":-43.4959083795547,
+    "logradouro":"RUA DOS QUARTEIS",
+    "numero":"221",
+    "bairro":"COMENDADOR SOARES",
+    "cep":26275320,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO CENTRAL DE CARAGUATATUBA",
+    "latitude":-23.62599,
+    "longitude":-45.41937,
+    "logradouro":"AVENIDA MARANHAO",
+    "numero":"451",
+    "bairro":"JARDIM PRIMAVERA",
+    "cep":11660690,
+    "telefone":"12 38972100"
+  },
+  {
+    "name":"UAI SAO JORGE",
+    "latitude":-18.9595,
+    "longitude":-48.23619,
+    "logradouro":"RUA TOLEDO",
+    "numero":"165",
+    "bairro":"PARQUES LARANJEIRAS",
+    "cep":38410526,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO CELIO PIRES DE SA",
+    "latitude":-7.19860776017445,
+    "longitude":-34.8462040071487,
+    "logradouro":"RUA ESTEVAM LOPES GALVAO",
+    "numero":"1",
+    "bairro":"VALENTINA",
+    "cep":58064090,
+    "telefone":"3237-7880"
+  },
+  {
+    "name":"UPA RUI BARBOSA",
+    "latitude":-25.5493,
+    "longitude":-49.20733,
+    "logradouro":"AVENIDA RUI BARBOSA",
+    "numero":"10471",
+    "bairro":"COLONIA RIO GRANDE",
+    "cep":83025010,
+    "telefone":"(41) 3398 - 2710"
+  },
+  {
+    "name":"UPA 24HS GLEBA A GRAVATA",
+    "latitude":-12.6883288324898,
+    "longitude":-38.3337846984863,
+    "logradouro":"AVENIDA DO CANAL",
+    "numero":"S/N",
+    "bairro":"GLEBA A",
+    "cep":42800100,
+    "telefone":"71 30408304"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR AFRANIO MARTINS",
+    "latitude":-22.2481862883774,
+    "longitude":-54.7838288602829,
+    "logradouro":"RUA FREI ANTONIO",
+    "numero":"3675",
+    "bairro":"TERRA ROCHA",
+    "cep":79830020,
+    "telefone":"67 84685029"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR JUSTINO ALVES PEREIRA",
+    "latitude":-23.2625001214859,
+    "longitude":-51.0578656196594,
+    "logradouro":"AV SOUZA NAVES",
+    "numero":"1245",
+    "bairro":"JD MORADA DO SOL",
+    "cep":86200000,
+    "telefone":"43 3178 0348"
+  },
+  {
+    "name":"UPA RUY SILVA",
+    "latitude":-22.6643929999489,
+    "longitude":-50.4087066650391,
+    "logradouro":"RUA OSMAR LUCHINI",
+    "numero":"670",
+    "bairro":"JD AEROPORTO",
+    "cep":19813178,
+    "telefone":"(18)33225619"
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO ALEGRETE",
+    "latitude":-29.8129605488169,
+    "longitude":-55.7624259634018,
+    "logradouro":"MESTRE CACAIO",
+    "numero":"S/N",
+    "bairro":"CANUDOS",
+    "cep":97541475,
+    "telefone":""
+  },
+  {
+    "name":"UPA CAMPOS SALLES",
+    "latitude":-2.9644832,
+    "longitude":-59.9999329,
+    "logradouro":"RUA DONA OTILIA",
+    "numero":"649",
+    "bairro":"TARUMA",
+    "cep":69021005,
+    "telefone":"9232499050"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR JOSE ABILIO M DE BARROS",
+    "latitude":-19.0464073009114,
+    "longitude":-57.6441310739517,
+    "logradouro":"LUIZ FEITOSA RODRIGUES",
+    "numero":"S/N",
+    "bairro":"GUATOS",
+    "cep":79333030,
+    "telefone":""
+  },
+  {
+    "name":"UPA UNIDADE DE PRONTO ATENDIMENTO PRICESA ISABEL",
+    "latitude":-7.72460016648645,
+    "longitude":-37.9915809631348,
+    "logradouro":"RUA ALFREDO CARLOS DA COSTA",
+    "numero":"S/N",
+    "bairro":"MAIA",
+    "cep":58755000,
+    "telefone":"83-33457227"
+  },
+  {
+    "name":"UPA AFONSO PENA",
+    "latitude":-25.4979552885012,
+    "longitude":-49.1698867378235,
+    "logradouro":"RUA FRANCISCA DE SOUZA CORTES",
+    "numero":"460",
+    "bairro":"AFONSO PENA",
+    "cep":83065370,
+    "telefone":"41 3385-3502"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO MUNICIPAL 24 HS UPA",
+    "latitude":-28.6471776834314,
+    "longitude":-53.6065766749382,
+    "logradouro":"VENANCIO AIRES",
+    "numero":"1781",
+    "bairro":"CENTRO",
+    "cep":98005970,
+    "telefone":"55 33227777"
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO DR AVELINO G MARTINS NETO",
+    "latitude":-21.256719821444,
+    "longitude":-48.3265248866081,
+    "logradouro":"AVENIDA SETE DE SETEMBRO",
+    "numero":"750",
+    "bairro":"CENTRO",
+    "cep":14870570,
+    "telefone":"(16)32023610"
+  },
+  {
+    "name":"UPA JOSE FERNANDO DA SILVA SAO PEDRO",
+    "latitude":-22.5450909872861,
+    "longitude":-47.9146759166717,
+    "logradouro":"RUA MALAQUIAS GERRA",
+    "numero":"162",
+    "bairro":"CENTRO",
+    "cep":13520000,
+    "telefone":"34819270"
+  },
+  {
+    "name":"ALMOXARIFADO CENTRAL",
+    "latitude":-24.7325171736018,
+    "longitude":-53.7671971321106,
+    "logradouro":"RUA PIRATINI",
+    "numero":"S/N",
+    "bairro":"CENTRO",
+    "cep":85909629,
+    "telefone":""
+  },
+  {
+    "name":"UPA PARQUE BEIRA MAR",
+    "latitude":-22.7321033343132,
+    "longitude":-43.3042311749887,
+    "logradouro":"ROD WASHINGTON LUIS",
+    "numero":"3200",
+    "bairro":"VILA SAO LUIS",
+    "cep":25070260,
+    "telefone":""
+  },
+  {
+    "name":"UNIDADE DE PRONTO ATENDIMENTO TIPO I UPA",
+    "latitude":0.0976098303872618,
+    "longitude":-51.046978533268,
+    "logradouro":"RUA FERNANDO ALVES DE OLIVEIRA",
+    "numero":"S/N",
+    "bairro":"NOVO HORIZONTE",
+    "cep":68909806,
+    "telefone":""
+  },
+  {
+    "name":"UPA TANGARA ESTORIL",
+    "latitude":-20.8398947557013,
+    "longitude":-49.3744509735108,
+    "logradouro":"AVENIDA GETULIO VARGAS",
+    "numero":"384",
+    "bairro":"SAO FRANCISCO",
+    "cep":15086080,
+    "telefone":"17-32224184"
+  }
+]

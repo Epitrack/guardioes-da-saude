@@ -69,6 +69,11 @@ angular
         controller: 'HelpCtrl',
         controllerAs: 'help'
       })
+      .when('/add-profile', {
+        templateUrl: 'views/add-profile.html',
+        controller: 'AddProfileCtrl',
+        controllerAs: 'addProfile'
+      })
       .otherwise({
         redirectTo: '/'
       });
