@@ -74,6 +74,11 @@ angular
         controller: 'AddProfileCtrl',
         controllerAs: 'addProfile'
       })
+      .when('/survey', {
+        templateUrl: 'views/survey.html',
+        controller: 'SurveyCtrl',
+        controllerAs: 'survey'
+      })
       .otherwise({
         redirectTo: '/'
       });
