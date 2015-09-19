@@ -23,6 +23,7 @@
 .mainform {
 	border: 2px solid #fff;
 	border-radius: 5px; 
+	margin: 0 0 15px 0;
 }
 
 .mainform-input {
@@ -519,7 +520,7 @@
 		width: 100%;
     padding: 70px 0 0 0;
     border-top: 1px solid #ccc;
-	
+
 		.all-done {
 			width: 111.9px;
 			height: 111.9px;
@@ -532,10 +533,6 @@
 		  width: 213px;
 		  margin: 0 20px 22px 0;
 		  display: inline-block;
-		}
-
-		.social-signin:first-child {
-			margin-left: 19%;
 		}
 
     p, h3 {
@@ -551,6 +548,11 @@
     	width: 328px;
     	margin: 30.5px auto 20px auto;
     }
+
+		ul {
+			width: 470px;
+			margin: 0 auto;
+		}
 
 		.modal-options {
 
