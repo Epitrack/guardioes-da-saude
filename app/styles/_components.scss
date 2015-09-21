@@ -19,10 +19,10 @@
 }
 //==
 
-// 03 cadastro email 
+// 03 cadastro email
 .mainform {
 	border: 2px solid #fff;
-	border-radius: 5px; 
+	border-radius: 5px;
 	margin: 0 0 15px 0;
 }
 
@@ -137,7 +137,7 @@
 		font-size: 18px;
 		color: #4c4c4c;
 	}
-	
+
 	.total-weekly {
 		font-family: $ff-bold;
 		font-size: 24px;
@@ -240,11 +240,11 @@
 .member, .add-member {
 	float: left;
 	text-align: center;
-	
+
 	img {
 		margin: 0 0 15px 0;
 		width: 130px;
-		height: 130px;	
+		height: 130px;
 		webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
 		-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
 		box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
@@ -283,17 +283,17 @@
 	.panel-heading {
 		background: #1e88e5;
 		height: 40px;
-	
+
 		h3 {
 			font-family: $ff-light;
 			font-size: 14px;
 			color: #fff;
 		}
 	}
-	
+
 	.panel-body {
 		padding: 0;
-	
+
 		fieldset {
 
 			label {
@@ -346,7 +346,7 @@
 	.form-user {
 		float: left;
   	padding: 35px 0 0 0px;
-  	width: 61.5%;		
+  	width: 61.5%;
 
 		fieldset {
 			margin: 0 0 15px 0;
@@ -358,12 +358,12 @@
 				color: #4c4c4c;
 			}
 		}
-		
+
 		.radio-list {
 			float: left;
 			position: relative;
 			margin: 3px 0 0 0;
-			
+
 			label[for=sex] {
 				position: absolute;
 				top: -30px;
@@ -399,7 +399,7 @@
 		}
 
 		.first-data {
-		
+
 			.nickname {
 				float: left;
 				clear: both;
@@ -416,7 +416,7 @@
 
 		.second-data {
 			width: 600px;
-			
+
 			ul {
 
 				li {
@@ -446,12 +446,12 @@
 				}
 			}
 		}
-	
+
 		.modal-options {
 			border: none;
 			padding: 0;
 
-			.save-data {	
+			.save-data {
 				color: #fff;
 			}
 			.cancel-data {
@@ -466,13 +466,13 @@
 .choose-status {
 	float: left;
 	width: 212.2px;
+
 	a {
 		text-decoration: none;
-	}
 
-	:hover{
-		color: #fff;
-	}
+    &:hover{ color: #FFFFFF; }
+  }
+
 
 	img {
 		width: 100%;
@@ -587,14 +587,14 @@
 	.form-user {
 		float: left;
   	padding: 35px 0 0 0px;
-  	width: 61.5%;		
+  	width: 61.5%;
 
 		fieldset {
 			margin: 0 0 15px 0;
 		}
-	
+
 		.first-data {
-		
+
 			.nickname {
 				float: left;
 				clear: both;
@@ -611,7 +611,7 @@
 
 		.second-data {
 			width: 600px;
-			
+
 			ul {
 
 				li {
@@ -646,7 +646,7 @@
 				position: relative;
 				margin: 32px 0 0 0;
 				width: 100%;
-				
+
 				label[for=sex] {
 					position: absolute;
 					top: -30px;
@@ -681,12 +681,12 @@
 				}
 			}
 		}
-	
+
 		.modal-options {
 			border: none;
 			padding: 0;
 
-			.save-data {	
+			.save-data {
 				color: #fff;
 			}
 			.cancel-data {
@@ -699,9 +699,9 @@
 
 // 11.1 perfil usuario
 .edit-avatar {
-	
+
 	.panel-body {
-	
+
 		.form-user {
 
 			.avatars {
@@ -715,7 +715,7 @@
 					font-size: 14px;
 					color: #999;
 				}
-				
+
 				span {
 					position: absolute;
 			    top: 138px;
@@ -729,7 +729,7 @@
 					li {
 						float: left;
 						margin: 0 12px 11px 0;
-			
+
 						img {
 							width: 68px;
 							height: 68px;
@@ -737,7 +737,7 @@
 						}
 					}
 				}
-				
+
 				.choose-photo {
 					float: right;
     			padding: 0 37px 0 0;
@@ -756,7 +756,7 @@
 
 					.modal-options {
 						border: none;
-						
+
 						.save-data {
 							width: 179px;
 							height: 32px;
@@ -772,9 +772,9 @@
 					}
 				}
 
-			}		
+			}
 		}
-	}	
+	}
 }
 //==
 

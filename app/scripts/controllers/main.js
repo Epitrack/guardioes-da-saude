@@ -10,9 +10,8 @@
 angular.module('gdsApp')
   .controller('MainCtrl', ['$scope', function ($scope) {
 
-    $scope.openSubnav = function() {
-      var myEl = angular.element(document.getElementById('profiles'));
-          myEl.toggleClass('in');
+    $scope.openSubnav01 = function() {
+      $scope.healthDaily.active = !$scope.healthDaily.active;
     };
 
   }]);
