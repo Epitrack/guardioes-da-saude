@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="45px" height="46px" viewBox="0 0 45 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_phone_selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Smartphone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="health-tips-icons-web-white" sketch:type="MSLayerGroup" transform="translate(-206.000000, -6.000000)" fill="#FFFFFF">
+            <path d="M238.491,33.2977434 C237.761,32.8447434 236.669,32.9697434 236.045,33.5797434 L231.206,38.4167434 C230.587,39.0257434 229.604,39.0257434 228.994,38.4167434 L218.122,27.5387434 C217.513,26.9297434 217.513,25.9347434 218.122,25.3267434 L222.679,20.7707434 C223.286,20.1617434 223.376,19.0887434 222.884,18.3867434 L214.593,6.63074338 C214.102,5.92874338 213.142,5.79174338 212.469,6.32574338 C212.469,6.32574338 206,11.4607434 206,16.1747434 C206,35.4737434 221.648,51.1177434 240.944,51.1177434 C245.665,51.1177434 250.253,42.4607434 250.253,42.4607434 C250.652,41.7027434 250.39,40.7057434 249.653,40.2517434 L238.491,33.2977434" id="icon_phone_selected" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

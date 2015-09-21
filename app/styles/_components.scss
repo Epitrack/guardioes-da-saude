@@ -1,0 +1,790 @@
+// —————————————————————————
+//     Components
+// —————————————————————————
+
+
+// 01 home search
+.search-home {
+	font-family: $ff-light;
+	font-size: $fs-medium;
+	text-align: center;
+	background: url('../images/icon_search.svg') #fff no-repeat 6.5%;
+	background-size: 32.5px 32.6px;
+	border: 1px solid #ccc;
+	@include bdr(5px);
+	webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+	-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+	box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+	height: 78.1px;
+}
+//==
+
+// 03 cadastro email 
+.mainform {
+	border: 2px solid #fff;
+	border-radius: 5px; 
+	margin: 0 0 15px 0;
+}
+
+.mainform-input {
+	font-family: $ff-light;
+	font-size: 18px;
+	color: #a4cae6;
+	background: none;
+	border-bottom: 2px solid #fff;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	box-shadow: none;
+	text-align: left;
+	height: 42px;
+	padding: 0 0 0 15px;
+	border-radius: 0;
+}
+
+.mainform input:first-child {
+	border: 0 0 2px 0;
+}
+
+.mainform input:last-child {
+	border: 0;
+}
+
+.mainform .select, .mainform .select {
+	background: url("../images/icon_arrowdown.svg") no-repeat 96.8% 15px;
+}
+
+.btn-signup, .btn-confirm {
+	font-family: $ff-light;
+	font-size: 18px;
+	background: #fff;
+	color: $blue-dark;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+}
+
+.btn-signup:hover {
+	color: $blue-dark;
+}
+//==
+
+// 04 login social
+.social-signin {
+	margin: 0 0 22px 20px;
+
+	.social {
+		height: 38px;
+		font-family: $ff-light;
+		font-size: 18px;
+		background: #fff;
+		color: $blue-dark;
+		-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+		-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+		box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+	}
+
+	.login-facebook {
+		color: #fff;
+	  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
+	  background-size: 16.7px 31.7px;
+	}
+
+	.login-google {
+		color: #fff;
+	  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
+	  background-size: 16.3px 24.5px;
+	}
+
+	.login-facebook:hover, .login-google:hover{
+		color: #fff;
+	}
+
+	.login-twitter {
+		color: #5e9fca;
+	  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
+	  background-size: 25.3px 20.9px;
+	}
+
+	.login-twitter:hover {
+		color: #5e9fca;
+	}
+}
+//==
+
+// 06 mapa da saude
+.search-town {
+	font-family: $ff-light;
+	font-size: 1.6rem;
+	text-align: left;
+	background: url('../images/icon_search.svg') #fff no-repeat 6.5%;
+	background-size: 17.3px 17.3px;
+	border: 1px solid #ccc;
+	@include bdr(5px);
+	webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+	-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+	box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+	height: 41.5px;
+	padding: 5px 0 0 15%;
+}
+
+.weekly-users {
+	background: url("../images/icon_participations.svg") no-repeat 1px 3px;
+  padding: 0 0 0 60px;
+
+	h3 {
+		font-family: $ff-light;
+		font-size: 18px;
+		color: #4c4c4c;
+	}
+	
+	.total-weekly {
+		font-family: $ff-bold;
+		font-size: 24px;
+		float: left;
+		width: 100%;
+	}
+}
+
+.icon-small {
+	width: 29.9px;
+	height: 29.9px;
+	border-radius: 14px;
+}
+
+.icon-medium {
+	width: 59.7px;
+	height: 59.7px;
+	border-radius: 30px;
+}
+
+.icon-large {
+	border-radius: 110px;
+}
+
+.icon-shadow {
+	webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+	box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.metrics {
+	width: 140px;
+  height: auto;
+
+	img {
+		margin: 0px 30% 10% 30%;
+	}
+
+	.light {
+		font-family: $ff-light;
+	}
+
+	.total-percentage {
+	  font-family: $ff-bold;
+	  font-size: 24px;
+	  float: left;
+	  color: #4c4c4c;
+	  text-align: center;
+	  width: 100%;
+	}
+
+	.total-users {
+		font-family: $ff-light;
+	  font-size: 16px;
+	  color: #1e88e5;
+	  width: 100%;
+	  float: left;
+	}
+}
+
+.progress-container {
+  position: relative;
+ 	float: left;
+  height: 26px;
+  background: url("../images/icon_progress_bar.svg") no-repeat 0px 3px;
+  background-size: 22px 22px;
+  padding: 0 0 0 30px;
+  width: 100%;
+
+	  .sickness-info {
+		font-family: $ff-light;
+	  font-size: 14px;
+	  color: #4c4c4c;
+	}
+
+	.sickness-name {
+	  float: left;
+	}
+
+	.progress-percentage {
+	  float: right;
+	}
+
+	.progress-status {
+		background: #078ade;
+	}
+
+	.sickness {
+		height: 4.4px;
+	  background: #d7d7d7;
+	  bottom: 0px;
+	  width: 100%;
+	  margin-bottom: 0;
+	  border-radius: 0;
+	}
+}
+//==
+
+// 07 quem vai participar
+.member, .add-member {
+	float: left;
+	text-align: center;
+	
+	img {
+		margin: 0 0 15px 0;
+		width: 130px;
+		height: 130px;	
+		webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+		box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
+		border-radius: 65px;
+	}
+
+	h3, .age {
+		font-family: $ff-bold;
+		font-size: 24px;
+		color: #fff;
+		margin: 0;
+	}
+
+	.age {
+		font-family: $ff-light;
+	}
+
+}
+
+.add-member {
+
+	h3 {
+		font-family: $ff-light;
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+//==
+
+// 07.1 quem vai participar
+.main-modal {
+	float: left;
+	width: 100%;
+	border: none;
+
+	.panel-heading {
+		background: #1e88e5;
+		height: 40px;
+	
+		h3 {
+			font-family: $ff-light;
+			font-size: 14px;
+			color: #fff;
+		}
+	}
+	
+	.panel-body {
+		padding: 0;
+	
+		fieldset {
+
+			label {
+				float: left;
+				font-family: $ff-light;
+				font-size: 14px;
+				color: #4c4c4c;
+			}
+
+			input {
+				border: 1px solid #979797;
+    		border-radius: 5px;
+			}
+		}
+
+		.modal-options {
+			padding: 10px;
+    	border-top: 1px solid #ccc;
+			clear: both;
+
+			a {
+				float: right;
+				font-family: $ff-light;
+				font-size: 14px;
+				margin: 0 0 0 15px;
+			}
+		}
+	}
+}
+
+.add-new-member {
+
+	.avatar-user {
+		position: relative;
+		float: left;
+		padding: 37px 41px 0 41px;
+
+		img {
+			width: 168.9px;
+			height: 181.9px
+		}
+
+		.edit-user {
+			width: 179.9px;
+			height: 43px;
+			background: url('../images/bg_edit_user_button.svg') no-repeat;
+		}
+	}
+
+	.form-user {
+		float: left;
+  	padding: 35px 0 0 0px;
+  	width: 61.5%;		
+
+		fieldset {
+			margin: 0 0 15px 0;
+
+			label {
+				float: left;
+				font-family: $ff-light;
+				font-size: 14px;
+				color: #4c4c4c;
+			}
+		}
+		
+		.radio-list {
+			float: left;
+			position: relative;
+			margin: 3px 0 0 0;
+			
+			label[for=sex] {
+				position: absolute;
+				top: -30px;
+			}
+
+			li {
+				display: inline-block;
+		    position: relative;
+		    width: 79px;
+		    height: 12px;
+		    margin: 0 14px 0 0;
+
+				input[type=radio] {
+		    	float: left;
+		    	width: 16px;
+		    	height: 16px;
+		    }
+
+		    .sex {
+		    	float: right;
+		    	display: block;
+		    	background: #1e88e5;
+		    	border-radius: 3px;
+		    	color: #fff;
+		    	font-size: 11px;
+		    	width: 56px;
+		    	height: 18px;
+		    	text-align: center;
+		    	padding: 1px 0 0 0;
+		    	margin: 3px 0 0 0;
+		    }
+			}
+		}
+
+		.first-data {
+		
+			.nickname {
+				float: left;
+				clear: both;
+				width: 50%;
+				height: 34px;
+				margin: 0 14px 0 0;
+				border-radius: 5px;
+				border: 1px solid #979797;
+				webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+				-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+				box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+			}
+		}
+
+		.second-data {
+			width: 600px;
+			
+			ul {
+
+				li {
+					float: left;
+					margin: 0 11px 35px 0px;
+					width: 36%;
+					height: 34px;
+
+					.birth {
+						width: 77%;
+  					margin: 0px 2px 0 0;
+  					border-radius: 5px;
+					}
+
+					.open-calendar {
+						float: left;
+						width: 20%;
+						height: 34px;
+						background: url('../images/icon_calendar.svg') no-repeat;
+						border: none;
+					}
+
+					.race {
+						width: 100%;
+						background: url('../images/icon_select_modal_add_member.svg') no-repeat 96% center;
+					}
+				}
+			}
+		}
+	
+		.modal-options {
+			border: none;
+			padding: 0;
+
+			.save-data {	
+				color: #fff;
+			}
+			.cancel-data {
+				color: #4c4c4c;
+			}
+		}
+	}
+}
+//==
+
+// 08 como esta sua saude
+.choose-status {
+	float: left;
+	width: 212.2px;
+	a {
+		text-decoration: none;
+	}
+
+	:hover{
+		color: #fff;
+	}
+
+	img {
+		width: 100%;
+		height: 212.2px;
+	}
+
+	h3 {
+		font-family: $ff-light;
+		font-size: 35.8px;
+		color: #fff;
+		width: 100%;
+		text-align: center;
+	}
+}
+//==
+
+// 09.1 survey
+.confirmation {
+	.form-user {
+		width: 100%;
+    padding: 10px 0 0 0;
+    border-top: 1px solid #ccc;
+
+    p {
+    	font-family: $ff-light;
+    	font-size: 18px;
+    	color: #4c4c4c;
+    	padding: 0 0 0 10px;
+    }
+
+		.modal-options {
+
+    	a {
+    		float: right;
+    		margin: 0 0 0 10px;
+    	}
+		}
+	}
+}
+//==
+
+// 09.2 survey & 09.3
+.thanks {
+	.form-user {
+		width: 100%;
+    padding: 70px 0 0 0;
+    border-top: 1px solid #ccc;
+
+		.all-done {
+			width: 111.9px;
+			height: 111.9px;
+			margin: 0 auto;
+			margin-bottom: 20.8px;
+			display: inherit;
+		}
+
+		.social-signin {
+		  width: 213px;
+		  margin: 0 0 4% 3%;
+		  display: inline-block;
+		}
+
+    p, h3 {
+    	width: 419px;
+    	margin: 0 auto;
+    	font-family: $ff-light;
+    	font-size: 18px;
+    	color: #4c4c4c;
+    	text-align: center;
+    }
+
+    h3 {
+    	width: 328px;
+    	margin: 30.5px auto 20px auto;
+    }
+
+		ul {
+			width: 470px;
+			margin: 0 auto;
+		}
+
+		.modal-options {
+
+    	a {
+    		margin: 0 0 0 10px;
+    	}
+		}
+	}
+}
+//==
+
+// 11 perfil usuario
+.profile-general {
+
+	.avatar-user {
+		position: relative;
+		float: left;
+		padding: 37px 41px 0 41px;
+
+		img {
+			width: 168.9px;
+			height: 181.9px
+		}
+
+		.edit-user {
+			width: 179.9px;
+			height: 43px;
+			background: url('../images/bg_edit_user_button.svg') no-repeat;
+		}
+	}
+
+	.form-user {
+		float: left;
+  	padding: 35px 0 0 0px;
+  	width: 61.5%;		
+
+		fieldset {
+			margin: 0 0 15px 0;
+		}
+	
+		.first-data {
+		
+			.nickname {
+				float: left;
+				clear: both;
+				width: 100%;
+				height: 34px;
+				margin: 0 14px 0 0;
+				border-radius: 5px;
+				border: 1px solid #979797;
+				webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+				-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+				box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+			}
+		}
+
+		.second-data {
+			width: 600px;
+			
+			ul {
+
+				li {
+					float: left;
+					margin: 0 11px 35px 0px;
+					width: 36%;
+					height: 34px;
+
+					.birth {
+						width: 77%;
+  					margin: 0px 2px 0 0;
+  					border-radius: 5px;
+					}
+
+					.open-calendar {
+						float: left;
+						width: 20%;
+						height: 34px;
+						background: url('../images/icon_calendar.svg') no-repeat;
+						border: none;
+					}
+
+					.race {
+						width: 100%;
+						background: url('../images/icon_select_modal_add_member.svg') no-repeat 96% center;
+					}
+				}
+			}
+
+			.radio-list {
+				float: left;
+				position: relative;
+				margin: 32px 0 0 0;
+				width: 100%;
+				
+				label[for=sex] {
+					position: absolute;
+					top: -30px;
+				}
+
+				li {
+					display: inline-block;
+			    position: relative;
+			    width: 37%;
+			    height: 12px;
+			    margin: 0 14px 0 0;
+
+					input[type=radio] {
+			    	float: left;
+			    	width: 16px;
+			    	height: 16px;
+			    }
+
+			    .sex {
+			    	float: right;
+			    	display: block;
+			    	background: #1e88e5;
+			    	border-radius: 3px;
+			    	color: #fff;
+			    	font-size: 11px;
+			    	width: 56px;
+			    	height: 18px;
+			    	text-align: center;
+			    	padding: 1px 0 0 0;
+			    	margin: 3px 0 0 0;
+			    }
+				}
+			}
+		}
+	
+		.modal-options {
+			border: none;
+			padding: 0;
+
+			.save-data {	
+				color: #fff;
+			}
+			.cancel-data {
+				color: #4c4c4c;
+			}
+		}
+	}
+}
+//==
+
+// 11.1 perfil usuario
+.edit-avatar {
+	
+	.panel-body {
+	
+		.form-user {
+
+			.avatars {
+				float: left;
+				width: 100%;
+				position: relative;
+		    padding: 0 0 15px 15px;
+
+				h4, span {
+					font-family: $ff-light;
+					font-size: 14px;
+					color: #999;
+				}
+				
+				span {
+					position: absolute;
+			    top: 138px;
+			    left: 55%;
+				}
+
+				.choose-avatar {
+					float: left;
+					width: 320px;
+
+					li {
+						float: left;
+						margin: 0 12px 11px 0;
+			
+						img {
+							width: 68px;
+							height: 68px;
+							border-radius: 33px;
+						}
+					}
+				}
+				
+				.choose-photo {
+					float: right;
+    			padding: 0 37px 0 0;
+
+					h4 {
+						padding: 0 0 0 23px;
+					}
+
+					img {
+						float: right;
+						width: 179px;
+						height: 179px;
+						border-radius: 88px;
+						margin: 0 0 10px 0;
+					}
+
+					.modal-options {
+						border: none;
+						
+						.save-data {
+							width: 179px;
+							height: 32px;
+							background: #078ade;
+						}
+
+						.cancel-data {
+							background: url('../images/icon_upload.svg') no-repeat;
+							border: none;
+					    width: 37px;
+					    height: 35px;
+						}
+					}
+				}
+
+			}		
+		}
+	}	
+}
+//==
+
+
+
+
+
+
+
+
+
+
+

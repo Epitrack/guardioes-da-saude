@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="menu" sketch:type="MSLayerGroup" transform="translate(-30.000000, -4.000000)" fill="#FFFFFF">
+            <path d="M45,17.2129701 L45,19.0003309 L30,19.0003309 L30,17.2129701 L35.0004412,14.0002206 L35.0004412,12.7498621 C34.6917393,12.7498621 34.4065292,12.4401676 34.1441491,11.8191243 C33.8811073,11.198081 33.7500827,10.6749752 33.7500827,10.2501379 L33.7500827,7.75008272 C33.7500827,6.71710599 34.1170178,5.83368259 34.850557,5.10014338 C35.5837653,4.36759678 36.466527,4 37.5001654,4 C38.5331422,4 39.4165656,4.36759678 40.1501048,5.10014338 C40.8829822,5.83368259 41.2499173,6.71710599 41.2499173,7.75008272 L41.2499173,10.2501379 C41.2499173,10.6749752 41.1188927,11.198081 40.8565126,11.8191243 C40.5938017,12.4401676 40.3085916,12.7498621 40.0002206,12.7498621 L40.0002206,14.0002206 L45,17.2129701" id="icon_profile" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

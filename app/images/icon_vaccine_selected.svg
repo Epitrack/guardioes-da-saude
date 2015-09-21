@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="25px" height="60px" viewBox="0 0 25 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_vaccine_selected</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Smartphone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="health-tips-icons-web-white" sketch:type="MSLayerGroup" transform="translate(-123.000000, 0.000000)" fill="#FFFFFF">
+            <path d="M136.6888,10.764 L136.6888,6.6808 L143.8976,0.588 L143.8976,0.0024 C143.8912,0.0024 143.8864,0 143.88,0 L126.328,0 L126.328,0.6208 L133.4912,6.68 L133.4912,10.764 L123.0888,10.764 C123.0584,10.764 123.0296,10.772 123,10.7736 L123,15.02 C123.0304,15.0216 123.0592,15.0288 123.0888,15.0288 L126.3008,15.0288 L126.3008,49.1376 L133.4912,54.6144 L134.0952,59.2104 L136.0848,59.2104 L136.6888,54.6152 L143.88,49.1376 L143.88,15.0288 L147.1976,15.0288 L147.1976,10.7752 C147.1616,10.7736 136.6888,10.764 136.6888,10.764 L136.6888,10.764 Z M139.9944,17.428 L134.4128,17.428 L134.4128,20.6216 L139.9944,20.6216 L139.9944,23.036 L134.4128,23.036 L134.4128,26.2296 L139.9944,26.2296 L139.9944,28.644 L134.4128,28.644 L134.4128,31.8376 L139.9944,31.8376 L139.9944,34.252 L130.188,34.252 L130.188,15.0136 L139.9944,15.0136 L139.9944,17.428 L139.9944,17.428 Z" id="icon_vaccine_selected" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
