@@ -3,9 +3,9 @@
     <ul>
       <!-- <li><a ng-href="#/dashboard" class="dashboard" title="Painel de Controle">Painel de Controle</a></li> -->
       <li>
-        <a ng-click="openSubnav01()" class="health-daily dropdown" title="Diário de Saúde">Diário de Saúde</a>
+        <a ng-click="active = !active" class="health-daily dropdown" title="Diário de Saúde">Diário de Saúde</a>
 
-        <ul class="nav nav-list collapse in sub-nav" id="health-dailys" ng-show="healthDaily.active">
+        <ul class="nav nav-list sub-nav" id="health-dailys" ng-hide="!active">
           <li><a ng-href="#/health-daily">Aninha</a></li>
           <li><a ng-href="#/health-daily">Dudu</a></li>
           <li><a ng-href="#/health-daily">Carol</a></li>
@@ -13,9 +13,9 @@
       </li>
 
       <li>
-        <a ng-click="openSubNav()" class="profile dropdown" title="Perfil">Perfil</a>
+        <a ng-click="profileActive = ! profileActive" class="profile dropdown" title="Perfil">Perfil</a>
 
-        <ul class="nav nav-list collapse in sub-nav" id="profiles">
+        <ul class="nav nav-list sub-nav" id="profiles" ng-hide="!profileActive">
           <li><a ng-href="#/profile">Aninha</a></li>
           <li><a ng-href="#/add-profile">Adicionar membro</a></li>
         </ul>

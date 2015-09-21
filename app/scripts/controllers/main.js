@@ -8,10 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
+  .controller('MainCtrl', function () {
 
-    $scope.openSubnav01 = function() {
-      $scope.healthDaily.active = !$scope.healthDaily.active;
-    };
-
-  }]);
+  });

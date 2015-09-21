@@ -415,8 +415,8 @@ body {
       background-repeat: no-repeat;
       background-position: 95% center;
       background-size: 5%;
-      @include bsd(-1px, 3px, 6px, rgba(0, 0, 0, .3));
       @include path('nav/icon-dropdown.svg');
+      // @include bsd(-1px, 3px, 6px, rgba(0, 0, 0, .3));
     }
 
     &.dashboard {
