@@ -8,11 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', function ($scope) {
+  .controller('MainCtrl', function () {
 
-    $scope.openSubnav = function() {
-      var myEl = angular.element(document.getElementById('profiles'));
-          myEl.toggleClass('in');
-    };
-
-  }]);
+  });
