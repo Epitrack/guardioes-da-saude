@@ -732,7 +732,7 @@ body {
     overflow: hidden;
 
     img {
-      max-width: 100%;
+      width: 100%;
       @include scale3d(1);
       @include transition(transform, .2s, 0s, linear);
     }
