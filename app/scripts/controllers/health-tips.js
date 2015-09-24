@@ -41,7 +41,7 @@ angular.module('gdsApp')
     };
 
     // get user location and load map
-    $scope.loadMap();
+    // $scope.loadMap();
 
     $scope.sampleTips = function() {
       $scope.defaultTips = "";
@@ -63,22 +63,6 @@ angular.module('gdsApp')
       healthTips.getFarmacias(function(data) {
         $scope.farmacias = data;
       });
-    };
-
-    $scope.loadVacinas = function() {
-      $scope.vacinas = "";
-    };
-
-    $scope.loadTelefonesUteis = function() {
-      $scope.telefones = "";
-    };
-
-    $scope.loadCuidadosBasicos = function() {
-      $scope.cuidados = "";
-    };
-
-    $scope.loadPrevencoes = function() {
-      $scope.prevencoes = "";
     };
 
   }]);
