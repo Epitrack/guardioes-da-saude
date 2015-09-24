@@ -14,7 +14,7 @@ angular.module('gdsApp')
     var upas = [];
 
     obj.getUpas = function(callback) {
-      $http.get('https://gist.githubusercontent.com/thulioph/035de62d0d40e0c7ac5a/raw/3f011b92fbcb0da22c12ab15e6852e50401097c9/upas.json')
+      $http.get('assets/upas.json')
         .success(function(data) {
           upas = data;
           callback(data);

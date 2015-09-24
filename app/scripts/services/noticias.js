@@ -14,7 +14,7 @@ angular.module('gdsApp')
     var noticias = [];
 
     obj.getNoticias = function(callback) {
-      $http.get('http://localhost/epitrack/guardioes-da-saude/assets/noticias.json')
+      $http.get('assets/noticias.json')
       .success(function(data) {
         noticias = data;
         callback(data);
