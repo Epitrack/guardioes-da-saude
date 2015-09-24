@@ -84,6 +84,11 @@ angular
         controller: 'Component01Ctrl',
         controllerAs: 'components'
       })
+      .when('/noticias', {
+        templateUrl: 'views/noticias.html',
+        controller: 'NoticiasCtrl',
+        controllerAs: 'noticias'
+      })
       .otherwise({
         redirectTo: '/'
       });

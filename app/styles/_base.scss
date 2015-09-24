@@ -201,12 +201,12 @@ $bg-secondary:                       $black-ligthen;
 }
 
 // scale
-@mixin scale3d($scaleX, $scaleY, $scaleZ) {
-  -webkit-transform: scale($scaleX, $scaleY, $scaleZ);
-     -moz-transform: scale($scaleX, $scaleY, $scaleZ);
-      -ms-transform: scale($scaleX, $scaleY, $scaleZ);
-       -o-transform: scale($scaleX, $scaleY, $scaleZ);
-          transform: scale($scaleX, $scaleY, $scaleZ);
+@mixin scale3d($rulers...) {
+  -webkit-transform: scale($rulers);
+     -moz-transform: scale($rulers);
+      -ms-transform: scale($rulers);
+       -o-transform: scale($rulers);
+          transform: scale($rulers);
 }
 
 // animation

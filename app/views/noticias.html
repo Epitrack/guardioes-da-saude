@@ -1,0 +1,28 @@
+<div class="wrapper-internal wrapper-full-page">
+  <div class="container-fluid">
+    <div class="row">
+      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+        <h2 class="title-primary">Notícias</h2>
+
+        <article class="col-xs-12 col-sm-6 col-md-4 news-card" ng-repeat="new in noticias">
+          <time datetime="{{ new.datestamp }}" class="news-date">{{ new.day }} <span>/ {{ new.month }}</span></time>
+
+          <a href="{{ new.url }}" class="news-link" target="_blank">
+            <figure>
+            <img src="images/news/{{ new.image }}.png" alt="{{ new.title }}">
+              <figcaption>{{ new.title }}</figcaption>
+            </figure>
+
+            <footer class="news-footer">
+              <span class="news-address">{{ new.address }}</span>
+              <span class="news-read-more">Ler mais</span>
+            </footer>
+          </a>
+        </article>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div ng-include src="'views/partials/footer-not-logged.html'"></div>
