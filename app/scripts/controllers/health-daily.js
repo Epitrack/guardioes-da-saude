@@ -8,10 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('HealthDailyCtrl', ['$scope', function ($scope) {
+    $scope.pageClass = 'health-daily-page';
+  }]);

@@ -1,0 +1,72 @@
+// —————————————————————————
+//     Animations
+// —————————————————————————
+
+//
+// Keyframes
+//
+
+@-webkit-keyframes moveToLeftFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeftFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRightFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRightFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+// ====
+
+
+
+//
+// Pages
+//
+
+.page {
+  &.ng-leave { z-index:9999; }
+  &.ng-enter { z-index:8888; }
+
+  &.whatever-page {
+    &.ng-leave {
+      -webkit-animation: moveToLeftFade .7s ease-in-out both;
+      animation: moveToLeftFade .7s ease-in-out both;
+    }
+
+    &.ng-enter {
+      -webkit-animation: moveToRightFade .7s ease-in-out both;
+      animation: moveToRightFade .7s ease-in-out both;
+    }
+  }
+
+  &.add-profile-page {}
+
+  &.dashboard-page {}
+
+  &.noticias-page {}
+
+  &.health-daily-page {}
+
+  &.health-tips-page {}
+
+  &.help-page {}
+
+  &.login-email-page {}
+
+  &.news-page {}
+
+  &.profile-page {}
+
+  &.survey-page {}
+}
+
+// ====

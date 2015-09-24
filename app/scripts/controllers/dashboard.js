@@ -8,10 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('DashboardCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('DashboardCtrl', ['$scope', function ($scope) {
+    $scope.pageClass = 'dashboard-page';
+  }]);

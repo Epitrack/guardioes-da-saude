@@ -8,10 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('CadastroCtrl', ['$scope', function ($scope) {
+    $scope.pageClass = 'cadastro-page';
+  }]);

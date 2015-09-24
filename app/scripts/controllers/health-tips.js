@@ -10,6 +10,8 @@
 angular.module('gdsApp')
   .controller('HealthTipsCtrl', ['$scope', 'healthTips', function ($scope, healthTips) {
 
+    $scope.pageClass = 'health-tips-page';
+
     $scope.loadMap = function() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(mapLeaFlet, errorGeolocation);

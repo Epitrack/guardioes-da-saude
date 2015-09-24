@@ -10,6 +10,8 @@
 angular.module('gdsApp')
   .controller('NoticiasCtrl', ['$scope', 'noticias', function ($scope, noticias) {
 
+    $scope.pageClass = 'noticias-page';
+
     noticias.getNoticias(function(data) {
       $scope.noticias = data;
     });

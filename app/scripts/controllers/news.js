@@ -8,10 +8,11 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('NewsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('NewsCtrl', ['$scope', 'noticias', function ($scope, noticias) {
+    $scope.pageClass = 'news-page';
+
+    noticias.getNoticias(function(data) {
+      $scope.noticias = data;
+    });
+
+  }]);

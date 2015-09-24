@@ -8,6 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', function () {
-
-  });
+  .controller('MainCtrl', ['$scope', function ($scope) {
+    $scope.pageClass = 'main-page';
+  }]);

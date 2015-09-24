@@ -8,10 +8,6 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginEmailCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('LoginEmailCtrl', ['$scope', function ($scope) {
+    $scope.pageClass = 'login-email-page';
+  }]);
