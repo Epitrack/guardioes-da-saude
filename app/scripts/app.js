@@ -81,7 +81,7 @@ angular
       })
       .when('/components', {
         templateUrl: 'views/components.html',
-        controller: 'Component01Ctrl',
+        controller: 'ComponentCtrl',
         controllerAs: 'components'
       })
       .when('/noticias', {

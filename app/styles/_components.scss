@@ -4,112 +4,108 @@
 
 
 // 01 home search
-.search-home {
-	font-family: $ff-light;
-	font-size: $fs-medium;
-	text-align: center;
-	background: url('../images/icon_search.svg') #fff no-repeat 6.5%;
-	background-size: 32.5px 32.6px;
-	border: 1px solid #ccc;
-	@include bdr(5px);
-	webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
-	-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
-	box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
-	height: 78.1px;
-}
+// .search-home {
+// 	font-family: $ff-light;
+// 	font-size: $fs-medium;
+// 	text-align: center;
+// 	background: url('../images/icon_search.svg') #fff no-repeat 6.5%;
+// 	background-size: 32.5px 32.6px;
+// 	border: 1px solid #ccc;
+// 	@include bdr(5px);
+// 	webkit-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+// 	-moz-box-shadow: 0px 1px 0px 0px rgba(236,236,236,1);
+// 	box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+// 	height: 78.1px;
+// }
 //==
 
 // 03 cadastro email
-.mainform {
-	border: 2px solid #fff;
-	border-radius: 5px;
-	margin: 0 0 15px 0;
-}
+// .mainform {
+//   margin: 0 0 15px 0;
+//   @include bdr(5px);
+// 	border: 2px solid $link-primary;
 
-.mainform-input {
-	font-family: $ff-light;
-	font-size: 18px;
-	color: #a4cae6;
-	background: none;
-	border-bottom: 2px solid #fff;
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	box-shadow: none;
-	text-align: left;
-	height: 42px;
-	padding: 0 0 0 15px;
-	border-radius: 0;
-}
+//   input {
+//     &:first-child { border: 0 0 2px 0; }
 
-.mainform input:first-child {
-	border: 0 0 2px 0;
-}
+//     &:last-child { border: 0; }
+//   }
+// }
 
-.mainform input:last-child {
-	border: 0;
-}
+// .mainform-input {
+// 	font-family: $ff-light;
+// 	font-size: ($fs-medium)-.2;
+// 	color: #a4cae6;
+// 	background: none;
+// 	border: 2px solid $link-primary;
+// 	border-top: 0;
+// 	border-left: 0;
+// 	border-right: 0;
+// 	text-align: left;
+// 	height: 42px;
+// 	padding: 0 0 0 15px;
+//   @include bdr(0);
+// }
 
-.mainform .select, .mainform .select {
-	background: url("../images/icon_arrowdown.svg") no-repeat 96.8% 15px;
-}
+// .mainform .select, .mainform .select {
+//   @include path('icon-arrow-down.svg');
+//   background-repeat: no-repeat;
+//   background-position: 96% 15px;
+// }
 
-.btn-signup, .btn-confirm {
-	font-family: $ff-light;
-	font-size: 18px;
-	background: #fff;
-	color: $blue-dark;
-	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-}
+// .btn-signup, .btn-confirm {
+// 	color: $bg-header;
+//   font-family: $ff-light;
+//   font-size: ($fs-medium)-.2;
+//   background-color: $link-primary;
+//   @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
 
-.btn-signup:hover {
-	color: $blue-dark;
-}
+//   &:hover { color: $bg-header; }
+// }
+
 //==
 
 // 04 login social
-.social-signin {
-	margin: 0 0 22px 20px;
+// .social-signin {
+// 	margin: 0 0 22px 20px;
 
-	.social {
-		height: 38px;
-		font-family: $ff-light;
-		font-size: 18px;
-		background: #fff;
-		color: $blue-dark;
-		-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-		-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-		box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
-	}
+// 	.social {
+// 		height: 38px;
+// 		font-family: $ff-light;
+// 		font-size: 18px;
+// 		background: #fff;
+// 		color: $bg-header;
+// 		-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+// 		-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+// 		box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.40);
+// 	}
 
-	.login-facebook {
-		color: #fff;
-	  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
-	  background-size: 16.7px 31.7px;
-	}
+// 	.login-facebook {
+// 		color: #fff;
+// 	  background: url("../images/btn_facebook.svg") #395185 no-repeat 4% 7px;
+// 	  background-size: 16.7px 31.7px;
+// 	}
 
-	.login-google {
-		color: #fff;
-	  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
-	  background-size: 16.3px 24.5px;
-	}
+// 	.login-google {
+// 		color: #fff;
+// 	  background: url("../images/btn_google.svg") #5879f4 no-repeat 4% 7px;
+// 	  background-size: 16.3px 24.5px;
+// 	}
 
-	.login-facebook:hover, .login-google:hover{
-		color: #fff;
-	}
+// 	.login-facebook:hover, .login-google:hover{
+// 		color: #fff;
+// 	}
 
-	.login-twitter {
-		color: #5e9fca;
-	  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
-	  background-size: 25.3px 20.9px;
-	}
+// 	.login-twitter {
+// 		color: #5e9fca;
+// 	  background: url("../images/btn_twitter.svg") #fff no-repeat 4% 7px;
+// 	  background-size: 25.3px 20.9px;
+// 	}
 
-	.login-twitter:hover {
-		color: #5e9fca;
-	}
-}
+// 	.login-twitter:hover {
+// 		color: #5e9fca;
+// 	}
+// }
 //==
 
 // 06 mapa da saude
@@ -207,7 +203,7 @@
   padding: 0 0 0 30px;
   width: 100%;
 
-	  .sickness-info {
+  .sickness-info {
 		font-family: $ff-light;
 	  font-size: 14px;
 	  color: #4c4c4c;
@@ -777,14 +773,3 @@
 	}
 }
 //==
-
-
-
-
-
-
-
-
-
-
-

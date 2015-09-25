@@ -836,6 +836,69 @@ body {
 
 
 //
+// Login
+//
+
+// social login
+.login-subtitle {
+  font-family: $ff-light;
+  color: $link-primary;
+  font-size: ($fs-medium);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-login {
+  display: block;
+  height: 40px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+  color: $link-primary;
+  font-size: ($fs-normal)+.6;
+  background-repeat: no-repeat;
+  background-size: 5%;
+  background-position: 30% center;
+  font-family: $ff-light;
+  @include apr(none);
+  @include bdr(5px);
+  @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+
+  &.facebook {
+    background-color: $btn-facebook;
+    @include path('btn-facebook.svg');
+  }
+
+  &.google {
+    background-color: $btn-google;
+    @include path('btn-google.svg');
+  }
+
+  &.twitter {
+    background-color: $link-primary;
+    color: $btn-twitter;
+    @include path('btn-twitter.svg');
+  }
+}
+
+p.login-email {
+  @extend .login-subtitle;
+  margin-top: 30px;
+  clear: both;
+
+  a {
+    padding-bottom: 1px;
+    color: $link-primary;
+    text-decoration: none;
+    border-bottom: 1px solid $link-primary;
+  }
+}
+
+// ====
+
+
+
+//
 // Media queries
 //
 

@@ -35,6 +35,59 @@
 
 // ===
 
+
+
+//
+// Login email
+//
+
+.mainform {
+  margin: 0 0 15px 0;
+  @include bdr(5px);
+  border: 2px solid $link-primary;
+
+  input {
+    &:first-child { border: 0 0 2px 0; }
+
+    &:last-child { border: 0; }
+  }
+}
+
+.mainform-input {
+  font-family: $ff-light;
+  font-size: ($fs-medium)-.2;
+  color: #a4cae6;
+  background: none;
+  border: 2px solid $link-primary;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  text-align: left;
+  height: 42px;
+  padding: 0 0 0 15px;
+  @include bdr(0);
+}
+
+.mainform .select, .mainform .select {
+  @include path('icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: 96% 15px;
+}
+
+.btn-signup, .btn-confirm {
+  color: $bg-header;
+  font-family: $ff-light;
+  font-size: ($fs-medium)-.2;
+  background-color: $link-primary;
+  @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+
+  &:hover { color: $bg-header; }
+}
+
+// ====
+
+
+
 // iPad
 @media (min-width: 768px) {
   // Search home
