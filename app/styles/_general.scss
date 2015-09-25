@@ -48,8 +48,7 @@ body {
 .main-content {
   display: block;
   position: relative;
-  height: auto;
-  // height: 100%;
+  height: 100%;
 }
 
 .main-content { background-color: $bg-section; }
@@ -776,8 +775,62 @@ body {
   font-size: ($fs-normal);
 }
 
+// ====
+
+
+
+//
+// Survey
+//
+
+.survey-content {
+  text-align: center;
+  background-image: radial-gradient(50% 162%, #1976D2 56%, #01579B 100%);
+
+  .title-primary { color: $link-primary; }
+}
+
+.survey-avatar {
+  width: 130px;
+  height: 200px;
+  margin: 0 15px 30px 0;
+  display: inline-block;
+
+  img {
+    max-width: 100%;
+    @include bdr(100%);
+    @include bsd(0, 4px, 6px, rgba(0, 0, 0, .5));
+  }
+
+  figcaption {
+    text-align: center;
+    color: $link-primary;
+    font-size: ($fs-normal)*2;
+    margin-top: 20px;
+    font-family: $ff-bold;
+
+    span {
+      margin-top: -5px;
+      display: block;
+      font-family: $ff-light;
+      font-size: ($fs-normal)+.8;
+    }
+  }
+
+  a {
+    &:hover { text-decoration: none; }
+  }
+}
+
+.survey-subtitle {
+  font-family: $ff-light;
+  font-size: ($fs-normal)*2+.2;
+  color: $link-primary;
+  margin: 35px auto 25px auto;
+}
 
 // ====
+
 
 
 //
@@ -859,6 +912,12 @@ body {
 
   .list-tips { margin-right: 30px; }
   // ====
+
+  // Survey
+  .survey-avatar { margin: 0 15px; }
+
+  .survey-content { min-height: 1024px; }
+  // ====
 }
 
 // Desktops
@@ -870,6 +929,12 @@ body {
     img { width: 60%; }
   }
   //  ====
+
+  .main, .main-content{ height: auto; }
+
+  // Survey
+  .survey-content { min-height: 750px; }
+  // ====
 }
 
 // Large Desktops
