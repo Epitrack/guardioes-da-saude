@@ -24,6 +24,25 @@
   to { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
 }
 
+@-webkit-keyframes pendulo {
+  0% { margin-left: 0; }
+  15% { margin-left: 5px; }
+  30% { margin-left: 10px; }
+  45% { margin-left: 15px; }
+  60% { margin-left: 10px; }
+  75% { margin-left: 5px; }
+  100% { margin-left: 0; }
+}
+@keyframes pendulo {
+  0% { margin-left: 0; }
+  15% { margin-left: 5px; }
+  30% { margin-left: 10px; }
+  45% { margin-left: 15px; }
+  60% { margin-left: 10px; }
+  75% { margin-left: 5px; }
+  100% { margin-left: 0; }
+}
+
 // ====
 
 
@@ -67,6 +86,30 @@
   &.profile-page {}
 
   &.survey-page {}
+}
+
+// ====
+
+
+
+//
+// Survey
+//
+
+.survey-avatar {
+  &.my-user {
+    &:hover {
+      img {
+        -webkit-animation: pendulo .7s ease-in-out infinite;
+        animation: pendulo .7s ease-in-out infinite;
+      }
+    }
+
+    img {
+      -webkit-animation: pendulo .7s ease-in-out paused;
+      animation: pendulo .7s ease-in-out paused;
+    }
+  }
 }
 
 // ====
