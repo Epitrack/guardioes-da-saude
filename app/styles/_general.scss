@@ -472,40 +472,6 @@ body {
   }
 }
 
-.card {
-  min-height: 300px;
-  background-color: $link-primary;
-  padding: 20px;
-  margin-bottom: 20px;
-  position: relative;
-  @include bdr(3px);
-  @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
-
-  &.half { margin-right: 20px;}
-}
-
-.card-avatar-image {
-  min-height: 250px;
-  text-align: center;
-
-  img { max-width: 100%; }
-
-  figcaption {
-    font-size: ($fs-medium)+.8;
-    color: $font-primary;
-
-    span {
-      font-size: ($fs-normal)+.6;
-      display: block;
-    }
-  }
-}
-
-.card-avatar-content {
-  min-height: 250px;
-  background-color: black;
-}
-
 .sub-nav {
   background-color: $bg-header;
   overflow: hidden;
@@ -553,6 +519,7 @@ body {
 }
 
 .btn-tip {
+  min-height: 45px !important;
   outline: none;
   min-height: 20px;
   padding: 10px;
@@ -893,6 +860,78 @@ p.login-email {
     border-bottom: 1px solid $link-primary;
   }
 }
+
+// ====
+
+
+
+//
+// Cards
+//
+
+.card {
+  min-height: 300px;
+  background-color: $link-primary;
+  margin-bottom: 20px;
+  position: relative;
+  @include bdr(3px);
+  @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+
+  &.half { margin-right: 20px;}
+}
+
+.link-figure {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.card-avatar-image {
+  min-height: 250px;
+  text-align: center;
+  // background-color: pink;
+
+  img { max-width: 100%; }
+
+  figcaption {
+    font-size: ($fs-medium)+.8;
+    color: $font-primary;
+
+    span {
+      font-size: ($fs-normal)+.6;
+      display: block;
+    }
+  }
+
+  &.edit {
+    overflow: hidden;
+    position: relative;
+    @include bdr(100%);
+
+    figcaption {
+      position: relative;
+      bottom: 60px;
+      color: $link-primary;
+      background-color: rgba(39, 39, 39, .65);
+    }
+  }
+}
+
+.card-avatar-content { min-height: 250px; }
+
+.panel-heading {
+  background-color: $btn-primary !important;
+  height: 40px;
+  margin-bottom: 35px;
+
+  h3 {
+    font-family: $ff-light;
+    font-size: ($fs-normal)+.2;
+    color: $link-primary;
+  }
+}
+
+.panel-body { padding: 0; }
 
 // ====
 
