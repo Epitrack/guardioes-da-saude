@@ -145,6 +145,12 @@
   font-family: $ff-light;
   font-size: ($fs-normal)+.2;
   margin: 0 0 0 15px;
+
+  &.cancel {
+    background-color: $link-primary;
+    color: $font-primary;
+    border: 1px solid $border-primary;
+  }
 }
 
 .select-primary {
