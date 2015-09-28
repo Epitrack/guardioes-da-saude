@@ -14,7 +14,7 @@ angular.module('gdsApp')
     var noticias = [];
 
     obj.getNoticias = function(callback) {
-      $http.get('assets/noticias.json')
+      $http.get('https://gist.githubusercontent.com/thulioph/741469bf184b1d731ff2/raw/12d3297fe2bc49f15cb907c053e649148be3586b/noticias.json')
       .success(function(data) {
         noticias = data;
         callback(data);
