@@ -786,6 +786,7 @@ body {
 
   a {
     display: block;
+    cursor: pointer;
 
     &:hover { text-decoration: none; }
   }

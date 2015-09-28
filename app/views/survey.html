@@ -7,7 +7,7 @@
         <aside class="survey-avatar my-user">
           <a href="#/" title="Clique para realizar a survey de Aninha">
             <figure>
-              <img src="../images/avatar/avatar-01.svg" alt="Aninha - 28 anos">
+              <img src="../images/avatar/avatar-1.svg" alt="Aninha - 28 anos">
               <figcaption>Aninha <span>28 anos</span></figcaption>
             </figure>
           </a>
@@ -17,7 +17,7 @@
           <h3 class="survey-subtitle">Membros do domicílio</h3>
 
           <aside class="survey-avatar">
-            <a href="#/">
+            <a data-toggle="modal" data-target="#modal-add-profile">
               <figure>
                 <img src="../images/btn-add-member.svg" alt="Adicionar membro">
                 <figcaption>Adicionar <span>membro</span></figcaption>
@@ -28,8 +28,8 @@
           <aside class="survey-avatar">
             <a href="#/">
               <figure>
-                <img src="../images/avatar/avatar-01.svg" alt="Aninha - 28 anos">
-                <figcaption>Aninha <span>28 anos</span></figcaption>
+                <img src="../images/avatar/avatar-2.svg" alt="Paulo - 32 anos">
+                <figcaption>Paulo <span>32 anos</span></figcaption>
               </figure>
             </a>
           </aside>
@@ -37,8 +37,8 @@
           <aside class="survey-avatar">
             <a href="#/">
               <figure>
-                <img src="../images/avatar/avatar-01.svg" alt="Aninha - 28 anos">
-                <figcaption>Aninha <span>28 anos</span></figcaption>
+                <img src="../images/avatar/avatar-3.svg" alt="Gilberto - 17 anos">
+                <figcaption>Gilberto <span>17 anos</span></figcaption>
               </figure>
             </a>
           </aside>
@@ -47,3 +47,6 @@
     </div>
   </div>
 </div>
+
+<!-- Modal add member -->
+<div ng-include src="'views/partials/modal-add-profile.html'"></div>
