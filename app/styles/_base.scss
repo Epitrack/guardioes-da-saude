@@ -262,3 +262,10 @@ $bg-secondary:                       $black-ligthen;
     @include path('icon-google-plus.svg');
   }
 }
+
+// Inputs of change photo
+@for $i from 01 through 12 {
+  .avatar-#{$i} {
+    &::before { @include path('avatar/avatar-'+ $i + '.svg'); }
+  }
+}

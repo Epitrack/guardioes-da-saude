@@ -89,6 +89,11 @@ angular
         controller: 'NoticiasCtrl',
         controllerAs: 'noticias'
       })
+      .when('/change-photo', {
+        templateUrl: 'views/change-photo.html',
+        controller: 'ChangePhotoCtrl',
+        controllerAs: 'changePhoto'
+      })
       .otherwise({
         redirectTo: '/'
       });

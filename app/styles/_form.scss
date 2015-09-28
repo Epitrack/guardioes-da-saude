@@ -177,6 +177,104 @@
   }
 }
 
+.radio-avatar {
+  margin: 0 5px 15px 5px !important;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  @include apr(none);
+
+  &::before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    @include bdr(100%);
+  }
+
+  &:checked {
+    outline: none;
+    background-color: rgba(0, 0, 0, .5);
+  }
+}
+
+// button change photo
+.save-change-photo {
+  @include bdr(3px);
+  @include apr(none);
+  text-align: center;
+  font-size: ($fs-normal)+.2;
+  outline: none;
+  border: none;
+  padding: 5px 60px;
+  color: $link-primary;
+  background-color: $btn-primary;
+  position: relative;
+  margin-bottom: 20px;
+
+  // &::before {
+  //   content: '';
+  //   width: 35px;
+  //   height: 30px;
+  //   left: -40px;
+  //   bottom: 0;
+  //   @include bdr(3px);
+  //   position: absolute;
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   @include path('icon-upload-image.svg');
+  // }
+}
+
+.input-file-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.input-file-trigger {
+  @include path('avatar/avatar-blank.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  display: block;
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  position: relative;
+  // @include bdr(100%);
+
+  // &::before {
+  //   content: attr(data-label);
+  //   position: absolute;
+  //   left: 10%;
+  //   top: 50%;
+  //   opacity: 0;
+  //   font-family: $ff-bold;
+  //   font-size: ($fs-normal)+.1;
+  //   color: #000000;
+  //   z-index: 1;
+  //   @include transition(opacity, .2s, 0s, linear);
+  // }
+
+  // &:hover {
+  //   opacity: .4;
+  //   background-color: rgba(0, 0, 0, .3);
+
+  //   &::before { opacity: 1; }
+  // }
+}
 // ====
 
 

@@ -878,6 +878,8 @@ p.login-email {
   @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
 
   &.half { margin-right: 20px;}
+
+  &.news { padding-top: 20px; }
 }
 
 .link-figure {
@@ -889,7 +891,6 @@ p.login-email {
 .card-avatar-image {
   min-height: 250px;
   text-align: center;
-  // background-color: pink;
 
   img { max-width: 100%; }
 
@@ -929,9 +930,36 @@ p.login-email {
     font-size: ($fs-normal)+.2;
     color: $link-primary;
   }
+
+  &.change-photo { margin-bottom: 10px; }
 }
 
 .panel-body { padding: 0; }
+
+// ====
+
+
+
+//
+// Change photo
+//
+
+.change-photo-subtitle {
+  font-size: ($fs-normal)+.2;
+  font-family: $ff-light;
+  color: $border-secondary;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-change-photo-default {
+  text-align: center;
+}
+
+.change-photo-or {
+  @extend .change-photo-subtitle;
+  margin-bottom: 0;
+}
 
 // ====
 
@@ -1021,6 +1049,11 @@ p.login-email {
   .survey-avatar { margin: 0 15px; }
 
   .survey-content { min-height: 1024px; }
+  // ====
+
+  // change photo
+  .form-change-photo-default { text-align: left; }
+  .change-photo-subtitle { text-align: left; }
   // ====
 }
 
