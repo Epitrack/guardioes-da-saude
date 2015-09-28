@@ -1,0 +1,26 @@
+// —————————————————————————
+//     General
+// —————————————————————————
+
+//
+// Add profile / survey
+//
+
+.modal-add-profile {
+  .birthdate { width: 80%; }
+}
+
+// ====
+
+// iPad
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {
+  .modal-add-profile {
+    .birthdate { width: 84%; }
+  }
+}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

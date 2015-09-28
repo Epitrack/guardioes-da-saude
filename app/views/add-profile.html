@@ -5,9 +5,72 @@
 <section class="col-sm-9 col-md-10 content-internal">
   <h2 class="section-title">Adicionar membro <span>/ domiciliar ou familiar</span></h2>
 
-  <article class="col-xs-12 card">
-    <figure class="col-xs-12 col-sm-12 col-md-2 card-avatar-image"></figure>
-    <div class="col-xs-12 col-sm-12 col-md-10 card-avatar-content"></div>
+  <article class="col-xs-12 panel panel-default no-padding card">
+    <header class="panel-heading">
+      <h3 class="panel-title">Adicionar membro</h3>
+    </header>
+
+    <div class="panel-body">
+      <a href="#/change-photo" class="col-xs-12 col-md-2" class="link-figure">
+        <figure class="card-avatar-image">
+          <img src="images/avatar/avatar-2.svg" alt="Avatar 01">
+          <figcaption>Editar</figcaption>
+        </figure>
+      </a>
+
+      <div class="col-xs-12 col-md-10 card-avatar-content">
+        <form class="card-form" name="add-form-profile">
+          <div class="no-padding col-xs-12">
+            <fieldset class="col-xs-12 col-sm-6">
+              <label for="profile-nickname">Apelido</label>
+              <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text">
+            </fieldset>
+
+            <fieldset class="col-xs-12 col-sm-6">
+              <label for="profile-gender">Sexo</label>
+
+              <input class="radio-primary" type="radio" name="add-profile-gender" value="add-profile-male" data-label="Masculino">
+              <input class="radio-primary" type="radio" name="add-profile-gender" value="add-profile-female" data-label="Feminino">
+            </fieldset>
+          </div>
+
+          <div class="no-padding col-xs-12">
+            <fieldset class="col-xs-12 col-sm-6">
+              <label for="profile-birthdate">Data de nascimento</label>
+              <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text">
+              <span class="icon-birthdate">
+                <a data-toggle="modal" data-target="#calendarModal"></a>
+              </span>
+            </fieldset>
+
+            <fieldset class="col-xs-12 col-sm-6">
+              <label for="profile-raca-cor">Raça/Cor</label>
+
+              <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor">
+                <option value="value01">Value 01</option>
+                <option value="value02">Value 02</option>
+                <option value="value03">Value 03</option>
+              </select>
+            </fieldset>
+          </div>
+
+          <fieldset class="col-xs-12 col-sm-6">
+            <label for="profile-parentesco">Parentesco</label>
+            <input class="input-primary" id="profile-parentesco" name="add-profile-parentesco" type="text">
+          </fieldset>
+
+          <fieldset class="col-xs-12 col-sm-6">
+            <label for="profile-email">Email (opcional)</label>
+            <input class="input-primary" id="profile-email" name="add-profile-email" type="email">
+          </fieldset>
+
+          <fieldset class="col-xs-12">
+            <button class="pull-right btn btn-primary">Salvar alterações</button>
+            <button class="pull-right btn btn-primary cancel">Cancelar</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
   </article>
 
 </section>

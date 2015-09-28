@@ -1,0 +1,50 @@
+<!-- Menu -->
+<div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
+
+<!-- Content -->
+<section class="col-sm-9 col-md-10 content-internal">
+  <h2 class="section-title">Perfil <span>/ Aninha</span></h2>
+
+  <article class="col-xs-12 panel panel-default no-padding card">
+    <header class="panel-heading change-photo">
+      <h3 class="panel-title">Editar foto</h3>
+    </header>
+
+    <div class="panel-body">
+      <div class="col-xs-12 col-md-10 card-avatar-content">
+        <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
+        <form class="card-form" name="change-photo-default">
+          <div class="col-xs-12 col-lg-4 form-change-photo-default">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-1" value="input-change-photo-1">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-2" value="input-change-photo-2">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-3" value="input-change-photo-3">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-4" value="input-change-photo-4">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-5" value="input-change-photo-5">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-6" value="input-change-photo-6">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-7" value="input-change-photo-7">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-8" value="input-change-photo-8">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-9" value="input-change-photo-9">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-10" value="input-change-photo-10">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-11" value="input-change-photo-11">
+            <input type="radio" name="input-change-photo" class="radio-avatar avatar-12" value="input-change-photo-12">
+          </div>
+        </form>
+
+          <span class="change-photo-or">ou</span>
+      </div>
+
+      <div class="col-xs-12 col-md-2">
+        <h3 class="change-photo-subtitle">Envie uma foto</h3>
+        <form name="search-photo-default">
+          <div class="input-file-container">
+            <input class="input-file" id="my-file" type="file">
+            <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem"></label>
+          </div>
+
+          <button type="submit" class="save-change-photo">Salvar foto</button>
+        </form>
+      </div>
+    </div>
+  </article>
+
+</section>

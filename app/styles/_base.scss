@@ -12,6 +12,7 @@ $blue-light:                         #1E88E5; // some fonts
 $blue-transparent:                   #90CAF9; // some fonts (survey title)
 $blue-darker:                        #395185; // facebook button
 $blue-acqua:                         #5879F4; // google button
+$green-acqua:                        #5E9FCA; // twitter button
 $white:                              #FFFFFF; // some fonts
 $gray:                               #CCCCCC; // some border
 $gray-light:                         #979797; // some border
@@ -26,6 +27,7 @@ $blue-light-rgb:                     rgb(30,136,229);
 $blue-transparent-rgb:               rgb(144,202,249);
 $blue-darker-rgb:                    rgb(57,81,133);
 $blue-acqua-rgb:                     rgb(88,121,244);
+$green-acqua-rgb:                    rgb(94,159,202);
 $white-rgb:                          rgb(255,255,255);
 $gray-rgb:                           rgb(204,204,204);
 $gray-light-rgb:                     rgb(151,151,151);
@@ -40,6 +42,7 @@ $btn-primary:                        $blue-light;
 $survey-title:                       $blue-transparent;
 $btn-facebook:                       $blue-darker;
 $btn-google:                         $blue-acqua;
+$btn-twitter:                        $green-acqua;
 $link-primary:                       $white;
 $border-secondary:                   $gray;
 $border-primary:                     $gray-light;
@@ -257,5 +260,12 @@ $bg-secondary:                       $black-ligthen;
   }
   @else if $type == 'google-plus' {
     @include path('icon-google-plus.svg');
+  }
+}
+
+// Inputs of change photo
+@for $i from 01 through 12 {
+  .avatar-#{$i} {
+    &::before { @include path('avatar/avatar-'+ $i + '.svg'); }
   }
 }

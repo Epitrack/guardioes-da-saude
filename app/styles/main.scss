@@ -15,7 +15,7 @@
 @import '_form';
 
 // Modal | components
-// @import '_modal';
+@import '_modal';
 
 // General styles
 @import '_general';
@@ -24,4 +24,7 @@
 @import '_animations';
 
 // Components
-@import '_components';
+// @import '_components';
+
+// Modal
+@import '_modal';

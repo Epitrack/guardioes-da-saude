@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name gdsApp.controller:ComponentCtrl
+ * @name gdsApp.controller:ChangePhotoCtrl
  * @description
- * # ComponentCtrl
+ * # ChangePhotoCtrl
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ComponentCtrl', function () {
+  .controller('ChangePhotoCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -81,13 +81,18 @@ angular
       })
       .when('/components', {
         templateUrl: 'views/components.html',
-        controller: 'Component01Ctrl',
+        controller: 'ComponentCtrl',
         controllerAs: 'components'
       })
       .when('/noticias', {
         templateUrl: 'views/noticias.html',
         controller: 'NoticiasCtrl',
         controllerAs: 'noticias'
+      })
+      .when('/change-photo', {
+        templateUrl: 'views/change-photo.html',
+        controller: 'ChangePhotoCtrl',
+        controllerAs: 'changePhoto'
       })
       .otherwise({
         redirectTo: '/'
