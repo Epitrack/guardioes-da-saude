@@ -47,6 +47,7 @@ angular.module('gdsApp')
       $scope.defaultTips = "";
     };
 
+    // UPAS
     $scope.loadUpas = function() {
       $scope.upas = [];
 
@@ -56,6 +57,7 @@ angular.module('gdsApp')
       });
     };
 
+    // FARMACIAS
     $scope.loadFarmacias = function() {
       $scope.farmacias = [];
 
@@ -63,6 +65,36 @@ angular.module('gdsApp')
       healthTips.getFarmacias(function(data) {
         $scope.farmacias = data;
       });
+    };
+
+    // VACINAS
+    $scope.loadVacinas = function() {
+      $scope.vacinas = [];
+
+      // Use service
+      healthTips.getVacinas(function(data) {
+        $scope.vacinas = data;
+      });
+    };
+
+    // TELEFONES
+    $scope.loadTelefones = function() {
+      $scope.telefones = [];
+
+      // Use service
+      healthTips.getTelefones(function(data) {
+        $scope.telefones = data;
+      });
+    };
+
+    // CUIDADOS
+    $scope.loadCuidados = function() {
+      console.log('Cuidados');
+    };
+
+    // PREVENCAO
+    $scope.loadPrevencao = function() {
+      console.log('Prevenção.');
     };
 
   }]);

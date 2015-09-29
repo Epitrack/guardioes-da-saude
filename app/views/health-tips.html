@@ -6,12 +6,29 @@
   <h2 class="section-title">Dicas de Saúde</h2>
 
   <aside class="col-xs-12 col-md-4 no-padding list-tips">
-    <button ng-click="aside = 'upas'" class="btn-tip upas">Upas</button>
-    <button ng-click="aside = 'farmacias'" class="btn-tip pharmacy">Farmácias</button>
-    <button ng-click="aside = 'vacina'" class="btn-tip vaccine">Vacina</button>
-    <button ng-click="aside = 'telefones'" class="btn-tip telephones">Telefones Úteis</button>
-    <button ng-click="aside = 'cuidados'" class="btn-tip caution">Cuidados Básicos</button>
-    <button ng-click="aside = 'prevencao'" class="btn-tip prevention">Prevenção</button>
+    <button ng-click="aside = 'upas'" class="btn-tip upas" ng-class="{ 'active' : aside == 'upas' }">
+      Upas
+    </button>
+
+    <button ng-click="aside = 'farmacias'" class="btn-tip pharmacy" ng-class="{ 'active' : aside == 'farmacias' }">
+      Farmácias
+    </button>
+
+    <button ng-click="aside = 'vacina'" class="btn-tip vaccine" ng-class="{ 'active' : aside == 'vacina' }">
+      Vacina
+    </button>
+
+    <button ng-click="aside = 'telefones'" class="btn-tip telephones" ng-class="{ 'active' : aside == 'telefones' }">
+      Telefones Úteis
+    </button>
+
+    <button ng-click="aside = 'cuidados'" class="btn-tip caution" ng-class="{ 'active' : aside == 'cuidados' }">
+      Cuidados Básicos
+    </button>
+
+    <button ng-click="aside = 'prevencao'" class="btn-tip prevention" ng-class="{ 'active' : aside == 'prevencao' }">
+      Prevenção
+    </button>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card health-tips-default" ng-if="!aside">
@@ -24,27 +41,27 @@
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'upas'">
-    <div ng-include src="'views/partials/ht-upas.html'"></div>
+    <div ng-include src="'views/partials/ht-upas.html'" ng-init="loadUpas()"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'farmacias'">
-    <div ng-include src="'views/partials/ht-farmacias.html'"></div>
+    <div ng-include src="'views/partials/ht-farmacias.html'" ng-init="loadFarmacias()"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'vacina'">
-    <div ng-include src="'views/partials/ht-vacina.html'"></div>
+    <div ng-include src="'views/partials/ht-vacina.html'" ng-init="loadVacinas()"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'telefones'">
-    <div ng-include src="'views/partials/ht-telefones.html'"></div>
+    <div ng-include src="'views/partials/ht-telefones.html'" ng-init="loadTelefones()"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'cuidados'">
-    <div ng-include src="'views/partials/ht-cuidados.html'"></div>
+    <div ng-include src="'views/partials/ht-cuidados.html'" ng-init="loadCuidados()"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card" ng-if="aside == 'prevencao'">
-    <div ng-include src="'views/partials/ht-prevencao.html'"></div>
+    <div ng-include src="'views/partials/ht-prevencao.html'" ng-init="loadPrevencao()"></div>
   </aside>
 
 </section>

@@ -1,5 +1,12 @@
 <!--
-  Health tips - Telefones
+  Health tips - Telefones úteis
 -->
 
-<h2>Telefones</h2>
+<ul class="row telephone-list">
+  <li class="telephone-item" ng-repeat="telephone in telefones">
+    <figure>
+      <img src="images/telephones/{{ telephone.icon }}.svg" alt="{{ telephone.name }}">
+      <figcaption>{{ telephone.name }} <span>{{ telephone.number }}</span></figcaption>
+    </figure>
+  </li>
+</ul>
