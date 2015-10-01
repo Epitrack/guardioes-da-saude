@@ -666,6 +666,17 @@ body {
   color: $bg-modal;
   font-size: ($fs-normal)+.2;
   list-style-type: circle;
+  position: relative;
+
+  &.ht {
+    &::before {
+      content: '•';
+      margin-right: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+    }
+  }
 }
 
 // telefones uteis
@@ -930,6 +941,10 @@ p.login-email {
   &.half { margin-right: 20px;}
 
   &.news { padding-top: 20px; }
+}
+
+.content-card {
+  padding: 20px;
 }
 
 .link-figure {

@@ -14,7 +14,7 @@ angular.module('gdsApp')
     var upas = [];
 
     obj.getUpas = function(callback) {
-      $http.get('assets/upas.json')
+      $http.get('https://gist.githubusercontent.com/thulioph/035de62d0d40e0c7ac5a/raw/b5a305271af64205493677701a461962f14ec33a/upas.json')
         .success(function(data) {
           upas = data;
           callback(data);
@@ -28,7 +28,9 @@ angular.module('gdsApp')
     var farmacias = [];
 
     obj.getFarmacias = function(callback) {
-      $http.get('https://gist.githubusercontent.com/thulioph/035de62d0d40e0c7ac5a/raw/3f011b92fbcb0da22c12ab15e6852e50401097c9/upas.json')
+      var api_key = 'AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg';
+
+      $http.get('http://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=-8.0865589,-34.8918439&radius=800&key=' + api_key)
         .success(function(data) {
           farmacias = data;
           callback(data);
@@ -42,7 +44,7 @@ angular.module('gdsApp')
     var vacinas = [];
 
     obj.getVacinas = function(callback) {
-      $http.get('https://gist.githubusercontent.com/thulioph/b64fe40c683e5606d35c/raw/931b5c5e56d1a4afabaa44a0f9b7e733b60d3f2b/vacinas.json')
+      $http.get('https://gist.githubusercontent.com/thulioph/b64fe40c683e5606d35c/raw/2d8395b0a969ccc48c2549b5563467ab677d67b5/vacinas.json')
         .success(function(data) {
           vacinas = data;
           callback(data);
@@ -63,6 +65,34 @@ angular.module('gdsApp')
           console.log('Success getTelefonesUteis: ', telefones);
         }).error(function(error) {
           console.log('Error getTelefonesUteis: ', error);
+        })
+    };
+    // ====
+
+    var cuidados = [];
+
+    obj.getCuidados = function(callback) {
+      $http.get('https://gist.githubusercontent.com/thulioph/113a86a5abebc6204aad/raw/96613079e9333c1fe23e49bbc85fdbf4d489c847/cuidados.json')
+        .success(function(data) {
+          cuidados = data;
+          callback(data);
+          console.log('Success getCuidados: ', cuidados);
+        }).error(function(error) {
+          console.log('Error getCuidados: ', error);
+        })
+    };
+    // ====
+
+    var prevencoes = [];
+
+    obj.getPrevencoes = function(callback) {
+      $http.get('https://gist.githubusercontent.com/thulioph/ec5829dcfb6c2ca2e36d/raw/aced61c01ffa9cd9242c1d21d10b99917e66c249/prevencao.json')
+        .success(function(data) {
+          prevencoes = data;
+          callback(data);
+          console.log('Success getPrevencoes: ', prevencoes);
+        }).error(function(error) {
+          console.log('Error getPrevencoes: ', error);
         })
     };
     // ====
