@@ -99,6 +99,16 @@ angular
         controller: 'FaleConoscoCtrl',
         controllerAs: 'faleConosco'
       })
+      .when('/sobre', {
+        templateUrl: 'views/sobre.html',
+        controller: 'SobreCtrl',
+        controllerAs: 'sobre'
+      })
+      .when('/politica-de-privacidade', {
+        templateUrl: 'views/politica-de-privacidade.html',
+        controller: 'PoliticaDePrivacidadeCtrl',
+        controllerAs: 'politicaDePrivacidade'
+      })
       .otherwise({
         redirectTo: '/'
       });

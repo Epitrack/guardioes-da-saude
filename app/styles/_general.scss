@@ -190,6 +190,13 @@ body {
   color: $btn-primary;
 }
 
+.section-subtitle {
+  color: $btn-primary !important;
+  font-family: $ff-bold;
+  border-bottom: 2px solid $border-secondary;
+  padding-bottom: 5px;
+}
+
 .wrapper-internal {
   width: 100%;
   padding: 0;
@@ -337,9 +344,8 @@ body {
 
 .logo-ministerio {
   @extend .col-xs-12;
-  @extend .col-sm-6;
+  @extend .col-sm-7;
   @extend .col-sm-offset-2;
-  @extend .col-md-6;
   @extend .col-md-offset-3;
 
   img {
@@ -1051,6 +1057,32 @@ p.login-email {
 }
 
 // ====
+
+
+
+//
+// About / Privacy policy
+//
+
+.about {
+  margin: 40px 0;
+
+  .title-primary { text-align: left; }
+
+  .logo-secondary {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .text-primary { line-height: ($fs-medium)+.5; }
+}
+
+.privacy-policy {
+  @extend .about;
+}
+
+// ====
+
 
 
 //
