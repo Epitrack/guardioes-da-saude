@@ -10,6 +10,10 @@
 
 :-ms-input-placeholder { color: $bg-modal; }
 
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
 
 
@@ -277,6 +281,28 @@
 }
 // ====
 
+
+
+//
+// Fale Conosco
+//
+
+.contact-form {
+  margin-top: 30px;
+
+  label {
+    color: $btn-primary;
+    font-family: $ff-bold;
+  }
+
+  input, select, textarea {
+    border: 1px solid $border-secondary;
+  }
+
+  .btn-primary { margin-left: 0; }
+}
+
+// ====
 
 
 // iPad

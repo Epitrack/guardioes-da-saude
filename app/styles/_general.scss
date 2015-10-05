@@ -943,9 +943,7 @@ p.login-email {
   &.news { padding-top: 20px; }
 }
 
-.content-card {
-  padding: 20px;
-}
+.content-card { padding: 20px; }
 
 .link-figure {
   &:hover {
@@ -1017,9 +1015,7 @@ p.login-email {
   text-align: center;
 }
 
-.form-change-photo-default {
-  text-align: center;
-}
+.form-change-photo-default { text-align: center; }
 
 .change-photo-or {
   @extend .change-photo-subtitle;
@@ -1028,6 +1024,33 @@ p.login-email {
 
 // ====
 
+
+
+//
+// Fale Conosco
+//
+
+.fale-conosco {
+  margin-bottom: 40px;
+
+  .title-primary {
+    font-family: $ff-bold;
+    text-align: left;
+    font-size: ($fs-medium)+1;
+    margin-bottom: 30px;
+  }
+
+  .btn-login {
+    background-position: 50% center;
+    text-indent: -999px;
+
+    &.twitter { background-size: 10%; }
+  }
+
+  h5 { color: $btn-primary; }
+}
+
+// ====
 
 
 //
@@ -1120,6 +1143,14 @@ p.login-email {
   .form-change-photo-default { text-align: left; }
   .change-photo-subtitle { text-align: left; }
   // ====
+
+  // fale conosco
+  .fale-conosco {
+    .title-primary {
+      font-size: $fs-large;
+    }
+  }
+  // ====
 }
 
 // Desktops
@@ -1136,6 +1167,12 @@ p.login-email {
 
   // Survey
   .survey-content { min-height: 750px; }
+  // ====
+
+  // fale conosco
+  .fale-conosco {
+    margin-top: 70px;
+  }
   // ====
 }
 

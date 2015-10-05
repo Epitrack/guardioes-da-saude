@@ -94,6 +94,11 @@ angular
         controller: 'ChangePhotoCtrl',
         controllerAs: 'changePhoto'
       })
+      .when('/fale-conosco', {
+        templateUrl: 'views/fale-conosco.html',
+        controller: 'FaleConoscoCtrl',
+        controllerAs: 'faleConosco'
+      })
       .otherwise({
         redirectTo: '/'
       });

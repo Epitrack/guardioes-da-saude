@@ -1,0 +1,48 @@
+<div class="wrapper-internal wrapper-full-page">
+  <div class="container-fluid">
+    <div class="row">
+      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 fale-conosco">
+        <aside class="col-xs-12 col-md-4">
+          <h2 class="title-primary">Entre em contato através do formulário</h2>
+
+          <div class="col-sm-4 col-md-7 no-padding social-contact">
+            <h5>Ou pelas nossas redes sociais:</h5>
+            <a ng-href="https://www.facebook.com/minsaude" target="_blank" class="col-xs-12 btn-login facebook">Facebook</a>
+            <a ng-href="https://twitter.com/minsaude" target="_blank" class="col-xs-12 btn-login twitter">Twitter</a>
+          </div>
+        </aside>
+
+        <aside class="col-xs-12 col-md-7 col-md-offset-1 no-padding">
+          <form class="card-form contact-form" name="form-contact">
+            <fieldset class="col-xs-12">
+              <label for="contact-email">Email</label>
+              <input class="input-primary" id="contact-email" name="contact-email" type="email">
+            </fieldset>
+
+            <fieldset class="col-xs-12">
+              <label for="contact-subject">Assunto</label>
+
+              <select class="select-primary" name="contact-subject" id="contact-subject">
+                <option value="Assunto 01">Assunto 01</option>
+                <option value="Assunto 02">Assunto 02</option>
+                <option value="Assunto 03">Assunto 03</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="col-xs-12">
+              <label for="contact-msg">Mensagem</label>
+              <textarea class="input-primary" id="contact-msg" name="contact-msg"></textarea>
+            </fieldset>
+
+            <fieldset class="col-xs-12">
+              <button class="btn btn-block btn-primary">Enviar</button>
+            </fieldset>
+          </form>
+        </aside>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- How it works -->
+<div ng-include src="'views/partials/footer-not-logged.html'"></div>
