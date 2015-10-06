@@ -109,6 +109,11 @@ angular
         controller: 'PoliticaDePrivacidadeCtrl',
         controllerAs: 'politicaDePrivacidade'
       })
+      .when('/esqueceu-senha', {
+        templateUrl: 'views/esqueceu-senha.html',
+        controller: 'EsqueceuSenhaCtrl',
+        controllerAs: 'esqueceuSenha'
+      })
       .otherwise({
         redirectTo: '/'
       });
