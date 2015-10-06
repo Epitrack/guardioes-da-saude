@@ -937,7 +937,7 @@ p.login-email {
 //
 
 .card {
-  min-height: 300px;
+  min-height: 280px;
   background-color: $link-primary;
   margin-bottom: 20px;
   position: relative;
@@ -1195,7 +1195,7 @@ p.login-email {
   }
   //  ====
 
-  .main, .main-content{ height: auto; }
+  .main, .main-content{ height: 100%; }
 
   // Survey
   .survey-content { min-height: 750px; }
