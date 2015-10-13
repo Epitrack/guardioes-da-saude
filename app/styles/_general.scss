@@ -865,6 +865,28 @@ body {
   margin: 35px auto 25px auto;
 }
 
+.btn-hayf {
+  @include apr(none);
+  @include bdr(100%);
+  border: none;
+  outline: none;
+  width: 210px;
+  height: 210px;
+  margin: 0 40px 40px 40px;
+  background-color: transparent;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  &.good {
+    @include path('icon-survey-good.svg');
+  }
+
+  &.bad {
+    @include path('icon-survey-bad.svg');
+  }
+}
+
 // ====
 
 
@@ -1169,6 +1191,8 @@ p.login-email {
   .survey-avatar { margin: 0 15px; }
 
   .survey-content { min-height: 1024px; }
+
+  .btn-hayf { margin: 0 40px; }
   // ====
 
   // change photo
@@ -1202,9 +1226,7 @@ p.login-email {
   // ====
 
   // fale conosco
-  .fale-conosco {
-    margin-top: 70px;
-  }
+  .fale-conosco { margin-top: 70px; }
   // ====
 }
 

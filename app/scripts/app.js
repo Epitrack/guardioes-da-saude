@@ -79,6 +79,11 @@ angular
         controller: 'SurveyCtrl',
         controllerAs: 'survey'
       })
+      .when('/survey/:id/step-1', {
+        templateUrl: 'views/how-are-you-feeling.html',
+        controller: 'HowAreYouFeelingCtrl',
+        controllerAs: 'howAreYouFeeling'
+      })
       .when('/components', {
         templateUrl: 'views/components.html',
         controller: 'ComponentCtrl',
@@ -119,5 +124,5 @@ angular
       });
 
       // use the HTML5 History API
-      $locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(false);
   });
