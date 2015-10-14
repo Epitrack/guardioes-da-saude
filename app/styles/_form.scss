@@ -305,6 +305,17 @@ textarea {
 // ====
 
 
+
+//
+// Survey
+//
+
+.hayf-form { height: 610px; }
+
+// ====
+
+
+
 // iPad
 @media (min-width: 768px) {
   // Search home
@@ -312,6 +323,10 @@ textarea {
     width: 80%;
     margin-left: 10%;
   }
+  // ====
+
+  // Survey
+  .hayf-form { height: 310px; }
   // ====
 }
 
