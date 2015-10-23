@@ -284,7 +284,7 @@ textarea {
 
 
 //
-// Fale Conosco
+// Contact
 //
 
 .contact-form {
@@ -305,6 +305,81 @@ textarea {
 // ====
 
 
+
+//
+// Survey
+//
+
+.hayf-form { height: 610px; }
+
+.form-primary {
+  legend {
+    text-align: left;
+    border-bottom: 0 solid transparent;
+    font-size: ($fs-normal)+.2;
+    color: $survey-title;
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    text-align: left;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  label {
+    color: $link-primary;
+    font-size: ($fs-normal)+.2;
+    margin-left: 10px;
+    max-width: 80%;
+  }
+
+  .btn-submit { margin-top: 50px; }
+}
+
+.legend {
+  margin-top: 30px;
+}
+
+.checkbox-primary {
+  width: 14px;
+  height: 14px;
+  @include bdr(2px);
+  @include apr(none);
+  vertical-align: top;
+  border: 1px solid $link-primary;
+  background-color: transparent;
+  outline: none;
+
+  &:checked {
+    @include path('icon-radio-check.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.btn-submit {
+  @include bdr(5px);
+  background-color: $link-primary;
+  color: $btn-primary;
+  font-size: ($fs-medium)-.2;
+  padding: 10px 0;
+  outline: none;
+  border: none;
+  @include transition(all, .2s, 0s, ease);
+
+  &:hover {
+    background-color: $btn-primary;
+    color: $link-primary;
+  }
+}
+
+// ====
+
+
+
 // iPad
 @media (min-width: 768px) {
   // Search home
@@ -312,6 +387,10 @@ textarea {
     width: 80%;
     margin-left: 10%;
   }
+  // ====
+
+  // Survey
+  .hayf-form { height: 310px; }
   // ====
 }
 

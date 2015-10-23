@@ -12,6 +12,37 @@
 
 // ====
 
+
+
+//
+// I Feel Good
+//
+
+.thank-you-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.thank-you-text {
+  text-align: center;
+  font-size: ($fs-normal)+.6;
+  color: $bg-modal;
+  margin-bottom: 0;
+}
+
+.thank-you-share {
+  margin-top: 40px;
+
+  h3 {
+    @extend .login-subtitle;
+    color: $bg-modal;
+  }
+}
+
+// ====
+
+
+
 // iPad
 @media screen and (min-width: 768px) {}
 

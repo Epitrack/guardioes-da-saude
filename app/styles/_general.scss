@@ -820,7 +820,11 @@ body {
   text-align: center;
   background-image: radial-gradient(50% 162%, #1976D2 56%, #01579B 100%);
 
-  .title-primary { color: $link-primary; }
+  .title-primary {
+    color: $link-primary;
+    font-size: ($fs-medium)*2;
+    margin-bottom: 40px;
+  }
 }
 
 .survey-avatar {
@@ -863,6 +867,47 @@ body {
   font-size: ($fs-normal)*2+.2;
   color: $link-primary;
   margin: 35px auto 25px auto;
+}
+
+.btn-hayf {
+  @include apr(none);
+  @include bdr(100%);
+  border: none;
+  outline: none;
+  width: 210px;
+  height: 210px;
+  margin: 0 40px 90px 40px;
+  background-color: transparent;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  font-family: $ff-light;
+
+  &::before {
+    content: attr(data-label);
+    color: $link-primary;
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    margin-left: -25px;
+    font-size: ($fs-medium)+1.5;
+  }
+
+  &.good {
+    @include path('icon-survey-good.svg');
+  }
+
+  &.bad {
+    @include path('icon-survey-bad.svg');
+  }
+}
+
+.survey-footer {
+  font-size: ($fs-normal)+.6;
+  color: $link-primary;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 // ====
@@ -1169,6 +1214,8 @@ p.login-email {
   .survey-avatar { margin: 0 15px; }
 
   .survey-content { min-height: 1024px; }
+
+  .btn-hayf { margin: 0 40px; }
   // ====
 
   // change photo
@@ -1198,13 +1245,15 @@ p.login-email {
   .main, .main-content{ height: 100%; }
 
   // Survey
-  .survey-content { min-height: 750px; }
+  .survey-content {
+    min-height: 750px;
+
+    .title-primary{ font-size: ($fs-large)+1; }
+  }
   // ====
 
   // fale conosco
-  .fale-conosco {
-    margin-top: 70px;
-  }
+  .fale-conosco { margin-top: 70px; }
   // ====
 }
 

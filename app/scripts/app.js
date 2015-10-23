@@ -79,6 +79,16 @@ angular
         controller: 'SurveyCtrl',
         controllerAs: 'survey'
       })
+      .when('/survey/:id/step-1', {
+        templateUrl: 'views/how-are-you-feeling.html',
+        controller: 'HowAreYouFeelingCtrl',
+        controllerAs: 'howAreYouFeeling'
+      })
+      .when('/survey/:id/step-2', {
+        templateUrl: 'views/choose-symptoms.html',
+        controller: 'ChooseSymptomsCtrl',
+        controllerAs: 'chooseSymptoms'
+      })
       .when('/components', {
         templateUrl: 'views/components.html',
         controller: 'ComponentCtrl',
