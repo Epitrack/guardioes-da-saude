@@ -10,4 +10,5 @@
 angular.module('gdsApp')
   .controller('HealthDailyCtrl', ['$scope', function ($scope) {
     $scope.pageClass = 'health-daily-page';
+    $scope.day = moment();
   }]);

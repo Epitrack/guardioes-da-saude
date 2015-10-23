@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="13---diario-da-saude" sketch:type="MSArtboardGroup" transform="translate(-254.000000, -527.000000)" fill="#1E88E5">
+            <g id="dashboard" sketch:type="MSLayerGroup" transform="translate(224.000000, 1.000000)">
+                <g id="Calendário" transform="translate(8.000000, 445.000000)" sketch:type="MSShapeGroup">
+                    <g id="MesAno" transform="translate(22.000000, 78.000000)">
+                        <path d="M11.7923727,8.20480376 C11.9242864,8.42832163 12,8.68979508 12,8.97031124 C12,9.37300587 11.8394289,9.7386376 11.5806687,10.0080864 L11.5806687,10.0080864 C11.5629397,10.0277252 11.5446013,10.0470303 11.5256529,10.0659787 L7.12409455,14.467537 C6.53677596,15.0548556 5.58987043,15.0601817 5,14.4703112 C4.41421356,13.8845248 4.40884821,12.9401427 5.00277421,12.3462167 L6.87867966,10.4703112 L1.49554521,10.4703112 C0.669578397,10.4703112 0,9.80451401 0,8.97031124 C0,8.14188412 0.679554462,7.47031124 1.49554521,7.47031124 L6.9079853,7.47031124 L5.00277421,5.56510015 C4.41545562,4.97778156 4.41012957,4.03087603 5,3.44100559 C5.58578644,2.85521916 6.53016855,2.8498538 7.12409455,3.4437798 L11.5256529,7.84533817 C11.6346221,7.95430732 11.7235568,8.07565485 11.7923727,8.20480376 Z" id="arrow-copy" transform="translate(6.000000, 8.955188) rotate(-180.000000) translate(-6.000000, -8.955188) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

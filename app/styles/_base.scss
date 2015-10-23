@@ -17,6 +17,7 @@ $white:                              #FFFFFF; // some fonts
 $gray:                               #CCCCCC; // some border
 $gray-light:                         #979797; // some border
 $gray-clean:                         #D9E0E7; // internal background
+$gray-smooth:                        #A9A9A9; // name of the week's day on the calendar directive
 $black-clean:                        #7E7E7E; // background when modal is open
 $black-light:                        #4C4C4C; // some fonts
 $black-ligthen:                      #D7D7D7; // some backgrounds
@@ -32,6 +33,7 @@ $white-rgb:                          rgb(255,255,255);
 $gray-rgb:                           rgb(204,204,204);
 $gray-light-rgb:                     rgb(151,151,151);
 $gray-clean-rgb:                     rgb(217,224,231);
+$gray-smooth-rgb:                    rgb(169,169,169);
 $black-clean-rgb:                    rgb(126,126,126);
 $black-light-rgb:                    rgb(76,76,76);
 $black-ligthen-rgb:                  rgb(215,215,215);
@@ -50,7 +52,7 @@ $bg-section:                         $gray-clean;
 $bg-modal:                           $black-clean;
 $font-primary:                       $black-light;
 $bg-secondary:                       $black-ligthen;
-
+$week-days-color:                    $gray-smooth;
 
 
 // ——————————————————————
