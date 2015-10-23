@@ -25,7 +25,7 @@ angular.module('gdsApp')
     $scope.submitFellGood = function() {
       // redirect user to home
       $timeout(function(){
-        $location.path('#/');
+        $location.path('/');
       },
       300);
     };
