@@ -820,7 +820,11 @@ body {
   text-align: center;
   background-image: radial-gradient(50% 162%, #1976D2 56%, #01579B 100%);
 
-  .title-primary { color: $link-primary; }
+  .title-primary {
+    color: $link-primary;
+    font-size: ($fs-medium)*2;
+    margin-bottom: 40px;
+  }
 }
 
 .survey-avatar {
@@ -1241,7 +1245,11 @@ p.login-email {
   .main, .main-content{ height: 100%; }
 
   // Survey
-  .survey-content { min-height: 750px; }
+  .survey-content {
+    min-height: 750px;
+
+    .title-primary{ font-size: ($fs-large)+1; }
+  }
   // ====
 
   // fale conosco

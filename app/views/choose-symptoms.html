@@ -4,7 +4,7 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
         <h2 class="title-primary">Marque abaixo o que você está sentindo neste momento:</h2>
 
-        <form ng-submit="getSymptoms()" name="choose-symptoms-form" class="row choose-symptoms-form">
+        <form name="choose-symptoms-form" class="choose-symptoms-form form-primary">
           <fieldset class="col-xs-12">
             <legend>Sintomas</legend>
           </fieldset>
@@ -14,67 +14,7 @@
             <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
           </fieldset>
 
-          <!-- <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.tosse" value="tosse" id="symptom-tosse" class="checkbox-primary">
-            <label for="symptom-tosse">Tosse</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.vomito" value="nausea-vomito" id="symptom-nausea-vomito" class="checkbox-primary">
-            <label for="symptom-nausea-vomito">Náusea ou vômito</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.manchaVermelha" value="mancha-vermelha" id="symptom-mancha-vermelha" class="checkbox-primary">
-            <label for="symptom-mancha-vermelha">Manchas vermelhas no corpo</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.dorNasJuntas" value="dor-nas-juntas" id="symptom-dor-nas-juntas" class="checkbox-primary">
-            <label for="symptom-dor-nas-juntas">Dor nas juntas</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.diarreia" value="diarreia" id="symptom-diarreia" class="checkbox-primary">
-            <label for="symptom-diarreia">Diarreia</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.dorNoCorpo" value="dor-no-corpo" id="symptom-dor-no-corpo" class="checkbox-primary">
-            <label for="symptom-dor-no-corpo">Dor no corpo</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.sangramento" value="sangramento" id="symptom-sangramento" class="checkbox-primary">
-            <label for="symptom-sangramento">Sangramento</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.faltaDeAr" value="falta-de-ar" id="symptom-falta-de-ar" class="checkbox-primary">
-            <label for="symptom-falta-de-ar">Falta de ar</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.urinaOuOlhosAmarelados" value="urina-ou-olhos-amarelados" id="symptom-urina-ou-olhos-amarelados" class="checkbox-primary">
-            <label for="symptom-urina-ou-olhos-amarelados">Urina ou olhos amarelados</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.dorDeCabeca" value="dor-de-cabeca" id="symptom-dor-de-cabeca" class="checkbox-primary">
-            <label for="symptom-dor-de-cabeca">Dor de cabeça</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.olhosVermelhos" value="olhos-vermelhos" id="symptom-olhos-vermelhos" class="checkbox-primary">
-            <label for="symptom-olhos-vermelhos">Olhos vermelhos</label>
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.coceira" value="coceira" id="symptom-coceira" class="checkbox-primary">
-            <label for="symptom-coceira">Coceira</label>
-          </fieldset> -->
-
-          <fieldset class="col-xs-12">
+          <fieldset class="col-xs-12 legend">
             <legend>Outros</legend>
           </fieldset>
 
@@ -93,13 +33,18 @@
             <label for="estive-fora">Estive fora do Brasil nos últimos 14 dias</label>
           </fieldset>
 
-          <button type="submit" class="col-xs-12 btn-submit">Confirmar</button>
+          <fieldset class="col-xs-12">
+            <button data-toggle="modal" data-target="#confirm-send-survey" class="col-xs-12 btn-submit">Confirmar</button>
+          </fieldset>
         </form>
 
       </section>
     </div>
   </div>
 </div>
+
+<!-- Show when user submit survey -->
+<div ng-include src="'views/partials/confirm-send-survey.html'"></div>
 
 <!-- I feel bad :( -->
 <div ng-include src="'views/partials/modal-i-feel-bad.html'"></div>
