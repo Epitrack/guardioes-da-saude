@@ -40,7 +40,7 @@ angular.module('gdsApp')
       $timeout(function(){
         $location.path('/');
       },
-      300);
+      500);
 
     };
 
