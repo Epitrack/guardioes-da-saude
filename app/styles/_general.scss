@@ -48,7 +48,6 @@ body {
 .main-content {
   display: block;
   position: relative;
-  height: 100%;
 }
 
 .main-content { background-color: $bg-section; }
@@ -1210,6 +1209,13 @@ p.login-email {
   .list-tips { margin-right: 30px; }
   // ====
 
+  // Main
+  .main-content {
+    height: auto;
+    min-height: 100%;
+  }
+  // ====
+
   // Survey
   .survey-avatar { margin: 0 15px; }
 
@@ -1241,8 +1247,6 @@ p.login-email {
     img { width: 60%; }
   }
   //  ====
-
-  .main, .main-content{ height: 100%; }
 
   // Survey
   .survey-content {
