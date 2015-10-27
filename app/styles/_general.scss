@@ -991,6 +991,20 @@ p.login-email {
   &.half { margin-right: 20px;}
 
   &.news { padding-top: 20px; }
+
+  h2 {
+    font-family: $ff-light;
+    font-size: $fs-medium;
+    color: $btn-primary;
+    margin: 15px 0 3px 0;
+  }
+
+  h3 {
+    font-family: $ff-light;
+    font-size: ($fs-normal)+.2;
+    color: $week-days-color;
+    margin: 3px 0 17px 0;
+  }
 }
 
 .content-card { padding: 20px; }
