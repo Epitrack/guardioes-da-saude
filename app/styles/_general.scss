@@ -721,6 +721,58 @@ body {
 
 
 //
+// Health Daily
+//
+
+.health-daily-avatar, .total-participants {
+  float: left;
+}
+.health-daily-avatar {
+  width: 180px;
+  margin: 31px 65px 20px 19px;
+  display: inline-block;
+
+  img {
+    max-width: 100%;
+    @include bdr(100%);
+  }
+
+  figcaption {
+    text-align: center;
+    color: $font-primary;
+    font-size: ($fs-normal)*2;
+    margin-top: 20px;
+    font-family: $ff-regular;
+
+    span {
+      margin-top: -5px;
+      display: block;
+      font-family: $ff-light;
+      font-size: ($fs-normal)+.8;
+    }
+  }
+}
+
+.total-participants {
+  margin: 31px 19px 20px 0;
+  
+  h1 {
+    font-family: $ff-light;
+    font-size: ($fs-medium)+.4;
+    color: $font-primary;
+    margin: 10px 0 20px 0;
+
+    span {
+      font-family: $ff-bold;
+    }
+  }
+}
+
+// ====
+
+
+
+//
 // News
 //
 

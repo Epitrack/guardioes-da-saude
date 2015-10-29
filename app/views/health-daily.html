@@ -6,7 +6,26 @@
   <h2 class="section-title">Diário da Saúde <span>/ Aninha</span></h2>
 
   <article class="col-xs-12 card">
-    <areachart id="area-chart" data-options="areaOptions"></areachart>
+    <aside class="health-daily-avatar">
+      <figure>
+        <img src="../images/avatar/avatar-1.svg" alt="Aninha - 28 anos">
+        <figcaption>Aninha <span>28 anos</span></figcaption>
+      </figure>
+    </aside>
+    
+    <aside class="total-participants">
+      <div>
+        <h2>Total de participações</h2>
+        <h1><span>162</span> Participações</h1>
+      </div>
+
+      <div>
+        <h2>Geral</h2>
+        <h3>Estatísticas das participações</h3>
+        <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+      </div>
+
+    </aside>
   </article>
 
   <article class="col-xs-12 col-md-4 card half">
@@ -20,13 +39,7 @@
   <article class="col-xs-12 col-md-7 card">
     <h2>Frequência</h2>
     <h3>Relação de participação por mês</h3>
-    <barchart id="bar-chart" data-options="barOptions"></barchart>    
-    <!-- <donutchart id="donut-chart" data-options="donutOptions"></donutchart> -->
-    <!-- <linechart id="line-chart" data-options="lineOptions"></linechart> -->
-    <!-- <areachart id="area-chart" data-options="areaOptions"></areachart> -->
-
-
-
+    <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
   </article>
 
 </section>
