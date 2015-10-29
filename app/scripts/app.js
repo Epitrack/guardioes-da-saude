@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'leaflet-directive'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -125,10 +126,15 @@ angular
         controller: 'EsqueceuSenhaCtrl',
         controllerAs: 'esqueceuSenha'
       })
+      .when('/health-map', {
+        templateUrl: 'views/health-map.html',
+        controller: 'HealthMapCtrl',
+        controllerAs: 'healthMap'
+      })
       .otherwise({
         redirectTo: '/'
       });
 
       // use the HTML5 History API
-      $locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(false);
   });

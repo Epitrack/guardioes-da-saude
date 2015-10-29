@@ -52,12 +52,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.4/leaflet.css">
   </head>
   <body ng-app="gdsApp">
     <!--[if lte IE 8]>
@@ -120,8 +120,6 @@
        ga('send', 'pageview');
      </script>
 
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.4/leaflet.js"></script>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -136,6 +134,9 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -166,6 +167,7 @@
         <script src="scripts/controllers/how-are-you-feeling.js"></script>
         <script src="scripts/controllers/choose-symptoms.js"></script>
         <script src="scripts/directives/calendar.js"></script>
+        <script src="scripts/controllers/health-map.js"></script>
         <!-- endbuild -->
 </body>
 </html>

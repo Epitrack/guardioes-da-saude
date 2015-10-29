@@ -26,15 +26,17 @@ angular.module('gdsApp')
 
       lat = position.coords.latitude, lng = position.coords.longitude;
 
-      map = L.map('map').setView([lat, lng], 13);
+      console.log('Position -> ', position);
 
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-        maxZoom: 18,
-        attribution: '<a href="http://www.epitrack.com.br" target="_blank">Epitrack</a> &copy;',
-        id: 'mapbox.streets'
-      }).addTo(map);
+      // map = L.map('map').setView([lat, lng], 13);
 
-      L.marker([lat, lng]).addTo(map).bindPopup("Você está aqui!").openPopup();
+      // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+      //   maxZoom: 18,
+      //   attribution: '<a href="http://www.epitrack.com.br" target="_blank">Epitrack</a> &copy;',
+      //   id: 'mapbox.streets'
+      // }).addTo(map);
+
+      // L.marker([lat, lng]).addTo(map).bindPopup("Você está aqui!").openPopup();
     };
 
     function mapError(msg) {
@@ -42,10 +44,10 @@ angular.module('gdsApp')
     }
     // ====
 
+    $scope.getLocation(); // get user location
+
     // UPAS
     $scope.loadUpas = function() {
-      $scope.getLocation(); // get user location
-
       $scope.upas = [];
 
       // Use service
