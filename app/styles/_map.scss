@@ -1,0 +1,46 @@
+// —————————————————————————
+//     Map interactions
+// —————————————————————————
+
+//
+// /health-map
+//
+
+.map-mini-dashboard {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: $link-primary;
+  z-index: 10;
+  height: 200px;
+  @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
+}
+
+.health-map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+// ====
+
+
+//
+// Media queries
+//
+
+// iPads
+@media screen and (min-width: 768px) {
+  .map-mini-dashboard {
+    position: absolute;
+    height: 100%;
+    @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
+  }
+}
+
+// Desktops
+@media screen and (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}
