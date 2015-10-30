@@ -8,20 +8,43 @@
 
 @-webkit-keyframes moveToLeftFade {
   from { }
-  to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+  }
 }
 @keyframes moveToLeftFade {
   from { }
-  to { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+
+  to {
+    opacity: 0.3;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
 }
 
 @-webkit-keyframes moveToRightFade {
-  from { }
-  to { opacity: 0.3; -webkit-transform: translateX(100%); }
+  from {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
 }
 @keyframes moveToRightFade {
-  from { }
-  to { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+  from {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
 }
 
 @-webkit-keyframes pendulo {
@@ -41,6 +64,30 @@
   60% { margin-left: 10px; }
   75% { margin-left: 5px; }
   100% { margin-left: 0; }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from  { transform:translateX(100%); }
+  to    { transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+  from  { -moz-transform:translateX(100%); }
+  to    { -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+  from  { -webkit-transform:translateX(100%); }
+  to    { -webkit-transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  to    { transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+  to    { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+  to    { -webkit-transform: translateX(-100%); }
 }
 
 // ====
@@ -109,6 +156,26 @@
       -webkit-animation: pendulo .7s ease-in-out paused;
       animation: pendulo .7s ease-in-out paused;
     }
+  }
+}
+
+// ====
+
+
+
+//
+// Health map
+//
+
+.health-map {
+  &.ng-leave {
+    -webkit-animation: moveToLeftFade .7s ease-in-out both;
+      animation: moveToLeftFade .7s ease-in-out both;
+  }
+
+  &.ng-enter {
+    -webkit-animation: moveToRightFade .7s ease-in-out both;
+      animation: moveToRightFade .7s ease-in-out both;
   }
 }
 

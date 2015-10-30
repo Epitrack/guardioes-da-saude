@@ -30,7 +30,7 @@ angular.module('gdsApp')
     obj.getFarmacias = function(callback) {
       var api_key = 'AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg';
 
-      $http.get('http://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=-8.0865589,-34.8918439&radius=800&key=' + api_key)
+      $http.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=-8.0865589,-34.8918439&radius=800&key=' + api_key)
         .success(function(data) {
           farmacias = data;
           callback(data);

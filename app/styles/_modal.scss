@@ -43,6 +43,25 @@
 
 
 
+//
+// Health map
+//
+
+.modal-sindromes {
+  @extend .modal-add-profile;
+
+  .modal-header { margin-bottom: 0; }
+
+  li {
+    @extend .text-primary;
+    margin-left: 10px;
+
+    span { font-family: $ff-light; }
+  }
+}
+
+
+
 // iPad
 @media screen and (min-width: 768px) {}
 
