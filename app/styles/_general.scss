@@ -778,7 +778,7 @@ body {
     }
 
     ul {
-      
+
       li {
         float: left;
         width: 155px;
@@ -786,7 +786,7 @@ body {
       }
 
       li:nth-child(1) {
-        margin: 0 15px 0 0; 
+        margin: 0 15px 0 0;
       }
 
       figcaption {
@@ -794,11 +794,11 @@ body {
         font-family: $ff-light;
         font-size: ($fs-normal)+.6;
         color: $font-primary;
-        
+
         span {
           font-family: $ff-bold;
         }
-        
+
         p {
           font-size: ($fs-normal)+.2;
         }
@@ -840,7 +840,7 @@ body {
 }
 
 .sort-by {
-  
+
   button {
     color: $link-primary;
     background-color: $btn-primary;
@@ -1317,7 +1317,11 @@ p.login-email {
     min-height: 700px;
     height: 100%;
   }
-  .nav-primary { margin-top: 20px; }
+  .nav-primary {
+    margin-top: 20px;
+
+    a { font-size: ($fs-normal); }
+  }
   // ====
 
   // How it Works
@@ -1412,6 +1416,12 @@ p.login-email {
     img { width: 60%; }
   }
   //  ====
+
+  // Nav primary
+  .nav-primary {
+    a { font-size: ($fs-normal)+.2; }
+  }
+  // ====
 
   // Survey
   .survey-content {

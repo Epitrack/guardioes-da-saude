@@ -70,6 +70,8 @@
   position: relative;
   display: inline-block;
 
+  &.other { color: $font-primary; }
+
   .icon {
     cursor: pointer;
     width: 15px;

@@ -42,11 +42,6 @@ angular
         controller: 'LoginEmailCtrl',
         controllerAs: 'loginEmail'
       })
-      .when('/dashboard', {
-        templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl',
-        controllerAs: 'dashboard'
-      })
       .when('/profile', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
@@ -131,6 +126,26 @@ angular
         templateUrl: 'views/health-map.html',
         controller: 'HealthMapCtrl',
         controllerAs: 'healthMap'
+      })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl',
+        controllerAs: 'dashboard'
+      })
+      .when('/dashboard/analysis', {
+        templateUrl: 'views/data-analysis.html',
+        controller: 'DataAnalysisCtrl',
+        controllerAs: 'dataAnalysis'
+      })
+      .when('/dashboard/analysis/result', {
+        templateUrl: 'views/dashboard-result.html',
+        controller: 'DashboardResultCtrl',
+        controllerAs: 'dashboardResult'
+      })
+      .when('/dashboard/map', {
+        templateUrl: 'views/dashboard-map.html',
+        controller: 'DashboardMapCtrl',
+        controllerAs: 'dashboardMap'
       })
       .otherwise({
         redirectTo: '/'
