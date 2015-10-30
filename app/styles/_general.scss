@@ -755,6 +755,20 @@ body {
 
 .total-participants {
   margin: 31px 19px 20px 0;
+
+  div {
+    float: left;
+  }
+
+  .geral {
+    float: left;
+    clear: left;
+    padding: 0;
+  }
+
+  .status  {
+    padding: 100px 0 0 0;
+  }
   
   h1 {
     font-family: $ff-light;
@@ -764,6 +778,33 @@ body {
 
     span {
       font-family: $ff-bold;
+    }
+  }
+
+  ul {
+    
+    li {
+      float: left;
+      width: 155px;
+    }
+
+    li:nth-child(1) {
+      margin: 0px 0 0 15px;
+    }
+
+    figcaption {
+      float: right;
+      font-family: $ff-light;
+      font-size: ($fs-normal)+.6;
+      color: $font-primary;
+      
+      span {
+        font-family: $ff-bold;
+      }
+      
+      p {
+        font-size: ($fs-normal)+.2;
+      }
     }
   }
 }
