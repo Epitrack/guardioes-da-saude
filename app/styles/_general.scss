@@ -755,7 +755,7 @@ body {
 }
 
 .total-participants {
-  margin: 31px 0 20px 0;
+  margin: 22px 0 20px 0;
 
   div {
     float: left;
@@ -824,6 +824,8 @@ body {
 }
 
 .frequency {
+  position: relative;
+
   h2, h3 {
     float: left;
   }
@@ -831,8 +833,9 @@ body {
     clear: both;
   }
   .sort-by {
-    float: right;
-    margin: 15px 0 0 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
   }
 }
 

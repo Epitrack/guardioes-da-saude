@@ -12,6 +12,12 @@ angular.module('gdsApp')
     $scope.pageClass = 'health-daily-page';
     $scope.day = moment();
 
+    $scope.totalParticipants = {
+    	data: [
+    		{total: 162}
+    	]
+    };
+
     $scope.barOptions = {
 	    data: [
 	      { y: '2006', a: 100, b: 90 },
