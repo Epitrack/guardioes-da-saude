@@ -778,10 +778,11 @@ body {
     }
 
     ul {
-    
+      
       li {
         float: left;
         width: 155px;
+        cursor: pointer;
       }
 
       li:nth-child(1) {

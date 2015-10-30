@@ -6,7 +6,14 @@
 
 svg { width: 100%; }
 
-#donut-chart-diario { width: 110px; height: 110px; }
+#donut-chart-diario { 
+	width: 110px;
+	height: 110px;
+
+	tspan {
+		display: none;
+	}
+}
 #line-chart-diario {
 	float: left;
 	width: 100%;

@@ -47,13 +47,13 @@ angular.module('gdsApp')
 
 	  $scope.donutOptions = {
 		  data: [
-		    {label: "Bem", value: 77},
-		    {label: "Mal", value: 23}
+		    {label: "Bem", value: 77, participants: 10},
+		    {label: "Mal", value: 23, participants: 5}
 		  ],
 		  colors: ['#E0D433', '#C81204'],
 		  resize: true
 		};
-
+		
 		$scope.areaOptions = {
 			data: [
 	      { y: '2006', a: 100, b: 90 },

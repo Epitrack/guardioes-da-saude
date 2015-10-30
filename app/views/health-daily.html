@@ -45,8 +45,8 @@
             <figure>
               <img src="../images/icon-health-daily-good.svg" alt="Bem">
               <figcaption>
-                <span>77%</span> Bem
-                <p>10 Participações</p>
+                <span>{{donutOptions.data[0].value}}%</span> {{donutOptions.data[0].label}}
+                <p>{{donutOptions.data[0].participants}} Participações</p>
               </figcaption>
             </figure>
           </li>
@@ -54,8 +54,8 @@
             <figure>
               <img src="../images/icon-health-daily-bad.svg" alt="Mal">
               <figcaption>
-                <span>23%</span> Bem
-                <p>10 Participações</p>
+                <span>{{donutOptions.data[1].value}}%</span> {{donutOptions.data[1].label}}
+                <p>{{donutOptions.data[1].participants}}  Participações</p>
               </figcaption>
             </figure>
           </li>
