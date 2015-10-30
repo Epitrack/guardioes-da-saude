@@ -14,6 +14,7 @@ $blue-darker:                        #395185; // facebook button
 $blue-acqua:                         #5879F4; // google button
 $green-acqua:                        #5E9FCA; // twitter button
 $white:                              #FFFFFF; // some fonts
+$black:                              #000000; // natural black
 $gray:                               #CCCCCC; // some border
 $gray-light:                         #979797; // some border
 $gray-clean:                         #D9E0E7; // internal background
@@ -30,6 +31,7 @@ $blue-darker-rgb:                    rgb(57,81,133);
 $blue-acqua-rgb:                     rgb(88,121,244);
 $green-acqua-rgb:                    rgb(94,159,202);
 $white-rgb:                          rgb(255,255,255);
+$black-rgb:                          rgb(0,0,0);
 $gray-rgb:                           rgb(204,204,204);
 $gray-light-rgb:                     rgb(151,151,151);
 $gray-clean-rgb:                     rgb(217,224,231);
@@ -46,6 +48,7 @@ $btn-facebook:                       $blue-darker;
 $btn-google:                         $blue-acqua;
 $btn-twitter:                        $green-acqua;
 $link-primary:                       $white;
+$natural-black:                      $black;
 $border-secondary:                   $gray;
 $border-primary:                     $gray-light;
 $bg-section:                         $gray-clean;

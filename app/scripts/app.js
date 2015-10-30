@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ChartAngular'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

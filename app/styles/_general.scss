@@ -721,6 +721,157 @@ body {
 
 
 //
+// Health Daily
+//
+
+.health-daily-avatar, .total-participants {
+  float: left;
+}
+
+.health-daily-avatar {
+  width: 180px;
+  margin: 31px 50px 20px 19px;
+  display: inline-block;
+
+  img {
+    max-width: 100%;
+    @include bdr(100%);
+  }
+
+  figcaption {
+    text-align: center;
+    color: $font-primary;
+    font-size: ($fs-normal)*2;
+    margin-top: 20px;
+    font-family: $ff-regular;
+
+    span {
+      margin-top: -5px;
+      display: block;
+      font-family: $ff-light;
+      font-size: ($fs-normal)+.8;
+    }
+  }
+}
+
+.total-participants {
+  margin: 22px 0 20px 0;
+
+  div {
+    float: left;
+  }
+
+  .geral {
+    float: left;
+    clear: left;
+    padding: 0;
+  }
+
+  .status  {
+    padding: 100px 0 0 0;
+
+    figure {
+      img {
+        @include bdr(100%);
+        @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
+      }
+    }
+
+    ul {
+      
+      li {
+        float: left;
+        width: 155px;
+        cursor: pointer;
+      }
+
+      li:nth-child(1) {
+        margin: 0 15px 0 0; 
+      }
+
+      figcaption {
+        float: right;
+        font-family: $ff-light;
+        font-size: ($fs-normal)+.6;
+        color: $font-primary;
+        
+        span {
+          font-family: $ff-bold;
+        }
+        
+        p {
+          font-size: ($fs-normal)+.2;
+        }
+      }
+    }
+  }
+
+  .sort-by {
+    float: right;
+  }
+
+  h1 {
+    font-family: $ff-light;
+    font-size: ($fs-medium)+.4;
+    color: $font-primary;
+    margin: 10px 0 20px 0;
+
+    span {
+      font-family: $ff-bold;
+    }
+  }
+
+}
+
+.frequency {
+  position: relative;
+
+  h2, h3 {
+    float: left;
+  }
+  h3 {
+    clear: both;
+  }
+  .sort-by {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.sort-by {
+  
+  button {
+    color: $link-primary;
+    background-color: $btn-primary;
+    border: none;
+
+    &:hover {
+      color: $link-primary;
+      background-color: $btn-google;
+    }
+  }
+
+  .dropdown-menu {
+    left: initial;
+    right: 0;
+    min-width: auto;
+
+    li {
+      float: none;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      text-align: center;
+    }
+  }
+}
+
+// ====
+
+
+
+//
 // News
 //
 
@@ -991,6 +1142,20 @@ p.login-email {
   &.half { margin-right: 20px;}
 
   &.news { padding-top: 20px; }
+
+  h2 {
+    font-family: $ff-light;
+    font-size: $fs-medium;
+    color: $btn-primary;
+    margin: 15px 0 3px 0;
+  }
+
+  h3 {
+    font-family: $ff-light;
+    font-size: ($fs-normal)+.2;
+    color: $week-days-color;
+    margin: 3px 0 17px 0;
+  }
 }
 
 .content-card { padding: 20px; }
