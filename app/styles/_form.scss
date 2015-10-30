@@ -387,6 +387,14 @@ textarea {
 .form-mini-dashboard {
   .input-primary {
     margin-top: 30px;
+    @include path('icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 6%;
+    padding-left: 40px;
+    @include transition(background, .2s, 0s, linear);
+
+    &:focus { background-size: 5%; }
   }
 }
 

@@ -9,6 +9,9 @@
  */
 angular.module('gdsApp')
   .controller('HealthMapCtrl', ['$scope', function ($scope) {
+
+    $scope.pageClass = 'health-map';
+
     angular.extend($scope, {
       location: {
         lat: 41.85,

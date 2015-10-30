@@ -12,7 +12,8 @@
   left: 0;
   background-color: $link-primary;
   z-index: 10;
-  height: 200px;
+  min-height: 200px;
+  height: auto;
   @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
 }
 
@@ -21,6 +22,91 @@
   width: 100%;
   position: absolute;
   z-index: 1;
+}
+
+.info-mini-dashboard {
+  .contact {
+    font-size: ($fs-normal)+.2;
+    color: $font-primary;
+    font-family: $ff-light;
+    text-align: center;
+    margin-top: 30px;
+
+    a {
+      display: block;
+      color: $font-primary;
+      text-decoration: underline;
+    }
+  }
+
+  .week-participation {
+    margin: 15px 0;
+    position: relative;
+
+    span {
+      width: 45px;
+      height: 45px;
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+      @include path('icon-participations.svg');
+    }
+
+    div {
+      display: inline-block;
+      margin-left: 15px;
+    }
+
+    h4 { margin: 5px auto; }
+    h5 { margin-top: 0; }
+  }
+}
+
+.legend-subtitle {
+  font-size: ($fs-normal)+.2;
+  border-bottom: none;
+  color: $btn-primary;
+  position: relative;
+  display: inline-block;
+
+  .icon {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    @include bdr(100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+
+    &.question {
+      @include path('icon-question.svg');
+    }
+  }
+}
+
+.progress-wrapper {
+  .progress {
+    clear: both;
+    background-color: $bg-secondary;
+  }
+
+  .progress-label {
+    @extend .pull-left;
+    font-size: ($fs-normal)+.2;
+    font-family: $ff-light;
+    color: $font-primary;
+  }
+
+  .progress-value {
+    @extend .pull-right;
+    font-size: ($fs-normal)+.2;
+    font-family: $ff-light;
+    color: $font-primary;
+  }
 }
 
 // ====

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>question</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="06---mapa-da-saude" sketch:type="MSArtboardGroup" transform="translate(-42.000000, -552.000000)">
+            <g id="content" sketch:type="MSLayerGroup" transform="translate(-208.000000, 62.000000)">
+                <g id="databox" transform="translate(208.000000, 0.000000)">
+                    <g id="Sintomas" transform="translate(42.000000, 454.000000)">
+                        <g id="Febre" transform="translate(0.000000, 34.074830)">
+                            <g id="question" transform="translate(0.000000, 2.176871)">
+                                <text id="?" sketch:type="MSTextLayer" font-family="Foco" font-size="16.6466587" font-weight="normal" fill="#1E88E5">
+                                    <tspan x="7.41924399" y="16.997599">?</tspan>
+                                </text>
+                                <ellipse id="Oval-4" stroke="#1E88E5" stroke-width="2" sketch:type="MSShapeGroup" cx="11.128866" cy="11.3197279" rx="11.128866" ry="10.9867947"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
