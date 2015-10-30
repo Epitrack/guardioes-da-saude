@@ -727,9 +727,10 @@ body {
 .health-daily-avatar, .total-participants {
   float: left;
 }
+
 .health-daily-avatar {
   width: 180px;
-  margin: 31px 65px 20px 19px;
+  margin: 31px 50px 20px 19px;
   display: inline-block;
 
   img {
@@ -754,7 +755,7 @@ body {
 }
 
 .total-participants {
-  margin: 31px 19px 20px 0;
+  margin: 31px 0 20px 0;
 
   div {
     float: left;
@@ -768,8 +769,46 @@ body {
 
   .status  {
     padding: 100px 0 0 0;
+
+    figure {
+      img {
+        @include bdr(100%);
+        @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
+      }
+    }
+
+    ul {
+    
+      li {
+        float: left;
+        width: 155px;
+      }
+
+      li:nth-child(1) {
+        margin: 0 15px 0 0; 
+      }
+
+      figcaption {
+        float: right;
+        font-family: $ff-light;
+        font-size: ($fs-normal)+.6;
+        color: $font-primary;
+        
+        span {
+          font-family: $ff-bold;
+        }
+        
+        p {
+          font-size: ($fs-normal)+.2;
+        }
+      }
+    }
   }
-  
+
+  .sort-by {
+    float: right;
+  }
+
   h1 {
     font-family: $ff-light;
     font-size: ($fs-medium)+.4;
@@ -781,30 +820,45 @@ body {
     }
   }
 
-  ul {
-    
+}
+
+.frequency {
+  h2, h3 {
+    float: left;
+  }
+  h3 {
+    clear: both;
+  }
+  .sort-by {
+    float: right;
+    margin: 15px 0 0 0;
+  }
+}
+
+.sort-by {
+  
+  button {
+    color: $link-primary;
+    background-color: $btn-primary;
+    border: none;
+
+    &:hover {
+      color: $link-primary;
+      background-color: $btn-google;
+    }
+  }
+
+  .dropdown-menu {
+    left: initial;
+    right: 0;
+    min-width: auto;
+
     li {
-      float: left;
-      width: 155px;
-    }
-
-    li:nth-child(1) {
-      margin: 0px 0 0 15px;
-    }
-
-    figcaption {
-      float: right;
-      font-family: $ff-light;
-      font-size: ($fs-normal)+.6;
-      color: $font-primary;
-      
-      span {
-        font-family: $ff-bold;
-      }
-      
-      p {
-        font-size: ($fs-normal)+.2;
-      }
+      float: none;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      text-align: center;
     }
   }
 }

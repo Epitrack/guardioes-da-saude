@@ -51,10 +51,7 @@ angular.module('gdsApp')
 		    {label: "Mal", value: 23}
 		  ],
 		  colors: ['#E0D433', '#C81204'],
-		  formatter: function (options) { 
-		  	var stateGood = 0;
-		  	console.log(stateGood);
-		  }
+		  resize: true
 		};
 
 		$scope.areaOptions = {

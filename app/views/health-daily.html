@@ -18,6 +18,20 @@
         <h2>Total de participações</h2>
         <h1><span>162</span> Participações</h1>
       </div>
+      
+      <div class="dropdown sort-by">
+        <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Este ano
+          <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+          <li><a href="#">2014</a></li>
+          <li><a href="#">2013</a></li>
+          <li><a href="#">2012</a></li>
+          <li><a href="#">2011</a></li>
+        </ul>
+      </div>
 
       <div class="geral">
         <h2>Geral</h2>
@@ -59,8 +73,21 @@
    </div>
   </article>
 
-  <article class="col-xs-12 col-md-7 card">
+  <article class="col-xs-12 col-md-7 card frequency">
     <h2>Frequência</h2>
+    <div class="dropdown sort-by">
+      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        2015
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+        <li><a href="#">2014</a></li>
+        <li><a href="#">2013</a></li>
+        <li><a href="#">2012</a></li>
+        <li><a href="#">2011</a></li>
+      </ul>
+    </div>
     <h3>Relação de participação por mês</h3>
     <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
   </article>

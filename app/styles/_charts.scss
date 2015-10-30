@@ -7,7 +7,11 @@
 svg { width: 100%; }
 
 #donut-chart-diario { width: 110px; height: 110px; }
-#line-chart-diario { height: 218px; }
+#line-chart-diario {
+	float: left;
+	width: 100%;
+	height: 208px;
+}
 
 
 //
