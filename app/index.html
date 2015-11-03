@@ -66,7 +66,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header class="header-primary">
+    <header class="header-primary" ng-controller="IndexCtrl">
       <div class="navbar navbar-default not-logged" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -84,13 +84,13 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- visible when user not logged -->
-            <!-- <ul class="nav navbar-nav">
-              <li><a class="nav-link" ng-href="#/cadastro">Cadastre-se</a></li>
-              <li><a class="nav-link" ng-href="#/login">Entrar</a></li>
-            </ul> -->
+            <ul class="nav navbar-nav">
+              <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
+              <li><a class="nav-link" ng-href="/login">Entrar</a></li>
+            </ul>
 
             <!-- visible when user is logged -->
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-show="$location.path() != '/'">
               <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
               <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
             </ul>
@@ -176,6 +176,8 @@
         <script src="scripts/controllers/data-analysis.js"></script>
         <script src="scripts/controllers/dashboard-map.js"></script>
         <script src="scripts/controllers/dashboard-result.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/services/userapi.js"></script>
         <!-- endbuild -->
 </body>
 </html>

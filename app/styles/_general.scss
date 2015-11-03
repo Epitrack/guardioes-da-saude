@@ -201,7 +201,7 @@ body {
   padding: 0;
 
   &.not-logged {
-    height: 600px;
+    height: 630px;
     background-repeat: repeat;
     background-size: 100%;
     @include path('bg-not-logged.svg');
@@ -757,9 +757,7 @@ body {
 .total-participants {
   margin: 22px 0 20px 0;
 
-  div {
-    float: left;
-  }
+  div { float: left; }
 
   .geral {
     float: left;
@@ -806,9 +804,7 @@ body {
     }
   }
 
-  .sort-by {
-    float: right;
-  }
+  .sort-by { float: right; }
 
   h1 {
     font-family: $ff-light;
@@ -820,7 +816,6 @@ body {
       font-family: $ff-bold;
     }
   }
-
 }
 
 .frequency {
@@ -840,7 +835,6 @@ body {
 }
 
 .sort-by {
-
   button {
     color: $link-primary;
     background-color: $btn-primary;
@@ -1120,6 +1114,26 @@ p.login-email {
     color: $link-primary;
     text-decoration: none;
     border-bottom: 1px solid $link-primary;
+  }
+}
+
+// ====
+
+
+
+//
+// Cadastro
+//
+
+.register-agree {
+  margin-top: 20px;
+  font-size: ($fs-normal)+.2;
+  font-family: $ff-light;
+  color: $link-primary;
+
+  a {
+    color: $link-primary;
+    text-decoration: underline;
   }
 }
 
