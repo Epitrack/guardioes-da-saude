@@ -22,9 +22,4 @@ angular.module('gdsApp')
     };
     // ====
 
-    // get user location
-    $scope.getLocation = function() {
-    };
-    // ====
-
   }]);

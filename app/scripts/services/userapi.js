@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('UserApi', function ($http, toaster, $location) {
+  .service('UserApi', function ($http, toaster, $location, LocalStorage) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var obj = {};
@@ -23,16 +23,26 @@ angular.module('gdsApp')
 
     // register
     obj.createUser = function(data) {
-
       data.app_token = app_token;
       data.platform = platform;
       data.client = client;
-      // data.lat = '-8.0464492';
-      // data.lon = '-34.9324883';
+
+      // pego a localização do localStorage
+      var userStorage = LocalStorage.getItem('userStorage');
+
+      data.lat = userStorage.lat;
+      data.lon = userStorage.lon;
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
           console.log('Success createUser ', data)
+          if (data.data.error === true) {
+            toaster.pop('error', "Guardiões da Saúde", data.data.message);
+          } else {
+            toaster.pop('success', "Guardiões da Saúde", data.data.message);
+            LocalStorage.userCreateData(data.data.user);
+            $location.path('/health-daily'); // redirect user
+          }
         }, function(error){
           console.warn('Error createUser: ', error)
       });
@@ -47,12 +57,11 @@ angular.module('gdsApp')
             toaster.pop('error', "Guardiões da Saúde", data.data.message);
           } else {
             toaster.pop('success', "Guardiões da Saúde", data.data.message);
-            user.user_token = data.data.token; // add token in user obj
-            user.data = data.data.user; // add user data in user obj
+            LocalStorage.userLogin(data.data.user, data.data.token);
             $location.path('/health-daily'); // redirect user
           }
         }, function(error){
-          // console.warn('Error loginUser: ', error);
+          console.warn('Error loginUser: ', error);
           toaster.pop('error', "Guardiões da Saúde", error);
       });
     };
