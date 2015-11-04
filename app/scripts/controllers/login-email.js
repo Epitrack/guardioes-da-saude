@@ -8,6 +8,15 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginEmailCtrl', ['$scope', function ($scope) {
+  .controller('LoginEmailCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
     $scope.pageClass = 'login-email-page';
+
+    // login with email
+    $scope.loginEmail = {};
+
+    $scope.loginUserEmail = function() {
+      UserApi.loginUser($scope.loginEmail);
+    };
+    // ====
+
   }]);

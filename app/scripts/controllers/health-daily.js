@@ -59,7 +59,7 @@ angular.module('gdsApp')
 		  colors: ['#E0D433', '#C81204'],
 		  resize: true
 		};
-		
+
 		$scope.areaOptions = {
 			data: [
 	      { y: '2006', a: 100, b: 90 },

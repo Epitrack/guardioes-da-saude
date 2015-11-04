@@ -18,6 +18,7 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'leaflet-directive',
+    'toaster',
     'ChartAngular'
   ])
   .config(function ($routeProvider, $locationProvider) {

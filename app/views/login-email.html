@@ -6,15 +6,15 @@
 
           <h3 class="login-subtitle">Entre com seu email e senha:</h3>
 
-          <form class="form-login-email" name="form-login-email">
+          <form ng-submit="loginUserEmail()" class="form-login-email" name="form-login-email">
             <fieldset class="input-group mainform signup">
-              <input type="email" class="form-control mainform-input" placeholder="Email">
-              <input type="password" class="form-control mainform-input" placeholder="Senha">
+              <input type="email" class="form-control mainform-input" ng-model="loginEmail.email" placeholder="Email">
+              <input type="password" class="form-control mainform-input" ng-model="loginEmail.password" placeholder="Senha">
             </fieldset>
 
             <fieldset class="btn-group btn-group-justified" role="group">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-signup">Entrar</button>
+                <button type="submit" class="btn btn-signup">Entrar</button>
               </div>
             </fieldset>
           </form>
@@ -24,6 +24,9 @@
     </div>
   </div>
 </div>
+
+<!-- Toast -->
+<div ng-include src="'views/partials/toaster.html'"></div>
 
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>
