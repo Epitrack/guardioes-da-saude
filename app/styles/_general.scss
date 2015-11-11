@@ -746,6 +746,7 @@ body {
 
   img {
     max-width: 100%;
+    height: auto;
     @include bdr(100%);
   }
 
@@ -1181,7 +1182,10 @@ p.login-email {
   min-height: 250px;
   text-align: center;
 
-  img { max-width: 100%; }
+  img { 
+    max-width: 100%;
+    height: 100%;
+  }
 
   figcaption {
     font-size: ($fs-medium)+.8;
