@@ -46,6 +46,7 @@ textarea {
 //
 
 .mainform {
+  width: 100%;
   margin: 0 0 15px 0;
   @include bdr(5px);
   border: 2px solid $link-primary;
