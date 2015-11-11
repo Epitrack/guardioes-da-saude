@@ -8,20 +8,23 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('NewsApi', function ($http) {
+  .service('NewsApi', function ($http, ApiConfig, LocalStorage) {
     // AngularJS will instantiate a singleton by calling "new" on this function
+
+    var apiUrl = ApiConfig.API_URL;
+    var app_token = ApiConfig.APP_TOKEN
+    var platform = ApiConfig.PLATFORM;
+    var client = ApiConfig.CLIENT;
+
+    var userStorage = LocalStorage.getItem('userStorage');
 
     var obj = {};
 
-    var apiUrl = 'http://52.20.162.21';
-    var user_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NjM5MjIyNThhN2E3ZmIwNTczMGFhMWUiLCJleHAiOjE0NDY3NDcyNTV9.uVs6Ypsh0-4DYKiuZdbN8fp3B4OXt2T6sskqZ2D2Eno';
-    var news = [];
-
-    obj.getNews = function() {
-      $http.get(apiUrl + '/news/get', { headers: {'user_token': user_token}})
+    obj.getNews = function(data, callback) {
+      $http.get(apiUrl + '/news/get', {headers: {'app_token': app_token, 'user_token':userStorage.user_token }})
         .success(function(data) {
-          // news = data;
           console.log('Success getNews: ', data);
+          callback(data);
         }).error(function(error) {
           console.log('Error getNews: ', error);
         })
