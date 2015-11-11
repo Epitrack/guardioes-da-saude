@@ -724,8 +724,12 @@ body {
 // Health Daily
 //
 
-.health-daily-avatar, .total-participants {
+.health-daily-avatar {
   float: left;
+}
+
+.total-participants {
+  float: right;
 }
 
 .health-daily-avatar {
