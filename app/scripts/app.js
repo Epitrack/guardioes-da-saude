@@ -20,7 +20,8 @@ angular
     'leaflet-directive',
     'toaster',
     'ChartAngular',
-    'ngMask'
+    'ngMask',
+    'angularMoment'
   ])
   .constant("ApiConfig", {
     'API_URL': 'http://52.20.162.21',

@@ -85,7 +85,7 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- visible when user not logged -->
-            <div ng-if="logged != 'true'">
+            <div ng-if="user == null">
               <ul class="nav navbar-nav">
                 <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
                 <li><a class="nav-link" ng-href="/login">Entrar</a></li>
@@ -93,7 +93,7 @@
             </div>
 
             <!-- visible when user is logged -->
-            <div ng-if="logged === 'true'">
+            <div ng-if="user != null">
               <ul class="nav navbar-nav">
                 <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
                 <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
@@ -149,6 +149,7 @@
     <script src="bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js"></script>
     <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
     <script src="bower_components/ngMask/dist/ngMask.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
