@@ -23,10 +23,9 @@ angular.module('gdsApp')
 
     // when user click in logout button
     $scope.clearStorage = function() {
-      localStorage.clear();
+      localStorage.removeItem('userStorage');
+      localStorage.removeItem('userStorageUpdate');
     };
     // ====
-
-    $scope.logged = LocalStorage.getItem('userLogged');
 
   }]);
