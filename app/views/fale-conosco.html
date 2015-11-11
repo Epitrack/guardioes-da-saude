@@ -13,29 +13,33 @@
         </aside>
 
         <aside class="col-xs-12 col-md-7 col-md-offset-1 no-padding">
-          <form class="card-form contact-form" name="form-contact">
+          <form ng-submit="sendContact()" class="card-form contact-form" name="formContact">
             <fieldset class="col-xs-12">
               <label for="contact-email">Email</label>
-              <input class="input-primary" id="contact-email" name="contact-email" type="email">
+              <input class="input-primary" id="contact-email" name="contact-email" type="email" ng-model="contact.email">
             </fieldset>
 
             <fieldset class="col-xs-12">
               <label for="contact-subject">Assunto</label>
 
-              <select class="select-primary" name="contact-subject" id="contact-subject">
-                <option value="Assunto 01">Assunto 01</option>
-                <option value="Assunto 02">Assunto 02</option>
-                <option value="Assunto 03">Assunto 03</option>
+              <select class="select-primary" name="contact-subject" id="contact-subject" ng-model="contact.subject">
+                <option ng-selected="true" disabled>Escoha um assunto</option>
+                <option value="informacoes">Informações</option>
+                <option value="sugestoes">Sugestões</option>
+                <option value="reclamacoes">Reclamações</option>
+                <option value="elogios">Elogios</option>
+                <option value="solicitacoes">Serviço/Solicitações</option>
+                <option value="outros">Outros</option>
               </select>
             </fieldset>
 
             <fieldset class="col-xs-12">
               <label for="contact-msg">Mensagem</label>
-              <textarea class="input-primary" id="contact-msg" name="contact-msg"></textarea>
+              <textarea class="input-primary" id="contact-msg" name="contact-msg" ng-model="contact.message"></textarea>
             </fieldset>
 
             <fieldset class="col-xs-12">
-              <button class="btn btn-block btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-block btn-primary">Enviar</button>
             </fieldset>
           </form>
         </aside>
