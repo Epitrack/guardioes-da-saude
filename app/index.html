@@ -85,16 +85,20 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- visible when user not logged -->
-            <ul class="nav navbar-nav">
-              <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
-              <li><a class="nav-link" ng-href="/login">Entrar</a></li>
-            </ul>
+            <div ng-if="">
+              <ul class="nav navbar-nav">
+                <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
+                <li><a class="nav-link" ng-href="/login">Entrar</a></li>
+              </ul>
+            </div>
 
             <!-- visible when user is logged -->
-            <ul class="nav navbar-nav" ng-show="$location.path() != '/'">
-              <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
-              <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
-            </ul>
+            <div ng-if="">
+              <ul class="nav navbar-nav">
+                <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
+                <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
+              </ul>
+            </div>
 
             <!-- sidebar just show when user is logged and mobile -->
             <div class="hidden-sm hidden-md hidden-lg">
@@ -144,6 +148,7 @@
     <script src="bower_components/morris.js/morris.js"></script>
     <script src="bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js"></script>
     <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/ngMask/dist/ngMask.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -181,6 +186,9 @@
         <script src="scripts/controllers/index.js"></script>
         <script src="scripts/services/userapi.js"></script>
         <script src="scripts/services/localstorage.js"></script>
+        <script src="scripts/services/householdapi.js"></script>
+        <script src="scripts/controllers/profile-internal.js"></script>
+        <script src="scripts/controllers/health-daily-household.js"></script>
         <!-- endbuild -->
 </body>
 </html>

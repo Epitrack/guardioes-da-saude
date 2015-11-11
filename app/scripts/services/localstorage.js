@@ -35,12 +35,13 @@ angular.module('gdsApp')
       userStorage.createdAt = obj.createdAt;
       userStorage.formattedAddress = obj.formattedAddress;
       userStorage.id = obj.id;
+      userStorage.user = obj.id;
       userStorage.platform = obj.platform;
       userStorage.state = obj.state;
-      userStorage.user_token = obj.token;
       userStorage.updatedAt = obj.updatedAt;
       userStorage.week_of = obj.week_of;
       userStorage.zip = obj.zip;
+      userStorage.user_token = obj.token;
 
       // adiciona no storage as informações do usuário
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
@@ -75,6 +76,11 @@ angular.module('gdsApp')
       userStorage.user_token = token;
 
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
+    };
+
+    obj.updateUser = function(data) {
+      // adiciona no storage as informações do usuário
+      localStorage.setItem('userStorageUpdate', JSON.stringify(data.data.data[0]));
     };
 
     return obj;

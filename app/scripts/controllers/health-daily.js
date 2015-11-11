@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', function ($scope) {
+  .controller('HealthDailyCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
     $scope.pageClass = 'health-daily-page';
     $scope.day = moment();
 
@@ -76,4 +76,6 @@ angular.module('gdsApp')
 	    resize: true
 		}
 
+    // set user with locaStorage data
+    $scope.user = LocalStorage.getItem('userStorage');
   }]);

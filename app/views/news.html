@@ -7,6 +7,22 @@
 
   <article class="col-xs-12 card news">
     <!-- Cards -->
-    <div ng-include src="'views/partials/news-card.html'"></div>
+    <article class="col-xs-12 col-sm-6 col-md-4 news-card" ng-repeat="noticia in news">
+      <time datetime="{{ noticia.datestamp }}" class="news-date">{{ noticia.day }} <span>/ {{ noticia.month }}</span></time>
+
+      <a href="{{ noticia.url }}" class="news-link" target="_blank">
+        <figure>
+        <img src="images/news/{{ noticia.image }}.png" alt="{{ noticia.title }}">
+          <figcaption>{{ noticia.title }}</figcaption>
+        </figure>
+
+        <footer class="news-footer">
+          <span class="news-address">{{ noticia.address }}</span>
+          <span class="news-read-more">Ler mais</span>
+        </footer>
+      </a>
+    </article>
+
+    <!-- <div ng-include src="'views/partials/news-card.html'"></div> -->
   </article>
 </section>

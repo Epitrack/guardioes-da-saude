@@ -19,8 +19,15 @@ angular
     'ui.bootstrap',
     'leaflet-directive',
     'toaster',
-    'ChartAngular'
+    'ChartAngular',
+    'ngMask'
   ])
+  .constant("ApiConfig", {
+    'API_URL': 'http://52.20.162.21',
+    'APP_TOKEN': 'd41d8cd98f00b204e9800998ecf8427e',
+    'PLATFORM': 'web',
+    'CLIENT': 'api'
+  })
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
@@ -48,10 +55,20 @@ angular
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
       })
+      .when('/profile/household/:id', {
+        templateUrl: 'views/profile-internal.html',
+        controller: 'ProfileInternalCtrl',
+        controllerAs: 'profileInternal'
+      })
       .when('/health-daily', {
         templateUrl: 'views/health-daily.html',
         controller: 'HealthDailyCtrl',
         controllerAs: 'healthDaily'
+      })
+      .when('/health-daily/household/:id', {
+        templateUrl: 'views/health-daily-household.html',
+        controller: 'HealthDailyHouseholdCtrl',
+        controllerAs: 'healthDailyHousehold'
       })
       .when('/health-tips', {
         templateUrl: 'views/health-tips.html',
@@ -68,7 +85,7 @@ angular
         controller: 'HelpCtrl',
         controllerAs: 'help'
       })
-      .when('/add-profile', {
+      .when('/profile/add', {
         templateUrl: 'views/add-profile.html',
         controller: 'AddProfileCtrl',
         controllerAs: 'addProfile'
@@ -153,5 +170,5 @@ angular
       });
 
       // use the HTML5 History API
-      $locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(false);
   });

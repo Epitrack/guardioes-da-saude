@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
+  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', function ($scope, UserApi, toaster, $location) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';
@@ -18,7 +18,14 @@ angular.module('gdsApp')
     $scope.createData = {};
 
     $scope.createUser = function() {
-      UserApi.createUser($scope.createData);
+      UserApi.createUser($scope.createData, function(data) {
+        if (data.data.error === true) {
+          toaster.pop('error', data.data.message);
+        } else {
+          toaster.pop('success', data.data.message);
+          $location.path('/health-daily');
+        }
+      });
     };
     // ====
 

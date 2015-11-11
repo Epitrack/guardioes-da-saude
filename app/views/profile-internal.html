@@ -3,7 +3,7 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ {{user.nick}}</span></h2>
+  <h2 class="section-title">Perfil <span>/ {{household.nick}}</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading">
@@ -13,7 +13,7 @@
     <div class="panel-body">
       <a ng-href="change-photo" class="col-xs-12 col-md-2" class="link-figure">
         <figure class="card-avatar-image">
-          <img src="images/avatar/avatar-1.svg" alt="Avatar 01">
+          <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}">
           <figcaption>Editar</figcaption>
         </figure>
       </a>
@@ -23,13 +23,13 @@
           <fieldset class="col-xs-12">
             <label for="profile-nickname">Apelido</label>
             <input class="input-primary" id="profile-nickname" name="profile-nickname" type="text"
-              ng-model="user.nick">
+              ng-model="household.nick">
           </fieldset>
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-birthdate">Data de nascimento</label>
-              <input class="input-primary birthdate" id="profile-birthdate" name="profile-birthdate" type="text" ng-model="user.dob"
+              <input class="input-primary birthdate" id="profile-birthdate" name="profile-birthdate" type="text" ng-model="household.dob"
                 ng-bind="date | date:'yyyy/mm/dd'">
               <span class="icon-birthdate">
                 <a data-toggle="modal" data-target="#calendarModal"></a>
@@ -39,8 +39,8 @@
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-gender">Sexo</label>
 
-              <input class="radio-primary" type="radio" ng-model="user.gender" ng-value="user.gender" name="profile-gender" value="user.gender" data-label="Masculino">
-              <input class="radio-primary" type="radio" ng-model="user.gender" ng-value="user.gender" name="profile-gender" value="user.gender" data-label="Feminino">
+              <input class="radio-primary" type="radio" ng-model="household.gender" ng-value="household.gender" name="profile-gender" value="household.gender" data-label="Masculino">
+              <input class="radio-primary" type="radio" ng-model="household.gender" ng-value="household.gender" name="profile-gender" value="household.gender" data-label="Feminino">
             </fieldset>
           </div>
 
@@ -48,14 +48,14 @@
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-email">Email</label>
               <input class="input-primary" id="profile-email" name="profile-email" type="email"
-              ng-model="user.email">
+              ng-model="household.email">
             </fieldset>
 
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-raca-cor">Raça/Cor</label>
 
               <select class="select-primary" name="profile-raca-cor" id="profile-raca-cor"
-                ng-model="user.race">
+                ng-model="household.race">
                 <option disabled selected>Cor/Raça</option>
                 <option value="branco">Branco</option>
                 <option value="preto">Preto</option>
@@ -69,7 +69,7 @@
           <fieldset class="col-xs-12 col-sm-6">
             <label for="profile-pass">Senha</label>
             <input class="input-primary" id="profile-pass" name="profilePass" type="password"
-              ng-model="user.password" ng-minlength="6">
+              ng-model="household.password" ng-minlength="6">
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-6">
@@ -78,7 +78,7 @@
           </fieldset>
 
           <fieldset class="col-xs-12">
-            <div ng-show="profile.repeatPassword != user.password" class="alert alert-info" role="alert">
+            <div ng-show="profile.repeatPassword != household.password" class="alert alert-info" role="alert">
               <span>As senhas digitadas precisam ser iguais.</span>
             </div>
 

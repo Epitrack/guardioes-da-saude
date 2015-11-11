@@ -474,6 +474,11 @@ body {
   span {
     font-family: $ff-light;
     font-size: ($fs-normal)+.6;
+
+    &:first-letter,
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 }
 

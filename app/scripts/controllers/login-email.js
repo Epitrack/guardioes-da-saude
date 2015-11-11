@@ -8,14 +8,22 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginEmailCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
+  .controller('LoginEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', function ($scope, UserApi, toaster, $location) {
+
     $scope.pageClass = 'login-email-page';
 
     // login with email
     $scope.loginEmail = {};
 
     $scope.loginUserEmail = function() {
-      UserApi.loginUser($scope.loginEmail);
+      UserApi.loginUser($scope.loginEmail, function(data) {
+        if (data.data.error === true) {
+          toaster.pop('error', data.data.message);
+        } else {
+          toaster.pop('success', data.data.message);
+          $location.path('/health-daily'); // redirect user
+        }
+      });
     };
     // ====
 

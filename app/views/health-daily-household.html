@@ -3,13 +3,14 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Diário da Saúde <span>/ {{user.nick}}</span></h2>
+
+  <h2 class="section-title">Diário da Saúde <span>/ {{household.nick}}</span></h2>
 
   <article class="col-xs-12 col-md-11 card">
     <aside class="col-md-4 health-daily-avatar">
       <figure>
-        <img src="../images/avatar/avatar-1.svg" alt="Avatar de {{user.nick}}">
-        <figcaption>{{user.nick}} <span>28 anos</span></figcaption>
+        <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}">
+        <figcaption>{{household.nick}} <span>28 anos</span></figcaption>
       </figure>
     </aside>
 

@@ -15,7 +15,14 @@ textarea {
   min-height: 120px;
 }
 
-
+select {
+  &.icon-arrow {
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 95% center;
+    @include path('select-arrow.svg');
+  }
+}
 
 //
 // Search home
@@ -47,11 +54,13 @@ textarea {
 
 .mainform {
   margin: 0 0 15px 0;
-  @include bdr(5px);
   border: 2px solid $link-primary;
+  @include bdr(5px);
 
   input {
-    &:first-child { border: 0 0 2px 0; }
+    &:first-child {
+      border: 0 0 2px 0;
+    }
 
     &:last-child { border: 0; }
   }
@@ -160,6 +169,7 @@ textarea {
 .select-primary {
   @extend .input-primary;
   height: 40px;
+  background-color: $link-primary;
 }
 
 .radio-primary {
@@ -395,6 +405,41 @@ textarea {
     @include transition(background, .2s, 0s, linear);
 
     &:focus { background-size: 5%; }
+  }
+}
+
+// ====
+
+
+
+//
+// Messages and Alerts
+//
+
+.alert {
+  font-size: ($fs-normal)+.1;
+}
+
+// ====
+
+
+
+//
+// Register home
+//
+
+.form-register-home,
+.form-login-email {
+  select {
+    @include apr(none);
+    position: relative;
+  }
+
+  input {
+    &::-webkit-input-placeholder { color: #a4cae6; }
+    &:-moz-placeholder { color: #a4cae6; }
+    &::-moz-placeholder { color: #a4cae6; }
+    &:-ms-input-placeholder { color: #a4cae6; }
   }
 }
 
