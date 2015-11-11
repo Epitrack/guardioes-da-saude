@@ -16,11 +16,6 @@ angular.module('gdsApp')
 
     NewsApi.getNews(null, function(data) {
       $scope.news = data.data.statuses;
-
-      // angular.forEach($scope.news, function(value, key) {
-      //   console.log(value, key);
-      //   $scope.news.date = moment(value.created_at).format('DD MM YYYY');
-      // });
     });
 
   }]);

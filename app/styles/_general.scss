@@ -911,10 +911,12 @@ body {
   figure {
     position: relative;
     overflow: hidden;
+    height: 340px;
 
     img {
       width: 100%;
-      @include scale3d(1);
+      height: 100%;
+      @include scale3d(1.2);
       @include transition(transform, .2s, 0s, linear);
     }
 
@@ -935,7 +937,7 @@ body {
   &:hover {
     text-decoration: none;
 
-    img { @include scale3d(1.2); }
+    img { @include scale3d(1.4); }
   }
 }
 
