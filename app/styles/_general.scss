@@ -215,7 +215,13 @@ body {
   }
 }
 
-.form-search-home { margin-bottom: 35px; }
+.form-search-home {
+  margin-bottom: 35px;
+    
+  fieldset {
+    width: 100%;
+  }
+}
 
 .last-cities {
   text-align: center;
