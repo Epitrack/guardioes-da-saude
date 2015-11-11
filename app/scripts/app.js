@@ -53,72 +53,73 @@ angular
       .when('/profile', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
-        controllerAs: 'profile'
+        controllerAs: 'profile',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/profile/household/:id', {
         templateUrl: 'views/profile-internal.html',
         controller: 'ProfileInternalCtrl',
-        controllerAs: 'profileInternal'
+        controllerAs: 'profileInternal',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/health-daily', {
         templateUrl: 'views/health-daily.html',
         controller: 'HealthDailyCtrl',
-        controllerAs: 'healthDaily'
+        controllerAs: 'healthDaily',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/health-daily/household/:id', {
         templateUrl: 'views/health-daily-household.html',
         controller: 'HealthDailyHouseholdCtrl',
-        controllerAs: 'healthDailyHousehold'
+        controllerAs: 'healthDailyHousehold',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/health-tips', {
         templateUrl: 'views/health-tips.html',
         controller: 'HealthTipsCtrl',
-        controllerAs: 'healthTips'
+        controllerAs: 'healthTips',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/news', {
         templateUrl: 'views/news.html',
         controller: 'NewsCtrl',
-        controllerAs: 'news'
-      })
-      .when('/help', {
-        templateUrl: 'views/help.html',
-        controller: 'HelpCtrl',
-        controllerAs: 'help'
+        controllerAs: 'news',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/profile/add', {
         templateUrl: 'views/add-profile.html',
         controller: 'AddProfileCtrl',
-        controllerAs: 'addProfile'
+        controllerAs: 'addProfile',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/survey', {
         templateUrl: 'views/survey.html',
         controller: 'SurveyCtrl',
-        controllerAs: 'survey'
+        controllerAs: 'survey',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/survey/:id/step-1', {
         templateUrl: 'views/how-are-you-feeling.html',
         controller: 'HowAreYouFeelingCtrl',
-        controllerAs: 'howAreYouFeeling'
+        controllerAs: 'howAreYouFeeling',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/survey/:id/step-2', {
         templateUrl: 'views/choose-symptoms.html',
         controller: 'ChooseSymptomsCtrl',
-        controllerAs: 'chooseSymptoms'
-      })
-      .when('/components', {
-        templateUrl: 'views/components.html',
-        controller: 'ComponentCtrl',
-        controllerAs: 'components'
+        controllerAs: 'chooseSymptoms',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/noticias', {
         templateUrl: 'views/noticias.html',
         controller: 'NoticiasCtrl',
         controllerAs: 'noticias'
       })
-      .when('/change-photo', {
+      .when('/profile/change-photo', {
         templateUrl: 'views/change-photo.html',
         controller: 'ChangePhotoCtrl',
-        controllerAs: 'changePhoto'
+        controllerAs: 'changePhoto',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/fale-conosco', {
         templateUrl: 'views/fale-conosco.html',
@@ -148,23 +149,37 @@ angular
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl',
-        controllerAs: 'dashboard'
+        controllerAs: 'dashboard',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/dashboard/analysis', {
         templateUrl: 'views/data-analysis.html',
         controller: 'DataAnalysisCtrl',
-        controllerAs: 'dataAnalysis'
+        controllerAs: 'dataAnalysis',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/dashboard/analysis/result', {
         templateUrl: 'views/dashboard-result.html',
         controller: 'DashboardResultCtrl',
-        controllerAs: 'dashboardResult'
+        controllerAs: 'dashboardResult',
+        resolve: { loggedin: checkLoggedOut }
       })
       .when('/dashboard/map', {
         templateUrl: 'views/dashboard-map.html',
         controller: 'DashboardMapCtrl',
-        controllerAs: 'dashboardMap'
+        controllerAs: 'dashboardMap',
+        resolve: { loggedin: checkLoggedOut }
       })
+      // .when('/components', {
+      //   templateUrl: 'views/components.html',
+      //   controller: 'ComponentCtrl',
+      //   controllerAs: 'components'
+      // })
+      // .when('/help', {
+      //   templateUrl: 'views/help.html',
+      //   controller: 'HelpCtrl',
+      //   controllerAs: 'help'
+      // })
       .otherwise({
         redirectTo: '/'
       });
@@ -172,3 +187,16 @@ angular
       // use the HTML5 History API
       $locationProvider.html5Mode(false);
   });
+
+var checkLoggedOut = function($q, $timeout, $location, $rootScope) {
+    var deferred = $q.defer();
+
+    if ($rootScope.user) {
+      deferred.resolve();
+    } else {
+      $timeout(deferred.reject);
+      return $location.url('/login');
+    }
+
+    return deferred.promise;
+  };

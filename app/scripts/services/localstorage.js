@@ -83,5 +83,9 @@ angular.module('gdsApp')
       localStorage.setItem('userStorageUpdate', JSON.stringify(data.data.data[0]));
     };
 
+    obj.logged = function(state) {
+      localStorage.setItem('userLogged', JSON.stringify(state));
+    };
+
     return obj;
   });

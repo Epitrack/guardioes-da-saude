@@ -8,18 +8,25 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
+  .controller('MainCtrl', ['$scope', 'LocalStorage', '$route', function ($scope, LocalStorage, $route) {
     $scope.pageClass = 'main-page';
+
+    console.log($route);
 
     // set user with locaStorage data
     $scope.user = LocalStorage.getItem('userStorage');
 
-    if (LocalStorage.getItem('userStorage') != null) {
+    if ($scope.user != null) {
       $scope.household = $scope.user.household;
     }
+    // ====
 
+    // when user click in logout button
     $scope.clearStorage = function() {
       localStorage.clear();
     };
+    // ====
+
+    $scope.logged = LocalStorage.getItem('userLogged');
 
   }]);

@@ -8,10 +8,10 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('IndexCtrl', ['$scope', '$location', 'LocalStorage', function ($scope, $location, LocalStorage) {
+  .controller('IndexCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
 
     // to hide menu
-    $scope.$location = $location;
+    $scope.logged = LocalStorage.getItem('userLogged');;
 
     // get user location
     $scope.getUserLocation = function() {

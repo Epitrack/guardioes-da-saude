@@ -55,7 +55,7 @@ angular.module('gdsApp')
       });
     };
 
-    // update
+    // get recent user info
     obj.updateUser = function(data) {
       $http.get(apiUrl + '/user/get/' + data, {headers: {'app_token': app_token}})
         .then(function(data){
@@ -63,6 +63,19 @@ angular.module('gdsApp')
           LocalStorage.updateUser(data);
         }, function(error){
           console.warn('Error updateUser: ', error);
+      });
+    };
+
+    // update user profile
+    obj.updateProfile = function(data, callback) {
+      return console.log(data);
+
+      $http.post(apiUrl + '/user/update', data, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(data){
+          console.log('Success updateProfile: ', data);
+          callback(data)
+        }, function(error){
+          console.warn('Error updateProfile: ', error);
       });
     };
 
