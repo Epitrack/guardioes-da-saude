@@ -25,7 +25,6 @@ angular.module('gdsApp')
           toaster.pop('success', data.data.message);
           $rootScope.user = data;
           $location.path('/health-daily');
-          LocalStorage.logged(true);
         }
       });
     };
