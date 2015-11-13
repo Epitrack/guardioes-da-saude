@@ -217,7 +217,9 @@ textarea {
   color: $link-primary;
   background-color: $btn-primary;
   position: relative;
+  margin: 0 auto;
   margin-bottom: 20px;
+  display: block;
 
   // &::before {
   //   content: '';
@@ -258,6 +260,7 @@ textarea {
   height: 180px;
   cursor: pointer;
   position: relative;
+  margin: 0 auto;
   // @include bdr(100%);
 
   // &::before {
