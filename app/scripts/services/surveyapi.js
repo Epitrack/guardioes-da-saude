@@ -46,12 +46,5 @@ angular.module('gdsApp')
       });
     }
 
-    // data atual
-    // lat
-    // long
-    // outros -> passar pro value em inglês
-    // verificar se a survey é minha ou do household if(household) { household_id }
-    // na url do survey pro household adicionar /survey/household
-
     return obj;
   });

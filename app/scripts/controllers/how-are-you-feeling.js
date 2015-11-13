@@ -9,10 +9,12 @@
  */
 angular.module('gdsApp')
   .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', function ($scope, $location, $timeout, Surveyapi, LocalStorage) {
+
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
     $scope.iFeelGood = function() {
-      console.log('I Feel Good');
+      var url = $location.path().split('/');
+      var household = url[url.length - 3];
 
       $scope.iFeelGood = {};
 
@@ -20,6 +22,11 @@ angular.module('gdsApp')
       $scope.iFeelGood.ill_date = moment().subtract(10, 'days').calendar();
       $scope.iFeelGood.lat = LocalStorage.getItem('userLocation').lat;
       $scope.iFeelGood.lon = LocalStorage.getItem('userLocation').lon;
+
+      if (household == 'household') {
+        // when submit survey to household
+        $scope.iFeelGood.household_id = url[url.length - 2];
+      }
 
       Surveyapi.submitSurvey($scope.iFeelGood, function(data) {
         if (data.data.error != false) {
@@ -31,9 +38,8 @@ angular.module('gdsApp')
     };
 
     $scope.iFeelBad = function() {
-      console.log('I Feel Bad');
-
       var url = $location.path().replace('step-1', 'step-2');
+
       $location.path(url);
     };
 
