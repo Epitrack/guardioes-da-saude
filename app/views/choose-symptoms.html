@@ -10,7 +10,7 @@
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4" ng-repeat="symptom in symptomsList">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.id]" value="{{symptom.id}}" id="symptom-{{symptom.id}}" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.code]" value="{{symptom.code}}" id="symptom-{{symptom.id}}" class="checkbox-primary">
             <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
           </fieldset>
 
@@ -19,17 +19,17 @@
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.tiveContato" value="tive-contato" id="tive-contato" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadContagiousContact" value="tive-contato" id="tive-contato" class="checkbox-primary">
             <label for="tive-contato">Tive contato com alguém com um desses sintomas</label>
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.procureiServico" value="procurei-servico" id="procurei-servico" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadHealthCare" value="procurei-servico" id="procurei-servico" class="checkbox-primary">
             <label for="procurei-servico">Procurei um serviço de saúde</label>
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.estiveFora" value="estive-fora" id="estive-fora" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadTravelledAbroad" value="estive-fora" id="estive-fora" class="checkbox-primary">
             <label for="estive-fora">Estive fora do Brasil nos últimos 14 dias</label>
           </fieldset>
 
