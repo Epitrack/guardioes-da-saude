@@ -8,11 +8,26 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
-    $scope.pageClass = 'hayf-page'; // hayft === 'How Are You Feeling'
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', function ($scope, $location, $timeout, Surveyapi, LocalStorage) {
+    $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
     $scope.iFeelGood = function() {
       console.log('I Feel Good');
+
+      $scope.iFeelGood = {};
+
+      $scope.iFeelGood.no_symptom = 'Y';
+      $scope.iFeelGood.ill_date = moment().subtract(10, 'days').calendar();
+      $scope.iFeelGood.lat = LocalStorage.getItem('userLocation').lat;
+      $scope.iFeelGood.lon = LocalStorage.getItem('userLocation').lon;
+
+      Surveyapi.submitSurvey($scope.iFeelGood, function(data) {
+        if (data.data.error != false) {
+          console.log('Obrigado')
+        } else {
+          console.warn('Alguma coisa deu errado, tente novamente depois :)')
+        }
+      });
     };
 
     $scope.iFeelBad = function() {
@@ -22,10 +37,9 @@ angular.module('gdsApp')
       $location.path(url);
     };
 
-    $scope.submitFellGood = function() {
-      // redirect user to home
+    $scope.goToHome = function() {
       $timeout(function(){
-        $location.path('/');
+        $location.path('/health-daily');
       },
       300);
     };

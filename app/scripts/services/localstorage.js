@@ -20,6 +20,7 @@ angular.module('gdsApp')
       userStorage.lon = lon;
 
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
+      localStorage.setItem('userLocation', JSON.stringify(userStorage));
     };
 
     // quando cria o usuário

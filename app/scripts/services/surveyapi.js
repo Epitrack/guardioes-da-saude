@@ -32,8 +32,9 @@ angular.module('gdsApp')
 
     obj.submitSurvey = function(data, callback) {
       data.client = client;
+      data.platform = platform;
       data.user_id = userStorage.id;
-      data.user_token = userStorage.user_token;
+      data.app_token = userStorage.app_token;
 
       $http.post(apiUrl + '/survey/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
@@ -44,6 +45,13 @@ angular.module('gdsApp')
           console.warn('Error submitSurvey: ', error)
       });
     }
+
+    // data atual
+    // lat
+    // long
+    // outros -> passar pro value em inglês
+    // verificar se a survey é minha ou do household if(household) { household_id }
+    // na url do survey pro household adicionar /survey/household
 
     return obj;
   });

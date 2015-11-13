@@ -14,5 +14,5 @@ angular.module('gdsApp')
     var userStorage = LocalStorage.getItem('userStorage');
 
     $scope.user = userStorage;
-    $scope.household = LocalStorage.getItem('userStorageUpdate').household;
+    $scope.household = userStorage.household;
   }]);
