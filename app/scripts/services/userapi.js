@@ -22,7 +22,7 @@ angular.module('gdsApp')
     var user = {};
 
     // pego a localização do localStorage
-    var userStorage = LocalStorage.getItem('userStorage');
+    var userStorage = $rootScope.user;
 
     // register
     obj.createUser = function(data, callback) {
@@ -56,26 +56,40 @@ angular.module('gdsApp')
     };
 
     // get recent user info
-    obj.updateUser = function(data) {
-      $http.get(apiUrl + '/user/get/' + data, {headers: {'app_token': app_token}})
-        .then(function(data){
-          console.log('Success updateUser: ', data);
-          LocalStorage.updateUser(data);
+    obj.updateUser = function(id) {
+      $http.get(apiUrl + '/user/get/' + id, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success updateUser: ', result);
+          LocalStorage.updateUser(result);
         }, function(error){
           console.warn('Error updateUser: ', error);
       });
     };
 
     // update user profile
-    obj.updateProfile = function(data, callback) {
-      return console.log(data);
+    obj.updateProfile = function(params, callback) {
+      params.client = client;
+      params.id = userStorage.id;
+      params.user_token = userStorage.user_token;
 
-      $http.post(apiUrl + '/user/update', data, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-        .then(function(data){
-          console.log('Success updateProfile: ', data);
-          callback(data)
+      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success updateProfile: ', result);
+          callback(result);
+          obj.updateUser(params.id);
         }, function(error){
           console.warn('Error updateProfile: ', error);
+      });
+    };
+
+    // get user surveys
+    obj.getUserSurvey = function(callback) {
+      $http.get(apiUrl + '/user/survey/summary', {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success getUserSurvey: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserSurvey: ', error);
       });
     };
 
