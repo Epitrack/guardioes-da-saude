@@ -43,5 +43,16 @@ angular.module('gdsApp')
         });
     };
 
+    // get user surveys
+    obj.getHouseholdSurvey = function(hhId, callback) {
+      $http.get(apiUrl + '/household/survey/summary?household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success getHouseholdSurvey: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getHouseholdSurvey: ', error);
+      });
+    };
+
     return obj;
   });

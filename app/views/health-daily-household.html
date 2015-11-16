@@ -10,14 +10,14 @@
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}">
-        <figcaption>{{household.nick}} <span>28 anos</span></figcaption>
+        <figcaption>{{ household.nick }} <span>{{ household.dob | amDifference : null : 'years' }} anos</span></figcaption>
       </figure>
     </aside>
 
     <aside class="col-md-7 total-participants">
       <div class="total">
         <h2>Total de participações</h2>
-        <h1><span>{{totalParticipants.data[0].total}}</span> Participações</h1>
+        <h1><span>{{ householdSurveys.total }}</span> Participações</h1>
       </div>
 
       <div class="dropdown sort-by">
@@ -37,21 +37,22 @@
 
       <div class="status">
         <ul>
-          <li ng-mouseover="showGood()">
+          <li>
             <figure>
               <img src="../images/icon-health-daily-good.svg" alt="Bem">
               <figcaption>
-                <span>{{donutOptions.data[0].value}}%</span> {{donutOptions.data[0].label}}
-                <p>{{donutOptions.data[0].participants}} Participações</p>
+                <span>{{ householdSurveys.no_symptom }}%</span> Bem
+                <p>{{ householdSurveys.no_symptom }} Participações</p>
               </figcaption>
             </figure>
           </li>
-          <li ng-mouseover="showBad()">
+
+          <li>
             <figure>
               <img src="../images/icon-health-daily-bad.svg" alt="Mal">
               <figcaption>
-                <span>{{donutOptions.data[1].value}}%</span> {{donutOptions.data[1].label}}
-                <p>{{donutOptions.data[1].participants}}  Participações</p>
+                <span>{{ householdSurveys.symptom }}%</span> Mal
+                <p>{{ householdSurveys.symptom }}  Participações</p>
               </figcaption>
             </figure>
           </li>
