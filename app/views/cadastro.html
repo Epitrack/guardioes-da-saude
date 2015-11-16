@@ -36,12 +36,12 @@
 
           <fieldset class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
-              <button type="submit" class="btn btn-signup">Cadastrar</button>
+              <button type="submit" ng-disabled="!agree" class="btn btn-signup">Cadastrar</button>
             </div>
           </fieldset>
 
           <fieldset class="register-agree" role="group">
-            <input type="checkbox" id="register-agree">
+            <input type="checkbox" id="register-agree" ng-model="agree">
             <label for="register-agree">Concordo com os <a href="politica-de-privacidade" title="Clique para visualizar os termos de uso" target="_blank">Termos de Uso</a>.</label>
           </fieldset>
         </form>
