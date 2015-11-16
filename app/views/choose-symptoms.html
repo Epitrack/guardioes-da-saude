@@ -10,7 +10,7 @@
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4" ng-repeat="symptom in symptomsList">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.code]" value="{{symptom.code}}" id="symptom-{{symptom.id}}" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.code]" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
             <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
           </fieldset>
 
@@ -45,3 +45,6 @@
 
 <!-- Show when user submit survey -->
 <div ng-include src="'views/partials/confirm-send-survey.html'"></div>
+
+<!-- Toaster -->
+<toaster-container></toaster-container>
