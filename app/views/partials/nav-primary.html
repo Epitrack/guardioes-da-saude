@@ -27,7 +27,7 @@
 
         <ul class="nav nav-list sub-nav" id="profiles" ng-hide="!profileActive">
           <li><a ng-href="/profile">{{user.nick}}</a></li>
-          <li ng-if="household" ng-repeat="hh in user.household">
+          <li ng-if="user.household" ng-repeat="hh in user.household">
             <a ng-href="/profile/household/{{ hh.id }}">{{ hh.nick }}</a>
           </li>
           <li><a ng-href="/profile/add">Adicionar membro</a></li>
