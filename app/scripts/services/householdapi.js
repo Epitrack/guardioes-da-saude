@@ -54,5 +54,20 @@ angular.module('gdsApp')
       });
     };
 
+    // update household profile
+    obj.updateProfile = function(params, callback) {
+      params.client = client;
+      params.user_token = userStorage.user_token;
+
+      $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success updateProfile: ', result);
+          callback(result);
+          UserApi.updateUser(userStorage.id);
+        }, function(error){
+          console.warn('Error updateProfile: ', error);
+      });
+    };
+
     return obj;
   });
