@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', function ($scope, UserApi, toaster, $location) {
+  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, UserApi, toaster, $location, LocalStorage) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';

@@ -30,8 +30,10 @@ angular.module('gdsApp')
       data.platform = platform;
       data.client = client;
 
-      data.lat = userStorage.lat;
-      data.lon = userStorage.lon;
+      data.lat = LocalStorage.getItem('userLocation').lat;
+      data.lon = LocalStorage.getItem('userLocation').lon;
+
+      console.warn(data);
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
@@ -84,7 +86,7 @@ angular.module('gdsApp')
 
     // get user surveys
     obj.getUserSurvey = function(callback) {
-      $http.get(apiUrl + '/user/survey/summary', {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+      $http.get(apiUrl + '/user/survey/summary', {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success getUserSurvey: ', result);
           callback(result);

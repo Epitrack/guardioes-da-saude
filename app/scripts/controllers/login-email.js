@@ -8,11 +8,9 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$rootScope', function ($scope, UserApi, toaster, $location, LocalStorage, $rootScope) {
+  .controller('LoginEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', '$rootScope', function ($scope, UserApi, toaster, $location, $rootScope) {
 
     $scope.pageClass = 'login-email-page';
-
-    var userStorage = LocalStorage.getItem('userStorage');
 
     // login with email
     $scope.loginEmail = {};
@@ -23,7 +21,7 @@ angular.module('gdsApp')
           toaster.pop('error', data.data.message);
         } else {
           toaster.pop('success', data.data.message);
-          $rootScope.user = data;
+          $rootScope.user = data.data.user;
           $location.path('/health-daily');
         }
       });
