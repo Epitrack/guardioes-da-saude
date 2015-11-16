@@ -4,10 +4,10 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
         <h2 class="title-primary">Quem vai participar?</h2>
         <aside class="survey-avatar my-user">
-          <a href="#/survey/{{ user.id }}/step-1" title="Clique para realizar a survey de {{ user.nick }}">
+          <a href="survey/{{ screen.user.id }}/step-1" title="Clique para realizar a survey de {{ screen.user.nick }}">
             <figure>
-              <img src="../images/avatar/avatar-1.svg" alt="{{ user.nick }} - 28 anos">
-              <figcaption>{{ user.nick }} <span>28 anos</span></figcaption>
+              <img src="../images/avatar/avatar-1.svg" alt="{{ screen.user.nick }} - {{ screen.user.dob | amDifference : null : 'years' }}">
+              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | amDifference : null : 'years' }}</span></figcaption>
             </figure>
           </a>
         </aside>
@@ -24,11 +24,11 @@
             </a>
           </aside>
 
-          <aside class="survey-avatar" ng-repeat="member in household">
-            <a href="#/survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
+          <aside class="survey-avatar" ng-repeat="member in screen.user.household">
+            <a href="survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
               <figure>
-                <img src="../images/avatar/avatar-2.svg" alt="{{ member.nick }} - 32 anos">
-                <figcaption>{{ member.nick }} <span>32 anos</span></figcaption>
+                <img src="../images/avatar/avatar-2.svg" alt="{{ member.nick }} - {{ member.dob | amDifference : null : 'years' }}">
+                <figcaption>{{ member.nick }} <span>{{ member.dob | amDifference : null : 'years' }}</span></figcaption>
               </figure>
             </a>
           </aside>

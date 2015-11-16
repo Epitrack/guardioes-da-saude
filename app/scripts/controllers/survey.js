@@ -8,11 +8,18 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('SurveyCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
+  .controller('SurveyCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+
     $scope.pageClass = 'survey-page';
 
-    var userStorage = LocalStorage.getItem('userStorage');
+    $scope.getUser = function() {
+      var u = $rootScope.user;
 
-    $scope.user = userStorage;
-    $scope.household = userStorage.household;
+      $scope.screen = {};
+
+      $scope.screen.user = u;
+    }
+
+    $scope.getUser();
+
   }]);
