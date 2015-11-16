@@ -179,7 +179,7 @@ body {
 
 .title-primary {
   color: $link-primary;
-  font-size: ($fs-medium)+1;
+  font-size: ($fs-medium);
   font-family: $ff-light;
   text-align: center;
   margin: 0;
@@ -885,10 +885,13 @@ body {
   min-height: 700px;
   background-color: $link-primary;
 
-  .title-primary {
-    color: $btn-primary;
-    font-size: ($fs-large)+1;
-    margin: 45px auto 90px auto;
+  .privacy-policy {
+
+    .title-primary {
+      color: $btn-primary;
+      font-size: ($fs-medium)+1;
+      margin: 0px auto 20px auto;
+    }
   }
 }
 
@@ -1296,6 +1299,7 @@ p.login-email {
 
 .privacy-policy {
   @extend .about;
+
 }
 
 // ====
@@ -1491,6 +1495,20 @@ p.login-email {
   }
 
   // ====
+
+  //policy and privacy 
+  .wrapper-full-page {
+
+    .privacy-policy {
+
+      .title-primary {
+        font-size: ($fs-large)+1;
+        margin: 45px auto 90px auto;
+      }
+    }
+  }
+  
+  // ===
 
 }
 
