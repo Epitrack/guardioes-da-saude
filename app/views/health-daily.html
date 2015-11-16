@@ -9,14 +9,14 @@
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img src="../images/avatar/avatar-1.svg" alt="Avatar de {{user.nick}}">
-        <figcaption>{{user.nick}} <span>28 anos</span></figcaption>
+        <figcaption>{{user.nick}} <span>{{ user.dob | amDifference : null : 'years' }} anos</span></figcaption>
       </figure>
     </aside>
 
     <aside class="col-md-7 total-participants">
       <div class="total">
         <h2>Total de participações</h2>
-        <h1><span>{{totalParticipants.data[0].total}}</span> Participações</h1>
+        <h1><span>{{ userSurvey.total }}</span> Participações</h1>
       </div>
 
       <div class="dropdown sort-by">
@@ -36,21 +36,22 @@
 
       <div class="status">
         <ul>
-          <li ng-mouseover="showGood()">
+          <li>
             <figure>
               <img src="../images/icon-health-daily-good.svg" alt="Bem">
               <figcaption>
-                <span>{{donutOptions.data[0].value}}%</span> {{donutOptions.data[0].label}}
-                <p>{{donutOptions.data[0].participants}} Participações</p>
+                <span>{{ userSurvey.no_symptom }}%</span> Bem
+                <p>{{ userSurvey.no_symptom }} Participações</p>
               </figcaption>
             </figure>
           </li>
-          <li ng-mouseover="showBad()">
+
+          <li>
             <figure>
               <img src="../images/icon-health-daily-bad.svg" alt="Mal">
               <figcaption>
-                <span>{{donutOptions.data[1].value}}%</span> {{donutOptions.data[1].label}}
-                <p>{{donutOptions.data[1].participants}}  Participações</p>
+                <span>{{ userSurvey.symptom }}%</span> Mal
+                <p>{{ userSurvey.symptom }}  Participações</p>
               </figcaption>
             </figure>
           </li>
@@ -78,10 +79,10 @@
       </button>
 
       <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-        <li><a href="#">2014</a></li>
-        <li><a href="#">2013</a></li>
-        <li><a href="#">2012</a></li>
-        <li><a href="#">2011</a></li>
+        <li><a ng-href="">2014</a></li>
+        <li><a ng-href="">2013</a></li>
+        <li><a ng-href="">2012</a></li>
+        <li><a ng-href="">2011</a></li>
       </ul>
     </div>
 

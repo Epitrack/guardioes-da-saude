@@ -8,31 +8,31 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
+
     $scope.pageClass = 'health-daily-page';
+
+    UserApi.getUserSurvey(function(data) {
+      $scope.userSurvey = data.data.data;
+    });
+
     $scope.day = moment();
 
-    $scope.totalParticipants = {
-    	data: [
-    		{total: 162}
-    	]
-    };
-
-    $scope.barOptions = {
-	    data: [
-	      { y: '2006', a: 100, b: 90 },
-	      { y: '2007', a: 75,  b: 65 },
-	      { y: '2008', a: 50,  b: 40 },
-	      { y: '2009', a: 75,  b: 65 },
-	      { y: '2010', a: 50,  b: 40 },
-	      { y: '2011', a: 75,  b: 65 },
-	      { y: '2012', a: 100, b: 90 }
-	    ],
-	    xkey: 'y',
-	    ykeys: ['a', 'b'],
-	    labels: ['Series A', 'Series B'],
-	    resize: true
-	  };
+   //  $scope.barOptions = {
+	  //   data: [
+	  //     { y: '2006', a: 100, b: 90 },
+	  //     { y: '2007', a: 75,  b: 65 },
+	  //     { y: '2008', a: 50,  b: 40 },
+	  //     { y: '2009', a: 75,  b: 65 },
+	  //     { y: '2010', a: 50,  b: 40 },
+	  //     { y: '2011', a: 75,  b: 65 },
+	  //     { y: '2012', a: 100, b: 90 }
+	  //   ],
+	  //   xkey: 'y',
+	  //   ykeys: ['a', 'b'],
+	  //   labels: ['Series A', 'Series B'],
+	  //   resize: true
+	  // };
 
 	  $scope.lineOptions = {
 	    data: [
@@ -60,22 +60,19 @@ angular.module('gdsApp')
 		  resize: true
 		};
 
-		$scope.areaOptions = {
-			data: [
-	      { y: '2006', a: 100, b: 90 },
-	      { y: '2007', a: 75,  b: 65 },
-	      { y: '2008', a: 50,  b: 40 },
-	      { y: '2009', a: 75,  b: 65 },
-	      { y: '2010', a: 50,  b: 40 },
-	      { y: '2011', a: 75,  b: 65 },
-	      { y: '2012', a: 100, b: 90 }
-	    ],
-	    xkey: 'y',
-	    ykeys: ['a', 'b'],
-	    labels: ['Series A', 'Series B'],
-	    resize: true
-		}
-
-    // set user with locaStorage data
-    $scope.user = LocalStorage.getItem('userStorage');
+		// $scope.areaOptions = {
+		// 	data: [
+	 //      { y: '2006', a: 100, b: 90 },
+	 //      { y: '2007', a: 75,  b: 65 },
+	 //      { y: '2008', a: 50,  b: 40 },
+	 //      { y: '2009', a: 75,  b: 65 },
+	 //      { y: '2010', a: 50,  b: 40 },
+	 //      { y: '2011', a: 75,  b: 65 },
+	 //      { y: '2012', a: 100, b: 90 }
+	 //    ],
+	 //    xkey: 'y',
+	 //    ykeys: ['a', 'b'],
+	 //    labels: ['Series A', 'Series B'],
+	 //    resize: true
+		// };
   }]);
