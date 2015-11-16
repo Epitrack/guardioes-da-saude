@@ -18,6 +18,7 @@ angular.module('gdsApp')
     var platform = ApiConfig.PLATFORM;
     var client = ApiConfig.CLIENT;
 
+    // var userStorage = $rootScope.user;
     var userStorage = LocalStorage.getItem('userStorage');
 
     obj.getSymptoms = function(callback) {
@@ -34,7 +35,7 @@ angular.module('gdsApp')
       data.client = client;
       data.platform = platform;
       data.user_id = userStorage.id;
-      data.app_token = userStorage.app_token;
+      data.app_token = app_token;
 
       $http.post(apiUrl + '/survey/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
