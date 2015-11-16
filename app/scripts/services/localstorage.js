@@ -83,6 +83,7 @@ angular.module('gdsApp')
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
     };
 
+    // atualiza o usuário sempre que acontece um post
     obj.updateUser = function(user) {
       // adds into storage user info/data
       if(user.data.data.length > 0) {
@@ -103,6 +104,15 @@ angular.module('gdsApp')
 
       localStorage.setItem('userStorage', JSON.stringify(currentUser));
     };
+
+    // atualiza a foto do usuário
+    obj.updateAvatar = function(obj) {
+      // userStorage.picture = obj.picture;
+
+      // $rootScope.user = userStorage;
+
+      console.warn(userStorage);
+    }
 
     return obj;
   });

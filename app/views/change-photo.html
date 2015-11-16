@@ -3,7 +3,7 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ Aninha</span></h2>
+  <h2 class="section-title">Perfil <span>/ {{user.nick}}</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading change-photo">
@@ -13,24 +13,20 @@
     <div class="panel-body">
       <div class="col-xs-12 col-sm-10 col-md-6 card-avatar-content">
         <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
-        <form class="card-form" name="change-photo-default">
-          <div class="form-change-photo-default">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-1" value="input-change-photo-1">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-2" value="input-change-photo-2">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-3" value="input-change-photo-3">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-4" value="input-change-photo-4">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-5" value="input-change-photo-5">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-6" value="input-change-photo-6">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-7" value="input-change-photo-7">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-8" value="input-change-photo-8">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-9" value="input-change-photo-9">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-10" value="input-change-photo-10">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-11" value="input-change-photo-11">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-12" value="input-change-photo-12">
-          </div>
-        </form>
-
-          <span class="change-photo-or">ou</span>
+        <div class="form-change-photo-default">
+          <input type="radio" ng-click="chooseAvatar(1)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-1" value="1">
+          <input type="radio" ng-click="chooseAvatar(2)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-2" value="2">
+          <input type="radio" ng-click="chooseAvatar(3)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-3" value="3">
+          <input type="radio" ng-click="chooseAvatar(4)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-4" value="4">
+          <input type="radio" ng-click="chooseAvatar(5)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-5" value="5">
+          <input type="radio" ng-click="chooseAvatar(6)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-6" value="6">
+          <input type="radio" ng-click="chooseAvatar(7)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-7" value="7">
+          <input type="radio" ng-click="chooseAvatar(8)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-8" value="8">
+          <input type="radio" ng-click="chooseAvatar(9)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-9" value="9">
+          <input type="radio" ng-click="chooseAvatar(10)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-10" value="10">
+          <input type="radio" ng-click="chooseAvatar(11)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-11" value="11">
+          <input type="radio" ng-click="chooseAvatar(12)" ng-model="screen.user.picture" name="input-change-photo" class="radio-avatar avatar-12" value="12">
+        </div>
       </div>
 
       <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3">

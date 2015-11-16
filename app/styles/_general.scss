@@ -1204,15 +1204,14 @@ p.login-email {
   }
 
   &.edit {
-    overflow: hidden;
     position: relative;
-    @include bdr(100%);
 
     figcaption {
-      position: relative;
-      bottom: 60px;
-      color: $link-primary;
-      background-color: rgba(39, 39, 39, .65);
+      position: absolute;
+      bottom: 40px;
+      background-color: $link-primary;
+      left: 0;
+      width: 100%;
     }
   }
 }
