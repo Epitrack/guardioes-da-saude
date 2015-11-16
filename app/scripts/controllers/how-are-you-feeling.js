@@ -8,33 +8,33 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', function ($scope, $location, $timeout, Surveyapi, LocalStorage) {
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
     $scope.iFeelGood = function() {
+      var form = {};
+
+      form.no_symptom = 'Y';
+      form.ill_date = moment().format('YYYY/DD/MM');
+      form.lat = LocalStorage.getItem('userLocation').lat;
+      form.lon = LocalStorage.getItem('userLocation').lon;
+
+      // when submit survey to household
       var url = $location.path().split('/');
       var household = url[url.length - 3];
 
-      $scope.iFeelGood = {};
-
-      $scope.iFeelGood.no_symptom = 'Y';
-      $scope.iFeelGood.ill_date = moment().format('YYYY/DD/MM');
-      $scope.iFeelGood.lat = LocalStorage.getItem('userLocation').lat;
-      $scope.iFeelGood.lon = LocalStorage.getItem('userLocation').lon;
-
       if (household == 'household') {
-        // when submit survey to household
-        $scope.iFeelGood.household_id = url[url.length - 2];
+        form.household_id = url[url.length - 2];
       }
 
-      console.log($scope.iFeelGood);
-
-      Surveyapi.submitSurvey($scope.iFeelGood, function(data) {
+      Surveyapi.submitSurvey(form, function(data) {
         if (data.data.error != false) {
-          console.log('Obrigado')
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
         } else {
-          console.warn('Alguma coisa deu errado, tente novamente depois :)')
+          console.log(data.data.message);
+          toaster.pop('success', data.data.message);
         }
       });
     };
