@@ -103,24 +103,6 @@ angular.module('gdsApp')
               $scope.surveyByCitySummary.pct_symptoms = $scope.surveyByCitySummary.pct_symptoms.toFixed(2);
           }
 
-          // ====
-
-          $scope.surveyByCitySummary.pct_diarreica = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.diarreica)*100));
-          $scope.surveyByCitySummary.pct_exantematica = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.exantematica)*100));
-          $scope.surveyByCitySummary.pct_respiratoria = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.respiratoria)*100));
-
-          if($scope.surveyByCitySummary.pct_diarreica %1 !==0) {
-              $scope.surveyByCitySummary.pct_diarreica = $scope.surveyByCitySummary.pct_diarreica.toFixed(2);
-          }
-
-          if($scope.surveyByCitySummary.pct_exantematica %1 !==0) {
-              $scope.surveyByCitySummary.pct_exantematica = $scope.surveyByCitySummary.pct_exantematica.toFixed(2);
-          }
-
-          if($scope.surveyByCitySummary.pct_respiratoria %1 !==0) {
-              $scope.surveyByCitySummary.pct_respiratoria = $scope.surveyByCitySummary.pct_respiratoria.toFixed(2);
-          }
-
           $rootScope.surveyByCitySummary = $scope.surveyByCitySummary;
 
           console.warn($rootScope.surveyByCitySummary);
