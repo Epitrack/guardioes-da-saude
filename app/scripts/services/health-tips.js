@@ -8,89 +8,92 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('healthTips', ['$http', function ($http) {
+  .service('healthTips', ['$http', 'ApiConfig', 'LocalStorage', '$resource', function ($http, ApiConfig, LocalStorage, $resource) {
+
     var obj = {};
 
-    var upas = [];
+    var apiUrl = ApiConfig.API_URL;
 
+    // ====
     obj.getUpas = function(callback) {
-      $http.get('https://gist.githubusercontent.com/thulioph/035de62d0d40e0c7ac5a/raw/b5a305271af64205493677701a461962f14ec33a/upas.json')
+      $http.get(apiUrl + '/content/upas.json')
         .success(function(data) {
-          upas = data;
+          console.log('Success getUpas: ', data);
           callback(data);
-          console.log('Success getUpas: ', upas);
         }).error(function(error) {
           console.log('Error getUpas: ', error);
         })
     };
     // ====
 
-    var farmacias = [];
-
+    // ====
     obj.getFarmacias = function(callback) {
       var api_key = 'AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg';
+      var lat = LocalStorage.getItem('userLocation').lat;
+      var lng = LocalStorage.getItem('userLocation').lon;
 
-      $http.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=-8.0865589,-34.8918439&radius=800&key=' + api_key)
+      // var Maps = $resource('https://maps.googleapis.com/maps/api/place/textsearch/json',
+      //     {
+      //       query: 'pharmacy',
+      //       location: lat + ',' +lng,
+      //       radius: '10000',
+      //       key: api_key
+      //     });
+
+      // Maps.get({}, function(data) {console.log(data)}, function(error) {console.log(error)});
+
+      $http.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=' + lat + ',' + lng + '&radius=10000&key=' + api_key)
         .success(function(data) {
-          farmacias = data;
+          return console.log('Success getFarmacias: ', data.result);
           callback(data);
-          console.log('Success getFarmacias: ', farmacias);
         }).error(function(error) {
           console.log('Error getFarmacias: ', error);
         })
     };
     // ====
 
-    var vacinas = [];
-
+    // ====
     obj.getVacinas = function(callback) {
       $http.get('https://gist.githubusercontent.com/thulioph/b64fe40c683e5606d35c/raw/2d8395b0a969ccc48c2549b5563467ab677d67b5/vacinas.json')
         .success(function(data) {
-          vacinas = data;
+          console.log('Success getVacinas: ', data);
           callback(data);
-          console.log('Success getVacinas: ', vacinas);
         }).error(function(error) {
           console.log('Error getVacinas: ', error);
         })
     };
     // ====
 
-    var telefones = [];
-
+    // ====
     obj.getTelefones = function(callback) {
       $http.get('https://gist.githubusercontent.com/thulioph/a1ffc9d243d24077b8a6/raw/74c459e947ef6270f70e25af53630b7403fc1ca9/telefones-uteis.json')
         .success(function(data) {
-          telefones = data;
+          console.log('Success getTelefonesUteis: ', data);
           callback(data);
-          console.log('Success getTelefonesUteis: ', telefones);
         }).error(function(error) {
           console.log('Error getTelefonesUteis: ', error);
         })
     };
     // ====
 
-    var cuidados = [];
-
+    // ====
     obj.getCuidados = function(callback) {
       $http.get('https://gist.githubusercontent.com/thulioph/113a86a5abebc6204aad/raw/96613079e9333c1fe23e49bbc85fdbf4d489c847/cuidados.json')
         .success(function(data) {
-          cuidados = data;
+          console.log('Success getCuidados: ', data);
           callback(data);
-          console.log('Success getCuidados: ', cuidados);
         }).error(function(error) {
           console.log('Error getCuidados: ', error);
         })
     };
     // ====
 
-    var prevencoes = [];
-
+    // ====
     obj.getPrevencoes = function(callback) {
       $http.get('https://gist.githubusercontent.com/thulioph/ec5829dcfb6c2ca2e36d/raw/aced61c01ffa9cd9242c1d21d10b99917e66c249/prevencao.json')
         .success(function(data) {
-          prevencoes = data;
+          console.log('Success getPrevencoes: ', data);
           callback(data);
-          console.log('Success getPrevencoes: ', prevencoes);
         }).error(function(error) {
           console.log('Error getPrevencoes: ', error);
         })

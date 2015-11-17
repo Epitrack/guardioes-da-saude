@@ -93,19 +93,14 @@ angular.module('gdsApp')
 
     // FARMACIAS
     $scope.loadFarmacias = function() {
-      $scope.farmacias = [];
-
-      // Use service
       healthTips.getFarmacias(function(data) {
+        console.log('data loadFarmacia -> ', data);
         $scope.farmacias = data;
       });
     };
 
     // VACINAS
     $scope.loadVacinas = function() {
-      $scope.vacinas = [];
-
-      // Use service
       healthTips.getVacinas(function(data) {
         $scope.vacinas = data;
       });
@@ -113,9 +108,6 @@ angular.module('gdsApp')
 
     // TELEFONES
     $scope.loadTelefones = function() {
-      $scope.telefones = [];
-
-      // Use service
       healthTips.getTelefones(function(data) {
         $scope.telefones = data;
       });
@@ -123,9 +115,6 @@ angular.module('gdsApp')
 
     // CUIDADOS
     $scope.loadCuidados = function() {
-      $scope.cuidados = [];
-
-      // Use service
       healthTips.getCuidados(function(data) {
         $scope.cuidados = data;
       });
@@ -133,9 +122,6 @@ angular.module('gdsApp')
 
     // PREVENCAO
     $scope.loadPrevencao = function() {
-      $scope.prevencoes = [];
-
-      // Use service
       healthTips.getPrevencoes(function(data) {
         $scope.prevencoes = data;
       });
