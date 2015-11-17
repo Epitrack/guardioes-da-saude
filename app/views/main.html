@@ -4,9 +4,9 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 near-you-box">
         <h2 class="title-primary">Veja como está a saúde perto de você</h2>
 
-        <form name="form-search-home" class="form-search-home">
+        <form ng-submit="getSurveyByCity()" name="form-search-home" class="form-search-home">
           <fieldset class="input-group">
-            <input type="text" class="search-home" placeholder="Pesquise pela sua cidade">
+            <input type="text" ng-model="surveyByCity.city" class="search-home" placeholder="Pesquise pela sua cidade">
           </fieldset>
         </form>
 
@@ -31,3 +31,6 @@
 
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>
+
+<!-- Toaster -->
+<toaster-container></toaster-container>

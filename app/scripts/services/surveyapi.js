@@ -45,7 +45,17 @@ angular.module('gdsApp')
         }, function(error){
           console.warn('Error submitSurvey: ', error)
       });
-    }
+    };
+
+    obj.getMarkersByCity = function(city, callback) {
+      $http.get(apiUrl + '/surveys/l?q=' + city, {headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success getMarkersByCity: ', data);
+          callback(data);
+        }, function(error){
+          console.warn('Error getMarkersByCity: ', error);
+      });
+    };
 
     return obj;
   });

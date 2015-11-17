@@ -8,25 +8,35 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthMapCtrl', ['$scope', function ($scope) {
+  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage) {
 
     $scope.pageClass = 'health-map';
 
-    angular.extend($scope, {
-      location: {
-        lat: 41.85,
-        lng: -87.65,
-        zoom: 8
-      },
+    var addressPointsToMarkers = function(points) {
+      for (var i = 0; i < points.length; i++) {
+        return points.map(function(points) {
+          return {
+            lat: points.lat,
+            lng: points.lon,
+            zoom: 12,
+            title: points.formattedAddress,
+            icon: {
+                iconUrl: '../../images/icon-health-daily-' +  points.no_symptom + '.svg',
+                iconSize: [38, 95],
+                iconAnchor: [22, 94]
+            }
+          };
+        });
+      }
+    };
 
-      markers: {
-        m1: {
-          lat: 41.85,
-          lng: -87.65,
-          message: "I'm a static marker with defaultIcon",
-          focus: false,
-          icon: {}
-        }
+    $scope.markers = addressPointsToMarkers($rootScope.markersByCity);
+
+    angular.extend($scope, {
+      userLocation: {
+        lat: LocalStorage.getItem('userLocation').lat,
+        lng: LocalStorage.getItem('userLocation').lon,
+        zoom: 12
       },
 
       layers: {
@@ -44,12 +54,12 @@ angular.module('gdsApp')
       },
 
       leafIcon: {
-        iconUrl: 'img/leaf-green.png',
-        shadowUrl: 'img/leaf-shadow.png',
+        iconUrl: '../../images/icon-health-daily-bad.svg',
+        // shadowUrl: 'img/leaf-shadow.png',
         iconSize:     [38, 95], // size of the icon
-        shadowSize:   [50, 64], // size of the shadow
+        // shadowSize:   [50, 64], // size of the shadow
         iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62],  // the same for the shadow
+        // shadowAnchor: [4, 62],  // the same for the shadow
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
       },
 
