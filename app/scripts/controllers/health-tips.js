@@ -8,52 +8,87 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthTipsCtrl', ['$scope', 'healthTips', function ($scope, healthTips) {
+  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', '$rootScope', 'leafletMarkerEvents', function ($scope, healthTips, LocalStorage, $rootScope, leafletMarkerEvents) {
 
     $scope.pageClass = 'health-tips-page';
 
-    // get user location to init some things
-    $scope.getLocation = function() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(mapSuccess, mapError);
-      } else {
-        console.log('Seu navegador não suporta geolocation');
-      }
-    };
-
-    function mapSuccess(position) {
-      var map, lat, lng;
-
-      lat = position.coords.latitude, lng = position.coords.longitude;
-
-      console.log('Position -> ', position);
-
-      // map = L.map('map').setView([lat, lng], 13);
-
-      // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-      //   maxZoom: 18,
-      //   attribution: '<a href="http://www.epitrack.com.br" target="_blank">Epitrack</a> &copy;',
-      //   id: 'mapbox.streets'
-      // }).addTo(map);
-
-      // L.marker([lat, lng]).addTo(map).bindPopup("Você está aqui!").openPopup();
-    };
-
-    function mapError(msg) {
-      console.log('Error geolocation:', msg);
-    }
-    // ====
-
-    $scope.getLocation(); // get user location
-
     // UPAS
     $scope.loadUpas = function() {
-      $scope.upas = [];
-
-      // Use service
       healthTips.getUpas(function(data) {
-        $scope.upas = data;
+        $rootScope.markersUpa = data;
+        $scope.addMarkers();
       });
+
+      var myIcon = L.icon({
+        iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-64.png',
+        iconSize: [38, 95],
+        iconAnchor: [22, 94]
+      });
+
+      angular.extend($scope, {
+        userLocation: {
+          lat: LocalStorage.getItem('userLocation').lat,
+          lng: LocalStorage.getItem('userLocation').lon,
+          zoom: 5
+          // icon: myIcon
+        },
+
+        layers: {
+          baselayers: {
+            mapbox_light: {
+              name: 'Guardiões da Saúde',
+              url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+              type: 'xyz',
+              layerOptions: {
+                apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
+                mapid: 'thulioph.wix561or'
+              }
+            }
+          }
+        }
+      });
+
+      console.log($scope.userLocation);
+
+      $scope.addMarkers = function() {
+        var addressPointsToMarkers = function(points) {
+          for (var i = 0; i < points.length; i++) {
+            return points.map(function(points) {
+              return {
+                lat: points.latitude,
+                lng: points.longitude,
+                title: points.name, // upaTitle
+                message: points.logradouro + ', ' + points.bairro + ' - ' + points.numero, // upaMessage
+                icon: {
+                  iconUrl: '../../images/icon-marker-upa.svg',
+                  iconSize: [38, 95]
+                }
+              };
+            });
+          }
+        };
+
+        $scope.markers = addressPointsToMarkers($rootScope.markersUpa);
+      };
+
+      // adds events when click in marker
+      var markerEvents = leafletMarkerEvents.getAvailableEvents();
+
+      for (var k in markerEvents){
+        var eventName = 'leafletDirectiveMarker.click';
+
+        $scope.$on(eventName, function(event, args){
+            $scope.upaTitle = args.model.title;
+            $scope.upaMessage = args.model.message;
+        });
+      }
+
+      $scope.events = {
+        markers: {
+          enable: leafletMarkerEvents.getAvailableEvents()
+        }
+      }
+      // ====
     };
 
     // FARMACIAS

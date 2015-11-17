@@ -2,12 +2,9 @@
   Health tips - UPA
 -->
 
-<h2>Upas</h2>
+<leaflet event-broadcast="events" lf-center="userLocation" markers="markers" layers="layers" height="600px" width="100%"></leaflet>
 
-{{ upas }}
-<!-- <div id="map" class="map"></div> -->
-
-<!-- <div class="map-info">
-  <h5>Título aqui</h5>
-  <h6>Descrição ou endereço</h6>
-</div> -->
+<div ng-show="upaTitle" class="map-info">
+  <h5>{{upaTitle}}</h5>
+  <h6>{{upaMessage}}</h6>
+</div>
