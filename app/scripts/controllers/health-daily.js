@@ -14,6 +14,16 @@ angular.module('gdsApp')
 
     UserApi.getUserSurvey(function(data) {
       $scope.userSurvey = data.data.data;
+      $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom/$scope.userSurvey.total)*100));
+      $scope.userSurvey.pct_symptoms = ((($scope.userSurvey.symptom/$scope.userSurvey.total)*100));
+
+      if($scope.userSurvey.pct_no_symptoms %1 !==0) {
+          $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.pct_no_symptoms.toFixed(2);
+      }
+
+      if($scope.userSurvey.pct_symptoms %1 !==0) {
+          $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
+      }
     });
 
     $scope.day = moment();

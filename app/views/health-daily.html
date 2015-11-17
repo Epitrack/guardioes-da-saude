@@ -9,7 +9,7 @@
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img src="../images/avatar/avatar-1.svg" alt="Avatar de {{user.nick}}">
-        <figcaption>{{user.nick}} <span>{{ user.dob | amDifference : null : 'years' }} anos</span></figcaption>
+        <figcaption>{{user.nick}} <span>{{ user.dob | ageFilter }} anos</span></figcaption>
       </figure>
     </aside>
 
@@ -40,7 +40,7 @@
             <figure>
               <img src="../images/icon-health-daily-good.svg" alt="Bem">
               <figcaption>
-                <span>{{ userSurvey.no_symptom }}%</span> Bem
+                <span>{{ userSurvey.pct_no_symptoms }}%</span> Bem
                 <p>{{ userSurvey.no_symptom }} Participações</p>
               </figcaption>
             </figure>
@@ -50,7 +50,7 @@
             <figure>
               <img src="../images/icon-health-daily-bad.svg" alt="Mal">
               <figcaption>
-                <span>{{ userSurvey.symptom }}%</span> Mal
+                <span>{{ userSurvey.pct_symptoms }}%</span> Mal
                 <p>{{ userSurvey.symptom }}  Participações</p>
               </figcaption>
             </figure>

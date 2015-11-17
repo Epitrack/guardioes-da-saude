@@ -7,7 +7,7 @@
           <a href="survey/{{ screen.user.id }}/step-1" title="Clique para realizar a survey de {{ screen.user.nick }}">
             <figure>
               <img src="../images/avatar/avatar-1.svg" alt="{{ screen.user.nick }} - {{ screen.user.dob | amDifference : null : 'years' }}">
-              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | amDifference : null : 'years' }}</span></figcaption>
+              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | ageFilter }} anos</span></figcaption>
             </figure>
           </a>
         </aside>
@@ -27,8 +27,8 @@
           <aside class="survey-avatar" ng-repeat="member in screen.user.household">
             <a href="survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
               <figure>
-                <img src="../images/avatar/avatar-2.svg" alt="{{ member.nick }} - {{ member.dob | amDifference : null : 'years' }}">
-                <figcaption>{{ member.nick }} <span>{{ member.dob | amDifference : null : 'years' }}</span></figcaption>
+                <img src="../images/avatar/avatar-2.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
+                <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }} anos</span></figcaption>
               </figure>
             </a>
           </aside>
