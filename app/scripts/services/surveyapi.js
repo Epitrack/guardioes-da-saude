@@ -57,5 +57,15 @@ angular.module('gdsApp')
       });
     };
 
+    obj.getMarkersByCitySummary = function(city, callback) {
+      $http.get(apiUrl + '/surveys/summary?q=' + city, {headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success getMarkersByCitySummary: ', data);
+          callback(data);
+        }, function(error){
+          console.warn('Error getMarkersByCitySummary: ', error);
+      });
+    };
+
     return obj;
   });

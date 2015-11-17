@@ -28,13 +28,62 @@ angular.module('gdsApp')
       Surveyapi.getMarkersByCity($scope.surveyByCity.city, function(data) {
         if (data.data.error === false) {
           $location.path('/health-map');
+          // set into $rootScope to get data in /health-map screen
           $rootScope.markersByCity = data.data.data;
+        } else {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        }
+      });
+
+      // obtém os dados em summary
+      $scope.getSurveyByCitySummary($scope.surveyByCity.city)
+    };
+
+    $scope.getSurveyByCitySummary = function(city) {
+      Surveyapi.getMarkersByCitySummary(city, function(data) {
+        if (data.data.error === false) {
+          $scope.surveyByCitySummary = data.data.data;
+
+          $scope.surveyByCitySummary.pct_no_symptoms = ((($scope.surveyByCitySummary.total_no_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+          $scope.surveyByCitySummary.pct_symptoms = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+
+          if($scope.surveyByCitySummary.pct_no_symptoms %1 !==0) {
+              $scope.surveyByCitySummary.pct_no_symptoms = $scope.surveyByCitySummary.pct_no_symptoms.toFixed(2);
+          }
+
+          if($scope.surveyByCitySummary.pct_symptoms %1 !==0) {
+              $scope.surveyByCitySummary.pct_symptoms = $scope.surveyByCitySummary.pct_symptoms.toFixed(2);
+          }
+
+          // ====
+
+          $scope.surveyByCitySummary.pct_diarreica = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.diarreica)*100));
+          $scope.surveyByCitySummary.pct_exantematica = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.exantematica)*100));
+          $scope.surveyByCitySummary.pct_respiratoria = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.diseases.respiratoria)*100));
+
+          if($scope.surveyByCitySummary.pct_diarreica %1 !==0) {
+              $scope.surveyByCitySummary.pct_diarreica = $scope.surveyByCitySummary.pct_diarreica.toFixed(2);
+          }
+
+          if($scope.surveyByCitySummary.pct_exantematica %1 !==0) {
+              $scope.surveyByCitySummary.pct_exantematica = $scope.surveyByCitySummary.pct_exantematica.toFixed(2);
+          }
+
+          if($scope.surveyByCitySummary.pct_respiratoria %1 !==0) {
+              $scope.surveyByCitySummary.pct_respiratoria = $scope.surveyByCitySummary.pct_respiratoria.toFixed(2);
+          }
+
+          $rootScope.surveyByCitySummary = $scope.surveyByCitySummary;
+
+          console.warn($rootScope.surveyByCitySummary);
         } else {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
       })
     };
+
     // ====
 
   }]);
