@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("gdsApp")
 .config(['$httpProvider', function($httpProvider) {
   console.log("doidones");

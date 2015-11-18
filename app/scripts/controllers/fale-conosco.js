@@ -8,12 +8,19 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('FaleConoscoCtrl', ['$scope', function ($scope) {
+  .controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 'toaster', function ($scope, ContactApi, toaster) {
 
     $scope.contact = {};
 
     $scope.sendContact = function() {
-      console.log($scope.contact);
+      ContactApi.faleConosco($scope.contact, function(data) {
+        if (data.data.error === true) {
+          toaster.pop('error', data.data.message);
+        } else {
+          toaster.pop('success', data.data.message);
+          $scope.contact = {};
+        }
+      });
     };
 
     $scope.esterEgg = function() {
