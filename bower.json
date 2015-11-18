@@ -15,7 +15,11 @@
     "angular-bootstrap": "~0.14.2",
     "angular-leaflet-directive": "~0.9.0",
     "chart-angular-raphaeljs-morris": "*",
+<<<<<<< HEAD
     "ng-file-upload": "~10.0.2"
+=======
+    "css-browser-selector": "*"
+>>>>>>> feature_bugfix
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

@@ -1,0 +1,9 @@
+// —————————————————————————---------------
+//     Crossbrowser styles & CSS bug fixes
+// —————————————————————————---------------
+
+
+.ie .card-avatar-image img, .gecko .card-avatar-image img { height: 100%; }
+.ie .health-daily-avatar img, .gecko .health-daily-avatar img { height: 100%; }
+.ie .my-user img, .gecko .my-user img {height: 100%;}
+.ie .survey-avatar img, .gecko .survey-avatar img {height: 100%;}

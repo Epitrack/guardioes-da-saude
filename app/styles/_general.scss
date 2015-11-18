@@ -165,6 +165,7 @@ body {
 
   img {
     max-width: 100%;
+    max-height: 100%;
   }
 }
 
@@ -178,7 +179,7 @@ body {
 
 .title-primary {
   color: $link-primary;
-  font-size: ($fs-medium)+1;
+  font-size: ($fs-medium);
   font-family: $ff-light;
   text-align: center;
   margin: 0;
@@ -215,7 +216,13 @@ body {
   }
 }
 
-.form-search-home { margin-bottom: 35px; }
+.form-search-home {
+  margin-bottom: 35px;
+    
+  fieldset {
+    width: 100%;
+  }
+}
 
 .last-cities {
   text-align: center;
@@ -723,18 +730,17 @@ body {
 //
 // Health Daily
 //
-
-.health-daily-avatar, .total-participants {
-  float: left;
-}
-
 .health-daily-avatar {
-  width: 180px;
-  margin: 31px 50px 20px 19px;
+  float: left;
+  width: 100%;
+  margin: 0 auto;
   display: inline-block;
+  text-align: center;
+  margin-top: 15px;
 
   img {
     max-width: 100%;
+    height: auto;
     @include bdr(100%);
   }
 
@@ -755,6 +761,7 @@ body {
 }
 
 .total-participants {
+  float: left;
   margin: 22px 0 20px 0;
 
   div {
@@ -765,49 +772,46 @@ body {
     float: left;
     clear: left;
     padding: 0;
-  }
+  
+    .status  {
+      width: 150px;
+      margin: 0 0 0 5px;
 
-  .status  {
-    padding: 100px 0 0 0;
-
-    figure {
-      img {
-        @include bdr(100%);
-        @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
-      }
-    }
-
-    ul {
-
-      li {
-        float: left;
-        width: 155px;
-        cursor: pointer;
-      }
-
-      li:nth-child(1) {
-        margin: 0 15px 0 0;
-      }
-
-      figcaption {
-        float: right;
-        font-family: $ff-light;
-        font-size: ($fs-normal)+.6;
-        color: $font-primary;
-
-        span {
-          font-family: $ff-bold;
-        }
-
-        p {
-          font-size: ($fs-normal)+.2;
+      figure {
+        img {
+          @include bdr(100%);
+          @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
         }
       }
-    }
-  }
 
-  .sort-by {
-    float: right;
+      ul {
+
+        li {
+          float: left;
+          width: 155px;
+          cursor: pointer;
+        }
+
+        li:nth-child(1) {
+          margin: 0 15px 0 0;
+        }
+
+        figcaption {
+          float: right;
+          font-family: $ff-light;
+          font-size: ($fs-normal)+.6;
+          color: $font-primary;
+
+          span {
+            font-family: $ff-bold;
+          }
+
+          p {
+            font-size: ($fs-normal)+.2;
+          }
+        }
+      }
+    }
   }
 
   h1 {
@@ -820,7 +824,6 @@ body {
       font-family: $ff-bold;
     }
   }
-
 }
 
 .frequency {
@@ -836,10 +839,14 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
+    margin: 0;
+    z-index: 1;
   }
 }
 
 .sort-by {
+  float: right;
+  margin: 15px 0 0 0;
 
   button {
     color: $link-primary;
@@ -879,10 +886,13 @@ body {
   min-height: 700px;
   background-color: $link-primary;
 
-  .title-primary {
-    color: $btn-primary;
-    font-size: ($fs-large)+1;
-    margin: 45px auto 90px auto;
+  .privacy-policy {
+
+    .title-primary {
+      color: $btn-primary;
+      font-size: ($fs-medium)+1;
+      margin: 0px auto 20px auto;
+    }
   }
 }
 
@@ -1170,7 +1180,9 @@ p.login-email {
   min-height: 250px;
   text-align: center;
 
-  img { max-width: 100%; }
+  img { 
+    max-width: 100%;
+  }
 
   figcaption {
     font-size: ($fs-medium)+.8;
@@ -1288,6 +1300,7 @@ p.login-email {
 
 .privacy-policy {
   @extend .about;
+
 }
 
 // ====
@@ -1405,6 +1418,27 @@ p.login-email {
     }
   }
   // ====
+
+  // health daily
+  .health-daily-avatar {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .total-participants {
+    .geral {
+      .status  {
+        width: auto;
+        margin: 30px 0 0 20px;
+      }
+    }
+  }
+
+  // ====
 }
 
 // Desktops
@@ -1432,6 +1466,51 @@ p.login-email {
   // fale conosco
   .fale-conosco { margin-top: 70px; }
   // ====
+  
+  // health daily
+  .sort-by {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+  }
+
+  .health-daily-avatar {
+    float: left;
+    width: 180px;
+    display: inline-block;
+    text-align: center;
+    margin: 30px 0 0 30px;
+  }
+
+  .total-participants {
+    float: right;
+    margin: 22px 0 20px 0;
+
+    .geral {
+      .status  {
+        width: auto;
+        margin: 30px 0 0 20px;
+      }
+    }
+  }
+
+  // ====
+
+  //policy and privacy 
+  .wrapper-full-page {
+
+    .privacy-policy {
+
+      .title-primary {
+        font-size: ($fs-large)+1;
+        margin: 45px auto 90px auto;
+      }
+    }
+  }
+  
+  // ===
+
 }
 
 // Large Desktops

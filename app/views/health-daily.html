@@ -6,62 +6,61 @@
   <h2 class="section-title">Diário da Saúde <span>/ Aninha</span></h2>
 
   <article class="col-xs-12 card">
-    <aside class="health-daily-avatar">
+    <div class="dropdown sort-by">
+      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Este ano
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+        <li><a href="#">2014</a></li>
+        <li><a href="#">2013</a></li>
+        <li><a href="#">2012</a></li>
+        <li><a href="#">2011</a></li>
+      </ul> 
+    </div>
+    
+    <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img src="../images/avatar/avatar-1.svg" alt="Aninha - 28 anos">
         <figcaption>Aninha <span>28 anos</span></figcaption>
       </figure>
     </aside>
 
-    <aside class="total-participants">
+    <aside class="col-md-8 total-participants">
       <div class="total">
         <h2>Total de participações</h2>
         <h1><span>{{totalParticipants.data[0].total}}</span> Participações</h1>
-      </div>
-
-      <div class="dropdown sort-by">
-        <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Este ano
-          <span class="caret"></span>
-        </button>
-
-        <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-          <li><a href="#">2014</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2011</a></li>
-        </ul>
       </div>
 
       <div class="geral">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
         <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+      
+        <div class="status">
+          <ul>
+            <li ng-mouseover="showGood()">
+              <figure>
+                <img src="../images/icon-health-daily-good.svg" alt="Bem">
+                <figcaption>
+                  <span>{{donutOptions.data[0].value}}%</span> {{donutOptions.data[0].label}}
+                  <p>{{donutOptions.data[0].participants}} Participações</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li ng-mouseover="showBad()">
+              <figure>
+                <img src="../images/icon-health-daily-bad.svg" alt="Mal">
+                <figcaption>
+                  <span>{{donutOptions.data[1].value}}%</span> {{donutOptions.data[1].label}}
+                  <p>{{donutOptions.data[1].participants}}  Participações</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <div class="status">
-        <ul>
-          <li ng-mouseover="showGood()">
-            <figure>
-              <img src="../images/icon-health-daily-good.svg" alt="Bem">
-              <figcaption>
-                <span>{{donutOptions.data[0].value}}%</span> {{donutOptions.data[0].label}}
-                <p>{{donutOptions.data[0].participants}} Participações</p>
-              </figcaption>
-            </figure>
-          </li>
-          <li ng-mouseover="showBad()">
-            <figure>
-              <img src="../images/icon-health-daily-bad.svg" alt="Mal">
-              <figcaption>
-                <span>{{donutOptions.data[1].value}}%</span> {{donutOptions.data[1].label}}
-                <p>{{donutOptions.data[1].participants}}  Participações</p>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </div>
-
     </aside>
   </article>
 

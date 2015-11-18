@@ -1,17 +1,17 @@
 <div class="header">
   <i class="fa fa-angle-left" ng-click="previous()"></i>
-  <span>{{month.format("MMMM, YYYY")}}</span>
+  <span>{{ month.format("MMMM, YYYY") }}</span>
   <i class="fa fa-angle-right" ng-click="next()"></i>
 </div>
 
 <div class="week names">
-  <span class="day">Sun</span>
-  <span class="day">Mon</span>
-  <span class="day">Tue</span>
-  <span class="day">Wed</span>
-  <span class="day">Thu</span>
-  <span class="day">Fri</span>
-  <span class="day">Sat</span>
+  <span class="day">Seg</span>
+  <span class="day">Ter</span>
+  <span class="day">Qua</span>
+  <span class="day">Qui</span>
+  <span class="day">Sex</span>
+  <span class="day">Sab</span>
+  <span class="day">Dom</span>
 </div>
 
 <div class="week" ng-repeat="week in weeks">

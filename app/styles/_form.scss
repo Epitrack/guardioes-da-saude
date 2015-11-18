@@ -46,12 +46,13 @@ textarea {
 //
 
 .mainform {
+  width: 100%;
   margin: 0 0 15px 0;
   @include bdr(5px);
   border: 2px solid $link-primary;
 
   input {
-    &:first-child { border: 0 0 2px 0; }
+    &:first-child {  }
 
     &:last-child { border: 0; }
   }
@@ -222,6 +223,9 @@ textarea {
   color: $link-primary;
   background-color: $btn-primary;
   position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: block;
 
   // &::before {
   //   content: '';
@@ -268,11 +272,14 @@ textarea {
   position: relative;
   overflow: hidden;
   border-radius: 100%;
+  margin: 0 auto;
 
   img {
     width: 180px;
     height: 180px;
   }
+
+  
 
   // @include bdr(100%);
 
