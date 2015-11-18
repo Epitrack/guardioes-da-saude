@@ -12,25 +12,20 @@ angular.module('gdsApp')
 
     $scope.pageClass = 'health-tips-page';
 
-    // UPAS
-    $scope.loadUpas = function() {
-      healthTips.getUpas(function(data) {
-        $rootScope.markersUpa = data;
-        $scope.addMarkers();
-      });
-
-      var myIcon = L.icon({
-        iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-64.png',
-        iconSize: [38, 95],
+    // $scope.addMarkers = function() {
+      var myIcon = {
+        iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-16.png',
+        iconSize: [16, 16],
         iconAnchor: [22, 94]
-      });
+      };
 
       angular.extend($scope, {
         userLocation: {
           lat: LocalStorage.getItem('userLocation').lat,
           lng: LocalStorage.getItem('userLocation').lon,
-          zoom: 5
-          // icon: myIcon
+          title: 'Me',
+          zoom: 10,
+          icon: myIcon
         },
 
         layers: {
@@ -48,27 +43,47 @@ angular.module('gdsApp')
         }
       });
 
-      console.log($scope.userLocation);
+      console.warn('$scope.userLocation', $scope.userLocation);
 
       $scope.addMarkers = function() {
         var addressPointsToMarkers = function(points) {
-          for (var i = 0; i < points.length; i++) {
-            return points.map(function(points) {
-              return {
-                lat: points.latitude,
-                lng: points.longitude,
-                title: points.name, // upaTitle
-                message: points.logradouro + ', ' + points.bairro + ' - ' + points.numero, // upaMessage
+          // console.warn('points', points);
+          var t = [$scope.userLocation];
+          angular.forEach(points, function(p){
+            t.push({
+                lat: p.latitude,
+                lng: p.longitude,
+                title: p.name, // upaTitle
+                message: p.logradouro + ', ' + p.bairro + ' - ' + p.numero, // upaMessage
                 icon: {
                   iconUrl: '../../images/icon-marker-upa.svg',
                   iconSize: [38, 95]
                 }
-              };
-            });
-          }
+              });
+          });
+          return t;
+        };
+
+        var addressPointsToMarkersPharmacy = function(points) {
+          // console.warn('points', points);
+          var t = [$scope.userLocation];
+          angular.forEach(points, function(p){
+            t.push({
+              lat: p.latitude,
+              lng: p.longitude,
+                title: p.name, // upaTitle
+                message: p.logradouro + ', ' + p.bairro + ' - ' + p.numero, // upaMessage
+                icon: {
+                  iconUrl: '../../images/icon-marker-pharmacy.svg',
+                  iconSize: [38, 95]
+                }
+              });
+          });
+          return t;
         };
 
         $scope.markers = addressPointsToMarkers($rootScope.markersUpa);
+        $scope.markersPharmacy = addressPointsToMarkersPharmacy($rootScope.markersPharmacy);
       };
 
       // adds events when click in marker
@@ -88,14 +103,23 @@ angular.module('gdsApp')
           enable: leafletMarkerEvents.getAvailableEvents()
         }
       }
-      // ====
+    // };
+
+    // UPAS
+    $scope.loadUpas = function() {
+      healthTips.getUpas(function(data) {
+        // adiciono os pontos ao $rootScope
+        $rootScope.markersUpa = data;
+        $scope.addMarkers();
+      });
     };
 
     // FARMACIAS
     $scope.loadFarmacias = function() {
       healthTips.getFarmacias(function(data) {
         console.log('data loadFarmacia -> ', data);
-        $scope.farmacias = data;
+        $rootScope.markersPharmacy = data;
+        $scope.addMarkers();
       });
     };
 
