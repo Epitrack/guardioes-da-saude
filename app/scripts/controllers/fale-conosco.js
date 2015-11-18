@@ -17,8 +17,10 @@ angular.module('gdsApp')
     };
 
     $scope.esterEgg = function() {
-      cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
-        consol.warn('~ Voilà! ~');
+      cheet('e p i t r a c k', function () {
+        $('#modal-kc').modal({
+          show: 'true'
+        });
       });
     };
 
