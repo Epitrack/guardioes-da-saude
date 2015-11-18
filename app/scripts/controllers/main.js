@@ -44,9 +44,14 @@ angular.module('gdsApp')
       Surveyapi.getMarkersByCitySummary(city, function(data) {
         if (data.data.error === false) {
           $scope.surveyByCitySummary = data.data.data;
-
-          $scope.surveyByCitySummary.pct_no_symptoms = ((($scope.surveyByCitySummary.total_no_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
-          $scope.surveyByCitySummary.pct_symptoms = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+          $scope.surveyByCitySummary.pct_no_symptoms = 0;
+          $scope.surveyByCitySummary.pct_symptoms = 0;
+          if($scope.surveyByCitySummary.total_no_symptoms > 0) {
+            $scope.surveyByCitySummary.pct_no_symptoms = ((($scope.surveyByCitySummary.total_no_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+          }
+          if($scope.surveyByCitySummary.total_symptoms > 0) {
+            $scope.surveyByCitySummary.pct_symptoms = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+          }
 
           if($scope.surveyByCitySummary.pct_no_symptoms %1 !==0) {
               $scope.surveyByCitySummary.pct_no_symptoms = $scope.surveyByCitySummary.pct_no_symptoms.toFixed(2);
@@ -55,7 +60,6 @@ angular.module('gdsApp')
           if($scope.surveyByCitySummary.pct_symptoms %1 !==0) {
               $scope.surveyByCitySummary.pct_symptoms = $scope.surveyByCitySummary.pct_symptoms.toFixed(2);
           }
-
           $rootScope.surveyByCitySummary = $scope.surveyByCitySummary;
 
           console.warn($rootScope.surveyByCitySummary);
