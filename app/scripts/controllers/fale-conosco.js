@@ -16,4 +16,12 @@ angular.module('gdsApp')
       console.log($scope.contact);
     };
 
+    $scope.esterEgg = function() {
+      cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+        consol.warn('~ Voilà! ~');
+      });
+    };
+
+    $scope.esterEgg();
+
   }]);
