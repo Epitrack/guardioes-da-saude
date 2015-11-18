@@ -15,18 +15,54 @@
         <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
         <form class="card-form" name="change-photo-default">
           <div class="form-change-photo-default">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-1" value="input-change-photo-1">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-2" value="input-change-photo-2">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-3" value="input-change-photo-3">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-4" value="input-change-photo-4">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-5" value="input-change-photo-5">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-6" value="input-change-photo-6">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-7" value="input-change-photo-7">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-8" value="input-change-photo-8">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-9" value="input-change-photo-9">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-10" value="input-change-photo-10">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-11" value="input-change-photo-11">
-            <input type="radio" name="input-change-photo" class="radio-avatar avatar-12" value="input-change-photo-12">
+
+            <label for="input-1" class="radio-avatar avatar-1" ng-class='{"photo-selected":tog==1}' ng-click='tog=1'>
+              <input type="radio" name="input-change-photo" id="input-1" value="input-change-photo-1">
+            </label>
+            
+            <label for="input-2" class="radio-avatar avatar-2" ng-class='{"photo-selected":tog==2}' ng-click='tog=2'>
+              <input type="radio" name="input-change-photo" id="input-2" value="input-change-photo-2">
+            </label>
+
+            <label for="input-3" class="radio-avatar avatar-3" ng-class='{"photo-selected":tog==3}' ng-click='tog=3'>
+              <input type="radio" name="input-change-photo" id="input-3" value="input-change-photo-3">
+            </label>
+
+            <label for="input-4" class="radio-avatar avatar-4" ng-class='{"photo-selected":tog==4}' ng-click='tog=4'>
+              <input type="radio" name="input-change-photo" id="input-4" value="input-change-photo-4">
+            </label>
+
+            <label for="input-5" class="radio-avatar avatar-5" ng-class='{"photo-selected":tog==5}' ng-click='tog=5'>
+              <input type="radio" name="input-change-photo" id="input-5" value="input-change-photo-5">
+            </label>
+
+            <label for="input-6" class="radio-avatar avatar-6" ng-class='{"photo-selected":tog==6}' ng-click='tog=6'>
+              <input type="radio" name="input-change-photo" id="input-6" value="input-change-photo-6">
+            </label>
+
+            <label for="input-7" class="radio-avatar avatar-7" ng-class='{"photo-selected":tog==7}' ng-click='tog=7'>
+              <input type="radio" name="input-change-photo" id="input-7" value="input-change-photo-7">
+            </label>
+
+            <label for="input-8" class="radio-avatar avatar-8" ng-class='{"photo-selected":tog==8}' ng-click='tog=8'>
+              <input type="radio" name="input-change-photo" id="input-8" value="input-change-photo-8">
+            </label>
+
+            <label for="input-9" class="radio-avatar avatar-9" ng-class='{"photo-selected":tog==9}' ng-click='tog=9'>
+              <input type="radio" name="input-change-photo" id="input-9" value="input-change-photo-9">
+            </label>
+
+            <label for="input-10" class="radio-avatar avatar-10" ng-class='{"photo-selected":tog==10}' ng-click='tog=10'>
+              <input type="radio" name="input-change-photo" id="input-10" value="input-change-photo-10">
+            </label>
+
+            <label for="input-11" class="radio-avatar avatar-11" ng-class='{"photo-selected":tog==11}' ng-click='tog=11'>
+              <input type="radio" name="input-change-photo" id="input-11" value="input-change-photo-11">
+            </label>
+
+            <label for="input-12" class="radio-avatar avatar-12" ng-class='{"photo-selected":tog==12}' ng-click='tog=12'>
+              <input type="radio" name="input-change-photo" id="input-12" value="input-change-photo-12">
+            </label>
           </div>
         </form>
 
@@ -35,13 +71,38 @@
 
       <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3">
         <h3 class="change-photo-subtitle">Envie uma foto</h3>
-        <form name="search-photo-default">
+        <!-- <form name="search-photo-default">
           <div class="input-file-container">
-            <input class="input-file" id="my-file" type="file">
+            <input class="input-file" id="my-file" type="file" nv-file-select="" uploader="uploader" multiple />
             <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem"></label>
           </div>
 
-          <button type="submit" class="save-change-photo">Salvar foto</button>
+          <button class="save-change-photo" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">Salvar foto</button>
+        </form> -->
+
+        <form name="myForm">
+          <fieldset>
+            <legend>Upload on form submit</legend>
+            Username:
+            <input type="text" name="userName" ng-model="username" size="31" required>
+            <i ng-show="myForm.userName.$error.required">*required</i>
+            <br>Photo:
+            <input type="file" ngf-select ng-model="picFile" name="file"    
+                   accept="image/*" ngf-max-size="2MB" required>
+            <i ng-show="myForm.file.$error.required">*required</i><br>
+            <i ng-show="myForm.file.$error.maxSize">File too large 
+                {{picFile.size / 1000000|number:1}}MB: max 2M</i>
+            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+            <br>
+            <button ng-click="uploadPic(picFile)">Submit</button>
+            <span class="progress" ng-show="picFile.progress >= 0">
+              <div style="width:{{picFile.progress}}%" 
+                  ng-bind="picFile.progress + '%'"></div>
+            </span>
+            <span ng-show="picFile.result">Upload Successful</span>
+            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+          </fieldset>
+          <br>
         </form>
       </div>
     </div>

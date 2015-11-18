@@ -182,6 +182,8 @@ textarea {
 }
 
 .radio-avatar {
+  float: left;
+  cursor: pointer;
   margin: 0 5px 15px 5px !important;
   width: 70px;
   height: 70px;
@@ -198,9 +200,13 @@ textarea {
     @include bdr(100%);
   }
 
-  &:checked {
+  &.photo-selected {
     outline: none;
     background-color: rgba(0, 0, 0, .5);
+  }
+    
+  input {
+    visibility: hidden;
   }
 }
 

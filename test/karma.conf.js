@@ -41,6 +41,7 @@ module.exports = function(config) {
       'bower_components/mocha/mocha.js',
       'bower_components/morris.js/morris.js',
       'bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js',
+      'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

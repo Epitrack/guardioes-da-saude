@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'leaflet-directive',
-    'ChartAngular'
+    'ChartAngular',
+    'ngFileUpload'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
