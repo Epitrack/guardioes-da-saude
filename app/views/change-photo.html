@@ -69,40 +69,26 @@
           <span class="change-photo-or">ou</span>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3">
+      <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3 upload-form">
         <h3 class="change-photo-subtitle">Envie uma foto</h3>
-        <!-- <form name="search-photo-default">
+        <form name="search-photo-default">
           <div class="input-file-container">
-            <input class="input-file" id="my-file" type="file" nv-file-select="" uploader="uploader" multiple />
-            <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem"></label>
+            <input class="input-file" id="my-file" type="file" ngf-select ng-model="picFile" name="file"    
+                   accept="image/*" ngf-max-size="2MB" required>
+            <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem">
+              <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> 
+            </label>
           </div>
 
-          <button class="save-change-photo" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">Salvar foto</button>
-        </form> -->
-
-        <form name="myForm">
-          <fieldset>
-            <legend>Upload on form submit</legend>
-            Username:
-            <input type="text" name="userName" ng-model="username" size="31" required>
-            <i ng-show="myForm.userName.$error.required">*required</i>
-            <br>Photo:
-            <input type="file" ngf-select ng-model="picFile" name="file"    
-                   accept="image/*" ngf-max-size="2MB" required>
-            <i ng-show="myForm.file.$error.required">*required</i><br>
-            <i ng-show="myForm.file.$error.maxSize">File too large 
-                {{picFile.size / 1000000|number:1}}MB: max 2M</i>
-            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
-            <br>
-            <button ng-click="uploadPic(picFile)">Submit</button>
-            <span class="progress" ng-show="picFile.progress >= 0">
-              <div style="width:{{picFile.progress}}%" 
+          <button class="save-change-photo" ng-click="uploadPic(picFile)">Salvar foto</button>
+          <h3 ng-show="picFile.result">Upload Successful</h3>
+          <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+          <!-- <i ng-show="myForm.file.$error.maxSize">File too large 
+                {{picFile.size / 1000000|number:1}}MB: max 2M</i> -->
+            <!-- <span class="progress" ng-show="picFile.progress >= 0"> -->
+              <!-- <div style="width:{{picFile.progress}}%" 
                   ng-bind="picFile.progress + '%'"></div>
-            </span>
-            <span ng-show="picFile.result">Upload Successful</span>
-            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-          </fieldset>
-          <br>
+            </span> -->
         </form>
       </div>
     </div>

@@ -222,7 +222,6 @@ textarea {
   color: $link-primary;
   background-color: $btn-primary;
   position: relative;
-  margin-bottom: 20px;
 
   // &::before {
   //   content: '';
@@ -236,6 +235,10 @@ textarea {
   //   background-repeat: no-repeat;
   //   @include path('icon-upload-image.svg');
   // }
+}
+
+.upload-form {
+  margin-bottom: 20px;
 }
 
 .input-file-container {
@@ -263,6 +266,14 @@ textarea {
   height: 180px;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+
+  img {
+    width: 180px;
+    height: 180px;
+  }
+
   // @include bdr(100%);
 
   // &::before {
