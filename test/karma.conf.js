@@ -42,6 +42,10 @@ module.exports = function(config) {
       'bower_components/morris.js/morris.js',
       'bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js',
       'bower_components/ng-file-upload/ng-file-upload.js',
+      'bower_components/AngularJS-Toaster/toaster.js',
+      'bower_components/ngMask/dist/ngMask.js',
+      'bower_components/angular-moment/angular-moment.js',
+      'bower_components/cheet.js/cheet.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

@@ -8,10 +8,22 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('FaleConoscoCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('FaleConoscoCtrl', ['$scope', function ($scope) {
+
+    $scope.contact = {};
+
+    $scope.sendContact = function() {
+      console.log($scope.contact);
+    };
+
+    $scope.esterEgg = function() {
+      cheet('e p i t r a c k', function () {
+        $('#modal-kc').modal({
+          show: 'true'
+        });
+      });
+    };
+
+    $scope.esterEgg();
+
+  }]);

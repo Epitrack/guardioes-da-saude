@@ -8,40 +8,54 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', '$location', '$timeout', function ($scope, $location, $timeout) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout) {
 
-    $scope.symptomsList = [
-      {name: 'Febre', id: 'febre'},
-      {name: 'Tosse', id: 'tosse'},
-      {name: 'Náusea ou Vômito', id: 'nausea-ou-vomito'},
-      {name: 'Manchas vermelhas no corpo', id: 'mancha-vermelha'},
-      {name: 'Dor nas juntas', id: 'dor-nas-juntas'},
-      {name: 'Diarréia', id: 'diarreia'},
-      {name: 'Dor no corpo', id: 'dor-no-corpo'},
-      {name: 'Sangramento', id: 'sangramento'},
-      {name: 'Falta de Ar', id: 'falta-de-ar'},
-      {name: 'Urina ou olhos amarelados', id: 'urina-olhos-amarelados'},
-      {name: 'Dor de cabeça', id: 'dor-de-cabeca'},
-      {name: 'Olhos vermelhos', id: 'olhos-vermelhos'},
-      {name: 'Coceira', id: 'coceira'}
-    ];
+    // get all symptoms
+    Surveyapi.getSymptoms(function(data) {
+      $scope.symptomsList = data.data.data;
+    });
 
+    // report survey
     $scope.symptoms = {};
 
     $scope.submitSurvey = function() {
-      angular.forEach($scope.symptoms, function(item, key) {
-        $scope.symptoms[key] = 1;
+      var form = {};
+
+      angular.forEach($scope.symptoms, function(v, symptom) {
+        if(v) {
+          form[symptom] = "Y";
+        }
       });
 
-      // send symptoms
-      console.log($scope.symptoms);
+      form.ill_date = moment().format('YYYY/DD/MM');
+      form.lat = LocalStorage.getItem('userLocation').lat;
+      form.lon = LocalStorage.getItem('userLocation').lon;
 
-      // redirect user to home
+      // when submit survey to household
+      var url = $location.path().split('/');
+      var household = url[url.length - 3];
+
+      if (household == 'household') {
+        form.household_id = url[url.length - 2];
+      }
+
+      Surveyapi.submitSurvey(form, function(data) {
+        if (data.data.error != false) {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        } else {
+          console.log(data.data.message);
+          toaster.pop('success', data.data.message);
+          $scope.goToHome();
+        }
+      });
+    };
+
+    $scope.goToHome = function() {
       $timeout(function(){
-        $location.path('/');
+        $location.path('/health-daily');
       },
-      500);
-
+      300);
     };
 
   }]);

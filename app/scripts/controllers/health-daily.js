@@ -8,31 +8,41 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', function ($scope) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
+
     $scope.pageClass = 'health-daily-page';
+
+    UserApi.getUserSurvey(function(data) {
+      $scope.userSurvey = data.data.data;
+      $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom/$scope.userSurvey.total)*100));
+      $scope.userSurvey.pct_symptoms = ((($scope.userSurvey.symptom/$scope.userSurvey.total)*100));
+
+      if($scope.userSurvey.pct_no_symptoms %1 !==0) {
+          $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.pct_no_symptoms.toFixed(2);
+      }
+
+      if($scope.userSurvey.pct_symptoms %1 !==0) {
+          $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
+      }
+    });
+
     $scope.day = moment();
 
-    $scope.totalParticipants = {
-    	data: [
-    		{total: 162}
-    	]
-    };
-
-    $scope.barOptions = {
-	    data: [
-	      { y: '2006', a: 100, b: 90 },
-	      { y: '2007', a: 75,  b: 65 },
-	      { y: '2008', a: 50,  b: 40 },
-	      { y: '2009', a: 75,  b: 65 },
-	      { y: '2010', a: 50,  b: 40 },
-	      { y: '2011', a: 75,  b: 65 },
-	      { y: '2012', a: 100, b: 90 }
-	    ],
-	    xkey: 'y',
-	    ykeys: ['a', 'b'],
-	    labels: ['Series A', 'Series B'],
-	    resize: true
-	  };
+   //  $scope.barOptions = {
+	  //   data: [
+	  //     { y: '2006', a: 100, b: 90 },
+	  //     { y: '2007', a: 75,  b: 65 },
+	  //     { y: '2008', a: 50,  b: 40 },
+	  //     { y: '2009', a: 75,  b: 65 },
+	  //     { y: '2010', a: 50,  b: 40 },
+	  //     { y: '2011', a: 75,  b: 65 },
+	  //     { y: '2012', a: 100, b: 90 }
+	  //   ],
+	  //   xkey: 'y',
+	  //   ykeys: ['a', 'b'],
+	  //   labels: ['Series A', 'Series B'],
+	  //   resize: true
+	  // };
 
 	  $scope.lineOptions = {
 	    data: [
@@ -59,21 +69,20 @@ angular.module('gdsApp')
 		  colors: ['#E0D433', '#C81204'],
 		  resize: true
 		};
-		
-		$scope.areaOptions = {
-			data: [
-	      { y: '2006', a: 100, b: 90 },
-	      { y: '2007', a: 75,  b: 65 },
-	      { y: '2008', a: 50,  b: 40 },
-	      { y: '2009', a: 75,  b: 65 },
-	      { y: '2010', a: 50,  b: 40 },
-	      { y: '2011', a: 75,  b: 65 },
-	      { y: '2012', a: 100, b: 90 }
-	    ],
-	    xkey: 'y',
-	    ykeys: ['a', 'b'],
-	    labels: ['Series A', 'Series B'],
-	    resize: true
-		}
 
+		// $scope.areaOptions = {
+		// 	data: [
+	 //      { y: '2006', a: 100, b: 90 },
+	 //      { y: '2007', a: 75,  b: 65 },
+	 //      { y: '2008', a: 50,  b: 40 },
+	 //      { y: '2009', a: 75,  b: 65 },
+	 //      { y: '2010', a: 50,  b: 40 },
+	 //      { y: '2011', a: 75,  b: 65 },
+	 //      { y: '2012', a: 100, b: 90 }
+	 //    ],
+	 //    xkey: 'y',
+	 //    ykeys: ['a', 'b'],
+	 //    labels: ['Series A', 'Series B'],
+	 //    resize: true
+		// };
   }]);

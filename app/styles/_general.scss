@@ -202,7 +202,7 @@ body {
   padding: 0;
 
   &.not-logged {
-    height: 600px;
+    height: 630px;
     background-repeat: repeat;
     background-size: 100%;
     @include path('bg-not-logged.svg');
@@ -218,7 +218,7 @@ body {
 
 .form-search-home {
   margin-bottom: 35px;
-    
+
   fieldset {
     width: 100%;
   }
@@ -481,6 +481,11 @@ body {
   span {
     font-family: $ff-light;
     font-size: ($fs-normal)+.6;
+
+    &:first-letter,
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -644,8 +649,9 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  padding: 0 20px;
   width: 100%;
-  height: 80px;
+  height: 90px;
   z-index: 9999;
   background-color: $link-primary;
   @include bsd(0, -3px, 3px, rgba(0, 0, 0, .3));
@@ -764,15 +770,13 @@ body {
   float: left;
   margin: 22px 0 20px 0;
 
-  div {
-    float: left;
-  }
+  div { float: left; }
 
   .geral {
     float: left;
     clear: left;
     padding: 0;
-  
+
     .status  {
       width: 150px;
       margin: 0 0 0 5px;
@@ -813,6 +817,7 @@ body {
       }
     }
   }
+  // .sort-by { float: right; }
 
   h1 {
     font-family: $ff-light;
@@ -922,10 +927,12 @@ body {
   figure {
     position: relative;
     overflow: hidden;
+    height: 340px;
 
     img {
       width: 100%;
-      @include scale3d(1);
+      height: 100%;
+      @include scale3d(1.2);
       @include transition(transform, .2s, 0s, linear);
     }
 
@@ -946,7 +953,7 @@ body {
   &:hover {
     text-decoration: none;
 
-    img { @include scale3d(1.2); }
+    img { @include scale3d(1.4); }
   }
 }
 
@@ -955,7 +962,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0 10px;
+  padding: 2px 10px;
   font-size: ($fs-normal)-.1;
   color: $link-primary;
   font-family: $ff-light;
@@ -1138,6 +1145,26 @@ p.login-email {
 
 
 //
+// Cadastro
+//
+
+.register-agree {
+  margin-top: 20px;
+  font-size: ($fs-normal)+.2;
+  font-family: $ff-light;
+  color: $link-primary;
+
+  a {
+    color: $link-primary;
+    text-decoration: underline;
+  }
+}
+
+// ====
+
+
+
+//
 // Cards
 //
 
@@ -1180,7 +1207,7 @@ p.login-email {
   min-height: 250px;
   text-align: center;
 
-  img { 
+  img {
     max-width: 100%;
   }
 
@@ -1195,15 +1222,14 @@ p.login-email {
   }
 
   &.edit {
-    overflow: hidden;
     position: relative;
-    @include bdr(100%);
 
     figcaption {
-      position: relative;
-      bottom: 60px;
-      color: $link-primary;
-      background-color: rgba(39, 39, 39, .65);
+      position: absolute;
+      bottom: 40px;
+      background-color: $link-primary;
+      left: 0;
+      width: 100%;
     }
   }
 }
@@ -1265,6 +1291,7 @@ p.login-email {
     text-align: left;
     font-size: ($fs-medium)+1;
     margin-bottom: 30px;
+    color: $btn-primary;
   }
 
   .btn-login {
@@ -1399,7 +1426,7 @@ p.login-email {
   // ====
 
   // Survey
-  .survey-avatar { margin: 0 15px; }
+  .survey-avatar { margin: 15px; }
 
   .survey-content { min-height: 1024px; }
 
@@ -1466,7 +1493,7 @@ p.login-email {
   // fale conosco
   .fale-conosco { margin-top: 70px; }
   // ====
-  
+
   // health daily
   .sort-by {
     position: absolute;
@@ -1497,7 +1524,7 @@ p.login-email {
 
   // ====
 
-  //policy and privacy 
+  //policy and privacy
   .wrapper-full-page {
 
     .privacy-policy {
@@ -1508,7 +1535,7 @@ p.login-email {
       }
     }
   }
-  
+
   // ===
 
 }

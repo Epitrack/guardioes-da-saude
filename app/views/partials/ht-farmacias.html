@@ -2,5 +2,9 @@
   Health tips - Farmácias
 -->
 
-<!-- {{ farmacias }} -->
-<div id="map" class="map"></div>
+<leaflet event-broadcast="events" lf-center="userLocation" markers="markersPharmacy" layers="layers" height="600px" width="100%"></leaflet>
+
+<div ng-show="pharmacyTitle" class="map-info">
+  <h5>{{pharmacyTitle}}</h5>
+  <h6>{{pharmacyMessage}}</h6>
+</div>

@@ -3,7 +3,7 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ Aninha</span></h2>
+  <h2 class="section-title">Perfil <span>/ {{user.nick}}</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading change-photo">
@@ -20,7 +20,7 @@
               <i></i>
               <input type="radio" name="input-change-photo" id="input-1" value="input-change-photo-1">
             </label>
-            
+
             <label for="input-2" class="radio-avatar avatar-2" ng-class='{"photo-selected":tog==2}' ng-click='tog=2'>
               <i></i>
               <input type="radio" name="input-change-photo" id="input-2" value="input-change-photo-2">
@@ -85,20 +85,20 @@
         <h3 class="change-photo-subtitle">Envie uma foto</h3>
         <form name="search-photo-default">
           <div class="input-file-container">
-            <input class="input-file" id="my-file" type="file" ngf-select ng-model="picFile" name="file"    
+            <input class="input-file" id="my-file" type="file" ngf-select ng-model="picFile" name="file"
                    accept="image/*" ngf-max-size="2MB" required>
             <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem">
-              <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> 
+              <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
             </label>
           </div>
 
           <button class="save-change-photo" ng-click="uploadPic(picFile)">Salvar foto</button>
           <h3 ng-show="picFile.result">Upload Successful</h3>
           <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-          <!-- <i ng-show="myForm.file.$error.maxSize">File too large 
+          <!-- <i ng-show="myForm.file.$error.maxSize">File too large
                 {{picFile.size / 1000000|number:1}}MB: max 2M</i> -->
             <!-- <span class="progress" ng-show="picFile.progress >= 0"> -->
-              <!-- <div style="width:{{picFile.progress}}%" 
+              <!-- <div style="width:{{picFile.progress}}%"
                   ng-bind="picFile.progress + '%'"></div>
             </span> -->
         </form>

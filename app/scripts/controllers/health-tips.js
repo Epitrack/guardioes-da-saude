@@ -8,69 +8,127 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthTipsCtrl', ['$scope', 'healthTips', function ($scope, healthTips) {
+  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', '$rootScope', 'leafletMarkerEvents', function ($scope, healthTips, LocalStorage, $rootScope, leafletMarkerEvents) {
 
     $scope.pageClass = 'health-tips-page';
 
-    // get user location to init some things
-    $scope.getLocation = function() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(mapSuccess, mapError);
-      } else {
-        console.log('Seu navegador não suporta geolocation');
+    // $scope.addMarkers = function() {
+      var myIcon = {
+        iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-16.png',
+        iconSize: [16, 16],
+        iconAnchor: [22, 94]
+      };
+
+      angular.extend($scope, {
+        userLocation: {
+          lat: LocalStorage.getItem('userLocation').lat,
+          lng: LocalStorage.getItem('userLocation').lon,
+          title: 'Me',
+          zoom: 10,
+          icon: myIcon
+        },
+
+        layers: {
+          baselayers: {
+            mapbox_light: {
+              name: 'Guardiões da Saúde',
+              url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+              type: 'xyz',
+              layerOptions: {
+                apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
+                mapid: 'thulioph.wix561or'
+              }
+            }
+          }
+        }
+      });
+
+      console.warn('$scope.userLocation', $scope.userLocation);
+
+      $scope.addMarkers = function() {
+        // upas
+        var addressPointsToMarkers = function(points) {
+          // console.warn('points', points);
+          var t = [$scope.userLocation];
+          angular.forEach(points, function(p){
+            t.push({
+                lat: p.latitude,
+                lng: p.longitude,
+                title: p.name, // upaTitle
+                message: p.logradouro + ', ' + p.bairro + ' - ' + p.numero, // upaMessage
+                icon: {
+                  iconUrl: '../../images/icon-marker-upa.svg',
+                  iconSize: [38, 95]
+                }
+              });
+          });
+          return t;
+        };
+
+        // pharmacy
+        var addressPointsToMarkersPharmacy = function(points) {
+          var t = [$scope.userLocation];
+          angular.forEach(points, function(p){
+            t.push({
+              lat: p.geometry.location.lat,
+              lng: p.geometry.location.lng,
+                title: p.name, // pharmacyTitle
+                message: p.vicinity, // pharmacyMessage
+                icon: {
+                  iconUrl: '../../images/icon-marker-pharmacy.svg',
+                  iconSize: [38, 95]
+                }
+              });
+          });
+          return t;
+        };
+
+        $scope.markers = addressPointsToMarkers($rootScope.markersUpa);
+        $scope.markersPharmacy = addressPointsToMarkersPharmacy($rootScope.markersPharmacy);
+      };
+
+      // adds events when click in marker
+      var markerEvents = leafletMarkerEvents.getAvailableEvents();
+
+      for (var k in markerEvents){
+        var eventName = 'leafletDirectiveMarker.click';
+
+        $scope.$on(eventName, function(event, args){
+            $scope.upaTitle = args.model.title;
+            $scope.upaMessage = args.model.message;
+
+            $scope.pharmacyTitle = args.model.title;
+            $scope.pharmacyMessage = args.model.message;
+        });
       }
-    };
 
-    function mapSuccess(position) {
-      var map, lat, lng;
-
-      lat = position.coords.latitude, lng = position.coords.longitude;
-
-      console.log('Position -> ', position);
-
-      // map = L.map('map').setView([lat, lng], 13);
-
-      // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-      //   maxZoom: 18,
-      //   attribution: '<a href="http://www.epitrack.com.br" target="_blank">Epitrack</a> &copy;',
-      //   id: 'mapbox.streets'
-      // }).addTo(map);
-
-      // L.marker([lat, lng]).addTo(map).bindPopup("Você está aqui!").openPopup();
-    };
-
-    function mapError(msg) {
-      console.log('Error geolocation:', msg);
-    }
-    // ====
-
-    $scope.getLocation(); // get user location
+      $scope.events = {
+        markers: {
+          enable: leafletMarkerEvents.getAvailableEvents()
+        }
+      }
+    // };
 
     // UPAS
     $scope.loadUpas = function() {
-      $scope.upas = [];
-
-      // Use service
       healthTips.getUpas(function(data) {
-        $scope.upas = data;
+        // adiciono os pontos ao $rootScope
+        $rootScope.markersUpa = data;
+        $scope.addMarkers();
       });
     };
 
     // FARMACIAS
     $scope.loadFarmacias = function() {
-      $scope.farmacias = [];
-
-      // Use service
       healthTips.getFarmacias(function(data) {
-        $scope.farmacias = data;
+        console.log('data loadFarmacia -> ', data);
+        $rootScope.markersPharmacy = data;
+        $scope.addMarkers();
       });
     };
 
     // VACINAS
     $scope.loadVacinas = function() {
-      $scope.vacinas = [];
-
-      // Use service
       healthTips.getVacinas(function(data) {
         $scope.vacinas = data;
       });
@@ -78,9 +136,6 @@ angular.module('gdsApp')
 
     // TELEFONES
     $scope.loadTelefones = function() {
-      $scope.telefones = [];
-
-      // Use service
       healthTips.getTelefones(function(data) {
         $scope.telefones = data;
       });
@@ -88,9 +143,6 @@ angular.module('gdsApp')
 
     // CUIDADOS
     $scope.loadCuidados = function() {
-      $scope.cuidados = [];
-
-      // Use service
       healthTips.getCuidados(function(data) {
         $scope.cuidados = data;
       });
@@ -98,9 +150,6 @@ angular.module('gdsApp')
 
     // PREVENCAO
     $scope.loadPrevencao = function() {
-      $scope.prevencoes = [];
-
-      // Use service
       healthTips.getPrevencoes(function(data) {
         $scope.prevencoes = data;
       });

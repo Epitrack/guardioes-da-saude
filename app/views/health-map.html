@@ -1,7 +1,7 @@
 <aside class="col-sm-5 col-md-3 map-mini-dashboard">
-  <form class="form-mini-dashboard">
+  <form ng-submit="getSurveyByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
-      <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text">
+      <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city">
     </fieldset>
   </form>
 
@@ -10,7 +10,7 @@
       <span class="icon"></span>
 
       <div>
-        <h4 class="value">71.252</h4>
+        <h4 class="value">{{surveyByCitySummary.total_surveys}}</h4>
         <h5>Participações essa semana</h5>
       </div>
     </div>
@@ -18,9 +18,21 @@
     <div class="geral">
       <legend class="legend-subtitle">Geral</legend>
 
-      <span class="graphic big"></span>
+      <div class="metrics col-sm-6">
+        <img class="icon-medium icon-shadow" src="../images/icon-survey-good.svg" alt="Good">
+        <span class="total-percentage">{{surveyByCitySummary.pct_no_symptoms}}% <span class="light">Bem</span></span>
+        <span class="total-users">{{surveyByCitySummary.total_no_symptoms}} Participantes</span>
+      </div>
+
+      <div class="metrics col-sm-6">
+        <img class="icon-medium icon-shadow" src="../images/icon-survey-bad.svg" alt="Bad">
+        <span class="total-percentage">{{surveyByCitySummary.pct_symptoms}}% <span class="light">Mal<span></span>
+        <span class="total-users">{{surveyByCitySummary.total_symptoms}} Participantes</span>
+      </div>
+
+      <!-- <span class="graphic big"></span>
       <span class="graphic good"></span>
-      <span class="graphic bad"></span>
+      <span class="graphic bad"></span> -->
     </div>
 
     <div class="sindromes">
@@ -28,36 +40,36 @@
 
       <div class="progress-wrapper">
         <span class="progress-label">Diarréica</span>
-        <span class="progress-value">47%</span>
+        <span class="progress-value">{{surveyByCitySummary.diseases.diarreica}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="47" aria-valuemin="0" aria-valuemax="100" style="width: 47%">
-            <span class="sr-only">47% Complete</span>
+            aria-valuenow="{{surveyByCitySummary.diseases.diarreica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.diarreica}}%">
+            <span class="sr-only">{{surveyByCitySummary.diseases.diarreica}}% Complete</span>
           </div>
         </div>
       </div>
 
       <div class="progress-wrapper">
         <span class="progress-label">Exantemáica</span>
-        <span class="progress-value">34%</span>
+        <span class="progress-value">{{surveyByCitySummary.diseases.exantematica}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width: 34%">
-            <span class="sr-only">34% Complete</span>
+            aria-valuenow="{{surveyByCitySummary.diseases.exantematica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.exantematica}}%">
+            <span class="sr-only">{{surveyByCitySummary.diseases.exantematica}}% Complete</span>
           </div>
         </div>
       </div>
 
       <div class="progress-wrapper">
         <span class="progress-label">Respiratória</span>
-        <span class="progress-value">80%</span>
+        <span class="progress-value">{{surveyByCitySummary.diseases.respiratoria}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-            <span class="sr-only">80% Complete</span>
+            aria-valuenow="{{surveyByCitySummary.diseases.respiratoria}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.respiratoria}}%">
+            <span class="sr-only">{{surveyByCitySummary.diseases.respiratoria}}% Complete</span>
           </div>
         </div>
       </div>
@@ -72,7 +84,7 @@
 </aside>
 
 <div class="health-map-container">
-  <leaflet lf-center="location" markers="markers" layers="layers" height="100%" width="100%"></leaflet>
+  <leaflet lf-center="userLocation" markers="markers" layers="layers" height="100%" width="100%"></leaflet>
 </div>
 
 <!-- Síndromes Modal -->
@@ -100,3 +112,6 @@
     </div>
   </article>
 </div>
+
+<!-- Toaster -->
+<toaster-container></toaster-container>

@@ -54,6 +54,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -66,7 +67,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header class="header-primary">
+    <header class="header-primary" ng-controller="IndexCtrl">
       <div class="navbar navbar-default not-logged" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -84,16 +85,20 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- visible when user not logged -->
-            <!-- <ul class="nav navbar-nav">
-              <li><a class="nav-link" ng-href="#/cadastro">Cadastre-se</a></li>
-              <li><a class="nav-link" ng-href="#/login">Entrar</a></li>
-            </ul> -->
+            <div ng-if="user == null">
+              <ul class="nav navbar-nav">
+                <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
+                <li><a class="nav-link" ng-href="/login">Entrar</a></li>
+              </ul>
+            </div>
 
             <!-- visible when user is logged -->
-            <ul class="nav navbar-nav">
-              <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
-              <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
-            </ul>
+            <div ng-if="user != null">
+              <ul class="nav navbar-nav">
+                <li><figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-1.svg" alt="avatar 01"></figure></li>
+                <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
+              </ul>
+            </div>
 
             <!-- sidebar just show when user is logged and mobile -->
             <div class="hidden-sm hidden-md hidden-lg">
@@ -143,11 +148,16 @@
     <script src="bower_components/morris.js/morris.js"></script>
     <script src="bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/ngMask/dist/ngMask.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/cheet.js/cheet.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/app.config.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/components.js"></script>
     <script src="scripts/controllers/login.js"></script>
@@ -164,7 +174,6 @@
     <script src="scripts/controllers/survey.js"></script>
     <script src="scripts/controllers/noticias.js"></script>
     <script src="scripts/services/news.js"></script>
-    <script src="scripts/services/noticias.js"></script>
     <script src="scripts/controllers/change-photo.js"></script>
     <script src="scripts/controllers/fale-conosco.js"></script>
     <script src="scripts/controllers/sobre.js"></script>
@@ -177,6 +186,14 @@
     <script src="scripts/controllers/data-analysis.js"></script>
     <script src="scripts/controllers/dashboard-map.js"></script>
     <script src="scripts/controllers/dashboard-result.js"></script>
+    <script src="scripts/controllers/index.js"></script>
+    <script src="scripts/services/userapi.js"></script>
+    <script src="scripts/services/localstorage.js"></script>
+    <script src="scripts/services/householdapi.js"></script>
+    <script src="scripts/controllers/profile-internal.js"></script>
+    <script src="scripts/controllers/health-daily-household.js"></script>
+    <script src="scripts/services/surveyapi.js"></script>
+    <script src="scripts/filters/agefilter.js"></script>
     <!-- endbuild -->
 </body>
 </html>

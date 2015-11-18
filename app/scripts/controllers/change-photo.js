@@ -9,7 +9,7 @@
  */
 angular.module('gdsApp')
   .controller('ChangePhotoCtrl', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
-    
+
     $scope.uploadPic = function(file) {
 	    file.upload = Upload.upload({
 	      url: 'http://posttestserver.com/post.php',

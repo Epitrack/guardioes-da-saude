@@ -1,14 +1,16 @@
-<article class="col-xs-12 col-sm-6 col-md-4 news-card" ng-repeat="new in noticias">
-  <time datetime="{{ new.datestamp }}" class="news-date">{{ new.day }} <span>/ {{ new.month }}</span></time>
+<article class="col-xs-12 col-sm-6 col-md-3 news-card" ng-repeat="noticia in news">
+  <time datetime="{{ noticia.date }}" class="news-date">
+    {{ noticia.created_at | amUtc | amDateFormat:'DD'  }} <span>/ {{ noticia.created_at | amUtc | amDateFormat:'MMMM'  }}</span>
+  </time>
 
-  <a href="{{ new.url }}" class="news-link" target="_blank">
+  <a href="http://www.twitter.com/minsaude" ng-href="{{ noticia.entities.urls[0].url }}" class="news-link" target="_blank" title="Clique para ver esta notícia.">
     <figure>
-    <img src="images/news/{{ new.image }}.png" alt="{{ new.title }}">
-      <figcaption>{{ new.title }}</figcaption>
+    <img src="../../images/bg-news-default.png" ng-src="{{ noticia.entities.media[0].media_url }}" alt="{{ noticia.text }}">
+      <figcaption>{{ noticia.text }}</figcaption>
     </figure>
 
     <footer class="news-footer">
-      <span class="news-address">{{ new.address }}</span>
+      <span class="news-address">{{ noticia.entities.urls[0].url }}</span>
       <span class="news-read-more">Ler mais</span>
     </footer>
   </a>

@@ -4,13 +4,13 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
         <h2 class="title-primary">Marque abaixo o que você está sentindo neste momento:</h2>
 
-        <form name="choose-symptoms-form" class="choose-symptoms-form form-primary">
+        <form name="chooseSymptomsForm" class="choose-symptoms-form form-primary">
           <fieldset class="col-xs-12">
             <legend>Sintomas</legend>
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4" ng-repeat="symptom in symptomsList">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.id]" value="{{symptom.id}}" id="symptom-{{symptom.id}}" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.code]" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
             <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
           </fieldset>
 
@@ -19,17 +19,17 @@
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.tiveContato" value="tive-contato" id="tive-contato" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadContagiousContact" value="tive-contato" id="tive-contato" class="checkbox-primary">
             <label for="tive-contato">Tive contato com alguém com um desses sintomas</label>
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.procureiServico" value="procurei-servico" id="procurei-servico" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadHealthCare" value="procurei-servico" id="procurei-servico" class="checkbox-primary">
             <label for="procurei-servico">Procurei um serviço de saúde</label>
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-4">
-            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.estiveFora" value="estive-fora" id="estive-fora" class="checkbox-primary">
+            <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadTravelledAbroad" value="estive-fora" id="estive-fora" class="checkbox-primary">
             <label for="estive-fora">Estive fora do Brasil nos últimos 14 dias</label>
           </fieldset>
 
@@ -46,5 +46,5 @@
 <!-- Show when user submit survey -->
 <div ng-include src="'views/partials/confirm-send-survey.html'"></div>
 
-<!-- I feel bad :( -->
-<div ng-include src="'views/partials/modal-i-feel-bad.html'"></div>
+<!-- Toaster -->
+<toaster-container></toaster-container>

@@ -4,33 +4,54 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
         <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
 
-        <form class="form-register-home" name="form-register-home">
+        <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome">
           <h3>Por favor, preencha o formulário abaixo:</h3>
 
-          <input class="input-secondary" type="text" placeholder="Apelido">
-          <input class="input-secondary" type="number" placeholder="Data de nascimento (dd/mm/aaaa)">
+          <fieldset class="input-group mainform signup">
+            <input class="form-control mainform-input" type="text" placeholder="Apelido" ng-model="createData.nick">
+            <input class="form-control mainform-input" type="email" placeholder="Email" ng-model="createData.email">
+            <input class="form-control mainform-input" type="tel" placeholder="Data de nascimento (dd/mm/aaaa)" ng-model="createData.dob" mask="99-99-9999" ng-bind="date | date:'yyyy/mm/dd'">
 
-          <select class="select-secondary" name="cor">
-            <option value="">Cor/Raça</option>
-          </select>
+            <select class="form-control mainform-input icon-arrow" name="cor" ng-model="createData.race">
+              <option ng-selected="true" disabled>Cor/Raça</option>
+              <option value="branco">Branco</option>
+              <option value="preto">Preto</option>
+              <option value="pardo">Pardo</option>
+              <option value="amarelo">Amarelo</option>
+              <option value="indigena">Indígena</option>
+            </select>
 
-          <select class="select-secondary" name="sexo">
-            <option value="">Sexo</option>
-          </select>
+            <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
+              <option ng-selected="true" disabled>Sexo</option>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
 
-          <input class="input-secondary" type="password" placeholder="Senha">
+            <input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password" ng-minlength="6">
+          </fieldset>
 
-          <button class="btn-secondary">Cadastrar-se</button>
+          <div ng-show="formRegisterHome.password.$error.minlength" class="alert alert-info" role="alert">
+            <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+          </div>
 
-          <fieldset>
-            <input type="checkbox" id="register-agree" class="register-agree">
-            <label for="register-agree">Concordo com os <a href="#/">Termos de Uso</a>.</label>
+          <fieldset class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="submit" ng-disabled="!agree" class="btn btn-signup">Cadastrar</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="register-agree" role="group">
+            <input type="checkbox" id="register-agree" ng-model="agree">
+            <label for="register-agree">Concordo com os <a href="politica-de-privacidade" title="Clique para visualizar os termos de uso" target="_blank">Termos de Uso</a>.</label>
           </fieldset>
         </form>
       </section>
     </div>
   </div>
 </div>
+
+<!-- Toast -->
+<div ng-include src="'views/partials/toaster.html'"></div>
 
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>
