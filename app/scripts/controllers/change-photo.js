@@ -13,7 +13,7 @@ angular.module('gdsApp')
     $scope.uploadPic = function(file) {
 	    file.upload = Upload.upload({
 	      url: 'http://posttestserver.com/post.php',
-	      data: {file: file, username: $scope.username},
+	      data: {file: file},
 	    });
 
 	    file.upload.then(function (response) {
@@ -32,4 +32,4 @@ angular.module('gdsApp')
 	    });
     }
 
-}]);
+	}]);

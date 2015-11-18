@@ -190,7 +190,7 @@ textarea {
   position: relative;
   @include apr(none);
 
-  &::before {
+  i {
     content: '';
     width: 70px;
     height: 70px;

@@ -271,6 +271,6 @@ $week-days-color:                    $gray-smooth;
 // Inputs of change photo
 @for $i from 01 through 12 {
   .avatar-#{$i} {
-    &::before { @include path('avatar/avatar-'+ $i + '.svg'); }
+    i { @include path('avatar/avatar-'+ $i + '.svg'); }
   }
 }
