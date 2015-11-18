@@ -46,6 +46,7 @@ angular.module('gdsApp')
       console.warn('$scope.userLocation', $scope.userLocation);
 
       $scope.addMarkers = function() {
+        // upas
         var addressPointsToMarkers = function(points) {
           // console.warn('points', points);
           var t = [$scope.userLocation];
@@ -64,15 +65,15 @@ angular.module('gdsApp')
           return t;
         };
 
+        // pharmacy
         var addressPointsToMarkersPharmacy = function(points) {
-          // console.warn('points', points);
           var t = [$scope.userLocation];
           angular.forEach(points, function(p){
             t.push({
-              lat: p.latitude,
-              lng: p.longitude,
-                title: p.name, // upaTitle
-                message: p.logradouro + ', ' + p.bairro + ' - ' + p.numero, // upaMessage
+              lat: p.geometry.location.lat,
+              lng: p.geometry.location.lng,
+                title: p.name, // pharmacyTitle
+                message: p.vicinity, // pharmacyMessage
                 icon: {
                   iconUrl: '../../images/icon-marker-pharmacy.svg',
                   iconSize: [38, 95]
@@ -95,6 +96,9 @@ angular.module('gdsApp')
         $scope.$on(eventName, function(event, args){
             $scope.upaTitle = args.model.title;
             $scope.upaMessage = args.model.message;
+
+            $scope.pharmacyTitle = args.model.title;
+            $scope.pharmacyMessage = args.model.message;
         });
       }
 

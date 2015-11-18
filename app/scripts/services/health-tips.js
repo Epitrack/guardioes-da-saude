@@ -32,19 +32,15 @@ angular.module('gdsApp')
       var lat = LocalStorage.getItem('userLocation').lat;
       var lng = LocalStorage.getItem('userLocation').lon;
 
-      // var Maps = $resource('https://maps.googleapis.com/maps/api/place/textsearch/json',
-      //     {
-      //       query: 'pharmacy',
-      //       location: lat + ',' +lng,
-      //       radius: '10000',
-      //       key: api_key
-      //     });
-
-      // Maps.get({}, function(data) {console.log(data)}, function(error) {console.log(error)});
-
-      $http.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=' + lat + ',' + lng + '&radius=10000&key=' + api_key)
-        .success(function(data) {
-          return console.log('Success getFarmacias: ', data.result);
+      $http.get(apiUrl + '/content/places', {
+        params: {
+          lat: lat,
+          lon: lng,
+          type: 'pharmacy',
+          radius: '1000'
+        }
+      }).success(function(data) {
+         console.warn('Success getFarmacias: ', data);
           callback(data);
         }).error(function(error) {
           console.log('Error getFarmacias: ', error);
