@@ -32,4 +32,11 @@ angular.module('gdsApp')
 	    });
     }
 
+    $scope.chooseDefaultAvatar = function() {
+    	$('label.radio-avatar').on('click', function(){
+			  var clickedAvatar = $(this).find('i').css('background-image').replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+			  $('.input-file-trigger').css('background-image', 'url(' + clickedAvatar + ')');
+			});
+    }
+
 	}]);
