@@ -110,4 +110,28 @@
 }
 
 // Large Desktops
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+  .week {
+    padding-left: 0;
+
+    .day { margin: 0 7px; }
+  }
+}
+
+// Extra Large Desktops
+@media screen and (min-width: 1500px) {
+  .week {
+    padding-left: 0;
+
+    .day { margin: 0 3.3%; }
+  }
+}
+
+// Extra Extra Large Desktops
+@media screen and (min-width: 1800px) {
+  .week {
+    padding-left: 0;
+
+    .day { margin: 0 4%; }
+  }
+}
