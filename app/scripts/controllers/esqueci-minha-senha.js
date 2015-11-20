@@ -17,13 +17,16 @@ angular.module('gdsApp')
 
       var params = {
         password: $scope.screen.user.password,
-        hash: $location.url().split('/')[2]
+        hash: $location.url().split('/')[1].replace('esqueci-minha-senha?hash=', '')
       };
 
       UserApi.validateHash(params.hash, function(data) {
         if (data.data.error == false) {
-          $scope.message = data.data.message;
-          console.log('success', data.data.message);
+          // faz o post dos dados pra API
+          // params.id = data.data.data.userId;
+          // UserApi.updateUser(params.password, function(data) {
+          //   console.log(data)
+          // })
         } else {
           $scope.message = 'Esta url parece não ser válida, tente modificar sua senha novamente.';
           console.log('error', data.data.message);
