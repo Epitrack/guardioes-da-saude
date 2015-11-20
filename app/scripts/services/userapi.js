@@ -153,5 +153,17 @@ angular.module('gdsApp')
       });
     };
 
+    // register
+    obj.updateUserPassword = function(params, callback) {
+      $http.post(apiUrl + '/user/update/password', params, { headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success updateUserPassword ', data);
+          // LocalStorage.userCreateData(data.data.user);
+          callback(data);
+        }, function(error){
+          console.warn('Error updateUserPassword: ', error);
+      });
+    };
+
     return obj;
   });
