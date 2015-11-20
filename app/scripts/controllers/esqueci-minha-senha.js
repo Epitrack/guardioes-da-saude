@@ -31,6 +31,7 @@ angular.module('gdsApp')
               toaster.pop('success', data.data.message)
               $timeout(function() {
                 $location.path('login-email');
+                $location.search('hash', null);
               }, 3000)
             } else {
               toaster.pop('error', data.data.message)
