@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'UserApi', function ($scope, UserApi) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', function ($scope, UserApi, $rootScope) {
 
     $scope.pageClass = 'health-daily-page';
 
@@ -32,9 +32,51 @@ angular.module('gdsApp')
       }
     });
 
-    $scope.day = moment();
+    $scope.getSurveyByMonth = function() {
+      $scope.day = moment();
 
-	  $scope.lineOptions = {
+      var monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+      ];
+
+      // $scope.monthName = monthNames[moment().month()];
+
+      var params = {
+        month: moment().month()+1, // gambiarra detected
+        year: moment().year()
+      };
+
+      // console.warn(params);
+
+      UserApi.getUserCalendar(params, function(data) {
+        var userCalendar = [];
+
+        for (var i = 0; i < data.data.data.length; i++) {
+          $scope.total = data.data.data[i].count;
+          $scope.days = data.data.data[i]._id.day;
+          $scope.symptom = data.data.data[i]._id.no_symptom;
+
+          var params = {
+            total: $scope.total,
+            report_day: $scope.days,
+            symptom: $scope.symptom
+          };
+
+          userCalendar.push(params)
+
+          console.log(params);
+        }
+
+        $rootScope.userCalendar = userCalendar;
+
+        console.log($rootScope.userCalendar);
+      });
+    };
+
+    $scope.getSurveyByMonth();
+
+
+	  // graphic
+    $scope.lineOptions = {
 	    data: [
 	      { y: '2006', a: 10, b: 90 },
 	      { y: '2007', a: 45,  b: 65 },
@@ -59,4 +101,5 @@ angular.module('gdsApp')
 		  colors: ['#E0D433', '#C81204'],
 		  resize: true
 		};
+    // ====
   }]);

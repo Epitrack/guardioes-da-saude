@@ -117,5 +117,19 @@ angular.module('gdsApp')
       });
     };
 
+    // get calendar data
+    obj.getUserCalendar = function(params, callback) {
+      var month = params.month,
+          year = params.year;
+
+      $http.get(apiUrl + '/user/calendar/month?month=' + month + '&year=' + year, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+        .then(function(result){
+          console.log('Success getUserCalendar: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserCalendar: ', error);
+      });
+    };
+
     return obj;
   });

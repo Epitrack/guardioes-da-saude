@@ -15,6 +15,15 @@
 </div>
 
 <div class="week" ng-repeat="week in weeks">
-  <span class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }" ng-click="select(day)"
-  ng-repeat="day in week.days" popover-title="Title here" uib-popover="content here" popover-placement="top" popover-trigger="mouseenter" >{{day.number}}</span>
+  <span class="day"
+    ng-class="{ today: day.isToday,
+    'different-month': !day.isCurrentMonth,
+    selected: day.date.isSame(selected) }"
+    ng-click="select(day)"
+    ng-repeat="day in week.days"
+    popover-title="Title here"
+    uib-popover="content here"
+    popover-placement="top"
+    popover-trigger="mouseenter" >{{day.number}}
+  </span>
 </div>
