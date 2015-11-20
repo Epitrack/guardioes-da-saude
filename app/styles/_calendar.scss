@@ -80,15 +80,24 @@
       color: $week-days-color;
       padding: 0 0 0 10px;
       cursor: default;
-      visibility: hidden;
-
-      &:first-letter { visibility: visible; }
 
       &:last-child { margin-right: 0; }
     }
   }
 }
 
+.popover-inner {
+  h3 {
+    background: none;
+    border: 0;
+    margin: 0;
+    text-align: center;
+    color: $font-primary;
+    font-weight: 900;
+    border-bottom: 1px solid $bg-section;
+    font-size: 14px;
+  }
+}
 
 // iPads
 @media screen and (min-width: 768px) {
