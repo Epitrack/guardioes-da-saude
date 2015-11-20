@@ -14,7 +14,6 @@ angular.module('gdsApp')
 
     $scope.resetPass = function() {
       UserApi.forgotPassword($scope.forgotPass, function(data) {
-        console.warn(data);
         if (data.data.error == false) {
           $scope.message = data.data.message;
           toaster.pop('success', data.data.message);

@@ -137,6 +137,17 @@ angular.module('gdsApp')
         .then(function(result){
           console.log('Success forgotPassword: ', result);
           callback(result);
+        }, function(error){
+          console.warn('Error forgotPassword: ', error);
+      });
+    };
+
+    // check hash validation
+    obj.validateHash = function(hash, callback) {
+      $http.get(apiUrl + '/user/validate/hash?hash='+ hash, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success forgotPassword: ', result);
+          callback(result);
           // obj.updateUser(params.id);
         }, function(error){
           console.warn('Error forgotPassword: ', error);
