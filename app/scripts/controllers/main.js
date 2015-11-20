@@ -18,6 +18,8 @@ angular.module('gdsApp')
     $scope.clearStorage = function() {
       localStorage.removeItem('userStorage');
       localStorage.removeItem('userStorageUpdate');
+
+      $window.location.reload();
     };
     // ====
 
@@ -85,5 +87,7 @@ angular.module('gdsApp')
     $scope.getMostCities(5);
 
     // ====
+
+    console.log($rootScope.user);
 
   }]);
