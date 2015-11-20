@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope) {
+  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope, Upload, $timeout) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var obj = {};
@@ -69,16 +69,34 @@ angular.module('gdsApp')
     };
 
     obj.changePhoto = function(img, callback) {
-      return console.log('img -> ', img);
-
-      $http.post(apiUrl + '/user/upload-photo', img, {'app_token': app_token})
-        .then(function(data){
-          console.log('Success changePhoto: ', data);
-          // LocalStorage.userLogin(data.data.user, data.data.token);
-          callback(data)
-        }, function(error){
-          console.warn('Error changePhoto: ', error);
+      img.upload = Upload.upload({
+        url: apiUrl + '/user/upload-photo',
+        headers : {
+          'user_token': userStorage.user_token,
+          'app_token': app_token
+        },
+        data: { uploadFile: img }
       });
+
+      img.upload.then(function (response) {
+        $timeout(function () {
+          callback(response);
+        });
+      }, function (response) {
+        if (response.status > 0)
+          $scope.errorMsg = response.status + ': ' + response.data;
+      }, function (evt) {
+        callback(img.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total)));
+      });
+
+      // $http.post(apiUrl + '/user/upload-photo', img, {'app_token': app_token})
+      //   .then(function(data){
+      //     console.log('Success changePhoto: ', data);
+      //     // LocalStorage.userLogin(data.data.user, data.data.token);
+      //     callback(data)
+      //   }, function(error){
+      //     console.warn('Error changePhoto: ', error);
+      // });
     };
 
     // update user profile

@@ -8,7 +8,8 @@
   <article class="col-xs-12 col-md-11 card">
     <aside class="col-md-4 health-daily-avatar">
       <figure>
-        <img src="../images/avatar/avatar-1.svg" alt="Avatar de {{user.nick}}">
+          <img ng-if="user.picture" ng-src="{{user.picture}}" alt="Avatar de {{user.nick}}">
+          <img ng-if="!user.picture" ng-src="../images/avatar/avatar-blank.svg" alt="Avatar Defaul">
         <figcaption>{{user.nick}} <span>{{ user.dob | ageFilter }} anos</span></figcaption>
       </figure>
     </aside>

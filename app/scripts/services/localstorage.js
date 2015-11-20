@@ -90,14 +90,9 @@ angular.module('gdsApp')
         var newUser = user.data.data[0];
         var currentUser = obj.getItem("userStorage");
 
-        // console.log("newUser", newUser);
-        // console.log("currentUser", currentUser);
-
         angular.forEach(newUser, function(v, key){
           currentUser[key] = v;
         });
-
-        // console.log("currentUser M", currentUser);
 
         $rootScope.user = currentUser;
       }
@@ -106,12 +101,10 @@ angular.module('gdsApp')
     };
 
     // atualiza a foto do usuário
-    obj.updateAvatar = function(obj) {
-      // userStorage.picture = obj.picture;
+    obj.updateAvatar = function(img) {
+      $rootScope.user.picture = img;
 
-      // $rootScope.user = userStorage;
-
-      console.warn(userStorage);
+      localStorage.setItem('userStorage', JSON.stringify($rootScope.user));
     }
 
     return obj;

@@ -13,7 +13,8 @@
     <div class="panel-body">
       <a ng-href="profile/change-photo" class="col-xs-12 col-md-2" class="link-figure" title="Clique para editar a foto">
         <figure class="card-avatar-image edit">
-          <img src="images/avatar/avatar-1.svg" alt="Avatar 01">
+          <img ng-if="user.picture" ng-src="{{user.picture}}" alt="Avatar 01">
+          <img ng-if="!user.picture" ng-src="../images/avatar/avatar-blank.svg" alt="Avatar Defaul">
           <figcaption>Editar foto</figcaption>
         </figure>
       </a>

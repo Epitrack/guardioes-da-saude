@@ -1223,6 +1223,10 @@ p.login-email {
 
   &.edit {
     position: relative;
+    @include bdr(100%);
+    overflow: hidden;
+    min-width: 190px;
+    min-height: 190px;
 
     figcaption {
       position: absolute;

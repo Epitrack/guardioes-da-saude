@@ -94,6 +94,13 @@
           </div>
 
           <button class="save-change-photo" ng-click="uploadPic(picFile)">Salvar foto</button>
+          <br>
+
+        <div ng-hide="progress != null" class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
+            <span class="sr-only">{{progress}}% Complete</span>
+          </div>
+        </div>
 
           <h3 ng-show="picFile.result">Upload realizado com sucesso.</h3>
           <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
