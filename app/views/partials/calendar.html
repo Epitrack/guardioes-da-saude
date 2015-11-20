@@ -5,13 +5,7 @@
 </div>
 
 <div class="week names">
-  <span class="day">S</span>
-  <span class="day">T</span>
-  <span class="day">Q</span>
-  <span class="day">Q</span>
-  <span class="day">S</span>
-  <span class="day">S</span>
-  <span class="day">D</span>
+  <span class="day" ng-repeat="day in week.days">{{day.name}}</span>
 </div>
 
 <div class="week" ng-repeat="week in weeks">
@@ -21,9 +15,9 @@
     selected: day.date.isSame(selected) }"
     ng-click="select(day)"
     ng-repeat="day in week.days"
-    popover-title="Title here"
+    popover-title="{{day.name}}"
     uib-popover="content here"
     popover-placement="top"
-    popover-trigger="mouseenter" >{{day.number}}
+    popover-trigger="click" >{{day.number}}
   </span>
 </div>

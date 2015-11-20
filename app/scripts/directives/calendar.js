@@ -64,7 +64,7 @@ angular.module('gdsApp')
       var days = [];
       for (var i = 0; i < 7; i++) {
         days.push({
-          name: date.format("dd").substring(0, 1),
+          name: date.format("dddd"),
           number: date.date(),
           isCurrentMonth: date.month() === month.month(),
           isToday: date.isSame(new Date(), "day"),
@@ -77,5 +77,4 @@ angular.module('gdsApp')
 
       return days;
     }
-
   });
