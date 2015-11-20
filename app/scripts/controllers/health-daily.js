@@ -45,8 +45,6 @@ angular.module('gdsApp')
         year: moment().year()
       };
 
-      // console.warn(params);
-
       UserApi.getUserCalendar(params, function(data) {
         var userCalendar = [];
 

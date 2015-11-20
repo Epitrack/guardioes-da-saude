@@ -69,5 +69,20 @@ angular.module('gdsApp')
       });
     };
 
+    // get calendar data
+    obj.getHouseholdCalendar = function(params, callback) {
+      var month = params.month,
+          year = params.year,
+          hhId = params.hhId;
+
+      $http.get(apiUrl + '/household/calendar/month?month=' + month + '&year=' + year + '&household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+        .then(function(result){
+          console.log('Success getHouseholdCalendar: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getHouseholdCalendar: ', error);
+      });
+    };
+
     return obj;
   });
