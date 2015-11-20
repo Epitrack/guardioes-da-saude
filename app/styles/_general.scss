@@ -32,8 +32,19 @@ html {
   text-rendering: optimizeLegibility !important;
 }
 
+.header-primary {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+html {
+  padding-top: 70px;
+}
+
 body {
-  padding: 0;
   font-size: $fs-root;
   font-family: $ff-regular;
   position: relative;
