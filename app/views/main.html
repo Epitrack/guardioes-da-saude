@@ -13,11 +13,9 @@
         <div class="last-cities">
           <h4>Cidades mais acessadas</h4>
           <ul>
-            <li><a ng-href="health-map">Recife</a></li>
-            <li><a ng-href="health-map">Fortaleza</a></li>
-            <li><a ng-href="health-map">São Paulo</a></li>
-            <li><a ng-href="health-map">Rio de Janeiro</a></li>
-            <li><a ng-href="health-map">Campinas</a></li>
+            <li ng-repeat="city in cities">
+              <a href="" ng-click="getSurveyByCity(city._id)">{{ city._id }}</a>
+            </li>
           </ul>
         </div>
 

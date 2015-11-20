@@ -8,11 +8,11 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', '$route', 'Surveyapi', '$location', 'toaster', '$rootScope', function ($scope, $route, Surveyapi, $location, toaster, $rootScope) {
+  .controller('MainCtrl', ['$scope', '$route', 'Surveyapi', '$location', 'toaster', '$rootScope', 'SearchCitiesApi', function ($scope, $route, Surveyapi, $location, toaster, $rootScope, SearchCitiesApi) {
 
     $scope.pageClass = 'main-page';
 
-    console.log($route);
+    // console.log($route);
 
     // when user click in logout button
     $scope.clearStorage = function() {
@@ -24,7 +24,11 @@ angular.module('gdsApp')
     // search by city /index
     $scope.surveyByCity = {};
 
-    $scope.getSurveyByCity = function() {
+    $scope.getSurveyByCity = function(params) {
+      if (params) {
+        $scope.surveyByCity.city = params;
+      }
+
       Surveyapi.getMarkersByCity($scope.surveyByCity.city, function(data) {
         if (data.data.error === false) {
           $location.path('/health-map');
@@ -69,6 +73,16 @@ angular.module('gdsApp')
         }
       })
     };
+
+    $scope.getMostCities = function(limit) {
+      $scope.cities = {};
+
+      SearchCitiesApi.getCities(limit, function(data) {
+        $scope.cities = data.data;
+      });
+    };
+
+    $scope.getMostCities(5);
 
     // ====
 

@@ -45,7 +45,11 @@ angular.module('gdsApp')
 
     $scope.addMarkers = function() {
         var addressPointsToMarkers = function(points) {
-          console.warn('points', points);
+          if($rootScope.markersByCity.length == 0 || points.length == 0) {
+            console.log('error', 'Nenhuma pessoa reportou nesta região.');
+            toaster.pop('error', 'Nenhuma pessoa reportou nesta região.');
+          };
+
           var t = [$scope.userLocation];
           angular.forEach(points, function(p){
             t.push({
@@ -64,7 +68,6 @@ angular.module('gdsApp')
         };
 
         $scope.markers = addressPointsToMarkers($rootScope.markersByCity);
-        // console.log('ul', $scope.markers);
       };
 
     // só adiciona os marcadores se existir no $rootScope
