@@ -88,15 +88,6 @@ angular.module('gdsApp')
       }, function (evt) {
         callback(img.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total)));
       });
-
-      // $http.post(apiUrl + '/user/upload-photo', img, {'app_token': app_token})
-      //   .then(function(data){
-      //     console.log('Success changePhoto: ', data);
-      //     // LocalStorage.userLogin(data.data.user, data.data.token);
-      //     callback(data)
-      //   }, function(error){
-      //     console.warn('Error changePhoto: ', error);
-      // });
     };
 
     // update user profile

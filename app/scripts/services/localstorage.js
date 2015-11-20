@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('LocalStorage', function ($rootScope) {
+  .service('LocalStorage', function ($rootScope, ApiConfig) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var obj = {};
 
@@ -77,6 +77,10 @@ angular.module('gdsApp')
       userStorage.week_of = obj.week_of;
       userStorage.zip = obj.zip;
       userStorage.user_token = token;
+
+      if (obj.picture) {
+        userStorage.picture = ApiConfig.API_URL + obj.picture
+      };
 
       $rootScope.user = userStorage;
 
