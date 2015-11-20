@@ -85,7 +85,7 @@
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <!-- visible when user not logged -->
-            <div ng-if="user == null">
+            <div ng-if="user.id == undefined">
               <ul class="nav navbar-nav">
                 <li><a class="nav-link" ng-href="/cadastro">Cadastre-se</a></li>
                 <li><a class="nav-link" ng-href="/login">Entrar</a></li>
@@ -93,7 +93,7 @@
             </div>
 
             <!-- visible when user is logged -->
-            <div ng-if="user != null">
+            <div ng-if="user.id != null">
               <ul class="nav navbar-nav">
                 <li ng-show="!user.picture">
                   <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-blank.svg" alt="avatar"></figure>
