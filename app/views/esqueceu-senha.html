@@ -6,17 +6,27 @@
 
           <h3 class="login-subtitle">Recupere sua senha:</h3>
 
-          <form class="form-recuperar-senha" name="form-recuperar-senha">
+          <form ng-submit="resetPass()" class="form-recuperar-senha" name="form-recuperar-senha">
             <fieldset class="input-group mainform signup">
-              <input type="email" class="form-control mainform-input" placeholder="Email">
+              <input type="email" class="form-control mainform-input" ng-model="forgotPass.email" placeholder="Email">
             </fieldset>
 
             <fieldset class="btn-group btn-group-justified" role="group">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-signup">Recuperar senha</button>
+                <button type="submit" class="btn btn-signup">Recuperar senha</button>
               </div>
             </fieldset>
           </form>
+
+          <br>
+
+          <div ng-show="message" class="alert alert-info" role="alert">
+            <span>Foi enviada uma mensagem para o email {{forgotPass.email}}, siga as instruções enviadas para recuperar sua senha.</span>
+          </div>
+
+          <div ng-show="messageError" class="alert alert-danger" role="alert">
+            <span>{{messageError}}</span>
+          </div>
       </section>
     </div>
   </div>
@@ -24,3 +34,6 @@
 
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>
+
+<!-- Toast -->
+<div ng-include src="'views/partials/toaster.html'"></div>

@@ -131,5 +131,17 @@ angular.module('gdsApp')
       });
     };
 
+    // forgot password
+    obj.forgotPassword = function(email, callback) {
+      $http.post(apiUrl + '/user/forgot-password', email, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success forgotPassword: ', result);
+          callback(result);
+          // obj.updateUser(params.id);
+        }, function(error){
+          console.warn('Error forgotPassword: ', error);
+      });
+    };
+
     return obj;
   });

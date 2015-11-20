@@ -8,10 +8,20 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('EsqueceuSenhaCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('EsqueceuSenhaCtrl', ['$scope', 'UserApi', 'toaster', function ($scope, UserApi, toaster) {
+
+    $scope.forgotPass = {};
+
+    $scope.resetPass = function() {
+      UserApi.forgotPassword($scope.forgotPass, function(data) {
+        console.warn(data);
+        if (data.data.error == false) {
+          $scope.message = data.data.message;
+          toaster.pop('success', data.data.message);
+        } else {
+          $scope.messageError = data.data.message
+        }
+      })
+    };
+
+  }]);
