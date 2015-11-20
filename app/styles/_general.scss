@@ -32,8 +32,19 @@ html {
   text-rendering: optimizeLegibility !important;
 }
 
+.header-primary {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+html {
+  padding-top: 70px;
+}
+
 body {
-  padding: 0;
   font-size: $fs-root;
   font-family: $ff-regular;
   position: relative;
@@ -353,6 +364,9 @@ body {
   @extend .col-sm-7;
   @extend .col-sm-offset-2;
   @extend .col-md-offset-3;
+
+  width: 100%;
+  margin: 0 auto;
 
   img {
     width: 90%;
@@ -1403,7 +1417,7 @@ p.login-email {
   .logo-ministerio {
     margin-top: 20px;
 
-    img { margin: 0; }
+    img { width: auto; }
   }
   // ====
 
@@ -1478,7 +1492,7 @@ p.login-email {
   .step-title { font-size: ($fs-medium + $fs-normal)+.4; }
 
   .logo-ministerio {
-    img { width: 60%; }
+    img { width: auto; }
   }
   //  ====
 
