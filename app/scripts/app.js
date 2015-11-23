@@ -23,7 +23,8 @@
   'ChartAngular',
   'ngMask',
   'angularMoment',
-  'ngFileUpload'
+  'ngFileUpload',
+  'firebase'
   ])
  .run(['$rootScope', 'LocalStorage', function($rootScope, LocalStorage){
   var u = LocalStorage.getItem('userStorage');
