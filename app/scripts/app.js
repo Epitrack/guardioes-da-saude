@@ -202,6 +202,11 @@
     controller: 'EsqueciMinhaSenhaCtrl',
     controllerAs: 'esqueciMinhaSenha'
   })
+.when('/template/email/esqueci-senha', {
+  templateUrl: 'views/template-email-esqueci-senha.html',
+  controller: 'TemplateEmailEsqueciSenhaCtrl',
+  controllerAs: 'templateEmailEsqueciSenha'
+})
 .otherwise({
   redirectTo: '/'
 });
