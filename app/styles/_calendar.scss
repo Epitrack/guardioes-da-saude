@@ -47,8 +47,6 @@
 }
 
 .week {
-  float: left;
-  width: 16%;
 
   .day {
     float: left;
@@ -59,9 +57,9 @@
     display: inline-block;
     cursor: pointer;
     font-size: ($fs-normal)+.2;
-    margin: 0 10px;
+    margin: 0 4% 0 0;
+    padding: 3px 0 0 0;
     @include bdr(100%);
-    padding: 0.9%;
 
     &:last-child { margin-right: 0; }
 
@@ -78,7 +76,6 @@
   &.names {
     .day {
       color: $week-days-color;
-      padding: 0 0 0 10px;
       cursor: default;
 
       &:last-child { margin-right: 0; }
@@ -99,13 +96,37 @@
   }
 }
 
+.popover-content {
+  width: auto;
+  height: 32px;
+  padding: 3px 0 0 35px;
+  margin: 5px 14px 0px 10px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  @include path('icon-health-daily-good.svg');
+}
+
+.popover-content.bad {
+  @include path('icon-health-daily-bad.svg');
+}
+
+// Large Smartphones
+@media screen and (min-width: 380px) {
+  .week {
+    width: 100%;
+    padding-left: 10px;
+
+    .day { margin: 0 6% 0 0; }
+  }
+}
+
 // iPads
 @media screen and (min-width: 768px) {
   .week {
     width: 100%;
     padding-left: 10px;
 
-    .day {  margin: 0 22px; }
+    .day { margin: 0 10% 0 0; }
   }
 }
 
@@ -123,7 +144,7 @@
   .week {
     padding-left: 0;
 
-    .day { margin: 0 7px; }
+    .day { margin: 0 6% 0 0; }
   }
 }
 

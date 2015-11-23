@@ -154,5 +154,9 @@ angular.module('gdsApp')
       });
     };
 
+    obj.getSavedCalendar = function(){
+      return $rootScope.userCalendar;
+    };
+
     return obj;
   });

@@ -65,6 +65,7 @@ angular.module('gdsApp')
         }
 
         $rootScope.userCalendar = userCalendar;
+        $rootScope.$broadcast('USER_CALENDAR_UPDATED');
 
         console.log($rootScope.userCalendar);
       });
