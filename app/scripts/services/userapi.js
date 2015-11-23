@@ -146,11 +146,22 @@ angular.module('gdsApp')
     obj.validateHash = function(hash, callback) {
       $http.get(apiUrl + '/user/validate/hash?hash='+ hash, {headers: {'app_token': app_token}})
         .then(function(result){
-          console.log('Success forgotPassword: ', result);
+          console.log('Success validateHash: ', result);
           callback(result);
-          // obj.updateUser(params.id);
         }, function(error){
-          console.warn('Error forgotPassword: ', error);
+          console.warn('Error validateHash: ', error);
+      });
+    };
+
+    // register
+    obj.updateUserPassword = function(params, callback) {
+      $http.post(apiUrl + '/user/update/password', params, { headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success updateUserPassword ', data);
+          // LocalStorage.userCreateData(data.data.user);
+          callback(data);
+        }, function(error){
+          console.warn('Error updateUserPassword: ', error);
       });
     };
 

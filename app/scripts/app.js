@@ -197,7 +197,7 @@
       //   controller: 'HelpCtrl',
       //   controllerAs: 'help'
       // })
-  .when('/esqueci-minha-senha/:hash', {
+  .when('/esqueci-minha-senha?:hash', {
     templateUrl: 'views/esqueci-minha-senha.html',
     controller: 'EsqueciMinhaSenhaCtrl',
     controllerAs: 'esqueciMinhaSenha'
@@ -207,7 +207,7 @@
 });
 
       // use the HTML5 History API
-      $locationProvider.html5Mode(false);
+      $locationProvider.html5Mode(true);
     });
 
 var checkLoggedOut = function($q, $timeout, $location, $rootScope) {

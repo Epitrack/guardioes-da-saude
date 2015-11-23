@@ -8,13 +8,12 @@
 
           <form ng-submit="checkHash()" class="form-recuperar-senha" name="formCheckHash">
             <fieldset class="input-group mainform signup">
-              <input class="form-control main-form-input input-primary" id="profile-pass" name="newUserPass" type="password"
-              ng-model="screen.user.password" ng-minlength="6">
+              <input type="password" class="form-control mainform-input" ng-model="screen.user.password" placeholder="Nova senha" name="newUserPass" ng-minlength="6">
 
-              <input class="form-control main-form-input input-primary" id="profile-pass-again" name="newUserPassAgain" type="password" ng-model="screen.repeatPassword">
+              <input type="password" class="form-control mainform-input" ng-model="screen.repeatPassword" placeholder="Confirme a nova senha" name="newUserPassAgain">
             </fieldset>
 
-            <fieldset class="col-xs-12">
+            <fieldset>
               <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
                 <span>As senhas digitadas precisam ser iguais.</span>
               </div>
@@ -30,16 +29,6 @@
               </div>
             </fieldset>
           </form>
-
-          <!-- <br> -->
-
-          <!-- <div ng-show="message" class="alert alert-info" role="alert">
-            <span>Foi enviada uma mensagem para o email {{forgotPass.email}}, siga as instruções enviadas para recuperar sua senha.</span>
-          </div> -->
-
-          <!-- <div ng-show="messageError" class="alert alert-danger" role="alert">
-            <span>{{messageError}}</span>
-          </div> -->
       </section>
     </div>
   </div>
