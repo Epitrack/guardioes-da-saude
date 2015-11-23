@@ -32,7 +32,7 @@
       <span 
         ng-if="checkForSymptoms(day)"
         class="day selected"
-        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
         ng-click="select(day)"
         popover-title="{{ day.name }}"
         uib-popover="{{day.symptoms}} Sintomas"
@@ -46,7 +46,7 @@
       <span 
         ng-if="!checkForSymptoms(day)"
         class="day no-symptoms"
-        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
         popover-title="{{ day.name }}"
         uib-popover="0 Sintomas"
         popover-placement="top"
