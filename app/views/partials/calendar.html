@@ -13,17 +13,45 @@
   <span class="day">S</span>
   <span class="day">D</span>
 </div>
+<div class="week" ng-repeat="week in weeks" ng-controller="HealthDailyCtrl">
+  <div ng-repeat="day in week.days" class="day">
+  
 
-<div class="week" ng-repeat="week in weeks">
-  <span class="day"
-    ng-class="{ today: day.isToday,
-    'different-month': !day.isCurrentMonth,
-    selected: day.date.isSame(selected) }"
-    ng-click="select(day)"
-    ng-repeat="day in week.days"
-    popover-title="Title here"
-    uib-popover="content here"
-    popover-placement="top"
-    popover-trigger="mouseenter" >{{day.number}}
-  </span>
+<!--     <span 
+      class="day"
+      ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+      ng-click="select(day)"
+      ng-repeat="day in week.days"
+      uib-popover="Testing"
+      popover-placement="top"
+      popover-trigger="mouseenter">{{day.number}}
+    </span> -->
+
+    <!-- DIAS COM SINTOMAS -->
+    <div class="with-symptoms">
+      <span 
+        ng-if="checkForSymptoms(day)"
+        class="day selected"
+        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
+        ng-click="select(day)"
+        popover-title="{{ day.name }}"
+        uib-popover="{{day.symptoms}} Sintomas"
+        popover-placement="top"
+        popover-trigger="click">{{ day.number }} 
+      </span>
+    </div>
+
+    <!-- DIAS SEM SINTOMAS -->
+    <div class="no-symptoms">
+      <span 
+        ng-if="!checkForSymptoms(day)"
+        class="day no-symptoms"
+        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
+        popover-title="{{ day.name }}"
+        uib-popover="0 Sintomas"
+        popover-placement="top"
+        popover-trigger="click">{{ day.number }}
+      </span>
+    </div>
+  </div>
 </div>

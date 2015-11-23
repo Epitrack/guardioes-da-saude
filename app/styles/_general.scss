@@ -294,7 +294,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $link-primary;
-  @include path('bg-how-it-works.svg');
+  @include path('bg-how-it-works.jpg');
 }
 
 .how-it-works {
@@ -1209,8 +1209,11 @@ p.login-email {
   }
 }
 
-.content-card { padding: 20px; }
-
+.content-card { 
+  padding: 20px; 
+  z-index: 1;
+}
+  
 .link-figure {
   &:hover {
     text-decoration: none;

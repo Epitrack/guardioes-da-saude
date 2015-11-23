@@ -7,7 +7,7 @@
  * # calendar
  */
 angular.module('gdsApp')
-  .directive('calendar', function () {
+  .directive('calendar', ['$rootScope', 'UserApi', function ($rootScope, UserApi) {
     return {
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
@@ -15,8 +15,25 @@ angular.module('gdsApp')
         selected: "="
       },
       link: function($scope) {
+        $rootScope.$on('USER_CALENDAR_UPDATED', function(){
+          $scope.userCalendar = UserApi.getSavedCalendar();
+          console.log("USER_CALENDAR_UPDATED");
+        });
+        $scope.userCalendar = UserApi.getSavedCalendar();
         $scope.selected = _removeTime($scope.selected || moment());
         $scope.month = $scope.selected.clone();
+        
+        $scope.checkForSymptoms = function(day) {
+          var calendar = $scope.userCalendar;
+          var status = false;
+          angular.forEach(calendar, function(item){
+            if(day.number == item.report_day) {
+              day.symptoms = item.total;
+              status = true;
+            }
+          });
+          return status;
+        };
 
         var start = $scope.selected.clone();
           start.date(1);
@@ -25,7 +42,7 @@ angular.module('gdsApp')
 
         $scope.select = function(day) {
           $scope.selected = day.date;
-          console.log(day);
+          $('.with-symptoms div .popover-inner .popover-content').addClass('bad');
         };
 
         $scope.next = function() {
@@ -64,7 +81,7 @@ angular.module('gdsApp')
       var days = [];
       for (var i = 0; i < 7; i++) {
         days.push({
-          name: date.format("dd").substring(0, 1),
+          name: date.format("dddd"),
           number: date.date(),
           isCurrentMonth: date.month() === month.month(),
           isToday: date.isSame(new Date(), "day"),
@@ -77,5 +94,4 @@ angular.module('gdsApp')
 
       return days;
     }
-
-  });
+  }]);
