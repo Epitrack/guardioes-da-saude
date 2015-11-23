@@ -6,9 +6,14 @@
 
           <h3 class="login-subtitle">Entre rapidamente com:</h3>
 
-          <button class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook</button>
-          <button class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google</button>
-          <button class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter</button>
+          <button ng-click="facebookLogin()"
+            class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook</button>
+
+          <button ng-click="googleLogin()"
+            class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google</button>
+
+          <button ng-click="twitterLogin()"
+            class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter</button>
 
           <p class="login-email">Ou entre <a ng-href="login-email">usando seu email</a></p>
       </section>

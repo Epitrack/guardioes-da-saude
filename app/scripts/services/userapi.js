@@ -169,5 +169,15 @@ angular.module('gdsApp')
       return $rootScope.userCalendar;
     };
 
+    obj.fbLogin = function(accessToken, callback) {
+      $http.get(apiUrl + '/auth/facebook/callback?code=' + accessToken, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success fbLogin: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error fbLogin: ', error);
+      });
+    };
+
     return obj;
   });
