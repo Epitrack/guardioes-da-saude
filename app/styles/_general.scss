@@ -294,7 +294,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $link-primary;
-  @include path('bg-how-it-works.jpg');
+  @include path('bg-how-it-works.svg');
 }
 
 .how-it-works {
