@@ -26,14 +26,16 @@ angular.module('gdsApp')
 
     // register
     obj.createUser = function(data, callback) {
+      if (data.fb) {
+        data.fb = data.fb
+      }
+
       data.app_token = app_token;
       data.platform = platform;
       data.client = client;
 
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
-
-      console.warn(data);
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
@@ -170,12 +172,43 @@ angular.module('gdsApp')
     };
 
     obj.fbLogin = function(accessToken, callback) {
-      $http.get(apiUrl + '/auth/facebook/callback?code=' + accessToken, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
         .then(function(result){
           console.log('Success fbLogin: ', result);
+          // LocalStorage.userCreateData(data.data.user);
           callback(result);
         }, function(error){
           console.warn('Error fbLogin: ', error);
+      });
+    };
+
+    obj.twLogin = function(accessToken, callback) {
+      $http.get(apiUrl + '/auth/twitter/callback?oauth_token=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret , {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success twLogin: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error twLogin: ', error);
+      });
+    };
+
+    obj.glLogin = function(accessToken, callback) {
+      $http.get(apiUrl + '/auth/google/callback?access_token=' + accessToken.access_token, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success glLogin: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error glLogin: ', error);
+      });
+    };
+
+    obj.getUserEmail = function(email, callback) {
+      $http.get(apiUrl + '/user/get?email=' + email , {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success getUserEmail: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserEmail: ', error);
       });
     };
 

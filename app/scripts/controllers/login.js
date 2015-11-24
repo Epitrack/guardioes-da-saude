@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginCtrl', ['$scope', '$firebaseAuth', 'UserApi', function ($scope, $firebaseAuth, UserApi) {
+  .controller('LoginCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
     $scope.pageClass = 'login-page';
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
@@ -17,14 +17,34 @@ angular.module('gdsApp')
     $scope.facebookLogin = function() {
       auth.$authWithOAuthPopup('facebook').then(function(authData) {
         console.log('Facebook authentication success:', authData);
-        // $scope.fb_token = authData.facebook.accessToken;
-        // console.warn($scope.fb_token);
 
-        // UserApi.fbLogin($scope.fb_token, function(data) {
-        //   console.warn(data);
-        // })
+        var userFbData = {};
+
+        userFbData.fb_token = authData.facebook.accessToken;
+        userFbData.nick = authData.facebook.displayName;
+        userFbData.picture = authData.facebook.profileImageURL;
+        userFbData.fb = authData.facebook.id;
+
+        if (authData.facebook.cachedUserProfile.gender == 'male') {
+          userFbData.gender = 'M';
+        } else {
+          userFbData.gender = 'F';
+        }
+
+        $scope.userData = userFbData;
+
+        UserApi.fbLogin(userFbData.fb_token, function(data) {
+          console.warn(data);
+          if (data.data.error == false) {
+            console.log(data.data.message);
+            // $location.path('health-daily');
+          } else {
+            console.log(data.data.message);
+            $('#modal-complete-login').modal('show');
+          }
+        })
       }).catch(function(error) {
-        // $scope.errorFacebook = error;
+        toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
       });
     };
@@ -32,14 +52,28 @@ angular.module('gdsApp')
     $scope.googleLogin = function() {
       auth.$authWithOAuthPopup('google').then(function(authData) {
         console.log('Google authentication success:', authData);
-        // $scope.fb_token = authData.facebook.accessToken;
-        // console.warn($scope.fb_token);
 
-        // UserApi.fbLogin($scope.fb_token, function(data) {
-        //   console.warn(data);
-        // })
+        var userGlData = {};
+
+        userGlData.access_token = authData.google.accessToken;
+        userGlData.nick = authData.google.displayName;
+        userGlData.picture = authData.google.profileImageURL;
+        userGlData.gl = authData.google.id;
+
+        $scope.userData = userGlData;
+
+        UserApi.glLogin(userGlData, function(data) {
+          if (data.data.error == false) {
+            console.log(data.data.message);
+            LocalStorage.userLogin(data.data.user, data.data.token);
+            $location.path('health-daily');
+          } else {
+            console.log(data.data.message);
+            $('#modal-complete-login').modal('show');
+          }
+        })
       }).catch(function(error) {
-        // $scope.errorFacebook = error;
+        toaster.pop('error', error);
         console.log('Google authentication failed:', error);
       });
     };
@@ -47,15 +81,45 @@ angular.module('gdsApp')
     $scope.twitterLogin = function() {
       auth.$authWithOAuthPopup('twitter').then(function(authData) {
         console.log('Twitter authentication success:', authData);
-        // $scope.fb_token = authData.facebook.accessToken;
-        // console.warn($scope.fb_token);
 
-        // UserApi.fbLogin($scope.fb_token, function(data) {
-        //   console.warn(data);
-        // })
+        var userTwData = {};
+
+        userTwData.oauth_token = authData.twitter.accessToken;
+        userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
+        userTwData.nick = authData.twitter.displayName;
+        userTwData.picture = authData.twitter.profileImageURL;
+        userTwData.tw = authData.twitter.id;
+
+        $scope.userData = userTwData;
+
+        UserApi.twLogin(userTwData, function(data) {
+          if (data.data.error == false) {
+            console.log(data.data.message);
+            LocalStorage.userLogin(data.data.user, data.data.token);
+            $location.path('health-daily');
+          } else {
+            console.log(data.data.message);
+            $('#modal-complete-login').modal('show');
+          }
+        })
       }).catch(function(error) {
-        // $scope.errorFacebook = error;
-        console.log('Twitter authentication failed:', error);
+        toaster.pop('error', error);
+        console.log('Facebook authentication failed:', error);
+      });
+    };
+
+    $scope.updateUserSocialData = function() {
+      $('#modal-complete-login').modal('hide');
+
+      UserApi.createUser($scope.userData, function(data) {
+        if (data.data.error == false) {
+          toaster.pop('success', data.data.message);
+          LocalStorage.userCreateData(data.data.user);
+          $location.path('health-daily');
+        } else {
+          toaster.pop('error', data.data.message);
+          console.warn(data.data.message);
+        }
       });
     };
   }]);

@@ -44,6 +44,10 @@ angular.module('gdsApp')
       userStorage.zip = obj.zip;
       userStorage.user_token = obj.token;
 
+      if (obj.picture) {
+        userStorage.picture = obj.picture
+      }
+
       // adiciona no storage as informações do usuário
       $rootScope.user = userStorage;
 
@@ -79,7 +83,7 @@ angular.module('gdsApp')
       userStorage.user_token = token;
 
       if (obj.picture) {
-        userStorage.picture = ApiConfig.API_URL + obj.picture
+        userStorage.picture = obj.picture
       };
 
       $rootScope.user = userStorage;
@@ -109,7 +113,7 @@ angular.module('gdsApp')
       $rootScope.user.picture = img;
 
       localStorage.setItem('userStorage', JSON.stringify($rootScope.user));
-    }
+    };
 
     return obj;
   });
