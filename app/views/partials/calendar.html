@@ -15,17 +15,6 @@
 </div>
 <div class="week" ng-repeat="week in weeks" ng-controller="HealthDailyCtrl">
   <div ng-repeat="day in week.days" class="day">
-  
-
-<!--     <span 
-      class="day"
-      ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
-      ng-click="select(day)"
-      ng-repeat="day in week.days"
-      uib-popover="Testing"
-      popover-placement="top"
-      popover-trigger="mouseenter">{{day.number}}
-    </span> -->
 
     <!-- DIAS COM SINTOMAS -->
     <div class="with-symptoms">
