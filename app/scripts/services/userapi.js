@@ -26,6 +26,10 @@ angular.module('gdsApp')
 
     // register
     obj.createUser = function(data, callback) {
+      if (data.fb) {
+        data.fb = data.fb
+      }
+
       data.app_token = app_token;
       data.platform = platform;
       data.client = client;
@@ -33,13 +37,11 @@ angular.module('gdsApp')
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
 
-      console.warn(data);
-
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
           console.log('Success createUser ', data);
-          LocalStorage.userCreateData(data.data.user);
           callback(data);
+          LocalStorage.userCreateData(data.data.user);
         }, function(error){
           console.warn('Error createUser: ', error);
       });
@@ -69,25 +71,15 @@ angular.module('gdsApp')
     };
 
     obj.changePhoto = function(img, callback) {
-      img.upload = Upload.upload({
-        url: apiUrl + '/user/upload-photo',
-        headers : {
-          'user_token': userStorage.user_token,
-          'app_token': app_token
-        },
-        data: { uploadFile: img }
+      $http.get(apiUrl + '/user/upload-photo', img, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success changePhoto: ', result);
+          callback(result);
+          obj.updateUser(userStorage.id);
+        }, function(error){
+          console.warn('Error changePhoto: ', error);
       });
 
-      img.upload.then(function (response) {
-        $timeout(function () {
-          callback(response);
-        });
-      }, function (response) {
-        if (response.status > 0)
-          $scope.errorMsg = response.status + ': ' + response.data;
-      }, function (evt) {
-        callback(img.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total)));
-      });
     };
 
     // update user profile
@@ -170,12 +162,43 @@ angular.module('gdsApp')
     };
 
     obj.fbLogin = function(accessToken, callback) {
-      $http.get(apiUrl + '/auth/facebook/callback?code=' + accessToken, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
         .then(function(result){
           console.log('Success fbLogin: ', result);
+          // LocalStorage.userCreateData(data.data.user);
           callback(result);
         }, function(error){
           console.warn('Error fbLogin: ', error);
+      });
+    };
+
+    obj.twLogin = function(accessToken, callback) {
+      $http.get(apiUrl + '/auth/twitter/callback?oauth_token=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret , {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success twLogin: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error twLogin: ', error);
+      });
+    };
+
+    obj.glLogin = function(accessToken, callback) {
+      $http.get(apiUrl + '/auth/google/callback?access_token=' + accessToken.access_token, {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success glLogin: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error glLogin: ', error);
+      });
+    };
+
+    obj.getUserEmail = function(email, callback) {
+      $http.get(apiUrl + '/user/get?email=' + email , {headers: {'app_token': app_token}})
+        .then(function(result){
+          console.log('Success getUserEmail: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserEmail: ', error);
       });
     };
 
