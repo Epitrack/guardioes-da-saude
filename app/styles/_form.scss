@@ -205,11 +205,25 @@ select {
     background-repeat: no-repeat;
     background-size: 100%;
     @include bdr(100%);
+    @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
   }
 
   &.photo-selected {
     outline: none;
-    background-color: rgba(0, 0, 0, .5);
+
+    &::before {
+      content: '✔';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      @include bdr(100%);
+      color: $link-primary;
+      padding: 17px 0 0 0;
+      font-size: ($fs-medium)+.4;
+      background-color: rgba(0, 0, 0, .5);
+    }
   }
 
   input {
@@ -285,6 +299,7 @@ select {
   overflow: hidden;
   border-radius: 100%;
   margin: 0 auto;
+  @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
 
   img {
     width: 180px;
