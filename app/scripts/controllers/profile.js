@@ -20,7 +20,7 @@ angular.module('gdsApp')
 
       $scope.screen.user = {
         nick: u.nick,
-        dob: u.dob,
+        dob: moment(u.dob).format('YYYY-DD-MM'), // change date format
         gender: u.gender,
         email: u.email,
         race: u.race,
@@ -32,6 +32,8 @@ angular.module('gdsApp')
       if($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
       }
+
+      return console.warn($scope.screen.user);
 
       UserApi.updateProfile($scope.screen.user, function(data) {
         console.log('editProfile: ', data);
