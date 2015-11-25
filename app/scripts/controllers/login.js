@@ -111,8 +111,6 @@ angular.module('gdsApp')
     $scope.updateUserSocialData = function() {
       $('#modal-complete-login').modal('hide');
 
-      console.log('$scope.userData -> ', $scope.userData);
-
       UserApi.createUser($scope.userData, function(data) {
         if (data.data.error == false) {
           toaster.pop('success', data.data.message);
