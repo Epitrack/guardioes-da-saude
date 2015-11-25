@@ -37,7 +37,7 @@ angular.module('gdsApp')
           console.warn(data);
           if (data.data.error == false) {
             console.log(data.data.message);
-            // $location.path('health-daily');
+            $location.path('health-daily');
           } else {
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
@@ -110,6 +110,8 @@ angular.module('gdsApp')
 
     $scope.updateUserSocialData = function() {
       $('#modal-complete-login').modal('hide');
+
+      console.log('$scope.userData -> ', $scope.userData);
 
       UserApi.createUser($scope.userData, function(data) {
         if (data.data.error == false) {
