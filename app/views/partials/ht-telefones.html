@@ -5,7 +5,7 @@
 <ul class="row telephone-list">
   <li class="telephone-item" ng-repeat="telephone in telefones">
     <figure>
-      <img src="images/telephones/{{ telephone.icon }}.svg" alt="{{ telephone.name }}">
+      <img ng-src="images/telephones/{{ telephone.icon }}" alt="{{ telephone.name }}">
       <figcaption>{{ telephone.name }} <span>{{ telephone.number }}</span></figcaption>
     </figure>
   </li>
