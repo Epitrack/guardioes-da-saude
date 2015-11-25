@@ -33,8 +33,6 @@ angular.module('gdsApp')
         delete $scope.screen.user.password;
       }
 
-      return console.warn($scope.screen.user);
-
       UserApi.updateProfile($scope.screen.user, function(data) {
         console.log('editProfile: ', data);
         if (data.data.error === true) {
