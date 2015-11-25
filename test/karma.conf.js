@@ -46,6 +46,8 @@ module.exports = function(config) {
       'bower_components/ngMask/dist/ngMask.js',
       'bower_components/angular-moment/angular-moment.js',
       'bower_components/cheet.js/cheet.js',
+      'bower_components/firebase/firebase.js',
+      'bower_components/angularfire/dist/angularfire.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
