@@ -13,17 +13,10 @@ angular.module('gdsApp')
     $scope.screen = {};
 
     $scope.uploadPic = function(file) {
+      return console.warn(file);
+
       UserApi.changePhoto(file, function(data) {
-        $scope.progress = data;
-
-        if (typeof(data) === 'number') {
-          $scope.progress = data;
-        } else {
-          $scope.progress = null;
-
-          LocalStorage.updateAvatar(ApiConfig.API_URL + data.data.user[0].picture);
-        }
-
+        console.log(data);
       });
     };
 

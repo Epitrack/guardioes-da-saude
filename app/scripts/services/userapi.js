@@ -71,25 +71,15 @@ angular.module('gdsApp')
     };
 
     obj.changePhoto = function(img, callback) {
-      img.upload = Upload.upload({
-        url: apiUrl + '/user/upload-photo',
-        headers : {
-          'user_token': userStorage.user_token,
-          'app_token': app_token
-        },
-        data: { uploadFile: img }
+      $http.get(apiUrl + '/user/upload-photo', img, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(result){
+          console.log('Success changePhoto: ', result);
+          callback(result);
+          obj.updateUser(userStorage.id);
+        }, function(error){
+          console.warn('Error changePhoto: ', error);
       });
 
-      img.upload.then(function (response) {
-        $timeout(function () {
-          callback(response);
-        });
-      }, function (response) {
-        if (response.status > 0)
-          $scope.errorMsg = response.status + ': ' + response.data;
-      }, function (evt) {
-        callback(img.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total)));
-      });
     };
 
     // update user profile
