@@ -27,7 +27,7 @@ angular.module('gdsApp')
         }
       });
 
-      form.ill_date = moment().format('YYYY/DD/MM');
+      form.ill_date = moment(form.ill_date).format('YYYY-DD-MM');
       form.lat = LocalStorage.getItem('userLocation').lat;
       form.lon = LocalStorage.getItem('userLocation').lon;
 
@@ -44,8 +44,8 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          console.log(data.data.message);
           toaster.pop('success', data.data.message);
+          console.log(data.data.message);
           $scope.goToHome();
         }
       });

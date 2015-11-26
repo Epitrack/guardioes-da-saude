@@ -70,7 +70,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 1337,
+        port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -258,7 +258,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglify'],
+              js: ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -297,16 +297,16 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-     uglify: {
-       dist: {
-         files: [{
-           expand: true,
-           cwd: '<%= yeoman.app %>/scripts',
-           src: '**/*.js',
-           dest: '<%= yeoman.dist %>/scripts'
-         }]
-       }
-     },
+     // uglify: {
+     //   dist: {
+     //     files: [{
+     //       expand: true,
+     //       cwd: '<%= yeoman.app %>/scripts',
+     //       src: '**/*.js',
+     //       dest: '<%= yeoman.dist %>/scripts'
+     //     }]
+     //   }
+     // },
     // concat: {
     //   dist: {}
     // },

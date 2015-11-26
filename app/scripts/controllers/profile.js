@@ -20,7 +20,7 @@ angular.module('gdsApp')
 
       $scope.screen.user = {
         nick: u.nick,
-        dob: u.dob,
+        dob: moment(u.dob).format('YYYY-DD-MM'), // change date format
         gender: u.gender,
         email: u.email,
         race: u.race,

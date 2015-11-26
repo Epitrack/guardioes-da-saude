@@ -37,7 +37,7 @@ angular.module('gdsApp')
           console.warn(data);
           if (data.data.error == false) {
             console.log(data.data.message);
-            // $location.path('health-daily');
+            $location.path('health-daily');
           } else {
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
