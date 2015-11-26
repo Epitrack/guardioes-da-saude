@@ -92,23 +92,22 @@
           </div>
 
           <button class="save-change-photo" ng-click="uploadPic(picFile)">Salvar foto</button>
-
           <br>
 
-          <div ng-hide="progress != null" class="progress">
-            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
-              <span class="sr-only">{{progress}}% Complete</span>
-            </div>
+        <div ng-hide="progress != null" class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%">
+            <span class="sr-only">{{progress}}% Complete</span>
           </div>
+        </div>
 
-            <h3 class="success-message" ng-show="picFile.result">Upload realizado com sucesso.</h3>
-            <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-            <i ng-show="searchPhotoDefault.file.$error.maxSize">File too large
-            {{picFile.size / 1000000|number:1}}MB: max 2M</i>
-            <span class="progress" ng-show="picFile.progress >= 0">
-              <div style="width:{{picFile.progress}}%"
-              ng-bind="picFile.progress + '%'"></div>
-            </span>
+          <h3 class="success-message" ng-show="picFile.result">Upload realizado com sucesso.</h3>
+          <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+          <!-- <i ng-show="searchPhotoDefault.file.$error.maxSize">File too large
+          {{picFile.size / 1000000|number:1}}MB: max 2M</i> -->
+          <!-- <span class="progress" ng-show="picFile.progress >= 0"> -->
+              <!-- <div style="width:{{picFile.progress}}%"
+                  ng-bind="picFile.progress + '%'"></div>
+                </span> -->
         </form>
       </div>
     </div>

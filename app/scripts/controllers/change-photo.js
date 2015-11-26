@@ -13,10 +13,17 @@ angular.module('gdsApp')
     $scope.screen = {};
 
     $scope.uploadPic = function(file) {
-      return console.warn(file);
-
       UserApi.changePhoto(file, function(data) {
-        console.log(data);
+        $scope.progress = data;
+
+        if (typeof(data) === 'number') {
+          $scope.progress = data;
+        } else {
+          $scope.progress = null;
+
+          LocalStorage.updateAvatar(ApiConfig.API_URL + data.data.user[0].picture);
+        }
+
       });
     };
 
@@ -26,5 +33,7 @@ angular.module('gdsApp')
 			  $('.input-file-trigger').css('background-image', 'url(' + clickedAvatar + ')');
 			});
     }
+
+    $scope.uploadPic();
 
 	}]);
