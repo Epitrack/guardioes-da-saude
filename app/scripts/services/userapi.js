@@ -83,7 +83,6 @@ angular.module('gdsApp')
         }, function(error){
           console.warn('Error changePhoto: ', error);
       });
-
     };
 
     // update user profile
