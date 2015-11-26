@@ -47,7 +47,8 @@ angular.module('gdsApp')
 
     $scope.openDatePicker = function(){
       $('.birthdate').datepicker({
-        autoclose: true
+        autoclose: true,
+        format: "yyyy-mm-dd"
       });
     };
 
