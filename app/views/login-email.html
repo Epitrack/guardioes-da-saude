@@ -19,6 +19,12 @@
             </fieldset>
           </form>
 
+          <br>
+
+          <div ng-show="loginError" class="alert alert-danger" role="alert">
+            <span>{{loginError}}</span>
+          </div>
+
           <p class="login-email"><a ng-href="esqueceu-senha">esqueceu sua senha?</a></p>
       </section>
     </div>

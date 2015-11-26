@@ -56,8 +56,7 @@ angular.module('gdsApp')
       $http.post(apiUrl + '/user/login', data)
         .then(function(data){
           console.log('Success loginUser: ', data);
-          LocalStorage.userLogin(data.data.user, data.data.token);
-          callback(data)
+          callback(data);
         }, function(error){
           console.warn('Error loginUser: ', error);
       });
