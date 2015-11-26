@@ -12,17 +12,18 @@ angular.module('gdsApp')
 
     $scope.screen = {};
 
-    $scope.uploadPic = function(file) {
-      UserApi.changePhoto(file, function(data) {
-        $scope.progress = data;
+    $scope.uploadPic = function() {
 
-        if (typeof(data) === 'number') {
-          $scope.progress = data;
+      UserApi.changeAvatar($scope.avatar, function(data) {
+
+        if (data.error){
+          console.error('deu ruim');
+        
         } else {
-          $scope.progress = null;
-
-          LocalStorage.updateAvatar(ApiConfig.API_URL + data.data.user[0].picture);
+          console.log('rolou');
         }
+      
+        // LocalStorage.updateAvatar(ApiConfig.API_URL + data.data.user[0].picture);
 
       });
     };
@@ -33,7 +34,5 @@ angular.module('gdsApp')
 			  $('.input-file-trigger').css('background-image', 'url(' + clickedAvatar + ')');
 			});
     }
-
-    $scope.uploadPic();
-
+    
 	}]);

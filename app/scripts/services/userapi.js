@@ -74,16 +74,15 @@ angular.module('gdsApp')
       });
     };
 
-    obj.changePhoto = function(img, callback) {
-      $http.get(apiUrl + '/user/upload-photo', img, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+    obj.changeAvatar = function(avatar, callback) {
+      $http.post(apiUrl + '/user/update', {id: LocalStorage.getItem('userStorage').id, picture: avatar}, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){
           console.log('Success changePhoto: ', result);
           callback(result);
-          obj.updateUser(userStorage.id);
+          obj.updateUser(LocalStorage.getItem('userStorage').id);
         }, function(error){
           console.warn('Error changePhoto: ', error);
       });
-
     };
 
     // update user profile
