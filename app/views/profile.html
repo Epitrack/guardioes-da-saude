@@ -32,7 +32,7 @@
               <label for="profile-birthdate">Data de nascimento</label>
               <input class="input-primary birthdate" id="profile-birthdate" name="profile-birthdate" type="text" ng-model="screen.user.dob" ng-bind="date | date:'yyyy/mm/dd'">
               <span class="icon-birthdate">
-                <a data-toggle="modal" data-target="#calendarModal"></a>
+                <a data-toggle="modal" data-target="#calendarModal" ng-click="openForDataPicker()"></a>
               </span>
             </fieldset>
 

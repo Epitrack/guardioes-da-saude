@@ -45,5 +45,16 @@ angular.module('gdsApp')
       });
     };
 
+    $scope.openDatePicker = function(){
+      $('.birthdate').datepicker({
+        autoclose: true
+      });
+    };
+
+    $scope.openForDataPicker = function() {
+      $('.birthdate').focus();
+    };
+
     $scope.getUser();
+    $scope.openDatePicker();
   }]);

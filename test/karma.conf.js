@@ -48,6 +48,7 @@ module.exports = function(config) {
       'bower_components/cheet.js/cheet.js',
       'bower_components/firebase/firebase.js',
       'bower_components/angularfire/dist/angularfire.js',
+      'bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
