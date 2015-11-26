@@ -18,6 +18,8 @@ angular.module('gdsApp')
     $scope.createData = {};
 
     $scope.createUser = function() {
+      return console.warn($scope.createData);
+
       UserApi.createUser($scope.createData, function(data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
