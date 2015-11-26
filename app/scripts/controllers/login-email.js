@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', '$rootScope', function ($scope, UserApi, toaster, $location, $rootScope) {
+  .controller('LoginEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', '$rootScope', 'LocalStorage', function ($scope, UserApi, toaster, $location, $rootScope, LocalStorage) {
 
     $scope.pageClass = 'login-email-page';
 
@@ -18,10 +18,11 @@ angular.module('gdsApp')
     $scope.loginUserEmail = function() {
       UserApi.loginUser($scope.loginEmail, function(data) {
         if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
+          $scope.loginError = 'Email ou usuário inválidos.'
         } else {
           toaster.pop('success', data.data.message);
           $rootScope.user = data.data.user;
+          LocalStorage.userLogin(data.data.user, data.data.token);
           $location.path('/health-daily');
         }
       });

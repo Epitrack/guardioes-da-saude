@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('IndexCtrl', ['$scope', 'LocalStorage', function ($scope, LocalStorage) {
+  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', function ($scope, LocalStorage, $rootScope) {
 
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');;
@@ -53,6 +53,14 @@ angular.module('gdsApp')
     if (!localStorage.getItem('userStorage')) {
       $scope.getUserLocation();
     }
+    // ====
+
+    // when user click in logout button
+    $scope.clearStorage = function() {
+      delete $rootScope.user;
+
+      localStorage.removeItem('userStorage');
+    };
     // ====
 
   }]);
