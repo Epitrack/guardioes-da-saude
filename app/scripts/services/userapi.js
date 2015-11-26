@@ -34,12 +34,12 @@ angular.module('gdsApp')
       data.platform = platform;
       data.client = client;
 
-      data.dob = moment().format('YYYY-MM-DD');
+      data.dob = data.dob.split("-").reverse().join('-');
 
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
 
-      return console.warn('DATA -> ', data);
+      // return console.warn('DATA -> ', data);
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
