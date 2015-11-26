@@ -53,5 +53,17 @@ angular.module('gdsApp')
       $scope.getHousehold();
     };
 
+    $scope.openDatePicker = function(){
+      $('.birthdate').datepicker({
+        autoclose: true,
+        format: "yyyy-mm-dd"
+      });
+    };
+
+    $scope.openForDataPicker = function() {
+      $('.birthdate').focus();
+    };
+
     $scope.getHousehold();
+    $scope.openDatePicker();
   }]);
