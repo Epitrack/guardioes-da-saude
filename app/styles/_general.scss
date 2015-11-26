@@ -180,6 +180,18 @@ body {
   }
 }
 
+.dropdown {
+  &.dropnav {
+    button {
+      font-size: ($fs-normal)+.2;
+      background: transparent;
+      border: none;
+      color: $link-primary;
+      margin: 20px 20px auto auto;
+    }
+  }
+}
+
 // ===
 
 

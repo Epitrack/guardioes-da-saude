@@ -19,7 +19,7 @@ angular.module('gdsApp')
       delete $rootScope.user;
 
       localStorage.removeItem('userStorage');
-      localStorage.removeItem('userLocation');
+      // localStorage.removeItem('userLocation');
     };
     // ====
 

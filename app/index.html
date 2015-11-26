@@ -99,9 +99,23 @@
                   <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-blank.svg" alt="avatar"></figure>
                 </li>
 
+                <li ng-show="user" class="dropdown dropnav">
+                  <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{user.nick}}
+                    <span class="caret"></span>
+                  </button>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a ng-href="health-daily">Diário da Saúde</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ng-href="/" ng-click="clearStorage()">Sair</a></li>
+                  </ul>
+                </li>
+
                 <li ng-show="user.picture">
                   <figure class="mini-avatar-user hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
                 </li>
+
                 <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
               </ul>
             </div>
