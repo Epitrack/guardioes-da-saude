@@ -286,19 +286,15 @@ select {
   cursor: pointer;
 }
 
-.input-file-trigger {
-  @include path('avatar/avatar-blank.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
+.avatar-image {
   display: block;
   width: 180px;
   height: 180px;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
   border-radius: 100%;
   margin: 0 auto;
+  margin-bottom: 25px;
   @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
 
   img {

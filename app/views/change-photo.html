@@ -82,20 +82,17 @@
       <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3 upload-form">
         <h3 class="change-photo-subtitle">Envie uma foto</h3>
         
-
-        <form name="searchPhotoDefault">
-          <div class="input-file-container">
-            <label tabindex="0" for="my-file" class="input-file-trigger" data-label="Procurar por uma imagem">
-              <img ng-show="searchPhotoDefault.file.$valid" ngf-thumbnail="picFile" class="thumb">
-            </label>
+        <div ng-if="user.id != null">
+          <div ng-show="!user.picture">
+            <img class="avatar-image" src="images/avatar/avatar-blank.svg" alt="avatar">
           </div>
 
-          <button class="save-change-photo" ng-click="uploadPic()">Salvar foto</button>
-          <br>
-        </form>
-
-
-
+          <div ng-show="user.picture">
+            <img class="avatar-image" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar">
+          </div>
+        </div>
+        
+        <button class="save-change-photo" ng-click="uploadPic()">Salvar foto</button>
       </div>
     </div>
   </article>
