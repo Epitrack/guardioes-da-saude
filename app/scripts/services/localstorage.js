@@ -24,7 +24,7 @@ angular.module('gdsApp')
     };
 
     // quando cria o usuário
-    obj.userCreateData = function(obj) {
+    obj.userCreateData = function(obj, params) {
       userStorage.nick = obj.nick;
       userStorage.email = obj.email;
       userStorage.dob = obj.dob;
@@ -42,10 +42,15 @@ angular.module('gdsApp')
       userStorage.updatedAt = obj.updatedAt;
       userStorage.week_of = obj.week_of;
       userStorage.zip = obj.zip;
-      userStorage.user_token = obj.token;
 
       if (obj.picture) {
         userStorage.picture = obj.picture
+      }
+
+      if (params) {
+        userStorage.user_token = params;
+      } else {
+        userStorage.user_token = obj.token;
       }
 
       // adiciona no storage as informações do usuário

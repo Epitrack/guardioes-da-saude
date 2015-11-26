@@ -167,7 +167,6 @@ angular.module('gdsApp')
       $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
         .then(function(result){
           console.log('Success fbLogin: ', result);
-          // LocalStorage.userCreateData(data.data.user);
           callback(result);
         }, function(error){
           console.warn('Error fbLogin: ', error);

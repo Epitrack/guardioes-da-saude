@@ -34,9 +34,10 @@ angular.module('gdsApp')
         $scope.userData = userFbData;
 
         UserApi.fbLogin(userFbData.fb_token, function(data) {
-          console.warn(data);
+          console.log('Data -> ', data);
           if (data.data.error == false) {
             console.log(data.data.message);
+            LocalStorage.userCreateData(data.data.user, data.data.token);
             $location.path('health-daily');
           } else {
             console.log(data.data.message);
