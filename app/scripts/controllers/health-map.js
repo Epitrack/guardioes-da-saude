@@ -13,8 +13,10 @@ angular.module('gdsApp')
     $scope.pageClass = 'health-map';
 
     var myIcon = {
-        iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-64.png',
-        iconSize: [38, 95]
+        iconUrl: '../../images/icon-user-location.png',
+        iconSize: [38, 95],
+        shadowUrl: '../../images/shadow-user-location.png',
+        shadowSize: [50, 64]
     };
 
     angular.extend($scope, {
@@ -44,31 +46,32 @@ angular.module('gdsApp')
     });
 
     $scope.addMarkers = function() {
-        var addressPointsToMarkers = function(points) {
-          if($rootScope.markersByCity.length == 0 || points.length == 0) {
-            console.log('error', 'Nenhuma pessoa reportou nesta região.');
-            toaster.pop('error', 'Nenhuma pessoa reportou nesta região.');
-          };
-
-          var t = [$scope.userLocation];
-          angular.forEach(points, function(p){
-            t.push({
-                lat: p.lat,
-                lng: p.lon,
-                zoom: 12,
-                title: p.name, // upaTitle
-                message: p.logradouro + ', ' + p.bairro + ' - ' + p.numero, // upaMessage
-                icon: {
-                  iconUrl: '../../images/icon-health-daily-' +  p.no_symptom + '.svg',
-                  iconSize: [38, 95]
-                }
-              });
-          });
-          return t;
+      var addressPointsToMarkers = function(points) {
+        if($rootScope.markersByCity.length == 0 || points.length == 0) {
+          console.log('error', 'Nenhuma pessoa reportou nesta região.');
+          toaster.pop('error', 'Nenhuma pessoa reportou nesta região.');
         };
 
-        $scope.markers = addressPointsToMarkers($rootScope.markersByCity);
+        var t = [$scope.userLocation];
+
+        angular.forEach(points, function(p){
+          t.push({
+              lat: p.lat,
+              lng: p.lon,
+              zoom: 8,
+              message: p.formattedAddress,
+              icon: {
+                iconUrl: '../../images/icon-health-daily-' +  p.no_symptom + '.svg',
+                iconSize: [38, 95]
+              }
+            });
+        });
+
+        return t;
       };
+
+      $scope.markers = addressPointsToMarkers($rootScope.markersByCity);
+    };
 
     // só adiciona os marcadores se existir no $rootScope
     // impede que apareça erro se entrar na url /health-map sem digitar um endereço
@@ -81,6 +84,8 @@ angular.module('gdsApp')
 
     $scope.getSurveyByCity = function() {
       Surveyapi.getMarkersByCity($scope.surveyByCity.city, function(data) {
+        $rootScope.markersByCity = '';
+
         if (data.data.error === false) {
           $rootScope.markersByCity = data.data.data;
           $scope.addMarkers();
