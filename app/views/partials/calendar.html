@@ -18,7 +18,7 @@
 
     <!-- DIAS COM SINTOMAS -->
     <div class="with-symptoms">
-      <span 
+      <span
         ng-if="checkForSymptoms(day)"
         class="day selected"
         ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
@@ -26,20 +26,20 @@
         popover-title="{{ day.name }}"
         uib-popover="{{day.symptoms}} Sintomas"
         popover-placement="top"
-        popover-trigger="click">{{ day.number }} 
+        popover-trigger="hover">{{ day.number }}
       </span>
     </div>
 
     <!-- DIAS SEM SINTOMAS -->
     <div class="no-symptoms">
-      <span 
+      <span
         ng-if="!checkForSymptoms(day)"
         class="day no-symptoms"
         ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
         popover-title="{{ day.name }}"
         uib-popover="0 Sintomas"
         popover-placement="top"
-        popover-trigger="click">{{ day.number }}
+        popover-trigger="hover">{{ day.number }}
       </span>
     </div>
   </div>
