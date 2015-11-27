@@ -25,10 +25,10 @@
             </a>
           </aside>
 
-          <aside class="survey-avatar" ng-repeat="member in screen.user.household">
+          <aside class="survey-avatar" ng-repeat="member in user.household">
             <a href="survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
               <figure>
-                <img src="../images/avatar/avatar-2.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
+                <img src="../images/avatar/avatar-blank.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
                 <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }} anos</span></figcaption>
               </figure>
             </a>
@@ -41,3 +41,6 @@
 
 <!-- Modal add member -->
 <div ng-include src="'views/partials/modal-add-profile.html'"></div>
+
+<!-- Toaster -->
+<div ng-include src="'views/partials/toaster.html'"></div>
