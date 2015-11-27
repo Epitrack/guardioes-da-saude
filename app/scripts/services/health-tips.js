@@ -48,53 +48,5 @@ angular.module('gdsApp')
     };
     // ====
 
-    // ====
-    obj.getVacinas = function(callback) {
-      $http.get('../../assets/vacinas.json')
-        .success(function(data) {
-          console.log('Success getVacinas: ', data);
-          callback(data);
-        }).error(function(error) {
-          console.log('Error getVacinas: ', error);
-        })
-    };
-    // ====
-
-    // ====
-    obj.getTelefones = function(callback) {
-      $http.get('../../assets/telefones-uteis.json')
-        .success(function(data) {
-          console.log('Success getTelefonesUteis: ', data);
-          callback(data);
-        }).error(function(error) {
-          console.log('Error getTelefonesUteis: ', error);
-        })
-    };
-    // ====
-
-    // ====
-    obj.getCuidados = function(callback) {
-      $http.get('../../assets/cuidados.json')
-        .success(function(data) {
-          console.log('Success getCuidados: ', data);
-          callback(data);
-        }).error(function(error) {
-          console.log('Error getCuidados: ', error);
-        })
-    };
-    // ====
-
-    // ====
-    obj.getPrevencoes = function(callback) {
-      $http.get('https://gist.githubusercontent.com/thulioph/ec5829dcfb6c2ca2e36d/raw/aced61c01ffa9cd9242c1d21d10b99917e66c249/prevencao.json')
-        .success(function(data) {
-          console.log('Success getPrevencoes: ', data);
-          callback(data);
-        }).error(function(error) {
-          console.log('Error getPrevencoes: ', error);
-        })
-    };
-    // ====
-
     return obj;
   }]);

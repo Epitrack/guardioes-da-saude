@@ -127,32 +127,4 @@ angular.module('gdsApp')
       });
     };
 
-    // VACINAS
-    $scope.loadVacinas = function() {
-      healthTips.getVacinas(function(data) {
-        $scope.vacinas = data;
-      });
-    };
-
-    // TELEFONES
-    $scope.loadTelefones = function() {
-      healthTips.getTelefones(function(data) {
-        $scope.telefones = data;
-      });
-    };
-
-    // CUIDADOS
-    $scope.loadCuidados = function() {
-      healthTips.getCuidados(function(data) {
-        $scope.cuidados = data;
-      });
-    };
-
-    // PREVENCAO
-    $scope.loadPrevencao = function() {
-      healthTips.getPrevencoes(function(data) {
-        $scope.prevencoes = data;
-      });
-    };
-
   }]);
