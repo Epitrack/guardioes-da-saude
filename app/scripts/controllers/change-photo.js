@@ -8,31 +8,28 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChangePhotoCtrl', ['$scope', 'Upload', '$timeout', 'UserApi', 'LocalStorage', 'ApiConfig', '$rootScope', function ($scope, Upload, $timeout, UserApi, LocalStorage, ApiConfig, $rootScope) {
+  .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', 'toaster', function ($scope, UserApi, LocalStorage, $rootScope, toaster) {
 
-    $scope.screen = {};
+    $scope.avatar = {};
 
     $scope.uploadPic = function() {
-
       UserApi.changeAvatar($scope.avatar, function(data) {
-
-        if (data.error){
-          console.error('deu ruim');
-        
+        if (data.data.error == false){
+          console.log(data.data.message);
+          toaster.pop('success', data.data.message, null);
         } else {
-          console.log('rolou');
+          console.log(data.data.message);
+          toaster.pop('error', data.data.message);
         }
-      
-        // LocalStorage.updateAvatar(ApiConfig.API_URL + data.data.user[0].picture);
-
       });
     };
 
     $scope.chooseDefaultAvatar = function() {
     	$('label.radio-avatar').on('click', function(){
 			  var clickedAvatar = $(this).find('i').css('background-image').replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+
 			  $('.avatar-image').attr('src', clickedAvatar);
 			});
-    }
+    };
 
 	}]);
