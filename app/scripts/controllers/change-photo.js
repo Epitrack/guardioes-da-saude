@@ -16,7 +16,7 @@ angular.module('gdsApp')
       UserApi.changeAvatar($scope.avatar, function(data) {
         if (data.data.error == false){
           console.log(data.data.message);
-          toaster.pop('success', data.data.message);
+          toaster.pop('success', data.data.message, null);
         } else {
           console.log(data.data.message);
           toaster.pop('error', data.data.message);
