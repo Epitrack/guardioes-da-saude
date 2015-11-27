@@ -40,14 +40,21 @@ angular.module('gdsApp')
       }
 
       Surveyapi.submitSurvey(form, function(data) {
-        if (data.data.error != false) {
+        if (data.data.error == true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          toaster.pop('success', data.data.message);
           console.log(data.data.message);
-          $scope.goToHome();
+          toaster.pop('success', data.data.message);
+
+          openModal();
         }
+      });
+    };
+
+    function openModal() {
+      $('#modal-thanks').modal({
+        show: 'true'
       });
     };
 
