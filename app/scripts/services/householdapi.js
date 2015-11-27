@@ -22,7 +22,8 @@ angular.module('gdsApp')
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
-      data.dob = moment(data.dob).format('YYYY-DD-MM'); // change date format
+      // data.dob = moment(data.dob).format('YYYY-DD-MM'); // change date format
+      data.dob = data.dob.split("-").reverse().join('-');
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
