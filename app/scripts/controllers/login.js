@@ -22,7 +22,7 @@ angular.module('gdsApp')
 
         userFbData.fb_token = authData.facebook.accessToken;
         userFbData.nick = authData.facebook.displayName;
-        userFbData.picture = authData.facebook.profileImageURL;
+        // userFbData.picture = authData.facebook.profileImageURL;
         userFbData.fb = authData.facebook.id;
 
         if (authData.facebook.cachedUserProfile.gender == 'male') {
@@ -58,7 +58,7 @@ angular.module('gdsApp')
 
         userGlData.access_token = authData.google.accessToken;
         userGlData.nick = authData.google.displayName;
-        userGlData.picture = authData.google.profileImageURL;
+        // userGlData.picture = authData.google.profileImageURL;
         userGlData.gl = authData.google.id;
 
         $scope.userData = userGlData;
@@ -88,7 +88,7 @@ angular.module('gdsApp')
         userTwData.oauth_token = authData.twitter.accessToken;
         userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
         userTwData.nick = authData.twitter.displayName;
-        userTwData.picture = authData.twitter.profileImageURL;
+        // userTwData.picture = authData.twitter.profileImageURL;
         userTwData.tw = authData.twitter.id;
 
         $scope.userData = userTwData;
