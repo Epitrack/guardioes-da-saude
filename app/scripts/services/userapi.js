@@ -76,7 +76,7 @@ angular.module('gdsApp')
     obj.changeAvatar = function(avatar, callback) {
       avatar.id = LocalStorage.getItem('userStorage').id;
 
-      $http.post(apiUrl + '/user/update', avatar, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+      $http.post(apiUrl + '/user/update', avatar, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success changeAvatar: ', result);
           callback(result);
@@ -92,7 +92,7 @@ angular.module('gdsApp')
       params.id = userStorage.id;
       params.user_token = userStorage.user_token;
 
-      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
           callback(result);
