@@ -188,6 +188,12 @@
     controllerAs: 'dashboardMap',
         resolve: { loggedin: checkLoggedOut }
       })
+  .when('/dashboard/download', {
+    templateUrl: 'views/data-download.html',
+    controller: 'DataDownloadCtrl',
+    controllerAs: 'dataDownload',
+        resolve: { loggedin: checkLoggedOut }
+    })
       // .when('/components', {
       //   templateUrl: 'views/components.html',
       //   controller: 'ComponentCtrl',

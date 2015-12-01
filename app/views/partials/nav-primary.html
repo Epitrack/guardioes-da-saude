@@ -1,15 +1,21 @@
 <section class="col-sm-3 col-md-2 no-padding sidebar" ng-controller="MainCtrl">
   <nav class="nav-primary">
     <ul>
-      <!-- <li>
+
+      <li>
         <a ng-click="dashboardActive = !dashboardActive" class="dashboard dropdown" title="Painel de Controle">Painel de Controle</a>
 
         <ul class="nav nav-list sub-nav" id="dashboardActive" ng-hide="!dashboardActive">
           <li><a ng-href="dashboard">Geral</a></li>
           <li><a ng-href="dashboard/map">Mapa</a></li>
           <li><a ng-href="dashboard/analysis">Análise de dados</a></li>
+          <li><a ng-href="dashboard/download">Download dos dados</a></li>
         </ul>
-      </li> -->
+      </li>
+
+      <li>
+        <a ng-href="/health-map" class="health-map" title="Mapa da Saúde">Mapa da Saúde</a>
+      </li>
 
       <li>
         <a ng-click="active = !active" class="health-daily dropdown" title="Diário de Saúde">Diário de Saúde</a>

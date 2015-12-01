@@ -469,6 +469,14 @@ body {
       &::before { @include path('nav/icon-health-daily.svg'); }
     }
 
+    &.health-map {
+      &::before {
+        height: 42px;
+        background-size: 90%;
+        @include path('nav/icon-health-map.svg');
+      }
+    }
+
     &.health-tips {
       &::before {
         height: 42px;
@@ -1273,7 +1281,7 @@ p.login-email {
   background-color: $btn-primary !important;
   height: 40px;
   margin-bottom: 35px;
-  
+
   .location {
     padding: 10px;
     margin: 0;
