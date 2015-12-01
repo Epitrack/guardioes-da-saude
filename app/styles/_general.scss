@@ -846,13 +846,16 @@ body {
   // .sort-by { float: right; }
 
   h1 {
-    font-family: $ff-light;
     font-size: ($fs-medium)+.4;
     color: $font-primary;
     margin: 10px 0 20px 0;
 
     span {
       font-family: $ff-bold;
+    }
+
+    .text {
+      font-family: $ff-light;
     }
   }
 }
