@@ -25,13 +25,13 @@ angular.module('gdsApp')
 
     // quando cria o usuário
     obj.userCreateData = function(obj, params) {
+      userStorage.app = obj.app;
       userStorage.nick = obj.nick;
       userStorage.email = obj.email;
       userStorage.dob = obj.dob;
       userStorage.race = obj.race;
       userStorage.gender = obj.gender;
       userStorage.active = obj.active;
-      userStorage.app = obj.app;
       userStorage.city = obj.city;
       userStorage.createdAt = obj.createdAt;
       userStorage.formattedAddress = obj.formattedAddress;
@@ -52,6 +52,28 @@ angular.module('gdsApp')
       } else {
         userStorage.user_token = obj.token;
       }
+
+      // to login with social network
+      if (obj.household) {
+        userStorage.household = obj.household
+      }
+
+      if (obj.active) {
+        userStorage.active = obj.active
+      }
+
+      if (obj.categories) {
+        userStorage.categories = obj.categories
+      }
+
+      if (obj.hashtags) {
+        userStorage.hashtags = obj.hashtags
+      }
+
+      if (obj.surveys) {
+        userStorage.surveys = obj.surveys
+      }
+      // ====
 
       // adiciona no storage as informações do usuário
       $rootScope.user = userStorage;
