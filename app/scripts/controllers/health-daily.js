@@ -13,6 +13,8 @@ angular.module('gdsApp')
     $scope.pageClass = 'health-daily-page';
 
     UserApi.getUserSurvey(function(data) {
+      console.warn(data);
+
       $scope.userSurvey = data.data.data;
 
       if ($scope.userSurvey.total !== 0) {
