@@ -13,7 +13,7 @@
     <div class="panel-body">
       <a ng-href="" class="col-xs-12 col-md-3" class="link-figure">
         <figure class="card-avatar-image">
-          <img src="../images/avatar/avatar-1.svg" alt="Avatar de {{ screen.household.nick }}">
+          <img src="../images/avatar/avatar-blank.svg" alt="Avatar de {{ screen.household.nick }}">
           <!-- <figcaption>Editar</figcaption> -->
         </figure>
       </a>
@@ -88,6 +88,7 @@
 
           <fieldset class="col-xs-12">
             <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
+            <button type="button" data-toggle="modal" data-target="#modal-delete-household" class="pull-right btn btn-danger">Excluir</button>
           </fieldset>
         </form>
       </div>
@@ -95,5 +96,9 @@
   </article>
 </section>
 
+
 <!-- Toaster -->
 <div ng-include src="'views/partials/toaster.html'"></div>
+
+<!-- Modal -->
+<div ng-include src="'views/partials/modal-delete-household.html'"></div>

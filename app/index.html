@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <base href="/"> 
+    <base href="/">
     <title>Guardiões da Saúde</title>
 
     <!-- META TAGS -->
@@ -96,7 +96,7 @@
             <!-- visible when user is logged -->
             <div ng-if="user.id != null">
               <ul class="nav navbar-nav">
-                <li ng-show="!user.picture">
+                <li ng-show="!user.picture || user.picture == '0'">
                   <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-blank.svg" alt="avatar"></figure>
                 </li>
 
@@ -226,6 +226,7 @@
     <script src="scripts/services/searchcitiesapi.js"></script>
     <script src="scripts/controllers/esqueci-minha-senha.js"></script>
     <script src="scripts/controllers/template-email-esqueci-senha.js"></script>
+    <script src="scripts/controllers/data-download.js"></script>
     <!-- endbuild -->
 </body>
 </html>

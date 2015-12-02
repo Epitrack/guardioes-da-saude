@@ -34,6 +34,19 @@ angular.module('gdsApp')
       });
     };
 
+    obj.deleteHousehold = function(data, callback) {
+      data.client = client;
+
+      $http.get(apiUrl + '/household/delete/' + data.id + '?client=' + data.client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+        .then(function(data){
+          console.log('Success deleteHousehold ', data);
+          callback(data);
+          UserApi.updateUser(userStorage.id);
+        }, function(error){
+          console.warn('Error deleteHousehold: ', error)
+      });
+    };
+
     obj.getHousehold = function(userID, callback) {
       $http.get(apiUrl + '/user/household/' + userID, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
       .then(function(data){

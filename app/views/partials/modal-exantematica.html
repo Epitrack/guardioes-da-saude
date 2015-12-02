@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal-thanks" tabindex="-1" role="dialog" aria-labelledby="modalAddProfile">
+<div class="modal fade" id="modal-exantematica" tabindex="-1" role="dialog" aria-labelledby="modalAddProfile">
   <article class="modal-dialog" role="document">
     <div class="modal-content">
       <form class="card-form" name="i-feel-good-form">
@@ -13,18 +13,16 @@
         <div class="modal-body">
           <div class="panel-body">
             <figure class="col-xs-12 thank-you-image">
-              <img src="images/icon-thank-you.svg" alt="Obrigado pela participação.">
+              <img src="images/icon-exclama.svg" alt="Atenção!">
             </figure>
 
             <div class="col-xs-12">
-              <p class="thank-you-text">Obrigado pela sua contribuição.</p>
-              <p class="thank-you-text">Continue informando diariamente como está sua saúde.</p>
+              <p class="thank-you-text"><b>Atenção!</b></p>
+              <p class="thank-you-text">Os sintomas reportados podem estar relacionados ao Zika vírus.</p>
+              <p class="thank-you-text">Procure a unidade de pronto atendimento mais próxima.</p>
 
               <footer class="thank-you-share">
-                <h3>Convide seus amigos para serem Guardiões!</h3>
-
-                <button ng-click="share('facebook')" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook</button>
-                <button ng-click="share('twitter')" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter</button>
+                <button ng-click="goToUpas();" data-dismiss="modal" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-tip upas active">Procurar UPAs</button>
               </footer>
             </div>
           </div>
