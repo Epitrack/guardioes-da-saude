@@ -853,11 +853,11 @@ body {
     span {
       font-family: $ff-bold;
     }
-
-    .text {
-      font-family: $ff-light;
-    }
   }
+}
+
+.check-odd {
+  font-family: $ff-light;
 }
 
 .frequency {

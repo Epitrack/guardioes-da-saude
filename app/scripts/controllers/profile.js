@@ -20,7 +20,7 @@ angular.module('gdsApp')
 
       $scope.screen.user = {
         nick: u.nick,
-        dob: moment(u.dob).format('YYYY-DD-MM'), // change date format
+        dob: moment(u.dob).format('YYYY-MM-DD'), // change date format
         gender: u.gender,
         email: u.email,
         race: u.race,
@@ -45,17 +45,13 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.openDatePicker = function(){
-      $('.birthdate').datepicker({
-        autoclose: true,
-        format: "yyyy-mm-dd"
-      });
+    $scope.open = function($event) {
+      $scope.status.opened = true;
     };
 
-    $scope.openForDataPicker = function() {
-      $('.birthdate').focus();
+    $scope.status = {
+      opened: false
     };
 
     $scope.getUser();
-    $scope.openDatePicker();
   }]);

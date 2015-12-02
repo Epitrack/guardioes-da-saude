@@ -27,7 +27,7 @@ angular.module('gdsApp')
 
         $scope.screen.household = {
           nick: hh.nick,
-          dob: hh.dob,
+          dob: moment(hh.dob).format('YYYY-MM-DD'), // change date format
           gender: hh.gender,
           email: hh.email,
           race: hh.race,
@@ -53,17 +53,13 @@ angular.module('gdsApp')
       $scope.getHousehold();
     };
 
-    $scope.openDatePicker = function(){
-      $('.birthdate').datepicker({
-        autoclose: true,
-        format: "yyyy-mm-dd"
-      });
+    $scope.open = function($event) {
+      $scope.status.opened = true;
     };
 
-    $scope.openForDataPicker = function() {
-      $('.birthdate').focus();
+    $scope.status = {
+      opened: false
     };
 
     $scope.getHousehold();
-    $scope.openDatePicker();
   }]);
