@@ -30,14 +30,8 @@ angular.module('gdsApp')
       }
 
       if($scope.userSurvey.pct_symptoms %1 !== 0) {
-          $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
+        $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
       }
-
-      if ($scope.userSurvey.total == 1) {
-        $('.total-participants h1 span.text').text('Participação');
-      }
-
-      console.log('$scope.userSurvey.total >>>', $scope.userSurvey.total);
     });
 
     $scope.getSurveyByMonth = function() {

@@ -29,6 +29,10 @@ angular.module('gdsApp')
     $scope.getHouseholdSurvey = function(hhId) {
       HouseholdApi.getHouseholdSurvey(hhId, function(data) {
         $scope.householdSurveys = data.data.data;
+
+        if ($scope.householdSurveys.total == 1) {
+          $scope.checkSingular();
+        }
       });
     };
 

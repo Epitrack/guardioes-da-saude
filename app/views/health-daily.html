@@ -19,7 +19,7 @@
         <h2>Total de participações</h2>
         <h1>
           <span>{{ userSurvey.total }}</span>
-          <span class="text">Participações</span>
+          <span ng>Participações</span>
         </h1>
       </div>
 
@@ -44,7 +44,7 @@
                 <img src="../images/icon-health-daily-good.svg" alt="Bem">
                 <figcaption>
                   <span>{{ userSurvey.pct_no_symptoms }}%</span> Bem
-                  <p>{{ userSurvey.no_symptom }} Participações</p>
+                  <p>{{ userSurvey.no_symptom }} <span>Participações</span></p>
                 </figcaption>
               </figure>
             </li>
@@ -54,7 +54,7 @@
                 <img src="../images/icon-health-daily-bad.svg" alt="Mal">
                 <figcaption>
                   <span>{{ userSurvey.pct_symptoms }}%</span> Mal
-                  <p>{{ userSurvey.symptom }}  Participações</p>
+                  <p>{{ userSurvey.symptom }} <span>Participações</span></p>
                 </figcaption>
               </figure>
             </li>

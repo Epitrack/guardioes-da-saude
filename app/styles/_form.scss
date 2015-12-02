@@ -129,7 +129,31 @@ select {
     width: 80%;
     margin-right: 1%;
     display: inline-block;
+    height: 41px;
   }
+}
+
+.glyphicon-chevron-left {
+  &::before {
+    content: '<';
+  }
+}
+
+.glyphicon-chevron-right {
+  &::before {
+    content: '>';
+  }
+}
+
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
 }
 
 .icon-birthdate {
