@@ -33,6 +33,11 @@
             <label for="estive-fora">Estive fora do Brasil nos últimos 14 dias</label>
           </fieldset>
 
+          <fieldset class="col-xs-12 col-sm-4 pull-right" ng-show="symptoms.hadTravelledAbroad">
+            <label for="what-country">Qual país?</label>
+            <input type="text" ng-model="symptoms.travelLocation" id="what-country" class="input-primary">
+          </fieldset>
+
           <fieldset class="col-xs-12">
             <button data-toggle="modal" data-target="#confirm-send-survey" class="col-xs-12 btn-submit">Confirmar</button>
           </fieldset>
@@ -51,3 +56,6 @@
 
 <!-- Thanks modal -->
 <div ng-include src="'views/partials/modal-thanks.html'"></div>
+
+<!-- Exantematica modal -->
+<div ng-include src="'views/partials/modal-exantematica.html'"></div>

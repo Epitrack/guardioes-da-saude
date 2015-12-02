@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', '$window', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout, $window) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function(data) {
@@ -20,6 +20,10 @@ angular.module('gdsApp')
 
     $scope.submitSurvey = function() {
       var form = {};
+
+      if ($scope.symptoms.travelLocation) {
+        var country = $scope.symptoms.travelLocation
+      }
 
       angular.forEach($scope.symptoms, function(v, symptom) {
         if(v) {
@@ -39,6 +43,10 @@ angular.module('gdsApp')
         form.household_id = url[url.length - 2];
       }
 
+      if (country != undefined) {
+        form.travelLocation = country;
+      }
+
       Surveyapi.submitSurvey(form, function(data) {
         if (data.data.error == true) {
           console.warn(data.data.message);
@@ -47,7 +55,11 @@ angular.module('gdsApp')
           console.log(data.data.message);
           toaster.pop('success', data.data.message);
 
-          openModal();
+          if (data.data.exantematica == true) {
+            openModalExantematica();
+          } else {
+            openModal();
+          }
         }
       });
     };
@@ -58,11 +70,37 @@ angular.module('gdsApp')
       });
     };
 
+    function openModalExantematica() {
+      $('#modal-exantematica').modal({
+        show: 'true'
+      });
+    };
+
+    $scope.goToUpas = function() {
+      $timeout(function(){
+        $location.path('/health-tips');
+      },
+      400);
+    };
+
     $scope.goToHome = function() {
       $timeout(function(){
         $location.path('/health-daily');
       },
       300);
+    };
+
+    $scope.share = function(social) {
+      var text, social;
+
+      text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      social = social;
+
+      if (social == 'facebook') {
+        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ text)
+      } else {
+        $window.open('https://twitter.com/home?status='+ text)
+      }
     };
 
   }]);

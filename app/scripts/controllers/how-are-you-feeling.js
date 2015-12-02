@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster) {
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', '$window', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster, $window) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
@@ -51,4 +51,18 @@ angular.module('gdsApp')
       },
       300);
     };
+
+    $scope.share = function(social) {
+      var text, social;
+
+      text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      social = social;
+
+      if (social == 'facebook') {
+        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ text)
+      } else {
+        $window.open('https://twitter.com/home?status='+ text)
+      }
+    };
+
   }]);

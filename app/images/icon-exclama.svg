@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="114px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_exclama</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="09.4---zyka" sketch:type="MSArtboardGroup" transform="translate(-455.000000, -230.000000)" fill="#1E88E5">
+            <g id="obrigado" sketch:type="MSLayerGroup">
+                <g id="icon_exclama" transform="translate(455.000000, 230.000000)" sketch:type="MSShapeGroup">
+                    <g id="atenção" transform="translate(1.000000, 1.000000)">
+                        <circle id="Oval-231" cx="56" cy="83" r="7"></circle>
+                        <circle id="Oval-231" cx="56" cy="67" r="6"></circle>
+                        <path d="M50,27 L62,27 L62,67 L50,67 L50,27 Z" id="Rectangle-1313"></path>
+                        <circle id="Oval-231" cx="56" cy="27" r="6"></circle>
+                        <path d="M56,106 L56,106 C83.6142375,106 106,83.6142375 106,56 C106,28.3857625 83.6142375,6 56,6 C28.3857625,6 6,28.3857625 6,56 C6,83.6142375 28.3857625,106 56,106 L56,106 Z M56,112 L56,112 C25.072054,112 0,86.927946 0,56 C0,25.072054 25.072054,0 56,0 C86.927946,0 112,25.072054 112,56 C112,86.927946 86.927946,112 56,112 L56,112 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

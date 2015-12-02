@@ -49,6 +49,8 @@
     @extend .login-subtitle;
     color: $bg-modal;
   }
+
+  .btn-tip { text-align: center !important; }
 }
 
 // ====
@@ -81,6 +83,10 @@
 @media screen and (min-width: 992px) {
   .modal-add-profile {
     .birthdate { width: 84%; }
+  }
+
+  .thank-you-share {
+    .btn-tip { width: 50% !important; }
   }
 }
 
