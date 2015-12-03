@@ -39,7 +39,8 @@
             </fieldset>
 
             <fieldset class="col-xs-12">
-              <button type="submit" class="btn btn-block btn-primary">Enviar</button>
+              <button type="submit" class="btn btn-block btn-primary"
+              ng-disabled="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid  || formContact.contactSubject.$dirty && formContact.contactSubject.$invalid || formContact.contactMsg.$dirty && formContact.contactMsg.$invalid">Enviar</button>
             </fieldset>
           </form>
         </aside>
