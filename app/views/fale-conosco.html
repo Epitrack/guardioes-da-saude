@@ -13,16 +13,16 @@
         </aside>
 
         <aside class="col-xs-12 col-md-7 col-md-offset-1 no-padding">
-          <form ng-submit="sendContact()" class="card-form contact-form" name="formContact">
+          <form ng-submit="sendContact()" class="card-form contact-form" name="formContact" novalidate>
             <fieldset class="col-xs-12">
               <label for="contact-email">Email</label>
-              <input class="input-primary" id="contact-email" name="contact-email" type="email" ng-model="contact.email">
+              <input class="input-primary" id="contact-email" name="contactEmail" type="email" ng-model="contact.email" required>
             </fieldset>
 
             <fieldset class="col-xs-12">
               <label for="contact-subject">Assunto</label>
 
-              <select class="select-primary" name="contact-subject" id="contact-subject" ng-model="contact.subject">
+              <select class="select-primary" name="contactSubject" id="contactSubject" ng-model="contact.subject" required>
                 <option ng-selected="true" disabled>Escoha um assunto</option>
                 <option value="informacoes">Informações</option>
                 <option value="sugestoes">Sugestões</option>
@@ -35,13 +35,29 @@
 
             <fieldset class="col-xs-12">
               <label for="contact-msg">Mensagem</label>
-              <textarea class="input-primary" id="contact-msg" name="contact-msg" ng-model="contact.message"></textarea>
+              <textarea class="input-primary" id="contact-msg" name="contactMsg" ng-model="contact.message" required></textarea>
             </fieldset>
 
             <fieldset class="col-xs-12">
               <button type="submit" class="btn btn-block btn-primary">Enviar</button>
             </fieldset>
           </form>
+        </aside>
+
+        <!-- validation -->
+        <aside class="col-xs-12 col-md-7 col-md-offset-1">
+          <div ng-show="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid" class="alert alert-warning" role="alert">
+            <span ng-show="formContact.contactEmail.$error.required">O campo <b>email</b> é obrigatório.</span>
+            <span ng-show="formContact.contactEmail.$error.email">Endereço de e-mail inválido.</span>
+          </div>
+
+          <div ng-show="formContact.contactSubject.$dirty && formContact.contactSubject.$invalid" class="alert alert-warning" role="alert">
+            <span ng-show="formContact.contactSubject.$error.required">O campo <b>assunto</b> é obrigatório.</span>
+          </div>
+
+          <div ng-show="formContact.contactMsg.$dirty && formContact.contactMsg.$invalid" class="alert alert-warning" role="alert">
+            <span ng-show="formContact.contactMsg.$error.required">O campo <b>mensagem</b> é obrigatório.</span>
+          </div>
         </aside>
       </section>
     </div>
