@@ -11,6 +11,11 @@ angular.module('gdsApp')
   .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'toaster', function ($scope, UserApi, $rootScope, toaster) {
 
     $scope.pageClass = 'profile-page';
+    $scope.format = 'dd/MM/yyyy';
+    $scope.dateOptions = {
+      formatYear: 'yy',
+      startingDay: 1
+    };
 
     // set user with $rootScope data
     $scope.getUser = function() {
@@ -26,15 +31,21 @@ angular.module('gdsApp')
         race: u.race,
         password: ""
       };
+
+      return console.warn('$scope.screen.user in getUser ', $scope.screen.user);
     };
 
     $scope.editProfile = function() {
+      $scope.screen.user.dob = moment($scope.dt).format('YYYY-MM-DD');
+      
+      // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
+
       if($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
       }
 
       UserApi.updateProfile($scope.screen.user, function(data) {
-        console.log('editProfile: ', data);
+        // return console.log('updateProfile in editProfile ', data);
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
@@ -46,12 +57,16 @@ angular.module('gdsApp')
     };
 
     $scope.open = function($event) {
-      $scope.status.opened = true;
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $scope.opened = true;
     };
 
-    $scope.status = {
-      opened: false
-    };
+    $scope.convertDate = function() {
+      var convertedDate = moment($scope.screen.user.dob).format('DD-MM-YYYY').replace(/-/g, "/");
+      $scope.convertedBirthDate = convertedDate;
+    }
 
     $scope.getUser();
   }]);
