@@ -4,7 +4,15 @@
       <section class="col-xs-12 how-it-works">
         <h2 class="title-secondary">Como Funciona?</h2>
 
-        <aside id="video" class="col-xs-12 video"></aside>
+        <aside id="slideshow" class="col-xs-12 slideshow" ng-controller="SlideshowCtrl">
+          <!-- <ul rn-carousel rn-carousel-auto-slide rn-carousel-transition="hexagon" class="image">
+            <li ng-repeat="images in kittens">
+              <div ng-repeat="image in images">
+                <img class="alignLeft" ng-src="{{image}}"/>
+              </div>
+            </li>
+          </ul> -->
+        </aside>
 
         <div class="steps">
           <aside class="col-xs-12 col-sm-4 step-box">
@@ -32,14 +40,14 @@
           <aside class="col-xs-12 col-sm-4 step-box">
             <h4 class="step-title">Dicas</h4>
             <p class="step-text">
-              Além de conter dicas relevantes sobre cuidados com a saúde, prevenção de doenças e vacinação, o Guardião localiza as UPAs e farmácias mais próximas, com auxílio de mapas. 
+              Além de conter dicas relevantes sobre cuidados com a saúde, prevenção de doenças e vacinação, o Guardião localiza as UPAs e farmácias mais próximas, com auxílio de mapas.
             </p>
           </aside>
 
           <aside class="col-xs-12 col-sm-4 step-box">
             <h4 class="step-title">Diário da Saúde</h4>
             <p class="step-text">
-              Monitore seu histórico de saúde e dos seus familiares cadastrados. Todos os seus registros serão salvos, permitindo que você os acesse a qualquer lugar e ocasião. 
+              Monitore seu histórico de saúde e dos seus familiares cadastrados. Todos os seus registros serão salvos, permitindo que você os acesse a qualquer lugar e ocasião.
             </p>
           </aside>
 
@@ -57,21 +65,3 @@
   <!-- Footer -->
   <div ng-include src="'views/partials/footer-not-logged.html'"></div>
 </div>
-
-<script>
-  // Load the Player API code asynchronously.
-  // var tag = document.createElement('script');
-  // tag.src = "https://www.youtube.com/player_api";
-  // var firstScriptTag = document.getElementsByTagName('script')[0];
-  // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // YouTube player after the API code downloads.
-  // var player;
-  // function onYouTubePlayerAPIReady() {
-  //   player = new YT.Player('video', {
-  //     height: '100%',
-  //     width: '100%',
-  //     videoId: 'SzLGD2MBV34'
-  //   });
-  // }
-</script>
