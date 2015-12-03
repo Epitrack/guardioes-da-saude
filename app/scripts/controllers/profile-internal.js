@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileInternalCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'toaster', '$location', '$timeout', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, toaster, $location, $timeout) {
+  .controller('ProfileInternalCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'toaster', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, toaster) {
 
     var meuFiltro = $filter;
 
@@ -27,7 +27,7 @@ angular.module('gdsApp')
 
         $scope.screen.household = {
           nick: hh.nick,
-          dob: moment(hh.dob).format('YYYY-MM-DD'), // change date format
+          dob: hh.dob,
           gender: hh.gender,
           email: hh.email,
           race: hh.race,
@@ -38,6 +38,7 @@ angular.module('gdsApp')
     };
 
     $scope.editProfile = function() {
+
       if($scope.screen.household.password == "" || $scope.screen.household.password != $scope.screen.repeatPassword) {
         delete $scope.screen.household.password;
       }
@@ -53,33 +54,7 @@ angular.module('gdsApp')
       $scope.getHousehold();
     };
 
-    $scope.open = function($event) {
-      $scope.status.opened = true;
-    };
-
-    $scope.status = {
-      opened: false
-    };
-
-    $scope.deleteHousehold = function(id) {
-      $scope.hhId = {};
-      $scope.hhId.id = id;
-
-      HouseholdApi.deleteHousehold($scope.hhId, function(data) {
-        console.log('Retorno da API -> ', data);
-
-        if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
-        } else {
-          toaster.pop('success', data.data.message);
-
-          $timeout(function() {
-              $location.path('/health-daily');
-          }, 3000);
-
-        }
-      });
-    };
+    
 
     $scope.getHousehold();
   }]);

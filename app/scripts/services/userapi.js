@@ -92,6 +92,8 @@ angular.module('gdsApp')
       params.id = userStorage.id;
       params.user_token = userStorage.user_token;
 
+      // return console.log('params in updateProfile ', params);
+
       $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
