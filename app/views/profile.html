@@ -29,20 +29,15 @@
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento</label>
-
+              <label for="profile-birthdate">Data de nascimento (mm.dd.aaaa)</label>
               <input type="text" class="input-primary birthdate"
-                ng-init="convertDate();"
-                placeholder="{{ convertedBirthDate }}"
                 uib-datepicker-popup="{{format}}"
                 ng-model="dt"
-                is-open="opened" 
-                datepicker-options="dateOptions" 
-                date-disabled="disabled(date, mode)" 
-                ng-required="true"
-                close-text="Fechar"
-                show-weeks="false"
-                show-button-bar="false" />
+                ng-init="convertDate()"
+                is-open="status.opened"
+                datepicker-options="dateOptions"
+                date-disabled="disabled(date, mode)"
+                placeholder="{{convertedBirthDate}}" />
 
               <span class="icon-birthdate">
                 <a ng-click="open($event)"></a>
