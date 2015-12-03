@@ -10,7 +10,7 @@
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}">
-        <figcaption>{{ household.nick }} <span>{{ household.dob | amDifference : null : 'years' }} anos</span></figcaption>
+        <figcaption>{{ household.nick }} <span>{{ household.dob | ageFilter }} anos</span></figcaption>
       </figure>
     </aside>
 
