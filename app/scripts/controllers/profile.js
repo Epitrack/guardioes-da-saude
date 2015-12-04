@@ -86,7 +86,7 @@ angular.module('gdsApp')
     };
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = 'MM.dd.yyyy';
+    $scope.format = 'dd.MM.yyyy';
 
     $scope.status = {
       opened: false
@@ -109,7 +109,7 @@ angular.module('gdsApp')
       ];
 
     $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).format('MM-DD-YYYY').replace(/-/g, ".");
+      var convertedDate = moment($scope.screen.user.dob).format('DD.MM.YYYY').replace(/-/g, ".");
       $scope.convertedBirthDate = convertedDate;
     }
 

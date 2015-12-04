@@ -117,7 +117,7 @@ angular.module('gdsApp')
     $timeout(function() {         
       $scope.convertDate = function() {
         console.log('testing', $scope.screen.household.dob);
-        var convertedDate = moment($scope.screen.household.dob).format('MM-DD-YYYY').replace(/-/g, ".");
+        var convertedDate = moment($scope.screen.household.dob).format('DD.MM.YYYY').replace(/-/g, ".");
         $scope.convertedBirthDate = convertedDate;
       }
       $scope.convertDate();
