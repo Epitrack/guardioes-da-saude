@@ -15,9 +15,9 @@ angular.module('gdsApp')
 
     var slides = $scope.slides = [];
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 1; i < 4; i++) {
       slides.push({
-        image: '../../images/slide/00-slide.png',
+        image: '../../images/slide/gds-slides0' + i + '.png',
         text: 'Hey Judie'
       });
     }

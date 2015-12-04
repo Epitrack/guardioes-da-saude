@@ -16,6 +16,13 @@
   }
 }
 
+.carousel-control {
+  &.right { background-image: none; }
+  &.left { background-image: none; }
+
+  .glyphicon { visibility: hidden; }
+}
+
 // iPads
 @media screen and (min-width: 768px) {}
 
