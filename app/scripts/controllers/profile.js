@@ -35,8 +35,14 @@ angular.module('gdsApp')
       
       // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
 
-      if($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
+      if ($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
+      }
+
+      if ($scope.invalidbirth) {
+        console.log('invalid birthdate!');
+        // $('.birthdate').val() = $scope.screen.user.dob; 
+        return false;
       }
 
       UserApi.updateProfile($scope.screen.user, function(data) {
@@ -51,14 +57,20 @@ angular.module('gdsApp')
       });
     };
 
-    // $scope.today = function() {
-    //   $scope.dt = new Date();
-    // };
-    // $scope.today();
+    $scope.checkValidDate = function()  {
+      // console.log('dob in editProfile', $scope.screen.user.dob);
 
-    // $scope.clear = function () {
-    //   $scope.dt = null;
-    // };
+      $('.birthdate').on('change', function(){
+        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
+          console.log('invalid birthdate!');
+          $scope.invalidbirth = true;
+
+        } else {
+          delete $scope.invalidbirth;
+          console.log('valid birthdate', $scope.invalidbirth);
+        }
+      });
+    };
 
     // Disable weekend selection
     $scope.disabled = function(date, mode) {
@@ -73,13 +85,8 @@ angular.module('gdsApp')
       $scope.dt = new Date(year, month, day);
     };
 
-    // $scope.dateOptions = {
-    //   formatYear: 'yy',
-    //   startingDay: 1
-    // };
-
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = 'dd.MM.yyyy';
+    $scope.format = 'MM.dd.yyyy';
 
     $scope.status = {
       opened: false
@@ -101,26 +108,11 @@ angular.module('gdsApp')
         }
       ];
 
-    // $scope.getDayClass = function(date, mode) {
-    //   if (mode === 'day') {
-    //     var dayToCheck = new Date(date).setHours(0,0,0,0);
-
-    //     for (var i=0;i<$scope.events.length;i++){
-    //       var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-
-    //       if (dayToCheck === currentDay) {
-    //         return $scope.events[i].status;
-    //       }
-    //     }
-    //   }
-
-    //   return '';
-    // };
-
     $scope.convertDate = function() {
       var convertedDate = moment($scope.screen.user.dob).format('MM-DD-YYYY').replace(/-/g, ".");
       $scope.convertedBirthDate = convertedDate;
     }
 
     $scope.getUser();
+    $scope.checkValidDate();
   }]);
