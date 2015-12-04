@@ -37,6 +37,8 @@ angular.module('gdsApp')
       data.user_id = userStorage.id;
       data.app_token = app_token;
 
+      console.warn('Enviando...', data);
+
       $http.post(apiUrl + '/survey/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
           console.log('Success submitSurvey ', data);
