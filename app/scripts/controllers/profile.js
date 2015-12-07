@@ -20,7 +20,7 @@ angular.module('gdsApp')
 
       $scope.screen.user = {
         nick: u.nick,
-        dob: moment(u.dob).format('YYYY-MM-DD'), // change date format
+        dob: moment(u.dob).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD'), // change date format
         gender: u.gender,
         email: u.email,
         race: u.race,
@@ -31,7 +31,7 @@ angular.module('gdsApp')
     };
 
     $scope.editProfile = function() {
-      $scope.screen.user.dob = moment($scope.dt).format('YYYY-MM-DD');
+      $scope.screen.user.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
       
       // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
 
@@ -109,7 +109,7 @@ angular.module('gdsApp')
       ];
 
     $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).format('DD.MM.YYYY').replace(/-/g, ".");
+      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
       $scope.convertedBirthDate = convertedDate;
     }
 

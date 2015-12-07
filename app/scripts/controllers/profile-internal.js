@@ -41,7 +41,7 @@ angular.module('gdsApp')
     };
 
     $scope.editProfile = function() {
-      $scope.screen.household.dob = moment($scope.dt).format('YYYY-MM-DD');
+      $scope.screen.household.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
 
       if($scope.screen.household.password == "" || $scope.screen.household.password != $scope.screen.repeatPassword) {
         delete $scope.screen.household.password;
@@ -117,7 +117,7 @@ angular.module('gdsApp')
     $timeout(function() {         
       $scope.convertDate = function() {
         console.log('testing', $scope.screen.household.dob);
-        var convertedDate = moment($scope.screen.household.dob).format('DD.MM.YYYY').replace(/-/g, ".");
+        var convertedDate = moment($scope.screen.household.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
         $scope.convertedBirthDate = convertedDate;
       }
       $scope.convertDate();
