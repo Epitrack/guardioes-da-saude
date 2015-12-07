@@ -19,10 +19,15 @@ angular.module('gdsApp')
     var userStorage = LocalStorage.getItem('userStorage');
 
     obj.createHousehold = function(data, callback) {
+
+      // return console.log('data in createHousehold', data);
+
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
-      data.dob = data.dob.split("-").reverse().join('-');
+      data.dob = data.dob;
+
+      console.log('data.dob in createHousehold', data.dob);
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
