@@ -844,6 +844,10 @@ body {
             font-family: $ff-bold;
           }
 
+          .spelling {
+            font-family: $ff-light;
+          }
+
           p {
             font-size: ($fs-normal)+.2;
           }
@@ -861,11 +865,11 @@ body {
     span {
       font-family: $ff-bold;
     }
-  }
-}
 
-.check-odd {
-  font-family: $ff-light;
+    .spelling {
+      font-family: $ff-light;
+    }
+  }
 }
 
 .frequency {
