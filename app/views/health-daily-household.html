@@ -9,7 +9,8 @@
   <article class="col-xs-12 col-md-11 card">
     <aside class="col-md-4 health-daily-avatar">
       <figure>
-        <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}">
+        <!-- <img src="{{ household.picture }}" alt="Avatar de {{ household.nick }}"> -->
+        <img src="images/avatar/avatar-blank.svg" alt="Avatar de {{ household.nick }}">
         <figcaption>{{ household.nick }} <span>{{ household.dob | amDifference : null : 'years' }} anos</span></figcaption>
       </figure>
     </aside>
