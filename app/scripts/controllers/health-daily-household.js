@@ -11,9 +11,11 @@ angular.module('gdsApp')
   .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams) {
 
     var meuFiltro = $filter;
-
     var userStorage = $rootScope.user;
     var userID = userStorage.id;
+    var singularSpelling = 'Participação';
+
+    $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
 
     $scope.getHousehold = function() {
       HouseholdApi.getHousehold(userID, function(data) {
@@ -31,7 +33,15 @@ angular.module('gdsApp')
         $scope.householdSurveys = data.data.data;
 
         if ($scope.householdSurveys.total == 1) {
-          $scope.checkSingular();
+          $scope.totalSpelling = singularSpelling;
+        }
+
+        if ($scope.householdSurveys.no_symptom == 1) {
+          $scope.goodSpelling = singularSpelling;
+        }
+
+        if ($scope.householdSurveys.symptom == 1) {
+          $scope.badSpelling = singularSpelling;
         }
       });
     };
