@@ -32,23 +32,7 @@ angular.module('gdsApp')
 
     function errorGeolocation(error) {
       console.warn('errorGeolocation', error);
-
-      // @TODO:
-      // openAgain();
     };
-
-
-    //@TODO:
-    // function openAgain() {
-    //   console.log('Again');
-
-    //   $('#modal-location').modal({
-    //     show: 'true'
-    //   });
-      
-    //   $scope.getUserLocation();
-    // };
-
 
     if (!localStorage.getItem('userStorage')) {
       $scope.getUserLocation();
