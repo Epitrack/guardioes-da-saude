@@ -24,8 +24,7 @@
   'ngMask',
   'angularMoment',
   'ngFileUpload',
-  'firebase',
-  'angular-carousel'
+  'firebase'
   ])
  .run(['$rootScope', 'LocalStorage', function($rootScope, LocalStorage){
   var u = LocalStorage.getItem('userStorage');

@@ -6,19 +6,25 @@
 
           <h3 class="login-subtitle">Recupere sua senha:</h3>
 
-          <form ng-submit="resetPass()" class="form-recuperar-senha" name="form-recuperar-senha">
+          <form ng-submit="resetPass()" class="form-recuperar-senha" name="formRecuperarSenha" novalidate>
             <fieldset class="input-group mainform signup">
-              <input type="email" class="form-control mainform-input" ng-model="forgotPass.email" placeholder="Email">
+              <input type="email" name="email" class="form-control mainform-input" ng-model="forgotPass.email" placeholder="Email" required>
             </fieldset>
 
             <fieldset class="btn-group btn-group-justified" role="group">
               <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-signup">Recuperar senha</button>
+                <button type="submit" class="btn btn-signup" ng-disabled="formRecuperarSenha.email.$dirty && formRecuperarSenha.email.$invalid">Recuperar senha</button>
               </div>
             </fieldset>
           </form>
 
           <br>
+
+          <!-- validation -->
+          <div ng-show="formRecuperarSenha.email.$dirty && formRecuperarSenha.email.$invalid" class="alert alert-warning" role="alert">
+            <span ng-show="formRecuperarSenha.email.$error.required">O campo <b>email</b> é obrigatório.</span>
+            <span ng-show="formRecuperarSenha.email.$error.email">Endereço de email inválido.</span>
+          </div>
 
           <div ng-show="message" class="alert alert-info" role="alert">
             <span>Foi enviada uma mensagem para o email {{forgotPass.email}}, siga as instruções enviadas para recuperar sua senha.</span>

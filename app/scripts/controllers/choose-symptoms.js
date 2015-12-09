@@ -40,7 +40,7 @@ angular.module('gdsApp')
       var household = url[url.length - 3];
 
       if (household == 'household') {
-        form.household_id = url[url.length - 2];
+        form.household_id = url[3];
       }
 
       if (country != undefined) {

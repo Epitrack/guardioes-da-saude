@@ -4,14 +4,15 @@
       <section class="col-xs-12 how-it-works">
         <h2 class="title-secondary">Como Funciona?</h2>
 
-        <aside id="slideshow" class="col-xs-12 slideshow" ng-controller="SlideshowCtrl">
-          <!-- <ul rn-carousel rn-carousel-auto-slide rn-carousel-transition="hexagon" class="image">
-            <li ng-repeat="images in kittens">
-              <div ng-repeat="image in images">
-                <img class="alignLeft" ng-src="{{image}}"/>
-              </div>
-            </li>
-          </ul> -->
+        <aside id="slideshow" class="col-xs-12 hidden-xs slideshow" ng-controller="SlideshowCtrl">
+          <uib-carousel interval="5000" no-wrap="false">
+            <uib-slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}">
+              <!-- <div class="carousel-caption"> -->
+              <!-- <h4>Slide {{$index}}</h4> -->
+              <!-- <p>{{slide.text}}</p> -->
+            </uib-slide>
+          </uib-carousel>
         </aside>
 
         <div class="steps">

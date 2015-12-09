@@ -56,7 +56,6 @@
     <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
     <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
-    <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -101,6 +100,10 @@
                   <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-blank.svg" alt="avatar"></figure>
                 </li>
 
+                <li ng-show="user.picture">
+                  <figure class="mini-avatar-user hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
+                </li>
+
                 <li ng-show="user" class="dropdown dropnav">
                   <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     {{user.nick}}
@@ -112,10 +115,6 @@
                     <li role="separator" class="divider"></li>
                     <li><a ng-href="/" ng-click="clearStorage()">Sair</a></li>
                   </ul>
-                </li>
-
-                <li ng-show="user.picture">
-                  <figure class="mini-avatar-user hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
                 </li>
 
                 <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
@@ -181,7 +180,6 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

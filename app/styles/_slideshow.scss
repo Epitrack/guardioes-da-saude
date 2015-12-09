@@ -1,0 +1,35 @@
+//
+// Slideshow
+//
+
+.carousel-indicators {
+  top: 100%;
+
+  li {
+    border: 1px solid $bg-header;
+    margin-right: 5px;
+
+    &.active {
+      background-color: $bg-header;
+      margin-right: 5px;
+    }
+  }
+}
+
+.carousel-control {
+  &.right { background-image: none; }
+  &.left { background-image: none; }
+
+  .glyphicon { visibility: hidden; }
+}
+
+// iPads
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {
+  .carousel-indicators { bottom: 0; }
+}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

@@ -10,14 +10,16 @@
 angular.module('gdsApp')
   .controller('SlideshowCtrl', ['$scope', function ($scope) {
 
-    // $scope.activeSlide = function() {
-      $scope.kittens = [
-        ['http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500'],
-        ['http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500'],
-        ['http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500','http://placekitten.com/g/1024/500']
-      ];
-    // };
+    $scope.myInterval = 5000;
+    $scope.noWrapSlides = false;
 
-    // $scope.activeSlide();
+    var slides = $scope.slides = [];
+
+    for (var i = 1; i < 4; i++) {
+      slides.push({
+        image: '../../images/slide/gds-slides0' + i + '.png',
+        text: 'Hey Judie'
+      });
+    }
 
   }]);
