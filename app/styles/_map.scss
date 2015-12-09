@@ -101,7 +101,7 @@
 }
 
 .legend-subtitle {
-  font-size: ($fs-normal)+.2;
+  font-size: ($fs-normal)+.4;
   border-bottom: none;
   color: $btn-primary;
   position: relative;
@@ -159,7 +159,7 @@
 @media screen and (min-width: 768px) {
   .map-mini-dashboard {
     position: absolute;
-    height: 100%;
+    height: auto;
     @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
   }
 }
