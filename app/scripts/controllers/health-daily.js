@@ -44,7 +44,7 @@ angular.module('gdsApp')
         $scope.goodSpelling = singularSpelling;
       }
 
-      if ($scope.userSurvey.symptom) {
+      if ($scope.userSurvey.symptom == 1) {
         $scope.badSpelling = singularSpelling;
       }
     });
@@ -88,10 +88,6 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.checkSpelling = function() {
-      
-    };
-
 	  // graphic
     $scope.lineOptions = {
 	    data: [
@@ -121,5 +117,4 @@ angular.module('gdsApp')
     // ====
 
     $scope.getSurveyByMonth();
-    $scope.checkSpelling();
   }]);
