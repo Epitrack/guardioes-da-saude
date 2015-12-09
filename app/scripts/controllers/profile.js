@@ -11,11 +11,6 @@ angular.module('gdsApp')
   .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'toaster', function ($scope, UserApi, $rootScope, toaster) {
 
     $scope.pageClass = 'profile-page';
-    $scope.format = 'dd/MM/yyyy';
-    $scope.dateOptions = {
-      formatYear: 'yy',
-      startingDay: 1
-    };
 
     // set user with $rootScope data
     $scope.getUser = function() {
@@ -25,7 +20,7 @@ angular.module('gdsApp')
 
       $scope.screen.user = {
         nick: u.nick,
-        dob: moment(u.dob).format('YYYY-MM-DD'), // change date format
+        dob: moment(u.dob).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD'), // change date format
         gender: u.gender,
         email: u.email,
         race: u.race,
@@ -36,12 +31,18 @@ angular.module('gdsApp')
     };
 
     $scope.editProfile = function() {
-      $scope.screen.user.dob = moment($scope.dt).format('YYYY-MM-DD');
+      $scope.screen.user.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
       
       // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
 
-      if($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
+      if ($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
+      }
+
+      if ($scope.invalidbirth) {
+        console.log('invalid birthdate!');
+        // $('.birthdate').val() = $scope.screen.user.dob; 
+        return false;
       }
 
       UserApi.updateProfile($scope.screen.user, function(data) {
@@ -56,17 +57,62 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.open = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
+    $scope.checkValidDate = function()  {
+      // console.log('dob in editProfile', $scope.screen.user.dob);
 
-      $scope.opened = true;
+      $('.birthdate').on('change', function(){
+        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
+          console.log('invalid birthdate!');
+          $scope.invalidbirth = true;
+
+        } else {
+          delete $scope.invalidbirth;
+          console.log('valid birthdate', $scope.invalidbirth);
+        }
+      });
     };
 
+    // Disable weekend selection
+    $scope.disabled = function(date, mode) {
+      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    };
+
+    $scope.open = function($event) {
+      $scope.status.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+      $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = 'dd.MM.yyyy';
+
+    $scope.status = {
+      opened: false
+    };
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var afterTomorrow = new Date();
+    afterTomorrow.setDate(tomorrow.getDate() + 2);
+    $scope.events =
+      [
+        {
+          date: tomorrow,
+          status: 'full'
+        },
+        {
+          date: afterTomorrow,
+          status: 'partially'
+        }
+      ];
+
     $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).format('DD-MM-YYYY').replace(/-/g, "/");
+      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
       $scope.convertedBirthDate = convertedDate;
     }
 
     $scope.getUser();
+    $scope.checkValidDate();
   }]);

@@ -39,11 +39,21 @@
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento</label>
-              <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                ng-model="houseHold.dob" mask="99-99-9999">
+              <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
+              <input id="profile-birthdate"
+                class="input-primary birthdate"
+                name="add-profile-birthdate"
+                type="text"
+                uib-datepicker-popup="{{format}}"
+                ng-model="houseHold.dob"
+                ng-init="convertDate()"
+                is-open="status.opened"
+                datepicker-options="dateOptions"
+                date-disabled="disabled(date, mode)"
+                show-button-bar="false" />
+
               <span class="icon-birthdate">
-                <a data-toggle="modal" data-target="#calendarModal"></a>
+                <a ng-click="open($event)"></a>
               </span>
             </fieldset>
 
@@ -97,6 +107,20 @@
           <fieldset class="col-xs-12">
             <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
             <button class="pull-right btn btn-primary cancel">Cancelar</button>
+          </fieldset>
+
+          <fieldset class="col-xs-12">
+            <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
+              <span>As senhas digitadas precisam ser iguais.</span>
+            </div>
+
+            <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
+              <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+            </div>
+
+            <div ng-show="invalidbirth" class="alert alert-info" role="alert">
+              <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
+            </div>
           </fieldset>
         </form>
       </div>

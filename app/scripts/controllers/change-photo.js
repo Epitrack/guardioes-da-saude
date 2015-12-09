@@ -32,4 +32,5 @@ angular.module('gdsApp')
 			});
     };
 
+    $scope.chooseDefaultAvatar();
 	}]);

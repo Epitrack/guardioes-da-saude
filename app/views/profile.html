@@ -13,8 +13,10 @@
     <div class="panel-body">
       <a ng-href="profile/change-photo" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
         <figure class="card-avatar-image edit">
+          
           <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
-          <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Defaul">
+          
+          <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Default">
           <figcaption>Editar foto</figcaption>
         </figure>
       </a>
@@ -29,20 +31,19 @@
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento</label>
+              <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
 
               <input type="text" class="input-primary birthdate"
-                ng-init="convertDate();"
-                placeholder="{{ convertedBirthDate }}"
                 uib-datepicker-popup="{{format}}"
                 ng-model="dt"
-                is-open="opened" 
-                datepicker-options="dateOptions" 
-                date-disabled="disabled(date, mode)" 
-                ng-required="true"
-                close-text="Fechar"
-                show-weeks="false"
-                show-button-bar="false" />
+                ng-init="convertDate()"
+                is-open="status.opened"
+                datepicker-options="dateOptions"
+                date-disabled="disabled(date, mode)"
+                placeholder="{{convertedBirthDate}}"
+                show-button-bar="false"
+                value="dt"
+                init-date="dt" />
 
               <span class="icon-birthdate">
                 <a ng-click="open($event)"></a>
@@ -97,6 +98,10 @@
 
             <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
               <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+            </div>
+
+            <div ng-show="invalidbirth" class="alert alert-info" role="alert">
+              <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
             </div>
           </fieldset>
 

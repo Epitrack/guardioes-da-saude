@@ -14,7 +14,12 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      console.log($scope.houseHold);
+      console.log('addHousehold >>', $scope.houseHold);
+
+      if ($scope.invalidbirth) {
+        console.log('invalid birthdate!');
+        return false;
+      }
 
       HouseholdApi.createHousehold($scope.houseHold, function(data) {
         // return console.log(data.data.member);
@@ -64,6 +69,64 @@ angular.module('gdsApp')
       });
     }
 
+    $scope.checkValidDate = function()  {
+      // console.log('dob in editProfile', $scope.screen.household.dob);
 
+      $('.birthdate').on('change', function(){
+        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
+          console.log('invalid birthdate!');
+          $scope.invalidbirth = true;
 
+        } else {
+          delete $scope.invalidbirth;
+          console.log('valid birthdate', $scope.invalidbirth);
+        }
+      });
+    };
+
+    $timeout(function() {         
+      $scope.convertDate = function() {
+        console.log('testing', $scope.screen.household.dob);
+        var convertedDate = moment($scope.screen.household.dob).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD').replace(/-/g, ".");
+        $scope.convertedBirthDate = convertedDate;
+      }
+      $scope.convertDate();
+    }, 1000);
+
+    $scope.disabled = function(date, mode) {
+      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    };
+
+    $scope.open = function($event) {
+      $scope.status.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+      $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = 'dd.MM.yyyy';
+
+    $scope.status = {
+      opened: false
+    };
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var afterTomorrow = new Date();
+    afterTomorrow.setDate(tomorrow.getDate() + 2);
+    $scope.events =
+      [
+        {
+          date: tomorrow,
+          status: 'full'
+        },
+        {
+          date: afterTomorrow,
+          status: 'partially'
+        }
+      ];
+
+    $scope.checkValidDate();
   }]);

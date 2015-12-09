@@ -10,7 +10,10 @@
 angular.module('gdsApp')
   .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', function ($scope, UserApi, $rootScope) {
 
+    var singularSpelling = 'Participação';
+
     $scope.pageClass = 'health-daily-page';
+    $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
 
     UserApi.getUserSurvey(function(data) {
       console.warn(data);
@@ -31,6 +34,18 @@ angular.module('gdsApp')
 
       if($scope.userSurvey.pct_symptoms %1 !== 0) {
         $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
+      }
+
+      if ($scope.userSurvey.total == 1) {
+        $scope.totalSpelling = singularSpelling;
+      }
+
+      if($scope.userSurvey.no_symptom == 1) {
+        $scope.goodSpelling = singularSpelling;
+      }
+
+      if ($scope.userSurvey.symptom) {
+        $scope.badSpelling = singularSpelling;
       }
     });
 
@@ -73,8 +88,9 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.getSurveyByMonth();
-
+    $scope.checkSpelling = function() {
+      
+    };
 
 	  // graphic
     $scope.lineOptions = {
@@ -103,4 +119,7 @@ angular.module('gdsApp')
 		  resize: true
 		};
     // ====
+
+    $scope.getSurveyByMonth();
+    $scope.checkSpelling();
   }]);
