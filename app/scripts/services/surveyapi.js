@@ -18,9 +18,6 @@ angular.module('gdsApp')
     var platform = ApiConfig.PLATFORM;
     var client = ApiConfig.CLIENT;
 
-    // var userStorage = $rootScope.user;
-    var userStorage = LocalStorage.getItem('userStorage');
-
     obj.getSymptoms = function(callback) {
       $http.get(apiUrl + '/symptoms', {headers: {'app_token': app_token}})
         .then(function(data){
@@ -34,16 +31,16 @@ angular.module('gdsApp')
     obj.submitSurvey = function(data, callback) {
       data.client = client;
       data.platform = platform;
-      data.user_id = userStorage.id;
+      data.user_id = $rootScope.user.id;
       data.app_token = app_token;
 
       console.warn('Enviando...', data);
 
-      $http.post(apiUrl + '/survey/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+      $http.post(apiUrl + '/survey/create', data, { headers: {'app_token': app_token, 'user_token': $rootScope.user.user_token}})
         .then(function(data){
           console.log('Success submitSurvey ', data);
           callback(data);
-          UserApi.updateUser(userStorage.id);
+          UserApi.updateUser($rootScope.user.id);
         }, function(error){
           console.warn('Error submitSurvey: ', error)
       });
