@@ -73,6 +73,8 @@
     img {
       margin: 0px 30% 10% 30%;
       width: 60px;
+      @include bdr(100%);
+      @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
     }
 
     .light {
