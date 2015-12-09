@@ -132,4 +132,13 @@ angular.module('gdsApp')
     };
     // ====
 
+    $scope.donutOptions = {
+      data: [
+        {label: "Bem", value: 77, participants: 10},
+        {label: "Mal", value: 23, participants: 5}
+      ],
+      colors: ['#E0D433', '#C81204'],
+      resize: true
+    };
+
   }]);
