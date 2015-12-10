@@ -68,7 +68,7 @@
 .modal-sindromes {
   @extend .modal-add-profile;
 
-  .modal-header { margin-bottom: 0; }
+  .modal-header { padding: 10px; margin-bottom: 0; }
 
   li {
     @extend .text-primary;
