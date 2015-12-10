@@ -206,6 +206,12 @@ body {
   font-family: $ff-light;
   text-align: center;
   margin: 0;
+
+  &.news {
+    color: $btn-primary;
+    font-size: ($fs-medium)*2;
+    margin: 30px 0 50px 0;
+  }
 }
 
 .title-secondary {
@@ -945,9 +951,9 @@ body {
 
 .news-card {
   position: relative;
-  min-height: 320px;
   margin-bottom: 35px;
   padding: 0 15px;
+  min-height: 290px;
 }
 
 .news-date {
@@ -969,7 +975,7 @@ body {
   figure {
     position: relative;
     overflow: hidden;
-    height: 340px;
+    height: 290px;
 
     img {
       width: 100%;
@@ -980,10 +986,11 @@ body {
 
     figcaption {
       color: $link-primary;
-      font-size: ($fs-normal)+.6;
+      font-size: ($fs-normal)+.3;
       padding: 8px;
       text-align: left;
-      height: 110px;
+      min-height: 110px;
+      max-height: 150px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1419,7 +1426,14 @@ p.login-email {
   // ====
 
   // How it Works
-  .title-primary { font-size: ($fs-large)+1; }
+  .title-primary {
+    font-size: ($fs-large)+1;
+
+    &.news {
+      margin: 50px 0 70px 0;
+      font-size: ($fs-large)+1;
+    }
+  }
 
   .slideshow {
     min-height: 315px;
