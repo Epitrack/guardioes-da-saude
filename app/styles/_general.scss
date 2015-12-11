@@ -200,6 +200,11 @@ body {
 // Inside content
 //
 
+#toast-container {
+  font-family: $ff-regular;
+  font-size: $fs-normal;
+}
+
 .title-primary {
   color: $link-primary;
   font-size: ($fs-medium);
