@@ -4,8 +4,10 @@
   </time>
 
   <a href="{{ min_url }}" ng-href="{{ noticia.entities.urls[0].url }}" class="news-link" target="_blank" title="Clique para ver esta notícia.">
+
     <figure>
-      <img src="../../images/bg-news-default.png" ng-src="{{ noticia.entities.media[0].media_url }}" alt="{{ noticia.text }}">
+      <img class="default-logo" ng-show="!noticia.entities.media[0].media_url" src="../../images/ministerio-logo.png" alt="{{ noticia.text }}">
+      <img ng-show="noticia.entities.media[0].media_url" ng-src="{{ noticia.entities.media[0].media_url }}" alt="{{ noticia.text }}">
       <figcaption>{{ noticia.text }}</figcaption>
     </figure>
 

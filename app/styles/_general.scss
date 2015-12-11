@@ -984,6 +984,14 @@ body {
       @include transition(transform, .2s, 0s, linear);
     }
 
+    .default-logo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto;
+      display: block;
+      margin-top: 18px;
+    }
+
     figcaption {
       color: $link-primary;
       font-size: ($fs-normal)+.3;
