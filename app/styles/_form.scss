@@ -63,6 +63,33 @@ select {
   }
 }
 
+.social-login {
+  margin: 20px 0 20px 0;
+
+  li {
+    display: inline-block;
+  }
+
+  .btn-login {
+    margin: 0;
+    float: left;
+    width: 170px;
+    background-position: 15% center;
+  }
+
+  .facebook {
+    background-size: 7%;
+  }
+
+  .google {
+    background-size: 8%;
+  }
+
+  .twitter {
+    background-size: 13%;
+  }
+}
+
 .mainform-input {
   font-family: $ff-light;
   font-size: ($fs-medium)-.2;

@@ -5,7 +5,15 @@
         <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
 
         <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
-          <h3>Por favor, preencha o formulário abaixo:</h3>
+          <h3>Por favor, preencha o formulário abaixo ou entre rapidamente com:</h3>
+            
+          <fieldset class="social-login">
+            <ul>
+              <li><button ng-click="facebookLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook</button></li>
+              <li><button ng-click="googleLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google</button></li>
+              <li><button ng-click="twitterLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter</button></li>
+            </ul>  
+          </fieldset>
 
           <fieldset class="input-group mainform signup">
             <input class="form-control mainform-input" name="nick" type="text" placeholder="Apelido" ng-model="createData.nick" required>
