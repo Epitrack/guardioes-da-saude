@@ -26,7 +26,11 @@
   'ngFileUpload',
   'firebase'
   ])
- .run(['$rootScope', 'LocalStorage', function($rootScope, LocalStorage){
+ .run(['$rootScope', 'LocalStorage', 'amMoment', function($rootScope, LocalStorage, amMoment){
+  // moment js
+  amMoment.changeLocale('pt-br');
+
+  // check if user exist
   var u = LocalStorage.getItem('userStorage');
   if(u != null) {
     $rootScope.user = u;
