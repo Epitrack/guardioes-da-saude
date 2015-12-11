@@ -1161,16 +1161,20 @@ body {
 
   &.facebook {
     background-color: $btn-facebook;
+    background-size: 4%;
     @include path('btn-facebook.svg');
+
   }
 
   &.google {
     background-color: $btn-google;
+    background-size: 5%;
     @include path('btn-google.svg');
   }
 
   &.twitter {
     background-color: $link-primary;
+    background-size: 8%;
     color: $btn-twitter;
     @include path('btn-twitter.svg');
   }
@@ -1395,6 +1399,31 @@ p.login-email {
 
 // ====
 
+// Social login in Cadastro
+.social-login {
+  margin: 20px 0 20px 0;
+
+  li {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+  
+    &:first-child, &:last-child {
+      margin: 0;
+    }
+  }
+
+  .btn-login {
+    margin: 0;
+    float: left;
+    width: 85px;
+    font-size: ($fs-normal)+.4;
+    background-image: none;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+// ====
 
 
 //
@@ -1612,6 +1641,45 @@ p.login-email {
   //   max-height: 360px;
   //   overflow: scroll;
   // }
+
+
+  // Social login in Cadastro (desktop stylesheet)
+  .social-login {
+    margin: 20px 0 20px 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px 0 10px;
+    
+      &:first-child, &:last-child {
+        margin: 0;
+      }
+    }
+
+    .btn-login {
+      margin: 0;
+      float: left;
+      width: 170px;
+      background-position: 15% center;
+    }
+
+    .facebook {
+      background-size: 7%;
+      @include path('btn-facebook.svg');
+    }
+
+    .google {
+      background-size: 8%;
+      @include path('btn-google.svg');
+    }
+
+    .twitter {
+      background-size: 13%;
+      @include path('btn-twitter.svg');
+    }
+  }
+
+  // ====
 
 }
 
