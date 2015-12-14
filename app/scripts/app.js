@@ -218,6 +218,11 @@
   controller: 'TemplateEmailEsqueciSenhaCtrl',
   controllerAs: 'templateEmailEsqueciSenha'
 })
+.when('/cadastro-email', {
+  templateUrl: 'views/cadastro-email.html',
+  controller: 'CadastroEmailCtrl',
+  controllerAs: 'cadastroEmail'
+})
 .otherwise({
   redirectTo: '/'
 });

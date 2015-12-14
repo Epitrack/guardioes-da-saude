@@ -8,11 +8,14 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
-    $scope.pageClass = 'login-page';
+  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', '$filter', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage, $filter) {
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
+
+    // set page class to animations
+    $scope.pageClass = 'cadastro-page';
+    // ====
 
     $scope.facebookLogin = function() {
       auth.$authWithOAuthPopup('facebook').then(function(authData) {
@@ -109,6 +112,22 @@ angular.module('gdsApp')
       });
     };
 
+    // create new user
+    $scope.createData = {};
+
+    $scope.createUser = function() {
+      UserApi.createUser($scope.createData, function(data) {
+        if (data.data.error === true) {
+          toaster.pop('error', data.data.message);
+        } else {
+          toaster.pop('success', data.data.message);
+          $location.path('/health-daily');
+        }
+      });
+    };
+    // ====
+
+    // create user using social network
     $scope.updateUserSocialData = function() {
       $('#modal-complete-login').modal('hide');
 
@@ -123,4 +142,6 @@ angular.module('gdsApp')
         }
       });
     };
+    // ====
+
   }]);

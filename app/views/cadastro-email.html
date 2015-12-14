@@ -1,0 +1,87 @@
+<div class="wrapper-internal not-logged">
+  <div class="container">
+	<div class="row">
+	  <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
+		<h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
+
+		<form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
+		  <h3>Por favor, preencha o formulário abaixo ou entre rapidamente com:</h3>
+
+		  <fieldset class="input-group mainform signup">
+			<input class="form-control mainform-input" name="nick" type="text" placeholder="Apelido" ng-model="createData.nick" required>
+			<input class="form-control mainform-input" name="email" type="email" placeholder="Email" ng-model="createData.email" required>
+			<input class="form-control mainform-input" type="tel" placeholder="Data de nascimento (dd/mm/aaaa)" ng-model="createData.dob" mask="99-99-9999" ng-bind="date | date:'yyyy/mm/dd'" required>
+
+			<select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race" required>
+			  <option ng-selected="true" disabled>Cor/Raça</option>
+			  <option value="branco">Branco</option>
+			  <option value="preto">Preto</option>
+			  <option value="pardo">Pardo</option>
+			  <option value="amarelo">Amarelo</option>
+			  <option value="indigena">Indígena</option>
+			</select>
+
+			<select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender" required>
+			  <option ng-selected="true" disabled>Sexo</option>
+			  <option value="M">Masculino</option>
+			  <option value="F">Feminino</option>
+			</select>
+
+			<input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password" ng-minlength="6" required>
+		  </fieldset>
+
+		  <!-- form validation -->
+		  <div ng-show="formRegisterHome.nick.$dirty && formRegisterHome.nick.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.nick.$error.required">O campo <b>apelido</b> é obrigatório.</span>
+		  </div>
+
+		  <div ng-show="formRegisterHome.email.$dirty && formRegisterHome.email.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.email.$error.required">O campo <b>email</b> é obrigatório.</span>
+			<span ng-show="formRegisterHome.email.$error.email">Endereço de e-mail inválido.</span>
+		  </div>
+
+		  <div ng-show="formRegisterHome.dob.$dirty && formRegisterHome.dob.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.dob.$error.required">O campo <b>data de nascimento</b> é obrigatório.</span>
+		  </div>
+
+		  <div ng-show="formRegisterHome.race.$dirty && formRegisterHome.race.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.race.$error.required">O campo <b>cor/raça</b> é obrigatório.</span>
+		  </div>
+
+		  <div ng-show="formRegisterHome.gender.$dirty && formRegisterHome.gender.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.gender.$error.required">O campo <b>gender</b> é obrigatório.</span>
+		  </div>
+
+		  <div ng-show="formRegisterHome.password.$dirty && formRegisterHome.password.$invalid" class="alert alert-warning" role="alert">
+			<span ng-show="formRegisterHome.password.$error.required">O campo <b>senha</b> é obrigatório.</span>
+			<span ng-show="formRegisterHome.password.$error.minlength">Sua senha precisa ter no mínimo 6 dígitos</span>
+		  </div>
+
+		  <fieldset class="btn-group btn-group-justified" role="group">
+			<div class="btn-group" role="group">
+			  <button type="submit"
+				ng-disabled="formRegisterHome.nick.$dirty && formRegisterHome.nick.$invalid ||
+				formRegisterHome.email.$dirty && formRegisterHome.email.$invalid ||
+				formRegisterHome.dob.$dirty && formRegisterHome.dob.$invalid ||
+				formRegisterHome.race.$dirty && formRegisterHome.race.$invalid ||
+				formRegisterHome.gender.$dirty && formRegisterHome.gender.$invalid ||
+				formRegisterHome.password.$dirty && formRegisterHome.password.$invalid ||
+				!agree" class="btn btn-signup">Cadastrar</button>
+			</div>
+		  </fieldset>
+
+		  <fieldset class="register-agree" role="group">
+			<input type="checkbox" id="register-agree" ng-model="agree">
+			<label for="register-agree">Concordo com os <a href="politica-de-privacidade" title="Clique para visualizar os termos de uso" target="_blank">Termos de Uso</a>.</label>
+		  </fieldset>
+		</form>
+	  </section>
+	</div>
+  </div>
+</div>
+
+<!-- Toaster -->
+<div ng-include src="'views/partials/toaster.html'"></div>
+
+<!-- How it works -->
+<div ng-include src="'views/partials/how-it-works.html'"></div>
