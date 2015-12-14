@@ -314,11 +314,11 @@ body {
 
 // How It Works
 .wrapper-how-it-works {
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
   background-color: $link-primary;
-  @include path('bg-how-it-works.svg');
+  @include path('bg-map.png');
+  // background-color: black;
+  // background-size: cover;
 }
 
 .how-it-works {
@@ -1419,7 +1419,7 @@ p.login-email {
   li {
     display: inline-block;
     margin: 0 10px 0 10px;
-  
+
     &:first-child, &:last-child {
       margin: 0;
     }
@@ -1663,7 +1663,7 @@ p.login-email {
     li {
       display: inline-block;
       margin: 0 10px 0 10px;
-    
+
       &:first-child, &:last-child {
         margin: 0;
       }
