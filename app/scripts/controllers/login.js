@@ -110,6 +110,12 @@ angular.module('gdsApp')
     };
 
     $scope.updateUserSocialData = function() {
+      if ($scope.invalidbirth) {
+        console.log('invalid birthdate!');
+        // $('.birthdate').val() = $scope.screen.user.dob; 
+        return false;
+      }
+
       $('#modal-complete-login').modal('hide');
 
       UserApi.createUser($scope.userData, function(data) {
@@ -123,4 +129,62 @@ angular.module('gdsApp')
         }
       });
     };
+
+    $scope.checkValidDate = function()  {
+      // console.log('dob in editProfile', $scope.screen.user.dob);
+
+      $('.birthdate').on('change', function(){
+        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
+          console.log('invalid birthdate!');
+          $scope.invalidbirth = true;
+
+        } else {
+          delete $scope.invalidbirth;
+          console.log('valid birthdate', $scope.invalidbirth);
+        }
+      });
+    };
+
+    // Disable weekend selection
+    $scope.disabled = function(date, mode) {
+      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    };
+
+    $scope.open = function($event) {
+      $scope.status.opened = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+      $scope.dt = new Date(year, month, day);
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = 'dd.MM.yyyy';
+
+    $scope.status = {
+      opened: false
+    };
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var afterTomorrow = new Date();
+    afterTomorrow.setDate(tomorrow.getDate() + 2);
+    $scope.events =
+      [
+        {
+          date: tomorrow,
+          status: 'full'
+        },
+        {
+          date: afterTomorrow,
+          status: 'partially'
+        }
+      ];
+
+    $scope.convertDate = function() {
+      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
+      $scope.convertedBirthDate = convertedDate;
+    }
+
+    $scope.checkValidDate();
   }]);

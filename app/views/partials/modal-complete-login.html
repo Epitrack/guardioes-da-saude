@@ -10,7 +10,7 @@
         <div class="modal-body">
           <div class="panel-body">
             <figure class="col-xs-12 col-md-2 col-lg-3 card-avatar-image">
-              <img src="{{userData.picture}}" alt="Avatar de {{userData.name}}">
+              <img src="images/avatar/avatar-blank.svg" alt="Imagem de um avatar em branco">
             </figure>
 
             <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
@@ -33,11 +33,21 @@
 
                 <div class="no-padding col-xs-12">
                   <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-birthdate">Data de nascimento</label>
-                    <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                     ng-model="userData.dob" mask="99-99-9999">
+                    <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
+                    <input type="text" class="input-primary birthdate"
+                      uib-datepicker-popup="{{format}}"
+                      ng-model="dt"
+                      ng-init="convertDate()"
+                      is-open="status.opened"
+                      datepicker-options="dateOptions"
+                      date-disabled="disabled(date, mode)"
+                      placeholder="{{convertedBirthDate}}"
+                      show-button-bar="false"
+                      value="dt"
+                      init-date="dt" />
+
                     <span class="icon-birthdate">
-                      <a data-toggle="modal" data-target="#calendarModal"></a>
+                      <a ng-click="open($event)"></a>
                     </span>
                   </fieldset>
 
@@ -57,7 +67,21 @@
 
                 <fieldset class="col-xs-12">
                   <label for="profile-email">Email</label>
-                  <input class="input-primary" id="profile-email" name="add-profile-email" type="email" ng-model="userData.email">
+                  <input class="input-primary" id="profile-email" name="add-profile-email" type="email" ng-model="userData.email" ng-required="true">
+                </fieldset>
+
+                <fieldset class="col-xs-12">
+                  <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
+                    <span>As senhas digitadas precisam ser iguais.</span>
+                  </div>
+
+                  <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
+                    <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+                  </div>
+
+                  <div ng-show="invalidbirth" class="alert alert-info" role="alert">
+                    <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
+                  </div>
                 </fieldset>
             </div>
           </div>
