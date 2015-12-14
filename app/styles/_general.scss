@@ -623,6 +623,10 @@ body {
     &.prevention {
       &::before { @include path('nav/icon-prevention-hover.svg'); }
     }
+
+    &.zika {
+      &::before { @include path('nav/icon-zika-hover.svg'); }
+    }
   }
 
   &::before {
@@ -662,6 +666,10 @@ body {
 
   &.prevention {
     &::before { @include path('nav/icon-prevention.svg'); }
+  }
+
+  &.zika {
+    &::before { @include path('nav/icon-zika.svg'); }
   }
 }
 
