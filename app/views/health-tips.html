@@ -6,6 +6,10 @@
   <h2 class="section-title">Dicas de Saúde</h2>
 
   <aside class="col-xs-12 col-md-4 no-padding list-tips">
+    <button ng-click="aside = 'zika'" class="btn-tip zika" ng-class="{ 'active' : aside == 'zika' }">
+      Zika
+    </button>
+
     <button ng-click="aside = 'upas'" class="btn-tip upas" ng-class="{ 'active' : aside == 'upas' }">
       Upas
     </button>
@@ -38,6 +42,10 @@
 
     <h4>Bem vindo ao Dicas de Saúde</h4>
     <p>Aqui você poderá pesquisar informações importantes para o seu bem estar.</p>
+  </aside>
+
+  <aside class="col-xs-12 col-md-7 card content-card" ng-if="aside == 'zika'">
+    <div ng-include src="'views/partials/ht-zika.html'"></div>
   </aside>
 
   <aside class="col-xs-12 col-md-7 card content-card" ng-if="aside == 'upas'">
