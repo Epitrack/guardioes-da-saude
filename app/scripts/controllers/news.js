@@ -16,6 +16,7 @@ angular.module('gdsApp')
 
     NewsApi.getNews(null, function(data) {
       $scope.news = data.data.statuses;
+      console.log('news in news', $scope.news);
     });
 
   }]);
