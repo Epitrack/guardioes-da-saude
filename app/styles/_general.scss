@@ -749,6 +749,11 @@ body {
   }
 
   &.justified { text-align: justify; }
+
+  span {
+    &.italic { font-style: italic }
+    &.bold { font-weight: bold; }
+  }
 }
 
 // telefones uteis
