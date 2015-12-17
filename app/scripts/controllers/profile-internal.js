@@ -8,12 +8,26 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'toaster', '$filter', '$timeout', function ($scope, $routeParams, HouseholdApi, $rootScope, toaster, $filter, $timeout) {
+  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'toaster', '$filter', '$timeout', '$location', function ($scope, $routeParams, HouseholdApi, $rootScope, toaster, $filter, $timeout, $location) {
 
     var meuFiltro = $filter;
 
     var userStorage = $rootScope.user;
     var userID = userStorage.id;
+
+    $scope.deleteHousehold = function(id) {
+      HouseholdApi.deleteHousehold(id, function(data) {
+        if (data.data.error == false) {
+          toaster.pop('success', data.data.message);
+          $timeout(function() {
+            $location.path('profile');
+          }, 2000);
+        } else {
+          toaster.pop('error', data.data.message);
+          console.warn('Error', data.data.message);
+        }
+      });
+    };
 
     $scope.getHousehold = function() {
 
@@ -114,16 +128,16 @@ angular.module('gdsApp')
         }
       ];
 
-    $timeout(function() {         
+    $timeout(function() {
       $scope.convertDate = function() {
         console.log('testing', $scope.screen.household.dob);
         var convertedDate = moment($scope.screen.household.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
         $scope.convertedBirthDate = convertedDate;
       }
       $scope.convertDate();
-    }, 1000); 
-      
-    
+    }, 1000);
+
+
     $scope.getHousehold();
     $scope.checkValidDate();
   }]);
