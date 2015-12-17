@@ -14,7 +14,15 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      console.log('addHousehold >>', $scope.houseHold);
+      var race = $scope.household.race;
+      var gender = $scope.household.gender;
+
+      // if (gender == 'M') { // masculino
+      //   if (race == 'preto' || race == 'pardo' || race == 'indigena') {}
+      // } else { // feminino
+      // }
+
+      // return console.log('addHousehold >>', $scope.houseHold);
 
       if ($scope.invalidbirth) {
         console.log('invalid birthdate!');
@@ -84,7 +92,7 @@ angular.module('gdsApp')
       });
     };
 
-    $timeout(function() {         
+    $timeout(function() {
       $scope.convertDate = function() {
         console.log('testing', $scope.screen.household.dob);
         var convertedDate = moment($scope.screen.household.dob).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD').replace(/-/g, ".");
