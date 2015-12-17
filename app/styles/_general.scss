@@ -758,11 +758,13 @@ body {
 }
 
 .telephone-item {
-  height: 220px;
-  width: 220px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 40px;
+  min-height: 220px;
+  text-align: left;
+  text-align: center;
+  margin-bottom: 10px;
+  // background: red;
+  // height: 220px;
+  // text-align: left;
 
   img {
     padding: 20px;
@@ -770,10 +772,10 @@ body {
   }
 
   figcaption {
-    font-size: ($fs-medium)-.2;
+    font-size: ($fs-medium)+.4;
     font-family: $ff-bold;
     color: $btn-primary;
-    margin-top: 10px;
+    // margin-top: 70px;
 
     span {
       font-family: $ff-light;
@@ -1472,6 +1474,7 @@ p.login-email {
     min-height: 700px;
     height: 100%;
   }
+
   .nav-primary {
     margin-top: 20px;
 
@@ -1586,7 +1589,15 @@ p.login-email {
       }
     }
   }
+  // ====
 
+  // ht-telefones
+  .telephone-item {
+    text-align: left;
+    min-height: 100px;
+
+    figcaption { margin-top: 25px; }
+  }
   // ====
 }
 
@@ -1711,8 +1722,10 @@ p.login-email {
         &.twitter { background-size: 16%; }
       }
     }
-    
+
   // ====
+
+  .telephone-item { margin-left: 40px; }
 
 }
 
