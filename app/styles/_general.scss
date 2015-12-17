@@ -1005,8 +1005,8 @@ body {
 
     figcaption {
       color: $link-primary;
-      font-size: ($fs-normal)+.3;
-      padding: 8px;
+      font-size: ($fs-normal)+.4;
+      padding: 10px 10px 0 10px;
       text-align: left;
       min-height: 110px;
       max-height: 150px;
@@ -1026,7 +1026,7 @@ body {
 }
 
 .news-footer {
-  height: 20px;
+  height: 28px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -1039,8 +1039,8 @@ body {
 
 .news-read-more {
   float: right;
-  font-family: $ff-bold;
-  font-size: ($fs-normal);
+  font-family: $ff-regular;
+  font-size: ($fs-normal)+.2;
 }
 
 // ====
