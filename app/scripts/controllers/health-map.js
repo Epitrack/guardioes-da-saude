@@ -25,7 +25,7 @@ angular.module('gdsApp')
         lng: LocalStorage.getItem('userLocation').lon,
         zoom: 12,
         icon: myIcon,
-        draggable: true,
+        draggable: false,
         focus: true,
         title: 'ME'
       },
