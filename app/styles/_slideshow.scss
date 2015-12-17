@@ -17,8 +17,27 @@
 }
 
 .carousel-control {
-  &.right { background-image: none; }
-  &.left { background-image: none; }
+  &.right { 
+    background-image: none;
+
+    &::before {
+      position: absolute;
+      content: ">";
+      margin-top: 170px;
+      font-size: 90px;
+    }
+  }
+
+  &.left { 
+    background-image: none; 
+
+    &::before {
+      position: absolute;
+      content: "<";
+      margin-top: 170px;
+      font-size: 90px;
+    }
+  }
 
   .glyphicon { visibility: hidden; }
 }
