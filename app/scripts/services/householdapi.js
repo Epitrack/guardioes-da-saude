@@ -19,9 +19,6 @@ angular.module('gdsApp')
     var userStorage = LocalStorage.getItem('userStorage');
 
     obj.createHousehold = function(data, callback) {
-
-      // return console.log('data in createHousehold', data);
-
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
