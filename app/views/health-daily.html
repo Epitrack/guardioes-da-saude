@@ -43,7 +43,7 @@
               <figure>
                 <img src="../images/icon-health-daily-good.svg" alt="Bem">
                 <figcaption>
-                  <span>{{ userSurvey.pct_no_symptoms }}%</span> Bem
+                  <span>{{ roundedGoodSymptoms }}%</span> Bem
                   <p>{{ userSurvey.no_symptom }} <span class="spelling">{{ goodSpelling }}</span></p>
                 </figcaption>
               </figure>
@@ -53,7 +53,7 @@
               <figure>
                 <img src="../images/icon-health-daily-bad.svg" alt="Mal">
                 <figcaption>
-                  <span>{{ userSurvey.pct_symptoms }}%</span> Mal
+                  <span>{{ roundedBadSymptoms }}%</span> Mal
                   <p>{{ userSurvey.symptom }} <span class="spelling">{{ badSpelling }}</span></p>
                 </figcaption>
               </figure>

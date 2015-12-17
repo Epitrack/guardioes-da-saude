@@ -23,6 +23,9 @@ angular.module('gdsApp')
       if ($scope.userSurvey.total !== 0) {
         $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom/$scope.userSurvey.total)*100));
         $scope.userSurvey.pct_symptoms = ((($scope.userSurvey.symptom/$scope.userSurvey.total)*100));
+
+        $scope.roundedGoodSymptoms = Math.round($scope.userSurvey.pct_no_symptoms);
+        $scope.roundedBadSymptoms = Math.round($scope.userSurvey.pct_symptoms);
       } else {
         $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.no_symptom;
         $scope.userSurvey.pct_symptoms = $scope.userSurvey.symptom;
