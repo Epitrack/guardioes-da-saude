@@ -39,10 +39,8 @@ angular.module('gdsApp')
       });
     };
 
-    obj.deleteHousehold = function(data, callback) {
-      data.client = client;
-
-      $http.get(apiUrl + '/household/delete/' + data.id + '?client=' + data.client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
+    obj.deleteHousehold = function(id, callback) {
+      $http.get(apiUrl + '/household/delete/' + id + '?client=' + client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
           console.log('Success deleteHousehold ', data);
           callback(data);

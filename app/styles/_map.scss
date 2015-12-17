@@ -159,7 +159,7 @@
 @media screen and (min-width: 768px) {
   .map-mini-dashboard {
     position: absolute;
-    height: auto;
+    height: 100%;
     @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
   }
 }

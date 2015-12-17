@@ -749,6 +749,11 @@ body {
   }
 
   &.justified { text-align: justify; }
+
+  span {
+    &.italic { font-style: italic }
+    &.bold { font-weight: bold; }
+  }
 }
 
 // telefones uteis
@@ -758,11 +763,13 @@ body {
 }
 
 .telephone-item {
-  height: 220px;
-  width: 220px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-bottom: 40px;
+  min-height: 220px;
+  text-align: left;
+  text-align: center;
+  margin-bottom: 10px;
+  // background: red;
+  // height: 220px;
+  // text-align: left;
 
   img {
     padding: 20px;
@@ -770,10 +777,10 @@ body {
   }
 
   figcaption {
-    font-size: ($fs-medium)-.2;
+    font-size: ($fs-medium)+.4;
     font-family: $ff-bold;
     color: $btn-primary;
-    margin-top: 10px;
+    // margin-top: 70px;
 
     span {
       font-family: $ff-light;
@@ -1065,7 +1072,8 @@ body {
 
 .survey-avatar {
   width: 130px;
-  height: 200px;
+  min-height: 200px;
+  vertical-align: top;
   margin: 0 15px 30px 0;
   display: inline-block;
 
@@ -1472,6 +1480,7 @@ p.login-email {
     min-height: 700px;
     height: 100%;
   }
+
   .nav-primary {
     margin-top: 20px;
 
@@ -1586,7 +1595,15 @@ p.login-email {
       }
     }
   }
+  // ====
 
+  // ht-telefones
+  .telephone-item {
+    text-align: left;
+    min-height: 100px;
+
+    figcaption { margin-top: 25px; }
+  }
   // ====
 }
 
@@ -1705,15 +1722,21 @@ p.login-email {
   // ====
 
   // Fale Conosco
-    .fale-conosco {
-      .btn-login {
-        &.facebook { background-size: 8%; }
-        &.twitter { background-size: 16%; }
-      }
+  .fale-conosco {
+    .btn-login {
+      &.facebook { background-size: 8%; }
+      &.twitter { background-size: 16%; }
     }
-    
+  }
   // ====
 
+  // telefones-uteis
+  .telephone-item {
+    margin-left: 40px;
+
+    figcaption { margin-top: 60px; }
+  }
+  // ====
 }
 
 // Large Desktops
