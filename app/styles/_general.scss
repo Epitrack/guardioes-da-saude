@@ -1387,7 +1387,10 @@ p.login-email {
     &.twitter { background-size: 10%; }
   }
 
-  h5 { color: $btn-primary; }
+  h5 {
+    font-size: ($fs-normal)+.2;
+    color: $btn-primary;
+  }
 }
 
 // ====
@@ -1698,6 +1701,16 @@ p.login-email {
     }
   }
 
+  // ====
+
+  // Fale Conosco
+    .fale-conosco {
+      .btn-login {
+        &.facebook { background-size: 8%; }
+        &.twitter { background-size: 16%; }
+      }
+    }
+    
   // ====
 
 }
