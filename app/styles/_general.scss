@@ -1716,17 +1716,21 @@ p.login-email {
   // ====
 
   // Fale Conosco
-    .fale-conosco {
-      .btn-login {
-        &.facebook { background-size: 8%; }
-        &.twitter { background-size: 16%; }
-      }
+  .fale-conosco {
+    .btn-login {
+      &.facebook { background-size: 8%; }
+      &.twitter { background-size: 16%; }
     }
-
+  }
   // ====
 
-  .telephone-item { margin-left: 40px; }
+  // telefones-uteis
+  .telephone-item {
+    margin-left: 40px;
 
+    figcaption { margin-top: 60px; }
+  }
+  // ====
 }
 
 // Large Desktops
