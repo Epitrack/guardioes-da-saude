@@ -14,8 +14,8 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      var race = $scope.household.race;
-      var gender = $scope.household.gender;
+      var race = $scope.houseHold.race;
+      var gender = $scope.houseHold.gender;
 
       // if (gender == 'M') { // masculino
       //   if (race == 'preto' || race == 'pardo' || race == 'indigena') {}
