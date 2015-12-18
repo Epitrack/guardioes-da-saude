@@ -14,15 +14,20 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      var race = $scope.household.race;
-      var gender = $scope.household.gender;
+      var race = $scope.houseHold.race;
+      var gender = $scope.houseHold.gender;
 
-      // if (gender == 'M') { // masculino
-      //   if (race == 'preto' || race == 'pardo' || race == 'indigena') {}
-      // } else { // feminino
+      // if (gender == 'M') {
+      //   // masculino
+      // if (race == 'preto' || race == 'pardo' || race == 'indigena') {
+
+      // }
+      
+      // } else { 
+      //   // feminino
       // }
 
-      // return console.log('addHousehold >>', $scope.houseHold);
+      return console.log('addHousehold >>', $scope.houseHold);
 
       if ($scope.invalidbirth) {
         console.log('invalid birthdate!');
