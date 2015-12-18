@@ -32,7 +32,7 @@ angular.module('gdsApp')
 
     $scope.editProfile = function() {
       $scope.screen.user.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
-      
+
       // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
 
       if ($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
@@ -41,7 +41,7 @@ angular.module('gdsApp')
 
       if ($scope.invalidbirth) {
         console.log('invalid birthdate!');
-        // $('.birthdate').val() = $scope.screen.user.dob; 
+        // $('.birthdate').val() = $scope.screen.user.dob;
         return false;
       }
 
@@ -109,7 +109,7 @@ angular.module('gdsApp')
       ];
 
     $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
+      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD-MM-YYYY').replace(/-/g, "-");
       $scope.convertedBirthDate = convertedDate;
     }
 
