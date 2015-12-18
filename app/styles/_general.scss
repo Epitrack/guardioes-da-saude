@@ -1390,10 +1390,17 @@ p.login-email {
   }
 
   .btn-login {
-    background-position: 50% center;
-    text-indent: -999px;
+    background-position: 10% center;
+    text-indent: 80px;
+    line-height: 40px;
 
     &.twitter { background-size: 10%; }
+
+    &:hover {
+      &.facebook {
+        color: white;
+      }
+    }
   }
 
   h5 {
@@ -1573,6 +1580,10 @@ p.login-email {
   .fale-conosco {
     .title-primary {
       font-size: $fs-large;
+    }
+
+    .bt-login {
+      text-indent: 50px;
     }
   }
   // ====
