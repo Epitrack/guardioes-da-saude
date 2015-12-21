@@ -73,26 +73,7 @@
             </fieldset>
           </div>
 
-          <fieldset class="col-xs-12 col-sm-6">
-            <label for="profile-pass">Senha</label>
-            <input class="input-primary" id="profile-pass" name="profilePass" type="password"
-              ng-model="screen.household.password" ng-minlength="6">
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-6">
-            <label for="profile-pass-again">Repetir Senha</label>
-            <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password" ng-model="screen.repeatPassword">
-          </fieldset>
-
           <fieldset class="col-xs-12">
-            <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
-              <span>As senhas digitadas precisam ser iguais.</span>
-            </div>
-
-            <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
-              <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-            </div>
-
             <div ng-show="invalidbirth" class="alert alert-info" role="alert">
               <span>Sua data de nascimento precisa estar no formato: mm.dd.aaaa</span>
             </div>
