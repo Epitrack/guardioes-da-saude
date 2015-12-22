@@ -730,6 +730,18 @@ body {
 // Health tips
 //
 
+.subtitle {
+  &.primary {
+    margin-bottom: 0;
+    font-size: ($fs-normal)+.4;
+    font-family: $ff-bold;
+  }
+
+  &.secondary {
+    margin-top: 20px;
+  }
+}
+
 // vacinas
 .text-primary {
   padding-top: 10px;
