@@ -123,5 +123,5 @@ angular.module('gdsApp')
         }
       ];
 
-    $scope.checkValidDate();
+    // $scope.checkValidDate();
   }]);
