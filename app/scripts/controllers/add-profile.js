@@ -14,21 +14,6 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      var race = $scope.houseHold.race;
-      var gender = $scope.houseHold.gender;
-
-      // if (gender == 'M') {
-      //   // masculino
-      // if (race == 'preto' || race == 'pardo' || race == 'indigena') {
-
-      // }
-      
-      // } else { 
-      //   // feminino
-      // }
-
-      return console.log('addHousehold >>', $scope.houseHold);
-
       if ($scope.invalidbirth) {
         console.log('invalid birthdate!');
         return false;
@@ -127,8 +112,10 @@ angular.module('gdsApp')
 
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
+
     var afterTomorrow = new Date();
     afterTomorrow.setDate(tomorrow.getDate() + 2);
+
     $scope.events =
       [
         {
