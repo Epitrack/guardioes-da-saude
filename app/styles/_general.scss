@@ -740,6 +740,11 @@ body {
   &.secondary {
     margin-top: 20px;
   }
+
+  &.master {
+    color: $natural-black;
+    margin-bottom: 20px;
+  }
 }
 
 // vacinas
@@ -1754,11 +1759,7 @@ p.login-email {
   // ====
 
   // telefones-uteis
-  .telephone-item {
-    margin-left: 40px;
-
-    figcaption { margin-top: 60px; }
-  }
+  .telephone-item { margin-left: 40px; }
   // ====
 }
 
