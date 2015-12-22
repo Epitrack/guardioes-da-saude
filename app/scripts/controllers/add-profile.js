@@ -14,11 +14,6 @@ angular.module('gdsApp')
     $scope.houseHold = {};
 
     $scope.addHousehold = function() {
-      if ($scope.invalidbirth) {
-        console.log('invalid birthdate!');
-        return false;
-      }
-
       HouseholdApi.createHousehold($scope.houseHold, function(data) {
         // return console.log(data.data.member);
 
