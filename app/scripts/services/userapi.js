@@ -63,11 +63,14 @@ angular.module('gdsApp')
     };
 
     // get recent user info
-    obj.updateUser = function(id) {
+    obj.updateUser = function(id, callback) {
       $http.get(apiUrl + '/user/get/' + id, {headers: {'app_token': app_token}})
         .then(function(result){
           console.log('Success updateUser: ', result);
           LocalStorage.updateUser(result);
+          if(callback) {
+            callback(result);
+          }
         }, function(error){
           console.warn('Error updateUser: ', error);
       });
@@ -88,18 +91,26 @@ angular.module('gdsApp')
 
     // update user profile
     obj.updateProfile = function(params, callback) {
-      params.client = client;
-      params.id = userStorage.id;
-      params.user_token = userStorage.user_token;
+      var p = angular.copy(params);
+      p.client = client;
+      p.id = userStorage.id;
+      p.user_token = userStorage.user_token;
+
+      if (p.dob != null) {
+        console.log("dob 1", p.dob);
+        var d = moment(p.dob, "DD-MM-YYYY");
+        p.dob = d.format('YYYY-MM-DD');
+        console.log("dob 2", p.dob);
+      }
 
       //User this return to test what is being sent to back-end
-      // return console.log('params in updateProfile ', params);
+      // return console.log('p in updateProfile ', p);
 
-      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+      $http.post(apiUrl + '/user/update', p, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
           callback(result);
-          obj.updateUser(params.id);
+          obj.updateUser(p.id);
         }, function(error){
           console.warn('Error updateProfile: ', error);
       });

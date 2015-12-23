@@ -15,25 +15,32 @@ angular.module('gdsApp')
     // set user with $rootScope data
     $scope.getUser = function() {
       var u = $rootScope.user;
+      UserApi.updateUser(u.id, function(data){
+        if (data.data.error === true) {
+          toaster.pop('error', data.data.message);
+        } else {
+          u = data.data.data[0];
+          var dob = moment(u.dob.substr(0,10)).utc().format('DD-MM-YYYY');
+          console.log(dob);
 
-      $scope.screen = {};
+          $scope.screen = {};
 
-      $scope.screen.user = {
-        nick: u.nick,
-        dob: moment(u.dob).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD'), // change date format
-        gender: u.gender,
-        email: u.email,
-        race: u.race,
-        password: ""
-      };
+          $scope.screen.user = {
+            nick: u.nick,
+            dob: dob,
+            gender: u.gender,
+            email: u.email,
+            race: u.race,
+            password: ""
+          };
 
-      return console.warn('$scope.screen.user in getUser ', $scope.screen.user);
+          return console.warn('$scope.screen.user in getUser ', $scope.screen.user);
+        }
+      });
     };
 
     $scope.editProfile = function() {
-      $scope.screen.user.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
-
-      // return console.warn('$scope.screen.user in editProfile', $scope.screen.user);
+      // $scope.screen.user.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
 
       if ($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
@@ -46,73 +53,72 @@ angular.module('gdsApp')
       }
 
       UserApi.updateProfile($scope.screen.user, function(data) {
-        // return console.log('updateProfile in editProfile ', data);
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
           toaster.pop('success', data.data.message);
         }
-
+        $scope.screen = false;
         $scope.getUser();
       });
     };
 
-    $scope.checkValidDate = function()  {
-      // console.log('dob in editProfile', $scope.screen.user.dob);
+    // $scope.checkValidDate = function()  {
+    //   // console.log('dob in editProfile', $scope.screen.user.dob);
 
-      $('.birthdate').on('change', function(){
-        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
-          console.log('invalid birthdate!');
-          $scope.invalidbirth = true;
+    //   $('.birthdate').on('change', function(){
+    //     if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
+    //       console.log('invalid birthdate!');
+    //       $scope.invalidbirth = true;
 
-        } else {
-          delete $scope.invalidbirth;
-          console.log('valid birthdate', $scope.invalidbirth);
-        }
-      });
-    };
+    //     } else {
+    //       delete $scope.invalidbirth;
+    //       console.log('valid birthdate', $scope.invalidbirth);
+    //     }
+    //   });
+    // };
 
-    // Disable weekend selection
-    $scope.disabled = function(date, mode) {
-      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-    };
+    // // Disable weekend selection
+    // $scope.disabled = function(date, mode) {
+    //   return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    // };
 
-    $scope.open = function($event) {
-      $scope.status.opened = true;
-    };
+    // $scope.open = function($event) {
+    //   $scope.status.opened = true;
+    // };
 
-    $scope.setDate = function(year, month, day) {
-      $scope.dt = new Date(year, month, day);
-    };
+    // $scope.setDate = function(year, month, day) {
+    //   $scope.dt = new Date(year, month, day);
+    // };
 
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = 'dd.MM.yyyy';
+    // $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    // $scope.format = 'dd.MM.yyyy';
 
-    $scope.status = {
-      opened: false
-    };
+    // $scope.status = {
+    //   opened: false
+    // };
 
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    var afterTomorrow = new Date();
-    afterTomorrow.setDate(tomorrow.getDate() + 2);
-    $scope.events =
-      [
-        {
-          date: tomorrow,
-          status: 'full'
-        },
-        {
-          date: afterTomorrow,
-          status: 'partially'
-        }
-      ];
+    // var tomorrow = new Date();
+    // tomorrow.setDate(tomorrow.getDate() + 1);
+    // var afterTomorrow = new Date();
+    // afterTomorrow.setDate(tomorrow.getDate() + 2);
+    // $scope.events =
+    //   [
+    //     {
+    //       date: tomorrow,
+    //       status: 'full'
+    //     },
+    //     {
+    //       date: afterTomorrow,
+    //       status: 'partially'
+    //     }
+    //   ];
 
-    $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD-MM-YYYY').replace(/-/g, "-");
-      $scope.convertedBirthDate = convertedDate;
-    }
+    // $scope.convertDate = function() {
+    //   var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD-MM-YYYY').replace(/-/g, "-");
+    //   $scope.convertedBirthDate = convertedDate;
+    // }
 
     $scope.getUser();
-    $scope.checkValidDate();
+    // $scope.checkValidDate();
   }]);

@@ -28,19 +28,10 @@
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
-              <input type="text" class="input-primary birthdate"
-                uib-datepicker-popup="{{format}}"
-                ng-model="dt"
-                is-open="status.opened"
-                datepicker-options="dateOptions"
-                show-button-bar="false"
-                date-disabled="disabled(date, mode)"
-                placeholder="{{convertedBirthDate}}" />
-
-              <span class="icon-birthdate">
-                <a ng-click="open($event)"></a>
-              </span>
+              <label for="profile-birthdate">Data de nascimento (dd-mm-aaaa)</label>
+              <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text"
+               ng-model="screen.household.dob" mask="99-99-9999">
+              <span class="icon-birthdate"></span>
             </fieldset>
 
             <fieldset class="col-xs-12 col-sm-6">
@@ -72,12 +63,6 @@
               </select>
             </fieldset>
           </div>
-
-          <fieldset class="col-xs-12">
-            <div ng-show="invalidbirth" class="alert alert-info" role="alert">
-              <span>Sua data de nascimento precisa estar no formato: mm.dd.aaaa</span>
-            </div>
-          </fieldset>
 
           <fieldset class="col-xs-12">
             <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
