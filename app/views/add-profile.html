@@ -39,21 +39,15 @@
 
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
+              <label for="profile-birthdate">Data de nascimento</label>
               <input id="profile-birthdate"
                 class="input-primary birthdate"
                 name="add-profile-birthdate"
                 type="text"
-                uib-datepicker-popup="{{format}}"
-                ng-model="houseHold.dob"
-                ng-init="convertDate()"
-                is-open="status.opened"
-                datepicker-options="dateOptions"
-                date-disabled="disabled(date, mode)"
-                show-button-bar="false" />
+                ng-model="houseHold.dob"/>
 
               <span class="icon-birthdate">
-                <a ng-click="open($event)"></a>
+                <!-- <a ng-click="open($event)"></a> -->
               </span>
             </fieldset>
 
@@ -64,9 +58,9 @@
               ng-model="houseHold.race">
                 <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
                 <option value="branco">Branco</option>
+                <option value="amarelo">Amarelo</option>
                 <option value="preto">Preto</option>
                 <option value="pardo">Pardo</option>
-                <option value="amarelo">Amarelo</option>
                 <option value="indigena">Indígena</option>
               </select>
             </fieldset>

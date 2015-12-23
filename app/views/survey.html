@@ -28,7 +28,7 @@
           <aside class="survey-avatar" ng-repeat="member in user.household">
             <a href="survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
               <figure>
-                <img src="../images/avatar/avatar-blank.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
+                <img ng-src="images/avatar/avatar-{{member.picture}}.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
                 <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }} anos</span></figcaption>
               </figure>
             </a>

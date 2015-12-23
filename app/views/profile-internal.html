@@ -13,8 +13,8 @@
     <div class="panel-body">
       <a ng-href="" class="col-xs-12 col-md-3" class="link-figure">
         <figure class="card-avatar-image">
-          <img src="../images/avatar/avatar-blank.svg" alt="Avatar de {{ screen.household.nick }}">
-          <!-- <figcaption>Editar</figcaption> -->
+          <img ng-show="screen.household.picture" class="avatar-image" ng-src="images/avatar/avatar-{{screen.household.picture}}.svg" alt="household avatar">
+          <img ng-show="!screen.household.picture" src="images/avatar/avatar-blank.svg" alt="Avatar blank">
         </figure>
       </a>
 
