@@ -47,7 +47,8 @@ angular.module('gdsApp')
           email: hh.email,
           race: hh.race,
           id: hh.id,
-          password: ""
+          password: "",
+          picture: hh.picture
         };
 
         return console.warn('$scope.screen.household in getHousehold ', $scope.screen.household);

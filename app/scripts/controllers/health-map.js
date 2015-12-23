@@ -19,31 +19,29 @@ angular.module('gdsApp')
         shadowSize: [50, 64]
     };
 
-    angular.extend($scope, {
-      userLocation: {
-        lat: LocalStorage.getItem('userLocation').lat,
-        lng: LocalStorage.getItem('userLocation').lon,
-        zoom: 12,
-        icon: myIcon,
-        draggable: false,
-        focus: true,
-        title: 'ME'
-      },
+    $scope.userLocation = {
+      lat: LocalStorage.getItem('userLocation').lat,
+      lng: LocalStorage.getItem('userLocation').lon,
+      zoom: 12,
+      icon: myIcon,
+      draggable: false,
+      focus: true,
+      title: 'ME'
+    };
 
-      layers: {
-        baselayers: {
-          mapbox_light: {
-            name: 'Guardiões da Saúde',
-            url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
-            type: 'xyz',
-            layerOptions: {
-              apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
-              mapid: 'thulioph.wix561or'
-            }
+    $scope.layers = {
+      baselayers: {
+        mapbox_light: {
+          name: 'Guardiões da Saúde',
+          url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+          type: 'xyz',
+          layerOptions: {
+            apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
+            mapid: 'thulioph.wix561or'
           }
         }
       }
-    });
+    };
 
     $scope.addMarkers = function() {
       var addressPointsToMarkers = function(points) {
@@ -104,22 +102,25 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           $scope.surveyByCitySummary = data.data.data;
 
+          // ====
           $scope.surveyByCitySummary.pct_no_symptoms = 0;
-          $scope.surveyByCitySummary.pct_symptoms = 0;
           if($scope.surveyByCitySummary.total_no_symptoms > 0) {
-            $scope.surveyByCitySummary.pct_no_symptoms = ((($scope.surveyByCitySummary.total_no_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
+            $scope.surveyByCitySummary.pct_no_symptoms = Math.round(((($scope.surveyByCitySummary.total_no_symptoms/$scope.surveyByCitySummary.total_surveys)*100)));
           }
-          if($scope.surveyByCitySummary.total_symptoms > 0) {
-            $scope.surveyByCitySummary.pct_symptoms = ((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.total_surveys)*100));
-          }
-
           if($scope.surveyByCitySummary.pct_no_symptoms %1 !==0) {
-              $scope.surveyByCitySummary.pct_no_symptoms = $scope.surveyByCitySummary.pct_no_symptoms.toFixed(2);
+              $scope.surveyByCitySummary.pct_no_symptoms = Math.round($scope.surveyByCitySummary.pct_no_symptoms.toFixed(2));
           }
+          // ====
 
-          if($scope.surveyByCitySummary.pct_symptoms %1 !==0) {
-              $scope.surveyByCitySummary.pct_symptoms = $scope.surveyByCitySummary.pct_symptoms.toFixed(2);
+          // ====
+          $scope.surveyByCitySummary.pct_symptoms = 0;
+          if($scope.surveyByCitySummary.total_symptoms > 0) {
+            $scope.surveyByCitySummary.pct_symptoms = Math.round(((($scope.surveyByCitySummary.total_symptoms/$scope.surveyByCitySummary.total_surveys)*100)));
           }
+          if($scope.surveyByCitySummary.pct_symptoms %1 !==0) {
+              $scope.surveyByCitySummary.pct_symptoms = Math.round($scope.surveyByCitySummary.pct_symptoms.toFixed(2));
+          }
+          // ====
 
           $rootScope.surveyByCitySummary = $scope.surveyByCitySummary;
 

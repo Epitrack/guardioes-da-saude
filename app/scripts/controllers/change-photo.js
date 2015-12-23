@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', 'toaster', function ($scope, UserApi, LocalStorage, $rootScope, toaster) {
+  .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', 'toaster', '$location', '$timeout', function ($scope, UserApi, LocalStorage, $rootScope, toaster, $location, $timeout) {
 
     $scope.avatar = {};
 
@@ -17,6 +17,11 @@ angular.module('gdsApp')
         if (data.data.error == false){
           console.log(data.data.message);
           toaster.pop('success', data.data.message, null);
+
+          $timeout(function(){
+            $location.path('/profile');
+          },
+          400);
         } else {
           console.log(data.data.message);
           toaster.pop('error', data.data.message);

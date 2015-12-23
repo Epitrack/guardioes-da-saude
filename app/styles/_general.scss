@@ -730,6 +730,23 @@ body {
 // Health tips
 //
 
+.subtitle {
+  &.primary {
+    margin-bottom: 0;
+    font-size: ($fs-normal)+.4;
+    font-family: $ff-bold;
+  }
+
+  &.secondary {
+    margin-top: 20px;
+  }
+
+  &.master {
+    color: $natural-black;
+    margin-bottom: 20px;
+  }
+}
+
 // vacinas
 .text-primary {
   padding-top: 10px;
@@ -1391,7 +1408,7 @@ p.login-email {
 
   .btn-login {
     background-position: 10% center;
-    text-indent: 80px;
+    text-align: center;
     line-height: 40px;
 
     &.twitter { background-size: 10%; }
@@ -1742,11 +1759,7 @@ p.login-email {
   // ====
 
   // telefones-uteis
-  .telephone-item {
-    margin-left: 40px;
-
-    figcaption { margin-top: 60px; }
-  }
+  .telephone-item { margin-left: 40px; }
   // ====
 }
 

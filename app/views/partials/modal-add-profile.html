@@ -33,28 +33,10 @@
 
                 <div class="no-padding col-xs-12">
                   <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-birthdate">Data de nascimento (dd.mm.aaaa)</label>
-                    <input id="profile-birthdate"
-                      class="input-primary birthdate"
-                      name="add-profile-birthdate"
-                      type="text"
-                      uib-datepicker-popup="{{format}}"
-                      ng-model="houseHold.dob"
-                      ng-init="convertDate()"
-                      is-open="status.opened"
-                      datepicker-options="dateOptions"
-                      date-disabled="disabled(date, mode)"
-                      show-button-bar="false" />
-
-                    <span class="icon-birthdate">
-                      <a ng-click="open($event)"></a>
-                    </span>
-
-                    <!-- <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text"
+                    <label for="profile-birthdate">Data de nascimento</label>
+                    <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text"
                      ng-model="houseHold.dob" mask="99-99-9999">
-                    <span class="icon-birthdate">
-                      <a data-toggle="modal" data-target="#calendarModal"></a>
-                    </span> -->
+                    <span class="icon-birthdate"></span>
                   </fieldset>
 
                   <fieldset class="col-xs-12 col-sm-6">
@@ -88,11 +70,11 @@
                     <option value="bisneto">Bisneto(a)</option>
                     <option value="primo">Primo(a)</option>
                     <option value="sogro">Sogro(a)</option>
-                    <option value="genro">Genro</option>
-                    <option value="nora">Nora</option>
+                    <option value="genro-nora">Genro/Nora</option>
                     <option value="padrasto">Padrasto</option>
                     <option value="madrasta">Madrasta</option>
                     <option value="enteado">Enteado</option>
+                    <option value="conjuge">Cônjuge</option>
                     <option value="outros">Outros</option>
                   </select>
                 </fieldset>
