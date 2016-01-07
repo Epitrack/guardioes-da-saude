@@ -25,16 +25,16 @@ angular.module('gdsApp')
 
     // quando cria o usuário
     obj.userCreateData = function(obj, params) {
-      userStorage.app = obj.app;
-      userStorage.nick = obj.nick;
-      userStorage.email = obj.email;
-      userStorage.dob = obj.dob;
-      userStorage.race = obj.race;
-      userStorage.gender = obj.gender;
       userStorage.active = obj.active;
+      userStorage.app = obj.app;
       userStorage.city = obj.city;
       userStorage.createdAt = obj.createdAt;
+      userStorage.dob = obj.dob;
+      userStorage.email = obj.email;
       userStorage.formattedAddress = obj.formattedAddress;
+      userStorage.gender = obj.gender;
+      userStorage.nick = obj.nick;
+      userStorage.race = obj.race;
       userStorage.id = obj.id;
       userStorage.user = obj.id;
       userStorage.platform = obj.platform;

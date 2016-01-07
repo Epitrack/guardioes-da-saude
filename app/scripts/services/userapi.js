@@ -91,26 +91,20 @@ angular.module('gdsApp')
 
     // update user profile
     obj.updateProfile = function(params, callback) {
-      var p = angular.copy(params);
-      p.client = client;
-      p.id = userStorage.id;
-      p.user_token = userStorage.user_token;
 
-      if (p.dob != null) {
-        console.log("dob 1", p.dob);
-        var d = moment(p.dob, "DD-MM-YYYY");
-        p.dob = d.format('YYYY-MM-DD');
-        console.log("dob 2", p.dob);
-      }
+      // Adds in params obj some data to validate request
+      params.client = client;
+      params.id = userStorage.id;
+      params.user_token = userStorage.user_token;
+      // ====
 
-      //User this return to test what is being sent to back-end
-      // return console.log('p in updateProfile ', p);
+      // return console.warn(params);
 
-      $http.post(apiUrl + '/user/update', p, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
           callback(result);
-          obj.updateUser(p.id);
+          obj.updateUser(params.id);
         }, function(error){
           console.warn('Error updateProfile: ', error);
       });
