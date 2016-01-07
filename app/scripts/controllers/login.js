@@ -33,6 +33,8 @@ angular.module('gdsApp')
 
         $scope.userData = userFbData;
 
+        return console.warn(userFbData);
+
         UserApi.fbLogin(userFbData.fb_token, function(data) {
           console.log('Data -> ', data);
           if (data.data.error == false) {
@@ -112,7 +114,7 @@ angular.module('gdsApp')
     $scope.updateUserSocialData = function() {
       if ($scope.invalidbirth) {
         console.log('invalid birthdate!');
-        // $('.birthdate').val() = $scope.screen.user.dob; 
+        // $('.birthdate').val() = $scope.screen.user.dob;
         return false;
       }
 
@@ -181,10 +183,10 @@ angular.module('gdsApp')
         }
       ];
 
-    $scope.convertDate = function() {
-      var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
-      $scope.convertedBirthDate = convertedDate;
-    }
+    // $scope.convertDate = function() {
+    //   var convertedDate = moment($scope.screen.user.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
+    //   $scope.convertedBirthDate = convertedDate;
+    // }
 
     $scope.checkValidDate();
   }]);
