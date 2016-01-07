@@ -52,8 +52,10 @@
   })
   .when('/cadastro', {
     templateUrl: 'views/cadastro.html',
-    controller: 'CadastroCtrl',
-    controllerAs: 'cadastro'
+    controller: 'LoginCtrl',
+    controllerAs: 'login'
+    // controller: 'CadastroCtrl',
+    // controllerAs: 'cadastro'
   })
   .when('/login-email', {
     templateUrl: 'views/login-email.html',
