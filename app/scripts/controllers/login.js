@@ -33,7 +33,7 @@ angular.module('gdsApp')
 
         $scope.userData = userFbData;
 
-        return console.warn(userFbData);
+        // return console.warn(userFbData);
 
         UserApi.fbLogin(userFbData.fb_token, function(data) {
           console.log('Data -> ', data);
