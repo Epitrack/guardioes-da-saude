@@ -65,6 +65,7 @@ angular.module('gdsApp')
         } else {
           console.log(data.data.message);
           toaster.pop('success', data.data.message);
+          $scope.houseHold = {};
 
           hideModal();
         }
