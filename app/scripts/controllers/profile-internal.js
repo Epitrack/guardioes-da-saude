@@ -13,8 +13,8 @@ angular.module('gdsApp')
     var meuFiltro = $filter;
 
     var userStorage = $rootScope.user;
-    var userID = userStorage.id;
 
+    // ====
     $scope.deleteHousehold = function(id) {
       HouseholdApi.deleteHousehold(id, function(data) {
         if (data.data.error == false) {
@@ -28,117 +28,85 @@ angular.module('gdsApp')
         }
       });
     };
+    // ====
 
+    // ====
     $scope.getHousehold = function() {
-
       $scope.screen = {};
 
-      HouseholdApi.getHousehold(userID, function(data) {
-        $scope.screen.household = meuFiltro('filter')(data.data.data, {
+      HouseholdApi.getHousehold(userStorage.id, function(data) {
+        $scope.screen.householdData = meuFiltro('filter')(data.data.data, {
           id: $routeParams.id
         })[0];
 
-        var hh = $scope.screen.household;
-        console.log('hh in getHousehold', hh);
-        $scope.screen.household = {
-          nick: hh.nick,
-          dob: hh.dob,
-          gender: hh.gender,
-          email: hh.email,
-          race: hh.race,
-          id: hh.id,
-          password: "",
-          picture: hh.picture
-        };
-
-        return console.warn('$scope.screen.household in getHousehold ', $scope.screen.household);
+        $scope.screen.household = _buildObj($scope.screen.householdData);
       });
     };
+    // ====
 
+    // ====
     $scope.editProfile = function() {
-      $scope.screen.household.dob = moment($scope.dt).tz("America/Sao_Paulo").utc().format('YYYY-MM-DD');
 
+      // return console.warn($scope.screen.household);
+
+      // create a object to manipulate date and send to api
+      var params = {
+        nick: $scope.screen.household.nick,
+        dob: _unConvertDate($scope.screen.household.dob),
+        gender: $scope.screen.household.gender,
+        email: $scope.screen.household.email,
+        race: $scope.screen.household.race,
+        id: $scope.screen.household.id,
+        password: "",
+        picture: $scope.screen.household.picture
+      };
+
+      // verify is household changes password
       if($scope.screen.household.password == "" || $scope.screen.household.password != $scope.screen.repeatPassword) {
         delete $scope.screen.household.password;
+      } else {
+        params.password = $scope.screen.household.password;
       }
+      // ====
 
-      if ($scope.invalidbirth) {
-        console.log('invalid birthdate!');
-        return false;
-      }
+      // return console.warn(params);
 
-      HouseholdApi.updateProfile($scope.screen.household, function(data) {
+      HouseholdApi.updateProfile(params, function(data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
+          console.warn('DATA SUCCESS -> ', data);
           toaster.pop('success', data.data.message);
+
+          $scope.screen.household = _buildObj(data.data.user[0]);
         }
       });
 
       $scope.getHousehold();
     };
+    // ====
 
-    $scope.checkValidDate = function()  {
-      // console.log('dob in editProfile', $scope.screen.household.dob);
+    // Utils
+    var _unConvertDate = function(date) {
+      var newDob = date.split('-');
 
-      $('.birthdate').on('change', function(){
-        if ( $('.birthdate').val().indexOf('.') === -1 || $('.birthdate').val() == '' ) {
-          console.log('invalid birthdate!');
-          $scope.invalidbirth = true;
+      return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
+    };
 
-        } else {
-          delete $scope.invalidbirth;
-          console.log('valid birthdate', $scope.invalidbirth);
+    var _buildObj = function(obj) {
+      return {
+          nick: obj.nick,
+          dob: _unConvertDate(obj.dob),
+          gender: obj.gender,
+          email: obj.email,
+          race: obj.race,
+          id: obj.id,
+          password: "",
+          picture: obj.picture
         }
-      });
     };
-
-    // Disable weekend selection
-    $scope.disabled = function(date, mode) {
-      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-    };
-
-    $scope.open = function($event) {
-      $scope.status.opened = true;
-    };
-
-    $scope.setDate = function(year, month, day) {
-      $scope.dt = new Date(year, month, day);
-    };
-
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = 'dd.MM.yyyy';
-
-    $scope.status = {
-      opened: false
-    };
-
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    var afterTomorrow = new Date();
-    afterTomorrow.setDate(tomorrow.getDate() + 2);
-    $scope.events =
-      [
-        {
-          date: tomorrow,
-          status: 'full'
-        },
-        {
-          date: afterTomorrow,
-          status: 'partially'
-        }
-      ];
-
-    $timeout(function() {
-      $scope.convertDate = function() {
-        console.log('testing', $scope.screen.household.dob);
-        var convertedDate = moment($scope.screen.household.dob).tz("America/Sao_Paulo").utc().format('DD.MM.YYYY').replace(/-/g, ".");
-        $scope.convertedBirthDate = convertedDate;
-      }
-      $scope.convertDate();
-    }, 1000);
+    // ====
 
 
     $scope.getHousehold();
-    $scope.checkValidDate();
   }]);

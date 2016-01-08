@@ -43,7 +43,7 @@ angular.module('gdsApp')
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.user.nick,
-        dob: _unConvertDate($scope.screen.user.dob, 'YYYY-MM-DD'),
+        dob: _unConvertDate($scope.screen.user.dob),
         gender: $scope.screen.user.gender,
         email: $scope.screen.user.email,
         race: $scope.screen.user.race
@@ -72,6 +72,7 @@ angular.module('gdsApp')
       // ====
     };
 
+    // Utils
     var _convertDate = function(date, dateFormat) {
       return moment(date.substr(0,10)).utc().format(dateFormat)
     };
@@ -81,6 +82,8 @@ angular.module('gdsApp')
 
       return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
     };
+    // ====
+
 
     $scope.getUser();
   }]);

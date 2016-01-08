@@ -73,6 +73,8 @@ angular.module('gdsApp')
       params.client = client;
       params.user_token = userStorage.user_token;
 
+      // return console.warn(params);
+
       $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
