@@ -57,7 +57,7 @@
     // controller: 'CadastroCtrl',
     // controllerAs: 'cadastro'
   })
-  .when('/login-email', {
+  .when('/login/email', {
     templateUrl: 'views/login-email.html',
     controller: 'LoginEmailCtrl',
     controllerAs: 'loginEmail'
@@ -220,7 +220,7 @@
   controller: 'TemplateEmailEsqueciSenhaCtrl',
   controllerAs: 'templateEmailEsqueciSenha'
 })
-.when('/cadastro-email', {
+.when('/cadastro/email', {
   templateUrl: 'views/cadastro-email.html',
   controller: 'CadastroEmailCtrl',
   controllerAs: 'cadastroEmail'
