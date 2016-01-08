@@ -29,13 +29,117 @@
  .run(['$rootScope', 'LocalStorage', 'amMoment', function($rootScope, LocalStorage, amMoment){
   // moment js
   amMoment.changeLocale('pt-br');
+  // ====
 
   // check if user exist
   var u = LocalStorage.getItem('userStorage');
+
   if(u != null) {
     $rootScope.user = u;
   }
+
   console.log('app.run: user', $rootScope.user);
+  // ====
+
+  // Helpers functions
+  $rootScope.UTIL = {
+    unConvertDate: function(date) {
+      var newDob = date.split('-');
+      return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
+    },
+
+    convertDate: function(date, dateFormat) {
+      return moment(date.substr(0,10)).utc().format(dateFormat)
+    },
+
+    checkAvatar: function(obj) {
+      console.warn('this -> ', this);
+      console.warn(obj);
+      var gender, race, age;
+
+      gender = obj.gender;
+      race = obj.race;
+      age = this.getAge(obj.dob);
+
+      if (gender == 'M') {
+        if (race == 'preto' || race == 'indigena' || race == 'pardo') {
+          // $scope.houseHold.picture = 'avatar masculino preto';
+          if (age <= 49) {
+            return '4';
+            // console.log('avatar masculino preto novinho');
+          } else if (age >= 50) {
+            return '11';
+            // console.log('avatar masculino preto coroa');
+          }
+        } else if (race == 'branco'){
+          // $scope.houseHold.picture = 'avatar masculino branco';
+          if (age <= 49) {
+            return '5';
+            // console.log('avatar masculino branco novinho');
+          } else if (age >= 50) {
+            return '9';
+            // console.log('avatar masculino branco coroa');
+          }
+        } else if(race == 'amarelo') {
+          // $scope.houseHold.picture = 'avatar masculino amarelo';
+          if (age <= 49) {
+            return '14';
+            // console.log('avatar masculino amarelo novinho');
+          } else if (age >= 50) {
+            return '';
+            // console.log('avatar masculino amarelo coroa');
+          }
+        }
+      } else {
+        if (race == 'preto' || race == 'indigena' || race == 'pardo') {
+          // $scope.houseHold.picture = 'avatar feminino preto';
+          if (age <= 49) {
+            return '1';
+            // console.log('avatar feminino preto novinho');
+          } else if (age >= 50) {
+            return '12';
+            // console.log('avatar feminino preto coroa');
+          }
+        } else if (race == 'branco'){
+          // $scope.houseHold.picture = 'avatar feminino branco';
+          if (age <= 49) {
+            return '3';
+            // console.log('avatar feminino branco novinho');
+          } else if (age >= 50) {
+            return '10';
+            // console.log('avatar feminino branco coroa');
+          }
+        } else if(race == 'amarelo') {
+          // $scope.houseHold.picture = 'avatar feminino amarelo';
+          if (age <= 49) {
+            return '13';
+            // console.log('avatar feminino amarelo novinho');
+          } else if (age >= 50) {
+            return '';
+            // console.log('avatar feminino amarelo coroa');
+          }
+        }
+      }
+
+      // console.warn($scope.houseHold);
+    },
+
+    getAge: function(dateString) {
+      var today, birthDate, age, m;
+
+      today = new Date();
+      birthDate = new Date(dateString);
+      age = today.getFullYear() - birthDate.getFullYear();
+      m = today.getMonth() - birthDate.getMonth();
+
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+
+      return age;
+    }
+  };
+  // ====
 }])
 
 .config(function ($routeProvider, $locationProvider) {
@@ -57,7 +161,7 @@
     // controller: 'CadastroCtrl',
     // controllerAs: 'cadastro'
   })
-  .when('/login-email', {
+  .when('/login/email', {
     templateUrl: 'views/login-email.html',
     controller: 'LoginEmailCtrl',
     controllerAs: 'loginEmail'
@@ -213,14 +317,14 @@
   .when('/esqueci-minha-senha?:hash', {
     templateUrl: 'views/esqueci-minha-senha.html',
     controller: 'EsqueciMinhaSenhaCtrl',
-    controllerAs: 'esqueciMinhaSenha'
+  controllerAs: 'esqueciMinhaSenha'
   })
 .when('/template/email/esqueci-senha', {
   templateUrl: 'views/template-email-esqueci-senha.html',
   controller: 'TemplateEmailEsqueciSenhaCtrl',
   controllerAs: 'templateEmailEsqueciSenha'
 })
-.when('/cadastro-email', {
+.when('/cadastro/email', {
   templateUrl: 'views/cadastro-email.html',
   controller: 'CadastroEmailCtrl',
   controllerAs: 'cadastroEmail'

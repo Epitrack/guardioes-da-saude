@@ -13,9 +13,7 @@
     <div class="panel-body">
       <a ng-href="profile/change-photo" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
         <figure class="card-avatar-image edit">
-
           <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
-
           <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Default">
           <figcaption>Editar foto</figcaption>
         </figure>
@@ -32,8 +30,8 @@
           <div class="no-padding col-xs-12">
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-birthdate">Data de nascimento (dd-mm-aaaa)</label>
-              <input class="input-primary birthdate" id="profile-birthdate" name="add-profile-birthdate" type="text" ng-model="screen.user.dob" mask="99-99-9999">
-              <span class="icon-birthdate"></span>
+              <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text" ng-model="screen.user.dob" mask="99-99-9999">
+              <!-- <span class="icon-birthdate"></span> -->
             </fieldset>
 
             <fieldset class="col-xs-12 col-sm-6">

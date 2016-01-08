@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', '$filter', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage, $filter) {
+  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', '$filter', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage, $filter, $rootScope) {
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
@@ -116,7 +116,11 @@ angular.module('gdsApp')
     $scope.createData = {};
 
     $scope.createUser = function() {
-      UserApi.createUser($scope.createData, function(data) {
+
+      // $scope.createData vem da view
+      var params = $scope.createData;
+
+      UserApi.createUser(params, function(data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
@@ -143,5 +147,4 @@ angular.module('gdsApp')
       });
     };
     // ====
-
   }]);

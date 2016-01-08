@@ -21,7 +21,8 @@ angular.module('gdsApp')
     // obj with user data
     var user = {};
 
-    // pego a localização do localStorage
+    // pego os dados do localStorage
+    // var userStorage = LocalStorage.getItem('userStorage');
     var userStorage = $rootScope.user;
 
     // register
@@ -39,7 +40,7 @@ angular.module('gdsApp')
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
 
-      // return console.warn('DATA -> ', data);
+      // return console.warn('createUser -> ', data);
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
@@ -91,26 +92,22 @@ angular.module('gdsApp')
 
     // update user profile
     obj.updateProfile = function(params, callback) {
-      var p = angular.copy(params);
-      p.client = client;
-      p.id = userStorage.id;
-      p.user_token = userStorage.user_token;
 
-      if (p.dob != null) {
-        console.log("dob 1", p.dob);
-        var d = moment(p.dob, "DD-MM-YYYY");
-        p.dob = d.format('YYYY-MM-DD');
-        console.log("dob 2", p.dob);
-      }
+      // console.warn('params 1 -> ', params);
 
-      //User this return to test what is being sent to back-end
-      // return console.log('p in updateProfile ', p);
+      // Adds in params obj some data to validate request
+      params.client = client;
+      params.id = LocalStorage.getItem('userStorage').id;
+      params.user_token = LocalStorage.getItem('userStorage').user_token;
+      // ====
 
-      $http.post(apiUrl + '/user/update', p, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+      // console.warn('params 2 -> ', params);
+
+      $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success updateProfile: ', result);
           callback(result);
-          obj.updateUser(p.id);
+          obj.updateUser(params.id);
         }, function(error){
           console.warn('Error updateProfile: ', error);
       });

@@ -24,7 +24,7 @@ angular.module('gdsApp')
       data.user_token = userStorage.user_token;
       data.dob = data.dob;
 
-      console.log('data.dob in createHousehold', data.dob);
+      // return console.warn(data);
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
@@ -72,6 +72,8 @@ angular.module('gdsApp')
     obj.updateProfile = function(params, callback) {
       params.client = client;
       params.user_token = userStorage.user_token;
+
+      // return console.warn(params);
 
       $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){
