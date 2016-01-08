@@ -21,7 +21,8 @@ angular.module('gdsApp')
     // obj with user data
     var user = {};
 
-    // pego a localização do localStorage
+    // pego os dados do localStorage
+    // var userStorage = LocalStorage.getItem('userStorage');
     var userStorage = $rootScope.user;
 
     // register
@@ -39,7 +40,7 @@ angular.module('gdsApp')
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
 
-      // return console.warn('DATA -> ', data);
+      // return console.warn('createUser -> ', data);
 
       $http.post(apiUrl + '/user/create', data, { headers: {'app_token': app_token}})
         .then(function(data){
@@ -92,13 +93,15 @@ angular.module('gdsApp')
     // update user profile
     obj.updateProfile = function(params, callback) {
 
+      // console.warn('params 1 -> ', params);
+
       // Adds in params obj some data to validate request
       params.client = client;
-      params.id = userStorage.id;
-      params.user_token = userStorage.user_token;
+      params.id = LocalStorage.getItem('userStorage').id;
+      params.user_token = LocalStorage.getItem('userStorage').user_token;
       // ====
 
-      // return console.warn(params);
+      // console.warn('params 2 -> ', params);
 
       $http.post(apiUrl + '/user/update', params, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){

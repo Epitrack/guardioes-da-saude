@@ -10,7 +10,7 @@
 		  <fieldset class="input-group mainform signup">
 			<input class="form-control mainform-input" name="nick" type="text" placeholder="Apelido" ng-model="createData.nick" required>
 			<input class="form-control mainform-input" name="email" type="email" placeholder="Email" ng-model="createData.email" required>
-			<input class="form-control mainform-input" type="tel" placeholder="Data de nascimento (dd/mm/aaaa)" ng-model="createData.dob" mask="99-99-9999" ng-bind="date | date:'yyyy/mm/dd'" required>
+			<input class="form-control mainform-input" type="tel" placeholder="Data de nascimento (dd-mm-aaaa)" ng-model="createData.dob" mask="99-99-9999" required>
 
 			<select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race" required>
 			  <option ng-selected="true" disabled>Cor/Raça</option>

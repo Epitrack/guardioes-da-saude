@@ -213,7 +213,7 @@
   .when('/esqueci-minha-senha?:hash', {
     templateUrl: 'views/esqueci-minha-senha.html',
     controller: 'EsqueciMinhaSenhaCtrl',
-    controllerAs: 'esqueciMinhaSenha'
+  controllerAs: 'esqueciMinhaSenha'
   })
 .when('/template/email/esqueci-senha', {
   templateUrl: 'views/template-email-esqueci-senha.html',
