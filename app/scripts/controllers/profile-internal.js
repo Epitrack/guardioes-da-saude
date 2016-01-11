@@ -101,6 +101,5 @@ angular.module('gdsApp')
     };
     // ====
 
-
     $scope.getHousehold();
   }]);

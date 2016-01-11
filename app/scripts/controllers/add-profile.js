@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'toaster', '$timeout', '$location', function ($scope, HouseholdApi, toaster, $timeout, $location) {
+  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'toaster', '$timeout', '$location', '$rootScope', function ($scope, HouseholdApi, toaster, $timeout, $location, $rootScope) {
     $scope.pageClass = 'add-profile-page';
 
     // Add a new household member
@@ -25,7 +25,11 @@ angular.module('gdsApp')
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
 
-      // return console.warn(params);
+      var age = $scope.UTIL.getAge(params.dob);
+
+      if ($rootScope.idade != true) {
+        return $scope.invalid = true;
+      }
 
       HouseholdApi.createHousehold(params, function(data) {
         if (data.data.error == true) {
