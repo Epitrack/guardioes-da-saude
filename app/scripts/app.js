@@ -53,8 +53,6 @@
     },
 
     checkAvatar: function(obj) {
-      // console.warn('this -> ', this);
-      // console.warn(obj);
       var gender, race, age;
 
       gender = obj.gender;
@@ -120,13 +118,9 @@
           }
         }
       }
-
-      // console.warn($scope.houseHold);
     },
 
     getAge: function(dateString) {
-      // return console.warn('dateString -> ', dateString);
-
       var today, birthDate, age, m;
 
       today = new Date();
@@ -144,19 +138,11 @@
 
     checkAge: function(age) {
       // debugger;
-      $rootScope.idade = '';
-
       if (age > 13 && age < 120) {
-        $rootScope.idade = true;
-        // console.log('idade ok =======')
+        localStorage.setItem('dobValid', true);
       } else {
-        $rootScope.idade = false;
-        // console.log('idade errada =======')
+        localStorage.setItem('dobValid', false);
       }
-
-      // console.warn('age & idade -> ', age, idade);
-
-      // return idade;
     }
   };
   // ====
