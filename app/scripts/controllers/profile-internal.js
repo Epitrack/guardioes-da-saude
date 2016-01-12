@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'toaster', '$filter', '$timeout', '$location', function ($scope, $routeParams, HouseholdApi, $rootScope, toaster, $filter, $timeout, $location) {
+  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'toaster', '$filter', '$timeout', '$location', 'LocalStorage', function ($scope, $routeParams, HouseholdApi, $rootScope, toaster, $filter, $timeout, $location, LocalStorage) {
 
     var meuFiltro = $filter;
 
@@ -46,9 +46,6 @@ angular.module('gdsApp')
 
     // ====
     $scope.editProfile = function() {
-
-      // return console.warn($scope.screen.household);
-
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.household.nick,
@@ -60,6 +57,14 @@ angular.module('gdsApp')
         password: "",
         picture: $scope.screen.household.picture
       };
+
+      var age = $scope.UTIL.getAge(params.dob);
+
+      $scope.invalid = '';
+
+      if (LocalStorage.getItem('dobValid') != true) {
+        return $scope.invalid = true;
+      }
 
       // verify is household changes password
       if($scope.screen.household.password == "" || $scope.screen.household.password != $scope.screen.repeatPassword) {
@@ -100,7 +105,6 @@ angular.module('gdsApp')
         }
     };
     // ====
-
 
     $scope.getHousehold();
   }]);

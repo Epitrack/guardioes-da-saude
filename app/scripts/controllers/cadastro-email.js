@@ -116,9 +116,16 @@ angular.module('gdsApp')
     $scope.createData = {};
 
     $scope.createUser = function() {
-
-      // $scope.createData vem da view
       var params = $scope.createData;
+      params.dob = $scope.UTIL.unConvertDate($scope.createData.dob);
+
+      var age = $scope.UTIL.getAge(params.dob);
+
+      $scope.invalid = '';
+
+      if (LocalStorage.getItem('dobValid') != true) {
+        return $scope.invalid = true;
+      }
 
       UserApi.createUser(params, function(data) {
         if (data.data.error === true) {

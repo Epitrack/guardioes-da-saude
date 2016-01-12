@@ -106,8 +106,8 @@
               <span>Sua senha precisa ter no mínimo 6 dígitos</span>
             </div>
 
-            <div ng-show="invalidbirth" class="alert alert-info" role="alert">
-              <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
+            <div ng-show="invalid == true" class="alert alert-info" role="alert">
+              <span>Data de nascimento inválida.</span>
             </div>
           </fieldset>
         </form>
