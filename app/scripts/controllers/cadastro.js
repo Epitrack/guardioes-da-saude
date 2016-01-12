@@ -122,9 +122,9 @@ angular.module('gdsApp')
         return $scope.invalid = true;
       }
 
-      $('#modal-complete-login').modal('hide');
+      // return console.warn('PARAMS CADASTRO -> ', params);
 
-      console.warn('PARAMS -> ', params);
+      $('#modal-complete-login').modal('hide');
 
       UserApi.createUser(params, function(data) {
         if (data.data.error == false) {
