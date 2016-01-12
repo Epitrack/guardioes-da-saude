@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'toaster', '$timeout', '$location', '$rootScope', function ($scope, HouseholdApi, toaster, $timeout, $location, $rootScope) {
+  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'toaster', '$timeout', '$location', '$rootScope', 'LocalStorage', function ($scope, HouseholdApi, toaster, $timeout, $location, $rootScope, LocalStorage) {
     $scope.pageClass = 'add-profile-page';
 
     // Add a new household member
@@ -27,7 +27,9 @@ angular.module('gdsApp')
 
       var age = $scope.UTIL.getAge(params.dob);
 
-      if ($rootScope.idade != true) {
+      $scope.invalid = '';
+
+      if (LocalStorage.getItem('dobValid') != true) {
         return $scope.invalid = true;
       }
 
