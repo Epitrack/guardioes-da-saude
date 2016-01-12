@@ -122,8 +122,6 @@ angular.module('gdsApp')
         return $scope.invalid = true;
       }
 
-      // return console.warn('PARAMS LOGIN -> ', params);
-
       $('#modal-complete-login').modal('hide');
 
       UserApi.createUser(params, function(data) {

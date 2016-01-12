@@ -35,8 +35,6 @@ angular.module('gdsApp')
       data.platform = platform;
       data.client = client;
 
-      // data.dob = data.dob.split("-").reverse().join('-');
-
       data.lat = LocalStorage.getItem('userLocation').lat;
       data.lon = LocalStorage.getItem('userLocation').lon;
 
