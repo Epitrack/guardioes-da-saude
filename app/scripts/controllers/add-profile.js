@@ -62,7 +62,13 @@ angular.module('gdsApp')
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
 
-      // return console.warn(params);
+      var age = $scope.UTIL.getAge(params.dob);
+
+      $scope.invalid = '';
+
+      if (LocalStorage.getItem('dobValid') != true) {
+        return $scope.invalid = true;
+      }
 
       HouseholdApi.createHousehold(params, function(data) {
         if (data.data.error == true) {

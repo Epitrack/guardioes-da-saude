@@ -9,7 +9,7 @@
  */
 angular.module('gdsApp')
   .controller('CadastroCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
-    $scope.pageClass = 'login-page';
+    // $scope.pageClass = 'login-page';
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
@@ -22,7 +22,6 @@ angular.module('gdsApp')
 
         userFbData.fb_token = authData.facebook.accessToken;
         userFbData.nick = authData.facebook.displayName;
-        // userFbData.picture = authData.facebook.profileImageURL;
         userFbData.fb = authData.facebook.id;
 
         if (authData.facebook.cachedUserProfile.gender == 'male') {
@@ -33,6 +32,8 @@ angular.module('gdsApp')
 
         $scope.userData = userFbData;
 
+        // return console.warn(userFbData);
+
         UserApi.fbLogin(userFbData.fb_token, function(data) {
           console.log('Data -> ', data);
           if (data.data.error == false) {
@@ -40,7 +41,7 @@ angular.module('gdsApp')
             LocalStorage.userCreateData(data.data.user, data.data.token);
             $location.path('health-daily');
           } else {
-            console.log(data.data.message);
+            console.warn('Error -> ', data.data.message);
             $('#modal-complete-login').modal('show');
           }
         })
@@ -58,10 +59,11 @@ angular.module('gdsApp')
 
         userGlData.access_token = authData.google.accessToken;
         userGlData.nick = authData.google.displayName;
-        // userGlData.picture = authData.google.profileImageURL;
         userGlData.gl = authData.google.id;
 
         $scope.userData = userGlData;
+
+        // return console.warn($scope.userData);
 
         UserApi.glLogin(userGlData, function(data) {
           if (data.data.error == false) {
@@ -88,7 +90,6 @@ angular.module('gdsApp')
         userTwData.oauth_token = authData.twitter.accessToken;
         userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
         userTwData.nick = authData.twitter.displayName;
-        // userTwData.picture = authData.twitter.profileImageURL;
         userTwData.tw = authData.twitter.id;
 
         $scope.userData = userTwData;
@@ -105,14 +106,25 @@ angular.module('gdsApp')
         })
       }).catch(function(error) {
         toaster.pop('error', error);
-        console.log('Facebook authentication failed:', error);
+        console.log('Twitter authentication failed:', error);
       });
     };
 
     $scope.updateUserSocialData = function() {
+      var params = $scope.userData;
+      params.dob = $scope.UTIL.unConvertDate($scope.userData.dob);
+
+      var age = $scope.UTIL.getAge(params.dob);
+
+      $scope.invalid = '';
+
+      if (LocalStorage.getItem('dobValid') != true) {
+        return $scope.invalid = true;
+      }
+
       $('#modal-complete-login').modal('hide');
 
-      UserApi.createUser($scope.userData, function(data) {
+      UserApi.createUser(params, function(data) {
         if (data.data.error == false) {
           toaster.pop('success', data.data.message);
           LocalStorage.userCreateData(data.data.user);
