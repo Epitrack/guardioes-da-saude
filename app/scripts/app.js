@@ -308,16 +308,6 @@
     controllerAs: 'dataDownload',
         resolve: { loggedin: checkLoggedOut }
     })
-      // .when('/components', {
-      //   templateUrl: 'views/components.html',
-      //   controller: 'ComponentCtrl',
-      //   controllerAs: 'components'
-      // })
-      // .when('/help', {
-      //   templateUrl: 'views/help.html',
-      //   controller: 'HelpCtrl',
-      //   controllerAs: 'help'
-      // })
   .when('/esqueci-minha-senha?:hash', {
     templateUrl: 'views/esqueci-minha-senha.html',
     controller: 'EsqueciMinhaSenhaCtrl',
