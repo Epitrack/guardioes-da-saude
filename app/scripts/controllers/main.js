@@ -85,7 +85,4 @@ angular.module('gdsApp')
     $scope.getMostCities(5);
 
     // ====
-
-    console.log($rootScope.user);
-
   }]);

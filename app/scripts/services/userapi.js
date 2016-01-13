@@ -21,8 +21,6 @@ angular.module('gdsApp')
     // obj with user data
     var user = {};
 
-    // pego os dados do localStorage
-    // var userStorage = LocalStorage.getItem('userStorage');
     var userStorage = $rootScope.user;
 
     // register
@@ -124,10 +122,7 @@ angular.module('gdsApp')
 
     // get calendar data
     obj.getUserCalendar = function(params, callback) {
-      var month = params.month,
-          year = params.year;
-
-      $http.get(apiUrl + '/user/calendar/month?month=' + month + '&year=' + year, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
+      $http.get(apiUrl + '/user/calendar/month?month=' + params.month + '&year=' + params.year, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
           console.log('Success getUserCalendar: ', result);
           callback(result);

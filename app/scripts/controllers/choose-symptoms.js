@@ -31,7 +31,7 @@ angular.module('gdsApp')
         }
       });
 
-      form.ill_date = moment(form.ill_date).format('YYYY-DD-MM');
+      form.ill_date = $scope.UTIL.unConvertDate(moment(new Date()).utc().format('DD-MM-YYYY'));
       form.lat = LocalStorage.getItem('userLocation').lat;
       form.lon = LocalStorage.getItem('userLocation').lon;
 
