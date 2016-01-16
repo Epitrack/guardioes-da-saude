@@ -19,37 +19,33 @@ angular.module('gdsApp')
         iconAnchor: [22, 94]
       };
 
-      angular.extend($scope, {
-        userLocation: {
-          lat: LocalStorage.getItem('userLocation').lat,
-          lng: LocalStorage.getItem('userLocation').lon,
-          title: 'Me',
-          zoom: 10,
-          icon: myIcon
-        },
+      $scope.userLocation = {
+        lat: LocalStorage.getItem('userLocation').lat,
+        lng: LocalStorage.getItem('userLocation').lon,
+        title: 'Me',
+        zoom: 10,
+        icon: myIcon
+      };
 
-        layers: {
-          baselayers: {
-            mapbox_light: {
-              name: 'Guardiões da Saúde',
-              url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
-              type: 'xyz',
-              layerOptions: {
-                apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
-                mapid: 'thulioph.wix561or'
-              }
+      $scope.layers = {
+        baselayers: {
+          mapbox_light: {
+            name: 'Guardiões da Saúde',
+            url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
+            type: 'xyz',
+            layerOptions: {
+              apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
+              mapid: 'thulioph.wix561or'
             }
           }
         }
-      });
-
-      console.warn('$scope.userLocation', $scope.userLocation);
+      };
 
       $scope.addMarkers = function() {
         // upas
         var addressPointsToMarkers = function(points) {
-          // console.warn('points', points);
-          var t = [$scope.userLocation];
+          var t = [];
+
           angular.forEach(points, function(p){
             t.push({
                 lat: p.latitude,
@@ -62,12 +58,14 @@ angular.module('gdsApp')
                 }
               });
           });
+
           return t;
         };
 
         // pharmacy
         var addressPointsToMarkersPharmacy = function(points) {
-          var t = [$scope.userLocation];
+          var t = [];
+
           angular.forEach(points, function(p){
             t.push({
               lat: p.geometry.location.lat,
@@ -80,10 +78,11 @@ angular.module('gdsApp')
                 }
               });
           });
+
           return t;
         };
 
-        $scope.markers = addressPointsToMarkers($rootScope.markersUpa);
+        $scope.markersUpa = addressPointsToMarkers($rootScope.markersUpa);
         $scope.markersPharmacy = addressPointsToMarkersPharmacy($rootScope.markersPharmacy);
       };
 
@@ -112,7 +111,6 @@ angular.module('gdsApp')
     // UPAS
     $scope.loadUpas = function() {
       healthTips.getUpas(function(data) {
-        // adiciono os pontos ao $rootScope
         $rootScope.markersUpa = data;
         $scope.addMarkers();
       });
@@ -121,7 +119,6 @@ angular.module('gdsApp')
     // FARMACIAS
     $scope.loadFarmacias = function() {
       healthTips.getFarmacias(function(data) {
-        console.log('data loadFarmacia -> ', data);
         $rootScope.markersPharmacy = data;
         $scope.addMarkers();
       });

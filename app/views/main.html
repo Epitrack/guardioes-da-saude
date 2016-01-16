@@ -4,9 +4,9 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 near-you-box">
         <h2 class="title-primary">Veja como está a saúde perto de você</h2>
 
-        <form ng-submit="getSurveyByCity()" name="form-search-home" class="form-search-home">
+        <form ng-submit="setRootCity()" name="form-search-home" class="form-search-home">
           <fieldset class="input-group">
-            <input type="text" ng-model="surveyByCity.city" class="search-home" placeholder="Pesquise pela sua cidade">
+            <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade">
           </fieldset>
         </form>
 
@@ -14,7 +14,7 @@
           <h4>Cidades mais acessadas</h4>
           <ul>
             <li ng-repeat="city in cities">
-              <a href="" ng-click="getSurveyByCity(city._id)">{{ city._id }}</a>
+              <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{ city._id }}</a>
             </li>
           </ul>
         </div>

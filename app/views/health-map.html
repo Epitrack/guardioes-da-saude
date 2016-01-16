@@ -1,5 +1,5 @@
 <aside class="col-sm-5 col-md-3 map-mini-dashboard">
-  <form ng-submit="getSurveyByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
+  <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
       <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city">
     </fieldset>
@@ -10,31 +10,29 @@
       <span class="icon"></span>
 
       <div>
-        <h4 class="value">{{surveyByCitySummary.total_surveys}}</h4>
+        <h4 class="value">{{summary.total_surveys}}</h4>
         <h5>Participações essa semana</h5>
       </div>
     </div>
 
     <div class="geral">
       <legend class="legend-subtitle ff-bold">Geral</legend>
-      <div>
+
+      <!-- <div>
         <donutchart id="donut-chart-map" data-options="donutOptions"></donutchart>
-      </div>
+      </div> -->
+
       <div class="metrics col-sm-6">
         <img class="icon-medium icon-shadow" src="../images/icon-health-daily-good.svg" alt="Good">
-        <span class="total-percentage">{{surveyByCitySummary.pct_no_symptoms}}% <span class="light">Bem</span></span>
-        <span class="total-users">{{surveyByCitySummary.total_no_symptoms}} Participantes</span>
+        <span class="total-percentage">{{summary.pct_no_symptoms}}% <span class="light">Bem</span></span>
+        <span class="total-users">{{summary.total_no_symptoms}} Participantes</span>
       </div>
 
       <div class="metrics col-sm-6">
         <img class="icon-medium icon-shadow" src="../images/icon-health-daily-bad.svg" alt="Bad">
-        <span class="total-percentage">{{surveyByCitySummary.pct_symptoms}}% <span class="light">Mal<span></span>
-        <span class="total-users">{{surveyByCitySummary.total_symptoms}} Participantes</span>
+        <span class="total-percentage">{{summary.pct_symptoms}}% <span class="light">Mal<span></span>
+        <span class="total-users">{{summary.total_symptoms}} Participantes</span>
       </div>
-
-      <!-- <span class="graphic big"></span>
-      <span class="graphic good"></span>
-      <span class="graphic bad"></span> -->
     </div>
 
     <div class="sindromes">
@@ -42,36 +40,36 @@
 
       <div class="progress-wrapper">
         <span class="progress-label">Diarréica</span>
-        <span class="progress-value">{{surveyByCitySummary.diseases.diarreica}}%</span>
+        <span class="progress-value">{{summary.diarreica}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{surveyByCitySummary.diseases.diarreica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.diarreica}}%">
-            <span class="sr-only">{{surveyByCitySummary.diseases.diarreica}}% Complete</span>
+            aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.diarreica}}%">
+            <span class="sr-only">{{summary.diarreica}}% Complete</span>
           </div>
         </div>
       </div>
 
       <div class="progress-wrapper">
         <span class="progress-label">Exantemáica</span>
-        <span class="progress-value">{{surveyByCitySummary.diseases.exantematica}}%</span>
+        <span class="progress-value">{{summary.exantematica}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{surveyByCitySummary.diseases.exantematica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.exantematica}}%">
-            <span class="sr-only">{{surveyByCitySummary.diseases.exantematica}}% Complete</span>
+            aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.exantematica}}%">
+            <span class="sr-only">{{summary.exantematica}}% Complete</span>
           </div>
         </div>
       </div>
 
       <div class="progress-wrapper">
         <span class="progress-label">Respiratória</span>
-        <span class="progress-value">{{surveyByCitySummary.diseases.respiratoria}}%</span>
+        <span class="progress-value">{{summary.respiratoria}}%</span>
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{surveyByCitySummary.diseases.respiratoria}}" aria-valuemin="0" aria-valuemax="100" style="width: {{surveyByCitySummary.diseases.respiratoria}}%">
-            <span class="sr-only">{{surveyByCitySummary.diseases.respiratoria}}% Complete</span>
+            aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.respiratoria}}%">
+            <span class="sr-only">{{summary.respiratoria}}% Complete</span>
           </div>
         </div>
       </div>
@@ -85,8 +83,17 @@
   </div>
 </aside>
 
-<div class="health-map-container">
-  <leaflet lf-center="userLocation" markers="markers" layers="layers" height="100%" width="100%"></leaflet>
+<div class="health-map-container" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{mapOptions}}">
+
+  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false" styles="{{config.style}}">
+    <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()" icon="{{userLocation.icon}}"></marker>
+
+    <info-window position="current-location">
+      <span>Você está aqui!</span>
+    </info-window>
+
+    <marker ng-repeat="m in markers" id="{{m.id}}" icon="{{m.icon}}" position="{{m.position}}"></marker>
+  </ng-map>
 </div>
 
 <!-- Síndromes Modal -->
