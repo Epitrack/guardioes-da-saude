@@ -85,7 +85,7 @@
 
 <div class="health-map-container" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{mapOptions}}">
 
-  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false">
+  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false" styles="{{config.style}}">
     <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()" icon="{{userLocation.icon}}"></marker>
 
     <info-window position="current-location">
