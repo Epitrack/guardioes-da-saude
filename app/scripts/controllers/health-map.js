@@ -47,6 +47,7 @@ angular.module('gdsApp')
     $scope.getMarkersByCity = function() {
       var params = $scope.surveyByCity.city;
 
+      getCoords(params);
       getSurveyByCity(params);
       getSurveyByCitySummary(params)
     };
@@ -104,6 +105,18 @@ angular.module('gdsApp')
           toaster.pop('error', data.data.message);
         }
       })
+    };
+
+    function getCoords(city) {
+      var geocoder = new google.maps.Geocoder();
+
+      geocoder.geocode({'address': city}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          $scope.map.setCenter(results[0].geometry.location);
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
     };
     // ====
 
