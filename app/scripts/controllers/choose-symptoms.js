@@ -97,9 +97,9 @@ angular.module('gdsApp')
       social = social;
 
       if (social == 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ text)
+        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text))
       } else {
-        $window.open('https://twitter.com/home?status='+ text)
+        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text))
       }
     };
 
