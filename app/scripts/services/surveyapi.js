@@ -56,6 +56,26 @@ angular.module('gdsApp')
       });
     };
 
+    obj.getMarkersByLocation = function(params, callback) {
+      $http.get(apiUrl + '/surveys/l?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success getMarkersByLocation: ', data);
+          callback(data);
+        }, function(error){
+          console.warn('Error getMarkersByLocation: ', error);
+      });
+    };
+
+    obj.getSummaryByLocation = function(params, callback) {
+      $http.get(apiUrl + '/surveys/summary?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
+        .then(function(data){
+          console.log('Success getSummaryByLocation: ', data);
+          callback(data);
+        }, function(error){
+          console.warn('Error getSummaryByLocation: ', error);
+      });
+    };
+
     obj.getMarkersByCitySummary = function(city, callback) {
       $http.get(apiUrl + '/surveys/summary?q=' + city, {headers: {'app_token': app_token}})
         .then(function(data){

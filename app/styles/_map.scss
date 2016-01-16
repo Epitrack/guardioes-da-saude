@@ -18,10 +18,13 @@
 }
 
 .health-map-container {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   width: 100%;
   position: absolute;
   z-index: 1;
+
+  background-color: pink;
 }
 
 .info-mini-dashboard {
@@ -77,9 +80,7 @@
       @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
     }
 
-    .light {
-      font-family: $ff-light;
-    }
+    .light { font-family: $ff-light; }
 
     .total-percentage {
       font-family: $ff-bold;
@@ -159,6 +160,7 @@
 @media screen and (min-width: 768px) {
   .map-mini-dashboard {
     position: absolute;
+    overflow: scroll;
     height: 100%;
     @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
   }

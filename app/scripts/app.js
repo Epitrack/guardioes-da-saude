@@ -24,7 +24,8 @@
   'ngMask',
   'angularMoment',
   'ngFileUpload',
-  'firebase'
+  'firebase',
+  'ngMap'
   ])
  .run(['$rootScope', 'LocalStorage', 'amMoment', function($rootScope, LocalStorage, amMoment){
   // moment js
