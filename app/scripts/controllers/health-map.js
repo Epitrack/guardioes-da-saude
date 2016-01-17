@@ -49,7 +49,7 @@ angular.module('gdsApp')
 
       getCoords(params);
       getSurveyByCity(params);
-      getSurveyByCitySummary(params)
+      getSurveyByCitySummary(params);
     };
 
     function getSurveyByCity(city) {
@@ -61,13 +61,13 @@ angular.module('gdsApp')
           toaster.pop('error', data.data.message);
         }
       });
-    };
+    }
 
     function getSurveyByCitySummary(city) {
       var summary = {};
 
       Surveyapi.getMarkersByCitySummary(city, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
           summary.total_symptoms = data.data.data.total_symptoms;
@@ -104,8 +104,8 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
-      })
-    };
+      });
+    }
 
     function getCoords(city) {
       var geocoder = new google.maps.Geocoder();
@@ -117,7 +117,7 @@ angular.module('gdsApp')
           alert('Geocode was not successful for the following reason: ' + status);
         }
       });
-    };
+    }
     // ====
 
 
@@ -236,13 +236,13 @@ angular.module('gdsApp')
       });
 
       return t;
-    };
+    }
 
     function getSummaryByLocation(params) {
       var summary = {};
 
       Surveyapi.getSummaryByLocation(params, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
           summary.total_symptoms = data.data.data.total_symptoms;
@@ -278,8 +278,8 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
-      })
-    };
+      });
+    }
 
     $scope.getMarkersByLocation = function() {
       var params = {
@@ -288,7 +288,7 @@ angular.module('gdsApp')
       };
 
       Surveyapi.getMarkersByLocation(params, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
           console.warn(data.data.message);
@@ -296,7 +296,7 @@ angular.module('gdsApp')
         }
       });
 
-      getSummaryByLocation(params)
+      getSummaryByLocation(params);
     };
     // ====
 
@@ -304,7 +304,7 @@ angular.module('gdsApp')
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
 
-      delete $rootScope.city
+      delete $rootScope.city;
     } else {
       $scope.getMarkersByLocation();
     }

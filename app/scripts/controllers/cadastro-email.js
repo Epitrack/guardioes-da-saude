@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', '$filter', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage, $filter, $rootScope) {
+  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
@@ -28,7 +28,7 @@ angular.module('gdsApp')
         // userFbData.picture = authData.facebook.profileImageURL;
         userFbData.fb = authData.facebook.id;
 
-        if (authData.facebook.cachedUserProfile.gender == 'male') {
+        if (authData.facebook.cachedUserProfile.gender === 'male') {
           userFbData.gender = 'M';
         } else {
           userFbData.gender = 'F';
@@ -38,7 +38,7 @@ angular.module('gdsApp')
 
         UserApi.fbLogin(userFbData.fb_token, function(data) {
           console.log('Data -> ', data);
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userCreateData(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -46,7 +46,7 @@ angular.module('gdsApp')
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
@@ -67,7 +67,7 @@ angular.module('gdsApp')
         $scope.userData = userGlData;
 
         UserApi.glLogin(userGlData, function(data) {
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -75,7 +75,7 @@ angular.module('gdsApp')
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Google authentication failed:', error);
@@ -97,7 +97,7 @@ angular.module('gdsApp')
         $scope.userData = userTwData;
 
         UserApi.twLogin(userTwData, function(data) {
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -105,7 +105,7 @@ angular.module('gdsApp')
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
@@ -123,7 +123,7 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') != true) {
+      if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
@@ -143,7 +143,7 @@ angular.module('gdsApp')
       $('#modal-complete-login').modal('hide');
 
       UserApi.createUser($scope.userData, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           toaster.pop('success', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');

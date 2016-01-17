@@ -14,13 +14,13 @@ angular.module('gdsApp')
 
     $scope.resetPass = function() {
       UserApi.forgotPassword($scope.forgotPass, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           $scope.message = data.data.message;
           toaster.pop('success', data.data.message);
         } else {
-          $scope.messageError = data.data.message
+          $scope.messageError = data.data.message;
         }
-      })
+      });
     };
 
   }]);

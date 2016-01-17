@@ -24,12 +24,12 @@ angular.module('gdsApp')
       var url = $location.path().split('/');
       var household = url[url.length - 3];
 
-      if (household == 'household') {
+      if (household === 'household') {
         form.household_id = url[url.length - 2];
       }
 
       Surveyapi.submitSurvey(form, function(data) {
-        if (data.data.error != false) {
+        if (data.data.error !== false) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
@@ -53,15 +53,14 @@ angular.module('gdsApp')
     };
 
     $scope.share = function(social) {
-      var text, social;
+      var text;
 
       text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
-      social = social;
 
-      if (social == 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text))
+      if (social === 'facebook') {
+        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text));
       } else {
-        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text))
+        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text));
       }
     };
 

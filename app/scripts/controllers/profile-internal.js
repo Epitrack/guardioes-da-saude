@@ -17,7 +17,7 @@ angular.module('gdsApp')
     // ====
     $scope.deleteHousehold = function(id) {
       HouseholdApi.deleteHousehold(id, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           toaster.pop('success', data.data.message);
           $timeout(function() {
             $location.path('profile');
@@ -62,12 +62,12 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') != true) {
+      if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
       // verify is household changes password
-      if($scope.screen.household.password == "" || $scope.screen.household.password != $scope.screen.repeatPassword) {
+      if($scope.screen.household.password === "" || $scope.screen.household.password !== $scope.screen.repeatPassword) {
         delete $scope.screen.household.password;
       } else {
         params.password = $scope.screen.household.password;
@@ -102,7 +102,7 @@ angular.module('gdsApp')
           id: obj.id,
           password: "",
           picture: obj.picture
-        }
+        };
     };
     // ====
 

@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('healthTips', ['$http', 'ApiConfig', 'LocalStorage', '$resource', function ($http, ApiConfig, LocalStorage, $resource) {
+  .service('healthTips', ['$http', 'ApiConfig', 'LocalStorage', function ($http, ApiConfig, LocalStorage) {
 
     var obj = {};
 
@@ -22,13 +22,12 @@ angular.module('gdsApp')
           callback(data);
         }).error(function(error) {
           console.log('Error getUpas: ', error);
-        })
+        });
     };
     // ====
 
     // ====
     obj.getFarmacias = function(callback) {
-      var api_key = 'AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg';
       var lat = LocalStorage.getItem('userLocation').lat;
       var lng = LocalStorage.getItem('userLocation').lon;
 
@@ -44,7 +43,7 @@ angular.module('gdsApp')
           callback(data);
         }).error(function(error) {
           console.log('Error getFarmacias: ', error);
-        })
+        });
     };
     // ====
 

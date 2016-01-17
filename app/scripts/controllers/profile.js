@@ -18,7 +18,7 @@ angular.module('gdsApp')
       // return console.warn('$rootScope.user -> ', $rootScope.user);
 
       UserApi.updateUser(u.id, function(data){
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           u = data.data.data[0];
 
           $scope.screen = {};
@@ -51,7 +51,7 @@ angular.module('gdsApp')
       // ====
 
       // verify if user changes password
-      if ($scope.screen.user.password == "" || $scope.screen.user.password != $scope.screen.repeatPassword) {
+      if ($scope.screen.user.password === "" || $scope.screen.user.password !== $scope.screen.repeatPassword) {
         delete $scope.screen.user.password;
       } else {
         params.password = $scope.screen.user.password;
@@ -60,7 +60,7 @@ angular.module('gdsApp')
 
       // ====
       UserApi.updateProfile(params, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           toaster.pop('success', data.data.message);
         } else {
           toaster.pop('error', data.data.message);

@@ -32,15 +32,15 @@ angular.module('gdsApp')
       HouseholdApi.getHouseholdSurvey(hhId, function(data) {
         $scope.householdSurveys = data.data.data;
 
-        if ($scope.householdSurveys.total == 1) {
+        if ($scope.householdSurveys.total === 1) {
           $scope.totalSpelling = singularSpelling;
         }
 
-        if ($scope.householdSurveys.no_symptom == 1) {
+        if ($scope.householdSurveys.no_symptom === 1) {
           $scope.goodSpelling = singularSpelling;
         }
 
-        if ($scope.householdSurveys.symptom == 1) {
+        if ($scope.householdSurveys.symptom === 1) {
           $scope.badSpelling = singularSpelling;
         }
       });
@@ -79,11 +79,6 @@ angular.module('gdsApp')
     $scope.getSurveyByMonth = function(hhID) {
       $scope.day = moment();
 
-      var monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-      ];
-
-      // $scope.monthName = monthNames[moment().month()];
-
       var params = {
         month: moment().month()+1, // gambiarra detected
         year: moment().year(),
@@ -104,7 +99,7 @@ angular.module('gdsApp')
             symptom: $scope.symptom
           };
 
-          householdCalendar.push(params)
+          householdCalendar.push(params);
         }
 
         $rootScope.householdCalendar = householdCalendar;

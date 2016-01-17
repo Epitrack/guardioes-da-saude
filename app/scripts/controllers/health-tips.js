@@ -12,7 +12,6 @@ angular.module('gdsApp')
 
     $scope.pageClass = 'health-tips-page';
 
-    // $scope.addMarkers = function() {
       var myIcon = {
         iconUrl: 'https://cdn4.iconfinder.com/data/icons/miu/24/editor-flag-notification-glyph-16.png',
         iconSize: [16, 16],
@@ -86,27 +85,22 @@ angular.module('gdsApp')
         $scope.markersPharmacy = addressPointsToMarkersPharmacy($rootScope.markersPharmacy);
       };
 
-      // adds events when click in marker
-      var markerEvents = leafletMarkerEvents.getAvailableEvents();
 
-      for (var k in markerEvents){
-        var eventName = 'leafletDirectiveMarker.click';
+      var eventName = 'leafletDirectiveMarker.click';
 
-        $scope.$on(eventName, function(event, args){
-            $scope.upaTitle = args.model.title;
-            $scope.upaMessage = args.model.message;
+      $scope.$on(eventName, function(event, args){
+          $scope.upaTitle = args.model.title;
+          $scope.upaMessage = args.model.message;
 
-            $scope.pharmacyTitle = args.model.title;
-            $scope.pharmacyMessage = args.model.message;
-        });
-      }
+          $scope.pharmacyTitle = args.model.title;
+          $scope.pharmacyMessage = args.model.message;
+      });
 
       $scope.events = {
         markers: {
           enable: leafletMarkerEvents.getAvailableEvents()
         }
-      }
-    // };
+      };
 
     // UPAS
     $scope.loadUpas = function() {
