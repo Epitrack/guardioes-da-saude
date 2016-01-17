@@ -12,8 +12,7 @@ angular.module('gdsApp')
     var obj = {};
 
     var apiUrl = ApiConfig.API_URL;
-    var app_token = ApiConfig.APP_TOKEN
-    var platform = ApiConfig.PLATFORM;
+    var app_token = ApiConfig.APP_TOKEN;
     var client = ApiConfig.CLIENT;
 
     var userStorage = LocalStorage.getItem('userStorage');
@@ -32,7 +31,7 @@ angular.module('gdsApp')
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
-          console.warn('Error createHousehold: ', error)
+          console.warn('Error createHousehold: ', error);
       });
     };
 
@@ -43,7 +42,7 @@ angular.module('gdsApp')
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
-          console.warn('Error deleteHousehold: ', error)
+          console.warn('Error deleteHousehold: ', error);
       });
     };
 

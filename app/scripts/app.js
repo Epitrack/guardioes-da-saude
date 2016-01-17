@@ -35,7 +35,7 @@
   // check if user exist
   var u = LocalStorage.getItem('userStorage');
 
-  if(u != null) {
+  if(u !== null) {
     $rootScope.user = u;
   }
 
@@ -50,7 +50,7 @@
     },
 
     convertDate: function(date, dateFormat) {
-      return moment(date.substr(0,10)).utc().format(dateFormat)
+      return moment(date.substr(0,10)).utc().format(dateFormat);
     },
 
     checkAvatar: function(obj) {
@@ -60,8 +60,8 @@
       race = obj.race;
       age = this.getAge(obj.dob);
 
-      if (gender == 'M') {
-        if (race == 'preto' || race == 'indigena' || race == 'pardo') {
+      if (gender === 'M') {
+        if (race === 'preto' || race === 'indigena' || race === 'pardo') {
           // $scope.houseHold.picture = 'avatar masculino preto';
           if (age <= 49) {
             return '4';
@@ -70,7 +70,7 @@
             return '11';
             // console.log('avatar masculino preto coroa');
           }
-        } else if (race == 'branco'){
+        } else if (race === 'branco'){
           // $scope.houseHold.picture = 'avatar masculino branco';
           if (age <= 49) {
             return '5';
@@ -79,7 +79,7 @@
             return '9';
             // console.log('avatar masculino branco coroa');
           }
-        } else if(race == 'amarelo') {
+        } else if(race === 'amarelo') {
           // $scope.houseHold.picture = 'avatar masculino amarelo';
           if (age <= 49) {
             return '14';
@@ -90,7 +90,7 @@
           }
         }
       } else {
-        if (race == 'preto' || race == 'indigena' || race == 'pardo') {
+        if (race === 'preto' || race === 'indigena' || race === 'pardo') {
           // $scope.houseHold.picture = 'avatar feminino preto';
           if (age <= 49) {
             return '1';
@@ -99,7 +99,7 @@
             return '12';
             // console.log('avatar feminino preto coroa');
           }
-        } else if (race == 'branco'){
+        } else if (race === 'branco'){
           // $scope.houseHold.picture = 'avatar feminino branco';
           if (age <= 49) {
             return '3';
@@ -108,7 +108,7 @@
             return '10';
             // console.log('avatar feminino branco coroa');
           }
-        } else if(race == 'amarelo') {
+        } else if(race === 'amarelo') {
           // $scope.houseHold.picture = 'avatar feminino amarelo';
           if (age <= 49) {
             return '13';

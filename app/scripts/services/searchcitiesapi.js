@@ -12,9 +12,7 @@ angular.module('gdsApp')
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var apiUrl = ApiConfig.API_URL;
-    var app_token = ApiConfig.APP_TOKEN
-    var platform = ApiConfig.PLATFORM;
-    var client = ApiConfig.CLIENT;
+    var app_token = ApiConfig.APP_TOKEN;
 
     var obj = {};
 
@@ -25,7 +23,7 @@ angular.module('gdsApp')
           callback(data);
         }).error(function(error) {
           console.log('Error getCities: ', error);
-        })
+        });
     };
 
     return obj;

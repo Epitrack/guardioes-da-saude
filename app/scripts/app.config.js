@@ -5,7 +5,7 @@ angular.module("gdsApp")
   console.log("doidones");
 
   $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+  delete $httpProvider.defaults.headers.common["X-Requested-With"];
 }])
 .constant('ApiConfig', {
   'API_URL': 'http://api.guardioesdasaude.org',

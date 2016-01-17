@@ -39,15 +39,15 @@ angular.module('gdsApp')
           $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
         }
 
-        if ($scope.userSurvey.total == 1) {
+        if ($scope.userSurvey.total === 1) {
           $scope.totalSpelling = singularSpelling;
         }
 
-        if($scope.userSurvey.no_symptom == 1) {
+        if($scope.userSurvey.no_symptom === 1) {
           $scope.goodSpelling = singularSpelling;
         }
 
-        if ($scope.userSurvey.symptom == 1) {
+        if ($scope.userSurvey.symptom === 1) {
           $scope.badSpelling = singularSpelling;
         }
       });
@@ -69,22 +69,22 @@ angular.module('gdsApp')
       UserApi.getUserCalendar(params, function(data) {
         var userCalendar = [];
 
-        var params, total, day, no_symptom, symptom, year;
+        var params;
 
         for (var i = 0; i < data.data.data.length; i++) {
           params = {
             total: data.data.data[i].count,
             day: data.data.data[i]._id.day,
             year: data.data.data[i]._id.year
-          }
+          };
 
-          if (data.data.data[i]._id.no_symptom == 'Y') {
-            params.no_symptom = data.data.data[i]._id.no_symptom
+          if (data.data.data[i]._id.no_symptom === 'Y') {
+            params.no_symptom = data.data.data[i]._id.no_symptom;
           } else {
-            params.symptom = 'Y'
+            params.symptom = 'Y';
           }
 
-          userCalendar.push(params)
+          userCalendar.push(params);
         }
 
         $rootScope.userCalendar = userCalendar;

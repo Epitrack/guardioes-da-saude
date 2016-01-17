@@ -18,7 +18,7 @@ angular.module('gdsApp')
       $scope.screen = {};
 
       $scope.screen.user = u;
-    }
+    };
 
     $scope.getUser();
 

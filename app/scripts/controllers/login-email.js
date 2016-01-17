@@ -18,7 +18,7 @@ angular.module('gdsApp')
     $scope.loginUserEmail = function() {
       UserApi.loginUser($scope.loginEmail, function(data) {
         if (data.data.error === true) {
-          $scope.loginError = 'Email ou usuário inválidos.'
+          $scope.loginError = 'Email ou usuário inválidos.';
         } else {
           toaster.pop('success', data.data.message);
           $rootScope.user = data.data.user;

@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('LocalStorage', function ($rootScope, ApiConfig) {
+  .service('LocalStorage', function ($rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var obj = {};
 
@@ -44,7 +44,7 @@ angular.module('gdsApp')
       userStorage.zip = obj.zip;
 
       if (obj.picture) {
-        userStorage.picture = obj.picture
+        userStorage.picture = obj.picture;
       }
 
       if (params) {
@@ -55,23 +55,23 @@ angular.module('gdsApp')
 
       // to login with social network
       if (obj.household) {
-        userStorage.household = obj.household
+        userStorage.household = obj.household;
       }
 
       if (obj.active) {
-        userStorage.active = obj.active
+        userStorage.active = obj.active;
       }
 
       if (obj.categories) {
-        userStorage.categories = obj.categories
+        userStorage.categories = obj.categories;
       }
 
       if (obj.hashtags) {
-        userStorage.hashtags = obj.hashtags
+        userStorage.hashtags = obj.hashtags;
       }
 
       if (obj.surveys) {
-        userStorage.surveys = obj.surveys
+        userStorage.surveys = obj.surveys;
       }
       // ====
 
@@ -110,8 +110,8 @@ angular.module('gdsApp')
       userStorage.user_token = token;
 
       if (obj.picture) {
-        userStorage.picture = obj.picture
-      };
+        userStorage.picture = obj.picture;
+      }
 
       $rootScope.user = userStorage;
 

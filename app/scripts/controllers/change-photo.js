@@ -14,7 +14,7 @@ angular.module('gdsApp')
 
     $scope.uploadPic = function() {
       UserApi.changeAvatar($scope.avatar, function(data) {
-        if (data.data.error == false){
+        if (data.data.error === false){
           console.log(data.data.message);
           toaster.pop('success', data.data.message, null);
 

@@ -15,7 +15,7 @@ angular.module('gdsApp')
         selected: "="
       },
       link: function($scope) {
-        $scope.selected = _removeTime($scope.selected || moment());
+        $scope.selected = _removeTime($scope.selected);
         $scope.month = $scope.selected.clone();
 
         var start = $scope.selected.clone();
