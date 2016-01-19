@@ -36,15 +36,15 @@ angular.module('gdsApp')
       HouseholdApi.getHouseholdSurvey(id, function(data) {
         $scope.householdSurveys = data.data.data;
 
-        if ($scope.householdSurveys.total == 1) {
+        if ($scope.householdSurveys.total === 1) {
           $scope.totalSpelling = singularSpelling;
         }
 
-        if ($scope.householdSurveys.no_symptom == 1) {
+        if ($scope.householdSurveys.no_symptom === 1) {
           $scope.goodSpelling = singularSpelling;
         }
 
-        if ($scope.householdSurveys.symptom == 1) {
+        if ($scope.householdSurveys.symptom === 1) {
           $scope.badSpelling = singularSpelling;
         }
 
@@ -74,15 +74,15 @@ angular.module('gdsApp')
             total: data.data.data[i].count,
             day: data.data.data[i]._id.day,
             year: data.data.data[i]._id.year
-          }
+          };
 
           if (data.data.data[i]._id.no_symptom === 'Y') {
-            params.no_symptom = data.data.data[i]._id.no_symptom
+            params.no_symptom = data.data.data[i]._id.no_symptom;
           } else {
-            params.symptom = 'Y'
+            params.symptom = 'Y';
           }
 
-          householdCalendar.push(params)
+          householdCalendar.push(params);
         }
 
         $rootScope.householdCalendar = householdCalendar;
@@ -106,7 +106,7 @@ angular.module('gdsApp')
         days.push({
           dia: item,
           total: $rootScope.hhSurvey.total
-        })
+        });
       });
 
       days.push({

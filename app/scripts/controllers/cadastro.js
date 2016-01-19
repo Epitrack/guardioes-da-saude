@@ -24,7 +24,7 @@ angular.module('gdsApp')
         userFbData.nick = authData.facebook.displayName;
         userFbData.fb = authData.facebook.id;
 
-        if (authData.facebook.cachedUserProfile.gender == 'male') {
+        if (authData.facebook.cachedUserProfile.gender === 'male') {
           userFbData.gender = 'M';
         } else {
           userFbData.gender = 'F';
@@ -36,7 +36,7 @@ angular.module('gdsApp')
 
         UserApi.fbLogin(userFbData.fb_token, function(data) {
           console.log('Data -> ', data);
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userCreateData(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -44,7 +44,7 @@ angular.module('gdsApp')
             console.warn('Error -> ', data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
@@ -66,7 +66,7 @@ angular.module('gdsApp')
         // return console.warn($scope.userData);
 
         UserApi.glLogin(userGlData, function(data) {
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -74,7 +74,7 @@ angular.module('gdsApp')
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Google authentication failed:', error);
@@ -95,7 +95,7 @@ angular.module('gdsApp')
         $scope.userData = userTwData;
 
         UserApi.twLogin(userTwData, function(data) {
-          if (data.data.error == false) {
+          if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
             $location.path('health-daily');
@@ -103,7 +103,7 @@ angular.module('gdsApp')
             console.log(data.data.message);
             $('#modal-complete-login').modal('show');
           }
-        })
+        });
       }).catch(function(error) {
         toaster.pop('error', error);
         console.log('Twitter authentication failed:', error);
@@ -118,14 +118,14 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') != true) {
+      if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
       $('#modal-complete-login').modal('hide');
 
       UserApi.createUser(params, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           toaster.pop('success', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');

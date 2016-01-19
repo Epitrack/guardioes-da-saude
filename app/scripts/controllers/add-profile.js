@@ -29,12 +29,12 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') != true) {
+      if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
       HouseholdApi.createHousehold(params, function(data) {
-        if (data.data.error == true) {
+        if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
@@ -66,12 +66,12 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') != true) {
+      if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
       HouseholdApi.createHousehold(params, function(data) {
-        if (data.data.error == true) {
+        if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
@@ -86,7 +86,7 @@ angular.module('gdsApp')
 
     function hideModal() {
       $('#modal-add-profile').modal('toggle');
-    };
+    }
     // ====
 
   }]);

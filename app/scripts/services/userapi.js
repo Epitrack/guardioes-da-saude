@@ -8,25 +8,20 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope, Upload, $timeout) {
+  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var obj = {};
 
     var apiUrl = ApiConfig.API_URL;
-    var app_token = ApiConfig.APP_TOKEN
+    var app_token = ApiConfig.APP_TOKEN;
     var platform = ApiConfig.PLATFORM;
     var client = ApiConfig.CLIENT;
-
-    // obj with user data
-    var user = {};
-
-    var userStorage = $rootScope.user;
 
     // register
     obj.createUser = function(data, callback) {
       if (data.fb) {
-        data.fb = data.fb
+        data.fb = data.fb;
       }
 
       data.app_token = app_token;

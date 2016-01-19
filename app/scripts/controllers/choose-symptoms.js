@@ -22,7 +22,7 @@ angular.module('gdsApp')
       var form = {};
 
       if ($scope.symptoms.travelLocation) {
-        var country = $scope.symptoms.travelLocation
+        var country = $scope.symptoms.travelLocation;
       }
 
       angular.forEach($scope.symptoms, function(v, symptom) {
@@ -39,23 +39,23 @@ angular.module('gdsApp')
       var url = $location.path().split('/');
       var household = url[url.length - 3];
 
-      if (household == 'household') {
+      if (household === 'household') {
         form.household_id = url[3];
       }
 
-      if (country != undefined) {
+      if (country !== undefined) {
         form.travelLocation = country;
       }
 
       Surveyapi.submitSurvey(form, function(data) {
-        if (data.data.error == true) {
+        if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
           console.log(data.data.message);
           toaster.pop('success', data.data.message);
 
-          if (data.data.exantematica == true) {
+          if (data.data.exantematica === true) {
             openModalExantematica();
           } else {
             openModal();
@@ -68,13 +68,13 @@ angular.module('gdsApp')
       $('#modal-thanks').modal({
         show: 'true'
       });
-    };
+    }
 
     function openModalExantematica() {
       $('#modal-exantematica').modal({
         show: 'true'
       });
-    };
+    }
 
     $scope.goToUpas = function() {
       $timeout(function(){
@@ -91,15 +91,14 @@ angular.module('gdsApp')
     };
 
     $scope.share = function(social) {
-      var text, social;
+      var text;
 
       text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
-      social = social;
 
-      if (social == 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text))
+      if (social === 'facebook') {
+        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text));
       } else {
-        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text))
+        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text));
       }
     };
 

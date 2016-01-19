@@ -14,7 +14,7 @@ angular.module('gdsApp')
     var obj = {};
 
     var apiUrl = ApiConfig.API_URL;
-    var app_token = ApiConfig.APP_TOKEN
+    var app_token = ApiConfig.APP_TOKEN;
     var platform = ApiConfig.PLATFORM;
     var client = ApiConfig.CLIENT;
 
@@ -42,7 +42,7 @@ angular.module('gdsApp')
           callback(data);
           UserApi.updateUser($rootScope.user.id);
         }, function(error){
-          console.warn('Error submitSurvey: ', error)
+          console.warn('Error submitSurvey: ', error);
       });
     };
 

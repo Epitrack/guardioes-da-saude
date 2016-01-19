@@ -23,24 +23,24 @@ angular.module('gdsApp')
       };
 
       UserApi.validateHash(params.hash, function(data) {
-        if (data.data.error == false) {
+        if (data.data.error === false) {
           params.id = data.data.user_id;
 
           UserApi.updateUserPassword(params, function(data) {
-            if (data.data.error == false) {
-              toaster.pop('success', data.data.message)
+            if (data.data.error === false) {
+              toaster.pop('success', data.data.message);
               $timeout(function() {
                 $location.path('login-email');
                 $location.search('hash', null);
-              }, 3000)
+              }, 3000);
             } else {
-              toaster.pop('error', data.data.message)
+              toaster.pop('error', data.data.message);
             }
-          })
+          });
         } else {
           $scope.message = 'Esta url parece não ser válida, tente modificar sua senha novamente.';
           console.warn('error', data.data.message);
-        }2
+        }
       });
     };
 
