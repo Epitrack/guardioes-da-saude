@@ -133,7 +133,7 @@ angular.module('gdsApp')
 
       $scope.days = days;
 
-      console.warn($scope.days);
+      // console.warn($scope.days);
 
       $scope.lineOptions = {
         data: $scope.days,

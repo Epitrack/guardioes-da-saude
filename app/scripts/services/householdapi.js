@@ -24,8 +24,6 @@ angular.module('gdsApp')
       data.user_token = userStorage.user_token;
       data.dob = data.dob;
 
-      // return console.warn(data);
-
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
           console.log('Success createHousehold ', data);
@@ -73,7 +71,6 @@ angular.module('gdsApp')
       params.client = client;
       params.user_token = userStorage.user_token;
 
-      // return console.warn(params);
 
       $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){

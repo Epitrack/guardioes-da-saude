@@ -144,6 +144,20 @@
       } else {
         localStorage.setItem('dobValid', false);
       }
+    },
+
+    getDaysArray: function(year, month) {
+      // var names = [ 'sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat' ];
+      var date = new Date(year, month-1, 1);
+      var result = [];
+
+      while (date.getMonth() == month-1) {
+        // result.push(date.getDate()+"-"+names[date.getDay()]);
+        result.push(date.getDate());
+        date.setDate(date.getDate()+1);
+      }
+
+      return result;
     }
   };
   // ====

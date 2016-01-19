@@ -13,23 +13,27 @@ angular.module('gdsApp')
     var meuFiltro = $filter;
     var userStorage = $rootScope.user;
     var userID = userStorage.id;
-    var singularSpelling = 'Participação';
 
+    var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
 
+    // ====
     $scope.getHousehold = function() {
       HouseholdApi.getHousehold(userID, function(data) {
         $scope.household = meuFiltro('filter')(data.data.data, {
           id: $routeParams.id
         })[0];
 
-        $scope.getHouseholdSurvey($scope.household.id);
-        $scope.getSurveyByMonth($scope.household.id);
+        $rootScope.$broadcast('hh_ok', $scope.household);
       });
     };
+    // ====
 
-    $scope.getHouseholdSurvey = function(hhId) {
-      HouseholdApi.getHouseholdSurvey(hhId, function(data) {
+    // ====
+    $scope.getHouseholdSurvey = function() {
+      var id = $scope.household.id;
+
+      HouseholdApi.getHouseholdSurvey(id, function(data) {
         $scope.householdSurveys = data.data.data;
 
         if ($scope.householdSurveys.total == 1) {
@@ -43,73 +47,112 @@ angular.module('gdsApp')
         if ($scope.householdSurveys.symptom == 1) {
           $scope.badSpelling = singularSpelling;
         }
+
+        $rootScope.hhSurvey = $scope.householdSurveys;
+        $rootScope.$broadcast('hhSurvey_ok');
       });
-    };
-
-    $scope.getHousehold();
-
-    // graphic
-    $scope.lineOptions = {
-      data: [
-        { y: '2006', a: 10, b: 90 },
-        { y: '2007', a: 45,  b: 65 },
-        { y: '2008', a: 30,  b: 40 },
-        { y: '2009', a: 55,  b: 65 },
-        { y: '2010', a: 10,  b: 40 },
-        { y: '2011', a: 55,  b: 65 },
-        { y: '2012', a: 45, b: 90 }
-      ],
-      xkey: 'y',
-      ykeys: ['a'],
-      labels: ['Total'],
-      lineColors: ['#1E88E5'],
-      resize: true
-    };
-
-    $scope.donutOptions = {
-      data: [
-        {label: "Bem", value: 77, participants: 10},
-        {label: "Mal", value: 23, participants: 5}
-      ],
-      colors: ['#E0D433', '#C81204'],
-      resize: true
     };
     // ====
 
-    $scope.getSurveyByMonth = function(hhID) {
+    // ====
+    $scope.getSurveyByMonth = function() {
       $scope.day = moment();
 
-      var monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-      ];
-
-      // $scope.monthName = monthNames[moment().month()];
-
-      var params = {
-        month: moment().month()+1, // gambiarra detected
+      var obj = {
+        month: moment().month()+1,
         year: moment().year(),
-        hhId: hhID
+        hhId: $scope.household.id
       };
 
-      HouseholdApi.getHouseholdCalendar(params, function(data) {
+      HouseholdApi.getHouseholdCalendar(obj, function(data) {
         var householdCalendar = [];
 
-        for (var i = 0; i < data.data.data.length; i++) {
-          $scope.total = data.data.data[i].count;
-          $scope.days = data.data.data[i]._id.day;
-          $scope.symptom = data.data.data[i]._id.no_symptom;
+        var params;
 
-          var params = {
-            total: $scope.total,
-            report_day: $scope.days,
-            symptom: $scope.symptom
-          };
+        for (var i = 0; i < data.data.data.length; i++) {
+          params = {
+            total: data.data.data[i].count,
+            day: data.data.data[i]._id.day,
+            year: data.data.data[i]._id.year
+          }
+
+          if (data.data.data[i]._id.no_symptom === 'Y') {
+            params.no_symptom = data.data.data[i]._id.no_symptom
+          } else {
+            params.symptom = 'Y'
+          }
 
           householdCalendar.push(params)
         }
 
         $rootScope.householdCalendar = householdCalendar;
-
-        console.log($rootScope.householdCalendar);
+        $rootScope.$broadcast('build_hhCalendar');
       });
     };
+    // ====
+
+    // ====
+    $scope.getMonth = function(month) {
+      $rootScope.hhAllDays = '';
+      $rootScope.hhAllDays = $rootScope.UTIL.getDaysArray(new Date().getFullYear(), month);
+
+      $scope.graphic();
+    };
+
+    $scope.graphic = function() {
+      var days = [];
+
+      $rootScope.hhAllDays.forEach(function(item, index, array) {
+        days.push({
+          dia: item,
+          total: $rootScope.hhSurvey.total
+        })
+      });
+
+      days.push({
+        dia: 16, total: 43
+      });
+
+      days.push({
+        dia: 20, total: 84
+      });
+
+      days.push({
+        dia: 14, total: 45
+      });
+
+      $scope.days = days;
+
+      $scope.lineOptions = {
+        data: $scope.days,
+        xkey: 'dia',
+        ykeys: ['total'],
+        labels: ['Total'],
+        lineColors: ['#1E88E5'],
+        resize: true
+      };
+
+      $scope.donutOptions = {
+        data: [
+          { label: "Bem", value: $rootScope.hhSurvey.no_symptom },
+          { label: "Mal", value: $rootScope.hhSurvey.symptom }
+        ],
+        colors: ['#E0D433', '#C81204'],
+        resize: true
+      };
+    };
+    // ====
+
+
+    $scope.getHousehold();
+
+    $rootScope.$on('hh_ok', function(hhId) {
+      $scope.getHouseholdSurvey(hhId);
+      $scope.getSurveyByMonth(hhId);
+    });
+
+    $rootScope.$on('hhSurvey_ok', function() {
+      $scope.getMonth(new Date().getMonth() + 1);
+    });
+
   }]);

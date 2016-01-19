@@ -35,7 +35,9 @@
       <div class="geral">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+        <div ng-if="hhSurvey">
+          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+        </div>
 
         <div class="status">
           <ul>
@@ -79,18 +81,21 @@
 
     <div class="dropdown sort-by">
       <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        2015
+        Mês
         <span class="caret"></span>
       </button>
 
       <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-        <li><a href="#">2014</a></li>
-        <li><a href="#">2013</a></li>
-        <li><a href="#">2012</a></li>
-        <li><a href="#">2011</a></li>
+        <li><a ng-href="" ng-click="getMonth(01)">Jan</a></li>
+        <li><a ng-href="" ng-click="getMonth(02)">Fev</a></li>
+        <li><a ng-href="" ng-click="getMonth(03)">Mar</a></li>
+        <li><a ng-href="" ng-click="getMonth(04)">Abr</a></li>
       </ul>
     </div>
 
-    <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
+    <div ng-if="hhAllDays">
+      <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
+    </div>
+
   </article>
 </section>
