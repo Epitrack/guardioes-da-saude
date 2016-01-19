@@ -50,10 +50,11 @@ angular.module('gdsApp')
         if ($scope.userSurvey.symptom == 1) {
           $scope.badSpelling = singularSpelling;
         }
+
+        $rootScope.userSurvey = $scope.userSurvey;
+        $rootScope.$broadcast('userSurvey_ok');
       });
     };
-
-    $scope.getUserSurvey();
     // ====
 
     // ====
@@ -93,24 +94,51 @@ angular.module('gdsApp')
 
       // ----
     };
-
-    $scope.getSurveyByMonth();
     // ====
 
     // ====
+    $scope.getMonth = function(month) {
+      // console.log('MÊS -> ', month);
+
+      $rootScope.allDays = '';
+      $rootScope.allDays = $rootScope.UTIL.getDaysArray(new Date().getFullYear(), month);
+
+      $scope.graphic();
+    };
+
     $scope.graphic = function() {
+      var days = [];
+
+      $rootScope.allDays.forEach(function(item, index, array) {
+        days.push({
+          dia: item,
+          total: $rootScope.userSurvey.total
+        });
+      });
+
+      // adiciona alguns dias para fazer curva no gráfico
+      days.push({
+        dia: 16, total: 43
+      });
+
+      days.push({
+        dia: 20, total: 84
+      });
+
+      days.push({
+        dia: 14, total: 45
+      });
+
+      // console.warn($scope.days);
+
+      $scope.days = days;
+
+      console.warn($scope.days);
+
       $scope.lineOptions = {
-        data: [
-          { y: '2006', a: 10, b: 90 },
-          { y: '2007', a: 45,  b: 65 },
-          { y: '2008', a: 30,  b: 40 },
-          { y: '2009', a: 55,  b: 65 },
-          { y: '2010', a: 10,  b: 40 },
-          { y: '2011', a: 55,  b: 65 },
-          { y: '2012', a: 45, b: 90 }
-        ],
-        xkey: 'y',
-        ykeys: ['a'],
+        data: $scope.days,
+        xkey: 'dia',
+        ykeys: ['total'],
         labels: ['Total'],
         lineColors: ['#1E88E5'],
         resize: true
@@ -118,14 +146,20 @@ angular.module('gdsApp')
 
       $scope.donutOptions = {
         data: [
-          {label: "Bem", value: 77, participants: 10},
-          {label: "Mal", value: 23, participants: 5}
+          {label: "Bem", value: $rootScope.userSurvey.no_symptom},
+          {label: "Mal", value: $rootScope.userSurvey.symptom}
         ],
         colors: ['#E0D433', '#C81204'],
         resize: true
       };
     };
 
-    $scope.graphic();
     // ====
+
+    $scope.getUserSurvey();
+    $scope.getSurveyByMonth();
+
+    $rootScope.$on('userSurvey_ok', function() {
+      $scope.getMonth(new Date().getMonth() + 1);
+    });
   }]);
