@@ -59,7 +59,7 @@ angular.module('gdsApp')
 
     // ====
     $scope.getSurveyByMonth = function() {
-      $scope.currentDay = moment();
+      $scope.day = moment();
 
       // ----
       var params = {
@@ -112,7 +112,7 @@ angular.module('gdsApp')
       $rootScope.allDays.forEach(function(item, index, array) {
         days.push({
           dia: item,
-          total: $rootScope.userSurvey.total
+          total: $rootScope.userSurvey.total // @guinetik, check this
         });
       });
 
