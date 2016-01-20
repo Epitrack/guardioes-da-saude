@@ -59,7 +59,7 @@ angular.module('gdsApp')
 
     // ====
     $scope.getSurveyByMonth = function() {
-      $scope.day = moment();
+      $scope.currentDay = moment();
 
       // ----
       var params = {
