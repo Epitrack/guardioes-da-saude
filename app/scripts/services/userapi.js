@@ -204,5 +204,25 @@ angular.module('gdsApp')
       });
     };
 
+    obj.getUserSurveyByMonth = function(params, callback) {
+      $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year, {headers: {'app_token': app_token, 'user_token': params.user_token}})
+        .then(function(result){
+          console.log('Success getUserSurveyByMonth: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserSurveyByMonth: ', error);
+      });
+    };
+
+    obj.getUserSurveyByYear = function(params, callback) {
+      $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {headers: {'app_token': app_token, 'user_token': params.user_token}})
+        .then(function(result){
+          console.log('Success getUserSurveyByYear: ', result);
+          callback(result);
+        }, function(error){
+          console.warn('Error getUserSurveyByYear: ', error);
+      });
+    };
+
     return obj;
   });

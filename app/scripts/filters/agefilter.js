@@ -15,6 +15,7 @@ angular.module('gdsApp')
          var ageDate = new Date(ageDifMs); // miliseconds from epoch
          return Math.abs(ageDate.getUTCFullYear() - 1970);
      }
+
      function monthDiff(d1, d2) {
        if (d1 < d2){
         var months = d2.getMonth() - d1.getMonth();
@@ -22,9 +23,10 @@ angular.module('gdsApp')
        }
        return 0;
      }
+
      return function(birthdate) {
-            var k = new Date(birthdate);
-           var age = calculateAge(k);
+          var k = new Date(birthdate);
+          var age = calculateAge(k);
 
            if (age === 0) {
             return monthDiff(k, new Date()) + ' months';
