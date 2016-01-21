@@ -4,31 +4,33 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
         <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
 
-          <h3 class="login-subtitle">Crie uma nova senha para sua conta:</h3>
+        <h3 class="login-subtitle">Crie uma nova senha para sua conta:</h3>
 
-          <form ng-submit="checkHash()" class="form-recuperar-senha" name="formCheckHash">
-            <fieldset class="input-group mainform signup">
-              <input type="password" class="form-control mainform-input" ng-model="screen.user.password" placeholder="Nova senha" name="newUserPass" ng-minlength="6">
+        <form ng-submit="checkHash()" class="form-recuperar-senha" name="formCheckHash">
+          <fieldset class="input-group mainform signup">
+            <input type="password" class="form-control mainform-input" ng-model="screen.user.password"
+                   placeholder="Nova senha" name="newUserPass" ng-minlength="6">
 
-              <input type="password" class="form-control mainform-input" ng-model="screen.repeatPassword" placeholder="Confirme a nova senha" name="newUserPassAgain">
-            </fieldset>
+            <input type="password" class="form-control mainform-input" ng-model="screen.repeatPassword"
+                   placeholder="Confirme a nova senha" name="newUserPassAgain">
+          </fieldset>
 
-            <fieldset>
-              <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
-                <span>As senhas digitadas precisam ser iguais.</span>
-              </div>
+          <fieldset>
+            <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
+              <span>As senhas digitadas precisam ser iguais.</span>
+            </div>
 
-              <div ng-show="formCheckHash.newUserPass.$error.minlength" class="alert alert-info" role="alert">
-                <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-              </div>
-            </fieldset>
+            <div ng-show="formCheckHash.newUserPass.$error.minlength" class="alert alert-info" role="alert">
+              <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+            </div>
+          </fieldset>
 
-            <fieldset class="btn-group btn-group-justified" role="group">
-              <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-signup">Trocar senha</button>
-              </div>
-            </fieldset>
-          </form>
+          <fieldset class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="submit" class="btn btn-signup">Trocar senha</button>
+            </div>
+          </fieldset>
+        </form>
       </section>
     </div>
   </div>

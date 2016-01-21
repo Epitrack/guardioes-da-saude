@@ -17,83 +17,113 @@ angular.module('gdsApp')
 
     var userStorage = LocalStorage.getItem('userStorage');
 
-    obj.createHousehold = function(data, callback) {
+    obj.createHousehold = function (data, callback) {
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
       data.dob = data.dob;
 
-      $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-        .then(function(data){
+      $http.post(apiUrl + '/household/create', data, {
+          headers: {
+            'app_token': app_token,
+            'user_token': userStorage.user_token
+          }
+        })
+        .then(function (data) {
           console.log('Success createHousehold ', data);
           callback(data);
           UserApi.updateUser(userStorage.id);
-        }, function(error){
+        }, function (error) {
           console.warn('Error createHousehold: ', error);
-      });
+        });
     };
 
-    obj.deleteHousehold = function(id, callback) {
-      $http.get(apiUrl + '/household/delete/' + id + '?client=' + client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-        .then(function(data){
+    obj.deleteHousehold = function (id, callback) {
+      $http.get(apiUrl + '/household/delete/' + id + '?client=' + client, {
+          headers: {
+            'app_token': app_token,
+            'user_token': userStorage.user_token
+          }
+        })
+        .then(function (data) {
           console.log('Success deleteHousehold ', data);
           callback(data);
           UserApi.updateUser(userStorage.id);
-        }, function(error){
+        }, function (error) {
           console.warn('Error deleteHousehold: ', error);
-      });
+        });
     };
 
-    obj.getHousehold = function(userID, callback) {
-      $http.get(apiUrl + '/user/household/' + userID, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-      .then(function(data){
-        console.log('Success getHousehold: ', data);
-        callback(data);
-        }, function(error){
+    obj.getHousehold = function (userID, callback) {
+      $http.get(apiUrl + '/user/household/' + userID, {
+          headers: {
+            'app_token': app_token,
+            'user_token': userStorage.user_token
+          }
+        })
+        .then(function (data) {
+          console.log('Success getHousehold: ', data);
+          callback(data);
+        }, function (error) {
           console.warn('Error getHousehold: ', error);
         });
     };
 
     // get user surveys
-    obj.getHouseholdSurvey = function(hhId, callback) {
-      $http.get(apiUrl + '/household/survey/summary?household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-        .then(function(result){
+    obj.getHouseholdSurvey = function (hhId, callback) {
+      $http.get(apiUrl + '/household/survey/summary?household_id=' + hhId, {
+          headers: {
+            'app_token': app_token,
+            'user_token': userStorage.user_token
+          }
+        })
+        .then(function (result) {
           console.log('Success getHouseholdSurvey: ', result);
           callback(result);
-        }, function(error){
+        }, function (error) {
           console.warn('Error getHouseholdSurvey: ', error);
-      });
+        });
     };
 
     // update household profile
-    obj.updateProfile = function(params, callback) {
+    obj.updateProfile = function (params, callback) {
       params.client = client;
       params.user_token = userStorage.user_token;
 
 
-      $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
-        .then(function(result){
+      $http.post(apiUrl + '/household/update', params, {
+          headers: {
+            'app_token': app_token,
+            'user_token': userStorage.user_token
+          }
+        })
+        .then(function (result) {
           console.log('Success updateProfile: ', result);
           callback(result);
           UserApi.updateUser(userStorage.id);
-        }, function(error){
+        }, function (error) {
           console.warn('Error updateProfile: ', error);
-      });
+        });
     };
 
     // get calendar data
-    obj.getHouseholdCalendar = function(params, callback) {
+    obj.getHouseholdCalendar = function (params, callback) {
       var month = params.month,
-          year = params.year,
-          hhId = params.hhId;
+        year = params.year,
+        hhId = params.hhId;
 
-      $http.get(apiUrl + '/household/calendar/month?month=' + month + '&year=' + year + '&household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
-        .then(function(result){
+      $http.get(apiUrl + '/household/calendar/month?month=' + month + '&year=' + year + '&household_id=' + hhId, {
+          headers: {
+            'app_token': app_token,
+            'user_token': LocalStorage.getItem('userStorage').user_token
+          }
+        })
+        .then(function (result) {
           console.log('Success getHouseholdCalendar: ', result);
           callback(result);
-        }, function(error){
+        }, function (error) {
           console.warn('Error getHouseholdCalendar: ', error);
-      });
+        });
     };
 
     return obj;

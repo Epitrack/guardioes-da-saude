@@ -15,11 +15,11 @@ angular.module('gdsApp')
     var userStorage = $rootScope.user;
 
     // ====
-    $scope.deleteHousehold = function(id) {
-      HouseholdApi.deleteHousehold(id, function(data) {
+    $scope.deleteHousehold = function (id) {
+      HouseholdApi.deleteHousehold(id, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
-          $timeout(function() {
+          $timeout(function () {
             $location.path('profile');
           }, 2000);
         } else {
@@ -31,10 +31,10 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getHousehold = function() {
+    $scope.getHousehold = function () {
       $scope.screen = {};
 
-      HouseholdApi.getHousehold(userStorage.id, function(data) {
+      HouseholdApi.getHousehold(userStorage.id, function (data) {
         $scope.screen.householdData = meuFiltro('filter')(data.data.data, {
           id: $routeParams.id
         })[0];
@@ -45,7 +45,7 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.editProfile = function() {
+    $scope.editProfile = function () {
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.household.nick,
@@ -67,7 +67,7 @@ angular.module('gdsApp')
       }
 
       // verify is household changes password
-      if($scope.screen.household.password === "" || $scope.screen.household.password !== $scope.screen.repeatPassword) {
+      if ($scope.screen.household.password === "" || $scope.screen.household.password !== $scope.screen.repeatPassword) {
         delete $scope.screen.household.password;
       } else {
         params.password = $scope.screen.household.password;
@@ -76,7 +76,7 @@ angular.module('gdsApp')
 
       // return console.warn(params);
 
-      HouseholdApi.updateProfile(params, function(data) {
+      HouseholdApi.updateProfile(params, function (data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
@@ -92,17 +92,17 @@ angular.module('gdsApp')
     // ====
 
     // Utils
-    var _buildObj = function(obj) {
+    var _buildObj = function (obj) {
       return {
-          nick: obj.nick,
-          dob: $scope.UTIL.unConvertDate(obj.dob),
-          gender: obj.gender,
-          email: obj.email,
-          race: obj.race,
-          id: obj.id,
-          password: "",
-          picture: obj.picture
-        };
+        nick: obj.nick,
+        dob: $scope.UTIL.unConvertDate(obj.dob),
+        gender: obj.gender,
+        email: obj.email,
+        race: obj.race,
+        id: obj.id,
+        password: "",
+        picture: obj.picture
+      };
     };
     // ====
 

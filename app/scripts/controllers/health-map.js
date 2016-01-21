@@ -32,8 +32,8 @@ angular.module('gdsApp')
 
     $scope.donutOptions = {
       data: [
-        { label: "Bem", value: 77, participants: 10 },
-        { label: "Mal", value: 23, participants: 5 }
+        {label: "Bem", value: 77, participants: 10},
+        {label: "Mal", value: 23, participants: 5}
       ],
       colors: ['#E0D433', '#C81204'],
       resize: true
@@ -44,7 +44,7 @@ angular.module('gdsApp')
     // obtém as informações depois que o usuário digita a cidade
     $scope.surveyByCity = {};
 
-    $scope.getMarkersByCity = function() {
+    $scope.getMarkersByCity = function () {
       var params = $scope.surveyByCity.city;
 
       getCoords(params);
@@ -53,7 +53,7 @@ angular.module('gdsApp')
     };
 
     function getSurveyByCity(city) {
-      Surveyapi.getMarkersByCity(city, function(data) {
+      Surveyapi.getMarkersByCity(city, function (data) {
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
@@ -66,7 +66,7 @@ angular.module('gdsApp')
     function getSurveyByCitySummary(city) {
       var summary = {};
 
-      Surveyapi.getMarkersByCitySummary(city, function(data) {
+      Surveyapi.getMarkersByCitySummary(city, function (data) {
         if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
@@ -82,19 +82,19 @@ angular.module('gdsApp')
           summary.exantematica = data.data.data.diseases.exantematica;
           summary.respiratoria = data.data.data.diseases.respiratoria;
 
-          if(summary.total_no_symptoms > 0) {
-            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms/summary.total_surveys)*100)));
+          if (summary.total_no_symptoms > 0) {
+            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
           }
 
-          if(summary.pct_no_symptoms %1 !==0) {
+          if (summary.pct_no_symptoms % 1 !== 0) {
             summary.pct_no_symptoms = Math.round(summary.pct_no_symptoms.toFixed(2));
           }
 
-          if(summary.total_symptoms > 0) {
-            summary.pct_symptoms = Math.round((((summary.total_symptoms/summary.total_surveys)*100)));
+          if (summary.total_symptoms > 0) {
+            summary.pct_symptoms = Math.round((((summary.total_symptoms / summary.total_surveys) * 100)));
           }
 
-          if(summary.pct_symptoms %1 !==0) {
+          if (summary.pct_symptoms % 1 !== 0) {
             summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
           }
 
@@ -110,7 +110,7 @@ angular.module('gdsApp')
     function getCoords(city) {
       var geocoder = new google.maps.Geocoder();
 
-      geocoder.geocode({'address': city}, function(results, status) {
+      geocoder.geocode({'address': city}, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
           $scope.map.setCenter(results[0].geometry.location);
         } else {
@@ -118,6 +118,7 @@ angular.module('gdsApp')
         }
       });
     }
+
     // ====
 
 
@@ -140,80 +141,80 @@ angular.module('gdsApp')
     $scope.config = {
       styles: [
         {
-          'featureType':'water',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#e9e9e9'}, {'lightness':17} ]
+          'featureType': 'water',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#e9e9e9'}, {'lightness': 17}]
         },
         {
-          'featureType':'landscape',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#f5f5f5'}, {'lightness':20} ]
+          'featureType': 'landscape',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#f5f5f5'}, {'lightness': 20}]
         },
         {
-          'featureType':'road.highway',
-          'elementType':'geometry.fill',
-          'stylers':[ {'color':'#ffffff'}, {'lightness':17} ]
+          'featureType': 'road.highway',
+          'elementType': 'geometry.fill',
+          'stylers': [{'color': '#ffffff'}, {'lightness': 17}]
         },
         {
-          'featureType':'road.highway',
-          'elementType':'geometry.stroke',
-          'stylers':[ {'color':'#ffffff'}, {'lightness':29}, {'weight':0.2} ]
+          'featureType': 'road.highway',
+          'elementType': 'geometry.stroke',
+          'stylers': [{'color': '#ffffff'}, {'lightness': 29}, {'weight': 0.2}]
         },
         {
-          'featureType':'road.arterial',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#ffffff'}, {'lightness':18} ]
+          'featureType': 'road.arterial',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#ffffff'}, {'lightness': 18}]
         },
         {
-          'featureType':'road.local',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#ffffff'}, {'lightness':16} ]
+          'featureType': 'road.local',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#ffffff'}, {'lightness': 16}]
         },
         {
-          'featureType':'poi',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#f5f5f5'} ,{'lightness':21} ]
+          'featureType': 'poi',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#f5f5f5'}, {'lightness': 21}]
         },
         {
-          'featureType':'poi.park',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#dedede'}, {'lightness':21} ]
+          'featureType': 'poi.park',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#dedede'}, {'lightness': 21}]
         },
         {
-          'elementType':'labels.text.stroke',
-          'stylers':[ {'visibility':'on'}, {'color':'#ffffff'} ,{'lightness':16} ]
+          'elementType': 'labels.text.stroke',
+          'stylers': [{'visibility': 'on'}, {'color': '#ffffff'}, {'lightness': 16}]
         },
         {
-          'elementType':'labels.text.fill',
-          'stylers':[ {'saturation':36}, {'color':'#333333'}, {'lightness':40} ]
+          'elementType': 'labels.text.fill',
+          'stylers': [{'saturation': 36}, {'color': '#333333'}, {'lightness': 40}]
         },
         {
-          'elementType':'labels.icon',
-          'stylers':[ {'visibility':'off'} ]
+          'elementType': 'labels.icon',
+          'stylers': [{'visibility': 'off'}]
         },
         {
-          'featureType':'transit',
-          'elementType':'geometry',
-          'stylers':[ {'color':'#f2f2f2'}, {'lightness':19} ]
+          'featureType': 'transit',
+          'elementType': 'geometry',
+          'stylers': [{'color': '#f2f2f2'}, {'lightness': 19}]
         },
         {
-          'featureType':'administrative',
-          'elementType':'geometry.fill',
-          'stylers':[ {'color':'#fefefe'} ,{'lightness':20} ]
+          'featureType': 'administrative',
+          'elementType': 'geometry.fill',
+          'stylers': [{'color': '#fefefe'}, {'lightness': 20}]
         },
         {
-          'featureType':'administrative',
-          'elementType':'geometry.stroke',
-          'stylers':[ {'color':'#fefefe'}, {'lightness':17}, {'weight':1.2} ]
+          'featureType': 'administrative',
+          'elementType': 'geometry.stroke',
+          'stylers': [{'color': '#fefefe'}, {'lightness': 17}, {'weight': 1.2}]
         }
       ]
     };
 
-    NgMap.getMap().then(function(map) {
+    NgMap.getMap().then(function (map) {
       $scope.map = map;
     });
 
-    $scope.openInfoWindow = function(params) {
+    $scope.openInfoWindow = function (params) {
       $scope.info = params;
       $scope.map.showInfoWindow('foo', this);
     };
@@ -226,13 +227,13 @@ angular.module('gdsApp')
     function addToArray(markers) {
       var t = [];
 
-      angular.forEach(markers, function(p){
+      angular.forEach(markers, function (p) {
         t.push({
-            position: [p.lat, p.lon],
-            address: p.formattedAddress,
-            id: p.id,
-            icon: '../../images/icon-health-daily-' +  p.no_symptom + '.svg'
-          });
+          position: [p.lat, p.lon],
+          address: p.formattedAddress,
+          id: p.id,
+          icon: '../../images/icon-health-daily-' + p.no_symptom + '.svg'
+        });
       });
 
       return t;
@@ -241,7 +242,7 @@ angular.module('gdsApp')
     function getSummaryByLocation(params) {
       var summary = {};
 
-      Surveyapi.getSummaryByLocation(params, function(data) {
+      Surveyapi.getSummaryByLocation(params, function (data) {
         if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
@@ -257,19 +258,19 @@ angular.module('gdsApp')
           summary.exantematica = data.data.data.diseases.exantematica;
           summary.respiratoria = data.data.data.diseases.respiratoria;
 
-          if(summary.total_no_symptoms > 0) {
-            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms/summary.total_surveys)*100)));
+          if (summary.total_no_symptoms > 0) {
+            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
           }
 
-          if(summary.pct_no_symptoms %1 !==0) {
+          if (summary.pct_no_symptoms % 1 !== 0) {
             summary.pct_no_symptoms = Math.round(summary.pct_no_symptoms.toFixed(2));
           }
 
-          if(summary.total_symptoms > 0) {
-            summary.pct_symptoms = Math.round((((summary.total_symptoms/summary.total_surveys)*100)));
+          if (summary.total_symptoms > 0) {
+            summary.pct_symptoms = Math.round((((summary.total_symptoms / summary.total_surveys) * 100)));
           }
 
-          if(summary.pct_symptoms %1 !==0) {
+          if (summary.pct_symptoms % 1 !== 0) {
             summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
           }
 
@@ -281,13 +282,13 @@ angular.module('gdsApp')
       });
     }
 
-    $scope.getMarkersByLocation = function() {
+    $scope.getMarkersByLocation = function () {
       var params = {
         lat: LocalStorage.getItem('userLocation').lat,
         lon: LocalStorage.getItem('userLocation').lon
       };
 
-      Surveyapi.getMarkersByLocation(params, function(data) {
+      Surveyapi.getMarkersByLocation(params, function (data) {
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {

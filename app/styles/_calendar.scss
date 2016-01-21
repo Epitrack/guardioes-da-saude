@@ -98,12 +98,13 @@
 
 .popover-content {
   width: auto;
-  height: 32px;
-  padding: 3px 0 0 35px;
-  margin: 5px 14px 0px 10px;
-  background-size: 25px;
-  background-repeat: no-repeat;
-  @include path('icon-health-daily-good.svg');
+  min-width: 100px!important;
+  //height: 32px;
+  //padding: 3px 0 0 35px;
+  margin: 5px;
+  //background-size: 25px;
+  //background-repeat: no-repeat;
+  //@include path('icon-health-daily-good.svg');
 }
 
 .popover-content.bad {

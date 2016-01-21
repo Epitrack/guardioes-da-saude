@@ -14,8 +14,8 @@ angular.module('gdsApp')
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
 
-    $scope.facebookLogin = function() {
-      auth.$authWithOAuthPopup('facebook').then(function(authData) {
+    $scope.facebookLogin = function () {
+      auth.$authWithOAuthPopup('facebook').then(function (authData) {
         console.log('Facebook authentication success:', authData);
 
         var userFbData = {};
@@ -34,7 +34,7 @@ angular.module('gdsApp')
 
         // return console.warn(userFbData);
 
-        UserApi.fbLogin(userFbData.fb_token, function(data) {
+        UserApi.fbLogin(userFbData.fb_token, function (data) {
           console.log('Data -> ', data);
           if (data.data.error === false) {
             console.log(data.data.message);
@@ -45,14 +45,14 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
       });
     };
 
-    $scope.googleLogin = function() {
-      auth.$authWithOAuthPopup('google').then(function(authData) {
+    $scope.googleLogin = function () {
+      auth.$authWithOAuthPopup('google').then(function (authData) {
         console.log('Google authentication success:', authData);
 
         var userGlData = {};
@@ -65,7 +65,7 @@ angular.module('gdsApp')
 
         // return console.warn($scope.userData);
 
-        UserApi.glLogin(userGlData, function(data) {
+        UserApi.glLogin(userGlData, function (data) {
           if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
@@ -75,14 +75,14 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Google authentication failed:', error);
       });
     };
 
-    $scope.twitterLogin = function() {
-      auth.$authWithOAuthPopup('twitter').then(function(authData) {
+    $scope.twitterLogin = function () {
+      auth.$authWithOAuthPopup('twitter').then(function (authData) {
         console.log('Twitter authentication success:', authData);
 
         var userTwData = {};
@@ -94,7 +94,7 @@ angular.module('gdsApp')
 
         $scope.userData = userTwData;
 
-        UserApi.twLogin(userTwData, function(data) {
+        UserApi.twLogin(userTwData, function (data) {
           if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
@@ -104,13 +104,13 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Twitter authentication failed:', error);
       });
     };
 
-    $scope.updateUserSocialData = function() {
+    $scope.updateUserSocialData = function () {
       var params = $scope.userData;
       params.dob = $scope.UTIL.unConvertDate($scope.userData.dob);
 
@@ -124,7 +124,7 @@ angular.module('gdsApp')
 
       $('#modal-complete-login').modal('hide');
 
-      UserApi.createUser(params, function(data) {
+      UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
           LocalStorage.userCreateData(data.data.user);

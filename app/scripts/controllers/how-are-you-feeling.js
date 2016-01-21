@@ -12,7 +12,7 @@ angular.module('gdsApp')
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
-    $scope.iFeelGood = function() {
+    $scope.iFeelGood = function () {
       var form = {};
 
       form.no_symptom = 'Y';
@@ -28,7 +28,7 @@ angular.module('gdsApp')
         form.household_id = url[url.length - 2];
       }
 
-      Surveyapi.submitSurvey(form, function(data) {
+      Surveyapi.submitSurvey(form, function (data) {
         if (data.data.error !== false) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
@@ -39,28 +39,28 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.iFeelBad = function() {
+    $scope.iFeelBad = function () {
       var url = $location.path().replace('step-1', 'step-2');
 
       $location.path(url);
     };
 
-    $scope.goToHome = function() {
-      $timeout(function(){
-        $location.path('/health-daily');
-      },
-      300);
+    $scope.goToHome = function () {
+      $timeout(function () {
+          $location.path('/health-daily');
+        },
+        300);
     };
 
-    $scope.share = function(social) {
+    $scope.share = function (social) {
       var text;
 
       text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
 
       if (social === 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text));
+        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
       } else {
-        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text));
+        $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
       }
     };
 

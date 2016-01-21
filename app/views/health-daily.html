@@ -8,8 +8,8 @@
   <article class="col-xs-12 col-md-12 card">
     <aside class="col-md-4 health-daily-avatar">
       <figure>
-          <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar de {{user.nick}}">
-          <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Defaul">
+        <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar de {{user.nick}}">
+        <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Defaul">
         <figcaption>{{user.nick}} <span>{{ user.dob | ageFilter }} anos</span></figcaption>
       </figure>
     </aside>
@@ -68,11 +68,11 @@
 
   <article class="col-xs-12 col-md-4 card">
     <div class="calendar-wrapper">
-     <h2>Calendário</h2>
-     <h3>Histórico de participações</h3>
+      <h2>Calendário</h2>
+      <h3>Histórico de participações</h3>
 
-     <calendar class="calendar-directive" selected="currentDay"></calendar>
-   </div>
+      <calendar class="calendar-directive" selected="currentDay"></calendar>
+    </div>
   </article>
 
   <article class="col-xs-12 col-md-7 col-md-offset-1 card frequency">
@@ -80,7 +80,8 @@
     <h3>Relação de participação por mês</h3>
 
     <div class="dropdown sort-by">
-      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true">
         Mês
         <span class="caret"></span>
       </button>

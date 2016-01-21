@@ -16,30 +16,30 @@
 <div class="week" ng-repeat="week in weeks" ng-controller="HealthDailyCtrl">
   <div ng-repeat="day in week.days" class="day">
 
-    <!-- DIAS COM SINTOMAS -->
-    <div class="with-symptoms">
+    <div
+      ng-if="checkForSymptoms(day)"
+      class="with-symptoms">
+      <!-- DIAS COM SINTOMAS -->
       <span
-        ng-if="checkForSymptoms(day)"
         class="day selected"
         ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
         ng-click="select(day)"
-        popover-title="{{ day.name }}"
-        uib-popover="{{day.symptoms}} Sintomas"
+        popover-title="{{ getCalendarPopoverTitle(day) }}"
+        popover-template="'views/partials/calendar-popover.html'"
         popover-placement="top"
-        popover-trigger="click">{{ day.number }}
+        tabindex="0"
+        popover-trigger="focus">{{ day.number }}
       </span>
     </div>
 
-    <!-- DIAS SEM SINTOMAS -->
-    <div class="no-symptoms">
+    <div
+      ng-if="!checkForSymptoms(day)"
+      class="no-symptoms">
+      <!-- DIAS SEM SINTOMAS -->
       <span
-        ng-if="!checkForSymptoms(day)"
         class="day no-symptoms"
-        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
-        popover-title="{{ day.name }}"
-        uib-popover="0 Sintomas"
-        popover-placement="top"
-        popover-trigger="click">{{ day.number }}
+        ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}">
+        {{ day.number }}
       </span>
     </div>
   </div>

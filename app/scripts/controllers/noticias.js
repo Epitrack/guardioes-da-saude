@@ -14,10 +14,10 @@ angular.module('gdsApp')
 
     $scope.news = {};
 
-    NewsApi.getNews(null, function(data) {
+    NewsApi.getNews(null, function (data) {
       $scope.news = data.data.statuses;
 
-      angular.forEach(data.data.statuses, function(i) {
+      angular.forEach(data.data.statuses, function (i) {
         $scope.min_url = i.user.url;
         $scope.min_avatar = i.user.profile_image_url;
       });

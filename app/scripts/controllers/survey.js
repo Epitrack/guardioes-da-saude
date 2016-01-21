@@ -12,7 +12,7 @@ angular.module('gdsApp')
 
     $scope.pageClass = 'survey-page';
 
-    $scope.getUser = function() {
+    $scope.getUser = function () {
       var u = $rootScope.user;
 
       $scope.screen = {};

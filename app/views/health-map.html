@@ -1,7 +1,8 @@
 <aside class="col-sm-5 col-md-3 map-mini-dashboard">
   <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
-      <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city">
+      <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
+             ng-model="surveyByCity.city">
     </fieldset>
   </form>
 
@@ -36,7 +37,8 @@
     </div>
 
     <div class="sindromes">
-      <legend class="legend-subtitle ff-bold">Síndromes <span data-toggle="modal" data-target="#sindrome-modal" class="icon question"></span></legend>
+      <legend class="legend-subtitle ff-bold">Síndromes <span data-toggle="modal" data-target="#sindrome-modal"
+                                                              class="icon question"></span></legend>
 
       <div class="progress-wrapper">
         <span class="progress-label">Diarréica</span>
@@ -44,7 +46,8 @@
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.diarreica}}%">
+               aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.diarreica}}%">
             <span class="sr-only">{{summary.diarreica}}% Complete</span>
           </div>
         </div>
@@ -56,7 +59,8 @@
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.exantematica}}%">
+               aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.exantematica}}%">
             <span class="sr-only">{{summary.exantematica}}% Complete</span>
           </div>
         </div>
@@ -68,7 +72,8 @@
 
         <div class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar"
-            aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.respiratoria}}%">
+               aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.respiratoria}}%">
             <span class="sr-only">{{summary.respiratoria}}% Complete</span>
           </div>
         </div>
@@ -83,10 +88,13 @@
   </div>
 </aside>
 
-<div class="health-map-container" map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{mapOptions}}">
+<div class="health-map-container" map-lazy-load="https://maps.google.com/maps/api/js"
+     map-lazy-load-params="{{mapOptions}}">
 
-  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false" styles="{{config.style}}">
-    <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()" icon="{{userLocation.icon}}"></marker>
+  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false"
+          styles="{{config.style}}">
+    <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()"
+            icon="{{userLocation.icon}}"></marker>
 
     <info-window position="current-location">
       <span>Você está aqui!</span>
@@ -97,11 +105,12 @@
 </div>
 
 <!-- Síndromes Modal -->
-<div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog" >
+<div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">
   <article class="modal-dialog" role="document">
     <div class="modal-content">
       <header class="modal-header panel-heading">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
         <h3 class="modal-title panel-title">Síndromes</h3>
       </header>
 
@@ -112,9 +121,12 @@
           </p>
 
           <ul>
-            <li>Diarreica <span>(febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)</span></li>
-            <li>Respiratória <span>(febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)</span></li>
-            <li>Exantemática <span>(manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)</span></li>
+            <li>Diarreica <span>(febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)</span>
+            </li>
+            <li>Respiratória <span>(febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)</span>
+            </li>
+            <li>Exantemática <span>(manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)</span>
+            </li>
           </ul>
         </div>
       </div>

@@ -16,14 +16,14 @@ angular.module('gdsApp')
 
     var obj = {};
 
-    obj.getNews = function(data, callback) {
+    obj.getNews = function (data, callback) {
       $http.get(apiUrl + '/news/get', {headers: {'app_token': app_token}})
-        .success(function(data) {
+        .success(function (data) {
           console.log('Success getNews: ', data);
           callback(data);
-        }).error(function(error) {
-          console.log('Error getNews: ', error);
-        });
+        }).error(function (error) {
+        console.log('Error getNews: ', error);
+      });
     };
 
     return obj;

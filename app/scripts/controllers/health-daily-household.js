@@ -18,8 +18,8 @@ angular.module('gdsApp')
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
 
     // ====
-    $scope.getHousehold = function() {
-      HouseholdApi.getHousehold(userID, function(data) {
+    $scope.getHousehold = function () {
+      HouseholdApi.getHousehold(userID, function (data) {
         $scope.household = meuFiltro('filter')(data.data.data, {
           id: $routeParams.id
         })[0];
@@ -30,10 +30,10 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getHouseholdSurvey = function() {
+    $scope.getHouseholdSurvey = function () {
       var id = $scope.household.id;
 
-      HouseholdApi.getHouseholdSurvey(id, function(data) {
+      HouseholdApi.getHouseholdSurvey(id, function (data) {
         $scope.householdSurveys = data.data.data;
 
         if ($scope.householdSurveys.total === 1) {
@@ -55,16 +55,16 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getSurveyByMonth = function() {
+    $scope.getSurveyByMonth = function () {
       $scope.day = moment();
 
       var obj = {
-        month: moment().month()+1,
+        month: moment().month() + 1,
         year: moment().year(),
         hhId: $scope.household.id
       };
 
-      HouseholdApi.getHouseholdCalendar(obj, function(data) {
+      HouseholdApi.getHouseholdCalendar(obj, function (data) {
         var householdCalendar = [];
 
         var params;
@@ -92,17 +92,17 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getMonth = function(month) {
+    $scope.getMonth = function (month) {
       $rootScope.hhAllDays = '';
       $rootScope.hhAllDays = $rootScope.UTIL.getDaysArray(new Date().getFullYear(), month);
 
       $scope.graphic();
     };
 
-    $scope.graphic = function() {
+    $scope.graphic = function () {
       var days = [];
 
-      $rootScope.hhAllDays.forEach(function(item, index, array) {
+      $rootScope.hhAllDays.forEach(function (item, index, array) {
         days.push({
           dia: item,
           total: $rootScope.hhSurvey.total
@@ -134,8 +134,8 @@ angular.module('gdsApp')
 
       $scope.donutOptions = {
         data: [
-          { label: "Bem", value: $rootScope.hhSurvey.no_symptom },
-          { label: "Mal", value: $rootScope.hhSurvey.symptom }
+          {label: "Bem", value: $rootScope.hhSurvey.no_symptom},
+          {label: "Mal", value: $rootScope.hhSurvey.symptom}
         ],
         colors: ['#E0D433', '#C81204'],
         resize: true
@@ -146,12 +146,12 @@ angular.module('gdsApp')
 
     $scope.getHousehold();
 
-    $rootScope.$on('hh_ok', function(hhId) {
+    $rootScope.$on('hh_ok', function (hhId) {
       $scope.getHouseholdSurvey(hhId);
       $scope.getSurveyByMonth(hhId);
     });
 
-    $rootScope.$on('hhSurvey_ok', function() {
+    $rootScope.$on('hhSurvey_ok', function () {
       $scope.getMonth(new Date().getMonth() + 1);
     });
 

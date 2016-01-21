@@ -14,7 +14,7 @@ angular.module('gdsApp')
     $scope.logged = LocalStorage.getItem('userLogged');
 
     // get user location
-    $scope.getUserLocation = function() {
+    $scope.getUserLocation = function () {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition, errorGeolocation);
       } else {
@@ -40,7 +40,7 @@ angular.module('gdsApp')
     // ====
 
     // when user click in logout button
-    $scope.clearStorage = function() {
+    $scope.clearStorage = function () {
       delete $rootScope.user;
       console.log('clearStorage in index.js');
       localStorage.removeItem('userStorage');

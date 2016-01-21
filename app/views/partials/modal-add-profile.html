@@ -1,9 +1,11 @@
-<div class="modal fade modal-add-profile" id="modal-add-profile" tabindex="-1" role="dialog" aria-labelledby="modalAddProfile" ng-controller="AddProfileCtrl">
+<div class="modal fade modal-add-profile" id="modal-add-profile" tabindex="-1" role="dialog"
+     aria-labelledby="modalAddProfile" ng-controller="AddProfileCtrl">
   <article class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <form ng-submit="addHouseholdModal()" class="card-form" name="addFormProfile">
         <header class="modal-header panel-heading">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
           <h3 class="modal-title panel-title">Adicionar membro</h3>
         </header>
 
@@ -14,93 +16,96 @@
             </figure>
 
             <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
-                <div class="no-padding col-xs-12">
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-nickname">Apelido</label>
-                    <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
-                    ng-model="houseHold.nick">
-                  </fieldset>
-
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-gender">Sexo</label>
-
-                    <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
-                      data-label="Masculino" ng-model="houseHold.gender">
-                    <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
-                      data-label="Feminino" ng-model="houseHold.gender">
-                  </fieldset>
-                </div>
-
-                <div class="no-padding col-xs-12">
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-birthdate">Data de nascimento</label>
-                    <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                     ng-model="houseHold.dob" mask="99-99-9999">
-                    <!-- <span class="icon-birthdate"></span> -->
-                  </fieldset>
-
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-raca-cor">Raça/Cor</label>
-
-                    <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="houseHold.race">
-                      <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
-                      <option value="branco">Branco</option>
-                      <option value="preto">Preto</option>
-                      <option value="pardo">Pardo</option>
-                      <option value="amarelo">Amarelo</option>
-                      <option value="indigena">Indígena</option>
-                    </select>
-                  </fieldset>
-                </div>
+              <div class="no-padding col-xs-12">
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-nickname">Apelido</label>
+                  <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
+                         ng-model="houseHold.nick">
+                </fieldset>
 
                 <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-parentesco">Parentesco</label>
+                  <label for="profile-gender">Sexo</label>
 
-                  <select class="select-primary" name="profile-parentesco" id="profile-parentesco" ng-model="houseHold.relationship">
-                    <option ng-selected="true" disabled>Escolha um parentesco</option>
-                    <option value="pai">Pai</option>
-                    <option value="mae">Mãe</option>
-                    <option value="filho">Filho(a)</option>
-                    <option value="irmao">Irmão(a)</option>
-                    <option value="avo">Avó/Avô</option>
-                    <option value="neto">Neto(a)</option>
-                    <option value="tio">Tio(a)</option>
-                    <option value="sobrinho">Sobrinho(a)</option>
-                    <option value="bisavo">Bisavó/Bisavô</option>
-                    <option value="bisneto">Bisneto(a)</option>
-                    <option value="primo">Primo(a)</option>
-                    <option value="sogro">Sogro(a)</option>
-                    <option value="genro-nora">Genro/Nora</option>
-                    <option value="padrasto">Padrasto</option>
-                    <option value="madrasta">Madrasta</option>
-                    <option value="enteado">Enteado</option>
-                    <option value="conjuge">Cônjuge</option>
-                    <option value="outros">Outros</option>
+                  <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
+                         data-label="Masculino" ng-model="houseHold.gender">
+                  <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
+                         data-label="Feminino" ng-model="houseHold.gender">
+                </fieldset>
+              </div>
+
+              <div class="no-padding col-xs-12">
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-birthdate">Data de nascimento</label>
+                  <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
+                         ng-model="houseHold.dob" mask="99-99-9999">
+                  <!-- <span class="icon-birthdate"></span> -->
+                </fieldset>
+
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-raca-cor">Raça/Cor</label>
+
+                  <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
+                          ng-model="houseHold.race">
+                    <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="pardo">Pardo</option>
+                    <option value="amarelo">Amarelo</option>
+                    <option value="indigena">Indígena</option>
                   </select>
                 </fieldset>
+              </div>
 
-                <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-email">Email (opcional)</label>
-                  <input class="input-primary" id="profile-email" name="add-profile-email" type="email" ng-model="houseHold.email">
-                </fieldset>
+              <fieldset class="col-xs-12 col-sm-6">
+                <label for="profile-parentesco">Parentesco</label>
 
-                <fieldset class="col-xs-12">
-                  <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
-                    <span>As senhas digitadas precisam ser iguais.</span>
-                  </div>
+                <select class="select-primary" name="profile-parentesco" id="profile-parentesco"
+                        ng-model="houseHold.relationship">
+                  <option ng-selected="true" disabled>Escolha um parentesco</option>
+                  <option value="pai">Pai</option>
+                  <option value="mae">Mãe</option>
+                  <option value="filho">Filho(a)</option>
+                  <option value="irmao">Irmão(a)</option>
+                  <option value="avo">Avó/Avô</option>
+                  <option value="neto">Neto(a)</option>
+                  <option value="tio">Tio(a)</option>
+                  <option value="sobrinho">Sobrinho(a)</option>
+                  <option value="bisavo">Bisavó/Bisavô</option>
+                  <option value="bisneto">Bisneto(a)</option>
+                  <option value="primo">Primo(a)</option>
+                  <option value="sogro">Sogro(a)</option>
+                  <option value="genro-nora">Genro/Nora</option>
+                  <option value="padrasto">Padrasto</option>
+                  <option value="madrasta">Madrasta</option>
+                  <option value="enteado">Enteado</option>
+                  <option value="conjuge">Cônjuge</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </fieldset>
 
-                  <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
-                    <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-                  </div>
+              <fieldset class="col-xs-12 col-sm-6">
+                <label for="profile-email">Email (opcional)</label>
+                <input class="input-primary" id="profile-email" name="add-profile-email" type="email"
+                       ng-model="houseHold.email">
+              </fieldset>
 
-                  <div ng-show="invalidbirth" class="alert alert-info" role="alert">
-                    <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
-                  </div>
+              <fieldset class="col-xs-12">
+                <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
+                  <span>As senhas digitadas precisam ser iguais.</span>
+                </div>
 
-                  <div ng-show="invalid == true" class="alert alert-warning" role="alert">
-                   <span>Data de nascimento inválida.</span>
-                  </div>
-                </fieldset>
+                <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
+                  <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+                </div>
+
+                <div ng-show="invalidbirth" class="alert alert-info" role="alert">
+                  <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
+                </div>
+
+                <div ng-show="invalid == true" class="alert alert-warning" role="alert">
+                  <span>Data de nascimento inválida.</span>
+                </div>
+              </fieldset>
             </div>
           </div>
         </div>

@@ -16,14 +16,14 @@ angular.module('gdsApp')
 
     var obj = {};
 
-    obj.getCities = function(limit, callback) {
+    obj.getCities = function (limit, callback) {
       $http.get(apiUrl + '/search/cities?limit=' + limit, {headers: {'app_token': app_token}})
-        .success(function(data) {
+        .success(function (data) {
           console.log('Success getCities: ', data);
           callback(data);
-        }).error(function(error) {
-          console.log('Error getCities: ', error);
-        });
+        }).error(function (error) {
+        console.log('Error getCities: ', error);
+      });
     };
 
     return obj;
