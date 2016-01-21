@@ -71,7 +71,7 @@
      <h2>Calendário</h2>
      <h3>Histórico de participações</h3>
 
-     <calendar class="calendar-directive" selected="day"></calendar>
+     <!-- <calendar class="calendar-directive" selected="day"></calendar> -->
    </div>
   </article>
 
@@ -80,16 +80,13 @@
     <h3>Relação de participação por mês</h3>
 
     <div class="dropdown sort-by">
-      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Mês
-        <span class="caret"></span>
+      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Mês <span class="caret"></span>
       </button>
 
       <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-        <li><a ng-href="" ng-click="getMonth(01)">Jan</a></li>
-        <li><a ng-href="" ng-click="getMonth(02)">Fev</a></li>
-        <li><a ng-href="" ng-click="getMonth(03)">Mar</a></li>
-        <li><a ng-href="" ng-click="getMonth(04)">Abr</a></li>
+        <li ng-repeat="m in monthReports">
+          <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+        </li>
       </ul>
     </div>
 
@@ -98,3 +95,6 @@
     </div>
   </article>
 </section>
+
+<!-- Toaster -->
+<div ng-include src="'views/partials/toaster.html'"></div>
