@@ -86,10 +86,9 @@
       </button>
 
       <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-        <li><a ng-href="" ng-click="getMonth(01)">Jan</a></li>
-        <li><a ng-href="" ng-click="getMonth(02)">Fev</a></li>
-        <li><a ng-href="" ng-click="getMonth(03)">Mar</a></li>
-        <li><a ng-href="" ng-click="getMonth(04)">Abr</a></li>
+        <li ng-repeat="m in monthReports">
+          <a ng-href="" ng-click="getMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+        </li>
       </ul>
     </div>
 
@@ -99,3 +98,6 @@
 
   </article>
 </section>
+
+<!-- Toaster -->
+<div ng-include src="'views/partials/toaster.html'"></div>

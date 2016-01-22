@@ -151,7 +151,6 @@ angular.module('gdsApp')
         resize: true
       };
     };
-
     // ====
 
     // ====
