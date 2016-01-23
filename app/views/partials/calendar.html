@@ -13,18 +13,18 @@
   <span class="day">S</span>
   <span class="day">D</span>
 </div>
-<div class="week" ng-repeat="week in weeks" ng-controller="HealthDailyCtrl">
+<div class="week" ng-repeat="week in weeks">
   <div ng-repeat="day in week.days" class="day">
 
     <div
-      ng-if="checkForSymptoms(day)"
+      ng-if="CalendarInterface.checkForSymptoms(day)"
       class="with-symptoms">
       <!-- DIAS COM SINTOMAS -->
       <span
         class="day selected"
         ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth}"
         ng-click="select(day)"
-        popover-title="{{ getCalendarPopoverTitle(day) }}"
+        popover-title="{{ CalendarInterface.getCalendarPopoverTitle(day) }}"
         popover-template="'views/partials/calendar-popover.html'"
         popover-placement="top"
         tabindex="0"
@@ -33,7 +33,7 @@
     </div>
 
     <div
-      ng-if="!checkForSymptoms(day)"
+      ng-if="!CalendarInterface.checkForSymptoms(day)"
       class="no-symptoms">
       <!-- DIAS SEM SINTOMAS -->
       <span

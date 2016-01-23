@@ -7,12 +7,13 @@
  * # calendar
  */
 angular.module('gdsApp')
-  .directive('calendar', function () {
+  .directive('calendar', function ($rootScope) {
     return {
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
       scope: {
-        selected: "="
+        selected: "=",
+        CalendarInterface: "=interface"
       },
       link: function ($scope) {
         $scope.selected = _removeTime($scope.selected);
@@ -27,6 +28,8 @@ angular.module('gdsApp')
           $scope.selected = day.date;
           console.log(day);
         };
+
+        console.log("CI", $scope.CalendarInterface);
 
         $scope.next = function () {
           var next = $scope.month.clone();
@@ -58,6 +61,7 @@ angular.module('gdsApp')
         done = count++ > 2 && monthIndex !== date.month();
         monthIndex = date.month();
       }
+      $scope.CalendarInterface.onChange({month:$scope.month.month()+1, year:$scope.month.year()});
     }
 
     function _buildWeek(date, month) {

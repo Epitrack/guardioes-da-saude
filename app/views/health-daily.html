@@ -71,7 +71,10 @@
       <h2>Calendário</h2>
       <h3>Histórico de participações</h3>
 
-      <calendar class="calendar-directive" selected="currentDay"></calendar>
+      <calendar class="calendar-directive"
+                ng-hide="!calendarLoaded"
+                interface="vm.CalendarInterface"
+                selected="currentDay"></calendar>
     </div>
   </article>
 

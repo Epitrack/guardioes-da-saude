@@ -123,7 +123,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          console.log('Success getUserSurvey: ', result);
+          //console.log('Success getUserSurvey: ', result);
           callback(result);
         }, function (error) {
           console.warn('Error getUserSurvey: ', error);
@@ -139,10 +139,10 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          console.log('Success getUserCalendar: ', result);
+          //console.log('Success getUserCalendar: ', result);
           callback(result);
         }, function (error) {
-          console.warn('Error getUserCalendar: ', error);
+          //console.warn('Error getUserCalendar: ', error);
         });
     };
 
