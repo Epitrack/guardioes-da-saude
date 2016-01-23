@@ -61,7 +61,7 @@ angular.module('gdsApp')
         done = count++ > 2 && monthIndex !== date.month();
         monthIndex = date.month();
       }
-      $scope.CalendarInterface.onChange({month:$scope.month.month()+1, year:$scope.month.year()});
+      $scope.CalendarInterface.onChange({month: $scope.month.month() + 1, year: $scope.month.year()});
     }
 
     function _buildWeek(date, month) {

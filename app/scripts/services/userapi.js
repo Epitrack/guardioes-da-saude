@@ -123,7 +123,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          //console.log('Success getUserSurvey: ', result);
+          console.log('Success getUserSurvey: ', result);
           callback(result);
         }, function (error) {
           console.warn('Error getUserSurvey: ', error);
@@ -139,10 +139,10 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          //console.log('Success getUserCalendar: ', result);
+          console.log('Success getUserCalendar: ', result);
           callback(result);
         }, function (error) {
-          //console.warn('Error getUserCalendar: ', error);
+          console.warn('Error getUserCalendar: ', error);
         });
     };
 
@@ -221,6 +221,36 @@ angular.module('gdsApp')
           callback(result);
         }, function (error) {
           console.warn('Error getUserEmail: ', error);
+        });
+    };
+
+    obj.getUserSurveyByMonth = function (params, callback) {
+      $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year, {
+          headers: {
+            'app_token': app_token,
+            'user_token': params.user_token
+          }
+        })
+        .then(function (result) {
+          console.log('Success getUserSurveyByMonth: ', result);
+          callback(result);
+        }, function (error) {
+          console.warn('Error getUserSurveyByMonth: ', error);
+        });
+    };
+
+    obj.getUserSurveyByYear = function (params, callback) {
+      $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {
+          headers: {
+            'app_token': app_token,
+            'user_token': params.user_token
+          }
+        })
+        .then(function (result) {
+          console.log('Success getUserSurveyByYear: ', result);
+          callback(result);
+        }, function (error) {
+          console.warn('Error getUserSurveyByYear: ', error);
         });
     };
 
