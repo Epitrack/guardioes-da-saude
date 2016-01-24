@@ -122,14 +122,11 @@ angular.module('gdsApp')
         user_token: $scope.household.user_token
       };
 
-      // return console.log(params);
-
       HouseholdApi.getHouseholdSurveyByMonth(params, function(data) {
         if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          return console.warn(data.data.data);
           $rootScope.hhAllDays = data.data.data;
           $rootScope.$broadcast('hhAllDays_ok');
         }

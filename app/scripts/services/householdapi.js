@@ -98,7 +98,7 @@ angular.module('gdsApp')
 
     // frequency calendar
     obj.getHouseholdSurveyByMonth = function(params, callback) {
-      $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year, {headers: {'app_token': app_token, 'user_token': params.user_token}})
+      $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year + '&household_id=' + params.hh_id, {headers: {'app_token': app_token, 'user_token': params.user_token}})
         .then(function(result){
           console.log('Success getHouseholdSurveyByMonth: ', result);
           callback(result);
