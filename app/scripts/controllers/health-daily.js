@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', function ($scope, UserApi, $rootScope) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'toaster', function ($scope, UserApi, $rootScope, LocalStorage, toaster) {
 
     $scope.pageClass = 'health-daily-page';
 
@@ -58,7 +58,7 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getSurveyByMonth = function() {
+    $scope.getUserCalendar = function() {
       $scope.currentDay = moment();
 
       // ----
@@ -97,53 +97,51 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    $scope.getMonth = function(month) {
-      // console.log('MÊS -> ', month);
-
+    $scope.getSurveysByMonth = function(month) {
       $rootScope.allDays = '';
-      $rootScope.allDays = $rootScope.UTIL.getDaysArray(new Date().getFullYear(), month);
 
-      $scope.graphic();
+      var params = {
+        month: month,
+        year: new Date().getFullYear(),
+        user_token: LocalStorage.getItem('userStorage').user_token
+      };
+
+      UserApi.getUserSurveyByMonth(params, function(data) {
+        if (data.data.error === true) {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        } else {
+          $rootScope.allDays = data.data.data;
+          $rootScope.$broadcast('allDays_ok');
+        }
+      });
     };
 
-    $scope.graphic = function() {
+    $scope.graphicLine = function() {
       var days = [];
 
       $rootScope.allDays.forEach(function(item, index, array) {
         days.push({
-          dia: item,
-          total: $rootScope.userSurvey.total // @guinetik, check this
+          y: "Dia " + item._id.day.toString(),
+          total: item.count
         });
       });
 
-      // adiciona alguns dias para fazer curva no gráfico
-      days.push({
-        dia: 16, total: 43
-      });
-
-      days.push({
-        dia: 20, total: 84
-      });
-
-      days.push({
-        dia: 14, total: 45
-      });
-
-      // console.warn($scope.days);
-
-      $scope.days = days;
-
-      // console.warn($scope.days);
-
       $scope.lineOptions = {
-        data: $scope.days,
-        xkey: 'dia',
+        data: days.reverse(),
+        xkey: 'y',
         ykeys: ['total'],
-        labels: ['Total'],
+        labels: ['Participações'],
         lineColors: ['#1E88E5'],
-        resize: true
+        parseTime: false,
+        resize: true,
+        hoverCallback: function(index, options, content) {
+          return(content);
+        }
       };
+    };
 
+    $scope.graphicDonuts = function() {
       $scope.donutOptions = {
         data: [
           {label: "Bem", value: $rootScope.userSurvey.no_symptom},
@@ -153,13 +151,37 @@ angular.module('gdsApp')
         resize: true
       };
     };
+    // ====
 
+    // ====
+    $scope.getYear = function() {
+      var params = {
+        year: new Date().getFullYear(),
+        user_token: LocalStorage.getItem('userStorage').user_token
+      };
+
+      UserApi.getUserSurveyByYear(params, function(data) {
+        if (data.data.error === true) {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        } else {
+          console.log(data.data.data);
+          $scope.monthReports = data.data.data;
+        }
+      });
+    };
     // ====
 
     $scope.getUserSurvey();
-    $scope.getSurveyByMonth();
+    $scope.getUserCalendar();
+    $scope.getYear();
 
     $rootScope.$on('userSurvey_ok', function() {
-      $scope.getMonth(new Date().getMonth() + 1);
+      $scope.graphicDonuts();
+      $scope.getSurveysByMonth(new Date().getMonth() + 1)
+    });
+
+    $rootScope.$on('allDays_ok', function() {
+      $scope.graphicLine()
     });
   }]);
