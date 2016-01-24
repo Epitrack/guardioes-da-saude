@@ -12,7 +12,7 @@ angular.module('gdsApp')
 
     $scope.screen = {};
 
-    $scope.checkHash = function() {
+    $scope.checkHash = function () {
       console.log($scope.screen.user);
       var hash = $location.url().split('/')[1].replace('esqueci-minha-senha?hash=', '');
       // var hash = $location.url().split('/')[1].replace('esqueci-minha-senha?hash=', '').replace('%2F', '/');
@@ -22,14 +22,14 @@ angular.module('gdsApp')
         hash: decodeURIComponent(hash)
       };
 
-      UserApi.validateHash(params.hash, function(data) {
+      UserApi.validateHash(params.hash, function (data) {
         if (data.data.error === false) {
           params.id = data.data.user_id;
 
-          UserApi.updateUserPassword(params, function(data) {
+          UserApi.updateUserPassword(params, function (data) {
             if (data.data.error === false) {
               toaster.pop('success', data.data.message);
-              $timeout(function() {
+              $timeout(function () {
                 $location.path('login-email');
                 $location.search('hash', null);
               }, 3000);

@@ -17,8 +17,8 @@ angular.module('gdsApp')
     $scope.pageClass = 'cadastro-page';
     // ====
 
-    $scope.facebookLogin = function() {
-      auth.$authWithOAuthPopup('facebook').then(function(authData) {
+    $scope.facebookLogin = function () {
+      auth.$authWithOAuthPopup('facebook').then(function (authData) {
         console.log('Facebook authentication success:', authData);
 
         var userFbData = {};
@@ -36,7 +36,7 @@ angular.module('gdsApp')
 
         $scope.userData = userFbData;
 
-        UserApi.fbLogin(userFbData.fb_token, function(data) {
+        UserApi.fbLogin(userFbData.fb_token, function (data) {
           console.log('Data -> ', data);
           if (data.data.error === false) {
             console.log(data.data.message);
@@ -47,14 +47,14 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
       });
     };
 
-    $scope.googleLogin = function() {
-      auth.$authWithOAuthPopup('google').then(function(authData) {
+    $scope.googleLogin = function () {
+      auth.$authWithOAuthPopup('google').then(function (authData) {
         console.log('Google authentication success:', authData);
 
         var userGlData = {};
@@ -66,7 +66,7 @@ angular.module('gdsApp')
 
         $scope.userData = userGlData;
 
-        UserApi.glLogin(userGlData, function(data) {
+        UserApi.glLogin(userGlData, function (data) {
           if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
@@ -76,14 +76,14 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Google authentication failed:', error);
       });
     };
 
-    $scope.twitterLogin = function() {
-      auth.$authWithOAuthPopup('twitter').then(function(authData) {
+    $scope.twitterLogin = function () {
+      auth.$authWithOAuthPopup('twitter').then(function (authData) {
         console.log('Twitter authentication success:', authData);
 
         var userTwData = {};
@@ -96,7 +96,7 @@ angular.module('gdsApp')
 
         $scope.userData = userTwData;
 
-        UserApi.twLogin(userTwData, function(data) {
+        UserApi.twLogin(userTwData, function (data) {
           if (data.data.error === false) {
             console.log(data.data.message);
             LocalStorage.userLogin(data.data.user, data.data.token);
@@ -106,7 +106,7 @@ angular.module('gdsApp')
             $('#modal-complete-login').modal('show');
           }
         });
-      }).catch(function(error) {
+      }).catch(function (error) {
         toaster.pop('error', error);
         console.log('Facebook authentication failed:', error);
       });
@@ -115,7 +115,7 @@ angular.module('gdsApp')
     // create new user
     $scope.createData = {};
 
-    $scope.createUser = function() {
+    $scope.createUser = function () {
       var params = $scope.createData;
       params.dob = $scope.UTIL.unConvertDate($scope.createData.dob);
 
@@ -127,7 +127,7 @@ angular.module('gdsApp')
         return $scope.invalid = true;
       }
 
-      UserApi.createUser(params, function(data) {
+      UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
@@ -139,10 +139,10 @@ angular.module('gdsApp')
     // ====
 
     // create user using social network
-    $scope.updateUserSocialData = function() {
+    $scope.updateUserSocialData = function () {
       $('#modal-complete-login').modal('hide');
 
-      UserApi.createUser($scope.userData, function(data) {
+      UserApi.createUser($scope.userData, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
           LocalStorage.userCreateData(data.data.user);

@@ -13,11 +13,11 @@ angular.module('gdsApp')
     $scope.pageClass = 'profile-page';
 
     // set user with $rootScope data
-    $scope.getUser = function() {
+    $scope.getUser = function () {
       var u = $rootScope.user;
       // return console.warn('$rootScope.user -> ', $rootScope.user);
 
-      UserApi.updateUser(u.id, function(data){
+      UserApi.updateUser(u.id, function (data) {
         if (data.data.error === false) {
           u = data.data.data[0];
 
@@ -39,7 +39,7 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.editProfile = function() {
+    $scope.editProfile = function () {
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.user.nick,
@@ -59,7 +59,7 @@ angular.module('gdsApp')
       // ====
 
       // ====
-      UserApi.updateProfile(params, function(data) {
+      UserApi.updateProfile(params, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
         } else {

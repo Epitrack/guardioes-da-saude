@@ -11,22 +11,22 @@ angular.module('gdsApp')
   .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', '$window', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout, $window) {
 
     // get all symptoms
-    Surveyapi.getSymptoms(function(data) {
+    Surveyapi.getSymptoms(function (data) {
       $scope.symptomsList = data.data.data;
     });
 
     // report survey
     $scope.symptoms = {};
 
-    $scope.submitSurvey = function() {
+    $scope.submitSurvey = function () {
       var form = {};
 
       if ($scope.symptoms.travelLocation) {
         var country = $scope.symptoms.travelLocation;
       }
 
-      angular.forEach($scope.symptoms, function(v, symptom) {
-        if(v) {
+      angular.forEach($scope.symptoms, function (v, symptom) {
+        if (v) {
           form[symptom] = "Y";
         }
       });
@@ -47,7 +47,7 @@ angular.module('gdsApp')
         form.travelLocation = country;
       }
 
-      Surveyapi.submitSurvey(form, function(data) {
+      Surveyapi.submitSurvey(form, function (data) {
         if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
@@ -76,29 +76,29 @@ angular.module('gdsApp')
       });
     }
 
-    $scope.goToUpas = function() {
-      $timeout(function(){
-        $location.path('/health-tips');
-      },
-      400);
+    $scope.goToUpas = function () {
+      $timeout(function () {
+          $location.path('/health-tips');
+        },
+        400);
     };
 
-    $scope.goToHome = function() {
-      $timeout(function(){
-        $location.path('/health-daily');
-      },
-      300);
+    $scope.goToHome = function () {
+      $timeout(function () {
+          $location.path('/health-daily');
+        },
+        300);
     };
 
-    $scope.share = function(social) {
+    $scope.share = function (social) {
       var text;
 
       text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
 
       if (social === 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u='+ decodeURIComponent(text));
+        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
       } else {
-        $window.open('https://twitter.com/home?status='+ decodeURIComponent(text));
+        $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
       }
     };
 

@@ -7,7 +7,8 @@
 
           <div class="col-sm-4 col-md-7 no-padding social-contact">
             <h5>Ou pelas nossas redes sociais:</h5>
-            <a ng-href="https://www.facebook.com/minsaude" target="_blank" class="col-xs-12 btn-login facebook">Facebook</a>
+            <a ng-href="https://www.facebook.com/minsaude" target="_blank"
+               class="col-xs-12 btn-login facebook">Facebook</a>
             <a ng-href="https://twitter.com/minsaude" target="_blank" class="col-xs-12 btn-login twitter">Twitter</a>
           </div>
         </aside>
@@ -16,13 +17,15 @@
           <form ng-submit="sendContact()" class="card-form contact-form" name="formContact" novalidate>
             <fieldset class="col-xs-12">
               <label for="contact-email">Email</label>
-              <input class="input-primary" id="contact-email" name="contactEmail" type="email" ng-model="contact.email" required>
+              <input class="input-primary" id="contact-email" name="contactEmail" type="email" ng-model="contact.email"
+                     required>
             </fieldset>
 
             <fieldset class="col-xs-12">
               <label for="contact-subject">Assunto</label>
 
-              <select class="select-primary" name="contactSubject" id="contactSubject" ng-model="contact.subject" required>
+              <select class="select-primary" name="contactSubject" id="contactSubject" ng-model="contact.subject"
+                      required>
                 <option ng-selected="true" disabled>Escoha um assunto</option>
                 <option value="informacoes">Informações</option>
                 <option value="sugestoes">Sugestões</option>
@@ -35,28 +38,34 @@
 
             <fieldset class="col-xs-12">
               <label for="contact-msg">Mensagem</label>
-              <textarea class="input-primary" id="contact-msg" name="contactMsg" ng-model="contact.message" required></textarea>
+              <textarea class="input-primary" id="contact-msg" name="contactMsg" ng-model="contact.message"
+                        required></textarea>
             </fieldset>
 
             <fieldset class="col-xs-12">
               <button type="submit" class="btn btn-block btn-primary"
-              ng-disabled="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid  || formContact.contactSubject.$dirty && formContact.contactSubject.$invalid || formContact.contactMsg.$dirty && formContact.contactMsg.$invalid">Enviar</button>
+                      ng-disabled="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid  || formContact.contactSubject.$dirty && formContact.contactSubject.$invalid || formContact.contactMsg.$dirty && formContact.contactMsg.$invalid">
+                Enviar
+              </button>
             </fieldset>
           </form>
         </aside>
 
         <!-- validation -->
         <aside class="col-xs-12 col-md-7 col-md-offset-1">
-          <div ng-show="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid" class="alert alert-warning" role="alert">
+          <div ng-show="formContact.contactEmail.$dirty && formContact.contactEmail.$invalid"
+               class="alert alert-warning" role="alert">
             <span ng-show="formContact.contactEmail.$error.required">O campo <b>email</b> é obrigatório.</span>
             <span ng-show="formContact.contactEmail.$error.email">Endereço de e-mail inválido.</span>
           </div>
 
-          <div ng-show="formContact.contactSubject.$dirty && formContact.contactSubject.$invalid" class="alert alert-warning" role="alert">
+          <div ng-show="formContact.contactSubject.$dirty && formContact.contactSubject.$invalid"
+               class="alert alert-warning" role="alert">
             <span ng-show="formContact.contactSubject.$error.required">O campo <b>assunto</b> é obrigatório.</span>
           </div>
 
-          <div ng-show="formContact.contactMsg.$dirty && formContact.contactMsg.$invalid" class="alert alert-warning" role="alert">
+          <div ng-show="formContact.contactMsg.$dirty && formContact.contactMsg.$invalid" class="alert alert-warning"
+               role="alert">
             <span ng-show="formContact.contactMsg.$error.required">O campo <b>mensagem</b> é obrigatório.</span>
           </div>
         </aside>

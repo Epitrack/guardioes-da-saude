@@ -4,39 +4,45 @@
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
         <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
 
-          <h3 class="login-subtitle">Entre com seu email e senha:</h3>
+        <h3 class="login-subtitle">Entre com seu email e senha:</h3>
 
-          <form ng-submit="loginUserEmail()" class="form-login-email" name="formLoginEmail" novalidate>
-            <fieldset class="input-group mainform signup">
-              <input type="email" name="email" class="form-control mainform-input" ng-model="loginEmail.email" placeholder="Email" required>
-              <input type="password" name="password" class="form-control mainform-input" ng-model="loginEmail.password" placeholder="Senha" required>
-            </fieldset>
+        <form ng-submit="loginUserEmail()" class="form-login-email" name="formLoginEmail" novalidate>
+          <fieldset class="input-group mainform signup">
+            <input type="email" name="email" class="form-control mainform-input" ng-model="loginEmail.email"
+                   placeholder="Email" required>
+            <input type="password" name="password" class="form-control mainform-input" ng-model="loginEmail.password"
+                   placeholder="Senha" required>
+          </fieldset>
 
-            <fieldset class="btn-group btn-group-justified" role="group">
-              <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-signup"
-                ng-disabled="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid || formLoginEmail.password.$dirty && formLoginEmail.password.$invalid">Entrar</button>
-              </div>
-            </fieldset>
-          </form>
+          <fieldset class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <button type="submit" class="btn btn-signup"
+                      ng-disabled="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid || formLoginEmail.password.$dirty && formLoginEmail.password.$invalid">
+                Entrar
+              </button>
+            </div>
+          </fieldset>
+        </form>
 
-          <br>
+        <br>
 
-          <div ng-show="loginError" class="alert alert-danger" role="alert">
-            <span>{{loginError}}</span>
-          </div>
+        <div ng-show="loginError" class="alert alert-danger" role="alert">
+          <span>{{loginError}}</span>
+        </div>
 
-          <!-- validation -->
-          <div ng-show="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid" class="alert alert-warning" role="alert">
-            <span ng-show="formLoginEmail.email.$error.required">O campo <b>email</b> é obrigatório.</span>
-            <span ng-show="formLoginEmail.email.$error.email">Endereço de email inválido.</span>
-          </div>
+        <!-- validation -->
+        <div ng-show="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid" class="alert alert-warning"
+             role="alert">
+          <span ng-show="formLoginEmail.email.$error.required">O campo <b>email</b> é obrigatório.</span>
+          <span ng-show="formLoginEmail.email.$error.email">Endereço de email inválido.</span>
+        </div>
 
-          <div ng-show="formLoginEmail.password.$dirty && formLoginEmail.password.$invalid" class="alert alert-warning" role="alert">
-            <span ng-show="formLoginEmail.password.$error.required">O campo <b>senha</b> é obrigatório.</span>
-          </div>
+        <div ng-show="formLoginEmail.password.$dirty && formLoginEmail.password.$invalid" class="alert alert-warning"
+             role="alert">
+          <span ng-show="formLoginEmail.password.$error.required">O campo <b>senha</b> é obrigatório.</span>
+        </div>
 
-          <p class="login-email"><a ng-href="esqueceu-senha">esqueceu sua senha?</a></p>
+        <p class="login-email"><a ng-href="esqueceu-senha">esqueceu sua senha?</a></p>
       </section>
     </div>
   </div>

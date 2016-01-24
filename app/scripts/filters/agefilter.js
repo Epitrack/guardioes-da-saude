@@ -28,10 +28,10 @@ angular.module('gdsApp')
           var k = new Date(birthdate);
           var age = calculateAge(k);
 
-           if (age === 0) {
-            return monthDiff(k, new Date()) + ' months';
-           }
+      if (age === 0) {
+        return monthDiff(k, new Date()) + ' months';
+      }
 
-           return age;
-     };
+      return age;
+    };
   });

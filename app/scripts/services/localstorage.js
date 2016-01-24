@@ -15,7 +15,7 @@ angular.module('gdsApp')
     var userStorage = {};
 
     // quando o usuário entra no site
-    obj.saveLocation = function(lat, lon) {
+    obj.saveLocation = function (lat, lon) {
       userStorage.lat = lat;
       userStorage.lon = lon;
 
@@ -24,7 +24,7 @@ angular.module('gdsApp')
     };
 
     // quando cria o usuário
-    obj.userCreateData = function(obj, params) {
+    obj.userCreateData = function (obj, params) {
       userStorage.active = obj.active;
       userStorage.app = obj.app;
       userStorage.city = obj.city;
@@ -81,12 +81,12 @@ angular.module('gdsApp')
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
     };
 
-    obj.getItem = function(key) {
+    obj.getItem = function (key) {
       return JSON.parse(localStorage.getItem(key));
     };
 
     // quando o usuário se loga
-    obj.userLogin = function(obj, token) {
+    obj.userLogin = function (obj, token) {
       userStorage.active = obj.active;
       userStorage.app = obj.app;
       userStorage.categories = obj.categories;
@@ -119,13 +119,13 @@ angular.module('gdsApp')
     };
 
     // atualiza o usuário sempre que acontece um post
-    obj.updateUser = function(user) {
+    obj.updateUser = function (user) {
       // adds into storage user info/data
-      if(user.data.data.length > 0) {
+      if (user.data.data.length > 0) {
         var newUser = user.data.data[0];
         var currentUser = obj.getItem("userStorage");
 
-        angular.forEach(newUser, function(v, key){
+        angular.forEach(newUser, function (v, key) {
           currentUser[key] = v;
         });
 
@@ -136,7 +136,7 @@ angular.module('gdsApp')
     };
 
     // atualiza a foto do usuário
-    obj.updateAvatar = function(img) {
+    obj.updateAvatar = function (img) {
       $rootScope.user.picture = img;
 
       localStorage.setItem('userStorage', JSON.stringify($rootScope.user));

@@ -11,9 +11,9 @@
 angular.module('gdsApp')
   .filter('getMonth', function () {
     var months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-    return function(index) {
+    return function (index) {
       return months[index - 1]
     }
   });

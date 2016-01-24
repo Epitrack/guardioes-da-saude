@@ -12,8 +12,8 @@ angular.module('gdsApp')
 
     $scope.contact = {};
 
-    $scope.sendContact = function() {
-      ContactApi.faleConosco($scope.contact, function(data) {
+    $scope.sendContact = function () {
+      ContactApi.faleConosco($scope.contact, function (data) {
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
@@ -23,7 +23,7 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.esterEgg = function() {
+    $scope.esterEgg = function () {
       cheet('e p i t r a c k', function () {
         $('#modal-kc').modal({
           show: 'true'

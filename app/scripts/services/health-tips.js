@@ -15,19 +15,19 @@ angular.module('gdsApp')
     var apiUrl = ApiConfig.API_URL;
 
     // ====
-    obj.getUpas = function(callback) {
+    obj.getUpas = function (callback) {
       $http.get(apiUrl + '/content/upas.json')
-        .success(function(data) {
+        .success(function (data) {
           console.log('Success getUpas: ', data);
           callback(data);
-        }).error(function(error) {
-          console.log('Error getUpas: ', error);
-        });
+        }).error(function (error) {
+        console.log('Error getUpas: ', error);
+      });
     };
     // ====
 
     // ====
-    obj.getFarmacias = function(callback) {
+    obj.getFarmacias = function (callback) {
       var lat = LocalStorage.getItem('userLocation').lat;
       var lng = LocalStorage.getItem('userLocation').lon;
 
@@ -38,12 +38,12 @@ angular.module('gdsApp')
           type: 'pharmacy',
           radius: '1000'
         }
-      }).success(function(data) {
-         console.warn('Success getFarmacias: ', data);
-          callback(data);
-        }).error(function(error) {
-          console.log('Error getFarmacias: ', error);
-        });
+      }).success(function (data) {
+        console.warn('Success getFarmacias: ', data);
+        callback(data);
+      }).error(function (error) {
+        console.log('Error getFarmacias: ', error);
+      });
     };
     // ====
 

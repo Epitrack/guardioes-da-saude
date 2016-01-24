@@ -7,38 +7,41 @@
  * # calendar
  */
 angular.module('gdsApp')
-  .directive('calendar', function () {
+  .directive('calendar', function ($rootScope) {
     return {
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
       scope: {
-        selected: "="
+        selected: "=",
+        CalendarInterface: "=interface"
       },
-      link: function($scope) {
+      link: function ($scope) {
         $scope.selected = _removeTime($scope.selected);
         $scope.month = $scope.selected.clone();
 
         var start = $scope.selected.clone();
-          start.date(1);
-          _removeTime(start.day(0));
-          _buildMonth($scope, start, $scope.month);
+        start.date(1);
+        _removeTime(start.day(0));
+        _buildMonth($scope, start, $scope.month);
 
-        $scope.select = function(day) {
+        $scope.select = function (day) {
           $scope.selected = day.date;
           console.log(day);
         };
 
-        $scope.next = function() {
+        console.log("CI", $scope.CalendarInterface);
+
+        $scope.next = function () {
           var next = $scope.month.clone();
-          _removeTime(next.month(next.month()+1).date(1));
-          $scope.month.month($scope.month.month()+1);
+          _removeTime(next.month(next.month() + 1).date(1));
+          $scope.month.month($scope.month.month() + 1);
           _buildMonth($scope, next, $scope.month);
         };
 
-        $scope.previous = function() {
+        $scope.previous = function () {
           var previous = $scope.month.clone();
-          _removeTime(previous.month(previous.month()-1).date(1));
-          $scope.month.month($scope.month.month()-1);
+          _removeTime(previous.month(previous.month() - 1).date(1));
+          $scope.month.month($scope.month.month() - 1);
           _buildMonth($scope, previous, $scope.month);
         };
       }
@@ -53,11 +56,12 @@ angular.module('gdsApp')
       var done = false, date = start.clone(), monthIndex = date.month(), count = 0;
 
       while (!done) {
-        $scope.weeks.push({ days: _buildWeek(date.clone(), month) });
+        $scope.weeks.push({days: _buildWeek(date.clone(), month)});
         date.add(1, "w");
         done = count++ > 2 && monthIndex !== date.month();
         monthIndex = date.month();
       }
+      $scope.CalendarInterface.onChange({month: $scope.month.month() + 1, year: $scope.month.year()});
     }
 
     function _buildWeek(date, month) {

@@ -1,9 +1,11 @@
-<div class="modal fade modal-add-profile" id="modal-complete-login" tabindex="-1" role="dialog" aria-labelledby="modalCompleteLogin">
+<div class="modal fade modal-add-profile" id="modal-complete-login" tabindex="-1" role="dialog"
+     aria-labelledby="modalCompleteLogin">
   <article class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <form ng-submit="updateUserSocialData()" class="card-form" name="addFormSocialData">
         <header class="modal-header panel-heading">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
           <h3 class="modal-title panel-title">Complete suas informações para efetuar o cadastro</h3>
         </header>
 
@@ -14,63 +16,65 @@
             </figure>
 
             <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
-                <div class="no-padding col-xs-12">
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-nickname">Apelido</label>
-                    <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
-                    ng-model="userData.nick">
-                  </fieldset>
-
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-gender">Sexo</label>
-
-                    <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
-                      data-label="Masculino" ng-model="userData.gender">
-                    <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
-                      data-label="Feminino" ng-model="userData.gender">
-                  </fieldset>
-                </div>
-
-                <div class="no-padding col-xs-12">
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-birthdate">Data de nascimento</label>
-                    <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                    ng-model="userData.dob" mask="99-99-9999">
-                    <!-- <span class="icon-birthdate"></span> -->
-                  </fieldset>
-
-                  <fieldset class="col-xs-12 col-sm-6">
-                    <label for="profile-raca-cor">Raça/Cor</label>
-
-                    <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="userData.race">
-                      <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
-                      <option value="branco">Branco</option>
-                      <option value="preto">Preto</option>
-                      <option value="pardo">Pardo</option>
-                      <option value="amarelo">Amarelo</option>
-                      <option value="indigena">Indígena</option>
-                    </select>
-                  </fieldset>
-                </div>
-
-                <fieldset class="col-xs-12">
-                  <label for="profile-email">Email</label>
-                  <input class="input-primary" id="profile-email" name="add-profile-email" type="email" ng-model="userData.email" ng-required="true">
+              <div class="no-padding col-xs-12">
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-nickname">Apelido</label>
+                  <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
+                         ng-model="userData.nick">
                 </fieldset>
 
-                <fieldset class="col-xs-12">
-                  <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
-                    <span>As senhas digitadas precisam ser iguais.</span>
-                  </div>
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-gender">Sexo</label>
 
-                  <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
-                    <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-                  </div>
-
-                  <div ng-show="invalid == true" class="alert alert-warning" role="alert">
-                   <span>Data de nascimento inválida.</span>
-                  </div>
+                  <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
+                         data-label="Masculino" ng-model="userData.gender">
+                  <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
+                         data-label="Feminino" ng-model="userData.gender">
                 </fieldset>
+              </div>
+
+              <div class="no-padding col-xs-12">
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-birthdate">Data de nascimento</label>
+                  <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
+                         ng-model="userData.dob" mask="99-99-9999">
+                  <!-- <span class="icon-birthdate"></span> -->
+                </fieldset>
+
+                <fieldset class="col-xs-12 col-sm-6">
+                  <label for="profile-raca-cor">Raça/Cor</label>
+
+                  <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
+                          ng-model="userData.race">
+                    <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
+                    <option value="branco">Branco</option>
+                    <option value="preto">Preto</option>
+                    <option value="pardo">Pardo</option>
+                    <option value="amarelo">Amarelo</option>
+                    <option value="indigena">Indígena</option>
+                  </select>
+                </fieldset>
+              </div>
+
+              <fieldset class="col-xs-12">
+                <label for="profile-email">Email</label>
+                <input class="input-primary" id="profile-email" name="add-profile-email" type="email"
+                       ng-model="userData.email" ng-required="true">
+              </fieldset>
+
+              <fieldset class="col-xs-12">
+                <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
+                  <span>As senhas digitadas precisam ser iguais.</span>
+                </div>
+
+                <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
+                  <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+                </div>
+
+                <div ng-show="invalid == true" class="alert alert-warning" role="alert">
+                  <span>Data de nascimento inválida.</span>
+                </div>
+              </fieldset>
             </div>
           </div>
         </div>
