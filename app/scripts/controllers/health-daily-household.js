@@ -16,8 +16,9 @@ angular.module('gdsApp')
 
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
-    $scope.currentMonth =moment();
-    $scope.currentDay = moment();
+    $scope.currentMonth = moment();
+    $scope.vm = {};
+    $scope.vm.currentDay = moment();
     // ====
     $scope.getHousehold = function () {
       HouseholdApi.getHousehold(userID, function (data) {
@@ -78,7 +79,7 @@ angular.module('gdsApp')
     // ====
     $scope.getHouseholdCalendar = function (params) {
       $scope.day = moment();
-      $scope.currentDay = moment();
+      $scope.vm.currentDay = moment();
 
       if (!params) {
         params = {
@@ -87,13 +88,13 @@ angular.module('gdsApp')
           hhId: $routeParams.id
         };
       } else {
-        if(!params.hhId) {
+        if (!params.hhId) {
           params.hhId = $routeParams.id;
         }
-        if(!params.month) {
+        if (!params.month) {
           params.month = $scope.currentMonth.month;
         }
-        if(!params.year) {
+        if (!params.year) {
           params.year = $scope.currentMonth.year;
         }
       }
@@ -209,7 +210,11 @@ angular.module('gdsApp')
 
     $rootScope.$on('hh_ok', function (hhId) {
       $scope.getHouseholdSurvey(hhId);
-      $scope.getHouseholdCalendar({household_id:hhId, year:$scope.currentMonth.year, month:$scope.currentMonth.month});
+      $scope.getHouseholdCalendar({
+        household_id: hhId,
+        year: $scope.currentMonth.year,
+        month: $scope.currentMonth.month
+      });
       $scope.getYear();
     });
 
@@ -223,7 +228,6 @@ angular.module('gdsApp')
     });
 
     // ====
-    $scope.vm = {};
     $scope.vm.CalendarInterface = {
       getCalendarPopoverTitle: function (day) {
         return day.date.format('dddd, DD [de] MMMM [de] YYYY');
