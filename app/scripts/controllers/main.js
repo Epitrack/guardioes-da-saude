@@ -33,6 +33,7 @@ angular.module('gdsApp')
 
       SearchCitiesApi.getCities(limit, function (data) {
         $scope.cities = data.data;
+        $rootScope.$broadcast('getCities_ok');
       });
     };
 
