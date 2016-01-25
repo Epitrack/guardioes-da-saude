@@ -12,10 +12,12 @@ angular.module('gdsApp')
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
       scope: {
-        selected: "=",
+        selected: "=selected",
         CalendarInterface: "=interface"
       },
       link: function ($scope) {
+        console.log("scope_calendar", $scope);
+        if(!$scope.selected) $scope.selected = moment();
         $scope.selected = _removeTime($scope.selected);
         $scope.month = $scope.selected.clone();
 

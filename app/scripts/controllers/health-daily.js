@@ -10,10 +10,9 @@
 angular.module('gdsApp')
   .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'toaster', function ($scope, UserApi, $rootScope, LocalStorage, toaster) {
     $scope.pageClass = 'health-daily-page';
-    $scope.currentMonth = {
-      month: 0,
-      year: 0
-    };
+    $scope.vm = {};
+    $scope.currentMonth = moment();
+    $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
     // ====
@@ -53,7 +52,7 @@ angular.module('gdsApp')
     $scope.getUserCalendar = function (params) {
       console.log('getSurveyByMonth');
       if (!$scope.calendarLoaded) {
-        $scope.currentDay = moment();
+        $scope.vm.currentDay = moment();
         // ----
         if (!params) {
           params = {
@@ -169,7 +168,6 @@ angular.module('gdsApp')
       $scope.getSurveysByMonth(new Date().getMonth() + 1)
     });
     // ====
-    $scope.vm = {};
     $scope.vm.CalendarInterface = {
       getCalendarPopoverTitle: function (day) {
         return day.date.format('dddd, DD [de] MMMM [de] YYYY');
