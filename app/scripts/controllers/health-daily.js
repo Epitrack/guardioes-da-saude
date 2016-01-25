@@ -10,10 +10,7 @@
 angular.module('gdsApp')
   .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'toaster', function ($scope, UserApi, $rootScope, LocalStorage, toaster) {
     $scope.pageClass = 'health-daily-page';
-    $scope.currentMonth = {
-      month: 0,
-      year: 0
-    };
+    $scope.currentMonth = $scope.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
     // ====
