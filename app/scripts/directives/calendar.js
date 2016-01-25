@@ -12,7 +12,7 @@ angular.module('gdsApp')
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
       scope: {
-        selected: "=",
+        selected: "=selected",
         CalendarInterface: "=interface"
       },
       link: function ($scope) {

@@ -16,7 +16,8 @@ angular.module('gdsApp')
 
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
-    $scope.currentMonth = $scope.currentDay = moment();
+    $scope.currentMonth =moment();
+    $scope.currentDay = moment();
     // ====
     $scope.getHousehold = function () {
       HouseholdApi.getHousehold(userID, function (data) {
