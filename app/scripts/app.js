@@ -342,7 +342,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: true,//false to development
       requireBase: false
     });
   });
