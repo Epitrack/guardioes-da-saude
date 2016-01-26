@@ -47,4 +47,28 @@ angular.module('gdsApp')
     };
     // ====
 
+    // ====
+    $scope.checkPlatform = function() {
+      var ua, android, iphone;
+
+      ua = navigator.userAgent.toLowerCase();
+      android = ua.indexOf("android") > -1;
+      iphone = ua.indexOf("iphone") > -1;
+
+      if (android) {
+        $scope.downloadLink = 'http://www.google.com';
+      } else if (iphone) {
+        $scope.downloadLink = 'http://www.apple.com'
+      }
+
+      if(android || iphone) {
+        $('#modal-app').modal({ show: 'true' });
+      }
+    };
+
+    $rootScope.$on('getCities_ok', function() {
+      $scope.checkPlatform();
+    });
+    // ====
+
   }]);
