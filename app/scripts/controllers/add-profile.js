@@ -25,7 +25,7 @@ angular.module('gdsApp')
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
 
-      var age = $scope.UTIL.getAge(params.dob);
+      var age = $scope.UTIL.getAge(params.dob, false);
 
       $scope.invalid = '';
 
@@ -62,7 +62,7 @@ angular.module('gdsApp')
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
 
-      var age = $scope.UTIL.getAge(params.dob);
+      var age = $scope.UTIL.getAge(params.dob, false);
 
       $scope.invalid = '';
 
