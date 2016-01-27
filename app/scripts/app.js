@@ -41,6 +41,10 @@ angular
 
     console.log('app.run: user', $rootScope.user);
     // ====
+    
+    $rootScope.onInit = function(){
+        document.body.style.display = "block";
+    }
 
     // Helpers functions
     $rootScope.UTIL = {
@@ -121,7 +125,7 @@ angular
         }
       },
 
-      getAge: function (dateString) {
+      getAge: function (dateString, canIcheckAge) {
         var today, birthDate, age, m;
 
         today = new Date();
@@ -132,16 +136,20 @@ angular
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
         }
-
-        this.checkAge(age);
+          
+        
+        this.checkAge(age, canIcheckAge);
+        
+        
         return age;
       },
 
-      checkAge: function (age) {
-        // debugger;
-        if (age > 13 && age < 120) {
+      checkAge: function (age, canIcheckAge) {
+        // debugger;        
+        if ((age > 13 && age < 120) || (canIcheckAge && canIcheckAge == false)) {
           localStorage.setItem('dobValid', true);
         } else {
+            console.log("age no check age "+age)
           localStorage.setItem('dobValid', false);
         }
       },
@@ -342,7 +350,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,//false to development
+      enabled: true,// set false to development
       requireBase: false
     });
   });
