@@ -50,6 +50,7 @@ angular
     $rootScope.UTIL = {
       unConvertDate: function (date) {
         var newDob = date.split('-');
+        console.log("como está essa data  "+newDob[2] + '-' + newDob[1] + '-' + newDob[0])
         return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
       },
 
@@ -145,12 +146,13 @@ angular
       },
 
       checkAge: function (age, canIcheckAge) {
-        // debugger;        
-        if ((age > 13 && age < 120) || (canIcheckAge && canIcheckAge == false)) {
-          localStorage.setItem('dobValid', true);
+        // debugger;   
+        console.log(canIcheckAge)
+        if ((age > 13 && age < 120) || (canIcheckAge == false)) {
+            console.log('Age checked!!!!!' )
+            localStorage.setItem('dobValid', true);
         } else {
-            console.log("age no check age "+age)
-          localStorage.setItem('dobValid', false);
+            localStorage.setItem('dobValid', false);
         }
       },
 

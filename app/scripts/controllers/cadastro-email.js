@@ -129,10 +129,11 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
+            console.log()
+            toaster.pop('error', data.data.message);
         } else {
-          toaster.pop('success', data.data.message);
-          $location.path('/health-daily');
+            toaster.pop('success', data.data.message);
+            $location.path('/health-daily');
         }
       });
     };
