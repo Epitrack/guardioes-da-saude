@@ -194,23 +194,42 @@ select {
 }
 
 .radio-primary {
-  position: relative;
-  width: 110px;
-  height: 20px;
+    position: relative;
+    width: 30px;
+    height: 20px;
 
-  &::before {
-    padding: 5px;
-    content: attr(data-label);
-    background-color: $btn-primary;
-    position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    color: $link-primary;
-    font-size: ($fs-normal)-.1;
-    @include bdr(3px);
-    margin: -4px 0 0 30px;
-  }
+//  &::before {
+//    padding: 5px;
+//    content: attr(data-label);
+//    background-color: $btn-primary;
+//    position: absolute;
+//    display: inline-block;
+//    vertical-align: middle;
+//    color: $link-primary;
+//    font-size: ($fs-normal)-.1;
+//    @include bdr(3px);
+//    margin: -4px 0 0 30px;
+//  }
 }
+
+.span-sex-op{
+    padding: 5px;
+    background-color: $btn-primary;
+    position: relative;
+    display: inline-block !important;
+    color: $link-primary !important;
+    font-size: ($fs-normal)-.1 !important;
+    @include bdr(3px);
+    top: -5px;
+    left: -10px;
+
+}
+
+@-moz-document url-prefix() {
+    .span-sex-op{left:0} 
+}
+
+
 
 .radio-avatar {
   float: left;
