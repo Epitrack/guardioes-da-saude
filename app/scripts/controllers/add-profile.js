@@ -65,17 +65,14 @@ angular.module('gdsApp')
       var age = $scope.UTIL.getAge(params.dob, false);
 
       $scope.invalid = '';
-
       if (LocalStorage.getItem('dobValid') !== true) {
         return $scope.invalid = true;
       }
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          console.log(data.data.message);
           toaster.pop('success', data.data.message);
           $scope.houseHold = {};
 

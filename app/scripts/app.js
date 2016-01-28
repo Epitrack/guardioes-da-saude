@@ -50,12 +50,15 @@ angular
     $rootScope.UTIL = {
       unConvertDate: function (date) {
         var newDob = date.split('-');
-        console.log("como está essa data  "+newDob[2] + '-' + newDob[1] + '-' + newDob[0])
+        console.log("como está essa data unconvert  "+newDob[2] + '-' + newDob[1] + '-' + newDob[0])
         return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
       },
 
       convertDate: function (date, dateFormat) {
-        return moment(date.substr(0, 10)).utc().format(dateFormat);
+          
+        var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
+        console.log("convert  "+convert)
+        return convert;
       },
 
       checkAvatar: function (obj) {
@@ -137,10 +140,8 @@ angular
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
         }
-          
         
         this.checkAge(age, canIcheckAge);
-        
         
         return age;
       },
@@ -149,7 +150,6 @@ angular
         // debugger;   
         console.log(canIcheckAge)
         if ((age > 13 && age < 120) || (canIcheckAge == false)) {
-            console.log('Age checked!!!!!' )
             localStorage.setItem('dobValid', true);
         } else {
             localStorage.setItem('dobValid', false);
