@@ -49,10 +49,17 @@ angular.module('gdsApp')
         race: $scope.screen.user.race
       };
       // ====
+        
+        $scope.password.focus = false;
+//        $scope.showEqualsPassMsg = function(){
+//            //password.focus && (screen.repeatPassword != screen.user.password)
+//            console.log()
+//            return password.focus;
+//        }
 
       // verify if user changes password
       if ($scope.screen.user.password === "" || $scope.screen.user.password !== $scope.screen.repeatPassword) {
-        delete $scope.screen.user.password;
+          delete $scope.screen.user.password;
       } else {
         params.password = $scope.screen.user.password;
       }
