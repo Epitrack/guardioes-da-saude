@@ -352,7 +352,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,// set false to development
+      enabled: false,// set false to development
       requireBase: false
     });
   });

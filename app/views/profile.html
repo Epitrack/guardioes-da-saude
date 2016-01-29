@@ -77,11 +77,11 @@
           <fieldset class="col-xs-12 col-sm-6">
             <label for="profile-pass-again">Repetir Senha</label>
             <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password"
-                   ng-model="screen.repeatPassword" ng-focus="password.focus=true" ng-blur="password.focus=false">
+                   ng-model="screen.repeatPassword" ng-focus="repeatPassFocus=true" ng-blur="repeatPassBlur()">
           </fieldset>
 
           <fieldset class="col-xs-12">
-            <div ng-show="password.focus && (screen.repeatPassword != screen.user.password)" class="alert alert-info" role="alert">
+            <div ng-show="repeatPassFocus && (screen.repeatPassword != screen.user.password)" class="alert alert-info" role="alert">
               <span>As senhas digitadas precisam ser iguais.</span>
             </div>
 
@@ -95,7 +95,7 @@
           </fieldset>
 
           <fieldset class="col-xs-12">
-            <button type="submit" class="pull-right btn btn-primary" ng-disabled="screen.repeatPassword != screen.user.password">Salvar alterações</button>
+            <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
           </fieldset>
         </form>
       </div>

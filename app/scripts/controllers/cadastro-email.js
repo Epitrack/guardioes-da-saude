@@ -85,9 +85,11 @@ angular.module('gdsApp')
     $scope.twitterLogin = function () {
       auth.$authWithOAuthPopup('twitter').then(function (authData) {
         console.log('Twitter authentication success:', authData);
+        console.log("authData.twitter ")
+        console.log(authData.twitter)
 
         var userTwData = {};
-
+        
         userTwData.oauth_token = authData.twitter.accessToken;
         userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
         userTwData.nick = authData.twitter.displayName;

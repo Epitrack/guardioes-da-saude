@@ -26,10 +26,17 @@
                 <fieldset class="col-xs-12 col-sm-6">
                   <label for="profile-gender">Sexo</label>
 
+<!--
                   <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
                          data-label="Masculino" ng-model="userData.gender">
                   <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
                          data-label="Feminino" ng-model="userData.gender">
+-->
+                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="M" id="selected-m">
+                    <label for="selected-m" class="span-sex-op">Masculino</label>
+                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="F" id="selected-f">
+                    <label for="selected-f" class="span-sex-op">Feminino</label>            
+                    
                 </fieldset>
               </div>
 
