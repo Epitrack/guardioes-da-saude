@@ -117,22 +117,23 @@ angular.module('gdsApp')
 
     $scope.createUser = function () {
       var params = $scope.createData;
-      params.dob = $scope.UTIL.unConvertDate($scope.createData.dob);
+      var dob = $scope.UTIL.unConvertDate($scope.createData.dob);
+        
+      params.dob = $scope.createData.dob;
 
-      var age = $scope.UTIL.getAge(params.dob);
+      var age = $scope.UTIL.getAge(dob);
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true) {
-        return $scope.invalid = true;
-      }
+      if (LocalStorage.getItem('dobValid') !== true) return $scope.invalid = true;
+      else params.dob = dob;
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
+            toaster.pop('error', data.data.message);
         } else {
-          toaster.pop('success', data.data.message);
-          $location.path('/health-daily');
+            toaster.pop('success', data.data.message);
+            $location.path('/health-daily');
         }
       });
     };

@@ -41,16 +41,24 @@ angular
 
     console.log('app.run: user', $rootScope.user);
     // ====
+    
+    $rootScope.onInit = function(){
+        document.body.style.display = "block";
+    }
 
     // Helpers functions
     $rootScope.UTIL = {
       unConvertDate: function (date) {
         var newDob = date.split('-');
+        console.log("como está essa data unconvert  "+newDob[2] + '-' + newDob[1] + '-' + newDob[0])
         return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
       },
 
       convertDate: function (date, dateFormat) {
-        return moment(date.substr(0, 10)).utc().format(dateFormat);
+          
+        var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
+        console.log("convert  "+convert)
+        return convert;
       },
 
       checkAvatar: function (obj) {
@@ -121,7 +129,7 @@ angular
         }
       },
 
-      getAge: function (dateString) {
+      getAge: function (dateString, canIcheckAge) {
         var today, birthDate, age, m;
 
         today = new Date();
@@ -132,17 +140,19 @@ angular
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
         }
-
-        this.checkAge(age);
+        
+        this.checkAge(age, canIcheckAge);
+        
         return age;
       },
 
-      checkAge: function (age) {
-        // debugger;
-        if (age > 13 && age < 120) {
-          localStorage.setItem('dobValid', true);
+      checkAge: function (age, canIcheckAge) {
+        // debugger;   
+        console.log(canIcheckAge)
+        if ((age > 13 && age < 120) || (canIcheckAge == false)) {
+            localStorage.setItem('dobValid', true);
         } else {
-          localStorage.setItem('dobValid', false);
+            localStorage.setItem('dobValid', false);
         }
       },
 
@@ -342,7 +352,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: true,// set false to development
       requireBase: false
     });
   });

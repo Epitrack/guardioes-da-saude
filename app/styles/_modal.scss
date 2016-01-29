@@ -81,6 +81,46 @@
 
 
 
+//
+// Modal APP
+//
+
+.modal-app {
+  img { width: 100%; }
+
+  .modal-footer {
+    border-top: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  p {
+    color: $btn-primary;
+  }
+
+  .btn-primary {
+    background-color: $btn-primary;
+    color: #fff;
+  }
+
+  .btn-default {
+    color: $btn-primary;
+    background-color: transparent;
+    border: none;
+  }
+
+  .btn {
+    border: none;
+    margin: 10px 0;
+    padding: 15px 0;
+    @include bdr(0);
+  }
+}
+
+// ====
+
+
+
 // iPad
 @media screen and (min-width: 768px) {}
 

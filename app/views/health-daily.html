@@ -32,7 +32,7 @@
         </ul>
       </div>
 
-      <div class="geral">
+      <div class="geral" ng-if="roundedGoodSymptoms || roundedBadSymptoms">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
         <div ng-if="userSurvey">
@@ -74,7 +74,7 @@
       <calendar class="calendar-directive"
                 ng-hide="!calendarLoaded"
                 interface="vm.CalendarInterface"
-                selected="currentDay"></calendar>
+                selected="vm.currentDay"></calendar>
     </div>
   </article>
 
