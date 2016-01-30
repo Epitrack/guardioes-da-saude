@@ -50,7 +50,6 @@ angular
     $rootScope.UTIL = {
       unConvertDate: function (date) {
         var newDob = date.split('-');
-        console.log("como está essa data unconvert  "+newDob[2] + '-' + newDob[1] + '-' + newDob[0])
         return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
       },
 
