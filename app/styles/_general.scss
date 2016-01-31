@@ -420,7 +420,6 @@ body {
 //
 // Nav primary
 //
-
 .sidebar {
   z-index: 1;
   height: auto;
@@ -1309,8 +1308,10 @@ p.login-email {
   }
 }
 
+
 .card-avatar-image {
-  min-height: 250px;
+  min-width: 200px !important;
+  min-height: 200px;
   text-align: center;
 
   img {
@@ -1488,8 +1489,6 @@ p.login-email {
 
 //
 // Media queries
-//
-
 // iPads
 @media screen and (min-width: 768px) {
   // Header
@@ -1498,11 +1497,12 @@ p.login-email {
   // ====
 
   // Content internal
-  .content-internal { float: right; }
+  .content-internal { float: right; width: 72% !important;}
   // ====
 
   // Nav primary
   .sidebar {
+    width: 28% !important;
     position: absolute;
     left: 0;
     top: 0;
@@ -1642,6 +1642,7 @@ p.login-email {
 
 // Desktops
 @media screen and (min-width: 992px) {
+
   // How it Works
   .step-title { font-size: ($fs-medium + $fs-normal)+.4; }
 
