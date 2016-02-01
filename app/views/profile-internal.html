@@ -38,11 +38,11 @@
             <fieldset class="col-xs-12 col-sm-6">
               <label for="profile-gender">Sexo</label>
 
-              <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender"
-                     value="M" data-label="Masculino">
-              <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender"
-                     value="F" data-label="Feminino">
-            </fieldset>
+                <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender" value="M" id="selected-m">
+                <label for="selected-m" class="span-sex-op">Masculino</label>
+                <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender" value="F" id="selected-f">
+                <label for="selected-f" class="span-sex-op">Feminino</label>            
+              </fieldset>
           </div>
 
           <div class="no-padding col-xs-12">

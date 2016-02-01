@@ -47,15 +47,40 @@ angular.module('gdsApp')
         gender: $scope.screen.user.gender,
         email: $scope.screen.user.email,
         race: $scope.screen.user.race
+//          ,
+//        password:''  
       };
       // ====
-
-      // verify if user changes password
-      if ($scope.screen.user.password === "" || $scope.screen.user.password !== $scope.screen.repeatPassword) {
-        delete $scope.screen.user.password;
-      } else {
+        $scope.repeatPassFocus = false;
+        $scope.repeatPassBlur = function(){if($scope.screen.user.password === $scope.screen.repeatPassword) $scope.repeatPassFocus=false}
+        
+        
+        // verify if user changes password
+        if($scope.screen.user.password === undefined && $scope.screen.repeatPassword=== undefined){
+            toaster.pop('error', "Sua senha precisa ter no mínimo 6 dígitos")
+            return;
+        }
+        if($scope.screen.user.password!=="" && ($scope.screen.user.password !== $scope.screen.repeatPassword)){
+            toaster.pop('error', "As senhas digitadas precisam ser iguais.")
+            $scope.repeatPassFocus = true;
+            return;
+        }
+        
         params.password = $scope.screen.user.password;
-      }
+        delete $scope.screen.user.password;
+        
+//====== TODO this code should be removed
+//      if ($scope.screen.user.password === "" || $scope.screen.user.password !== $scope.screen.repeatPassword) {
+//          console.log("pass:"+$scope.screen.user.password+"    repeat:"+$scope.screen.repeatPassword)
+//          delete $scope.screen.user.password;
+//      } else {
+//          console.log('entrou no else' )
+//        params.password = $scope.screen.user.password;
+//      }
+        
+//        return;
+//====== TODO this code should be removed
+        
       // ====
 
       // ====

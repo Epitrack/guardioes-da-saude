@@ -2,8 +2,6 @@
 
 angular.module("gdsApp")
   .config(['$httpProvider', function ($httpProvider) {
-    console.log("doidones");
-
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
   }])

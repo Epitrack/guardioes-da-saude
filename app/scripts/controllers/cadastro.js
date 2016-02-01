@@ -13,6 +13,9 @@ angular.module('gdsApp')
 
     var href = new Firebase('https://popping-heat-8884.firebaseio.com');
     var auth = $firebaseAuth(href);
+    $scope.userData = {};
+    $scope.userData.gender = "M";
+    
 
     $scope.facebookLogin = function () {
       auth.$authWithOAuthPopup('facebook').then(function (authData) {
@@ -83,8 +86,9 @@ angular.module('gdsApp')
 
     $scope.twitterLogin = function () {
       auth.$authWithOAuthPopup('twitter').then(function (authData) {
-        console.log('Twitter authentication success:', authData);
-
+//        console.log('Twitter authentication success:', authData);
+//        console.log("authData.twitter ")
+//        console.log(authData.twitter)
         var userTwData = {};
 
         userTwData.oauth_token = authData.twitter.accessToken;
