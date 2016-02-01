@@ -27,6 +27,8 @@ angular.module('gdsApp')
         } else {
           $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.no_symptom;
           $scope.userSurvey.pct_symptoms = $scope.userSurvey.symptom;
+          $scope.roundedGoodSymptoms = 0;
+          $scope.roundedBadSymptoms = 0;
         }
         if ($scope.userSurvey.pct_no_symptoms % 1 !== 0) {
           $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.pct_no_symptoms.toFixed(2);
@@ -132,6 +134,7 @@ angular.module('gdsApp')
     };
     // ====
     $scope.graphicDonuts = function () {
+        
       $scope.donutOptions = {
         data: [
           {label: "Bem", value: $rootScope.userSurvey.no_symptom},

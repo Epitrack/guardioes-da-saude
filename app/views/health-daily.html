@@ -32,10 +32,10 @@
         </ul>
       </div>
 
-      <div class="geral" ng-if="roundedGoodSymptoms || roundedBadSymptoms">
+      <div class="geral" ><!--ng-if="roundedGoodSymptoms || roundedBadSymptoms"-->
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <div ng-if="userSurvey">
+        <div ng-if="userSurvey"><!---->
           <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
         </div>
 
