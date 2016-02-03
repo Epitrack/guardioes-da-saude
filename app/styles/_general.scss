@@ -1513,7 +1513,9 @@ p.login-email {
   .nav-primary {
     margin-top: 20px;
 
-    a { font-size: ($fs-normal); }
+    a { font-size: ($fs-normal); white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;}
   }
   // ====
 
