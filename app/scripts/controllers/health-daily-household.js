@@ -18,7 +18,13 @@ angular.module('gdsApp')
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
     $scope.currentMonth = moment();
     $scope.vm = {};
-    $scope.vm.currentDay = moment();
+    $scope.vm.currentDay = moment();      
+      
+    if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
+    if($scope.hhAllDays !== undefined) $scope.hhAllDays = undefined;
+    if($scope.householdSurveys !== undefined) $scope.householdSurveys = undefined;
+
+    
     // ====
     $scope.getHousehold = function () {
       HouseholdApi.getHousehold(userID, function (data) {
@@ -42,6 +48,8 @@ angular.module('gdsApp')
         if ($scope.householdSurveys.total !== 0) {
           $scope.householdSurveys.pct_no_symptoms = ((($scope.householdSurveys.no_symptom / $scope.householdSurveys.total) * 100));
           $scope.householdSurveys.pct_symptoms = ((($scope.householdSurveys.symptom / $scope.householdSurveys.total) * 100));
+          $scope.roundedGoodSymptoms = Math.round($scope.householdSurveys.pct_no_symptoms);
+          $scope.roundedBadSymptoms = Math.round($scope.householdSurveys.pct_symptoms);
         } else {
           $scope.householdSurveys.pct_no_symptoms = $scope.householdSurveys.no_symptom;
           $scope.householdSurveys.pct_symptoms = $scope.householdSurveys.symptom;
@@ -70,6 +78,7 @@ angular.module('gdsApp')
           $scope.badSpelling = singularSpelling;
         }
 
+          
         $rootScope.hhSurvey = $scope.householdSurveys;
         $rootScope.$broadcast('hhSurvey_ok');
       });
@@ -175,7 +184,7 @@ angular.module('gdsApp')
     };
 
     $scope.graphicDonuts = function () {
-      $scope.donutOptions = {
+        $scope.donutOptions = {
         data: [
           {label: "Bem", value: $rootScope.hhSurvey.no_symptom},
           {label: "Mal", value: $rootScope.hhSurvey.symptom}

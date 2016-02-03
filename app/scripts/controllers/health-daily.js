@@ -15,6 +15,9 @@ angular.module('gdsApp')
     $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
+
+    if($scope.userSurvey !== undefined) $scope.userSurvey = undefined;
+    
     // ====
     $scope.getUserSurvey = function () {
       UserApi.getUserSurvey(function (data) {

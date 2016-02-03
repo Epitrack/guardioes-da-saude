@@ -36,7 +36,7 @@
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
         <div ng-if="hhSurvey">
-          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+          <donutchart id="donut-chart-diario" data-options="{data: [{label: 'Bem', value: hhSurvey.no_symptom}, {label: 'Mal', value: hhSurvey.symptom} ], colors: ['#E0D433', '#C81204'], resize: true, redraw:true }"></donutchart> <!--donutOptions -->
         </div>
 
         <div class="status">
@@ -45,7 +45,7 @@
               <figure>
                 <img src="../images/icon-health-daily-good.svg" alt="Bem">
                 <figcaption>
-                  <span>{{ householdSurveys.no_symptom }}%</span> Bem
+                  <span>{{ householdSurveys.pct_no_symptoms }}%</span> Bem
                   <p>{{ householdSurveys.no_symptom }} <span class="spelling">{{ goodSpelling }}</span></p>
                 </figcaption>
               </figure>
@@ -55,7 +55,7 @@
               <figure>
                 <img src="../images/icon-health-daily-bad.svg" alt="Mal">
                 <figcaption>
-                  <span>{{ householdSurveys.symptom }}%</span> Mal
+                  <span>{{ householdSurveys.pct_symptoms }}%</span> Mal
                   <p>{{ householdSurveys.symptom }}  <span class="spelling">{{ badSpelling }}</span></p>
                 </figcaption>
               </figure>

@@ -34,6 +34,7 @@ angular
 
     // check if user exist
     var u = LocalStorage.getItem('userStorage');
+      
 
     if (u !== null) {
       $rootScope.user = u;
