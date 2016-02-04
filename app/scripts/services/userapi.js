@@ -185,7 +185,8 @@ angular.module('gdsApp')
     };
 
     obj.fbLogin = function (accessToken, callback) {
-      $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
+//      $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/auth/facebook/callback?fb=' + accessToken, {headers: {'app_token': app_token}})
         .then(function (result) {
           console.log('Success fbLogin: ', result);
           callback(result);
@@ -195,7 +196,7 @@ angular.module('gdsApp')
     };
 
     obj.twLogin = function (accessToken, callback) {
-      $http.get(apiUrl + '/auth/twitter/callback?oauth_token=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret, {headers: {'app_token': app_token}})
         .then(function (result) {
           console.log('Success twLogin: ', result);
           callback(result);
@@ -205,7 +206,7 @@ angular.module('gdsApp')
     };
 
     obj.glLogin = function (accessToken, callback) {
-      $http.get(apiUrl + '/auth/google/callback?access_token=' + accessToken.access_token, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/auth/google/callback?gl=' + accessToken.access_token, {headers: {'app_token': app_token}})
         .then(function (result) {
           console.log('Success glLogin: ', result);
           callback(result);

@@ -42,7 +42,7 @@ angular
     'ngFacebook'
   ])
   .config( function( $facebookProvider ) {
-    $facebookProvider.setAppId('961547147258065');
+    $facebookProvider.setAppId('179676235701655');//961547147258065
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
     // moment js
