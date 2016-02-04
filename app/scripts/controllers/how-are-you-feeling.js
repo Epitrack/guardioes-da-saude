@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', '$window', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster, $window) {
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', '$window', '$facebook', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster, $window, $facebook) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
@@ -46,7 +46,7 @@ angular.module('gdsApp')
     };
 
     $scope.goToHome = function () {
-        console.log('====== goToHome =======' )
+      console.log('====== goToHome =======')
       $timeout(function () {
           $location.path('/health-daily');
         },
@@ -55,17 +55,15 @@ angular.module('gdsApp')
 
     $scope.share = function (social) {
       var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
-        var title = 'Guardiões da Saúde';
-        var url = 'https://guardioesdasaude.org'
-
+      var title = 'Guardiões da Saúde';
+      var url = 'http://dev.guardioesdasaude.org';
       if (social === 'facebook') {
-          console.log('==========  facebook ==========')
-//          console.log(decodeURIComponent(text))
-        $window.open('https://www.facebook.com/sharer/sharer.php?t='+decodeURIComponent(text)+'&u='+decodeURIComponent(url));
-//        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
-        var winTop = (screen.height / 2);
-        var winLeft = (screen.width / 2);
-//        $window.open('http://www.facebook.com/sharer.php?s=100&p[title]='+ title +'&p[summary]=' + decodeURIComponent(text) + '&p[url]=' + url, 'sharer', 'top='+winTop+',left='+winLeft+',toolbar=0,status=0','width=320,height=350'); 
+        $facebook.ui({
+          method: 'share',
+          href: 'http://dev.guardioesdasaude.org'
+        }).then(function (response) {
+          console.log("responsesssss", response);
+        });
       } else {
         $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
       }

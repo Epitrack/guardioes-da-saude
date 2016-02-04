@@ -14,9 +14,9 @@
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=yes">
     <meta name="keywords" content="health, guardiões da saúde, saúde, guardiões">
-    <meta name="DC.title" content="Guardiões da Saúde">
-    <meta name="DC.publisher" content="Epitrack">
-    <meta name="DC.creator.address" content="contato@epitrack.com.br">
+    <meta name="title" content="Guardiões da Saúde">
+    <meta name="publisher" content="Epitrack">
+    <meta name="creator.address" content="contato@epitrack.com.br">
     <meta name="robots" content="all">
     <meta name="author" content="Epitrack">
     <meta name="rating" content="general">
@@ -101,7 +101,7 @@
                 </li>
 
                 <li ng-show="user.picture">
-                  <figure class="mini-avatar-user hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
+                  <figure class="mini-avatar-user  hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
                 </li>
 
                 <li ng-show="user" class="dropdown dropnav">
@@ -237,5 +237,14 @@
     <script src="scripts/controllers/cadastro-email.js"></script>
     <script src="scripts/filters/getmonth.js"></script>
     <!-- endbuild -->
+    <script>
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 </html>
