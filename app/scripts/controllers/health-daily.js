@@ -121,19 +121,20 @@ angular.module('gdsApp')
           total: item.count
         });
       });
-
-      $scope.lineOptions = {
-        data: days.reverse(),
-        xkey: 'y',
-        ykeys: ['total'],
-        labels: ['Participações'],
-        lineColors: ['#1E88E5'],
-        parseTime: false,
-        resize: true,
-        hoverCallback: function (index, options, content) {
-          return (content);
-        }
-      };
+      if(days.length > 0) {
+          $scope.lineOptions = {
+            data: days.reverse(),
+            xkey: 'y',
+            ykeys: ['total'],
+            labels: ['Participações'],
+            lineColors: ['#1E88E5'],
+            parseTime: false,
+            resize: true,
+            hoverCallback: function (index, options, content) {
+              return (content);
+            }
+          };
+      }
     };
     // ====
     $scope.graphicDonuts = function () {

@@ -89,8 +89,7 @@
 
       <ul class="dropdown-menu" aria-labelledby="sort-by-year">
         <li ng-repeat="m in monthReports">
-          <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month
-            | getMonth}}</a>
+          <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
         </li>
       </ul>
     </div>
@@ -98,6 +97,10 @@
     <div ng-if="allDays">
       <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
     </div>
+    <div ng-if="!lineOptions" >
+        <div id="notDataLinechart"><div>Não há dados para suficientes. Participe agora!</div></div>    
+    </div>
+  
   </article>
 </section>
 <!-- Toaster -->

@@ -46,6 +46,7 @@ angular.module('gdsApp')
     };
 
     $scope.goToHome = function () {
+        console.log('====== goToHome =======' )
       $timeout(function () {
           $location.path('/health-daily');
         },
@@ -53,12 +54,18 @@ angular.module('gdsApp')
     };
 
     $scope.share = function (social) {
-      var text;
-
-      text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+        var title = 'Guardiões da Saúde';
+        var url = 'https://guardioesdasaude.org'
 
       if (social === 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
+          console.log('==========  facebook ==========')
+//          console.log(decodeURIComponent(text))
+        $window.open('https://www.facebook.com/sharer/sharer.php?t='+decodeURIComponent(text)+'&u='+decodeURIComponent(url));
+//        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
+        var winTop = (screen.height / 2);
+        var winLeft = (screen.width / 2);
+//        $window.open('http://www.facebook.com/sharer.php?s=100&p[title]='+ title +'&p[summary]=' + decodeURIComponent(text) + '&p[url]=' + url, 'sharer', 'top='+winTop+',left='+winLeft+',toolbar=0,status=0','width=320,height=350'); 
       } else {
         $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
       }
