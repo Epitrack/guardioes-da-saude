@@ -196,7 +196,7 @@ angular.module('gdsApp')
     };
 
     obj.twLogin = function (accessToken, callback) {
-//      $http.get(apiUrl + '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret, {headers: {'app_token': app_token}})
+//    '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret
       $http.get(apiUrl + '/auth/twitter/callback?tw=' + accessToken.oauth_token, {headers: {'app_token': app_token}})
         .then(function (result) {
           console.log('Success twLogin: ', result);
