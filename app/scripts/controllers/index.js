@@ -44,6 +44,7 @@ angular.module('gdsApp')
       delete $rootScope.user;
       console.log('clearStorage in index.js');
       localStorage.removeItem('userStorage');
+      window.location.href = "/";
     };
     // ====
 
