@@ -11,6 +11,7 @@ angular.module('gdsApp')
   .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', 'toaster', '$location', '$timeout', function ($scope, UserApi, LocalStorage, $rootScope, toaster, $location, $timeout) {
 
     $scope.avatar = {};
+    $scope.vm = {};
 
     $scope.uploadPic = function () {
       UserApi.changeAvatar($scope.avatar, function (data) {

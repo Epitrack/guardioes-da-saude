@@ -51,6 +51,7 @@ module.exports = function(config) {
       'bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js',
       'bower_components/ngmap/build/scripts/ng-map.js',
       'bower_components/ng-facebook/ngFacebook.js',
+      'bower_components/angular-repeat-n/dist/angular-repeat-n.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

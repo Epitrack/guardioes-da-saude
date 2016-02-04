@@ -25,7 +25,8 @@ angular
     'angularMoment',
     'ngFileUpload',
     'firebase',
-    'ngMap'
+    'ngMap',
+    'angular-repeat-n'
   ])
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
     // moment js
@@ -34,7 +35,7 @@ angular
 
     // check if user exist
     var u = LocalStorage.getItem('userStorage');
-      
+
 
     if (u !== null) {
       $rootScope.user = u;
@@ -42,7 +43,7 @@ angular
 
     console.log('app.run: user', $rootScope.user);
     // ====
-    
+
     $rootScope.onInit = function(){
         document.body.style.display = "block";
     }
@@ -55,7 +56,7 @@ angular
       },
 
       convertDate: function (date, dateFormat) {
-          
+
         var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
         console.log("convert  "+convert)
         return convert;
@@ -140,14 +141,14 @@ angular
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
         }
-        
+
         this.checkAge(age, canIcheckAge);
-        
+
         return age;
       },
 
       checkAge: function (age, canIcheckAge) {
-        // debugger;   
+        // debugger;
         console.log(canIcheckAge)
         if ((age > 13 && age < 120) || (canIcheckAge == false)) {
             localStorage.setItem('dobValid', true);
