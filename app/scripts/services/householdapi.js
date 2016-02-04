@@ -33,6 +33,26 @@ angular.module('gdsApp')
       });
     };
 
+    obj.changeAvatar = function (household_id, avatar, callback) {
+      var params = {
+        id:household_id,
+        picture: avatar
+      };
+      $http.post(apiUrl + '/household/update', params, {
+          headers: {
+            'app_token': app_token,
+            'user_token': LocalStorage.getItem('userStorage').user_token
+          }
+        })
+        .then(function (result) {
+          console.log('Success changeAvatar: ', result);
+          callback(result);
+          obj.updateUser(LocalStorage.getItem('userStorage').id);
+        }, function (error) {
+          console.warn('Error changeAvatar: ', error);
+        });
+    };
+
     obj.deleteHousehold = function(id, callback) {
       $http.get(apiUrl + '/household/delete/' + id + '?client=' + client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){

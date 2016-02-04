@@ -8,6 +8,18 @@
  *
  * Main module of the application.
  */
+var checkLoggedOut = function ($q, $timeout, $location, $rootScope) {
+  var deferred = $q.defer();
+
+  if ($rootScope.user) {
+    deferred.resolve();
+  } else {
+    $timeout(deferred.reject);
+    return $location.url('/login');
+  }
+
+  return deferred.promise;
+};
 
 angular
   .module('gdsApp', [
@@ -46,7 +58,7 @@ angular
 
     $rootScope.onInit = function(){
         document.body.style.display = "block";
-    }
+    };
 
     // Helpers functions
     $rootScope.UTIL = {
@@ -58,7 +70,7 @@ angular
       convertDate: function (date, dateFormat) {
 
         var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
-        console.log("convert  "+convert)
+        console.log("convert  "+convert);
         return convert;
       },
 
@@ -73,25 +85,25 @@ angular
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
             // $scope.houseHold.picture = 'avatar masculino preto';
             if (age <= 49) {
-              return '4';
+              return 4;
               // console.log('avatar masculino preto novinho');
             } else if (age >= 50) {
-              return '11';
+              return 11;
               // console.log('avatar masculino preto coroa');
             }
           } else if (race === 'branco') {
             // $scope.houseHold.picture = 'avatar masculino branco';
             if (age <= 49) {
-              return '5';
+              return 5;
               // console.log('avatar masculino branco novinho');
             } else if (age >= 50) {
-              return '9';
+              return 9;
               // console.log('avatar masculino branco coroa');
             }
           } else if (race === 'amarelo') {
             // $scope.houseHold.picture = 'avatar masculino amarelo';
             if (age <= 49) {
-              return '14';
+              return 14;
               // console.log('avatar masculino amarelo novinho');
             } else if (age >= 50) {
               return '';
@@ -102,28 +114,28 @@ angular
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
             // $scope.houseHold.picture = 'avatar feminino preto';
             if (age <= 49) {
-              return '1';
+              return 1;
               // console.log('avatar feminino preto novinho');
             } else if (age >= 50) {
-              return '12';
+              return 12;
               // console.log('avatar feminino preto coroa');
             }
           } else if (race === 'branco') {
             // $scope.houseHold.picture = 'avatar feminino branco';
             if (age <= 49) {
-              return '3';
+              return 3;
               // console.log('avatar feminino branco novinho');
             } else if (age >= 50) {
-              return '10';
+              return 10;
               // console.log('avatar feminino branco coroa');
             }
           } else if (race === 'amarelo') {
             // $scope.houseHold.picture = 'avatar feminino amarelo';
             if (age <= 49) {
-              return '13';
+              return 13;
               // console.log('avatar feminino amarelo novinho');
             } else if (age >= 50) {
-              return '';
+              return 0;
               // console.log('avatar feminino amarelo coroa');
             }
           }
@@ -149,8 +161,8 @@ angular
 
       checkAge: function (age, canIcheckAge) {
         // debugger;
-        console.log(canIcheckAge)
-        if ((age > 13 && age < 120) || (canIcheckAge == false)) {
+        console.log(canIcheckAge);
+        if ((age > 13 && age < 120) || (canIcheckAge === false)) {
             localStorage.setItem('dobValid', true);
         } else {
             localStorage.setItem('dobValid', false);
@@ -271,7 +283,13 @@ angular
         controller: 'NoticiasCtrl',
         controllerAs: 'noticias'
       })
-      .when('/profile/change-photo', {
+      .when('/profile/change-photo/:user_id', {
+        templateUrl: 'views/change-photo.html',
+        controller: 'ChangePhotoCtrl',
+        controllerAs: 'changePhoto',
+        resolve: {loggedin: checkLoggedOut}
+      })
+      .when('/profile/household/change-photo/:household_id', {
         templateUrl: 'views/change-photo.html',
         controller: 'ChangePhotoCtrl',
         controllerAs: 'changePhoto',
@@ -357,16 +375,3 @@ angular
       requireBase: false
     });
   });
-
-var checkLoggedOut = function ($q, $timeout, $location, $rootScope) {
-  var deferred = $q.defer();
-
-  if ($rootScope.user) {
-    deferred.resolve();
-  } else {
-    $timeout(deferred.reject);
-    return $location.url('/login');
-  }
-
-  return deferred.promise;
-};

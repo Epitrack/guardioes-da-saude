@@ -3,7 +3,7 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ {{user.nick}}</span></h2>
+  <h2 class="section-title">Perfil <span>/ {{vm.profile.nick}}</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading change-photo">
@@ -14,9 +14,7 @@
       <div class="col-xs-12 col-sm-10 col-md-6 card-avatar-content">
         <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
         <form class="card-form" name="change-photo-default">
-          <div class="form-change-photo-default">
-
-
+          <div class="form-change-photo-default" ng-if="vm.tog">
             <div ng-repeat-n="12">
               <label for="input-{{$index+1}}" class="radio-avatar avatar-{{$index+1}}" ng-class="{'photo-selected':vm.tog=='avatar-{{$index+1}}'}"
                      ng-click="vm.tog='avatar-{{$index+1}}'">
@@ -34,13 +32,13 @@
       <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3 upload-form">
         <h3 class="change-photo-subtitle">Seu avatar:</h3>
 
-        <div ng-if="user.id != null">
-          <div ng-show="!user.picture">
+        <div>
+          <div ng-show="!vm.profile.picture">
             <img class="avatar-image" ng-src="images/avatar/avatar-blank.svg" alt="avatar">
           </div>
 
-          <div ng-show="user.picture">
-            <img class="avatar-image" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar">
+          <div ng-if="vm.tog">
+            <img class="avatar-image" ng-src="images/avatar/avatar-{{vm.profile.picture}}.svg" alt="avatar">
           </div>
         </div>
 

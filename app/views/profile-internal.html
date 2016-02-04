@@ -11,11 +11,11 @@
     </header>
 
     <div class="panel-body">
-      <a ng-href="" class="col-xs-12 col-md-3" class="link-figure">
-        <figure class="card-avatar-image">
-          <img ng-show="screen.household.picture" class="avatar-image"
-               ng-src="images/avatar/avatar-{{screen.household.picture}}.svg" alt="household avatar">
-          <img ng-show="!screen.household.picture" src="images/avatar/avatar-blank.svg" alt="Avatar blank">
+      <a ng-href="profile/household/change-photo/{{screen.household.id}}" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
+        <figure class="card-avatar-image edit">
+          <img ng-if="screen.household.picture" ng-src="images/avatar/avatar-{{screen.household.picture}}.svg" alt="household avatar">
+          <img ng-if="!screen.household.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar blank">
+          <figcaption>Editar foto</figcaption>
         </figure>
       </a>
 
@@ -41,7 +41,7 @@
                 <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender" value="M" id="selected-m">
                 <label for="selected-m" class="span-sex-op">Masculino</label>
                 <input class="radio-primary" type="radio" ng-model="screen.household.gender" name="profile-gender" value="F" id="selected-f">
-                <label for="selected-f" class="span-sex-op">Feminino</label>            
+                <label for="selected-f" class="span-sex-op">Feminino</label>
               </fieldset>
           </div>
 

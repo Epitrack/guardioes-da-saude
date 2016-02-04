@@ -11,8 +11,7 @@
     </header>
 
     <div class="panel-body">
-      <a ng-href="profile/change-photo" class="col-xs-12 col-md-3" class="link-figure"
-         title="Clique para editar a foto">
+      <a ng-href="profile/change-photo/{{user.id}}" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
         <figure class="card-avatar-image edit">
           <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
           <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Default">
