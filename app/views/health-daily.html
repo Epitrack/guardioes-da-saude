@@ -35,7 +35,7 @@
       <div class="geral" ><!--ng-if="roundedGoodSymptoms || roundedBadSymptoms"-->
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <div ng-if="userSurvey"><!---->
+        <div ng-if="userSurvey.no_symptom > 0 || userSurvey.symptom > 0">
           <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
         </div>
 
@@ -94,7 +94,7 @@
       </ul>
     </div>
 
-    <div ng-if="allDays">
+    <div ng-if="lineOptions">
       <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
     </div>
     <div ng-if="!lineOptions" >
