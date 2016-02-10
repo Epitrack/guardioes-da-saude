@@ -127,8 +127,10 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true) return $scope.invalid = true;
-      else params.dob = dob;
+      if (LocalStorage.getItem('dobValid') !== true) {
+          $scope.invalid = true;
+          return;
+      } else {params.dob = dob;}
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {

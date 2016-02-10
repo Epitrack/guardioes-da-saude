@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope) {
+  .service('UserApi', function ($http, $location, LocalStorage, ApiConfig, $rootScope, $facebook) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var obj = {};
@@ -20,6 +20,8 @@ angular.module('gdsApp')
 
     // register
     obj.createUser = function (data, callback) {
+//      console.log("create user ", data)
+//      return;
       if (data.fb) {
         data.fb = data.fb;
       }
@@ -116,6 +118,7 @@ angular.module('gdsApp')
 
     // get user surveys
     obj.getUserSurvey = function (callback) {
+        console.log('user_token', LocalStorage.getItem('userStorage').user_token)
       $http.get(apiUrl + '/user/survey/summary', {
           headers: {
             'app_token': app_token,
@@ -132,6 +135,7 @@ angular.module('gdsApp')
 
     // get calendar data
     obj.getUserCalendar = function (params, callback) {
+        
       $http.get(apiUrl + '/user/calendar/month?month=' + params.month + '&year=' + params.year, {
           headers: {
             'app_token': app_token,
@@ -184,16 +188,48 @@ angular.module('gdsApp')
       return $rootScope.userCalendar;
     };
 
-    obj.fbLogin = function (accessToken, callback) {
-//      $http.get(apiUrl + '/auth/facebook/callback?access_token=' + accessToken, {headers: {'app_token': app_token}})
-      $http.get(apiUrl + '/auth/facebook/callback?fb=' + accessToken, {headers: {'app_token': app_token}})
-        .then(function (result) {
-          console.log('Success fbLogin: ', result);
-          callback(result);
-        }, function (error) {
-          console.warn('Error fbLogin: ', error);
-        });
+    function fbLogin(facebook_id, callback) {
+        $http.get(apiUrl+'/user/get?fb='+facebook_id, {headers:{'app_token':app_token}})
+        .then(function(result){callback(result);},
+              function(error){console.warn('Error fbLogin: ', error);});
     };
+    obj.facebookLogin = function(userFbData, $scope, toaster){
+        $facebook.login().then(function(data){
+            if(data.status === 'connected'){
+                $facebook.api('me', {fields:'name,email,gender'})
+                .then(function(response) {
+                    userFbData.fb_token = data.authResponse.accessToken;
+                    userFbData.nick = response.name;
+                    userFbData.email = response.email;
+                    userFbData.gender = response.gender[0].toUpperCase();
+                    userFbData.fb = response.id;
+                    $scope.userData = userFbData;
+                    
+                    fbLogin(userFbData.fb, function (data) {
+                      if (data.data.error === false && data.data.data.length>0) {
+                          obj.loginUser({email: userFbData.email, password: userFbData.email}, function(resultMail){
+                              if(resultMail.data.error === true)
+                              {
+                                toaster.pop('error', resultMail.data.message);
+                              }else{
+                                  toaster.pop('success', resultMail.data.message);
+                                  LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                                  $location.path('health-daily');
+                              }
+                              
+                          });
+                          
+                      } else {
+                        console.warn('Error -> ', data.data.message);
+                        $('#modal-complete-login').modal('show');
+                      }
+                    });                
+                });
+            }else{
+                console.warn("Error ->", data);
+            }
+        });    
+    }
 
     obj.twLogin = function (accessToken, callback) {
 //    '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret
@@ -242,6 +278,7 @@ angular.module('gdsApp')
     };
 
     obj.getUserSurveyByYear = function (params, callback) {
+        
       $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {
           headers: {
             'app_token': app_token,

@@ -60,7 +60,19 @@ angular.module('gdsApp')
       if (social === 'facebook') {
         $facebook.ui({
           method: 'share',
+//            message: 'Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org',
           href: 'http://dev.guardioesdasaude.org'
+//          href: 'http://localhost:9000/'
+//             href: 'https://www.facebook.com/'
+//            href: "http://www.example.com"
+            
+//            method: 'feed',
+//            name: 'Guardiões da Saúde',
+//            link: 'http://dev.guardioesdasaude.org',
+//            picture: 'http://fbrell.com/f8.jpg',
+//            caption: 'Reference Documentation',
+//            description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
+//            message: 'Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org'
         }).then(function (response) {
           console.log("responsesssss", response);
         });
