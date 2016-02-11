@@ -63,7 +63,7 @@ angular.module('gdsApp')
 //          console.log("share ", faceShare)
 //          $window.open(faceShare)
         $facebook.ui({
-          method: 'feed',
+          method: 'share',
           href: 'http://dev.guardioesdasaude.org'
         }).then(function (response) {
           console.log("responsesssss", response);
