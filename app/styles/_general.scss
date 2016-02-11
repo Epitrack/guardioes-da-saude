@@ -1379,7 +1379,7 @@ p.login-email {
     text-align: center;
     margin-top: 80px;
     div{padding-top:73px; position: absolute !important; width: 100% !important;}
-    
+
 }
 
 // ====
@@ -1509,20 +1509,20 @@ p.login-email {
   // ====
 
   // Content internal
-  .content-internal { float: right; width: 72% !important;}
+  .content-internal { float: right; }
   // ====
   .card-avatar-content {padding-left: 50px;}
-    
+
   // Nav primary
   .sidebar {
-    width: 28% !important;
+    // width: 28% !important;
     position: absolute;
     left: 0;
     top: 0;
     min-height: 700px;
     height: 100%;
   }
-  
+
   .nav-primary {
     margin-top: 20px;
 
@@ -1697,12 +1697,12 @@ p.login-email {
     text-align: center;
     margin: 30px 0 0 30px;
   }
-    
-  
+
+
   .total-participants {
     float: right;
     margin: 22px 0 20px 0;
-  
+
     .geral {
       .status  {
         width: auto;

@@ -34,6 +34,7 @@ module.exports = function(config) {
       'bower_components/moment/moment.js',
       'bower_components/underscore/underscore.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-simple-logger/dist/angular-simple-logger.js',
       'bower_components/leaflet/dist/leaflet-src.js',
       'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js',
       'bower_components/raphael/raphael.js',
