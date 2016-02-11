@@ -118,7 +118,7 @@ angular.module('gdsApp')
         user_token: LocalStorage.getItem('userStorage').user_token
       };
 
-      console.warn('params -> ', params);
+      $rootScope.frequencyMonth = month;
 
       UserApi.getUserSurveyByMonth(params, function (data) {
         $scope.lineDataLoaded = true;
@@ -146,18 +146,21 @@ angular.module('gdsApp')
         });
       });
 
-      $scope.lineOptions = {
-        data: days.reverse(),
-        xkey: 'y',
-        ykeys: ['total'],
-        labels: ['Participações'],
-        lineColors: ['#1E88E5'],
-        parseTime: false,
-        resize: true,
-        hoverCallback: function (index, options, content) {
-          return (content);
-        }
-      };
+      if (days.length > 0) {
+        $scope.lineOptions = {
+          data: days.reverse(),
+          xkey: 'y',
+          ykeys: ['total'],
+          labels: ['Participações'],
+          lineColors: ['#1E88E5'],
+          parseTime: false,
+          resize: true,
+          hoverCallback: function (index, options, content) {
+            return (content);
+          }
+        };
+      }
+
     };
     // ====
 
