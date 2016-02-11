@@ -196,6 +196,7 @@ angular.module('gdsApp')
     obj.facebookLogin = function(userFbData, $scope, toaster){
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
+                console.log("fb data", data)
                 $facebook.api('me', {fields:'name,email,gender'})
                 .then(function(response) {
                     userFbData.fb_token = data.authResponse.accessToken;
@@ -203,13 +204,17 @@ angular.module('gdsApp')
                     userFbData.email = response.email;
                     userFbData.gender = response.gender[0].toUpperCase();
                     userFbData.fb = response.id;
+                    console.log("response",response)
+                    console.log("userID",data.authResponse.userID)
+                    console.log("userID",response.id.toString())
                     $scope.userData = userFbData;
                     
                     fbLogin(userFbData.fb, function (data) {
-                        console.log("email", userFbData.email, "--- password:", userFbData.email)
+//                        console.log("email", userFbData.email, "--- password:", userFbData.email)
+                        console.log("data.data", data.data, "data.data.error", data.data.error,"data.data.data.length",data.data.data.length)
                       if (data.data.error === false && data.data.data.length>0) {
-                          
-                          obj.loginUser({email: userFbData.email, password: userFbData.email}, function(resultMail){
+                            console.log("+++++email", data.data.data[0].email)
+                          obj.loginUser({email: data.data.data[0].email, password: data.data.data[0].email}, function(resultMail){
                               if(resultMail.data.error === true)
                               {
                                 toaster.pop('error', resultMail.data.message);
