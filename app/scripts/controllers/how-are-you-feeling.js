@@ -66,8 +66,8 @@ angular.module('gdsApp')
           method: 'share',
           href: 'http://dev.guardioesdasaude.org'
         }).then(function (response) {
-            toaster.pop('success', response);
-          console.log("responsesssss", response);
+            toaster.pop('success', "Obrigado por compartilhar");
+            $location.path('/health-daily');
         }, function(error){console.warn("error -->", error)});
       } else {
         $window.open('https://twitter.com/home?status=' + url);
