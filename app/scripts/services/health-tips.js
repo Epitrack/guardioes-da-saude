@@ -36,7 +36,7 @@ angular.module('gdsApp')
           lat: lat,
           lon: lng,
           type: 'pharmacy',
-          radius: '1000'
+          radius: '10000'
         }
       }).success(function (data) {
         console.warn('Success getFarmacias: ', data);
