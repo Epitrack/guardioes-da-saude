@@ -56,28 +56,20 @@ angular.module('gdsApp')
     $scope.share = function (social) {
       var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
       var title = 'Guardiões da Saúde';
-      var url = 'http://dev.guardioesdasaude.org';
+//      var url = decodeURIComponent('http://dev.guardioesdasaude.org');
+      var url = 'http%3A%2F%2Fdev.guardioesdasaude.org';
       if (social === 'facebook') {
+//          var faceShare = "https://www.facebook.com/dialog/share?app_id=1488956654743239&display=popup&href="+url+"&redirect_uri="+url
+//          console.log("share ", faceShare)
+//          $window.open(faceShare)
         $facebook.ui({
-          method: 'share',
-//            message: 'Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org',
+          method: 'feed',
           href: 'http://dev.guardioesdasaude.org'
-//          href: 'http://localhost:9000/'
-//             href: 'https://www.facebook.com/'
-//            href: "http://www.example.com"
-            
-//            method: 'feed',
-//            name: 'Guardiões da Saúde',
-//            link: 'http://dev.guardioesdasaude.org',
-//            picture: 'http://fbrell.com/f8.jpg',
-//            caption: 'Reference Documentation',
-//            description: 'Dialogs provide a simple, consistent interface for applications to interface with users.',
-//            message: 'Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org'
         }).then(function (response) {
           console.log("responsesssss", response);
-        });
+        }, function(error){console.warn("error -->", error)});
       } else {
-        $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
+        $window.open('https://twitter.com/home?status=' + url);
       }
     };
 
