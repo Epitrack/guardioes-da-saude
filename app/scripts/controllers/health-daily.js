@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc function
  * @name gdsApp.controller:HealthDailyCtrl
@@ -15,9 +14,18 @@ angular.module('gdsApp')
     $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
+    if($scope.userSurvey !== undefined) {
+      $scope.userSurvey = undefined;
+    }
+    if($scope.lineOptions !== undefined) {
+      $scope.lineOptions = undefined;
+    }
     // ====
     $scope.getUserSurvey = function () {
       UserApi.getUserSurvey(function (data) {
+          
+          console.log("data survey ", data.data.data) 
+//          return;
         $scope.userSurvey = data.data.data;
         if ($scope.userSurvey.total !== 0) {
           $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom / $scope.userSurvey.total) * 100));
@@ -27,6 +35,8 @@ angular.module('gdsApp')
         } else {
           $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.no_symptom;
           $scope.userSurvey.pct_symptoms = $scope.userSurvey.symptom;
+          $scope.roundedGoodSymptoms = 0;
+          $scope.roundedBadSymptoms = 0;
         }
         if ($scope.userSurvey.pct_no_symptoms % 1 !== 0) {
           $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.pct_no_symptoms.toFixed(2);
@@ -43,14 +53,12 @@ angular.module('gdsApp')
         if ($scope.userSurvey.symptom === 1) {
           $scope.badSpelling = singularSpelling;
         }
-        $rootScope.userSurvey = $scope.userSurvey;
         $rootScope.$broadcast('userSurvey_ok');
       });
     };
     // ====
     // ====
     $scope.getUserCalendar = function (params) {
-      console.log('getSurveyByMonth');
       if (!$scope.calendarLoaded) {
         $scope.vm.currentDay = moment();
         // ----
@@ -61,11 +69,9 @@ angular.module('gdsApp')
           };
         } else {
           //params.month = params.month +1;
-          //console.log("params", params);
         }
         UserApi.getUserCalendar(params, function (data) {
           var userCalendar = [];
-          console.log("getUserCalendar", data);
           var k;
           for (var i = 0; i < data.data.data.length; i++) {
             k = {
@@ -82,7 +88,8 @@ angular.module('gdsApp')
             }
             userCalendar.push(k);
           }
-          $rootScope.userCalendar = userCalendar;
+//          $rootScope.userCalendar = userCalendar;
+          $scope.userCalendar = userCalendar;
           $scope.calendarLoaded = true;
         });
         // ----
@@ -90,8 +97,8 @@ angular.module('gdsApp')
     };
     // ====
     $scope.getSurveysByMonth = function (month) {
-      $rootScope.allDays = '';
-
+//      $rootScope.allDays = '';
+      $scope.allDays = undefined;
       var params = {
         month: month,
         year: new Date().getFullYear(),
@@ -99,43 +106,53 @@ angular.module('gdsApp')
       };
       UserApi.getUserSurveyByMonth(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
+            console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          $rootScope.allDays = data.data.data;
-          $rootScope.$broadcast('allDays_ok');
+            if(data.data.data.length > 0){
+              $scope.allDays = data.data.data;
+              $rootScope.$broadcast('allDays_ok');
+            }
         }
       });
     };
     // ====
     $scope.graphicLine = function () {
       var days = [];
-      $rootScope.allDays.forEach(function (item, index, array) {
+        if($scope.allDays === undefined){return;}
+      if($scope.allDays.length === 0)
+      {
+        return;
+      }
+      $scope.allDays.forEach(function (item, index, array) {
         days.push({
           y: "Dia " + item._id.day.toString(),
           total: item.count
         });
       });
-
-      $scope.lineOptions = {
-        data: days.reverse(),
-        xkey: 'y',
-        ykeys: ['total'],
-        labels: ['Participações'],
-        lineColors: ['#1E88E5'],
-        parseTime: false,
-        resize: true,
-        hoverCallback: function (index, options, content) {
-          return (content);
-        }
-      };
+        
+      if(days.length > 0) {
+          $scope.lineOptions = {
+            data: days.reverse(),
+            xkey: 'y',
+            ykeys: ['total'],
+            labels: ['Participações'],
+            lineColors: ['#1E88E5'],
+            parseTime: false,
+            resize: true,
+            hoverCallback: function (index, options, content) {
+              return (content);
+            }
+          };
+      }
     };
     // ====
     $scope.graphicDonuts = function () {
+
       $scope.donutOptions = {
         data: [
-          {label: "Bem", value: $rootScope.userSurvey.no_symptom},
-          {label: "Mal", value: $rootScope.userSurvey.symptom}
+          {label: "Bem", value: $scope.userSurvey.no_symptom},
+          {label: "Mal", value: $scope.userSurvey.symptom}
         ],
         colors: ['#E0D433', '#C81204'],
         resize: true
@@ -153,8 +170,9 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          console.log(data.data.data);
-          $scope.monthReports = data.data.data;
+          if(data.data.data > 0){
+            $scope.monthReports = data.data.data;
+          }
         }
       });
     };
@@ -165,7 +183,7 @@ angular.module('gdsApp')
     // ====
     $rootScope.$on('userSurvey_ok', function () {
       $scope.graphicDonuts();
-      $scope.getSurveysByMonth(new Date().getMonth() + 1)
+      $scope.getSurveysByMonth(new Date().getMonth() + 1);
     });
     // ====
     $scope.vm.CalendarInterface = {
@@ -177,44 +195,50 @@ angular.module('gdsApp')
         var bem = 0;
         var d = day.number;
         angular.forEach($rootScope.userCalendar, function (item, k) {
-          if (item.day == d) {
+          if (item.day === d) {
             if (item.no_symptom) {
-              if (bem == 0) bem = item.total;
-              else bem += item.total;
+              if (bem === 0) {
+                bem = item.total;
+              }
+              else {
+                bem += item.total;
+              }
             } else {
-              if (mal == 0) mal = item.total;
-              else mal += item.total;
+              if (mal === 0) {
+                mal = item.total;
+              }
+              else {
+                mal += item.total;
+              }
             }
           }
         });
         var content;
-        if (q == 't') {
+        if (q === 't') {
           content = (mal + bem);
-        } else if (q == 'bem') {
+        } else if (q === 'bem') {
           content = bem;
         } else {
-          content = mal
+          content = mal;
         }
         return content;
       },
       checkForSymptoms: function (day) {
-        //console.log("checkForSymptoms", day);
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
           angular.forEach($rootScope.userCalendar, function (item, k) {
-            if (item.day == d && item.month == $scope.currentMonth.month) {
+            if (item.day === d && item.month === $scope.currentMonth.month) {
               r = true;
             }
           });
           return r;
-        } else return false;
+        } else {
+          return false;
+        }
       },
       onChange: function (params) {
-        console.log("onChange", params);
-        console.log("currentMonth", $scope.currentMonth);
-        if (params.month != $scope.currentMonth.month ||
-          params.year != $scope.currentMonth.year) {
+        if (params.month !== $scope.currentMonth.month || params.year !== $scope.currentMonth.year) {
           $scope.calendarLoaded = false;
           $scope.getUserCalendar(params);
           $scope.currentMonth = params;
@@ -224,6 +248,6 @@ angular.module('gdsApp')
     $scope.calendarLoaded = false;
     // ====
     $rootScope.$on('allDays_ok', function () {
-      $scope.graphicLine()
+      $scope.graphicLine();
     });
   }]);

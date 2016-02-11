@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', '$window', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster, $window) {
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', 'toaster', '$window', '$facebook', function ($scope, $location, $timeout, Surveyapi, LocalStorage, toaster, $window, $facebook) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
@@ -46,6 +46,7 @@ angular.module('gdsApp')
     };
 
     $scope.goToHome = function () {
+      console.log('====== goToHome =======')
       $timeout(function () {
           $location.path('/health-daily');
         },
@@ -53,14 +54,19 @@ angular.module('gdsApp')
     };
 
     $scope.share = function (social) {
-      var text;
-
-      text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
-
+      var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      var title = 'Guardiões da Saúde';
+      var url = 'http%3A%2F%2Fdev.guardioesdasaude.org';
+        
       if (social === 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
+        $facebook.ui({
+          method: 'share',
+          href: 'http://dev.guardioesdasaude.org'
+        }).then(function (response) {
+            toaster.pop('success', "Obrigado por compartilhar");
+        }, function(error){console.warn("error -->", error)});
       } else {
-        $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
+        $window.open('https://twitter.com/home?status=' + url);
       }
     };
 

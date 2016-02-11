@@ -57,8 +57,8 @@ angular.module('gdsApp')
         password: "",
         picture: $scope.screen.household.picture
       };
-
-      var age = $scope.UTIL.getAge(params.dob);
+      console.log("link photo "+$scope.screen.household.picture)
+      var age = $scope.UTIL.getAge(params.dob, false);
 
       $scope.invalid = '';
 

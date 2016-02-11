@@ -6,7 +6,7 @@
 
   <h2 class="section-title">Diário da Saúde <span>/ {{household.nick}}</span></h2>
 
-  <article class="col-xs-12 col-md-11 card">
+  <article class="col-xs-12 col-md-12 card">
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img ng-src="images/avatar/avatar-{{household.picture}}.svg" alt="Avatar de {{ household.nick }}">
@@ -35,8 +35,8 @@
       <div class="geral">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <div ng-if="hhSurvey">
-          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+        <div ng-if="donutOptions">
+          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart> <!--donutOptions -->
         </div>
 
         <div class="status">
@@ -45,7 +45,7 @@
               <figure>
                 <img src="../images/icon-health-daily-good.svg" alt="Bem">
                 <figcaption>
-                  <span>{{ householdSurveys.no_symptom }}%</span> Bem
+                  <span>{{ householdSurveys.pct_no_symptoms }}%</span> Bem
                   <p>{{ householdSurveys.no_symptom }} <span class="spelling">{{ goodSpelling }}</span></p>
                 </figcaption>
               </figure>
@@ -55,7 +55,7 @@
               <figure>
                 <img src="../images/icon-health-daily-bad.svg" alt="Mal">
                 <figcaption>
-                  <span>{{ householdSurveys.symptom }}%</span> Mal
+                  <span>{{ householdSurveys.pct_symptoms }}%</span> Mal
                   <p>{{ householdSurveys.symptom }}  <span class="spelling">{{ badSpelling }}</span></p>
                 </figcaption>
               </figure>
@@ -67,7 +67,7 @@
     </aside>
   </article>
 
-  <article class="col-xs-12 col-md-4 card half">
+  <article class="col-xs-12 col-md-4 card"> <!--half-->
     <div class="calendar-wrapper">
      <h2>Calendário</h2>
      <h3>Histórico de participações</h3>
@@ -78,7 +78,7 @@
    </div>
   </article>
 
-  <article class="col-xs-12 col-md-7 card frequency">
+  <article class="col-xs-12 col-md-7 col-md-offset-1 card frequency">
     <h2>Frequência</h2>
     <h3>Relação de participação por mês</h3>
 
@@ -95,8 +95,11 @@
       </ul>
     </div>
 
-    <div ng-if="hhAllDays">
+    <div ng-if="lineOptions">
       <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
+    </div>
+    <div ng-if="!lineOptions" >
+        <div id="notDataLinechart"><div>Não há dados para suficientes. Participe agora!</div></div>    
     </div>
 
   </article>

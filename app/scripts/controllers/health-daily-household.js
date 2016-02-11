@@ -18,7 +18,11 @@ angular.module('gdsApp')
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
     $scope.currentMonth = moment();
     $scope.vm = {};
-    $scope.vm.currentDay = moment();
+    $scope.vm.currentDay = moment();      
+      
+    if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
+    if($scope.lineOptions !== undefined) $scope.lineOptions = undefined;
+    
     // ====
     $scope.getHousehold = function () {
       HouseholdApi.getHousehold(userID, function (data) {
@@ -26,7 +30,7 @@ angular.module('gdsApp')
           id: $routeParams.id
         })[0];
 
-        $rootScope.$broadcast('hh_ok', $scope.household);
+        $scope.$broadcast('hh_ok', $scope.household);
       });
     };
     // ====
@@ -42,6 +46,8 @@ angular.module('gdsApp')
         if ($scope.householdSurveys.total !== 0) {
           $scope.householdSurveys.pct_no_symptoms = ((($scope.householdSurveys.no_symptom / $scope.householdSurveys.total) * 100));
           $scope.householdSurveys.pct_symptoms = ((($scope.householdSurveys.symptom / $scope.householdSurveys.total) * 100));
+          $scope.roundedGoodSymptoms = Math.round($scope.householdSurveys.pct_no_symptoms);
+          $scope.roundedBadSymptoms = Math.round($scope.householdSurveys.pct_symptoms);
         } else {
           $scope.householdSurveys.pct_no_symptoms = $scope.householdSurveys.no_symptom;
           $scope.householdSurveys.pct_symptoms = $scope.householdSurveys.symptom;
@@ -70,8 +76,9 @@ angular.module('gdsApp')
           $scope.badSpelling = singularSpelling;
         }
 
-        $rootScope.hhSurvey = $scope.householdSurveys;
-        $rootScope.$broadcast('hhSurvey_ok');
+          
+        $scope.hhSurvey = $scope.householdSurveys;
+        $scope.$broadcast('hhSurvey_ok');
       });
     };
     // ====
@@ -121,8 +128,8 @@ angular.module('gdsApp')
           householdCalendar.push(params);
         }
 
-        $rootScope.householdCalendar = householdCalendar;
-        $rootScope.$broadcast('build_hhCalendar');
+        $scope.householdCalendar = householdCalendar;
+        $scope.$broadcast('build_hhCalendar');
         $scope.calendarLoaded = true;
       });
     };
@@ -130,7 +137,7 @@ angular.module('gdsApp')
 
     // ====
     $scope.getMonth = function (month) {
-      $rootScope.hhAllDays = '';
+      $scope.hhAllDays = '';
 
       var params = {
         month: month,
@@ -144,8 +151,8 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          $rootScope.hhAllDays = data.data.data;
-          $rootScope.$broadcast('hhAllDays_ok');
+          $scope.hhAllDays = data.data.data;
+          $scope.$broadcast('hhAllDays_ok');
         }
       });
     };
@@ -153,36 +160,42 @@ angular.module('gdsApp')
     $scope.graphicLine = function () {
       var days = [];
 
-      $rootScope.hhAllDays.forEach(function (item, index, array) {
+      $scope.hhAllDays.forEach(function (item, index, array) {
         days.push({
           y: "Dia " + item._id.day.toString(),
           total: item.count
         });
       });
-
-      $scope.lineOptions = {
-        data: days.reverse(),
-        xkey: 'y',
-        ykeys: ['total'],
-        labels: ['Participações'],
-        lineColors: ['#1E88E5'],
-        parseTime: false,
-        resize: true,
-        hoverCallback: function (index, options, content) {
-          return (content);
+        console.log("d", days);
+        if(days.length > 0) {
+            $scope.lineOptions = {
+                data: days.reverse(),
+                xkey: 'y',
+                ykeys: ['total'],
+                labels: ['Participações'],
+                lineColors: ['#1E88E5'],
+                parseTime: false,
+                resize: true,
+                hoverCallback: function (index, options, content) {
+                  return (content);
+                }
+              };
         }
-      };
     };
 
     $scope.graphicDonuts = function () {
-      $scope.donutOptions = {
+        console.log("sssssssssss", $scope.hhSurvey.no_symptom);
+        if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
+            $scope.donutOptions = {
         data: [
-          {label: "Bem", value: $rootScope.hhSurvey.no_symptom},
-          {label: "Mal", value: $rootScope.hhSurvey.symptom}
+          {label: "Bem", value: $scope.hhSurvey.no_symptom},
+          {label: "Mal", value: $scope.hhSurvey.symptom}
         ],
         colors: ['#E0D433', '#C81204'],
         resize: true
       };
+        }
+        
     };
     // ====
 
@@ -208,7 +221,7 @@ angular.module('gdsApp')
 
     $scope.getHousehold();
 
-    $rootScope.$on('hh_ok', function (hhId) {
+    $scope.$on('hh_ok', function (hhId) {
       $scope.getHouseholdSurvey(hhId);
       $scope.getHouseholdCalendar({
         household_id: hhId,
@@ -218,12 +231,12 @@ angular.module('gdsApp')
       $scope.getYear();
     });
 
-    $rootScope.$on('hhSurvey_ok', function () {
+    $scope.$on('hhSurvey_ok', function () {
       $scope.graphicDonuts();
       $scope.getMonth(new Date().getMonth() + 1);
     });
 
-    $rootScope.$on('hhAllDays_ok', function () {
+    $scope.$on('hhAllDays_ok', function () {
       $scope.graphicLine()
     });
 
@@ -236,7 +249,7 @@ angular.module('gdsApp')
         var mal = 0;
         var bem = 0;
         var d = day.number;
-        angular.forEach($rootScope.householdCalendar, function (item, k) {
+        angular.forEach($scope.householdCalendar, function (item, k) {
           if (item.day == d) {
             if (item.no_symptom) {
               if (bem == 0) bem = item.total;
@@ -262,7 +275,7 @@ angular.module('gdsApp')
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
-          angular.forEach($rootScope.householdCalendar, function (item, k) {
+          angular.forEach($scope.householdCalendar, function (item, k) {
             //console.log("item.day", item.day, "x", d, item.month, "x", $scope.currentMonth.month);
             if (item.day == d && item.month == $scope.currentMonth.month) {
               r = true;

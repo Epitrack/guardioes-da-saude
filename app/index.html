@@ -14,9 +14,9 @@
     <meta name="HandheldFriendly" content="true" />
     <meta name="format-detection" content="telephone=yes">
     <meta name="keywords" content="health, guardiões da saúde, saúde, guardiões">
-    <meta name="DC.title" content="Guardiões da Saúde">
-    <meta name="DC.publisher" content="Epitrack">
-    <meta name="DC.creator.address" content="contato@epitrack.com.br">
+    <meta name="title" content="Guardiões da Saúde">
+    <meta name="publisher" content="Epitrack">
+    <meta name="creator.address" content="contato@epitrack.com.br">
     <meta name="robots" content="all">
     <meta name="author" content="Epitrack">
     <meta name="rating" content="general">
@@ -24,11 +24,14 @@
     <meta name="copyright" content="Guardiões da Saúde - Todos os direitos reservados">
 
     <!-- FACEBOOK  -->
+    <meta property="fb:app_id" content="1488956654743239" />
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://guardioesdasaude.org">
+    <meta property="og:url" content="http://dev.guardioesdasaude.org">
     <meta property="og:title" content="Guardiões da Saúde">
-    <meta property="og:image" content="gds-share.png">
-    <meta property="og:description" content="Veja como está a saúde perto de você.">
+    <meta property="og:image" content="https://s3.amazonaws.com/guardioesdasaude.org/gds-share.png">
+    <meta property="og:description" content="Acabei de participar do Guardiões da Saúde, participe você também.">
+      
+<!--    <meta property="og:description" content="Veja como está a saúde perto de você.">-->
 
     <!-- TWITTER -->
     <meta name="twitter:card" value="summary_large_image">
@@ -36,8 +39,9 @@
     <meta name="twitter:creator" value="@minsaude">
     <meta name="twitter:site" value="http://guardioesdasaude.org">
     <meta name="twitter:title" content="Guardiões da Saúde">
-    <meta name="twitter:description" content="Veja como está a saúde perto de você.">
-    <meta name="twitter:image:src" content="gds-share.png">
+<!--    <meta name="twitter:description" content="Veja como está a saúde perto de você.">-->
+    <meta name="twitter:description" content="Acabei de participar do Guardiões da Saúde, participe você também:">
+    <meta name="twitter:image:src" content="https://s3.amazonaws.com/guardioesdasaude.org/gds-share.png">
 
     <!-- APPLE TOUCH ICON -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -97,11 +101,11 @@
             <div ng-if="user.id != null">
               <ul class="nav navbar-nav">
                 <li ng-show="!user.picture || user.picture == '0'">
-                  <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-blank.svg" alt="avatar"></figure>
+                  <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
                 </li>
 
                 <li ng-show="user.picture">
-                  <figure class="mini-avatar-user hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
+                  <figure class="mini-avatar-user  hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
                 </li>
 
                 <li ng-show="user" class="dropdown dropnav">
@@ -182,6 +186,8 @@
     <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+    <script src="bower_components/angular-repeat-n/dist/angular-repeat-n.js"></script>
     <!-- endbower -->
 
     <script src="bower_components/moment/locale/pt-br.js"></script>
@@ -235,5 +241,14 @@
     <script src="scripts/controllers/cadastro-email.js"></script>
     <script src="scripts/filters/getmonth.js"></script>
     <!-- endbuild -->
+    <script>
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 </html>

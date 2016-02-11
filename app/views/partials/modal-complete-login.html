@@ -12,7 +12,7 @@
         <div class="modal-body">
           <div class="panel-body">
             <figure class="col-xs-12 col-md-2 col-lg-3 card-avatar-image">
-              <img src="images/avatar/avatar-blank.svg" alt="Imagem de um avatar em branco">
+              <img src="images/avatar/avatar-0.svg" alt="Imagem de um avatar em branco">
             </figure>
 
             <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
@@ -26,10 +26,17 @@
                 <fieldset class="col-xs-12 col-sm-6">
                   <label for="profile-gender">Sexo</label>
 
+<!--
                   <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
                          data-label="Masculino" ng-model="userData.gender">
                   <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
                          data-label="Feminino" ng-model="userData.gender">
+-->
+                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="M" id="selected-m">
+                    <label for="selected-m" class="span-sex-op">Masculino</label>
+                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="F" id="selected-f">
+                    <label for="selected-f" class="span-sex-op">Feminino</label>            
+                    
                 </fieldset>
               </div>
 
@@ -37,7 +44,7 @@
                 <fieldset class="col-xs-12 col-sm-6">
                   <label for="profile-birthdate">Data de nascimento</label>
                   <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                         ng-model="userData.dob" mask="99-99-9999">
+                         ng-model="userData.dob" mask="99-99-9999"  ng-required="true">
                   <!-- <span class="icon-birthdate"></span> -->
                 </fieldset>
 

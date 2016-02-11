@@ -11,11 +11,10 @@
     </header>
 
     <div class="panel-body">
-      <a ng-href="profile/change-photo" class="col-xs-12 col-md-3" class="link-figure"
-         title="Clique para editar a foto">
+      <a ng-href="profile/change-photo/{{user.id}}" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
         <figure class="card-avatar-image edit">
           <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
-          <img ng-if="!user.picture" ng-src="images/avatar/avatar-blank.svg" alt="Avatar Default">
+          <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Default">
           <figcaption>Editar foto</figcaption>
         </figure>
       </a>
@@ -77,11 +76,11 @@
           <fieldset class="col-xs-12 col-sm-6">
             <label for="profile-pass-again">Repetir Senha</label>
             <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password"
-                   ng-model="screen.repeatPassword" ng-focus="password.focus=true" ng-blur="password.focus=false">
+                   ng-model="screen.repeatPassword" ng-focus="repeatPassFocus=true" ng-blur="repeatPassBlur()">
           </fieldset>
 
           <fieldset class="col-xs-12">
-            <div ng-show="password.focus && (screen.repeatPassword != screen.user.password)" class="alert alert-info" role="alert">
+            <div ng-show="repeatPassFocus && (screen.repeatPassword != screen.user.password)" class="alert alert-info" role="alert">
               <span>As senhas digitadas precisam ser iguais.</span>
             </div>
 
@@ -95,7 +94,7 @@
           </fieldset>
 
           <fieldset class="col-xs-12">
-            <button type="submit" class="pull-right btn btn-primary" ng-disabled="screen.repeatPassword != screen.user.password">Salvar alterações</button>
+            <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
           </fieldset>
         </form>
       </div>

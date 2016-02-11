@@ -85,9 +85,11 @@ angular.module('gdsApp')
     $scope.twitterLogin = function () {
       auth.$authWithOAuthPopup('twitter').then(function (authData) {
         console.log('Twitter authentication success:', authData);
+        console.log("authData.twitter ")
+        console.log(authData.twitter)
 
         var userTwData = {};
-
+        
         userTwData.oauth_token = authData.twitter.accessToken;
         userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
         userTwData.nick = authData.twitter.displayName;
@@ -125,8 +127,10 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true) return $scope.invalid = true;
-      else params.dob = dob;
+      if (LocalStorage.getItem('dobValid') !== true) {
+          $scope.invalid = true;
+          return;
+      } else {params.dob = dob;}
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
