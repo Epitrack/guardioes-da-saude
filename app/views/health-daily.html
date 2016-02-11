@@ -97,10 +97,14 @@
     <div ng-if="lineOptions">
       <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
     </div>
+
     <div ng-if="!lineOptions" >
-        <div id="notDataLinechart"><div>Não há dados para suficientes. Participe agora!</div></div>    
+      <div id="notDataLinechart">
+        <div ng-if="lineDataLoaded">Não há dados para suficientes. Participe agora!</div>
+        <div ng-if="!lineDataLoaded">Carregando...</div>
+      </div>
     </div>
-  
+
   </article>
 </section>
 <!-- Toaster -->

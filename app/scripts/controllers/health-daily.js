@@ -14,19 +14,21 @@ angular.module('gdsApp')
     $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
+
     if($scope.userSurvey !== undefined) {
       $scope.userSurvey = undefined;
     }
-    if($scope.lineOptions !== undefined) {
-      $scope.lineOptions = undefined;
-    }
+
+    // if($scope.lineOptions !== undefined) {
+    //   $scope.lineOptions = undefined;
+    // }
+
     // ====
     $scope.getUserSurvey = function () {
       UserApi.getUserSurvey(function (data) {
-          
-          console.log("data survey ", data.data.data) 
-//          return;
+        // console.log("data survey ", data.data.data)
         $scope.userSurvey = data.data.data;
+
         if ($scope.userSurvey.total !== 0) {
           $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom / $scope.userSurvey.total) * 100));
           $scope.userSurvey.pct_symptoms = ((($scope.userSurvey.symptom / $scope.userSurvey.total) * 100));
@@ -38,25 +40,32 @@ angular.module('gdsApp')
           $scope.roundedGoodSymptoms = 0;
           $scope.roundedBadSymptoms = 0;
         }
+
         if ($scope.userSurvey.pct_no_symptoms % 1 !== 0) {
           $scope.userSurvey.pct_no_symptoms = $scope.userSurvey.pct_no_symptoms.toFixed(2);
         }
+
         if ($scope.userSurvey.pct_symptoms % 1 !== 0) {
           $scope.userSurvey.pct_symptoms = $scope.userSurvey.pct_symptoms.toFixed(2);
         }
+
         if ($scope.userSurvey.total === 1) {
           $scope.totalSpelling = singularSpelling;
         }
+
         if ($scope.userSurvey.no_symptom === 1) {
           $scope.goodSpelling = singularSpelling;
         }
+
         if ($scope.userSurvey.symptom === 1) {
           $scope.badSpelling = singularSpelling;
         }
+
         $rootScope.$broadcast('userSurvey_ok');
       });
     };
     // ====
+
     // ====
     $scope.getUserCalendar = function (params) {
       if (!$scope.calendarLoaded) {
@@ -88,7 +97,7 @@ angular.module('gdsApp')
             }
             userCalendar.push(k);
           }
-//          $rootScope.userCalendar = userCalendar;
+         // $rootScope.userCalendar = userCalendar;
           $scope.userCalendar = userCalendar;
           $scope.calendarLoaded = true;
         });
@@ -96,59 +105,64 @@ angular.module('gdsApp')
       }
     };
     // ====
+
+    // ====
     $scope.getSurveysByMonth = function (month) {
-//      $rootScope.allDays = '';
-      $scope.allDays = undefined;
+      $scope.allDays = '';
+      $scope.lineOptions = null;
+      $scope.lineDataLoaded = false;
+
       var params = {
         month: month,
         year: new Date().getFullYear(),
         user_token: LocalStorage.getItem('userStorage').user_token
       };
+
+      console.warn('params -> ', params);
+
       UserApi.getUserSurveyByMonth(params, function (data) {
+        $scope.lineDataLoaded = true;
         if (data.data.error === true) {
-            console.warn(data.data.message);
+          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
             if(data.data.data.length > 0){
               $scope.allDays = data.data.data;
-              $rootScope.$broadcast('allDays_ok');
+              $scope.$broadcast('allDays_ok');
             }
         }
       });
     };
     // ====
+
+    // ====
     $scope.graphicLine = function () {
       var days = [];
-        if($scope.allDays === undefined){return;}
-      if($scope.allDays.length === 0)
-      {
-        return;
-      }
+
       $scope.allDays.forEach(function (item, index, array) {
         days.push({
           y: "Dia " + item._id.day.toString(),
           total: item.count
         });
       });
-        
-      if(days.length > 0) {
-          $scope.lineOptions = {
-            data: days.reverse(),
-            xkey: 'y',
-            ykeys: ['total'],
-            labels: ['Participações'],
-            lineColors: ['#1E88E5'],
-            parseTime: false,
-            resize: true,
-            hoverCallback: function (index, options, content) {
-              return (content);
-            }
-          };
-      }
+
+      $scope.lineOptions = {
+        data: days.reverse(),
+        xkey: 'y',
+        ykeys: ['total'],
+        labels: ['Participações'],
+        lineColors: ['#1E88E5'],
+        parseTime: false,
+        resize: true,
+        hoverCallback: function (index, options, content) {
+          return (content);
+        }
+      };
     };
     // ====
-    $scope.graphicDonuts = function () {
 
+    // ====
+    $scope.graphicDonuts = function () {
       $scope.donutOptions = {
         data: [
           {label: "Bem", value: $scope.userSurvey.no_symptom},
@@ -158,6 +172,8 @@ angular.module('gdsApp')
         resize: true
       };
     };
+    // ====
+
     // ====
     $scope.getYear = function () {
       var params = {
@@ -170,21 +186,21 @@ angular.module('gdsApp')
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          if(data.data.data > 0){
+          if(data.data.data.length > 0){
             $scope.monthReports = data.data.data;
           }
         }
       });
     };
     // ====
-    $scope.getUserSurvey();
-    $scope.getUserCalendar();
-    $scope.getYear();
+
     // ====
     $rootScope.$on('userSurvey_ok', function () {
       $scope.graphicDonuts();
       $scope.getSurveysByMonth(new Date().getMonth() + 1);
     });
+    // ====
+
     // ====
     $scope.vm.CalendarInterface = {
       getCalendarPopoverTitle: function (day) {
@@ -245,9 +261,20 @@ angular.module('gdsApp')
         }
       }
     };
+
     $scope.calendarLoaded = false;
     // ====
-    $rootScope.$on('allDays_ok', function () {
+
+    // ====
+    $scope.$on('allDays_ok', function () {
+      $scope.lineOptions = null;
       $scope.graphicLine();
     });
+    // ====
+
+    // ====
+    $scope.getUserSurvey();
+    $scope.getUserCalendar();
+    $scope.getYear();
+    // ====
   }]);
