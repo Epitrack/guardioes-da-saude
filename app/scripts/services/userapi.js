@@ -47,7 +47,7 @@ angular.module('gdsApp')
 
     // login
     obj.loginUser = function (data, callback) {
-      $http.post(apiUrl + '/user/login', data)
+      $http.post(apiUrl + '/user/login', data, {headers: {'app_token': app_token}})
         .then(function (data) {
           console.log('Success loginUser: ', data);
           callback(data);
@@ -206,7 +206,9 @@ angular.module('gdsApp')
                     $scope.userData = userFbData;
                     
                     fbLogin(userFbData.fb, function (data) {
+                        console.log("email", userFbData.email, "--- password:", userFbData.email)
                       if (data.data.error === false && data.data.data.length>0) {
+                          
                           obj.loginUser({email: userFbData.email, password: userFbData.email}, function(resultMail){
                               if(resultMail.data.error === true)
                               {

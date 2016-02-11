@@ -66,6 +66,7 @@ angular.module('gdsApp')
           method: 'share',
           href: 'http://dev.guardioesdasaude.org'
         }).then(function (response) {
+            toaster.pop('success', response);
           console.log("responsesssss", response);
         }, function(error){console.warn("error -->", error)});
       } else {
