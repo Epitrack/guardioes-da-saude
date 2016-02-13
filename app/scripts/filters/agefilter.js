@@ -31,7 +31,7 @@ angular.module('gdsApp')
       if (age === 0) {
         return monthDiff(k, new Date()) + ' months';
       }
-
+         console.log("age filter ", age)
       return age;
     };
   });

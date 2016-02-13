@@ -19,7 +19,7 @@
               <div class="no-padding col-xs-12">
                 <fieldset class="col-xs-12 col-sm-6">
                   <label for="profile-nickname">Apelido</label>
-                  <input class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
+                  <input ng-required="true" class="input-primary" id="profile-nickname" name="add-profile-nickname" type="text"
                          ng-model="userData.nick">
                 </fieldset>
 
@@ -51,7 +51,7 @@
                 <fieldset class="col-xs-12 col-sm-6">
                   <label for="profile-raca-cor">Raça/Cor</label>
 
-                  <select class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
+                  <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
                           ng-model="userData.race">
                     <option ng-selected="true" disabled>Escoha uma Raça/Cor</option>
                     <option value="branco">Branco</option>
@@ -78,8 +78,11 @@
                   <span>Sua senha precisa ter no mínimo 6 dígitos</span>
                 </div>
 
-                <div ng-show="invalid == true" class="alert alert-warning" role="alert">
+                <div ng-show="invalid === true" class="alert alert-warning" role="alert">
                   <span>Data de nascimento inválida.</span>
+                </div>
+                <div ng-show="invalidRace === true" class="alert alert-warning" role="alert">
+                  <span>Campo Raça/Cor inválido</span>
                 </div>
               </fieldset>
             </div>

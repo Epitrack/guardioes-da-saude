@@ -122,7 +122,7 @@ angular.module('gdsApp')
       var dob = $scope.UTIL.unConvertDate($scope.createData.dob);
         
       params.dob = $scope.createData.dob;
-
+      console.log("passou por aquiiiiiiiiiiii",params)
       var age = $scope.UTIL.getAge(dob);
 
       $scope.invalid = '';
@@ -146,7 +146,7 @@ angular.module('gdsApp')
     // create user using social network
     $scope.updateUserSocialData = function () {
       $('#modal-complete-login').modal('hide');
-
+//      console.warn("======== passando aqui", $scope.userData)
       UserApi.createUser($scope.userData, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);

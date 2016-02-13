@@ -42,7 +42,7 @@ angular
     'ngFacebook'
   ])
   .config( function( $facebookProvider ) {
-    $facebookProvider.setAppId('1488956654743239');//961547147258065  179676235701655
+    $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
     // moment js
@@ -159,6 +159,7 @@ angular
         }
 
         this.checkAge(age, canIcheckAge);
+        console.log("++++++++++ minha idade ", age)
 
         return age;
       },

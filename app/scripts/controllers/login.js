@@ -77,18 +77,23 @@ angular.module('gdsApp')
         console.log('Twitter authentication failed:', error);
       });
     };
-
+    
+    $scope.invalid = '';
+    $scope.invalidRace = '';
     $scope.updateUserSocialData = function () {
+        
       var params = $scope.userData;
-      params.dob = $scope.UTIL.unConvertDate($scope.userData.dob);
+      var dob = $scope.UTIL.unConvertDate($scope.userData.dob);
+      params.dob = $scope.userData.dob
 
       var age = $scope.UTIL.getAge(params.dob);
 
-      $scope.invalid = '';
-
-      if (LocalStorage.getItem('dobValid') !== true) {
-        return $scope.invalid = true;
-      }
+      
+      if(params.password===undefined){params.password = params.email;}
+      if(params.race ===undefined) { $scope.invalidRace = true; return; }
+        
+      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; }
+      else {params.dob = dob;}
 
       $('#modal-complete-login').modal('hide');
 
