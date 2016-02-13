@@ -194,22 +194,30 @@ angular.module('gdsApp')
               function(error){console.warn('Error fbLogin: ', error);});
     };
     obj.facebookLogin = function(userFbData, $scope, toaster){
+        
+        $facebook.getLoginStatus().then(function(response){console.log("callback fb ", response)})
+        
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
-                $facebook.api('me', {fields:'name,email,gender'})
+                console.log("fb data", data)
+                $facebook.api('me', {fields:'name,email,gender,token_for_business'})
                 .then(function(response) {
                     userFbData.fb_token = data.authResponse.accessToken;
                     userFbData.nick = response.name;
                     userFbData.email = response.email;
                     userFbData.gender = response.gender[0].toUpperCase();
-                    userFbData.fb = response.id;
+                    userFbData.fb = response.token_for_business;//response.id;
+//                    console.log("response",response)
+//                    console.log("userID",data.authResponse.userID)
+//                    console.log("userID",response.id.toString())
                     $scope.userData = userFbData;
                     
-                    fbLogin(userFbData.fb, function (data) {
-                        console.log("email", userFbData.email, "--- password:", userFbData.email)
-                      if (data.data.error === false && data.data.data.length>0) {
-                          
-                          obj.loginUser({email: userFbData.email, password: userFbData.email}, function(resultMail){
+                    fbLogin(userFbData.fb, function (dataLg) {
+//                        console.log("dataLg",dataLg)
+                      if (dataLg.data.error === false && dataLg.data.data.length>0) {
+                          var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
+//                            console.log("+++++email", loginPass)
+                          obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true)
                               {
                                 toaster.pop('error', resultMail.data.message);
@@ -222,7 +230,7 @@ angular.module('gdsApp')
                           });
                           
                       } else {
-                        console.warn('Error -> ', data.data.message);
+                        console.warn('Error -> ', dataLg.data.message);
                         $('#modal-complete-login').modal('show');
                       }
                     });                

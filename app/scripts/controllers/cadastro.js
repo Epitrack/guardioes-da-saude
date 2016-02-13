@@ -93,10 +93,8 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true){
-          $scope.invalid = true;
-          return;
-      }else {params.dob = dob;}
+      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; } 
+      else { params.dob = dob; }
         
       if(params.password===undefined){params.password = params.email;}
         
@@ -105,7 +103,7 @@ angular.module('gdsApp')
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
-            console.log("++++++++ data.data",data.data)
+//            console.log("++++++++ data.data",data.data)
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {

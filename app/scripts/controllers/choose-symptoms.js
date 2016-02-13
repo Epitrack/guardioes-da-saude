@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', '$window', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout, $window) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout, $window, $facebook) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function (data) {
@@ -91,25 +91,20 @@ angular.module('gdsApp')
     };
 
     $scope.share = function (social) {
-      var text;
-
-      text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
+      var title = 'Guardiões da Saúde';
+      var url = 'http%3A%2F%2Fdev.guardioesdasaude.org';
         
-    var title = "guardiões"
-    var url = 'https://guardioesdasaude.org'
-      
-      console.log(decodeURIComponent(text))
       if (social === 'facebook') {
-        $window.open('https://www.facebook.com/sharer/sharer.php?u=' + decodeURIComponent(text));
-//        $window.open('https://www.facebook.com/sharer/sharer.php?u='+decodeURIComponent(text), 'facebook-share-dialog', 'width=626,height=436');
-//         $window.open( 'http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[url]=' + url + 'sharer', 'top=30,left=30,toolbar=0,status=0,width=520,height=350');
-//        var winTop = (screen.height / 2) - (winHeight / 2);
-//        var winLeft = (screen.width / 2) - (winWidth / 2);
-        $window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + text + '&p[url]=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=520,height=350');          
-          console.log("++++++++++++++ facebook share ++++++++++++++");
-          window.open('https://www.facebook.com/sharer/sharer.php')
+        $facebook.ui({
+          method: 'share',
+          href: 'http://dev.guardioesdasaude.org'
+        }).then(function (response) {
+            toaster.pop('success', "Obrigado por compartilhar");
+            $('#modal-i-feel-good').modal('hide');
+        }, function(error){console.warn("error -->", error)});
       } else {
-        $window.open('https://twitter.com/home?status=' + decodeURIComponent(text));
+        $window.open('https://twitter.com/home?status=' + url);
       }
     };
 
