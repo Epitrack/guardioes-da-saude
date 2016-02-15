@@ -35,8 +35,8 @@
       <div class="geral">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <div ng-if="donutOptions">
-          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart> <!--donutOptions -->
+        <div ng-if="hhSurvey.no_symptom > 0 || hhSurvey.symptom > 0">
+          <donutchart id="donut-chart-diario" data-options="hhDonutOptions"></donutchart> <!--donutOptions -->
         </div>
 
         <div class="status">
