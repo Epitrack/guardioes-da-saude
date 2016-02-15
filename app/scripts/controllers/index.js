@@ -55,6 +55,9 @@ angular.module('gdsApp')
       ua = navigator.userAgent.toLowerCase();
       android = ua.indexOf("android") > -1;
       iphone = ua.indexOf("iphone") > -1;
+        console.warn("ua",ua)
+        console.warn("android",android)
+        console.warn("iphone",iphone)
 
       if (android) {
         $scope.downloadLink = 'http://www.google.com';
