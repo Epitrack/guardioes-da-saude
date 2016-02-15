@@ -56,12 +56,12 @@ angular.module('gdsApp')
     $scope.share = function (social) {
       var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
       var title = 'Guardiões da Saúde';
-      var url = 'http%3A%2F%2Fdev.guardioesdasaude.org';
+      var url = 'http%3A%2F%2Fguardioesdasaude.org';
         
       if (social === 'facebook') {
         $facebook.ui({
           method: 'share',
-          href: 'http://dev.guardioesdasaude.org'
+          href: 'http://guardioesdasaude.org'
         }).then(function (response) {
             toaster.pop('success', "Obrigado por compartilhar");
             $('#modal-i-feel-good').modal('hide');

@@ -17,11 +17,18 @@ angular.module('gdsApp')
      }
 
      function monthDiff(d1, d2) {
-       if (d1 < d2){
-        var months = d2.getMonth() - d1.getMonth();
-        return months <= 0 ? 0 : months;
-       }
-       return 0;
+        var year = d2.getYear() - d1.getYear();
+        if (year===1){
+            var m1 = 12 - d1.getMonth() + d2.getMonth();
+            
+            return m1;
+        }
+        if (d1 < d2){
+
+            var months = d2.getMonth() - d1.getMonth();
+            return months <= 0 ? 0 : months;
+        }
+        return 0;
      }
 
      return function(birthdate) {
@@ -29,9 +36,11 @@ angular.module('gdsApp')
           var age = calculateAge(k);
 
       if (age === 0) {
-        return monthDiff(k, new Date()) + ' months';
+          var retorno = monthDiff(k, new Date());
+          retorno += (retorno>1)? ' meses' : ' mês'
+        return retorno;
       }
-         console.log("age filter ", age)
+       age += (age>1)? ' anos' : ' ano'
       return age;
     };
   });
