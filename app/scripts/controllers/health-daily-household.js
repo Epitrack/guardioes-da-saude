@@ -19,6 +19,7 @@ angular.module('gdsApp')
     $scope.currentMonth = moment();
     $scope.vm = {};
     $scope.vm.currentDay = moment();
+    console.warn("$scope.hhDonutOptions", $scope.hhDonutOptions)
 
     if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
     if($scope.lineOptions !== undefined) $scope.lineOptions = undefined;
@@ -189,9 +190,9 @@ angular.module('gdsApp')
     };
 
     $scope.graphicDonuts = function () {
-      // console.log("sssssssssss", $scope.hhSurvey.no_symptom);
-      if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
-        $scope.donutOptions = {
+       console.log("no_symptom", $scope.hhSurvey.no_symptom, "symptom", $scope.hhSurvey.symptom );
+//      if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
+        $scope.hhDonutOptions = {
           data: [
           {label: "Bem", value: $scope.hhSurvey.no_symptom},
           {label: "Mal", value: $scope.hhSurvey.symptom}
@@ -199,7 +200,7 @@ angular.module('gdsApp')
           colors: ['#E0D433', '#C81204'],
           resize: true
         };
-      }
+//      }
     };
     // ====
 

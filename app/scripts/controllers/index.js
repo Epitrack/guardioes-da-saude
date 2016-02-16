@@ -57,9 +57,9 @@ angular.module('gdsApp')
       iphone = ua.indexOf("iphone") > -1;
 
       if (android) {
-        $scope.downloadLink = 'http://www.google.com';
+        $scope.downloadLink = 'https://play.google.com/store/apps/details?id=com.epitrack.guardioes';
       } else if (iphone) {
-        $scope.downloadLink = 'http://www.apple.com'
+        $scope.downloadLink = 'https://itunes.apple.com/us/app/guardioes-da-saude/id1060576766?ls=1&mt=8'
       }
 
       if(android || iphone) {
