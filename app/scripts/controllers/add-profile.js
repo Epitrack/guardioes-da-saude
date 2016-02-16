@@ -26,10 +26,10 @@ angular.module('gdsApp')
       };
 
       var age = $scope.UTIL.getAge(params.dob, false);
-
+      console.log("age ", age)
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true) {
+      if (LocalStorage.getItem('dobValid') !== true || age < 0) {
         return $scope.invalid = true;
       }
 

@@ -85,15 +85,19 @@ angular.module('gdsApp')
       var params = $scope.userData;
       var dob = $scope.UTIL.unConvertDate($scope.userData.dob);
       params.dob = $scope.userData.dob
-
-      var age = $scope.UTIL.getAge(params.dob);
-
+      
+      
+      var age = $scope.UTIL.getAge(dob);
+        
       
       if(params.password===undefined){params.password = params.email;}
       if(params.race ===undefined) { $scope.invalidRace = true; return; }
+      else{$scope.invalidRace = false;}
+        
+        
         
       if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; }
-      else {params.dob = dob;}
+      else {params.dob = dob; $scope.invalid}
 
       $('#modal-complete-login').modal('hide');
 

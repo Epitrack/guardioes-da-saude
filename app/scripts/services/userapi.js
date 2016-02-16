@@ -200,23 +200,18 @@ angular.module('gdsApp')
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
                 console.log("fb data", data)
-                $facebook.api('me', {fields:'name,email,gender,token_for_business'})
+                $facebook.api('me', {fields:'name,email,gender,ids_for_business'})
                 .then(function(response) {
                     userFbData.fb_token = data.authResponse.accessToken;
                     userFbData.nick = response.name;
                     userFbData.email = response.email;
                     userFbData.gender = response.gender[0].toUpperCase();
-                    userFbData.fb = response.token_for_business;//response.id;
-//                    console.log("response",response)
-//                    console.log("userID",data.authResponse.userID)
-//                    console.log("userID",response.id.toString())
+                    userFbData.fb = response.ids_for_business.id;//response.id;
                     $scope.userData = userFbData;
                     
                     fbLogin(userFbData.fb, function (dataLg) {
-//                        console.log("dataLg",dataLg)
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
-//                            console.log("+++++email", loginPass)
                           obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true)
                               {

@@ -50,6 +50,13 @@ angular.module('gdsApp')
 //          ,
 //        password:''
       };
+        $scope.futureBirth = false;
+        if($scope.UTIL.getAge($scope.screen.user.dob) < 0) 
+        {
+            $scope.futureBirth = true;
+            return;
+        }
+        else  $scope.futureBirth = false;
       // ====
       $scope.repeatPassFocus = false;
       $scope.repeatPassBlur = function () {
@@ -70,19 +77,6 @@ angular.module('gdsApp')
 
       params.password = $scope.screen.user.password;
       delete $scope.screen.user.password;
-
-//====== TODO this code should be removed
-//      if ($scope.screen.user.password === "" || $scope.screen.user.password !== $scope.screen.repeatPassword) {
-//          console.log("pass:"+$scope.screen.user.password+"    repeat:"+$scope.screen.repeatPassword)
-//          delete $scope.screen.user.password;
-//      } else {
-//          console.log('entrou no else' )
-//        params.password = $scope.screen.user.password;
-//      }
-
-//        return;
-//====== TODO this code should be removed
-
       // ====
 
       // ====

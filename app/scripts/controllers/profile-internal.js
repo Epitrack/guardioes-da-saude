@@ -59,10 +59,10 @@ angular.module('gdsApp')
       };
       console.log("link photo "+$scope.screen.household.picture)
       var age = $scope.UTIL.getAge(params.dob, false);
-
+      
       $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true) {
+      if (LocalStorage.getItem('dobValid') !== true || age === -1) {
         return $scope.invalid = true;
       }
 
