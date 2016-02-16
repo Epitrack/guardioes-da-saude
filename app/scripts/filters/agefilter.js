@@ -19,7 +19,7 @@ angular.module('gdsApp')
      function monthDiff(d1, d2) {
         var year = d2.getYear() - d1.getYear();
         if (year===1){
-            var m1 = 12 - d1.getMonth() + d2.getMonth();
+            var m1 = 12 - d1.getMonth() + d2.getMonth()-1;
             
             return m1;
         }
