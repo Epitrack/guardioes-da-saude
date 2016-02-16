@@ -21,7 +21,6 @@ angular.module('gdsApp')
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
-        console.log("data",data)
       if(data.picture === undefined) data.picture = 0;
       data.dob = data.dob;
 
