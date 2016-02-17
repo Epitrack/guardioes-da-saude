@@ -14,11 +14,12 @@ angular.module('gdsApp')
     $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
-
+      console.log("$scope.currentMonth",$scope.currentMonth)
+      console.log("$scope.vm.currentDay",$scope.vm.currentDay)
     if($scope.userSurvey !== undefined) {
       $scope.userSurvey = undefined;
     }
-
+      
     // if($scope.lineOptions !== undefined) {
     //   $scope.lineOptions = undefined;
     // }

@@ -88,7 +88,6 @@ angular.module('gdsApp')
       var dob = $scope.UTIL.unConvertDate($scope.userData.dob);
         
       params.dob = $scope.userData.dob;
-
       var age = $scope.UTIL.getAge(dob);
 
       $scope.invalid = '';
