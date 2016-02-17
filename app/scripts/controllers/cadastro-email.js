@@ -129,22 +129,18 @@ angular.module('gdsApp')
 //      localStorage.setItem('dobValid', true);
       var dob = params.dob.toString();
       dob = $scope.UTIL.unConvertDate(dob);
-        
-        console.log('dobValid', LocalStorage.getItem('dobValid'));
       var age = $scope.UTIL.getAge(dob);
       console.warn("+++++++++age",age);
       $scope.invalid = '';
       $scope.invalidBirth = '';
       
-      if( age < 13 ) { $scope.invalidBirth = true; return;}
-      else {params.dob=dob;}
 
-      if (LocalStorage.getItem('dobValid') !== true) {
+      if (LocalStorage.getItem('dobValid') !== true || age <= 0) {
           $scope.invalid = true;
           return;
       } 
 
-//      return;
+      params.dob=dob;
         
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {

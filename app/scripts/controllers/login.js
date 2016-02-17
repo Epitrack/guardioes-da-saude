@@ -88,7 +88,6 @@ angular.module('gdsApp')
       
       
       var age = $scope.UTIL.getAge(dob);
-        
       
       if(params.password===undefined){params.password = params.email;}
       if(params.race ===undefined) { $scope.invalidRace = true; return; }

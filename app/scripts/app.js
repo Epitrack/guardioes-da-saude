@@ -154,7 +154,7 @@ angular
         age = today.getFullYear() - birthDate.getFullYear();
         m = today.getMonth() - birthDate.getMonth();
           
-        if (birthDate> today) {return -1;}
+        if (birthDate> today) { return -1 }
 
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
@@ -166,7 +166,7 @@ angular
       },
 
       checkAge: function (age, canIcheckAge) {
-        if ((age > 13 && age < 120) || (canIcheckAge === false)) {
+        if ((age > 12 && age < 120) || (canIcheckAge === false)) {
             localStorage.setItem('dobValid', true);
         } else {
             localStorage.setItem('dobValid', false);
