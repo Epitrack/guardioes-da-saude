@@ -148,13 +148,13 @@ angular
 
       getAge: function (dateString, canIcheckAge) {
         var today, birthDate, age, m;
-        var ds = dateString.replace(/-/g, ',')
+        var ds = dateString.replace(/-/g, ',');
         today = new Date();
         birthDate = new Date(ds);
         age = today.getFullYear() - birthDate.getFullYear();
         m = today.getMonth() - birthDate.getMonth();
           
-        if (birthDate> today) return-1;
+        if (birthDate> today) {return -1;}
 
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;

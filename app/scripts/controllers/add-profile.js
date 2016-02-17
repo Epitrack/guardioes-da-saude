@@ -26,11 +26,12 @@ angular.module('gdsApp')
       };
 
       var age = $scope.UTIL.getAge(params.dob, false);
-      console.log("age ", age)
+      
       $scope.invalid = '';
 
       if (LocalStorage.getItem('dobValid') !== true || age < 0) {
-        return $scope.invalid = true;
+            $scope.invalid = true;
+            return;
       }
 
       HouseholdApi.createHousehold(params, function (data) {
@@ -66,7 +67,8 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
       if (LocalStorage.getItem('dobValid') !== true) {
-        return $scope.invalid = true;
+          $scope.invalid = true;
+          return;
       }
 
       HouseholdApi.createHousehold(params, function (data) {

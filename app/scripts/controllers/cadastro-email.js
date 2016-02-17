@@ -85,8 +85,8 @@ angular.module('gdsApp')
     $scope.twitterLogin = function () {
       auth.$authWithOAuthPopup('twitter').then(function (authData) {
         console.log('Twitter authentication success:', authData);
-        console.log("authData.twitter ")
-        console.log(authData.twitter)
+        console.log("authData.twitter ");
+        console.log(authData.twitter);
 
         var userTwData = {};
         
@@ -118,20 +118,34 @@ angular.module('gdsApp')
     $scope.createData = {};
 
     $scope.createUser = function () {
-      var params = $scope.createData;
-      var dob = $scope.UTIL.unConvertDate($scope.createData.dob);
+    var params = {
+        dob: $scope.createData.dob,
+        email: $scope.createData.email,
+        gender: $scope.createData.gender,
+        nick: $scope.createData.nick,
+        password: $scope.createData.password,
+        race: $scope.createData.race
+    };
+//      localStorage.setItem('dobValid', true);
+      var dob = params.dob.toString();
+      dob = $scope.UTIL.unConvertDate(dob);
         
-      params.dob = $scope.createData.dob;
-      console.log("passou por aquiiiiiiiiiiii",params)
+        console.log('dobValid', LocalStorage.getItem('dobValid'));
       var age = $scope.UTIL.getAge(dob);
-
+      console.warn("+++++++++age",age);
       $scope.invalid = '';
+      $scope.invalidBirth = '';
+      
+      if( age < 13 ) { $scope.invalidBirth = true; return;}
+      else {params.dob=dob;}
 
       if (LocalStorage.getItem('dobValid') !== true) {
           $scope.invalid = true;
           return;
-      } else {params.dob = dob;}
+      } 
 
+//      return;
+        
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
             toaster.pop('error', data.data.message);

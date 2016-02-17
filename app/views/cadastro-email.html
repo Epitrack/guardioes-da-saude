@@ -35,11 +35,6 @@
           </fieldset>
 
           <!-- form validation -->
-          <div ng-show="formRegisterHome.race.$dirty && createData.race == null" class="alert alert-warning"
-               role="alert">
-            <span ng-show="formRegisterHome.race.$error.required">O campo <b>thulio</b> é obrigatório.</span>
-          </div>
-
           <div ng-show="formRegisterHome.nick.$dirty && formRegisterHome.nick.$invalid" class="alert alert-warning"
                role="alert">
             <span ng-show="formRegisterHome.nick.$error.required">O campo <b>apelido</b> é obrigatório.</span>
@@ -56,7 +51,7 @@
             <span ng-show="formRegisterHome.dob.$error.required">O campo <b>data de nascimento</b> é obrigatório.</span>
           </div>
 
-          <div ng-show="invalid == true" class="alert alert-warning" role="alert">
+          <div ng-show="invalidBirth == true" class="alert alert-warning" role="alert">
             <span>Data de nascimento inválida.</span>
           </div>
 
