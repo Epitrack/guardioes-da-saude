@@ -48,7 +48,7 @@ angular.module('gdsApp')
         .then(function (result) {
           console.log('Success changeAvatar: ', result);
           callback(result);
-          obj.updateUser(LocalStorage.getItem('userStorage').id);
+          UserApi.updateUser(LocalStorage.getItem('userStorage').id);
         }, function (error) {
           console.warn('Error changeAvatar: ', error);
         });

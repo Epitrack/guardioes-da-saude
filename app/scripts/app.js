@@ -84,66 +84,109 @@ angular
         gender = obj.gender;
         race = obj.race;
         age = this.getAge(obj.dob);
-
-        if (gender === 'M') {
+        if (gender === 'F') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-            // $scope.houseHold.picture = 'avatar masculino preto';
-            if (age <= 49) {
-              return 4;
-              // console.log('avatar masculino preto novinho');
-            } else if (age >= 50) {
-              return 11;
-              // console.log('avatar masculino preto coroa');
-            }
-          } else if (race === 'branco') {
-            // $scope.houseHold.picture = 'avatar masculino branco';
-            if (age <= 49) {
-              return 5;
-              // console.log('avatar masculino branco novinho');
-            } else if (age >= 50) {
-              return 9;
-              // console.log('avatar masculino branco coroa');
-            }
-          } else if (race === 'amarelo') {
-            // $scope.houseHold.picture = 'avatar masculino amarelo';
-            if (age <= 49) {
-              return 14;
-              // console.log('avatar masculino amarelo novinho');
-            } else if (age >= 50) {
-              return '';
-              // console.log('avatar masculino amarelo coroa');
-            }
+              if(age>49) { return 12; }
+              else if(age>25) { return 7; }
+              else { return 1; } 
           }
-        } else {
-          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-            // $scope.houseHold.picture = 'avatar feminino preto';
-            if (age <= 49) {
-              return 1;
-              // console.log('avatar feminino preto novinho');
-            } else if (age >= 50) {
-              return 12;
-              // console.log('avatar feminino preto coroa');
-            }
-          } else if (race === 'branco') {
-            // $scope.houseHold.picture = 'avatar feminino branco';
-            if (age <= 49) {
-              return 3;
-              // console.log('avatar feminino branco novinho');
-            } else if (age >= 50) {
-              return 10;
-              // console.log('avatar feminino branco coroa');
-            }
-          } else if (race === 'amarelo') {
-            // $scope.houseHold.picture = 'avatar feminino amarelo';
-            if (age <= 49) {
-              return 13;
-              // console.log('avatar feminino amarelo novinho');
-            } else if (age >= 50) {
-              return 0;
-              // console.log('avatar feminino amarelo coroa');
-            }
+          else if(race === 'amarelo')
+          {
+              if(age>49) { return 10; }
+              else if(age>25) { return 8; }
+              else { return 2; } 
+
+          }
+          else if(race === 'branco')
+          {
+              if(age>49) { return 10; }
+              else if(age>25) { return 8; }
+              else { return 13; } 
+
           }
         }
+        else if (gender === 'M') {
+          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
+              if(age>49) { return 11; }
+              else if(age>25) { return 5; }
+              else { return 3; } 
+          }
+          else if(race === 'amarelo')
+          {
+              if(age>49) { return 9; }
+              else if(age>25) { return 4; }
+              else { return 4; } 
+
+          }
+          else if(race === 'branco')
+          {
+              if(age>49) { return 9; }
+              else if(age>25) { return 6; }
+              else { return 14; } 
+
+          }
+        }
+          
+//          return;
+//        if (gender === 'M') {
+//          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
+//            // $scope.houseHold.picture = 'avatar masculino preto';
+//            if (age <= 49) {
+//              return 4;
+//              // console.log('avatar masculino preto novinho');
+//            } else if (age >= 50) {
+//              return 11;
+//              // console.log('avatar masculino preto coroa');
+//            }
+//          } else if (race === 'branco') {
+//            // $scope.houseHold.picture = 'avatar masculino branco';
+//            if (age <= 49) {
+//              return 5;
+//              // console.log('avatar masculino branco novinho');
+//            } else if (age >= 50) {
+//              return 9;
+//              // console.log('avatar masculino branco coroa');
+//            }
+//          } else if (race === 'amarelo') {
+//            // $scope.houseHold.picture = 'avatar masculino amarelo';
+//            if (age <= 49) {
+//              return 14;
+//              // console.log('avatar masculino amarelo novinho');
+//            } else if (age >= 50) {
+//              return '';
+//              // console.log('avatar masculino amarelo coroa');
+//            }
+//          }
+//        } else {
+//          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
+//            // $scope.houseHold.picture = 'avatar feminino preto';
+//            if (age <= 49) {
+//              return 1;
+//              // console.log('avatar feminino preto novinho');
+//            } else if (age >= 50) {
+//              return 12;
+//              // console.log('avatar feminino preto coroa');
+//            }
+//          } else if (race === 'branco') {
+//            // $scope.houseHold.picture = 'avatar feminino branco';
+//            if (age <= 49) {
+//              return 3;
+//              // console.log('avatar feminino branco novinho');
+//            } else if (age >= 50) {
+//              return 10;
+//              // console.log('avatar feminino branco coroa');
+//            }
+//          } else if (race === 'amarelo') {
+//            // $scope.houseHold.picture = 'avatar feminino amarelo';
+//            if (age <= 49) {
+//              return 13;
+//              // console.log('avatar feminino amarelo novinho');
+//            } else if (age >= 50) {
+//              return 0;
+//              // console.log('avatar feminino amarelo coroa');
+//            }
+//          }
+//        }
       },
 
       getAge: function (dateString, canIcheckAge) {
