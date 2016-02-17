@@ -206,10 +206,12 @@ angular.module('gdsApp')
                     userFbData.nick = response.name;
                     userFbData.email = response.email;
                     userFbData.gender = response.gender[0].toUpperCase();
-                    userFbData.fb = response.ids_for_business.id;//response.id;
+                    userFbData.fb = response.ids_for_business.data[0].id;//response.id;
                     $scope.userData = userFbData;
-                    
+                    console.warn("response.ids_for_business",response.ids_for_business)
+                    console.warn("userFbData.fb",userFbData)
                     fbLogin(userFbData.fb, function (dataLg) {
+                        console.warn("dataLg",dataLg)
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
                           obj.loginUser(loginPass, function(resultMail){
