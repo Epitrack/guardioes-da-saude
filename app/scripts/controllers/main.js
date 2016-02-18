@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', 'toaster', '$rootScope', 'SearchCitiesApi', function ($scope, Surveyapi, $location, toaster, $rootScope, SearchCitiesApi) {
+  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', 'toaster', '$rootScope', 'SearchCitiesApi', '$http', function ($scope, Surveyapi, $location, toaster, $rootScope, SearchCitiesApi, $http) {
 
     $scope.pageClass = 'main-page';
 
@@ -38,4 +38,22 @@ angular.module('gdsApp')
     };
 
     $scope.getMostCities(5);
+
+    // Auto complete
+    $scope.getLocation = function(val) {
+      return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: val,
+          sensor: false,
+          language: 'pt-BR'
+        }
+      }).then(function(response){
+        console.log(response);
+
+        return response.data.results.map(function(item){
+          return item.formatted_address;
+        });
+      });
+    };
+    // ====
   }]);
