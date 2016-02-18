@@ -57,7 +57,7 @@ angular
       $rootScope.user = u;
     }
 
-    console.log('app.run: user', $rootScope.user);
+//    console.log('app.run: user', $rootScope.user);
     // ====
 
     $rootScope.onInit = function(){

@@ -14,20 +14,13 @@ angular.module('gdsApp')
     $scope.vm.currentDay = moment();
     var singularSpelling = 'Participação';
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
-      console.log("$scope.currentMonth",$scope.currentMonth)
-      console.log("$scope.vm.currentDay",$scope.vm.currentDay)
     if($scope.userSurvey !== undefined) {
       $scope.userSurvey = undefined;
     }
       
-    // if($scope.lineOptions !== undefined) {
-    //   $scope.lineOptions = undefined;
-    // }
-
     // ====
     $scope.getUserSurvey = function () {
       UserApi.getUserSurvey(function (data) {
-        // console.log("data survey ", data.data.data)
         $scope.userSurvey = data.data.data;
 
         if ($scope.userSurvey.total !== 0) {
@@ -214,40 +207,28 @@ angular.module('gdsApp')
         var mal = 0;
         var bem = 0;
         var d = day.number;
-        angular.forEach($rootScope.userCalendar, function (item, k) {
+        angular.forEach($scope.userCalendar, function (item, k) {
           if (item.day === d) {
             if (item.no_symptom) {
-              if (bem === 0) {
-                bem = item.total;
-              }
-              else {
-                bem += item.total;
-              }
+              if (bem === 0) {bem = item.total;}
+              else {bem += item.total;}
             } else {
-              if (mal === 0) {
-                mal = item.total;
-              }
-              else {
-                mal += item.total;
-              }
+              if (mal === 0) { mal = item.total; }
+              else { mal += item.total; }
             }
           }
         });
         var content;
-        if (q === 't') {
-          content = (mal + bem);
-        } else if (q === 'bem') {
-          content = bem;
-        } else {
-          content = mal;
-        }
+        if (q === 't') { content = (mal + bem); } 
+          else if (q === 'bem') { content = bem; } 
+          else { content = mal; }
         return content;
       },
       checkForSymptoms: function (day) {
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
-          angular.forEach($rootScope.userCalendar, function (item, k) {
+          angular.forEach($scope.userCalendar, function (item, k) {
             if (item.day === d && item.month === $scope.currentMonth.month) {
               r = true;
             }
