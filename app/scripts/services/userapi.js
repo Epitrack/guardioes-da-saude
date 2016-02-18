@@ -134,6 +134,7 @@ angular.module('gdsApp')
 
     // get calendar data
     obj.getUserCalendar = function (params, callback) {
+        console.log("getUserCalendar ++++ ",params.month, params.year)
       $http.get(apiUrl + '/user/calendar/month?month=' + params.month + '&year=' + params.year, {
           headers: {
             'app_token': app_token,
@@ -141,7 +142,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-//          console.log('Success getUserCalendar: ', result);
+          console.log('Success getUserCalendar: ', result);
           callback(result);
         }, function (error) {
           console.warn('Error getUserCalendar: ', error);

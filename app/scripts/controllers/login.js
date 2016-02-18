@@ -82,7 +82,6 @@ angular.module('gdsApp')
     $scope.invalidRace = '';
     $scope.updateUserSocialData = function () {
         
-//      var params = $scope.userData;
       var params = {
             dob: $scope.userData.dob,
             email: $scope.userData.email,
@@ -91,15 +90,11 @@ angular.module('gdsApp')
             password: $scope.userData.password,
             race: $scope.userData.race
       };
+      if($scope.userData !== undefined) params.fb = $scope.userData.fb
       var dob = params.dob;
       dob = $scope.UTIL.unConvertDate(dob);
-      
-      
       var age = $scope.UTIL.getAge(dob);
         
-//      console.log('estou aqui!!!!!', age, dob, params.dob, $scope.userData.dob)
-//      return;
-      
       if(params.password===undefined){params.password = params.email;}
       if(params.race ===undefined) { $scope.invalidRace = true; return; }
       else{$scope.invalidRace = false;}
