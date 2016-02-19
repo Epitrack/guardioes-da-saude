@@ -198,7 +198,7 @@ angular.module('gdsApp')
         
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
-                console.log("fb data", data)
+//                console.log("fb data", data)
                 $facebook.api('me', {fields:'name,email,gender,ids_for_business'})
                 .then(function(response) {
                     userFbData.fb_token = data.authResponse.accessToken;
@@ -210,7 +210,7 @@ angular.module('gdsApp')
 //                    console.warn("response.ids_for_business",response.ids_for_business)
 //                    console.warn("userFbData.fb",userFbData)
                     fbLogin(userFbData.fb, function (dataLg) {
-//                        console.warn("dataLg",dataLg)
+                        console.warn("dataLg",dataLg)
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
                           obj.loginUser(loginPass, function(resultMail){
@@ -226,7 +226,7 @@ angular.module('gdsApp')
                           });
                           
                       } else {
-                        console.warn('Error -> ', dataLg.data.message);
+//                        console.warn('Error -> ', dataLg.data.message);
                         $('#modal-complete-login').modal('show');
                       }
                     });                

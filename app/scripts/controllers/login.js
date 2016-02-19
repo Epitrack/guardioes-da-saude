@@ -90,7 +90,7 @@ angular.module('gdsApp')
             password: $scope.userData.password,
             race: $scope.userData.race
       };
-      if($scope.userData !== undefined) params.fb = $scope.userData.fb
+      if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb
       var dob = params.dob;
       dob = $scope.UTIL.unConvertDate(dob);
       var age = $scope.UTIL.getAge(dob);
