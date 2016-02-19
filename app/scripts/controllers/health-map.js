@@ -301,15 +301,6 @@ angular.module('gdsApp')
     };
     // ====
 
-    if ($rootScope.city) {
-      getSurveyByCity($rootScope.city);
-      getSurveyByCitySummary($rootScope.city);
-
-      delete $rootScope.city;
-    } else {
-      $scope.getMarkersByLocation();
-    }
-
     // Auto complete
     $scope.getLocation = function(val) {
       return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
@@ -333,5 +324,15 @@ angular.module('gdsApp')
       getCoords(city);
     }
     // ====
+
+    if ($rootScope.city) {
+      getSurveyByCity($rootScope.city);
+      getSurveyByCitySummary($rootScope.city);
+      getCoords($rootScope.city);
+
+    return delete $rootScope.city;
+    } else {
+      $scope.getMarkersByLocation();
+    }
 
   }]);
