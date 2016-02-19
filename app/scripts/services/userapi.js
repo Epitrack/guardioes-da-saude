@@ -20,11 +20,6 @@ angular.module('gdsApp')
 
     // register
     obj.createUser = function (data, callback) {
-//      console.log("create user ", data)
-//      return;
-      if (data.fb) {
-        data.fb = data.fb;
-      }
 
       data.app_token = app_token;
       data.platform = platform;
@@ -194,7 +189,7 @@ angular.module('gdsApp')
     };
     obj.facebookLogin = function(userFbData, $scope, toaster){
         
-        $facebook.getLoginStatus().then(function(response){console.log("callback fb ", response)})
+        $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")})
         
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
@@ -210,7 +205,7 @@ angular.module('gdsApp')
 //                    console.warn("response.ids_for_business",response.ids_for_business)
 //                    console.warn("userFbData.fb",userFbData)
                     fbLogin(userFbData.fb, function (dataLg) {
-                        console.warn("dataLg",dataLg)
+//                        console.warn("dataLg",dataLg)
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
                           obj.loginUser(loginPass, function(resultMail){
