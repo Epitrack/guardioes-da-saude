@@ -4,6 +4,11 @@
 
 <h3 class="subtitle primary master">UPAs</h3>
 
+<div ng-if="markersPharmacy">
+    <gds-maps mid="mapUpa" location="userLocation" marks="markersUpa" size="{height:'600px', width:'100%'}"></gds-maps>
+</div>
+
+<!--
 <leaflet event-broadcast="events" lf-center="userLocation" markers="markersUpa" layers="layers" height="600px"
          width="100%"></leaflet>
 
@@ -11,3 +16,4 @@
   <h5>{{upaTitle}}</h5>
   <h6>{{upaMessage}}</h6>
 </div>
+-->
