@@ -88,20 +88,20 @@ angular
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
               if(age>49) { return 12; }
               else if(age>25) { return 7; }
-              else { return 1; } 
+              else { return 1; }
           }
           else if(race === 'amarelo')
           {
               if(age>49) { return 10; }
               else if(age>25) { return 8; }
-              else { return 2; } 
+              else { return 2; }
 
           }
           else if(race === 'branco')
           {
               if(age>49) { return 10; }
               else if(age>25) { return 8; }
-              else { return 13; } 
+              else { return 13; }
 
           }
         }
@@ -109,20 +109,20 @@ angular
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
               if(age>49) { return 11; }
               else if(age>25) { return 5; }
-              else { return 3; } 
+              else { return 3; }
           }
           else if(race === 'amarelo')
           {
               if(age>49) { return 9; }
               else if(age>25) { return 4; }
-              else { return 4; } 
+              else { return 4; }
 
           }
           else if(race === 'branco')
           {
               if(age>49) { return 9; }
               else if(age>25) { return 6; }
-              else { return 14; } 
+              else { return 14; }
           }
         }
       },
@@ -134,6 +134,7 @@ angular
         birthDate = new Date(Date.parse(dateString));
         age = today.getFullYear() - birthDate.getFullYear();
         m = today.getMonth() - birthDate.getMonth();
+
         if (birthDate> today) { return -1 }
 
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
@@ -330,7 +331,7 @@ angular
       })
       .when('/dashboard/download', {
         templateUrl: 'views/data-download.html',
-        controller: 'DataDownloadCtrl',
+      controller: 'DataDownloadCtrl',
         controllerAs: 'dataDownload',
         resolve: {loggedin: checkLoggedOut}
       })
