@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', 'NgMap', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage, NgMap) {
+  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', 'NgMap', '$http', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage, NgMap, $http) {
 
     $scope.pageClass = 'health-map';
 
@@ -301,11 +301,36 @@ angular.module('gdsApp')
     };
     // ====
 
+    // Auto complete
+    $scope.getLocation = function(val) {
+      return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+        params: {
+          address: val,
+          sensor: false,
+          language: 'pt-BR'
+        }
+      }).then(function(response){
+        console.log(response);
+
+        return response.data.results.map(function(item){
+          return item.formatted_address;
+        });
+      });
+    };
+
+    $scope.getCityAutoComplete = function(city) {
+      getSurveyByCity(city);
+      getSurveyByCitySummary(city);
+      getCoords(city);
+    }
+    // ====
+
     if ($rootScope.city) {
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
+      getCoords($rootScope.city);
 
-      delete $rootScope.city;
+    return delete $rootScope.city;
     } else {
       $scope.getMarkersByLocation();
     }

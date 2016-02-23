@@ -40,9 +40,7 @@ html {
   z-index: 9;
 }
 
-html {
-  padding-top: 70px;
-}
+html { padding-top: 70px; }
 
 body {
   font-size: $fs-root;
@@ -191,7 +189,6 @@ body {
     }
   }
 }
-
 // ===
 
 
@@ -257,6 +254,8 @@ body {
   fieldset {
     width: 100%;
   }
+
+  .dropdown-menu { width: 100%; }
 }
 
 .last-cities {
@@ -1369,17 +1368,21 @@ p.login-email {
 }
 
 .panel-body { padding: 0; }
-//#upNotData{position: absolute !important; width: 100% !important;}
-#notDataLinechart{
-    display: block;
-    width: 100%;
-    height: 180px;
-    background: #eeeeee;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 80px;
-    div{padding-top:73px; position: absolute !important; width: 100% !important;}
 
+#notDataLinechart{
+  display: block;
+  width: 100%;
+  height: 180px;
+  background: #eeeeee;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 80px;
+
+  div {
+    padding-top:73px;
+    position: absolute !important;
+    width: 100% !important;
+  }
 }
 
 // ====
@@ -1465,11 +1468,8 @@ p.login-email {
   .text-primary { line-height: ($fs-medium)+.5; }
 }
 
-.privacy-policy {
-  @extend .about;
+.privacy-policy { @extend .about; }
 
-}
-#what-country{}
 // ====
 
 // Social login in Cadastro
@@ -1501,6 +1501,8 @@ p.login-email {
 
 //
 // Media queries
+//
+
 // iPads
 @media screen and (min-width: 768px) {
   // Header
@@ -1783,6 +1785,10 @@ p.login-email {
   // telefones-uteis
   .telephone-item { margin-left: 40px; }
   // ====
+
+  .form-search-home {
+    .dropdown-menu { width: 80%; }
+  }
 }
 
 // Large Desktops
