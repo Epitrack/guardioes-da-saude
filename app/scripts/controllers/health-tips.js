@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', 'leafletMarkerEvents', function ($scope, healthTips, LocalStorage, leafletMarkerEvents) {
+  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', function ($scope, healthTips, LocalStorage) {
 
     $scope.pageClass = 'health-tips-page';
 
@@ -24,20 +24,6 @@ angular.module('gdsApp')
       title: 'Me',
       zoom: 10,
       icon: myIcon
-    };
-
-    $scope.layers = {
-      baselayers: {
-        mapbox_light: {
-          name: 'Guardiões da Saúde',
-          url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
-          type: 'xyz',
-          layerOptions: {
-            apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
-            mapid: 'thulioph.wix561or'
-          }
-        }
-      }
     };
 
     $scope.addMarkers = function () {
@@ -86,24 +72,34 @@ angular.module('gdsApp')
     };
 
 
-    var eventName = 'leafletDirectiveMarker.click';
-
-    $scope.$on(eventName, function (event, args) {
-      $scope.upaTitle = args.model.title;
-      $scope.upaMessage = args.model.message;
-
-      $scope.pharmacyTitle = args.model.title;
-      $scope.pharmacyMessage = args.model.message;
+    
+    $scope.$on('clickMarker.click', function (event, args) {
+        $scope.markTitle = args.title;
+        $scope.markMessage = args.message;
+        
+        $scope.showInfo = true;
+        
+        $scope.$apply();
     });
-
-    $scope.events = {
-      markers: {
-        enable: leafletMarkerEvents.getAvailableEvents()
-      }
-    };
-
+    
+    $scope.removeInfo = function(){delete $scope.showInfo; $scope.$apply();}  
+        
+    function clearMap(){
+        delete $scope._markersPharmacy;
+        delete $scope.markersPharmacy;
+        delete $scope._markersUpa;
+        delete $scope.markersUpa;
+        delete $scope.showInfo;
+        $scope.markTitle = '';
+        $scope.markMessage = '';
+    }
+      
+    $scope.markTitle = '';
+    $scope.markMessage = '';
+      
     // UPAS
     $scope.loadUpas = function () {
+      clearMap();
       healthTips.getUpas(function (data) {
         $scope._markersUpa = data;
         $scope.addMarkers();
@@ -113,6 +109,7 @@ angular.module('gdsApp')
     // FARMACIAS
     
     $scope.loadFarmacias = function () {
+      clearMap();
       healthTips.getFarmacias(function (data) {
         $scope._markersPharmacy = data;
         $scope.addMarkers();

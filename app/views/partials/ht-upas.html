@@ -8,12 +8,9 @@
     <gds-maps mid="mapUpa" location="userLocation" marks="markersUpa" size="{height:'600px', width:'100%'}"></gds-maps>
 </div>
 
-<!--
-<leaflet event-broadcast="events" lf-center="userLocation" markers="markersUpa" layers="layers" height="600px"
-         width="100%"></leaflet>
-
-<div ng-show="upaTitle" class="map-info">
-  <h5>{{upaTitle}}</h5>
-  <h6>{{upaMessage}}</h6>
+<div ng-show="showInfo" class="map-info">
+  <button ng-click="removeInfo()" class="right"><div class="close">x</div></button>
+  <h5>{{markTitle}}</h5>
+  <h6>{{markMessage}}</h6>
 </div>
--->
+
