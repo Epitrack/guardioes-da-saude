@@ -89,7 +89,7 @@ angular.module('gdsApp')
         console.log(authData.twitter);
 
         var userTwData = {};
-        
+
         userTwData.oauth_token = authData.twitter.accessToken;
         userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
         userTwData.nick = authData.twitter.displayName;
@@ -124,23 +124,24 @@ angular.module('gdsApp')
         gender: $scope.createData.gender,
         nick: $scope.createData.nick,
         password: $scope.createData.password,
-        race: $scope.createData.race
+        race: $scope.createData.race,
+        picture: $scope.UTIL.checkAvatar($scope.createData)
     };
-//      localStorage.setItem('dobValid', true);
+
       var dob = params.dob.toString();
       dob = $scope.UTIL.unConvertDate(dob);
       var age = $scope.UTIL.getAge(dob);
       $scope.invalid = '';
       $scope.invalidBirth = '';
-      
+
 
       if (LocalStorage.getItem('dobValid') !== true || age <= 0) {
           $scope.invalid = true;
           return;
-      } 
+      }
 
       params.dob=dob;
-        
+
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
             toaster.pop('error', data.data.message);

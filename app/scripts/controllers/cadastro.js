@@ -15,10 +15,10 @@ angular.module('gdsApp')
     var auth = $firebaseAuth(href);
     $scope.userData = {};
     $scope.userData.gender = "M";
-    
+
 
     $scope.facebookLogin = function () {
-      
+
         var userFbData = {}
         UserApi.facebookLogin(userFbData, $scope, toaster);
     };
@@ -91,8 +91,11 @@ angular.module('gdsApp')
         gender: $scope.userData.gender,
         nick: $scope.userData.nick,
         password: $scope.userData.password,
-        race: $scope.userData.race
+        race: $scope.userData.race,
+        picture: $scope.UTIL.checkAvatar($scope.userData)
       };
+
+
       if($scope.userData.fb) params.fb = $scope.userData.fb
 
       var dob = params.dob.toString();
@@ -101,20 +104,19 @@ angular.module('gdsApp')
 
       $scope.invalid = '';
       $scope.invalidBirth = '';
-        
 
-      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; } 
-       
-      params.dob = dob; 
-        
+
+      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; }
+
+      params.dob = dob;
+
       if(params.password===undefined){params.password = params.email;}
-        
+
       $('#modal-complete-login').modal('hide');
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
           toaster.pop('success', data.data.message);
-//            console.log("++++++++ data.data",data.data)
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
