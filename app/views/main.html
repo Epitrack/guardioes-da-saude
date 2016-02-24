@@ -7,6 +7,7 @@
         <form ng-submit="setRootCity()" name="form-search-home" class="form-search-home">
           <fieldset class="input-group">
             <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade"
+            autocomplete="off"
               uib-typeahead="address for address in getLocation($viewValue)"
               typeahead-loading="loadingLocations"
               typeahead-no-results="noResults"
