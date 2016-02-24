@@ -46,17 +46,25 @@ angular.module('gdsApp')
         dob: $scope.UTIL.unConvertDate($scope.screen.user.dob),
         gender: $scope.screen.user.gender,
         email: $scope.screen.user.email,
-        race: $scope.screen.user.race
+        race: $scope.screen.user.race,
+        picture: $scope.UTIL.checkAvatar($scope.screen.user)
 //          ,
 //        password:''
       };
-        $scope.futureBirth = false;
-        if($scope.UTIL.getAge($scope.screen.user.dob) < 0) 
-        {
-            $scope.futureBirth = true;
-            return;
-        }
-        else  $scope.futureBirth = false;
+
+      console.log("I'm here Buddy",$scope.screen.user)
+
+      var age = $scope.UTIL.getAge(params.dob, false);
+      console.log("my age ", age)
+
+      $scope.futureBirth = false;
+      if($scope.UTIL.getAge($scope.screen.user.dob) < 13)
+      {
+          $scope.futureBirth = true;
+          return;
+      }
+
+      $scope.futureBirth = false;
       // ====
       $scope.repeatPassFocus = false;
       $scope.repeatPassBlur = function () {

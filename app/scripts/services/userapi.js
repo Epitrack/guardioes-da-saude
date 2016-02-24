@@ -129,7 +129,7 @@ angular.module('gdsApp')
 
     // get calendar data
     obj.getUserCalendar = function (params, callback) {
-        console.log("getUserCalendar ++++ ",params.month, params.year)
+//        console.log("getUserCalendar ++++ ",params.month, params.year)
       $http.get(apiUrl + '/user/calendar/month?month=' + params.month + '&year=' + params.year, {
           headers: {
             'app_token': app_token,
@@ -137,7 +137,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          console.log('Success getUserCalendar: ', result);
+//          console.log('Success getUserCalendar: ', result);
           callback(result);
         }, function (error) {
           console.warn('Error getUserCalendar: ', error);
@@ -188,9 +188,9 @@ angular.module('gdsApp')
               function(error){console.warn('Error fbLogin: ', error);});
     };
     obj.facebookLogin = function(userFbData, $scope, toaster){
-        
+
         $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")})
-        
+
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
 //                console.log("fb data", data)
@@ -217,19 +217,19 @@ angular.module('gdsApp')
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
-                              
+
                           });
-                          
+
                       } else {
 //                        console.warn('Error -> ', dataLg.data.message);
                         $('#modal-complete-login').modal('show');
                       }
-                    });                
+                    });
                 });
             }else{
                 console.warn("Error ->", data);
             }
-        });    
+        });
     }
 
     obj.twLogin = function (accessToken, callback) {
@@ -279,7 +279,7 @@ angular.module('gdsApp')
     };
 
     obj.getUserSurveyByYear = function (params, callback) {
-        
+
       $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {
           headers: {
             'app_token': app_token,

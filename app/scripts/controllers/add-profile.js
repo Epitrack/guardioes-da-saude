@@ -24,9 +24,9 @@ angular.module('gdsApp')
         relationship: $scope.houseHold.relationship,
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
-        console.log("====== picture", params.picture)
+//        console.log("====== picture", params.picture)
       var age = $scope.UTIL.getAge(params.dob, false);
-      
+
       $scope.invalid = '';
 
       if (LocalStorage.getItem('dobValid') !== true || age < 0) {
