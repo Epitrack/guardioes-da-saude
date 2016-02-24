@@ -236,7 +236,7 @@ body {
     height: auto;
     min-height: 630px;
     background-repeat: repeat;
-    background-size: 100%;
+    // background-size: 100%;
     @include path('bg-not-logged.svg');
   }
 }
