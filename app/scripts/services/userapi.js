@@ -240,15 +240,15 @@ angular.module('gdsApp')
 
     obj.twitterLogin = function ($scope, toaster) {
       var userTwData = {};
-      OAuth.popup('twitter', function(err, res){ if(err)console.log('error tw',err); else console.log("response tw ",res);}
-                 ).done(function(result) {
+      OAuth.popup('twitter', function(err, res){ if(err)console.log('error tw',err); })
+        .done(function(result) {
           result.me().done(function(data) {
 //            console.log("me",data)
             userTwData.tw = data.id;
             userTwData.nick = data.name;
             $scope.userData = userTwData;
             twLogin(userTwData.tw, function(dataTw){
-              console.log("dataTw", dataTw);
+//              console.log("dataTw", dataTw);
               if (dataTw.data.error === false && dataTw.data.data.length>0) {
                   var loginPass = {email: dataTw.data.data[0].email, password: dataTw.data.data[0].email}
                   obj.loginUser(loginPass, function(resultMail){
@@ -263,7 +263,7 @@ angular.module('gdsApp')
                   }).fail(function(error){console.log("tw login error",error)})
               } else {
 //              console.warn('Error -> ', dataLg.data.message);
-                console.log("$scope.userData",$scope.userData)
+//                console.log("$scope.userData",$scope.userData)
                 $('#modal-complete-login').modal('show');
               }
             });
