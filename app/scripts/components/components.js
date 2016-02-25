@@ -23,14 +23,17 @@ app.directive('gdsMaps', function() {
          var map = new google.maps.Map(document.getElementById('myMap'), mapOptions);
          var markers = [];
          var infoWindow = new google.maps.InfoWindow();
-         var createMarker = function (info){
-             var img = {
-                 url: info.icon.iconUrl,
-                 size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
-                 scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
-//                 origin: new google.maps.Point(0, 0),
-//                 anchor: new google.maps.Point(0, info.icon.iconSize[1])
-             }
+         var createMarker = function (info, img){
+            if(img === undefined) {
+                var img = {
+                     url: info.icon.iconUrl,
+                     size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
+                     scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
+  //                 origin: new google.maps.Point(0, 0),
+  //                 anchor: new google.maps.Point(0, info.icon.iconSize[1])
+               }
+            }
+
             var marker = new google.maps.Marker({
                 map: map,
                 position: new google.maps.LatLng(info.lat, info.lng),
@@ -48,6 +51,10 @@ app.directive('gdsMaps', function() {
         for (var i = 0; i < scope.marks.length; i++){
             createMarker(scope.marks[i]);
         }
+//       var lIcon = {url: '/images/icon-user-location.png', }
+       createMarker({'lat':scope.location.lat, 'lng':scope.location.lng, 'title':'Você está aqui!'}, '/images/icon-user-location.png' );
+
+
 
      }
    };

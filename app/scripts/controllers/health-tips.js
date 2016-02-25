@@ -72,18 +72,18 @@ angular.module('gdsApp')
     };
 
 
-    
+
     $scope.$on('clickMarker.click', function (event, args) {
         $scope.markTitle = args.title;
         $scope.markMessage = args.message;
-        
+
         $scope.showInfo = true;
-        
+
         $scope.$apply();
     });
-    
-    $scope.removeInfo = function(){delete $scope.showInfo; $scope.$apply();}  
-        
+
+    $scope.removeInfo = function(){delete $scope.showInfo;}
+
     function clearMap(){
         delete $scope._markersPharmacy;
         delete $scope.markersPharmacy;
@@ -93,10 +93,10 @@ angular.module('gdsApp')
         $scope.markTitle = '';
         $scope.markMessage = '';
     }
-      
+
     $scope.markTitle = '';
     $scope.markMessage = '';
-      
+
     // UPAS
     $scope.loadUpas = function () {
       clearMap();
@@ -107,7 +107,7 @@ angular.module('gdsApp')
     };
 
     // FARMACIAS
-    
+
     $scope.loadFarmacias = function () {
       clearMap();
       healthTips.getFarmacias(function (data) {

@@ -52,10 +52,7 @@ angular.module('gdsApp')
 //        password:''
       };
 
-      console.log("I'm here Buddy",$scope.screen.user)
-
       var age = $scope.UTIL.getAge(params.dob, false);
-      console.log("my age ", age)
 
       $scope.futureBirth = false;
       if(age < 13)
