@@ -51,7 +51,6 @@ app.directive('gdsMaps', function() {
         for (var i = 0; i < scope.marks.length; i++){
             createMarker(scope.marks[i]);
         }
-//       var lIcon = {url: '/images/icon-user-location.png', }
        createMarker({'lat':scope.location.lat, 'lng':scope.location.lng, 'title':'Você está aqui!'}, '/images/icon-user-location.png' );
 
 
