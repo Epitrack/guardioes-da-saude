@@ -36,7 +36,6 @@ angular
     'ngMask',
     'angularMoment',
     'ngFileUpload',
-    'firebase',
     'ngMap',
     'angular-repeat-n',
     'ngFacebook'

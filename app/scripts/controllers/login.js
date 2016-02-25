@@ -8,11 +8,8 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage, $facebook) {
+  .controller('LoginCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', function ($scope, UserApi, toaster, $location, LocalStorage, $facebook) {
     $scope.pageClass = 'login-page';
-
-    var href = new Firebase('https://popping-heat-8884.firebaseio.com');
-    var auth = $firebaseAuth(href);
 
     $scope.facebookLogin = function () {
         UserApi.facebookLogin($scope, toaster);

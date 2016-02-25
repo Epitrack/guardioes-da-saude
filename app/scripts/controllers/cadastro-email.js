@@ -8,10 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
-
-    var href = new Firebase('https://popping-heat-8884.firebaseio.com');
-    var auth = $firebaseAuth(href);
+  .controller('CadastroEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, UserApi, toaster, $location, LocalStorage) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';
