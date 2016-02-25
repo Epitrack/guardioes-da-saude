@@ -1500,6 +1500,12 @@ p.login-email {
 
 // ====
 
+// Inputs of change photo
+@for $i from 01 through 16 {
+  .avatar-#{$i} {
+    i { @include path('avatar/avatar-'+ $i + '.svg'); }
+  }
+}
 
 //
 // Media queries
