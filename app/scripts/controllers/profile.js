@@ -58,7 +58,7 @@ angular.module('gdsApp')
       console.log("my age ", age)
 
       $scope.futureBirth = false;
-      if($scope.UTIL.getAge($scope.screen.user.dob) < 13)
+      if(age < 13)
       {
           $scope.futureBirth = true;
           return;
