@@ -50,32 +50,7 @@ angular.module('gdsApp')
     };
 
     $scope.twitterLogin = function () {
-      auth.$authWithOAuthPopup('twitter').then(function (authData) {
-        console.log('Twitter authentication success:', authData);
-
-        var userTwData = {};
-
-        userTwData.oauth_token = authData.twitter.accessToken;
-        userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
-        userTwData.nick = authData.twitter.displayName;
-        userTwData.tw = authData.twitter.id;
-
-        $scope.userData = userTwData;
-
-        UserApi.twLogin(userTwData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Twitter authentication failed:', error);
-      });
+        UserApi.twitterLogin($scope, toaster);
     };
 
     $scope.invalid = '';
@@ -93,7 +68,9 @@ angular.module('gdsApp')
       };
 
 
-      if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb
+      if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb;
+      if($scope.userData.tw !== undefined) params.tw = $scope.userData.tw;
+
       var dob = params.dob;
       dob = $scope.UTIL.unConvertDate(dob);
       var age = $scope.UTIL.getAge(dob);

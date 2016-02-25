@@ -45,6 +45,9 @@ angular
     $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
+
+    OAuth.initialize('1D1CANqgkBbEoY6WNiZFe4nAvZ8');
+
     // moment js
     amMoment.changeLocale('pt-br');
     // ====
@@ -59,6 +62,7 @@ angular
 
 //    console.log('app.run: user', $rootScope.user);
     // ====
+
 
     $rootScope.onInit = function(){
         document.body.style.display = "block";
