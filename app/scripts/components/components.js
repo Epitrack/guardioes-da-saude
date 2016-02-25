@@ -52,9 +52,6 @@ app.directive('gdsMaps', function() {
             createMarker(scope.marks[i]);
         }
        createMarker({'lat':scope.location.lat, 'lng':scope.location.lng, 'title':'Você está aqui!'}, '/images/icon-user-location.png' );
-
-
-
      }
    };
 });

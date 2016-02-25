@@ -46,8 +46,6 @@ angular
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
 
-    OAuth.initialize('1D1CANqgkBbEoY6WNiZFe4nAvZ8');
-
     // moment js
     amMoment.changeLocale('pt-br');
     // ====

@@ -18,39 +18,11 @@ angular.module('gdsApp')
 
 
     $scope.facebookLogin = function () {
-
-        var userFbData = {}
-        UserApi.facebookLogin(userFbData, $scope, toaster);
+        UserApi.facebookLogin($scope, toaster);
     };
 
     $scope.googleLogin = function () {
-      auth.$authWithOAuthPopup('google').then(function (authData) {
-        console.log('Google authentication success:', authData);
-
-        var userGlData = {};
-
-        userGlData.access_token = authData.google.accessToken;
-        userGlData.nick = authData.google.displayName;
-        userGlData.gl = authData.google.id;
-
-        $scope.userData = userGlData;
-
-        // return console.warn($scope.userData);
-
-        UserApi.glLogin(userGlData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Google authentication failed:', error);
-      });
+      UserApi.googleLogin($scope, toaster);
     };
 
     $scope.twitterLogin = function () {
@@ -69,9 +41,9 @@ angular.module('gdsApp')
         picture: $scope.UTIL.checkAvatar($scope.userData)
       };
 
-
       if($scope.userData.fb) params.fb = $scope.userData.fb;
       if($scope.userData.tw) params.tw = $scope.userData.tw;
+      if($scope.userData.gl) params.gl = $scope.userData.gl;
 
       var dob = params.dob.toString();
       dob = $scope.UTIL.unConvertDate(dob);
