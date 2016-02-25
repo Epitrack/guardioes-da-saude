@@ -259,7 +259,7 @@ angular.module('gdsApp')
                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                         $location.path('health-daily');
                       }
-                  });
+                  }).fail(function(error){console.log("tw login error",error)})
               } else {
 //              console.warn('Error -> ', dataLg.data.message);
                 console.log("$scope.userData",$scope.userData)
