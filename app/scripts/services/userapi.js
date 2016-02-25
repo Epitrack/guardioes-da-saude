@@ -240,7 +240,8 @@ angular.module('gdsApp')
 
     obj.twitterLogin = function ($scope, toaster) {
       var userTwData = {};
-      OAuth.popup('twitter').done(function(result) {
+      OAuth.popup('twitter', function(err, res){ if(err)console.log('error tw',err); else console.log("response tw ",res);}
+                 ).done(function(result) {
           result.me().done(function(data) {
 //            console.log("me",data)
             userTwData.tw = data.id;
