@@ -153,6 +153,8 @@
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 
+    <script src="https://oauth.io/auth/download/latest/oauth.js"></script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -188,6 +190,8 @@
     <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/jsSHA/src/sha.js"></script>
+    <script src="bower_components/ng-twitter-api/dist/ng-twitter-api.js"></script>
     <!-- endbower -->
 
     <script src="bower_components/moment/locale/pt-br.js"></script>
@@ -251,6 +255,19 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
+<!--
+    <script type="text/javascript">
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/anywhere.js?id="+gTWApplicationId;fjs.parentNode.insertBefore(js,fjs);}}(document, "script",'twitter-anywhere');
+      //describe the login actions
+        twttr.anywhere(function (T) {
+        T.bind("authComplete", function (e, user) {
+        var token = user.attributes._identity;
+        //define the login function on your client through Twitter
+        });
+      });
+    </script>
+-->
+
 </body>
 </html>

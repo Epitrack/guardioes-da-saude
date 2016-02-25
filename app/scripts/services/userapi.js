@@ -232,15 +232,42 @@ angular.module('gdsApp')
         });
     }
 
-    obj.twLogin = function (accessToken, callback) {
-//    '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret
-      $http.get(apiUrl + '/auth/twitter/callback?tw=' + accessToken.oauth_token, {headers: {'app_token': app_token}})
-        .then(function (result) {
-          console.log('Success twLogin: ', result);
-          callback(result);
-        }, function (error) {
-          console.warn('Error twLogin: ', error);
-        });
+    function twLogin(twitter_id, callback) {
+        $http.get(apiUrl+'/user/get?tw='+twitter_id, {headers:{'app_token':app_token}})
+        .then(function(result){callback(result);},
+              function(error){console.warn('Error twLogin: ', error);});
+    };
+
+    obj.twitterLogin = function ($scope, toaster) {
+      var userTwData = {};
+      OAuth.popup('twitter').done(function(result) {
+          result.me().done(function(data) {
+//            console.log("me",data)
+            userTwData.tw = data.id;
+            userTwData.nick = data.name;
+            $scope.userData = userTwData;
+            twLogin(userTwData.tw, function(dataTw){
+              console.log("dataTw", dataTw);
+              if (dataTw.data.error === false && dataTw.data.data.length>0) {
+                  var loginPass = {email: dataTw.data.data[0].email, password: dataTw.data.data[0].email}
+                  obj.loginUser(loginPass, function(resultMail){
+                      if(resultMail.data.error === true)
+                      {
+                        toaster.pop('error', resultMail.data.message);
+                      }else{
+                        toaster.pop('success', resultMail.data.message);
+                        LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                        $location.path('health-daily');
+                      }
+                  });
+              } else {
+//              console.warn('Error -> ', dataLg.data.message);
+                console.log("$scope.userData",$scope.userData)
+                $('#modal-complete-login').modal('show');
+              }
+            });
+          })
+      })
     };
 
     obj.glLogin = function (accessToken, callback) {
