@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_news_like</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="15---noticias" sketch:type="MSArtboardGroup" transform="translate(-397.000000, -481.000000)" fill="#8C8C8C">
+            <g id="content" sketch:type="MSLayerGroup" transform="translate(-82.000000, 62.000000)">
+                <g id="Content" transform="translate(425.000000, 195.000000)" sketch:type="MSShapeGroup">
+                    <g id="Post1" transform="translate(0.000000, 133.000000)">
+                        <g id="likes" transform="translate(54.000000, 87.000000)">
+                            <path d="M6.00249998,14.4963507 C6.10968748,14.4963507 6.21687498,14.4561554 6.2972656,14.3757647 L10.4708789,10.3562335 C10.5311718,10.2959405 12.005,8.94939758 12.005,7.34158508 C12.005,5.378714 10.8058398,4.20635072 8.8027734,4.20635072 C7.63041013,4.20635072 6.53173826,5.1308429 6.00249998,5.65338196 C5.4732617,5.1308429 4.37458983,4.20635072 3.20222655,4.20635072 C1.19916015,4.20635072 0,5.378714 0,7.34158508 C0,8.94939758 1.47382812,10.2959405 1.52742187,10.3428351 L5.70773435,14.3757647 C5.78812498,14.4561554 5.89531248,14.4963507 6.00249998,14.4963507 L6.00249998,14.4963507 Z" id="heart---FontAwesome"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
