@@ -22,37 +22,30 @@ angular.module('gdsApp')
     $scope.twitterLogin = function () {
         UserApi.twitterLogin($scope, toaster);
     };
-
-    $scope.invalid = '';
-    $scope.invalidRace = '';
+    $scope.checkF = {};
     $scope.updateUserSocialData = function () {
 
       var params = {
-            dob: $scope.userData.dob,
-            email: $scope.userData.email,
-            gender: $scope.userData.gender,
             nick: $scope.userData.nick,
-            password: $scope.userData.password,
+            gender: $scope.userData.gender,
+            dob: $scope.userData.dob,
             race: $scope.userData.race,
-            picture: $scope.UTIL.checkAvatar($scope.userData)
+            email: $scope.userData.email,
       };
+
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
+      if($scope.checkF.error===true){return;}
+
+      params.picture = $scope.UTIL.checkAvatar($scope.userData);
+      params.password = $scope.userData.password;
+
 
       if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb;
       if($scope.userData.tw !== undefined) params.tw = $scope.userData.tw;
       if($scope.userData.gl !== undefined) params.gl = $scope.userData.gl;
 
-      var dob = params.dob;
-      dob = $scope.UTIL.unConvertDate(dob);
-      var age = $scope.UTIL.getAge(dob);
 
       if(params.password===undefined){params.password = params.email;}
-      if(params.race ===undefined) { $scope.invalidRace = true; return; }
-      else{$scope.invalidRace = false;}
-
-
-
-      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; }
-      params.dob = dob;
 
       $('#modal-complete-login').modal('hide');
 

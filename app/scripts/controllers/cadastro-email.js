@@ -65,28 +65,18 @@ angular.module('gdsApp')
 
     $scope.createUser = function () {
     var params = {
-        dob: $scope.createData.dob,
-        email: $scope.createData.email,
-        gender: $scope.createData.gender,
         nick: $scope.createData.nick,
-        password: $scope.createData.password,
+        email: $scope.createData.email,
+        dob: $scope.createData.dob,
         race: $scope.createData.race,
-        picture: $scope.UTIL.checkAvatar($scope.createData)
+        gender: $scope.createData.gender,
+        password: $scope.createData.password,
     };
 
-      var dob = params.dob.toString();
-      dob = $scope.UTIL.unConvertDate(dob);
-      var age = $scope.UTIL.getAge(dob);
-      $scope.invalid = '';
-      $scope.invalidBirth = '';
+      $scope.checkF = $scope.UTIL.checkForm(params);
+      if($scope.checkF.error===true){return;}
 
-
-      if (LocalStorage.getItem('dobValid') !== true || age <= 0) {
-          $scope.invalid = true;
-          return;
-      }
-
-      params.dob=dob;
+      params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
