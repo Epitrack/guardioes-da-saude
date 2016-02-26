@@ -49,6 +49,8 @@ angular.module('gdsApp')
     // ====
 
     // ====
+    var GDSDownloadApp = LocalStorage.getItem('GDSDownloadApp');
+
     $scope.checkPlatform = function() {
       var ua, android, iphone;
 
@@ -62,8 +64,11 @@ angular.module('gdsApp')
         $scope.downloadLink = 'https://itunes.apple.com/us/app/guardioes-da-saude/id1060576766?ls=1&mt=8'
       }
 
-      if(android || iphone) {
-        $('#modal-app').modal({ show: 'true' });
+      if (!GDSDownloadApp) {
+        if (android || iphone) {
+          $('#modal-app').modal({ show: 'true' });
+          localStorage.setItem('GDSDownloadApp', true);
+        }
       }
     };
 
