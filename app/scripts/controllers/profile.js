@@ -20,7 +20,6 @@ angular.module('gdsApp')
       UserApi.updateUser(u.id, function (data) {
         if (data.data.error === false) {
           u = data.data.data[0];
-
           $scope.screen = {};
           $scope.screen.user = {
             nick: u.nick,
@@ -28,10 +27,11 @@ angular.module('gdsApp')
             gender: u.gender,
             email: u.email,
             race: u.race,
-            password: ""
+            picture:u.picture
+//            password: ""
           };
 
-          console.warn($scope.screen.user); // formato dob ok
+//          console.warn($scope.screen.user); // formato dob ok
         } else {
           toaster.pop('error', data.data.message);
         }
@@ -47,19 +47,19 @@ angular.module('gdsApp')
         email: $scope.screen.user.email,
         race: $scope.screen.user.race,
       };
-      console.log("I'M HEREEEEEEE", $scope.screen.user.repeatPassword)
+
       $scope.checkF = $scope.UTIL.checkForm(params, true);
 
-      if($scope.screen.user.password.length > 0 && $scope.screen.user.password.length < 6){
+      if($scope.screen.user.password && $scope.screen.user.password.length > 0 && $scope.screen.user.password.length < 6){
         $scope.checkF = {"error":true, "msg":"A senha precisa ter no mínimo 6 dígitos"}
       }
-      if($scope.screen.user.password.length >= 6 && $scope.screen.user.password !== $scope.screen.user.repeatPassword){
+      if($scope.screen.user.password && $scope.screen.user.password.length >= 6 && $scope.screen.user.password !== $scope.screen.user.repeatPassword){
         $scope.checkF = {"error":true, "msg":"As senhas digitadas precisam ser iguais."}
       }
 
       if($scope.checkF.error===true){return;}
 
-      params.picture = $scope.UTIL.checkAvatar($scope.screen.user);
+      params.picture = $scope.screen.user.picture;
 
       if($scope.screen.user.password) {
         params.password = $scope.screen.user.password;

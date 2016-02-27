@@ -68,8 +68,8 @@ angular
     // Helpers functions
     $rootScope.UTIL = {
       unConvertDate: function (date) {
-        var md = new Date(date);
-        return md.getUTCDate()+'-'+md.getUTCMonth()+'-'+md.getFullYear();
+        var md = date.substr(8,2)+'-'+date.substr(5,2)+'-'+date.substr(0,4);
+        return md;
       },
 
       convertDate: function (date) {
