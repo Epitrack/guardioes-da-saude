@@ -73,7 +73,7 @@ angular.module('gdsApp')
         password: $scope.createData.password,
     };
 
-      $scope.checkF = $scope.UTIL.checkForm(params);
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
       if($scope.checkF.error===true){return;}
 
       params.picture = $scope.UTIL.checkAvatar($scope.createData);

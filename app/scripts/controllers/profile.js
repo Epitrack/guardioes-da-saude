@@ -22,10 +22,9 @@ angular.module('gdsApp')
           u = data.data.data[0];
 
           $scope.screen = {};
-
           $scope.screen.user = {
             nick: u.nick,
-            dob: $scope.UTIL.convertDate(u.dob, 'DD-MM-YYYY'),
+            dob: $scope.UTIL.unConvertDate(u.dob),
             gender: u.gender,
             email: u.email,
             race: u.race,
@@ -43,45 +42,29 @@ angular.module('gdsApp')
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.user.nick,
-        dob: $scope.UTIL.unConvertDate($scope.screen.user.dob),
+        dob: $scope.screen.user.dob,
         gender: $scope.screen.user.gender,
         email: $scope.screen.user.email,
         race: $scope.screen.user.race,
-        picture: $scope.UTIL.checkAvatar($scope.screen.user)
-//          ,
-//        password:''
       };
+      console.log("I'M HEREEEEEEE", $scope.screen.user.repeatPassword)
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
 
-      var age = $scope.UTIL.getAge(params.dob, false);
-
-      $scope.futureBirth = false;
-      if(age < 13)
-      {
-          $scope.futureBirth = true;
-          return;
+      if($scope.screen.user.password.length > 0 && $scope.screen.user.password.length < 6){
+        $scope.checkF = {"error":true, "msg":"A senha precisa ter no mínimo 6 dígitos"}
+      }
+      if($scope.screen.user.password.length >= 6 && $scope.screen.user.password !== $scope.screen.user.repeatPassword){
+        $scope.checkF = {"error":true, "msg":"As senhas digitadas precisam ser iguais."}
       }
 
-      $scope.futureBirth = false;
-      // ====
-      $scope.repeatPassFocus = false;
-      $scope.repeatPassBlur = function () {
-        if ($scope.screen.user.password === $scope.screen.repeatPassword) {
-          $scope.repeatPassFocus = false;
-        }
-      };
-      // verify if user changes password
-      if ($scope.screen.user.password === undefined && $scope.screen.repeatPassword === undefined) {
-        toaster.pop('error', "Sua senha precisa ter no mínimo 6 dígitos");
-        return;
-      }
-      if ($scope.screen.user.password !== "" && ($scope.screen.user.password !== $scope.screen.repeatPassword)) {
-        toaster.pop('error', "As senhas digitadas precisam ser iguais.");
-        $scope.repeatPassFocus = true;
-        return;
-      }
+      if($scope.checkF.error===true){return;}
 
-      params.password = $scope.screen.user.password;
-      delete $scope.screen.user.password;
+      params.picture = $scope.UTIL.checkAvatar($scope.screen.user);
+
+      if($scope.screen.user.password) {
+        params.password = $scope.screen.user.password;
+        delete $scope.screen.user.password;
+      }
       // ====
 
       // ====

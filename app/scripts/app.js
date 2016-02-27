@@ -68,13 +68,12 @@ angular
     // Helpers functions
     $rootScope.UTIL = {
       unConvertDate: function (date) {
-        var newDob = date.split('-');
-        return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
+        var md = new Date(date);
+        return md.getUTCDate()+'-'+md.getUTCMonth()+'-'+md.getFullYear();
       },
 
       convertDate: function (date) {
         var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
-        console.log("convert  "+convert);
         return convert;
       },
 
@@ -180,7 +179,7 @@ angular
             }
             //validating email
             if(i==='email')
-            {console.log("é ",i)
+            {
               if(this.checkEmail(params[i])===false){ ret.error = true; ret.msg = "Email inválido."; break; }
             }
             //validating pass
