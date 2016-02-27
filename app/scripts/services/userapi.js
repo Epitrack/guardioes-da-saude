@@ -190,7 +190,7 @@ angular.module('gdsApp')
     obj.facebookLogin = function($scope, toaster){
 
         var userFbData = {}
-        $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")})
+        $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")});
 
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
@@ -206,7 +206,7 @@ angular.module('gdsApp')
 //                    console.warn("response.ids_for_business",response.ids_for_business)
 //                    console.warn("userFbData.fb",userFbData)
                     fbLogin(userFbData.fb, function (dataLg) {
-                        console.warn("dataLg",dataLg)
+//                        console.warn("dataLg",dataLg)
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {email: dataLg.data.data[0].email, password: dataLg.data.data[0].email}
                           obj.loginUser(loginPass, function(resultMail){
@@ -250,7 +250,7 @@ angular.module('gdsApp')
             userTwData.nick = data.name;
             $scope.userData = userTwData;
             twLogin(userTwData.tw, function(dataTw){
-              console.log("dataTw", dataTw);
+//              console.log("dataTw", dataTw);
               if (dataTw.data.error === false && dataTw.data.data.length>0) {
                   var loginPass = {email: dataTw.data.data[0].email, password: dataTw.data.data[0].email}
                   obj.loginUser(loginPass, function(resultMail){
@@ -285,14 +285,14 @@ angular.module('gdsApp')
       OAuth.popup('google', function(err, res){ if(err)console.log('error google',err); })
         .done(function(result) {
           result.me().done(function(data) {
-            console.log("me",data)
+//            console.log("me",data)
             userGlData.gl = data.id;
             userGlData.nick = data.name;
             userGlData.gender = (data.gender===0)? 'M' : 'F';
             userGlData.email = data.email;
             $scope.userData = userGlData;
             glLogin(userGlData.gl, function(dataGl){
-              console.log("dataGl", dataGl);
+//              console.log("dataGl", dataGl);
               if (dataGl.data.error === false && dataGl.data.data.length>0) {
                   var loginPass = {email: dataGl.data.data[0].email, password: dataGl.data.data[0].email}
                   obj.loginUser(loginPass, function(resultMail){
