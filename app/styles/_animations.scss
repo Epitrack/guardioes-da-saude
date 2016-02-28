@@ -196,7 +196,36 @@
 
 .btn-showNavbar {
   &.js-active {
-    background-color: green !important;
+    // background-color: green !important;
+
+    .icon-bar {
+      &:nth-child(1) {
+        @include origin(0% 0 0);
+        transform: rotate(45deg) translate(2px, -3px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        @include origin(0% 0 0);
+        transform: rotate(-45deg) translate(0px, 4px);
+      }
+    }
+  }
+}
+
+.bar-icon-wrapper {
+  @include translate3d(0, 0, 0);
+
+  .icon-bar {
+    @include transition(all, .15s, linear, 0s);
+    @include origin(50% 50%);
+
+    &:nth-child(2) {
+      @include transition(opacity, .1s, linear, 0s);
+    }
   }
 }
 
@@ -245,11 +274,3 @@
 }
 
 // ====
-
-
-
-
-
-
-
-
