@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', function ($scope, LocalStorage, $rootScope) {
+  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', '$location', function ($scope, LocalStorage, $rootScope, $location) {
 
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');
@@ -49,9 +49,10 @@ angular.module('gdsApp')
     // ====
 
     // ====
-    var GDSDownloadApp = LocalStorage.getItem('GDSDownloadApp');
 
     $scope.checkPlatform = function() {
+      var GDSDownloadApp = LocalStorage.getItem('GDSDownloadApp');
+
       var ua, android, iphone;
 
       ua = navigator.userAgent.toLowerCase();
@@ -64,7 +65,9 @@ angular.module('gdsApp')
         $scope.downloadLink = 'https://itunes.apple.com/us/app/guardioes-da-saude/id1060576766?ls=1&mt=8'
       }
 
-      if (!GDSDownloadApp) {
+      // console.log('GDSDownloadApp -> ', GDSDownloadApp);
+
+      if (GDSDownloadApp == null) {
         if (android || iphone) {
           $('#modal-app').modal({ show: 'true' });
           localStorage.setItem('GDSDownloadApp', true);
@@ -89,6 +92,10 @@ angular.module('gdsApp')
     $scope.closeNav = function() {
       $('#btn-showNavbar').removeClass('js-active');
       $('#wrapper-body').removeClass('st-menu-open');
+    }
+
+    $scope.goToUrl = function(path) {
+      $location.path(path);
     }
     // ====
 

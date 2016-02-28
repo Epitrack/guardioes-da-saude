@@ -17,8 +17,8 @@
         <!-- visible when user not logged -->
         <div ng-if="user.id == undefined">
           <ul class="nav navbar-nav mobile-navbar">
-            <li><a class="nav-link" ng-href="/cadastro" ng-click="closeNav()">Cadastre-se</a></li>
-            <li><a class="nav-link" ng-href="/login" ng-click="closeNav()">Entrar</a></li>
+            <li><a class="nav-link" ng-href="/cadastro" ng-click="goToUrl('/cadastro');closeNav()">Cadastre-se</a></li>
+            <li><a class="nav-link" ng-href="/login" ng-click="goToUrl('/login');closeNav()">Entrar</a></li>
           </ul>
         </div>
 
@@ -43,13 +43,13 @@
               </button>
 
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a ng-href="health-daily">Diário da Saúde</a></li>
+                <li><a ng-href="/health-daily" ng-click="goToUrl('/health-daily');closeNav()">Diário da Saúde</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a ng-href="/" ng-click="closeNav();clearStorage()">Sair</a></li>
+                <li><a ng-href="/" ng-click="goToUrl('/');closeNav();clearStorage()">Sair</a></li>
               </ul>
             </li>
 
-            <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
+            <li><a ng-href="/survey" ng-click="goToUrl('/survey');closeNav();" class="btn-survey">Participe Agora!</a></li>
           </ul>
         </div>
 
