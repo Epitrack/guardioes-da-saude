@@ -266,6 +266,7 @@
 
   .st-menu {
     visibility: visible;
+    overflow: scroll;
     @include translate3d(-15px, 0, 0);
     @include transition(all, .5s, 0s, linear);
   }
