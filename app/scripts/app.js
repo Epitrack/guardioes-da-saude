@@ -30,7 +30,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'leaflet-directive',
     'toaster',
     'ChartAngular',
     'ngMask',
