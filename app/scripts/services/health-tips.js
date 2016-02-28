@@ -35,7 +35,7 @@ angular.module('gdsApp')
         params: {
           lat: lat,
           lon: lng,
-          type: 'pharmacy',
+          types: 'pharmacy',
           radius: '10000'
         }
       }).success(function (data) {

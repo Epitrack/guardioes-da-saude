@@ -72,4 +72,11 @@ angular.module('gdsApp')
     });
     // ====
 
+    // mobile navbar
+    $scope.showNavbar = function(event) {
+      $(event.currentTarget).toggleClass('js-active');
+      $('#wrapper-body').toggleClass('st-menu-open');
+    }
+    // ====
+
   }]);

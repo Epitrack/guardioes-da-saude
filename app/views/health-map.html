@@ -2,7 +2,11 @@
   <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
       <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
-             ng-model="surveyByCity.city">
+        ng-model="surveyByCity.city"
+        uib-typeahead="address for address in getLocation($viewValue)"
+        typeahead-loading="loadingLocations"
+        typeahead-no-results="noResults"
+        typeahead-on-select="getCityAutoComplete($item)">
     </fieldset>
   </form>
 
@@ -54,7 +58,7 @@
       </div>
 
       <div class="progress-wrapper">
-        <span class="progress-label">Exantemáica</span>
+        <span class="progress-label">Exantemática</span>
         <span class="progress-value">{{summary.exantematica}}%</span>
 
         <div class="progress">

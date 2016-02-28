@@ -24,13 +24,14 @@ angular.module('gdsApp')
         relationship: $scope.houseHold.relationship,
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
-
+        console.log("====== picture", params.picture)
       var age = $scope.UTIL.getAge(params.dob, false);
-      console.log("age ", age)
+      
       $scope.invalid = '';
 
       if (LocalStorage.getItem('dobValid') !== true || age < 0) {
-        return $scope.invalid = true;
+            $scope.invalid = true;
+            return;
       }
 
       HouseholdApi.createHousehold(params, function (data) {
@@ -61,12 +62,13 @@ angular.module('gdsApp')
         relationship: $scope.houseHold.relationship,
         picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
-
+        console.log("====== picture", params.picture)
       var age = $scope.UTIL.getAge(params.dob, false);
 
       $scope.invalid = '';
       if (LocalStorage.getItem('dobValid') !== true) {
-        return $scope.invalid = true;
+          $scope.invalid = true;
+          return;
       }
 
       HouseholdApi.createHousehold(params, function (data) {

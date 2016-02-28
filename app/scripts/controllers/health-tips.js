@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', '$rootScope', 'leafletMarkerEvents', function ($scope, healthTips, LocalStorage, $rootScope, leafletMarkerEvents) {
+  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', 'leafletMarkerEvents', function ($scope, healthTips, LocalStorage, leafletMarkerEvents) {
 
     $scope.pageClass = 'health-tips-page';
 
@@ -81,8 +81,8 @@ angular.module('gdsApp')
         return t;
       };
 
-      $scope.markersUpa = addressPointsToMarkers($rootScope.markersUpa);
-      $scope.markersPharmacy = addressPointsToMarkersPharmacy($rootScope.markersPharmacy);
+      $scope.markersUpa = addressPointsToMarkers($scope._markersUpa);
+      $scope.markersPharmacy = addressPointsToMarkersPharmacy($scope._markersPharmacy);
     };
 
 
@@ -105,15 +105,16 @@ angular.module('gdsApp')
     // UPAS
     $scope.loadUpas = function () {
       healthTips.getUpas(function (data) {
-        $rootScope.markersUpa = data;
+        $scope._markersUpa = data;
         $scope.addMarkers();
       });
     };
 
     // FARMACIAS
+    
     $scope.loadFarmacias = function () {
       healthTips.getFarmacias(function (data) {
-        $rootScope.markersPharmacy = data;
+        $scope._markersPharmacy = data;
         $scope.addMarkers();
       });
     };

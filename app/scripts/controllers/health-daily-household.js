@@ -19,7 +19,6 @@ angular.module('gdsApp')
     $scope.currentMonth = moment();
     $scope.vm = {};
     $scope.vm.currentDay = moment();
-    console.warn("$scope.hhDonutOptions", $scope.hhDonutOptions)
 
     if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
     if($scope.lineOptions !== undefined) $scope.lineOptions = undefined;
@@ -190,7 +189,6 @@ angular.module('gdsApp')
     };
 
     $scope.graphicDonuts = function () {
-       console.log("no_symptom", $scope.hhSurvey.no_symptom, "symptom", $scope.hhSurvey.symptom );
 //      if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
         $scope.hhDonutOptions = {
           data: [
@@ -214,10 +212,8 @@ angular.module('gdsApp')
 
       HouseholdApi.getHouseholdSurveyByYear(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          console.log(data.data.data);
           $scope.monthReports = data.data.data;
         }
       });
@@ -258,31 +254,25 @@ angular.module('gdsApp')
         angular.forEach($scope.householdCalendar, function (item, k) {
           if (item.day == d) {
             if (item.no_symptom) {
-              if (bem == 0) bem = item.total;
-              else bem += item.total;
+              if (bem == 0) {bem = item.total;}
+              else {bem += item.total;}
             } else {
-              if (mal == 0) mal = item.total;
-              else mal += item.total;
+              if (mal == 0) {mal = item.total;}
+              else {mal += item.total;}
             }
           }
         });
         var content;
-        if (q == 't') {
-          content = (mal + bem);
-        } else if (q == 'bem') {
-          content = bem;
-        } else {
-          content = mal
-        }
+        if (q == 't') { content = (mal + bem); } 
+          else if (q == 'bem') {content = bem; } 
+          else { content = mal; }
         return content;
       },
       checkForSymptoms: function (day) {
-        //console.log("checkForSymptoms", day);
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
           angular.forEach($scope.householdCalendar, function (item, k) {
-            //console.log("item.day", item.day, "x", d, item.month, "x", $scope.currentMonth.month);
             if (item.day == d && item.month == $scope.currentMonth.month) {
               r = true;
             }
@@ -291,8 +281,6 @@ angular.module('gdsApp')
         } else return false;
       },
       onChange: function (params) {
-        console.log("onChange", params);
-        console.log("currentMonth", $scope.currentMonth);
         if (params.month != $scope.currentMonth.month ||
           params.year != $scope.currentMonth.year) {
           $scope.calendarLoaded = false;

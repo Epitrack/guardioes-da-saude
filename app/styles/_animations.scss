@@ -180,3 +180,76 @@
 }
 
 // ====
+
+
+
+//
+// Off canvas navbar
+//
+
+.wrapper-body {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-showNavbar {
+  &.js-active {
+    background-color: green !important;
+  }
+}
+
+.st-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
+  width: 300px;
+  height: 100%;
+  background: purple;
+  transition: all .5s linear;
+  transform: translate3d(-300px, 0, 0);
+
+  &.st-effect-2 { z-index: 1; }
+}
+
+.st-pusher {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  height: 100%;
+  @include perspective(1000px);
+  @include transition(transform, .5s, 0s, linear);
+}
+
+.st-content {
+  overflow-y: scroll;
+  position: relative;
+  height: 100%;
+}
+
+.st-menu-open {
+  .st-pusher {
+    @include translate3d(300px, 0, 0);
+  }
+
+  .st-menu {
+    visibility: visible;
+    @include translate3d(15px, 0, 0);
+    @include transition(all, .5s, 0s, linear);
+  }
+}
+
+// ====
+
+
+
+
+
+
+
+
