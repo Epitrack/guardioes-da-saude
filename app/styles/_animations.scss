@@ -245,13 +245,13 @@
 }
 
 .st-pusher {
+  // display: inline-block;
+  // left: 0;
+  // z-index: 1050;
+  // @include perspective(1000px);
   position: relative;
-  display: inline-block;
   width: 100%;
-  left: 0;
-  z-index: 1;
   height: 100%;
-  @include perspective(1000px);
   @include transition(transform, .5s, 0s, linear);
 }
 
