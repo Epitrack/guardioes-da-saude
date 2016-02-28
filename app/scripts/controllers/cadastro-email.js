@@ -16,40 +16,7 @@ angular.module('gdsApp')
 
     $scope.facebookLogin = function () {
       UserApi.facebookLogin($scope, toaster);
-      return;
-      auth.$authWithOAuthPopup('facebook').then(function (authData) {
-        console.log('Facebook authentication success:', authData);
 
-        var userFbData = {};
-
-        userFbData.fb_token = authData.facebook.accessToken;
-        userFbData.nick = authData.facebook.displayName;
-        // userFbData.picture = authData.facebook.profileImageURL;
-        userFbData.fb = authData.facebook.id;
-
-        if (authData.facebook.cachedUserProfile.gender === 'male') {
-          userFbData.gender = 'M';
-        } else {
-          userFbData.gender = 'F';
-        }
-
-        $scope.userData = userFbData;
-
-        UserApi.fbLogin(userFbData.fb_token, function (data) {
-          console.log('Data -> ', data);
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userCreateData(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Facebook authentication failed:', error);
-      });
     };
 
     $scope.googleLogin = function () {

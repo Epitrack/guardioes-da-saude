@@ -24,7 +24,6 @@ angular.module('gdsApp')
     };
     $scope.checkF = {};
     $scope.updateUserSocialData = function () {
-
       var params = {
             nick: $scope.userData.nick,
             gender: $scope.userData.gender,

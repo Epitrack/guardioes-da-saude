@@ -28,32 +28,25 @@ angular.module('gdsApp')
     };
 
     $scope.updateUserSocialData = function () {
-//      var params = $scope.userData;
       var params = {
-        dob: $scope.userData.dob,
-        email: $scope.userData.email,
-        gender: $scope.userData.gender,
-        nick: $scope.userData.nick,
-        password: $scope.userData.password,
-        race: $scope.userData.race,
-        picture: $scope.UTIL.checkAvatar($scope.userData)
+            nick: $scope.userData.nick,
+            gender: $scope.userData.gender,
+            dob: $scope.userData.dob,
+            race: $scope.userData.race,
+            email: $scope.userData.email,
       };
 
-      if($scope.userData.fb) params.fb = $scope.userData.fb;
-      if($scope.userData.tw) params.tw = $scope.userData.tw;
-      if($scope.userData.gl) params.gl = $scope.userData.gl;
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
+      if($scope.checkF.error===true){return;}
 
-      var dob = params.dob.toString();
-      dob = $scope.UTIL.unConvertDate(dob);
-      var age = $scope.UTIL.getAge(dob);
-
-      $scope.invalid = '';
-      $scope.invalidBirth = '';
+      params.picture = $scope.UTIL.checkAvatar($scope.userData);
+      params.password = $scope.userData.password;
 
 
-      if (LocalStorage.getItem('dobValid') !== true) { $scope.invalid = true; return; }
+      if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb;
+      if($scope.userData.tw !== undefined) params.tw = $scope.userData.tw;
+      if($scope.userData.gl !== undefined) params.gl = $scope.userData.gl;
 
-      params.dob = dob;
 
       if(params.password===undefined){params.password = params.email;}
 
