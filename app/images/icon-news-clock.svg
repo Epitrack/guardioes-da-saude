@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_news_clock</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="15---noticias" sketch:type="MSArtboardGroup" transform="translate(-889.000000, -480.000000)" fill="#8C8C8C">
+            <g id="content" sketch:type="MSLayerGroup" transform="translate(-82.000000, 62.000000)">
+                <g id="Content" transform="translate(425.000000, 195.000000)" sketch:type="MSShapeGroup">
+                    <g id="Post1" transform="translate(0.000000, 133.000000)">
+                        <g id="time" transform="translate(546.000000, 87.000000)">
+                            <path d="M7,3.55555556 C8.65259042,3.55555556 10.0657218,4.14240415 11.2394366,5.31611894 C12.4131514,6.48983372 13,7.90296513 13,9.55555556 C13,11.208146 12.4131514,12.6212774 11.2394366,13.7949922 C10.0657218,14.968707 8.65259042,15.5555556 7,15.5555556 C5.34740958,15.5555556 3.93427817,14.968707 2.76056338,13.7949922 C1.58684859,12.6212774 1,11.208146 1,9.55555556 C1,7.90296513 1.58684859,6.48983372 2.76056338,5.31611894 C3.93427817,4.14240415 5.34740958,3.55555556 7,3.55555556 Z M6.64705882,9.20261438 L6.64705882,5.67320261 L7.35294118,5.67320261 L7.35294118,9.90849673 L4.52941176,9.90849673 L4.52941176,9.20261438 L6.64705882,9.20261438 Z" id="android-time---Ionicons"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -8,23 +8,9 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', 'NgMap', '$http', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage, NgMap, $http) {
+  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', 'NgMap', '$http', '$timeout', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage, NgMap, $http, $timeout) {
 
     $scope.pageClass = 'health-map';
-
-    $scope.layers = {
-      baselayers: {
-        mapbox_light: {
-          name: 'Guardiões da Saúde',
-          url: 'http://api.tiles.mapbox.com/v4/{mapid}/{z}/{x}/{y}.png?access_token={apikey}',
-          type: 'xyz',
-          layerOptions: {
-            apikey: 'pk.eyJ1IjoidGh1bGlvcGgiLCJhIjoiNGZhZmI1ZTA5NTNlNDUwMzZhOGQ2NDkyNWQ2OTM4MWYifQ.P1pvnlNNlrvyhLOJM2xX-g',
-            mapid: 'thulioph.wix561or'
-          }
-        }
-      }
-    };
 
     //
     // Graphic
@@ -40,91 +26,6 @@ angular.module('gdsApp')
     };
     // ====
 
-    // ====
-    // obtém as informações depois que o usuário digita a cidade
-    $scope.surveyByCity = {};
-
-    $scope.getMarkersByCity = function () {
-      var params = $scope.surveyByCity.city;
-
-      getCoords(params);
-      getSurveyByCity(params);
-      getSurveyByCitySummary(params);
-    };
-
-    function getSurveyByCity(city) {
-      Surveyapi.getMarkersByCity(city, function (data) {
-        if (data.data.error === false) {
-          $scope.markers = addToArray(data.data.data);
-        } else {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
-        }
-      });
-    }
-
-    function getSurveyByCitySummary(city) {
-      var summary = {};
-
-      Surveyapi.getMarkersByCitySummary(city, function (data) {
-        if (data.data.error === false) {
-
-          summary.total_no_symptoms = data.data.data.total_no_symptoms;
-          summary.total_symptoms = data.data.data.total_symptoms;
-          summary.total_surveys = data.data.data.total_surveys;
-
-          summary.pct_no_symptoms = 0;
-          summary.pct_symptoms = 0;
-
-          summary.address = data.data.data.location.formattedAddress;
-
-          summary.diarreica = data.data.data.diseases.diarreica;
-          summary.exantematica = data.data.data.diseases.exantematica;
-          summary.respiratoria = data.data.data.diseases.respiratoria;
-
-          if (summary.total_no_symptoms > 0) {
-            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
-          }
-
-          if (summary.pct_no_symptoms % 1 !== 0) {
-            summary.pct_no_symptoms = Math.round(summary.pct_no_symptoms.toFixed(2));
-          }
-
-          if (summary.total_symptoms > 0) {
-            summary.pct_symptoms = Math.round((((summary.total_symptoms / summary.total_surveys) * 100)));
-          }
-
-          if (summary.pct_symptoms % 1 !== 0) {
-            summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
-          }
-
-          $scope.summary = summary;
-          // $rootScope.$broadcast('build_summary');
-        } else {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
-        }
-      });
-    }
-
-    function getCoords(city) {
-      var geocoder = new google.maps.Geocoder();
-
-      geocoder.geocode({'address': city}, function (results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-          $scope.map.setCenter(results[0].geometry.location);
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-
-    // ====
-
-
-    //
-    // MAP
-    //
 
     // ====
     // Configurações gerais do mapa
@@ -222,6 +123,88 @@ angular.module('gdsApp')
 
 
     // ====
+    // obtém as informações depois que o usuário digita a cidade
+    $scope.surveyByCity = {};
+
+    $scope.getMarkersByCity = function () {
+      var params = $scope.surveyByCity.city;
+
+      getCoords(params);
+      getSurveyByCity(params);
+      getSurveyByCitySummary(params);
+    };
+
+    function getSurveyByCity(city) {
+      Surveyapi.getMarkersByCity(city, function (data) {
+        if (data.data.error === false) {
+          $scope.markers = addToArray(data.data.data);
+        } else {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        }
+      });
+    }
+
+    function getSurveyByCitySummary(city) {
+      var summary = {};
+
+      Surveyapi.getMarkersByCitySummary(city, function (data) {
+        if (data.data.error === false) {
+
+          summary.total_no_symptoms = data.data.data.total_no_symptoms;
+          summary.total_symptoms = data.data.data.total_symptoms;
+          summary.total_surveys = data.data.data.total_surveys;
+
+          summary.pct_no_symptoms = 0;
+          summary.pct_symptoms = 0;
+
+          summary.address = data.data.data.location.formattedAddress;
+
+          summary.diarreica = data.data.data.diseases.diarreica;
+          summary.exantematica = data.data.data.diseases.exantematica;
+          summary.respiratoria = data.data.data.diseases.respiratoria;
+
+          if (summary.total_no_symptoms > 0) {
+            summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
+          }
+
+          if (summary.pct_no_symptoms % 1 !== 0) {
+            summary.pct_no_symptoms = Math.round(summary.pct_no_symptoms.toFixed(2));
+          }
+
+          if (summary.total_symptoms > 0) {
+            summary.pct_symptoms = Math.round((((summary.total_symptoms / summary.total_surveys) * 100)));
+          }
+
+          if (summary.pct_symptoms % 1 !== 0) {
+            summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
+          }
+
+          $scope.summary = summary;
+          // $rootScope.$broadcast('build_summary');
+        } else {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        }
+      });
+    }
+
+    function getCoords(city) {
+      var geocoder = new google.maps.Geocoder();
+
+      geocoder.geocode({'address': city}, function (results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          $scope.map.setCenter(results[0].geometry.location);
+        } else {
+          console.log('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+
+    // ====
+
+
+    // ====
     // quando o usuário entra na tela sem digitar
     // pega a localização e mostra no mapa
     function addToArray(markers) {
@@ -301,7 +284,9 @@ angular.module('gdsApp')
     };
     // ====
 
-    // Auto complete
+
+    //
+    // autocomplete
     $scope.getLocation = function(val) {
       return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
         params: {
@@ -319,18 +304,18 @@ angular.module('gdsApp')
     };
 
     $scope.getCityAutoComplete = function(city) {
+      getCoords(city);
       getSurveyByCity(city);
       getSurveyByCitySummary(city);
-      getCoords(city);
     }
     // ====
+
 
     if ($rootScope.city) {
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
       getCoords($rootScope.city);
-
-    return delete $rootScope.city;
+      return delete $rootScope.city;
     } else {
       $scope.getMarkersByLocation();
     }

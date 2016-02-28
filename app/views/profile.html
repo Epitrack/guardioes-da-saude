@@ -70,16 +70,20 @@
           <fieldset class="col-xs-12 col-sm-6">
             <label for="profile-pass">Redefinir senha (opcional)</label>
             <input class="input-primary" id="profile-pass" name="profilePass" type="password"
-                   ng-model="screen.user.password" ng-minlength="6" ng-focus="" ng-blur="">
+                   ng-model="screen.user.password">
           </fieldset>
 
           <fieldset class="col-xs-12 col-sm-6">
             <label for="profile-pass-again">Repetir Senha</label>
             <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password"
-                   ng-model="screen.repeatPassword" ng-focus="repeatPassFocus=true" ng-blur="repeatPassBlur()">
+                   ng-model="screen.user.repeatPassword">
           </fieldset>
 
           <fieldset class="col-xs-12">
+            <div ng-show="checkF.error" class="alert alert-warning" role="alert">
+              <span>{{checkF.msg}}</span>
+            </div>
+<!--
             <div ng-show="repeatPassFocus && (screen.repeatPassword != screen.user.password)" class="alert alert-info" role="alert">
               <span>As senhas digitadas precisam ser iguais.</span>
             </div>
@@ -94,6 +98,7 @@
             <div ng-show="futureBirth" class="alert alert-info" role="alert">
               <span>Data de nascimento inválida</span>
             </div>
+-->
           </fieldset>
 
           <fieldset class="col-xs-12">

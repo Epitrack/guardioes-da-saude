@@ -2,7 +2,7 @@
      aria-labelledby="modalAddProfile" ng-controller="AddProfileCtrl">
   <article class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <form ng-submit="addHouseholdModal()" class="card-form" name="addFormProfile">
+      <form ng-submit="addHousehold()" class="card-form" name="addFormProfile">
         <header class="modal-header panel-heading">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
             aria-hidden="true">&times;</span></button>
@@ -29,7 +29,7 @@
                     <input class="radio-primary" type="radio" ng-model="houseHold.gender" name="profile-gender" value="M" id="selected-m">
                     <label for="selected-m" class="span-sex-op">Masculino</label>
                     <input class="radio-primary" type="radio" ng-model="houseHold.gender" name="profile-gender" value="F" id="selected-f">
-                    <label for="selected-f" class="span-sex-op">Feminino</label>            
+                    <label for="selected-f" class="span-sex-op">Feminino</label>
                 </fieldset>
               </div>
 
@@ -90,6 +90,10 @@
               </fieldset>
 
               <fieldset class="col-xs-12">
+                <div ng-show="checkF.error" class="alert alert-warning" role="alert">
+                  <span>{{checkF.msg}}</span>
+                </div>
+<!--
                 <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
                   <span>As senhas digitadas precisam ser iguais.</span>
                 </div>
@@ -105,6 +109,7 @@
                 <div ng-show="invalid == true" class="alert alert-warning" role="alert">
                   <span>Data de nascimento inválida.</span>
                 </div>
+-->
               </fieldset>
             </div>
           </div>

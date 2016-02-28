@@ -8,16 +8,15 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
-
-    var href = new Firebase('https://popping-heat-8884.firebaseio.com');
-    var auth = $firebaseAuth(href);
+  .controller('CadastroEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, UserApi, toaster, $location, LocalStorage) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';
     // ====
 
     $scope.facebookLogin = function () {
+      UserApi.facebookLogin($scope, toaster);
+      return;
       auth.$authWithOAuthPopup('facebook').then(function (authData) {
         console.log('Facebook authentication success:', authData);
 
@@ -54,64 +53,11 @@ angular.module('gdsApp')
     };
 
     $scope.googleLogin = function () {
-      auth.$authWithOAuthPopup('google').then(function (authData) {
-        console.log('Google authentication success:', authData);
-
-        var userGlData = {};
-
-        userGlData.access_token = authData.google.accessToken;
-        userGlData.nick = authData.google.displayName;
-        // userGlData.picture = authData.google.profileImageURL;
-        userGlData.gl = authData.google.id;
-
-        $scope.userData = userGlData;
-
-        UserApi.glLogin(userGlData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Google authentication failed:', error);
-      });
+      UserApi.googleLogin($scope, toaster);
     };
 
     $scope.twitterLogin = function () {
-      auth.$authWithOAuthPopup('twitter').then(function (authData) {
-        console.log('Twitter authentication success:', authData);
-        console.log("authData.twitter ");
-        console.log(authData.twitter);
-
-        var userTwData = {};
-        
-        userTwData.oauth_token = authData.twitter.accessToken;
-        userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
-        userTwData.nick = authData.twitter.displayName;
-        // userTwData.picture = authData.twitter.profileImageURL;
-        userTwData.tw = authData.twitter.id;
-
-        $scope.userData = userTwData;
-
-        UserApi.twLogin(userTwData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Facebook authentication failed:', error);
-      });
+      UserApi.twitterLogin($scope, toaster);
     };
 
     // create new user
@@ -119,28 +65,19 @@ angular.module('gdsApp')
 
     $scope.createUser = function () {
     var params = {
-        dob: $scope.createData.dob,
-        email: $scope.createData.email,
-        gender: $scope.createData.gender,
         nick: $scope.createData.nick,
+        email: $scope.createData.email,
+        dob: $scope.createData.dob,
+        race: $scope.createData.race,
+        gender: $scope.createData.gender,
         password: $scope.createData.password,
-        race: $scope.createData.race
     };
-//      localStorage.setItem('dobValid', true);
-      var dob = params.dob.toString();
-      dob = $scope.UTIL.unConvertDate(dob);
-      var age = $scope.UTIL.getAge(dob);
-      $scope.invalid = '';
-      $scope.invalidBirth = '';
-      
 
-      if (LocalStorage.getItem('dobValid') !== true || age <= 0) {
-          $scope.invalid = true;
-          return;
-      } 
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
+      if($scope.checkF.error===true){return;}
 
-      params.dob=dob;
-        
+      params.picture = $scope.UTIL.checkAvatar($scope.createData);
+
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
             toaster.pop('error', data.data.message);

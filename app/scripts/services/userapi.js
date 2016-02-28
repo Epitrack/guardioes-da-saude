@@ -129,7 +129,7 @@ angular.module('gdsApp')
 
     // get calendar data
     obj.getUserCalendar = function (params, callback) {
-        console.log("getUserCalendar ++++ ",params.month, params.year)
+//        console.log("getUserCalendar ++++ ",params.month, params.year)
       $http.get(apiUrl + '/user/calendar/month?month=' + params.month + '&year=' + params.year, {
           headers: {
             'app_token': app_token,
@@ -137,7 +137,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          console.log('Success getUserCalendar: ', result);
+//          console.log('Success getUserCalendar: ', result);
           callback(result);
         }, function (error) {
           console.warn('Error getUserCalendar: ', error);
@@ -187,10 +187,11 @@ angular.module('gdsApp')
         .then(function(result){callback(result);},
               function(error){console.warn('Error fbLogin: ', error);});
     };
-    obj.facebookLogin = function(userFbData, $scope, toaster){
-        
-        $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")})
-        
+    obj.facebookLogin = function($scope, toaster){
+
+        var userFbData = {}
+        $facebook.getLoginStatus().then(function(response){console.log("getting facebook data")});
+
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
 //                console.log("fb data", data)
@@ -217,50 +218,101 @@ angular.module('gdsApp')
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
-                              
+
                           });
-                          
+
                       } else {
 //                        console.warn('Error -> ', dataLg.data.message);
                         $('#modal-complete-login').modal('show');
                       }
-                    });                
+                    });
                 });
             }else{
                 console.warn("Error ->", data);
             }
-        });    
+        });
     }
 
-    obj.twLogin = function (accessToken, callback) {
-//    '/auth/twitter/callback?tw=' + accessToken.oauth_token + '&oauth_token_secret=' + accessToken.oauth_token_secret
-      $http.get(apiUrl + '/auth/twitter/callback?tw=' + accessToken.oauth_token, {headers: {'app_token': app_token}})
-        .then(function (result) {
-          console.log('Success twLogin: ', result);
-          callback(result);
-        }, function (error) {
-          console.warn('Error twLogin: ', error);
-        });
+    function twLogin(twitter_id, callback) {
+        $http.get(apiUrl+'/user/get?tw='+twitter_id, {headers:{'app_token':app_token}})
+        .then(function(result){callback(result);},
+              function(error){console.warn('Error twLogin: ', error);});
     };
 
-    obj.glLogin = function (accessToken, callback) {
-      $http.get(apiUrl + '/auth/google/callback?gl=' + accessToken.access_token, {headers: {'app_token': app_token}})
-        .then(function (result) {
-          console.log('Success glLogin: ', result);
-          callback(result);
-        }, function (error) {
-          console.warn('Error glLogin: ', error);
-        });
+    obj.twitterLogin = function ($scope, toaster) {
+      OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+      var userTwData = {};
+      OAuth.popup('twitter', function(err, res){ if(err)console.log('error tw',err); })
+        .done(function(result) {
+          result.me().done(function(data) {
+//            console.log("me",data)
+            userTwData.tw = data.id;
+            userTwData.nick = data.name;
+            $scope.userData = userTwData;
+            twLogin(userTwData.tw, function(dataTw){
+//              console.log("dataTw", dataTw);
+              if (dataTw.data.error === false && dataTw.data.data.length>0) {
+                  var loginPass = {email: dataTw.data.data[0].email, password: dataTw.data.data[0].email}
+                  obj.loginUser(loginPass, function(resultMail){
+                      if(resultMail.data.error === true)
+                      {
+                        toaster.pop('error', resultMail.data.message);
+                      }else{
+                        toaster.pop('success', resultMail.data.message);
+                        LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                        $location.path('health-daily');
+                      }
+                  });
+              } else {
+//              console.warn('Error -> ', dataLg.data.message);
+//                console.log("$scope.userData",$scope.userData)
+                $('#modal-complete-login').modal('show');
+              }
+            });
+          })
+      })
     };
 
-    obj.getUserEmail = function (email, callback) {
-      $http.get(apiUrl + '/user/get?email=' + email, {headers: {'app_token': app_token}})
-        .then(function (result) {
-          console.log('Success getUserEmail: ', result);
-          callback(result);
-        }, function (error) {
-          console.warn('Error getUserEmail: ', error);
-        });
+    function glLogin (google_id, callback) {
+        $http.get(apiUrl+'/user/get?gl='+google_id, {headers:{'app_token':app_token}})
+        .then(function(result){callback(result);},
+              function(error){console.warn('Error glLogin: ', error);});
+    };
+
+    obj.googleLogin  = function ($scope, toaster) {
+      OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+      var userGlData = {};
+      OAuth.popup('google', function(err, res){ if(err)console.log('error google',err); })
+        .done(function(result) {
+          result.me().done(function(data) {
+//            console.log("me",data)
+            userGlData.gl = data.id;
+            userGlData.nick = data.name;
+            userGlData.gender = (data.gender===0)? 'M' : 'F';
+            userGlData.email = data.email;
+            $scope.userData = userGlData;
+            glLogin(userGlData.gl, function(dataGl){
+//              console.log("dataGl", dataGl);
+              if (dataGl.data.error === false && dataGl.data.data.length>0) {
+                  var loginPass = {email: dataGl.data.data[0].email, password: dataGl.data.data[0].email}
+                  obj.loginUser(loginPass, function(resultMail){
+                      if(resultMail.data.error === true)
+                      {
+                        toaster.pop('error', resultMail.data.message);
+                      }else{
+                        toaster.pop('success', resultMail.data.message);
+                        LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                        $location.path('health-daily');
+                      }
+                  });
+              } else {
+//              console.warn('Error -> ', dataLg.data.message);
+//                console.log("$scope.userData",$scope.userData)
+                $('#modal-complete-login').modal('show');
+              }
+            });
+          })
+      })
     };
 
     obj.getUserSurveyByMonth = function (params, callback) {
@@ -279,7 +331,7 @@ angular.module('gdsApp')
     };
 
     obj.getUserSurveyByYear = function (params, callback) {
-        
+
       $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {
           headers: {
             'app_token': app_token,

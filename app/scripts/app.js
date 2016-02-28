@@ -36,7 +36,6 @@ angular
     'ngMask',
     'angularMoment',
     'ngFileUpload',
-    'firebase',
     'ngMap',
     'angular-repeat-n',
     'ngFacebook'
@@ -45,6 +44,7 @@ angular
     $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
+
     // moment js
     amMoment.changeLocale('pt-br');
     // ====
@@ -60,6 +60,7 @@ angular
 //    console.log('app.run: user', $rootScope.user);
     // ====
 
+
     $rootScope.onInit = function(){
         document.body.style.display = "block";
     };
@@ -67,14 +68,12 @@ angular
     // Helpers functions
     $rootScope.UTIL = {
       unConvertDate: function (date) {
-        var newDob = date.split('-');
-        return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
+        var md = date.substr(8,2)+'-'+date.substr(5,2)+'-'+date.substr(0,4);
+        return md;
       },
 
-      convertDate: function (date, dateFormat) {
-
-        var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
-        console.log("convert  "+convert);
+      convertDate: function (date) {
+        var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
         return convert;
       },
 
@@ -86,20 +85,20 @@ angular
         age = this.getAge(obj.dob);
         if (gender === 'F') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>49) { return 12; }
-              else if(age>25) { return 7; }
+              if(age>49) { return 3; }
+              else if(age>25) { return 2; }
               else { return 1; }
           }
           else if(race === 'amarelo')
           {
-              if(age>49) { return 10; }
+              if(age>49) { return 9; }
               else if(age>25) { return 8; }
-              else { return 2; }
+              else { return 7; }
 
           }
           else if(race === 'branco')
           {
-              if(age>49) { return 10; }
+              if(age>49) { return 14; }
               else if(age>25) { return 8; }
               else { return 13; }
 
@@ -107,29 +106,29 @@ angular
         }
         else if (gender === 'M') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>49) { return 11; }
+              if(age>49) { return 6; }
               else if(age>25) { return 5; }
-              else { return 3; }
+              else { return 4; }
           }
           else if(race === 'amarelo')
           {
-              if(age>49) { return 9; }
-              else if(age>25) { return 4; }
-              else { return 4; }
+              if(age>49) { return 12; }
+              else if(age>25) { return 11; }
+              else { return 10; }
 
           }
           else if(race === 'branco')
           {
-              if(age>49) { return 9; }
-              else if(age>25) { return 6; }
-              else { return 14; }
+              if(age>49) { return 16; }
+              else if(age>25) { return 11; }
+              else { return 15; }
           }
         }
       },
 
       getAge: function (dateString, canIcheckAge) {
+        dateString = this.convertDate(dateString);
         var today, birthDate, age, m;
-        var ds = dateString.replace(/-/g, ',');
         today = new Date();
         birthDate = new Date(Date.parse(dateString));
         age = today.getFullYear() - birthDate.getFullYear();
@@ -141,8 +140,6 @@ angular
           age--;
         }
 
-        this.checkAge(age, canIcheckAge);
-
         return age;
       },
 
@@ -152,6 +149,49 @@ angular
         } else {
             localStorage.setItem('dobValid', false);
         }
+      },
+
+      checkForm:function(params, thirteenYears){
+        var ret = {"error":false, "msg":""};
+        var labels = {
+          dob: "Data de nascimento",
+          email: "Email",
+          gender: "Sexo",
+          nick: "Apelido",
+          race: "Raça/cor",
+          relationship: "Parentesco",
+          password:"Senha",
+        }
+
+        for(var i in params)
+        {
+          if(params[i]===undefined||params[i]==='')
+          {
+            ret.error=true;
+            ret.msg = "O campo "+labels[i]+" está vázio!";
+            break;
+          } else {
+            //validating age
+            if(i==='dob')
+            {
+              var age = this.getAge(params[i]);
+              if (isNaN(age) || age<0 || (thirteenYears && age < 13)){ ret.error = true; ret.msg = "Data de nascimento inválida."; break; }
+            }
+            //validating email
+            if(i==='email')
+            {
+              if(this.checkEmail(params[i])===false){ ret.error = true; ret.msg = "Email inválido."; break; }
+            }
+            //validating pass
+            if(i==='password' && params[i].length<6){ ret.error = true; ret.msg = "A senha precisa ter no mínimo 6 dígitos"; break; }
+          }
+        }
+        return ret;
+      },
+
+      checkEmail:function(email){
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
       },
 
       getDaysArray: function (year, month) {

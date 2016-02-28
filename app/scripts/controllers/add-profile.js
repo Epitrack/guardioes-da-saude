@@ -13,26 +13,28 @@ angular.module('gdsApp')
 
     // Add a new household member
     $scope.houseHold = {};
+    $scope.checkF = {};
 
     $scope.addHousehold = function () {
       var params = {
-        dob: $scope.UTIL.unConvertDate($scope.houseHold.dob),
-        email: $scope.houseHold.email,
-        gender: $scope.houseHold.gender,
         nick: $scope.houseHold.nick,
+        gender: $scope.houseHold.gender,
+        dob: $scope.houseHold.dob,
         race: $scope.houseHold.race,
         relationship: $scope.houseHold.relationship,
-        picture: $scope.UTIL.checkAvatar($scope.houseHold)
       };
-        console.log("====== picture", params.picture)
-      var age = $scope.UTIL.getAge(params.dob, false);
-      
-      $scope.invalid = '';
 
-      if (LocalStorage.getItem('dobValid') !== true || age < 0) {
-            $scope.invalid = true;
-            return;
+      $scope.checkF = $scope.UTIL.checkForm(params);
+      if($scope.checkF.error===true){return;}
+
+      //checking optional email
+      if($scope.houseHold.email)
+      {
+        if($scope.UTIL.checkEmail($scope.houseHold.email)) {params.email = $scope.houseHold.email;}
+        else{$scope.checkF = {"error":true, "msg":"Email inválido."}; return;}
       }
+
+      params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
@@ -43,45 +45,14 @@ angular.module('gdsApp')
           toaster.pop('success', data.data.message);
 
           $timeout(function () {
-              $location.path('/health-daily');
-            },
-            400);
+            $scope.params = {};
+            $location.path('/health-daily');
+
+            }, 400);
         }
       });
     };
     // ====
-
-    // add a new household member in survey page
-    $scope.addHouseholdModal = function () {
-      var params = {
-        dob: $scope.UTIL.unConvertDate($scope.houseHold.dob),
-        email: $scope.houseHold.email,
-        gender: $scope.houseHold.gender,
-        nick: $scope.houseHold.nick,
-        race: $scope.houseHold.race,
-        relationship: $scope.houseHold.relationship,
-        picture: $scope.UTIL.checkAvatar($scope.houseHold)
-      };
-        console.log("====== picture", params.picture)
-      var age = $scope.UTIL.getAge(params.dob, false);
-
-      $scope.invalid = '';
-      if (LocalStorage.getItem('dobValid') !== true) {
-          $scope.invalid = true;
-          return;
-      }
-
-      HouseholdApi.createHousehold(params, function (data) {
-        if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
-        } else {
-          toaster.pop('success', data.data.message);
-          $scope.houseHold = {};
-
-          hideModal();
-        }
-      });
-    };
 
     function hideModal() {
       $('#modal-add-profile').modal('toggle');
