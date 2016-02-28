@@ -220,7 +220,7 @@
   @include translate3d(0, 0, 0);
 
   .icon-bar {
-    @include transition(all, .15s, linear, 0s);
+    @include transition(all, .5s, linear, 0s);
     @include origin(50% 50%);
 
     &:nth-child(2) {
@@ -232,16 +232,16 @@
 .st-menu {
   position: absolute;
   top: 70px;
-  left: 0;
+  right: 0;
   z-index: 100;
   visibility: hidden;
   width: 300px;
   height: 100%;
-  background: purple;
+  background: $bg-header;
   transition: all .5s linear;
-  transform: translate3d(-300px, 0, 0);
+  transform: translate3d(300px, 0, 0);
 
-  &.st-effect-2 { z-index: 1; }
+  &.st-effect-2 { z-index: 2; }
 }
 
 .st-pusher {
@@ -249,7 +249,7 @@
   display: inline-block;
   width: 100%;
   left: 0;
-  z-index: 99;
+  z-index: 1;
   height: 100%;
   @include perspective(1000px);
   @include transition(transform, .5s, 0s, linear);
@@ -262,13 +262,11 @@
 }
 
 .st-menu-open {
-  .st-pusher {
-    @include translate3d(300px, 0, 0);
-  }
+  .st-pusher { @include translate3d(-315px, 0, 0); }
 
   .st-menu {
     visibility: visible;
-    @include translate3d(15px, 0, 0);
+    @include translate3d(-15px, 0, 0);
     @include transition(all, .5s, 0s, linear);
   }
 }

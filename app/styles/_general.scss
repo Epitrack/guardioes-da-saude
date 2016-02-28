@@ -507,6 +507,40 @@ body {
   }
 }
 
+.mobile-navbar {
+  margin: auto 0;
+
+  @extend .navbar-nav;
+  // background-color: red;
+
+  li {
+    margin-bottom: 10px;
+
+    &.dropdown {
+      background-color: #fff;
+
+      a, button {
+        color: $bg-header !important;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    a {
+      color: #fff !important;
+    }
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+}
+
+.wrapper-nav-primary-mobile {
+  background-color: red;
+}
+
 // ====
 
 
@@ -1523,7 +1557,7 @@ p.login-email {
   // Nav primary
   .sidebar {
     // width: 28% !important;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     min-height: 700px;

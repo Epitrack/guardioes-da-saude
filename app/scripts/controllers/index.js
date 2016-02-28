@@ -82,6 +82,14 @@ angular.module('gdsApp')
       $(event.currentTarget).toggleClass('js-active');
       $('#wrapper-body').toggleClass('st-menu-open');
     }
+
+    var hMenu = document.body.clientHeight;
+    $scope.hMenu = hMenu+'px';
+
+    $scope.closeNav = function() {
+      $('#btn-showNavbar').removeClass('js-active');
+      $('#wrapper-body').removeClass('st-menu-open');
+    }
     // ====
 
   }]);
