@@ -40,8 +40,6 @@ angular.module('gdsApp')
       $scope.checkF = $scope.UTIL.checkForm(params, true);
       if($scope.checkF.error===true){return;}
 
-      console.log('HEREEEEE', $scope.UTIL.convertDate(params.dob))
-      return;
       params.picture = $scope.UTIL.checkAvatar($scope.userData);
       params.password = $scope.userData.password;
 
