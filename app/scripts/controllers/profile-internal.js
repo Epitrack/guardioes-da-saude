@@ -84,7 +84,7 @@ angular.module('gdsApp')
     var _buildObj = function (obj) {
       return {
         nick: obj.nick,
-        dob: obj.dob,
+        dob: $scope.UTIL.unConvertDate(obj.dob),
         gender: obj.gender,
         email: obj.email,
         race: obj.race,
