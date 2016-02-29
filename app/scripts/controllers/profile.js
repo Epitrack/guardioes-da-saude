@@ -60,6 +60,7 @@ angular.module('gdsApp')
       if($scope.checkF.error===true){return;}
 
       params.picture = $scope.screen.user.picture;
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       if($scope.screen.user.password) {
         params.password = $scope.screen.user.password;

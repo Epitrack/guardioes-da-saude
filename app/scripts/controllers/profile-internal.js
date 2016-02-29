@@ -60,6 +60,7 @@ angular.module('gdsApp')
       params.picture = $scope.screen.household.picture;
       if($scope.screen.household.email){ params.email = $scope.screen.household.email; }
       params.id = $scope.screen.household.id;
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       // ====
 

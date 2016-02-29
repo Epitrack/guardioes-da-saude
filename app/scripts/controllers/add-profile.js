@@ -35,6 +35,7 @@ angular.module('gdsApp')
       }
 
       params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
