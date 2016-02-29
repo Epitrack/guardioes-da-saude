@@ -119,7 +119,7 @@
 // iPad
 @media screen and (min-width: 768px) {
   .week {
-    margin: 0;
+    &.names { margin-left: -10px; }
 
     .day { margin: 0 4.4%; }
   }
@@ -129,6 +129,9 @@
 // Desktop
 @media screen and (min-width: 992px) {
   .week {
+    margin: 0;
+    &.names {  margin: 0; }
+
     .day { margin: 0 3.2%; }
   }
 }
