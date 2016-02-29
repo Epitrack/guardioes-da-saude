@@ -2,7 +2,7 @@
      aria-labelledby="modalAddProfile" ng-controller="AddProfileCtrl">
   <article class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <form ng-submit="addHousehold()" class="card-form" name="addFormProfile">
+      <form ng-submit="addHouseholdFromSurvey()" class="card-form" name="addFormProfile">
         <header class="modal-header panel-heading">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
             aria-hidden="true">&times;</span></button>
@@ -38,7 +38,6 @@
                   <label for="profile-birthdate">Data de nascimento</label>
                   <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
                          ng-model="houseHold.dob" mask="99-99-9999">
-                  <!-- <span class="icon-birthdate"></span> -->
                 </fieldset>
 
                 <fieldset class="col-xs-12 col-sm-6">
@@ -93,23 +92,6 @@
                 <div ng-show="checkF.error" class="alert alert-warning" role="alert">
                   <span>{{checkF.msg}}</span>
                 </div>
-<!--
-                <div ng-show="screen.repeatPassword != screen.household.password" class="alert alert-info" role="alert">
-                  <span>As senhas digitadas precisam ser iguais.</span>
-                </div>
-
-                <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
-                  <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-                </div>
-
-                <div ng-show="invalidbirth" class="alert alert-info" role="alert">
-                  <span>Sua data de nascimento precisa estar no formato: dd.mm.aaaa</span>
-                </div>
-
-                <div ng-show="invalid == true" class="alert alert-warning" role="alert">
-                  <span>Data de nascimento inválida.</span>
-                </div>
--->
               </fieldset>
             </div>
           </div>

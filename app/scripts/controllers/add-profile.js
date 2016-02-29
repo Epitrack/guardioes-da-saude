@@ -55,10 +55,54 @@ angular.module('gdsApp')
     };
     // ====
 
+    // ====
     function hideModal() {
       $('#modal-add-profile').modal('toggle');
     }
+    // ====
 
+    // ====
+    $scope.addHouseholdFromSurvey = function () {
+      var params = {
+        nick: $scope.houseHold.nick,
+        gender: $scope.houseHold.gender,
+        dob: $scope.houseHold.dob,
+        race: $scope.houseHold.race,
+        relationship: $scope.houseHold.relationship,
+      };
+
+      $scope.checkF = $scope.UTIL.checkForm(params);
+      if($scope.checkF.error === true){
+        return;
+      }
+
+      //checking optional email
+      if($scope.houseHold.email) {
+        if($scope.UTIL.checkEmail($scope.houseHold.email)) {
+          params.email = $scope.houseHold.email;
+        }
+        else{
+          $scope.checkF = {
+            "error": true,
+            "msg": "Email inválido."
+          };
+          return;
+        }
+      }
+
+      params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
+
+      HouseholdApi.createHousehold(params, function (data) {
+        if (data.data.error === true) {
+          console.warn(data.data.message);
+          toaster.pop('error', data.data.message);
+        } else {
+          console.log(data.data.message);
+          hideModal();
+          toaster.pop('success', data.data.message);
+        }
+      });
+    };
     // ====
 
   }]);
