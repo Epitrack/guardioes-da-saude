@@ -35,6 +35,7 @@ angular.module('gdsApp')
       $scope.checkF = $scope.UTIL.checkForm(params, true);
       if($scope.checkF.error===true){return;}
 
+
       params.picture = $scope.UTIL.checkAvatar($scope.userData);
       params.password = $scope.userData.password;
 

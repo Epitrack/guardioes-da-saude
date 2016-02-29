@@ -43,6 +43,7 @@ angular.module('gdsApp')
       $scope.checkF = $scope.UTIL.checkForm(params, true);
       if($scope.checkF.error===true){return;}
 
+      params.dob = $scope.UTIL.convertDate(params.dob);
       params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
       UserApi.createUser(params, function (data) {

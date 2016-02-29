@@ -36,9 +36,12 @@ angular.module('gdsApp')
             email: $scope.userData.email,
       };
 
+
       $scope.checkF = $scope.UTIL.checkForm(params, true);
       if($scope.checkF.error===true){return;}
 
+      console.log('HEREEEEE', $scope.UTIL.convertDate(params.dob))
+      return;
       params.picture = $scope.UTIL.checkAvatar($scope.userData);
       params.password = $scope.userData.password;
 
@@ -49,6 +52,8 @@ angular.module('gdsApp')
 
 
       if(params.password===undefined){params.password = params.email;}
+
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       $('#modal-complete-login').modal('hide');
 
