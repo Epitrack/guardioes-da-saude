@@ -1380,7 +1380,8 @@ p.login-email {
 
 .panel-heading {
   background-color: $btn-primary !important;
-  height: 40px;
+  height: auto;
+  min-height: 40px;
   margin-bottom: 35px;
 
   .location {
