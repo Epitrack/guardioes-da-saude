@@ -7,26 +7,24 @@
 //
 
 .map-mini-dashboard {
-    position: relative;
-    top: 0;
-    left: 0;
-    background-color: $link-primary;
-    z-index: 8;
-    min-height: 200px;
-    height: auto;
-//    padding-bottom: 30px;
-    @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: $link-primary;
+  z-index: 8;
+  min-height: 200px;
+  height: auto;
+  @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
 }
+
 .health-map-container {
   height: 100%;
-//  min-height: 100%;
+  min-height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
   z-index: 1;
 }
-    
-    
-    
+
 .info-mini-dashboard {
   .contact {
     font-size: ($fs-normal)+.2;
@@ -158,11 +156,11 @@
 
 // iPads
 @media screen and (min-width: 768px) {
-    .map-mini-dashboard {
-        position: absolute;
-        height: auto;
-        @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
-    }
+  .map-mini-dashboard {
+    position: relative;
+    height: 100%;
+    @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
+  }
 }
 
 // Desktops
