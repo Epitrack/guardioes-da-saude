@@ -35,8 +35,9 @@ angular.module('gdsApp')
     };
 
     $scope.mapOptions = {
-      zoom: 14,
-      center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng)
+      zoom: 14
+//      ,
+//      center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng)
     };
 
     $scope.config = {
@@ -113,6 +114,7 @@ angular.module('gdsApp')
 
     NgMap.getMap().then(function (map) {
       $scope.map = map;
+      getCoords($rootScope.city);
     });
 
     $scope.openInfoWindow = function (params) {
@@ -139,7 +141,7 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
-          console.warn(data.data.message);
+//          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
       });
@@ -183,7 +185,7 @@ angular.module('gdsApp')
           $scope.summary = summary;
           // $rootScope.$broadcast('build_summary');
         } else {
-          console.warn(data.data.message);
+//          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
       });
@@ -191,10 +193,10 @@ angular.module('gdsApp')
 
     function getCoords(city) {
       var geocoder = new google.maps.Geocoder();
-
       geocoder.geocode({'address': city}, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-          $scope.map.setCenter(results[0].geometry.location);
+            $scope.map.setCenter(results[0].geometry.location);
+            if($rootScope.city){delete $rootScope.city;}
         } else {
           console.log('Geocode was not successful for the following reason: ' + status);
         }
@@ -259,7 +261,7 @@ angular.module('gdsApp')
 
           $scope.summary = summary;
         } else {
-          console.warn(data.data.message);
+//          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
       });
@@ -275,7 +277,7 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
-          console.warn(data.data.message);
+//          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         }
       });
@@ -295,7 +297,7 @@ angular.module('gdsApp')
           language: 'pt-BR'
         }
       }).then(function(response){
-        console.log(response);
+//        console.log(response);
 
         return response.data.results.map(function(item){
           return item.formatted_address;
@@ -304,6 +306,7 @@ angular.module('gdsApp')
     };
 
     $scope.getCityAutoComplete = function(city) {
+//      $rootScope.city = city;
       getCoords(city);
       getSurveyByCity(city);
       getSurveyByCitySummary(city);
@@ -314,8 +317,8 @@ angular.module('gdsApp')
     if ($rootScope.city) {
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
-      getCoords($rootScope.city);
-      return delete $rootScope.city;
+//      getCoords($rootScope.city);
+//      return delete $rootScope.city;
     } else {
       $scope.getMarkersByLocation();
     }
