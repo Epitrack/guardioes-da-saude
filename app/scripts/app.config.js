@@ -7,7 +7,6 @@ angular.module("gdsApp")
 }])
 .constant('ApiConfig', {
     'API_URL': 'https://api.guardioesdasaude.org',
-//    'API_URL': 'http://rest.guardioesdasaude.org',
     'APP_TOKEN': 'd41d8cd98f00b204e9800998ecf8427e',
     'PLATFORM': 'web',
     'CLIENT': 'api'

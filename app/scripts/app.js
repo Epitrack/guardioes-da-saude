@@ -42,7 +42,12 @@ angular
   .config( function( $facebookProvider ) {
     $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
   })
-  .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
+  .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
+
+    if( $location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) { ApiConfig.API_URL = 'http://rest.guardioesdasaude.org' }
+    console.log(ApiConfig.API_URL);
+
+
 
     // moment js
     amMoment.changeLocale('pt-br');
