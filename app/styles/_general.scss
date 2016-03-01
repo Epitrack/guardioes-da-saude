@@ -611,7 +611,7 @@ body {
 }
 
 .list-tips {
-  height: 100%;
+  height: auto;
   min-height: 100px;
 }
 
@@ -1568,10 +1568,15 @@ p.login-email {
 
   .nav-primary {
     margin-top: 20px;
+    overflow-y: scroll;
+    height: 80%;
 
-    a { font-size: ($fs-normal); white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;}
+    a {
+      font-size: ($fs-normal);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   // ====
 

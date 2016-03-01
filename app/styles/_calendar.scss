@@ -132,11 +132,15 @@
     margin: 0;
     &.names {  margin: 0; }
 
-    .day { margin: 0 3.2%; }
+    .day { margin: 0 2%; }
   }
 }
 // ====
 
 // Large Desktops
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1600px) {
+  .week {
+    .day { margin: 0 4%; }
+  }
+}
 // ====
