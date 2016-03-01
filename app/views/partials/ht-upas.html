@@ -9,7 +9,10 @@
 </div>
 
 <div ng-show="showInfo" class="map-info">
-  <button ng-click="removeInfo()" class="right"><div class="close">x</div></button>
+  <button ng-click="removeInfo()" type="button" class="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
   <h5>{{markTitle}}</h5>
   <h6>{{markMessage}}</h6>
 </div>
