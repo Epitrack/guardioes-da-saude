@@ -13,6 +13,9 @@ angular.module('gdsApp')
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');
 
+    function showLocationModal(){ $('#modal-location').modal({ show: 'true' }); }
+    showLocationModal();
+
     // get user location
     $scope.getUserLocation = function () {
       if (navigator.geolocation) {
@@ -34,9 +37,9 @@ angular.module('gdsApp')
       console.warn('errorGeolocation', error);
     }
 
-    if (!localStorage.getItem('userStorage')) {
-      $scope.getUserLocation();
-    }
+//    if (!localStorage.getItem('userStorage')) {
+//      $scope.getUserLocation();
+//    }
     // ====
 
     // when user click in logout button
