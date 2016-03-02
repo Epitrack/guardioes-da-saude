@@ -166,6 +166,7 @@ angular
           race: "Raça/cor",
           relationship: "Parentesco",
           password:"Senha",
+          repeat_password:"Repita a senha"
         }
 
         for(var i in params)
@@ -189,6 +190,7 @@ angular
             }
             //validating pass
             if(i==='password' && params[i].length<6){ ret.error = true; ret.msg = "A senha precisa ter no mínimo 6 dígitos"; break; }
+            if(i==='repeat_password' && params[i] !== params.password){ ret.error = true; ret.msg = "As senhas digitadas precisam ser iguais."; break; }
           }
         }
         return ret;

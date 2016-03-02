@@ -38,6 +38,7 @@ angular.module('gdsApp')
         race: $scope.createData.race,
         gender: $scope.createData.gender,
         password: $scope.createData.password,
+        repeat_password: $scope.createData.repeat_password,
     };
 
       $scope.checkF = $scope.UTIL.checkForm(params, true);
