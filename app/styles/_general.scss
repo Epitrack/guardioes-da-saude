@@ -359,6 +359,11 @@ body {
   text-align: justify;
 }
 
+.banner-download-app {
+  height: 500px;
+  @include path('banner-download-app.svg');
+}
+
 .footer-primary {
   width: 100%;
   height: 170px;
