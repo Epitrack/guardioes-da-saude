@@ -96,14 +96,14 @@ angular
           }
           else if(race === 'amarelo')
           {
-              if(age>49) { return 9; }
+              if(age>59) { return 9; }
               else if(age>25) { return 8; }
               else { return 7; }
 
           }
           else if(race === 'branco')
           {
-              if(age>49) { return 14; }
+              if(age>59) { return 14; }
               else if(age>25) { return 8; }
               else { return 13; }
 
@@ -111,20 +111,20 @@ angular
         }
         else if (gender === 'M') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>49) { return 6; }
+              if(age>59) { return 6; }
               else if(age>25) { return 5; }
               else { return 4; }
           }
           else if(race === 'amarelo')
           {
-              if(age>49) { return 12; }
+              if(age>59) { return 12; }
               else if(age>25) { return 11; }
               else { return 10; }
 
           }
           else if(race === 'branco')
           {
-              if(age>49) { return 16; }
+              if(age>59) { return 16; }
               else if(age>25) { return 11; }
               else { return 15; }
           }
