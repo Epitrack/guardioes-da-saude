@@ -17,15 +17,24 @@ angular.module('gdsApp')
     function showLocationModal(){
       $('#modal-location').modal({
         backdrop: 'static',
-        keyboard: false
-      });
-
-      $('#modal-location').modal({
+        keyboard: false,
         show: 'true'
       });
     }
 
-    // showLocationModal();
+    function getBrowser() {
+      if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+        $scope.url = 'chrome';
+      } else if (navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+        $scope.url = 'safari';
+      } else if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        $scope.url = 'firefox';
+      }
+    };
+
+    getBrowser();
+    showLocationModal();
+
     // ====
 
     // get user location
