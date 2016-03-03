@@ -30,13 +30,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'leaflet-directive',
     'toaster',
     'ChartAngular',
     'ngMask',
     'angularMoment',
     'ngFileUpload',
-    'firebase',
     'ngMap',
     'angular-repeat-n',
     'ngFacebook'
@@ -44,7 +42,14 @@ angular
   .config( function( $facebookProvider ) {
     $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
   })
-  .run(['$rootScope', 'LocalStorage', 'amMoment', function ($rootScope, LocalStorage, amMoment) {
+  .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
+
+    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
+      ApiConfig.API_URL = 'http://rest.guardioesdasaude.org'
+    }
+
+    // console.log(ApiConfig.API_URL);
+
     // moment js
     amMoment.changeLocale('pt-br');
     // ====
@@ -57,8 +62,9 @@ angular
       $rootScope.user = u;
     }
 
-    console.log('app.run: user', $rootScope.user);
+//    console.log('app.run: user', $rootScope.user);
     // ====
+
 
     $rootScope.onInit = function(){
         document.body.style.display = "block";
@@ -67,14 +73,13 @@ angular
     // Helpers functions
     $rootScope.UTIL = {
       unConvertDate: function (date) {
-        var newDob = date.split('-');
-        return newDob[2] + '-' + newDob[1] + '-' + newDob[0];
+        var md = date.substr(8,2)+'-'+date.substr(5,2)+'-'+date.substr(0,4);
+        return md;
       },
 
-      convertDate: function (date, dateFormat) {
-
-        var convert = moment(date.substr(0, 10)).utc().format(dateFormat);
-        console.log("convert  "+convert);
+      convertDate: function (date) {
+//        var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
+        var convert = new Date(parseInt(date.substr(6,4)), parseInt(date.substr(3,2))-1, parseInt(date.substr(0,2)));
         return convert;
       },
 
@@ -84,93 +89,117 @@ angular
         gender = obj.gender;
         race = obj.race;
         age = this.getAge(obj.dob);
-
-        if (gender === 'M') {
+        if (gender === 'F') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-            // $scope.houseHold.picture = 'avatar masculino preto';
-            if (age <= 49) {
-              return 4;
-              // console.log('avatar masculino preto novinho');
-            } else if (age >= 50) {
-              return 11;
-              // console.log('avatar masculino preto coroa');
-            }
-          } else if (race === 'branco') {
-            // $scope.houseHold.picture = 'avatar masculino branco';
-            if (age <= 49) {
-              return 5;
-              // console.log('avatar masculino branco novinho');
-            } else if (age >= 50) {
-              return 9;
-              // console.log('avatar masculino branco coroa');
-            }
-          } else if (race === 'amarelo') {
-            // $scope.houseHold.picture = 'avatar masculino amarelo';
-            if (age <= 49) {
-              return 14;
-              // console.log('avatar masculino amarelo novinho');
-            } else if (age >= 50) {
-              return '';
-              // console.log('avatar masculino amarelo coroa');
-            }
+              if(age>49) { return 3; }
+              else if(age>25) { return 2; }
+              else { return 1; }
           }
-        } else {
+          else if(race === 'amarelo')
+          {
+              if(age>59) { return 9; }
+              else if(age>25) { return 8; }
+              else { return 7; }
+
+          }
+          else if(race === 'branco')
+          {
+              if(age>59) { return 14; }
+              else if(age>25) { return 8; }
+              else { return 13; }
+
+          }
+        }
+        else if (gender === 'M') {
           if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-            // $scope.houseHold.picture = 'avatar feminino preto';
-            if (age <= 49) {
-              return 1;
-              // console.log('avatar feminino preto novinho');
-            } else if (age >= 50) {
-              return 12;
-              // console.log('avatar feminino preto coroa');
-            }
-          } else if (race === 'branco') {
-            // $scope.houseHold.picture = 'avatar feminino branco';
-            if (age <= 49) {
-              return 3;
-              // console.log('avatar feminino branco novinho');
-            } else if (age >= 50) {
-              return 10;
-              // console.log('avatar feminino branco coroa');
-            }
-          } else if (race === 'amarelo') {
-            // $scope.houseHold.picture = 'avatar feminino amarelo';
-            if (age <= 49) {
-              return 13;
-              // console.log('avatar feminino amarelo novinho');
-            } else if (age >= 50) {
-              return 0;
-              // console.log('avatar feminino amarelo coroa');
-            }
+              if(age>59) { return 6; }
+              else if(age>25) { return 5; }
+              else { return 4; }
+          }
+          else if(race === 'amarelo')
+          {
+              if(age>59) { return 12; }
+              else if(age>25) { return 11; }
+              else { return 10; }
+
+          }
+          else if(race === 'branco')
+          {
+              if(age>59) { return 16; }
+              else if(age>25) { return 11; }
+              else { return 15; }
           }
         }
       },
 
       getAge: function (dateString, canIcheckAge) {
+        dateString = this.convertDate(dateString);
         var today, birthDate, age, m;
-        var ds = dateString.replace(/-/g, ',')
         today = new Date();
-        birthDate = new Date(ds);
+        birthDate = new Date(Date.parse(dateString));
         age = today.getFullYear() - birthDate.getFullYear();
         m = today.getMonth() - birthDate.getMonth();
-          
-        if (birthDate> today) return-1;
+
+        if (birthDate> today) { return -1 }
 
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
         }
 
-        this.checkAge(age, canIcheckAge);
-
         return age;
       },
 
       checkAge: function (age, canIcheckAge) {
-        if ((age > 13 && age < 120) || (canIcheckAge === false)) {
+        if ((age > 12 && age < 120) || (canIcheckAge === false)) {
             localStorage.setItem('dobValid', true);
         } else {
             localStorage.setItem('dobValid', false);
         }
+      },
+
+      checkForm:function(params, thirteenYears){
+        var ret = {"error":false, "msg":""};
+        var labels = {
+          dob: "Data de nascimento",
+          email: "Email",
+          gender: "Sexo",
+          nick: "Apelido",
+          race: "Raça/cor",
+          relationship: "Parentesco",
+          password:"Senha",
+          repeat_password:"Repita a senha"
+        }
+
+        for(var i in params)
+        {
+          if(params[i]===undefined||params[i]==='')
+          {
+            ret.error=true;
+            ret.msg = "O campo "+labels[i]+" está vázio!";
+            break;
+          } else {
+            //validating age
+            if(i==='dob')
+            {
+              var age = this.getAge(params[i]);
+              if (isNaN(age) || age<0 || (thirteenYears && age < 13)){ ret.error = true; ret.msg = "Data de nascimento inválida."; break; }
+            }
+            //validating email
+            if(i==='email')
+            {
+              if(this.checkEmail(params[i])===false){ ret.error = true; ret.msg = "Email inválido."; break; }
+            }
+            //validating pass
+            if(i==='password' && params[i].length<6){ ret.error = true; ret.msg = "A senha precisa ter no mínimo 6 dígitos"; break; }
+            if(i==='repeat_password' && params[i] !== params.password){ ret.error = true; ret.msg = "As senhas digitadas precisam ser iguais."; break; }
+          }
+        }
+        return ret;
+      },
+
+      checkEmail:function(email){
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
       },
 
       getDaysArray: function (year, month) {
@@ -197,7 +226,7 @@ angular
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
+        controller: 'CadastroCtrl',
         controllerAs: 'login'
       })
       .when('/cadastro', {
@@ -350,7 +379,7 @@ angular
       })
       .when('/dashboard/download', {
         templateUrl: 'views/data-download.html',
-        controller: 'DataDownloadCtrl',
+      controller: 'DataDownloadCtrl',
         controllerAs: 'dataDownload',
         resolve: {loggedin: checkLoggedOut}
       })

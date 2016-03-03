@@ -217,6 +217,15 @@ $week-days-color:                    $gray-smooth;
           transform: scale($rulers);
 }
 
+// scale
+@mixin scaleX($rulers...) {
+  -webkit-transform: scaleX($rulers);
+     -moz-transform: scaleX($rulers);
+      -ms-transform: scaleX($rulers);
+       -o-transform: scaleX($rulers);
+          transform: scaleX($rulers);
+}
+
 // animation
 @mixin animation($rulers...){
   -webkit-animation: $rulers;
@@ -224,6 +233,15 @@ $week-days-color:                    $gray-smooth;
       -ms-animation: $rulers;
        -o-animation: $rulers;
           animation: $rulers;
+}
+
+// perspective
+@mixin perspective($value){
+  -webkit-perspective: $value;
+     -moz-perspective: $value;
+      -ms-perspective: $value;
+       -o-perspective: $value;
+          perspective: $value;
 }
 
 // appearance
@@ -265,12 +283,5 @@ $week-days-color:                    $gray-smooth;
   }
   @else if $type == 'google-plus' {
     @include path('icon-google-plus.svg');
-  }
-}
-
-// Inputs of change photo
-@for $i from 01 through 14 {
-  .avatar-#{$i} {
-    i { @include path('avatar/avatar-'+ $i + '.svg'); }
   }
 }

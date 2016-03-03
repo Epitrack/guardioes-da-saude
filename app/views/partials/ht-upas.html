@@ -4,10 +4,16 @@
 
 <h3 class="subtitle primary master">UPAs</h3>
 
-<leaflet event-broadcast="events" lf-center="userLocation" markers="markersUpa" layers="layers" height="600px"
-         width="100%"></leaflet>
-
-<div ng-show="upaTitle" class="map-info">
-  <h5>{{upaTitle}}</h5>
-  <h6>{{upaMessage}}</h6>
+<div ng-if="markersPharmacy">
+    <gds-maps mid="mapUpa" location="userLocation" marks="markersUpa" size="{height:'600px', width:'100%'}"></gds-maps>
 </div>
+
+<div ng-show="showInfo" class="map-info">
+  <button ng-click="removeInfo()" type="button" class="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <h5>{{markTitle}}</h5>
+  <h6>{{markMessage}}</h6>
+</div>
+

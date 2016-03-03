@@ -16,9 +16,9 @@ angular.module('gdsApp')
         CalendarInterface: "=interface"
       },
       link: function ($scope) {
-        console.log("scope_calendar", $scope);
         if(!$scope.selected) $scope.selected = moment();
-        $scope.selected = _removeTime($scope.selected);
+          
+//        $scope.selected = _removeTime($scope.selected);
         $scope.month = $scope.selected.clone();
 
         var start = $scope.selected.clone();
@@ -28,10 +28,10 @@ angular.module('gdsApp')
 
         $scope.select = function (day) {
           $scope.selected = day.date;
-          console.log(day);
+//          console.log(day);
         };
 
-        console.log("CI", $scope.CalendarInterface);
+//        console.log("CI", $scope.CalendarInterface);
 
         $scope.next = function () {
           var next = $scope.month.clone();

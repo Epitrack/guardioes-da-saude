@@ -6,8 +6,23 @@
 
         <form ng-submit="setRootCity()" name="form-search-home" class="form-search-home">
           <fieldset class="input-group">
-            <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade">
+            <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade"
+            autocomplete="off"
+              uib-typeahead="address for address in getLocation($viewValue)"
+              typeahead-loading="loadingLocations"
+              typeahead-no-results="noResults"
+              typeahead-on-select="setRootCity($item)">
           </fieldset>
+
+          <!-- <fieldset class="input-group">
+            <div ng-show="loadingLocations" class="alert alert-info" role="alert">
+              <i class="glyphicon glyphicon-refresh"></i>
+            </div>
+
+            <div ng-show="noResults" class="alert alert-danger" role="alert">
+              <i class="glyphicon glyphicon-remove"></i> No Results Found
+            </div>
+          </fieldset> -->
         </form>
 
         <div class="last-cities">
@@ -20,10 +35,10 @@
           </ul>
         </div>
 
-        <div class="goto-dashboard">
+        <!-- <div class="goto-dashboard">
           <p>Para uma busca mais detalhada, <br> <a ng-href="dashboard" title="Vá para o painel de controle">acesse o
             painel de controle</a>.</p>
-        </div>
+        </div> -->
       </section>
     </div>
   </div>

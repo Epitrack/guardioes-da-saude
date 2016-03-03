@@ -8,129 +8,44 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', '$firebaseAuth', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, $firebaseAuth, UserApi, toaster, $location, LocalStorage) {
-
-    var href = new Firebase('https://popping-heat-8884.firebaseio.com');
-    var auth = $firebaseAuth(href);
+  .controller('CadastroEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', function ($scope, UserApi, toaster, $location, LocalStorage) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';
     // ====
 
     $scope.facebookLogin = function () {
-      auth.$authWithOAuthPopup('facebook').then(function (authData) {
-        console.log('Facebook authentication success:', authData);
+      UserApi.facebookLogin($scope, toaster);
 
-        var userFbData = {};
-
-        userFbData.fb_token = authData.facebook.accessToken;
-        userFbData.nick = authData.facebook.displayName;
-        // userFbData.picture = authData.facebook.profileImageURL;
-        userFbData.fb = authData.facebook.id;
-
-        if (authData.facebook.cachedUserProfile.gender === 'male') {
-          userFbData.gender = 'M';
-        } else {
-          userFbData.gender = 'F';
-        }
-
-        $scope.userData = userFbData;
-
-        UserApi.fbLogin(userFbData.fb_token, function (data) {
-          console.log('Data -> ', data);
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userCreateData(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Facebook authentication failed:', error);
-      });
     };
 
     $scope.googleLogin = function () {
-      auth.$authWithOAuthPopup('google').then(function (authData) {
-        console.log('Google authentication success:', authData);
-
-        var userGlData = {};
-
-        userGlData.access_token = authData.google.accessToken;
-        userGlData.nick = authData.google.displayName;
-        // userGlData.picture = authData.google.profileImageURL;
-        userGlData.gl = authData.google.id;
-
-        $scope.userData = userGlData;
-
-        UserApi.glLogin(userGlData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Google authentication failed:', error);
-      });
+      UserApi.googleLogin($scope, toaster);
     };
 
     $scope.twitterLogin = function () {
-      auth.$authWithOAuthPopup('twitter').then(function (authData) {
-        console.log('Twitter authentication success:', authData);
-        console.log("authData.twitter ")
-        console.log(authData.twitter)
-
-        var userTwData = {};
-        
-        userTwData.oauth_token = authData.twitter.accessToken;
-        userTwData.oauth_token_secret = authData.twitter.accessTokenSecret;
-        userTwData.nick = authData.twitter.displayName;
-        // userTwData.picture = authData.twitter.profileImageURL;
-        userTwData.tw = authData.twitter.id;
-
-        $scope.userData = userTwData;
-
-        UserApi.twLogin(userTwData, function (data) {
-          if (data.data.error === false) {
-            console.log(data.data.message);
-            LocalStorage.userLogin(data.data.user, data.data.token);
-            $location.path('health-daily');
-          } else {
-            console.log(data.data.message);
-            $('#modal-complete-login').modal('show');
-          }
-        });
-      }).catch(function (error) {
-        toaster.pop('error', error);
-        console.log('Facebook authentication failed:', error);
-      });
+      UserApi.twitterLogin($scope, toaster);
     };
 
     // create new user
     $scope.createData = {};
 
     $scope.createUser = function () {
-      var params = $scope.createData;
-      var dob = $scope.UTIL.unConvertDate($scope.createData.dob);
-        
-      params.dob = $scope.createData.dob;
-      console.log("passou por aquiiiiiiiiiiii",params)
-      var age = $scope.UTIL.getAge(dob);
+    var params = {
+        nick: $scope.createData.nick,
+        email: $scope.createData.email,
+        dob: $scope.createData.dob,
+        race: $scope.createData.race,
+        gender: $scope.createData.gender,
+        password: $scope.createData.password,
+        repeat_password: $scope.createData.repeat_password,
+    };
 
-      $scope.invalid = '';
+      $scope.checkF = $scope.UTIL.checkForm(params, true);
+      if($scope.checkF.error===true){return;}
 
-      if (LocalStorage.getItem('dobValid') !== true) {
-          $scope.invalid = true;
-          return;
-      } else {params.dob = dob;}
+      params.dob = $scope.UTIL.convertDate(params.dob);
+      params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {

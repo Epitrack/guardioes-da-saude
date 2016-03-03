@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1277px" height="500px" viewBox="0 0 1277 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>img_bgblue</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="53.6334872%" y1="8.17793554%" x2="53.6334888%" y2="90.4039679%" id="linearGradient-1">
+            <stop stop-color="#1E88E5" offset="0%"></stop>
+            <stop stop-color="#01569C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="01--home-search" sketch:type="MSArtboardGroup" transform="translate(0.000000, -2018.000000)" fill="url(#linearGradient-1)">
+            <g id="available" sketch:type="MSLayerGroup" transform="translate(-2.000000, 1996.000000)">
+                <g id="bgblue" transform="translate(0.000000, 22.000000)" sketch:type="MSShapeGroup">
+                    <path d="M-9.9475983e-14,87.0123757 L1278.99576,0 L1278.99576,500 L1.99576486,420 L-9.9475983e-14,87.0123757 Z" id="Rectangle-1505"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

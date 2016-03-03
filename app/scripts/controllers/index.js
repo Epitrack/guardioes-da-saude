@@ -8,10 +8,39 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', function ($scope, LocalStorage, $rootScope) {
+  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', '$location', function ($scope, LocalStorage, $rootScope, $location) {
 
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');
+
+    // ====
+    function checkIsMobile() {
+      if (!/Android|webOS|iPhone|iPad|Windows Phone|ZuneWP7|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        getBrowser();
+        showLocationModal();
+      }
+    };
+
+    function showLocationModal(){
+      $('#modal-location').modal({
+        backdrop: 'static',
+        keyboard: false,
+        show: 'true'
+      });
+    };
+
+    function getBrowser() {
+      if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
+        $scope.url = 'chrome';
+      } else if (navigator.userAgent.toLowerCase().indexOf('safari') > -1) {
+        $scope.url = 'safari';
+      } else if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+        $scope.url = 'firefox';
+      }
+    };
+
+    checkIsMobile();
+    // ====
 
     // get user location
     $scope.getUserLocation = function () {
@@ -33,10 +62,6 @@ angular.module('gdsApp')
     function errorGeolocation(error) {
       console.warn('errorGeolocation', error);
     }
-
-    if (!localStorage.getItem('userStorage')) {
-      $scope.getUserLocation();
-    }
     // ====
 
     // when user click in logout button
@@ -49,7 +74,10 @@ angular.module('gdsApp')
     // ====
 
     // ====
+
     $scope.checkPlatform = function() {
+      var GDSDownloadApp = LocalStorage.getItem('GDSDownloadApp');
+
       var ua, android, iphone;
 
       ua = navigator.userAgent.toLowerCase();
@@ -62,14 +90,38 @@ angular.module('gdsApp')
         $scope.downloadLink = 'https://itunes.apple.com/us/app/guardioes-da-saude/id1060576766?ls=1&mt=8'
       }
 
-      if(android || iphone) {
-        $('#modal-app').modal({ show: 'true' });
+      // console.log('GDSDownloadApp -> ', GDSDownloadApp);
+
+      if (GDSDownloadApp == null) {
+        if (android || iphone) {
+          $('#modal-app').modal({ show: 'true' });
+          localStorage.setItem('GDSDownloadApp', true);
+        }
       }
     };
 
     $rootScope.$on('getCities_ok', function() {
       $scope.checkPlatform();
     });
+    // ====
+
+    // mobile navbar
+    $scope.showNavbar = function(event) {
+      $(event.currentTarget).toggleClass('js-active');
+      $('#wrapper-body').toggleClass('st-menu-open');
+    }
+
+    var hMenu = document.body.clientHeight;
+    $scope.hMenu = hMenu+'px';
+
+    $scope.closeNav = function() {
+      $('#btn-showNavbar').removeClass('js-active');
+      $('#wrapper-body').removeClass('st-menu-open');
+    }
+
+    $scope.goToUrl = function(path) {
+      $location.path(path);
+    }
     // ====
 
   }]);

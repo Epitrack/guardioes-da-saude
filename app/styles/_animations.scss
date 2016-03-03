@@ -180,3 +180,96 @@
 }
 
 // ====
+
+
+
+//
+// Off canvas navbar
+//
+
+.wrapper-body {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-showNavbar {
+  &.js-active {
+    // background-color: green !important;
+
+    .icon-bar {
+      &:nth-child(1) {
+        @include origin(0% 0 0);
+        transform: rotate(45deg) translate(2px, -3px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        @include origin(0% 0 0);
+        transform: rotate(-45deg) translate(0px, 4px);
+      }
+    }
+  }
+}
+
+.bar-icon-wrapper {
+  @include translate3d(0, 0, 0);
+
+  .icon-bar {
+    @include transition(all, .5s, linear, 0s);
+    @include origin(50% 50%);
+
+    &:nth-child(2) {
+      @include transition(opacity, .1s, linear, 0s);
+    }
+  }
+}
+
+.st-menu {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 100;
+  visibility: hidden;
+  width: 300px;
+  height: 100%;
+  background: $bg-header;
+  transition: all .5s linear;
+  transform: translate3d(300px, 0, 0);
+
+  &.st-effect-2 { z-index: 2; }
+}
+
+.st-pusher {
+  // display: inline-block;
+  // left: 0;
+  // z-index: 1050;
+  // @include perspective(1000px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include transition(transform, .5s, 0s, linear);
+}
+
+.st-content {
+  overflow-y: scroll;
+  position: relative;
+  height: 100%;
+}
+
+.st-menu-open {
+  .st-pusher { @include translate3d(-315px, 0, 0); }
+
+  .st-menu {
+    visibility: visible;
+    overflow: scroll;
+    @include translate3d(-15px, 0, 0);
+    @include transition(all, .5s, 0s, linear);
+  }
+}
+
+// ====

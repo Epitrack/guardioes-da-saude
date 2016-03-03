@@ -40,9 +40,7 @@ html {
   z-index: 9;
 }
 
-html {
-  padding-top: 70px;
-}
+html { padding-top: 70px; }
 
 body {
   font-size: $fs-root;
@@ -68,6 +66,10 @@ body {
   height: 100%;
   float: none;
   @extend .col-xs-12;
+}
+
+.page {
+  height: 100%;
 }
 
 // ===
@@ -191,7 +193,6 @@ body {
     }
   }
 }
-
 // ===
 
 
@@ -239,7 +240,7 @@ body {
     height: auto;
     min-height: 630px;
     background-repeat: repeat;
-    background-size: 100%;
+    // background-size: 100%;
     @include path('bg-not-logged.svg');
   }
 }
@@ -257,6 +258,8 @@ body {
   fieldset {
     width: 100%;
   }
+
+  .dropdown-menu { width: 100%; }
 }
 
 .last-cities {
@@ -331,15 +334,14 @@ body {
 }
 
 .slideshow {
-  height: 320px;
+  min-height: 320px;
   margin-bottom: 50px;
   position: relative;
-  // background-color: black;
 }
 
 .step-box {
-  min-height: 200px;
-  margin-bottom: 30px;
+  height: auto;
+  margin-bottom: 20px;
   padding: 0 20px;
 }
 
@@ -356,6 +358,76 @@ body {
   font-family: $ff-light;
   text-align: justify;
 }
+
+//
+// Banner download app
+//
+
+.banner-download-app {
+  height: 560px;
+  @include path('banner-download-app.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 150px;
+  background-position: 100%;
+  padding-top: 50px;
+}
+
+.phones {
+  height: 470px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.cta-download-app {
+  color: #ffffff;
+
+  h3 {
+    font-size: ($fs-medium)*2;
+    margin-top: 90px;
+  }
+
+  h5 {
+    font-family: $ff-light;
+    font-size: ($fs-medium)+.2;
+    margin-top: 15px;
+    padding-right: 190px;
+  }
+
+  p {
+    font-family: $ff-light;
+    font-size: ($fs-medium)-.2;
+    margin-top: 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    padding: 0;
+    margin-right: 20px;
+    @include transition(background, .2s, linear, 0s);
+
+    &:hover {
+      // background-color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  figcaption {
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: ($fs-normal)+.3;
+    font-family: $ff-light;
+    margin-top: 5px;
+  }
+}
+
+// ====
 
 .footer-primary {
   width: 100%;
@@ -508,6 +580,40 @@ body {
   }
 }
 
+.mobile-navbar {
+  margin: auto 0;
+
+  @extend .navbar-nav;
+  // background-color: red;
+
+  li {
+    margin-bottom: 10px;
+
+    &.dropdown {
+      background-color: #fff;
+
+      a, button {
+        color: $bg-header !important;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    a {
+      color: #fff !important;
+    }
+  }
+
+  .sidebar {
+    height: 100%;
+  }
+}
+
+.wrapper-nav-primary-mobile {
+  // background-color: red;
+}
+
 // ====
 
 
@@ -575,7 +681,7 @@ body {
 }
 
 .list-tips {
-  height: 100%;
+  height: auto;
   min-height: 100px;
 }
 
@@ -989,87 +1095,84 @@ body {
   }
 }
 
+.news-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  figcaption {
+    font-size: ($fs-medium)+.6;
+    font-family: $ff-regular;
+  }
+}
+
 .news-card {
+  font-family: $ff-regular;
+  color: $font-primary;
   position: relative;
-  margin-bottom: 35px;
-  padding: 0 15px;
-  min-height: 290px;
+  padding: 0 15px 30px 20px;
+  min-height: 120px;
+
+  &:before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $blue-light;
+  }
+
+  &:last-child { margin-bottom: 50px; }
 }
 
 .news-date {
-  font-family: $ff-bold;
-  color: $font-primary;
-  font-size: ($fs-medium)+.4;
+  font-size: ($fs-medium)-.2;
   text-align: left;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
+  display: block;
 
-  span {
-    font-family: $ff-light;
-    text-transform: uppercase;
+  &:before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    @include bdr(100%);
+    background-color: $blue-light;
+    position: absolute;
+    z-index: 1;
+    left: -8px;
+    top: 0px;
   }
 }
 
-.news-link {
-  display: block;
-
-  figure {
-    position: relative;
-    overflow: hidden;
-    height: 290px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      @include scale3d(1.2);
-      @include transition(transform, .2s, 0s, linear);
-    }
-
-    .default-logo {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto;
-      display: block;
-      margin-top: 18px;
-    }
-
-    figcaption {
-      color: $link-primary;
-      font-size: ($fs-normal)+.4;
-      padding: 10px 10px 0 10px;
-      text-align: left;
-      min-height: 110px;
-      max-height: 150px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      @include rgba($blue-light-rgb, .85);
-    }
-  }
-
-  &:hover {
-    text-decoration: none;
-
-    img { @include scale3d(1.4); }
-  }
+.news-tweet {
+  font-size: ($fs-medium)-.4;
+  margin-bottom: 10px;
 }
 
 .news-footer {
-  height: 28px;
-  bottom: 0;
-  left: 0;
+  display: block;
+  color: $week-days-color;
   width: 100%;
-  padding: 2px 10px;
-  font-size: ($fs-normal)-.1;
-  color: $link-primary;
-  font-family: $ff-light;
-  @include rgba($blue-light-rgb, .85);
+  font-size: ($fs-normal)+.4;
+  font-family: $ff-regular;
 }
 
-.news-read-more {
-  float: right;
-  font-family: $ff-regular;
-  font-size: ($fs-normal)+.2;
+.icon-news {
+  figure {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+
+    img { max-width: 100%; }
+  }
+
+  &.like {
+    text-align: left;
+  }
+
+  &.clock {
+    text-align: right;
+  }
 }
 
 // ====
@@ -1349,7 +1452,8 @@ p.login-email {
 
 .panel-heading {
   background-color: $btn-primary !important;
-  height: 40px;
+  height: auto;
+  min-height: 40px;
   margin-bottom: 35px;
 
   .location {
@@ -1369,17 +1473,21 @@ p.login-email {
 }
 
 .panel-body { padding: 0; }
-//#upNotData{position: absolute !important; width: 100% !important;}
-#notDataLinechart{
-    display: block;
-    width: 100%;
-    height: 180px;
-    background: #eeeeee;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 80px;
-    div{padding-top:73px; position: absolute !important; width: 100% !important;}
 
+#notDataLinechart{
+  display: block;
+  width: 100%;
+  height: 180px;
+  background: #eeeeee;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 80px;
+
+  div {
+    padding-top:73px;
+    position: absolute !important;
+    width: 100% !important;
+  }
 }
 
 // ====
@@ -1465,11 +1573,8 @@ p.login-email {
   .text-primary { line-height: ($fs-medium)+.5; }
 }
 
-.privacy-policy {
-  @extend .about;
+.privacy-policy { @extend .about; }
 
-}
-#what-country{}
 // ====
 
 // Social login in Cadastro
@@ -1498,9 +1603,17 @@ p.login-email {
 
 // ====
 
+// Inputs of change photo
+@for $i from 01 through 16 {
+  .avatar-#{$i} {
+    i { @include path('avatar/avatar-'+ $i + '.svg'); }
+  }
+}
 
 //
 // Media queries
+//
+
 // iPads
 @media screen and (min-width: 768px) {
   // Header
@@ -1515,20 +1628,23 @@ p.login-email {
 
   // Nav primary
   .sidebar {
-    // width: 28% !important;
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
     min-height: 700px;
     height: 100%;
   }
 
   .nav-primary {
     margin-top: 20px;
+    overflow-y: scroll;
+    height: 80%;
 
-    a { font-size: ($fs-normal); white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;}
+    a {
+      font-size: ($fs-normal);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   // ====
 
@@ -1542,9 +1658,9 @@ p.login-email {
     }
   }
 
-  .slideshow {
-    min-height: 315px;
-    height: 500px;
+  .step-box {
+    height: 220px;
+    margin-bottom: 30px;
   }
 
   .nav-secondary {
@@ -1783,6 +1899,10 @@ p.login-email {
   // telefones-uteis
   .telephone-item { margin-left: 40px; }
   // ====
+
+  .form-search-home {
+    .dropdown-menu { width: 80%; }
+  }
 }
 
 // Large Desktops
