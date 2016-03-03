@@ -8,16 +8,18 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 'toaster', function ($scope, ContactApi, toaster) {
+  .controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 'Notification', function ($scope, ContactApi, Notification) {
 
     $scope.contact = {};
 
     $scope.sendContact = function () {
       ContactApi.faleConosco($scope.contact, function (data) {
         if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Contato', data.data.message);
         } else {
-          toaster.pop('success', data.data.message);
+          // toaster.pop('success', data.data.message);
+          Notification.show('success', 'Contato', data.data.message);
           $scope.contact = {};
         }
       });

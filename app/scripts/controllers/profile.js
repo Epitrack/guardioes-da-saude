@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'toaster', function ($scope, UserApi, $rootScope, toaster) {
+  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'Notification', function ($scope, UserApi, $rootScope, Notification) {
 
     $scope.pageClass = 'profile-page';
 
@@ -28,12 +28,13 @@ angular.module('gdsApp')
             email: u.email,
             race: u.race,
             picture:u.picture
-//            password: ""
+           // password: ""
           };
 
-//          console.warn($scope.screen.user); // formato dob ok
+         // console.warn($scope.screen.user); // formato dob ok
         } else {
-          toaster.pop('error', data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     };
@@ -71,9 +72,11 @@ angular.module('gdsApp')
       // ====
       UserApi.updateProfile(params, function (data) {
         if (data.data.error === false) {
-          toaster.pop('success', data.data.message);
+          // toaster.pop('success', data.data.message);
+          Notification.show('success', 'Atualizar usuário', data.data.message);
         } else {
-          toaster.pop('error', data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atualizar usuário', data.data.message);
         }
 
         $scope.screen = false;

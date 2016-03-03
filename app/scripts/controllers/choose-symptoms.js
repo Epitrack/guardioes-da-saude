@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', 'toaster', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', function ($scope, Surveyapi, toaster, $location, LocalStorage, $timeout, $window, $facebook) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function (data) {
@@ -49,11 +49,13 @@ angular.module('gdsApp')
 
       Surveyapi.submitSurvey(form, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Survey', data.data.message);
         } else {
-          console.log(data.data.message);
-          toaster.pop('success', data.data.message);
+          // console.log(data.data.message);
+          // toaster.pop('success', data.data.message);
+          Notification.show('success', 'Survey', data.data.message);
 
           if (data.data.exantematica === true) {
             openModalExantematica();
@@ -94,13 +96,14 @@ angular.module('gdsApp')
       var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
       var title = 'Guardiões da Saúde';
       var url = 'http%3A%2F%2Fguardioesdasaude.org';
-        
+
       if (social === 'facebook') {
         $facebook.ui({
           method: 'share',
           href: 'http://guardioesdasaude.org'
         }).then(function (response) {
-            toaster.pop('success', "Obrigado por compartilhar");
+            // toaster.pop('success', "Obrigado por compartilhar");
+            Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
             $('#modal-i-feel-good').modal('hide');
         }, function(error){console.warn("error -->", error)});
       } else {
