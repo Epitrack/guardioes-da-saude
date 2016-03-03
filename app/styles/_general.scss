@@ -404,16 +404,29 @@ body {
 
   img {
     max-width: 100%;
+    opacity: 1;
+    @include transition(opacity, .2s, linear, 0s);
   }
 
   a {
     padding: 0;
     margin-right: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
     @include transition(background, .2s, linear, 0s);
 
     &:hover {
-      // background-color: #fff;
       text-decoration: none;
+
+      &.google-play {
+        @include path('../images/bttn_googleplay_hover.svg');
+      }
+
+      &.app-store {
+        @include path('../images/bttn_appstore_hover.svg');
+      }
+
+      img { opacity: 0; }
     }
   }
 
