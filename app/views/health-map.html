@@ -2,7 +2,12 @@
   <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
       <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
-             ng-model="surveyByCity.city">
+        ng-model="surveyByCity.city"
+        autocomplete="off"
+        uib-typeahead="address for address in getLocation($viewValue)"
+        typeahead-loading="loadingLocations"
+        typeahead-no-results="noResults"
+        typeahead-on-select="getCityAutoComplete($item)">
     </fieldset>
   </form>
 
@@ -54,7 +59,7 @@
       </div>
 
       <div class="progress-wrapper">
-        <span class="progress-label">Exantemáica</span>
+        <span class="progress-label">Exantemática</span>
         <span class="progress-value">{{summary.exantematica}}%</span>
 
         <div class="progress">
@@ -88,17 +93,20 @@
   </div>
 </aside>
 
-<div class="health-map-container" map-lazy-load="https://maps.google.com/maps/api/js"
+<div class="health-map-container" center="current-location" map-lazy-load="https://maps.google.com/maps/api/js"
      map-lazy-load-params="{{mapOptions}}">
-
-  <ng-map default-style="false" center="current-location" zoom="12" style="height:670px" scrollwheel="false"
+<!---->
+  <ng-map default-style="false"  zoom="12" style="height:100%" scrollwheel="false"
           styles="{{config.style}}">
     <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()"
             icon="{{userLocation.icon}}"></marker>
 
+<!--
+
     <info-window position="current-location">
       <span>Você está aqui!</span>
     </info-window>
+-->
 
     <marker ng-repeat="m in markers" id="{{m.id}}" icon="{{m.icon}}" position="{{m.position}}"></marker>
   </ng-map>

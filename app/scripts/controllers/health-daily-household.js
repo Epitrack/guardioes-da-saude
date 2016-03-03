@@ -18,11 +18,11 @@ angular.module('gdsApp')
     $scope.totalSpelling = $scope.goodSpelling = $scope.badSpelling = 'Participações';
     $scope.currentMonth = moment();
     $scope.vm = {};
-    $scope.vm.currentDay = moment();      
-      
+    $scope.vm.currentDay = moment();
+
     if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
     if($scope.lineOptions !== undefined) $scope.lineOptions = undefined;
-    
+
     // ====
     $scope.getHousehold = function () {
       HouseholdApi.getHousehold(userID, function (data) {
@@ -76,7 +76,7 @@ angular.module('gdsApp')
           $scope.badSpelling = singularSpelling;
         }
 
-          
+
         $scope.hhSurvey = $scope.householdSurveys;
         $scope.$broadcast('hhSurvey_ok');
       });
@@ -138,6 +138,8 @@ angular.module('gdsApp')
     // ====
     $scope.getMonth = function (month) {
       $scope.hhAllDays = '';
+      $scope.lineOptions = null;
+      $scope.lineDataLoaded = false;
 
       var params = {
         month: month,
@@ -146,7 +148,10 @@ angular.module('gdsApp')
         user_token: $scope.household.user_token
       };
 
+      $rootScope.frequencyMonth = month;
+
       HouseholdApi.getHouseholdSurveyByMonth(params, function (data) {
+        $scope.lineDataLoaded = true;
         if (data.data.error === true) {
           console.warn(data.data.message);
           toaster.pop('error', data.data.message);
@@ -166,36 +171,34 @@ angular.module('gdsApp')
           total: item.count
         });
       });
-        console.log("d", days);
-        if(days.length > 0) {
-            $scope.lineOptions = {
-                data: days.reverse(),
-                xkey: 'y',
-                ykeys: ['total'],
-                labels: ['Participações'],
-                lineColors: ['#1E88E5'],
-                parseTime: false,
-                resize: true,
-                hoverCallback: function (index, options, content) {
-                  return (content);
-                }
-              };
-        }
+
+      if(days.length > 0) {
+        $scope.lineOptions = {
+          data: days.reverse(),
+          xkey: 'y',
+          ykeys: ['total'],
+          labels: ['Participações'],
+          lineColors: ['#1E88E5'],
+          parseTime: false,
+          resize: true,
+          hoverCallback: function (index, options, content) {
+            return (content);
+          }
+        };
+      }
     };
 
     $scope.graphicDonuts = function () {
-        console.log("sssssssssss", $scope.hhSurvey.no_symptom);
-        if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
-            $scope.donutOptions = {
-        data: [
+//      if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
+        $scope.hhDonutOptions = {
+          data: [
           {label: "Bem", value: $scope.hhSurvey.no_symptom},
           {label: "Mal", value: $scope.hhSurvey.symptom}
-        ],
-        colors: ['#E0D433', '#C81204'],
-        resize: true
-      };
-        }
-        
+          ],
+          colors: ['#E0D433', '#C81204'],
+          resize: true
+        };
+//      }
     };
     // ====
 
@@ -209,10 +212,8 @@ angular.module('gdsApp')
 
       HouseholdApi.getHouseholdSurveyByYear(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
           toaster.pop('error', data.data.message);
         } else {
-          console.log(data.data.data);
           $scope.monthReports = data.data.data;
         }
       });
@@ -237,7 +238,8 @@ angular.module('gdsApp')
     });
 
     $scope.$on('hhAllDays_ok', function () {
-      $scope.graphicLine()
+      $scope.lineOptions = null;
+      $scope.graphicLine();
     });
 
     // ====
@@ -252,31 +254,25 @@ angular.module('gdsApp')
         angular.forEach($scope.householdCalendar, function (item, k) {
           if (item.day == d) {
             if (item.no_symptom) {
-              if (bem == 0) bem = item.total;
-              else bem += item.total;
+              if (bem == 0) {bem = item.total;}
+              else {bem += item.total;}
             } else {
-              if (mal == 0) mal = item.total;
-              else mal += item.total;
+              if (mal == 0) {mal = item.total;}
+              else {mal += item.total;}
             }
           }
         });
         var content;
-        if (q == 't') {
-          content = (mal + bem);
-        } else if (q == 'bem') {
-          content = bem;
-        } else {
-          content = mal
-        }
+        if (q == 't') { content = (mal + bem); } 
+          else if (q == 'bem') {content = bem; } 
+          else { content = mal; }
         return content;
       },
       checkForSymptoms: function (day) {
-        //console.log("checkForSymptoms", day);
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
           angular.forEach($scope.householdCalendar, function (item, k) {
-            //console.log("item.day", item.day, "x", d, item.month, "x", $scope.currentMonth.month);
             if (item.day == d && item.month == $scope.currentMonth.month) {
               r = true;
             }
@@ -285,8 +281,6 @@ angular.module('gdsApp')
         } else return false;
       },
       onChange: function (params) {
-        console.log("onChange", params);
-        console.log("currentMonth", $scope.currentMonth);
         if (params.month != $scope.currentMonth.month ||
           params.year != $scope.currentMonth.year) {
           $scope.calendarLoaded = false;

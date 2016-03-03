@@ -47,21 +47,23 @@
 }
 
 .week {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+  display: inline-block;
 
   .day {
-    float: left;
     width: 28px;
     height: 28px;
-    box-sizing: border-box;
-    text-align: center;
     display: inline-block;
+    vertical-align: middle;
     cursor: pointer;
     font-size: ($fs-normal)+.2;
-    margin: 0 4% 0 0;
-    padding: 3px 0 0 0;
+    margin: 0 1.5%;
+    padding-top: 3px;
     @include bdr(100%);
 
-    &:last-child { margin-right: 0; }
+    // &:last-child { margin-right: 0; }
 
     &.today { border: 2px solid $btn-primary; }
   }
@@ -99,70 +101,46 @@
 .popover-content {
   width: auto;
   min-width: 100px!important;
-  //height: 32px;
-  //padding: 3px 0 0 35px;
   margin: 5px;
-  //background-size: 25px;
-  //background-repeat: no-repeat;
-  //@include path('icon-health-daily-good.svg');
 }
 
 .popover-content.bad {
   @include path('icon-health-daily-bad.svg');
 }
 
-// Large Smartphones
-@media screen and (min-width: 380px) {
-  .week {
-    width: 100%;
-    padding-left: 10px;
+// ====
 
-    .day { margin: 0 6% 0 0; }
-  }
-}
 
-// iPads
+
+//
+// Breakpoints
+//
+
+// iPad
 @media screen and (min-width: 768px) {
   .week {
-    width: 100%;
-    padding-left: 10px;
+    &.names { margin-left: -10px; }
 
-    .day { margin: 0 10% 0 0; }
+    .day { margin: 0 4.4%; }
   }
 }
+// ====
 
-// Desktops
+// Desktop
 @media screen and (min-width: 992px) {
   .week {
-    padding-left: 0;
+    margin: 0;
+    &.names {  margin: 0; }
 
-    .day { margin: 0 7px; }
+    .day { margin: 0 2%; }
   }
 }
+// ====
 
 // Large Desktops
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1600px) {
   .week {
-    padding-left: 0;
-
-    .day { margin: 0 6% 0 0; }
-  }
-}
-
-// Extra Large Desktops
-@media screen and (min-width: 1500px) {
-  .week {
-    padding-left: 0;
-
-    .day { margin: 0 3.3%; }
-  }
-}
-
-// Extra Extra Large Desktops
-@media screen and (min-width: 1800px) {
-  .week {
-    padding-left: 0;
-
     .day { margin: 0 4%; }
   }
 }
+// ====

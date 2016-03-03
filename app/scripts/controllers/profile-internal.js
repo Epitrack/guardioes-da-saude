@@ -49,29 +49,19 @@ angular.module('gdsApp')
       // create a object to manipulate date and send to api
       var params = {
         nick: $scope.screen.household.nick,
-        dob: $scope.UTIL.unConvertDate($scope.screen.household.dob),
+        dob: $scope.screen.household.dob,
         gender: $scope.screen.household.gender,
-        email: $scope.screen.household.email,
         race: $scope.screen.household.race,
-        id: $scope.screen.household.id,
-        password: "",
-        picture: $scope.screen.household.picture
       };
-      console.log("link photo "+$scope.screen.household.picture)
-      var age = $scope.UTIL.getAge(params.dob, false);
 
-      $scope.invalid = '';
+      $scope.checkF = $scope.UTIL.checkForm(params);
+      if($scope.checkF.error===true){return;}
 
-      if (LocalStorage.getItem('dobValid') !== true) {
-        return $scope.invalid = true;
-      }
+      params.picture = $scope.screen.household.picture;
+      if($scope.screen.household.email){ params.email = $scope.screen.household.email; }
+      params.id = $scope.screen.household.id;
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
-      // verify is household changes password
-      if ($scope.screen.household.password === "" || $scope.screen.household.password !== $scope.screen.repeatPassword) {
-        delete $scope.screen.household.password;
-      } else {
-        params.password = $scope.screen.household.password;
-      }
       // ====
 
       // return console.warn(params);
@@ -80,9 +70,8 @@ angular.module('gdsApp')
         if (data.data.error === true) {
           toaster.pop('error', data.data.message);
         } else {
-          console.warn('DATA SUCCESS -> ', data);
+//          console.warn('DATA SUCCESS -> ', data);
           toaster.pop('success', data.data.message);
-
           $scope.screen.household = _buildObj(data.data.user[0]);
         }
       });
@@ -100,7 +89,6 @@ angular.module('gdsApp')
         email: obj.email,
         race: obj.race,
         id: obj.id,
-        password: "",
         picture: obj.picture
       };
     };

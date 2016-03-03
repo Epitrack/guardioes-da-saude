@@ -1,23 +1,35 @@
-<article class="col-xs-12 col-sm-6 col-md-4 news-card" ng-repeat="noticia in news">
-  <time datetime="{{ noticia.date }}" class="news-date">
-      {{noticia.created_at | amDateFormat:'DD'}}
-    <span>/ {{ noticia.created_at | amDateFormat:'MMMM'  }}</span>
+<header class="col-xs-12 news-header">
+  <figure>
+    <img src="../images/icon-news-twitter.svg" alt="Twitter logo">
+    <figcaption>Ministério da Saúde</figcaption>
+  </figure>
+</header>
+
+<article class="col-xs-12 col-md-9 col-md-offset-2 news-card" ng-repeat="noticia in news">
+  <time datetime="{{noticia.date}}" class="news-date">
+    {{noticia.created_at | amDateFormat:'DD/MM/YYYY'}}
   </time>
 
-  <a href="{{ min_url }}" ng-href="{{ noticia.entities.urls[0].url }}" class="news-link" target="_blank"
-     title="Clique para ver esta notícia.">
+  <p class="news-tweet">
+    {{noticia.text}}
+  </p>
 
-    <figure>
-      <img class="default-logo" ng-show="!noticia.entities.media[0].media_url" src="../../images/ministerio-logo.png"
-           alt="{{ noticia.text }}">
-      <img ng-show="noticia.entities.media[0].media_url" ng-src="{{ noticia.entities.media[0].media_url }}"
-           alt="{{ noticia.text }}">
-      <figcaption>{{ noticia.text }}</figcaption>
-    </figure>
+  <footer class="news-footer">
+    <span class="pull-left icon-news like">
+      <figure>
+        <img src="../../images/icon-news-like.svg" alt="ícone de um coração">
+      </figure>
 
-    <footer class="news-footer">
-      <!-- <span class="news-address">{{ noticia.entities.urls[0].url }}</span> -->
-      <span ng-if="noticia.entities.urls[0].url" class="news-read-more">Ler mais</span>
-    </footer>
-  </a>
+      {{noticia.favorite_count}}
+    </span>
+
+    <span class="pull-right icon-news clock">
+      <figure>
+        <img src="../../images/icon-news-clock.svg" alt="ícone de um relógio">
+      </figure>
+
+      <span am-time-ago="noticia.created_at"></span>
+      <!-- {{noticia.created_at | amDateFormat:'DD/MM/YYYY'}} -->
+    </span>
+  </footer>
 </article>

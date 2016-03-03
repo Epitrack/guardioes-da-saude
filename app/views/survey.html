@@ -9,7 +9,7 @@
               <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg"
                    alt="Avatar de {{ screen.user.nick }}">
               <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Defaul">
-              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | ageFilter }} anos</span></figcaption>
+              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | ageFilter }}</span></figcaption>
             </figure>
           </a>
         </aside>
@@ -31,8 +31,8 @@
                title="Clique para realizar a survey de {{ member.nick }}">
               <figure>
                 <img ng-src="images/avatar/avatar-{{member.picture}}.svg"
-                     alt="{{ member.nick }} - {{ member.dob | ageFilter }} anos">
-                <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }} anos</span></figcaption>
+                     alt="{{ member.nick }} - {{ member.dob | ageFilter }}">
+                <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }}</span></figcaption>
               </figure>
             </a>
           </aside>

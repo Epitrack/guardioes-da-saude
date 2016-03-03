@@ -10,7 +10,7 @@
     <aside class="col-md-4 health-daily-avatar">
       <figure>
         <img ng-src="images/avatar/avatar-{{household.picture}}.svg" alt="Avatar de {{ household.nick }}">
-        <figcaption>{{ household.nick }} <span>{{ household.dob | ageFilter }} anos</span></figcaption>
+        <figcaption>{{ household.nick }} <span>{{ household.dob | ageFilter }}</span></figcaption>
       </figure>
     </aside>
 
@@ -35,8 +35,8 @@
       <div class="geral">
         <h2>Geral</h2>
         <h3>Estatísticas das participações</h3>
-        <div ng-if="donutOptions">
-          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart> <!--donutOptions -->
+        <div ng-if="hhSurvey.no_symptom > 0 || hhSurvey.symptom > 0">
+          <donutchart id="donut-chart-diario" data-options="hhDonutOptions"></donutchart> <!--donutOptions -->
         </div>
 
         <div class="status">
@@ -80,7 +80,7 @@
 
   <article class="col-xs-12 col-md-7 col-md-offset-1 card frequency">
     <h2>Frequência</h2>
-    <h3>Relação de participação por mês</h3>
+    <h3>Relação de participação do mês {{frequencyMonth | getMonth}}</h3>
 
     <div class="dropdown sort-by">
       <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -98,8 +98,12 @@
     <div ng-if="lineOptions">
       <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
     </div>
+
     <div ng-if="!lineOptions" >
-        <div id="notDataLinechart"><div>Não há dados para suficientes. Participe agora!</div></div>    
+      <div id="notDataLinechart">
+        <div ng-if="lineDataLoaded">Não há dados para suficientes. Participe agora!</div>
+        <div ng-if="!lineDataLoaded">Carregando...</div>
+      </div>
     </div>
 
   </article>

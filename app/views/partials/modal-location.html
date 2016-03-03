@@ -1,0 +1,29 @@
+<div class="modal fade modal-app" id="modal-location" tabindex="-1" role="dialog" aria-labelledby="modalApp" ng-controller="IndexCtrl">
+  <article class="modal-dialog" role="document">
+    <div class="modal-content">
+      <aside class="card-form">
+        <header class="modal-header panel-heading">
+          <h3 class="modal-title panel-title">Atenção!</h3>
+        </header>
+
+        <div class="modal-body">
+          <div class="panel-body">
+            <div class="col-xs-12 contact-form">
+              <figure>
+                <img ng-src="../../images/modal-geolocation/{{url}}-permssion.png" alt="Como permitir sua localização.">
+              </figure>
+
+              <p class="thank-you-text">
+                Compartilhe sua localização para um perfeito funcionamento do Guardiões da Saúde.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-label="Close" ng-click="getUserLocation()">OK</button>
+        </div>
+      </aside>
+    </div>
+  </article>
+</div>

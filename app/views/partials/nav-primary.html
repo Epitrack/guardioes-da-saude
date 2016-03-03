@@ -6,10 +6,10 @@
         <a ng-click="dashboardActive = !dashboardActive" class="dashboard dropdown" title="Painel de Controle">Painel de Controle</a>
 
         <ul class="nav nav-list sub-nav" id="dashboardActive" ng-hide="!dashboardActive">
-          <li><a ng-href="dashboard">Geral</a></li>
-          <li><a ng-href="dashboard/map">Mapa</a></li>
-          <li><a ng-href="dashboard/analysis">Análise de dados</a></li>
-          <li><a ng-href="dashboard/download">Download dos dados</a></li>
+          <li><a ng-href="/dashboard'" ng-click="goToUrl('/dashboard');closeNav()">Geral</a></li>
+          <li><a ng-href="/dashboard/map" ng-click="goToUrl('/dashboard/map');closeNav()">Mapa</a></li>
+          <li><a ng-href="/dashboard/analysis" ng-click="goToUrl('/dashboard/analysis');closeNav()">Análise de dados</a></li>
+          <li><a ng-href="/dashboard/download" ng-click="goToUrl('/dashboard/download');closeNav()">Download dos dados</a></li>
         </ul>
       </li> -->
 
@@ -17,9 +17,9 @@
         <a ng-click="active = !active" class="health-daily dropdown" title="Diário de Saúde">Diário de Saúde</a>
 
         <ul class="nav nav-list sub-nav" id="health-daily" ng-hide="!active">
-          <li><a ng-href="/health-daily">{{user.nick}}</a></li>
+          <li><a ng-href="/health-daily" ng-click="goToUrl('/health-daily');closeNav()">{{user.nick}}</a></li>
           <li ng-if="user.household" ng-repeat="hh in user.household">
-            <a ng-href="/health-daily/household/{{ hh.id }}">{{ hh.nick }}</a>
+            <a ng-href="/health-daily/household/{{ hh.id }}" ng-click="goToUrl('/health-daily/household/{{ hh.id }}');closeNav()">{{ hh.nick }}</a>
           </li>
         </ul>
       </li>
@@ -28,28 +28,28 @@
         <a ng-click="profileActive = ! profileActive" class="profile dropdown" title="Perfil">Perfil</a>
 
         <ul class="nav nav-list sub-nav" id="profiles" ng-hide="!profileActive">
-          <li><a ng-href="/profile">{{user.nick}}</a></li>
+          <li><a ng-href="/profile" ng-click="goToUrl('/profile');closeNav()">{{user.nick}}</a></li>
           <li ng-if="user.household" ng-repeat="hh in user.household">
-            <a ng-href="/profile/household/{{ hh.id }}">{{ hh.nick }}</a>
+            <a ng-href="/profile/household/{{ hh.id }}" ng-click="goToUrl('/profile/household/{{ hh.id }}');closeNav()">{{ hh.nick }}</a>
           </li>
-          <li><a ng-href="/profile/add">Adicionar membro</a></li>
+          <li><a ng-href="/profile/add" ng-click="goToUrl('/profile/add');closeNav()">Adicionar membro</a></li>
         </ul>
       </li>
 
       <li>
-        <a ng-href="/health-map" class="health-map" title="Mapa da Saúde">Mapa da Saúde</a>
+        <a ng-href="/health-map" ng-click="goToUrl('/health-map');closeNav()" class="health-map" title="Mapa da Saúde">Mapa da Saúde</a>
       </li>
 
       <li>
-        <a ng-href="/health-tips" class="health-tips" title="Dicas de Saúde">Dicas de Saúde</a>
+        <a ng-href="/health-tips" ng-click="goToUrl('/health-tips');closeNav()" class="health-tips" title="Dicas de Saúde">Dicas de Saúde</a>
       </li>
 
       <li>
-        <a ng-href="/news" class="news" title="Notícias">Notícias</a>
+        <a ng-href="/news" ng-click="goToUrl('/news');closeNav()" class="news" title="Notícias">Notícias</a>
       </li>
 
       <li>
-        <a ng-href="/" class="logout" title="Sair" ng-click="clearStorage()">Sair</a>
+        <a ng-href="/" class="logout" title="Sair" ng-click="goToUrl('/');clearStorage();closeNav();">Sair</a>
       </li>
     </ul>
   </nav>

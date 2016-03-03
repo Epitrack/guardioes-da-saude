@@ -21,11 +21,11 @@ angular.module('gdsApp')
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
+      if(data.picture === undefined) data.picture = 0;
       data.dob = data.dob;
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
-          console.log('Success createHousehold ', data);
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
@@ -45,9 +45,8 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-          console.log('Success changeAvatar: ', result);
           callback(result);
-          obj.updateUser(LocalStorage.getItem('userStorage').id);
+          UserApi.updateUser(LocalStorage.getItem('userStorage').id);
         }, function (error) {
           console.warn('Error changeAvatar: ', error);
         });
@@ -56,7 +55,6 @@ angular.module('gdsApp')
     obj.deleteHousehold = function(id, callback) {
       $http.get(apiUrl + '/household/delete/' + id + '?client=' + client, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(data){
-          console.log('Success deleteHousehold ', data);
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
@@ -67,7 +65,6 @@ angular.module('gdsApp')
     obj.getHousehold = function(userID, callback) {
       $http.get(apiUrl + '/user/household/' + userID, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
       .then(function(data){
-        console.log('Success getHousehold: ', data);
         callback(data);
         }, function(error){
           console.warn('Error getHousehold: ', error);
@@ -78,7 +75,6 @@ angular.module('gdsApp')
     obj.getHouseholdSurvey = function(hhId, callback) {
       $http.get(apiUrl + '/household/survey/summary?household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){
-          console.log('Success getHouseholdSurvey: ', result);
           callback(result);
         }, function(error){
           console.warn('Error getHouseholdSurvey: ', error);
@@ -93,7 +89,6 @@ angular.module('gdsApp')
 
       $http.post(apiUrl + '/household/update', params, {headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
         .then(function(result){
-          console.log('Success updateProfile: ', result);
           callback(result);
           UserApi.updateUser(userStorage.id);
         }, function(error){
@@ -109,7 +104,6 @@ angular.module('gdsApp')
 
       $http.get(apiUrl + '/household/calendar/month?month=' + month + '&year=' + year + '&household_id=' + hhId, {headers: {'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token}})
         .then(function(result){
-          console.log('Success getHouseholdCalendar: ', result);
           callback(result);
         }, function(error){
           console.warn('Error getHouseholdCalendar: ', error);
@@ -120,7 +114,6 @@ angular.module('gdsApp')
     obj.getHouseholdSurveyByMonth = function(params, callback) {
       $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year + '&household_id=' + params.hh_id, {headers: {'app_token': app_token, 'user_token': params.user_token}})
         .then(function(result){
-          console.log('Success getHouseholdSurveyByMonth: ', result);
           callback(result);
         }, function(error){
           console.warn('Error getHouseholdSurveyByMonth: ', error);
@@ -130,7 +123,6 @@ angular.module('gdsApp')
     obj.getHouseholdSurveyByYear = function(params, callback) {
       $http.get(apiUrl + '/household/calendar/year?year=' + params.year + '&household_id=' + params.hh_id, {headers: {'app_token': app_token, 'user_token': params.user_token}})
         .then(function(result){
-          console.log('Success getHouseholdSurveyByYear: ', result);
           callback(result);
         }, function(error){
           console.warn('Error getHouseholdSurveyByYear: ', error);
