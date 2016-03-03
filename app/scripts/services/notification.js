@@ -33,7 +33,8 @@ angular.module('gdsApp')
     var obj = {};
 
     obj.show = function(status,title, message) {
-      console.warn(status, title, message);
+      // console.warn(status, title, message);
+      // getStatus();
 
         var params = {
           title: title,
@@ -41,17 +42,39 @@ angular.module('gdsApp')
           icon: '../images/'+status+'-notficon.png'
         };
 
-        // console.log(params);
+      Notification.requestPermission().then(function(result) {
+        // return console.warn(result);
 
-        getPermission()
-        .then(function(){
-          var n = new Notification(params.title, {
+        if (result === 'denied') {
+          // console.log('Permission wasn\'t granted. Allow a retry.');
+          return;
+        }
+
+        if (result === 'default') {
+          // console.log('The permission request was dismissed.');
+          return;
+        }
+
+        if (result === 'granted') {
+           var n = new Notification(params.title, {
             body: params.message,
             icon: params.icon
           });
-        }).catch(function(status){
-          console.log('Had no permission!');
-        });
+        }
+        // Do something with the granted permission.
+      });
+
+        // console.log(params);
+
+        // getPermission()
+        // .then(function(){
+        //   var n = new Notification(params.title, {
+        //     body: params.message,
+        //     icon: params.icon
+        //   });
+        // }).catch(function(status){
+        //   console.log('Had no permission!');
+        // });
     };
 
     return obj;
