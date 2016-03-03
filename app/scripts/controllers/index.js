@@ -50,7 +50,7 @@ angular.module('gdsApp')
         navigator.geolocation.getCurrentPosition(getPosition, errorGeolocation);
       } else {
         alert('Seu navegador não suporta geolocation');
-      }
+    }
     };
 
     function getPosition(position) {
