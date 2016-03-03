@@ -14,13 +14,20 @@ angular.module('gdsApp')
     $scope.logged = LocalStorage.getItem('userLogged');
 
     // ====
+    function checkIsMobile() {
+      if (!/Android|webOS|iPhone|iPad|Windows Phone|ZuneWP7|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        getBrowser();
+        showLocationModal();
+      }
+    };
+
     function showLocationModal(){
       $('#modal-location').modal({
         backdrop: 'static',
         keyboard: false,
         show: 'true'
       });
-    }
+    };
 
     function getBrowser() {
       if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
@@ -32,9 +39,7 @@ angular.module('gdsApp')
       }
     };
 
-    getBrowser();
-    showLocationModal();
-
+    checkIsMobile();
     // ====
 
     // get user location
@@ -57,10 +62,6 @@ angular.module('gdsApp')
     function errorGeolocation(error) {
       console.warn('errorGeolocation', error);
     }
-
-//    if (!localStorage.getItem('userStorage')) {
-//      $scope.getUserLocation();
-//    }
     // ====
 
     // when user click in logout button
