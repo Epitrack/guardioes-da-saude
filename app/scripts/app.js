@@ -398,13 +398,18 @@ angular
         controller: 'CadastroEmailCtrl',
         controllerAs: 'cadastroEmail'
       })
+      .when('/submit', {
+        templateUrl: 'views/help.html',
+        controller: 'HelpCtrl',
+        controllerAs: 'help'
+      })
       .otherwise({
         redirectTo: '/'
       });
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,// set false to development
+      enabled: false,// set false to development
       requireBase: false
     });
   });
