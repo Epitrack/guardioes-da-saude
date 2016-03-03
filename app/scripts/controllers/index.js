@@ -13,8 +13,20 @@ angular.module('gdsApp')
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');
 
-    function showLocationModal(){ $('#modal-location').modal({backdrop: 'static', keyboard: false}); $('#modal-location').modal({ show: 'true' }); }
-    showLocationModal();
+    // ====
+    function showLocationModal(){
+      $('#modal-location').modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+
+      $('#modal-location').modal({
+        show: 'true'
+      });
+    }
+
+    // showLocationModal();
+    // ====
 
     // get user location
     $scope.getUserLocation = function () {

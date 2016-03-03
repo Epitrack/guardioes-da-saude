@@ -359,10 +359,75 @@ body {
   text-align: justify;
 }
 
+//
+// Banner download app
+//
+
 .banner-download-app {
-  height: 500px;
+  height: 560px;
   @include path('banner-download-app.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 150px;
+  background-position: 100%;
+  padding-top: 50px;
 }
+
+.phones {
+  height: 470px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.cta-download-app {
+  color: #ffffff;
+
+  h3 {
+    font-size: ($fs-medium)*2;
+    margin-top: 90px;
+  }
+
+  h5 {
+    font-family: $ff-light;
+    font-size: ($fs-medium)+.2;
+    margin-top: 15px;
+    padding-right: 190px;
+  }
+
+  p {
+    font-family: $ff-light;
+    font-size: ($fs-medium)-.2;
+    margin-top: 30px;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    padding: 0;
+    margin-right: 20px;
+    @include transition(background, .2s, linear, 0s);
+
+    &:hover {
+      // background-color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  figcaption {
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: ($fs-normal)+.3;
+    font-family: $ff-light;
+    margin-top: 5px;
+  }
+}
+
+// ====
 
 .footer-primary {
   width: 100%;

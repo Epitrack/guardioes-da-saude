@@ -217,6 +217,15 @@ $week-days-color:                    $gray-smooth;
           transform: scale($rulers);
 }
 
+// scale
+@mixin scaleX($rulers...) {
+  -webkit-transform: scaleX($rulers);
+     -moz-transform: scaleX($rulers);
+      -ms-transform: scaleX($rulers);
+       -o-transform: scaleX($rulers);
+          transform: scaleX($rulers);
+}
+
 // animation
 @mixin animation($rulers...){
   -webkit-animation: $rulers;
