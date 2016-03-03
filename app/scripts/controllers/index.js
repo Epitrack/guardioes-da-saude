@@ -22,11 +22,13 @@ angular.module('gdsApp')
     };
 
     function showLocationModal(){
-      $('#modal-location').modal({
-        backdrop: 'static',
-        keyboard: false,
-        show: 'true'
-      });
+      if (LocalStorage.getItem('userLocation') === null) {
+        $('#modal-location').modal({
+          backdrop: 'static',
+          keyboard: false,
+          show: 'true'
+        });
+      }
     };
 
     function getBrowser() {
