@@ -111,11 +111,19 @@ angular.module('gdsApp')
         }
       ]
     };
-
+    var icon=undefined;
     NgMap.getMap().then(function (map) {
       $scope.map = map;
+
+      getSurveyByCity($rootScope.city);
+      getSurveyByCitySummary($rootScope.city);
       getCoords($rootScope.city);
-      google.maps.event.addListener(map, 'idle', showMarkers);
+      var position = new google.maps.LatLng($scope.userLocation.coords[0], $scope.userLocation.coords[1]);
+      var info  = new google.maps.InfoWindow({content:"<b>Você está aqui!</b>", map:$scope.map, position: position, pixelOffset:new google.maps.Size(0,-20)});
+      icon = new google.maps.Marker({icon:$scope.userLocation.icon, map:$scope.map, position: position});
+      //TODO colocar aqui o "você está aqui"
+      icon.setZIndex(100000);
+      google.maps.event.addListener(map, 'idle', addNewMarkers);
     });
 
     $scope.openInfoWindow = function (params) {
@@ -140,7 +148,14 @@ angular.module('gdsApp')
     function getSurveyByCity(city) {
       Surveyapi.getMarkersByCity(city, function (data) {
         if (data.data.error === false) {
-          $scope.markers = addToArray(data.data.data);
+          if($scope.markers){
+            var newMs = addToArray(data.data.data);
+//            console.log("$scope.markers.length",$scope.markers.length)
+            for(var i in newMs) {$scope.markers.push(newMs[i]);}
+
+          }
+          else{ $scope.markers = addToArray(data.data.data); }
+
         } else {
          // console.warn(data.data.message);
           // toaster.pop('error', data.data.message);
@@ -201,7 +216,7 @@ angular.module('gdsApp')
             $scope.map.setCenter(results[0].geometry.location);
             if($rootScope.city) { delete $rootScope.city; }
         } else {
-          console.log('Geocode was not successful for the following reason: ' + status);
+//          console.log('Geocode was not successful for the following reason: ' + status);
         }
       });
     }
@@ -220,7 +235,8 @@ angular.module('gdsApp')
           position: [p.lat, p.lon],
           address: p.formattedAddress,
           id: p.id,
-          icon: '../../images/icon-health-daily-' + p.no_symptom + '.svg'
+          icon: '../../images/icon-health-daily-' + p.no_symptom + '.svg',
+          zIndex:0
         });
       });
 
@@ -277,20 +293,11 @@ angular.module('gdsApp')
         lon: LocalStorage.getItem('userLocation').lon
       };
 
-      Surveyapi.getMarkersByLocation(params, function (data) {
-        if (data.data.error === false) {
-          $scope.markers = addToArray(data.data.data);
-        } else {
-         // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
-          Notification.show('error', 'Atenção', data.data.message);
-        }
+      Surveyapi.getCityByPosition(params, function(data){
+        $rootScope.city =  data.data.results[1].formatted_address;
       });
-
-      getSummaryByLocation(params);
     };
     // ====
-
 
     //
     // autocomplete
@@ -310,8 +317,38 @@ angular.module('gdsApp')
       });
     };
 
-    function showMarkers() {
-      console.log("IT'S CHANGING")
+    function addNewMarkers() {
+        var bounds = $scope.map.getBounds();
+
+        // var south = map.getBounds().getSouthWest();
+        var south_lat = $scope.map.getBounds().getSouthWest().lat();
+        var south_lng = $scope.map.getBounds().getSouthWest().lng();
+
+        // var north = map.getBounds().getNorthEast();
+        var north_lat = $scope.map.getBounds().getNorthEast().lat();
+        var north_lng = $scope.map.getBounds().getNorthEast().lng();
+
+        var center_lat = (south_lat + north_lat) / 2;
+        var center_lng = (south_lng + north_lng) / 2;
+        var params = {'lat': center_lat, 'lon':center_lng };
+
+        Surveyapi.getCityByPosition(params, function(data){
+          getSurveyByCity(data.data.results[1].formatted_address);
+          getSurveyByCitySummary(data.data.results[1].formatted_address);
+
+        });
+
+        Surveyapi.getMarkersByLocation(params, function (data) {
+          if (data.data.error === false) {
+//            $scope.markers = addToArray(data.data.data);
+            var newMs = addToArray(data.data.data)
+//            console.log("$scope.markers.length",$scope.markers.length)
+            for(var i in newMs){$scope.markers.push(newMs[i]);}
+
+          } else {
+            Notification.show('error', 'Atenção', data.data.message);
+          }
+        });
     }
 
     $scope.getCityAutoComplete = function(city) {
@@ -322,14 +359,6 @@ angular.module('gdsApp')
     }
     // ====
 
+    if ($rootScope.city===undefined){ $scope.getMarkersByLocation(); }
 
-    if ($rootScope.city) {
-      getSurveyByCity($rootScope.city);
-      getSurveyByCitySummary($rootScope.city);
-//      getCoords($rootScope.city);
-//      return delete $rootScope.city;
-    } else {
-      $scope.getMarkersByLocation();
-    }
-//    google.maps.event.addListener(map, 'idle', showMarkers);
   }]);
