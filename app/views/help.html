@@ -1,7 +1,18 @@
 <!-- Menu -->
-<div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
+<!-- <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div> -->
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Ajuda</h2>
+  <h2 class="section-title">Submit</h2>
+
+  <form ng-submit="uploadImage()">
+    <fieldset class="form-group">
+      <label for="image">Imagem</label>
+      <input id="image" accept="image/*" type="file" upload-file="produto.image" class="input-primary full">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <button class="btn btn-primary" type="submit">Enviar</button>
+    </fieldset>
+  </form>
 </section>
