@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', '$location', function ($scope, LocalStorage, $rootScope, $location) {
+  .controller('IndexCtrl', ['$scope', 'LocalStorage', '$rootScope', '$location', 'Notification', function ($scope, LocalStorage, $rootScope, $location, Notification) {
 
     // to hide menu
     $scope.logged = LocalStorage.getItem('userLogged');
@@ -60,14 +60,15 @@ angular.module('gdsApp')
     }
 
     function errorGeolocation(error) {
-      console.warn('errorGeolocation', error);
+      // console.warn('errorGeolocation', error);
+      Notification.show('error', 'Localização', error);
     }
     // ====
 
     // when user click in logout button
     $scope.clearStorage = function () {
       delete $rootScope.user;
-      console.log('clearStorage in index.js');
+      // console.log('clearStorage in index.js');
       localStorage.removeItem('userStorage');
       window.location.href = "/";
     };

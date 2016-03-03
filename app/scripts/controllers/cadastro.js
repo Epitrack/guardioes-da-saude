@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', function ($scope, UserApi, toaster, $location, LocalStorage, $facebook) {
+  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', 'Notification', function ($scope, UserApi, toaster, $location, LocalStorage, $facebook, Notification) {
     // $scope.pageClass = 'login-page';
 
     $scope.userData = {};
@@ -57,12 +57,14 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
-          toaster.pop('success', data.data.message);
+          // toaster.pop('success', data.data.message);
+          Notification.show('success', 'Cadastro', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
-          toaster.pop('error', data.data.message);
-          console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Cadastro', data.data.message);
+          // console.warn(data.data.message);
         }
       });
     };

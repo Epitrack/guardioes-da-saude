@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', 'toaster', '$rootScope', 'LocalStorage', 'NgMap', '$http', '$timeout', function ($scope, Surveyapi, toaster, $rootScope, LocalStorage, NgMap, $http, $timeout) {
+  .controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', 'NgMap', '$http', '$timeout', 'Notification', function ($scope, Surveyapi, $rootScope, LocalStorage, NgMap, $http, $timeout, Notification) {
 
     $scope.pageClass = 'health-map';
 
@@ -141,8 +141,9 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
-//          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+         // console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -185,8 +186,9 @@ angular.module('gdsApp')
           $scope.summary = summary;
           // $rootScope.$broadcast('build_summary');
         } else {
-//          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+         // console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -261,8 +263,9 @@ angular.module('gdsApp')
 
           $scope.summary = summary;
         } else {
-//          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+         // console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -277,8 +280,9 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           $scope.markers = addToArray(data.data.data);
         } else {
-//          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+         // console.warn(data.data.message);
+          // toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
 

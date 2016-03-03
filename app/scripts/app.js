@@ -62,7 +62,7 @@ angular
       $rootScope.user = u;
     }
 
-//    console.log('app.run: user', $rootScope.user);
+   // console.log('app.run: user', $rootScope.user);
     // ====
 
 
@@ -78,7 +78,7 @@ angular
       },
 
       convertDate: function (date) {
-//        var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
+       // var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
         var convert = new Date(parseInt(date.substr(6,4)), parseInt(date.substr(3,2))-1, parseInt(date.substr(0,2)));
         return convert;
       },

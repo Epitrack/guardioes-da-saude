@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', 'toaster', '$rootScope', 'SearchCitiesApi', '$http', function ($scope, Surveyapi, $location, toaster, $rootScope, SearchCitiesApi, $http) {
+  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http', function ($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
 
     $scope.pageClass = 'main-page';
 
@@ -48,7 +48,7 @@ angular.module('gdsApp')
           language: 'pt-BR'
         }
       }).then(function(response){
-        console.log(response);
+        // console.log(response);
 
         return response.data.results.map(function(item){
           return item.formatted_address;
