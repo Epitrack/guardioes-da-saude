@@ -42,6 +42,7 @@ angular.module('gdsApp')
     };
 
     checkIsMobile();
+    Notification.show('error', 'Titulo', 'Mensagem');
     // ====
 
     // get user location
