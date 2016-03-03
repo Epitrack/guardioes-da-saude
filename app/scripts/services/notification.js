@@ -11,6 +11,25 @@ angular.module('gdsApp')
   .service('Notification', function () {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
+    function getStatus () {
+      if (!window.Notification) {
+        return "unsupported";
+      }
+      return window.Notification.permission;
+    }
+
+    function getPermission () {
+      return new Promise((resolve, reject) => {
+        Notification.requestPermission(status => {
+          if (status == 'granted') {
+            resolve();
+          }else{
+            reject(status);
+          }
+        });
+      });
+    }
+
     var obj = {};
 
     obj.show = function(status,title, message) {
@@ -23,25 +42,6 @@ angular.module('gdsApp')
         };
 
         // console.log(params);
-
-        function getStatus () {
-          if (!window.Notification) {
-            return "unsupported";
-          }
-          return window.Notification.permission;
-        }
-
-        function getPermission () {
-          return new Promise((resolve, reject) => {
-            Notification.requestPermission(status => {
-              if (status == 'granted') {
-                resolve();
-              }else{
-                reject(status);
-              }
-            });
-          });
-        }
 
         getPermission()
         .then(function(){
