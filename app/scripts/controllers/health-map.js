@@ -115,6 +115,7 @@ angular.module('gdsApp')
     NgMap.getMap().then(function (map) {
       $scope.map = map;
       getCoords($rootScope.city);
+      google.maps.event.addListener(map, 'idle', showMarkers);
     });
 
     $scope.openInfoWindow = function (params) {
@@ -198,7 +199,7 @@ angular.module('gdsApp')
       geocoder.geocode({'address': city}, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             $scope.map.setCenter(results[0].geometry.location);
-            if($rootScope.city){delete $rootScope.city;}
+            if($rootScope.city) { delete $rootScope.city; }
         } else {
           console.log('Geocode was not successful for the following reason: ' + status);
         }
@@ -309,6 +310,10 @@ angular.module('gdsApp')
       });
     };
 
+    function showMarkers() {
+      console.log("IT'S CHANGING")
+    }
+
     $scope.getCityAutoComplete = function(city) {
 //      $rootScope.city = city;
       getCoords(city);
@@ -326,5 +331,5 @@ angular.module('gdsApp')
     } else {
       $scope.getMarkersByLocation();
     }
-
+//    google.maps.event.addListener(map, 'idle', showMarkers);
   }]);
