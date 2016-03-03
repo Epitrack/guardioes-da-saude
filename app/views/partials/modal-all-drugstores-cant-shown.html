@@ -2,21 +2,25 @@
   <article class="modal-dialog" role="document">
     <div class="modal-content">
       <aside class="card-form">
+        <header class="modal-header panel-heading">
+          <h3 class="modal-title panel-title">Atenção!</h3>
+        </header>
+
         <div class="modal-body">
           <div class="panel-body">
-            <div class="col-xs-12 contact-form">
-              <h1>Atenção</h1>
+<!--            <div class="col-xs-12 contact-form">-->
               <p class="thank-you-text">
                 Algumas farmácias podem não ser exibidas no mapa.
               </p>
-            </div>
+<!--            </div>-->
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default btn-block" data-dismiss="modal" aria-label="Close">OK</button>
+          <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" aria-label="Close" ng-click="getUserLocation()">OK</button>
         </div>
       </aside>
     </div>
   </article>
 </div>
+
