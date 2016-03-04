@@ -33,7 +33,6 @@ angular.module('gdsApp')
 
          // console.warn($scope.screen.user); // formato dob ok
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         }
       });
@@ -72,10 +71,8 @@ angular.module('gdsApp')
       // ====
       UserApi.updateProfile(params, function (data) {
         if (data.data.error === false) {
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Atualizar usuário', data.data.message);
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atualizar usuário', data.data.message);
         }
 

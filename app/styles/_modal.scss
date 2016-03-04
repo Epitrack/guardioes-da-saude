@@ -79,6 +79,8 @@
   }
 }
 
+// ====
+
 
 
 //
@@ -118,6 +120,43 @@
 }
 
 // ====
+
+
+
+//
+// Modal donload app & Drugstores
+//
+
+.modal-download-app {
+  header {
+    margin-bottom: 0;
+  }
+
+  .icon-location {
+    @extend .col-sm-4;
+    @extend .col-sm-offset-4;
+
+    img {
+      width: 70%;
+      margin-left: 20px;
+    }
+  }
+
+  p {
+    @extend .thank-you-text;
+  }
+
+  .permission {
+    margin: 30px 0;
+  }
+}
+
+.modal-drugstores {
+  @extend .modal-download-app;
+}
+
+// ====
+
 
 
 

@@ -49,10 +49,8 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
-            // toaster.pop('error', data.data.message);
             Notification.show('error', 'Cadastro por e-mail', data.data.message);
         } else {
-            // toaster.pop('success', data.data.message);
             Notification.show('success', 'Cadastro por e-mail', data.data.message);
             $location.path('/health-daily');
         }
@@ -66,13 +64,11 @@ angular.module('gdsApp')
      // console.warn("======== passando aqui", $scope.userData)
       UserApi.createUser($scope.userData, function (data) {
         if (data.data.error === false) {
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Cadastro', data.data.message);
 
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Cadastro', data.data.message);
 
           // console.warn(data.data.message);

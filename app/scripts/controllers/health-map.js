@@ -177,7 +177,6 @@ angular.module('gdsApp')
 
         } else {
          // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         }
       });
@@ -222,7 +221,6 @@ angular.module('gdsApp')
           // $rootScope.$broadcast('build_summary');
         } else {
          // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         }
       });
@@ -300,7 +298,6 @@ angular.module('gdsApp')
           $scope.summary = summary;
         } else {
          // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         }
       });
