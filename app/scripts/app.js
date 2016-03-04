@@ -45,12 +45,10 @@ angular
 
    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
      ApiConfig.API_URL = 'http://rest.guardioesdasaude.org';
-     $rootScope.ANALYTICS_ID = 'UA-71659608-1'; // dev
-   } else {
-     $rootScope.ANALYTICS_ID = 'UA-71659608-4'
+     ApiConfig.ANALYTICS_ID = 'UA-71659608-1';
    }
 
-    // console.log(ApiConfig.API_URL);
+    // console.warn('ApiConfig -> ', ApiConfig);
 
     // moment js
     amMoment.changeLocale('pt-br');
@@ -67,10 +65,13 @@ angular
    // console.log('app.run: user', $rootScope.user);
     // ====
 
+    // ====
+    $rootScope.body_is_ok = false;
 
     $rootScope.onInit = function(){
-        document.body.style.display = "block";
+      $rootScope.body_is_ok = true;
     };
+    // ====
 
     // Helpers functions
     $rootScope.UTIL = {

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="gdsApp" ng-init="onInit()">
   <head>
     <meta charset="utf-8">
     <base href="/">
@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="gdsApp" style="display:none" ng-init="onInit()">
+  <body ng-class="{ 'js-active' : body_is_ok }">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -86,16 +86,20 @@
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <div analytics></div>
+
      <script>
-      var analytics_id = '{{ ANALYTICS_ID }}';
+      // var analytics_id = '{{ANALYTICS_ID}}';
 
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      // console.warn('analytics_id', analytics_id);
 
-      ga('create', analytics_id, 'auto');
-      ga('send', 'pageview');
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      // ga('create', analytics_id, 'auto');
+      // ga('send', 'pageview');
      </script>
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -184,6 +188,8 @@
     <script src="scripts/services/notification.js"></script>
     <script src="scripts/services/upload.js"></script>
     <script src="scripts/directives/uploadfile.js"></script>
+    <script src="scripts/directives/analytics.js"></script>
+    <script src="scripts/services/helper.js"></script>
     <!-- endbuild -->
     <script>
       (function(d, s, id){
