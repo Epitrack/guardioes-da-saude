@@ -8,23 +8,23 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroEmailCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', 'Notification', function ($scope, UserApi, toaster, $location, LocalStorage, Notification) {
+  .controller('CadastroEmailCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', 'Notification', function ($scope, UserApi, $location, LocalStorage, Notification) {
 
     // set page class to animations
     $scope.pageClass = 'cadastro-page';
     // ====
 
     $scope.facebookLogin = function () {
-      UserApi.facebookLogin($scope, toaster);
+      UserApi.facebookLogin($scope);
 
     };
 
     $scope.googleLogin = function () {
-      UserApi.googleLogin($scope, toaster);
+      UserApi.googleLogin($scope);
     };
 
     $scope.twitterLogin = function () {
-      UserApi.twitterLogin($scope, toaster);
+      UserApi.twitterLogin($scope);
     };
 
     // create new user

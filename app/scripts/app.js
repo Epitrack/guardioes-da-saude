@@ -84,49 +84,42 @@ angular
 
       checkAvatar: function (obj) {
         var gender, race, age;
-
         gender = obj.gender;
         race = obj.race;
         age = this.getAge(obj.dob);
         if (gender === 'F') {
-          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>49) { return 3; }
-              else if(age>25) { return 2; }
-              else { return 1; }
-          }
-          else if(race === 'amarelo')
-          {
-              if(age>59) { return 9; }
-              else if(age>25) { return 8; }
-              else { return 7; }
-
-          }
-          else if(race === 'branco')
-          {
-              if(age>59) { return 14; }
-              else if(age>25) { return 8; }
-              else { return 13; }
-
+          switch(race){
+              case 'branco':
+              case 'indigena':
+                  return 8;
+                  break;
+              case 'preto':
+                  return 1;
+                  break;
+              case 'pardo':
+                  return 2;
+                  break;
+              case 'amarelo':
+                  return 7;
+                  break;
           }
         }
         else if (gender === 'M') {
-          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>59) { return 6; }
-              else if(age>25) { return 5; }
-              else { return 4; }
-          }
-          else if(race === 'amarelo')
-          {
-              if(age>59) { return 12; }
-              else if(age>25) { return 11; }
-              else { return 10; }
 
-          }
-          else if(race === 'branco')
-          {
-              if(age>59) { return 16; }
-              else if(age>25) { return 11; }
-              else { return 15; }
+            switch(race){
+              case 'branco':
+                  return 11;
+                  break;
+              case 'preto':
+                  return 5;
+                  break;
+              case 'pardo':
+              case 'indigena':
+                  return 4;
+                  break;
+              case 'amarelo':
+                  return 10;
+                  break;
           }
         }
       },
