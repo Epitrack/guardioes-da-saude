@@ -8,16 +8,16 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification', function ($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
+  .controller('CadastroCtrl', function ($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
     // $scope.pageClass = 'login-page';
 
     $scope.userData = {};
     $scope.userData.gender = "M";
 
 
-    $scope.facebookLogin = function () {
+    $scope.facebookLogin = function ()
       UserApi.facebookLogin($scope);
-    };
+    }
 
     $scope.googleLogin = function () {
       UserApi.googleLogin($scope);
@@ -66,4 +66,4 @@ angular.module('gdsApp')
         }
       });
     };
-  }]);
+  });
