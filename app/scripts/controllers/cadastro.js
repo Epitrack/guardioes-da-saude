@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', 'Notification', function ($scope, UserApi, toaster, $location, LocalStorage, $facebook, Notification) {
+  .controller('CadastroCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification', function ($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
     // $scope.pageClass = 'login-page';
 
     $scope.userData = {};
@@ -16,15 +16,15 @@ angular.module('gdsApp')
 
 
     $scope.facebookLogin = function () {
-        UserApi.facebookLogin($scope, toaster);
+      UserApi.facebookLogin($scope);
     };
 
     $scope.googleLogin = function () {
-      UserApi.googleLogin($scope, toaster);
+      UserApi.googleLogin($scope);
     };
 
     $scope.twitterLogin = function () {
-      UserApi.twitterLogin($scope, toaster);
+      UserApi.twitterLogin($scope);
     };
 
     $scope.updateUserSocialData = function () {
