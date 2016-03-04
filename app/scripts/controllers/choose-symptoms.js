@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', '$rootScope', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification, $rootScope) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function (data) {
@@ -81,6 +81,8 @@ angular.module('gdsApp')
           $location.path('/health-tips');
         },
         400);
+
+      $rootScope.aside = 'upas';
     };
 
     $scope.goToHome = function () {
