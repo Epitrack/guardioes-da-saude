@@ -29,6 +29,7 @@ angular.module('gdsApp')
       }
 
       Surveyapi.submitSurvey(form, function (data) {
+        console.log("submit survey ", data.data);
         if (data.data.error !== false) {
           // console.warn(data.data.message);
           Notification.show('error', 'Survey', data.data.message);

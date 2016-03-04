@@ -45,7 +45,22 @@ angular.module('gdsApp')
         .then(function (data) {
          // console.log('Success submitSurvey ', data);
           callback(data);
-          UserApi.updateUser($rootScope.user.id);
+
+          UserApi.updateUser($rootScope.user.id, function(data){
+
+              if(data.data.data[0].fb || data.data.data[0].tw || data.data.data[0].gl)
+              {
+
+                var params = {
+                  password:data.data.data[0].email,
+                  picture:data.data.data[0].picture
+                };
+
+
+                UserApi.updateProfile(params);
+              }
+
+          });
         }, function (error) {
           console.warn('Error submitSurvey: ', error);
         });
