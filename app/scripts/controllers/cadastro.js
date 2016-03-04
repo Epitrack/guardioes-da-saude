@@ -15,7 +15,7 @@ angular.module('gdsApp')
     $scope.userData.gender = "M";
 
 
-    $scope.facebookLogin = function ()
+    $scope.facebookLogin = function () {
       UserApi.facebookLogin($scope);
     }
 
