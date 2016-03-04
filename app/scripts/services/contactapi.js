@@ -19,7 +19,7 @@ angular.module('gdsApp')
     obj.faleConosco = function (data, callback) {
       $http.post(apiUrl + '/email/contact', data, {headers: {'app_token': app_token}})
         .then(function (data) {
-          console.log('Success faleConosco: ', data);
+          // console.log('Success faleConosco: ', data);
           callback(data);
         }, function (error) {
           console.warn('Error faleConosco: ', error);
