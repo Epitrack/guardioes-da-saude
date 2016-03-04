@@ -79,6 +79,8 @@
   }
 }
 
+// ====
+
 
 
 //
@@ -120,8 +122,9 @@
 // ====
 
 
+
 //
-// Modal donload app
+// Modal donload app & Drugstores
 //
 
 .modal-download-app {
@@ -148,7 +151,12 @@
   }
 }
 
+.modal-drugstores {
+  @extend .modal-download-app;
+}
+
 // ====
+
 
 
 
