@@ -44,7 +44,10 @@ angular
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
-     ApiConfig.API_URL = 'http://rest.guardioesdasaude.org'
+     ApiConfig.API_URL = 'http://rest.guardioesdasaude.org';
+     $rootScope.ANALYTICS_ID = 'UA-71659608-1'; // dev
+   } else {
+     $rootScope.ANALYTICS_ID = 'UA-71659608-4'
    }
 
     // console.log(ApiConfig.API_URL);
