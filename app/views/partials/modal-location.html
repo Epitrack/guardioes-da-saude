@@ -1,4 +1,4 @@
-<div class="modal fade modal-app" id="modal-location" tabindex="-1" role="dialog" aria-labelledby="modalApp" ng-controller="IndexCtrl">
+<div class="modal fade modal-app modal-download-app" id="modal-location" tabindex="-1" role="dialog" aria-labelledby="modalApp" ng-controller="IndexCtrl">
   <article class="modal-dialog" role="document">
     <div class="modal-content">
       <aside class="card-form">
@@ -8,13 +8,25 @@
 
         <div class="modal-body">
           <div class="panel-body">
-            <div class="col-xs-12 contact-form">
-              <figure>
+            <div class="col-xs-12">
+              <div class="row">
+                <figure class="icon-location">
+                  <img src="../../images/modal-geolocation/icon-location.png" alt="Ícone de um marcador">
+                </figure>
+              </div>
+
+              <p>
+                Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização.
+              </p>
+
+              <br>
+
+              <figure class="permission">
                 <img ng-src="../../images/modal-geolocation/{{url}}-permssion.png" alt="Como permitir sua localização.">
               </figure>
 
-              <p class="thank-you-text">
-                Compartilhe sua localização para um perfeito funcionamento do Guardiões da Saúde.
+              <p>
+                Não compartilhar implicará no mau funcionamento do Guardiões da Saúde.
               </p>
             </div>
           </div>

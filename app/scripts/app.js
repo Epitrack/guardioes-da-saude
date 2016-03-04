@@ -44,9 +44,9 @@ angular
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
-//    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
-//      ApiConfig.API_URL = 'http://rest.guardioesdasaude.org'
-//    }
+   if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
+     ApiConfig.API_URL = 'http://rest.guardioesdasaude.org'
+   }
 
     // console.log(ApiConfig.API_URL);
 
