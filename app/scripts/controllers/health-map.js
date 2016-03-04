@@ -11,6 +11,7 @@ angular.module('gdsApp')
   .controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', 'NgMap', '$http', '$timeout', 'Notification', function ($scope, Surveyapi, $rootScope, LocalStorage, NgMap, $http, $timeout, Notification) {
 
     $scope.pageClass = 'health-map';
+    $scope.markers =[];
 
     //
     // Graphic
@@ -145,13 +146,31 @@ angular.module('gdsApp')
       getSurveyByCitySummary(params);
     };
 
+    function pushingMarkers(datas) {
+        for(var i in datas)
+        {
+          if(!checkIfExistMarker(datas[i].id)) $scope.markers.push(datas[i]);
+        }
+
+    }
+
+    function checkIfExistMarker (id) {
+      for(var i in $scope.markers)
+      {
+        if($scope.markers[i].id === id) { return true; }
+      }
+      return false;
+    }
+
+
     function getSurveyByCity(city) {
       Surveyapi.getMarkersByCity(city, function (data) {
         if (data.data.error === false) {
           if($scope.markers){
-            var newMs = addToArray(data.data.data);
-//            console.log("$scope.markers.length",$scope.markers.length)
-            for(var i in newMs) {$scope.markers.push(newMs[i]);}
+            var newMs = [];
+            newMs = addToArray(data.data.data);
+            pushingMarkers(newMs);
+//            console.log("$scope.markers.length",$scope.markers.length);
 
           }
           else{ $scope.markers = addToArray(data.data.data); }
@@ -340,10 +359,10 @@ angular.module('gdsApp')
 
         Surveyapi.getMarkersByLocation(params, function (data) {
           if (data.data.error === false) {
-//            $scope.markers = addToArray(data.data.data);
-            var newMs = addToArray(data.data.data)
+            var newMs = [];
+            newMs = addToArray(data.data.data);
+            pushingMarkers(newMs);
 //            console.log("$scope.markers.length",$scope.markers.length)
-            for(var i in newMs){$scope.markers.push(newMs[i]);}
 
           } else {
             Notification.show('error', 'Atenção', data.data.message);
