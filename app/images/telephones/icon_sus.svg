@@ -1,87 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="360px" height="200px" viewBox="0 0 360 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
     <title>img_SUS</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
-            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-        <rect id="path-2" x="1" y="0" width="679" height="648" rx="6"></rect>
-        <rect id="path-3" x="0" y="0" width="723" height="1279"></rect>
-        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-5">
-            <feOffset dx="0" dy="19" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="19" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.210000008 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
-            <feOffset dx="0" dy="15" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
-            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.154 0" in="shadowBlurOuter2" type="matrix" result="shadowMatrixOuter2"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
-                <feMergeNode in="SourceGraphic"></feMergeNode>
-            </feMerge>
-        </filter>
-    </defs>
-    <g id="Smartphone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="44---dicas-de-saude-(dialog-sus)" sketch:type="MSArtboardGroup" transform="translate(-180.000000, -400.000000)">
-            <g id="Screen" sketch:type="MSLayerGroup" transform="translate(-1.000000, -202.000000)">
-                <rect id="bg_gray-2" fill="#EFF0F0" sketch:type="MSShapeGroup" x="2" y="198" width="720" height="1279"></rect>
-                <g id="Group" transform="translate(22.000000, 0.000000)">
-                    <g id="telefones" transform="translate(0.000000, 280.000000)">
-                        <g id="bg_white-2" filter="url(#filter-1)">
-                            <use fill="#FFFFFF" fill-rule="evenodd" sketch:type="MSShapeGroup" xlink:href="#path-2"></use>
-                            <use fill="none" xlink:href="#path-2"></use>
-                            <use fill="none" xlink:href="#path-2"></use>
-                            <use fill="none" xlink:href="#path-2"></use>
-                        </g>
-                        <g id="defesa" transform="translate(0.000000, 500.000000)" font-size="28" font-family="Roboto" fill="#444444" sketch:type="MSTextLayer" font-weight="normal">
-                            <text id="Defesa-Civil">
-                                <tspan x="40" y="26">Defesa Civil</tspan>
-                            </text>
-                        </g>
-                        <g id="bombeiros" transform="translate(0.000000, 412.000000)">
-                            <path d="M1.49999998,58.5 L679.500021,58.5" id="Line-2" stroke-opacity="0.2" stroke="#000000" sketch:type="MSShapeGroup"></path>
-                            <text id="Bombeiros" sketch:type="MSTextLayer" font-family="Roboto" font-size="28" font-weight="normal" fill="#444444">
-                                <tspan x="40" y="26">Bombeiros</tspan>
-                            </text>
-                        </g>
-                        <g id="denuncia" transform="translate(0.000000, 324.000000)">
-                            <path d="M1.49999998,58.5 L679.500021,58.5" id="Line-2" stroke-opacity="0.2" stroke="#000000" sketch:type="MSShapeGroup"></path>
-                            <text id="Disque-Denúncia" sketch:type="MSTextLayer" font-family="Roboto" font-size="28" font-weight="normal" fill="#444444">
-                                <tspan x="40" y="26">Disque Denúncia</tspan>
-                            </text>
-                        </g>
-                    </g>
-                </g>
-                <g id="dialog-copy" transform="translate(0.000000, 202.000000)">
-                    <mask id="mask-4" sketch:name="screen bg" fill="white">
-                        <use xlink:href="#path-3"></use>
-                    </mask>
-                    <use id="screen-bg" opacity="0.7" fill="#303030" sketch:type="MSShapeGroup" xlink:href="#path-3"></use>
-                    <g id="dialog" mask="url(#mask-4)">
-                        <g transform="translate(79.000000, 276.000000)">
-                            <rect id="dialog-bg" fill="#FFFFFF" filter="url(#filter-5)" sketch:type="MSShapeGroup" x="1" y="151" width="563" height="508" rx="2"></rect>
-                            <rect id="button-bg-2" fill="#EEEEEE" sketch:type="MSShapeGroup" x="1" y="-1.14225638e-13" width="563" height="424" rx="2"></rect>
-                            <g id="Imported-Layers-+-Imported-Layers" stroke-width="1" fill="none" sketch:type="MSLayerGroup" transform="translate(102.000000, 124.000000)">
-                                <g id="Imported-Layers" transform="translate(8.000000, 11.000000)" sketch:type="MSShapeGroup">
-                                    <path d="M121.526,96.04 L110.73,92.865 C103.742,90.634 98.974,83.967 98.974,76.671 C98.974,67.146 106.609,59.565 116.13,59.565 L137.412,59.565 L137.412,67.146 L122.489,67.146 C119.616,67.146 117.08,69.361 117.08,72.546 C117.08,74.451 118.359,76.671 120.584,77.298 L131.064,80.799 C138.36,83.019 142.172,90.317 142.172,98.588 C142.172,109.068 133.608,117.641 123.12,117.641 L100.576,117.641 L100.576,109.068 L119.947,109.068 C122.797,109.068 125.978,106.212 125.978,102.399 C125.978,99.536 124.393,96.997 121.526,96.04 M22.422,96.04 L11.637,92.865 C4.964,90.634 0.203,83.967 0.203,76.671 C0.203,67.146 7.83,59.565 17.362,59.565 L38.633,59.565 L38.633,67.146 L23.701,67.146 C20.851,67.146 18.308,69.361 18.308,72.546 C18.308,74.451 19.578,76.671 21.801,77.298 L32.279,80.799 C39.275,83.019 43.079,90.317 43.079,98.588 C43.079,109.068 34.81,117.641 24.333,117.641 L1.799,117.641 L1.799,109.068 L21.166,109.068 C24.029,109.068 27.191,106.212 27.191,102.399 C27.191,99.536 25.289,96.997 22.422,96.04 M71.669,119.545 C58.64,119.545 48.464,110.339 48.464,98.901 L48.464,59.882 L65.946,59.882 L65.946,100.48 C65.946,105.576 70.381,109.691 76.109,109.691 C81.509,109.691 86.278,105.576 86.278,100.48 L86.278,59.882 L94.53,59.882 L94.53,98.901 C94.53,110.339 84.375,119.545 71.669,119.545" id="Fill-1" fill="#075DAA"></path>
-                                    <path d="M191.635,59.565 C200.191,60.547 210.226,61.595 220.477,62.435 L221.628,62.532 L278.106,119.012 L344.994,119.012 L344.994,59.565 L191.635,59.565" id="Fill-2" fill="#005BAA"></path>
-                                    <path d="M253.722,129.886 C243.412,129.886 231.75,129.234 220.378,128.313 C222.67,154.71 226.097,178.455 226.097,178.455 L285.544,178.455 C285.544,178.455 282.094,154.586 279.806,128.104 C269.717,129.668 260.963,129.886 253.722,129.886" id="Fill-3" fill="#005BAA"></path>
-                                    <path d="M220.218,65.571 C192.486,63.294 166.651,59.565 166.651,59.565 L166.651,119.01 C166.651,119.01 218.06,126.738 253.726,126.738 C261.361,126.738 269.953,126.474 279.6,124.955 L220.218,65.571" id="Fill-4" fill="#005BAA"></path>
-                                    <path d="M226.098,0.118 L285.547,0.118 L285.547,56.42 L226.098,56.42 L226.098,0.118 Z" id="Fill-5" fill="#005BAA"></path>
-                                    <path d="M281.251,122.157 L282.583,123.489 L282.681,124.699 C282.763,125.676 282.845,126.649 282.929,127.62 C283.721,136.82 284.659,145.741 285.548,153.461 L285.548,122.157 L281.251,122.157" id="Fill-6" fill="#005BAA"></path>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Imported-Layers-+-Imported-Layers" sketch:type="MSLayerGroup">
+            <g id="Imported-Layers" transform="translate(8.000000, 11.000000)" sketch:type="MSShapeGroup">
+                <path d="M121.526,96.04 L110.73,92.865 C103.742,90.634 98.974,83.967 98.974,76.671 C98.974,67.146 106.609,59.565 116.13,59.565 L137.412,59.565 L137.412,67.146 L122.489,67.146 C119.616,67.146 117.08,69.361 117.08,72.546 C117.08,74.451 118.359,76.671 120.584,77.298 L131.064,80.799 C138.36,83.019 142.172,90.317 142.172,98.588 C142.172,109.068 133.608,117.641 123.12,117.641 L100.576,117.641 L100.576,109.068 L119.947,109.068 C122.797,109.068 125.978,106.212 125.978,102.399 C125.978,99.536 124.393,96.997 121.526,96.04 M22.422,96.04 L11.637,92.865 C4.964,90.634 0.203,83.967 0.203,76.671 C0.203,67.146 7.83,59.565 17.362,59.565 L38.633,59.565 L38.633,67.146 L23.701,67.146 C20.851,67.146 18.308,69.361 18.308,72.546 C18.308,74.451 19.578,76.671 21.801,77.298 L32.279,80.799 C39.275,83.019 43.079,90.317 43.079,98.588 C43.079,109.068 34.81,117.641 24.333,117.641 L1.799,117.641 L1.799,109.068 L21.166,109.068 C24.029,109.068 27.191,106.212 27.191,102.399 C27.191,99.536 25.289,96.997 22.422,96.04 M71.669,119.545 C58.64,119.545 48.464,110.339 48.464,98.901 L48.464,59.882 L65.946,59.882 L65.946,100.48 C65.946,105.576 70.381,109.691 76.109,109.691 C81.509,109.691 86.278,105.576 86.278,100.48 L86.278,59.882 L94.53,59.882 L94.53,98.901 C94.53,110.339 84.375,119.545 71.669,119.545" id="Fill-1" fill="#075DAA"></path>
+                <path d="M191.635,59.565 C200.191,60.547 210.226,61.595 220.477,62.435 L221.628,62.532 L278.106,119.012 L344.994,119.012 L344.994,59.565 L191.635,59.565" id="Fill-2" fill="#005BAA"></path>
+                <path d="M253.722,129.886 C243.412,129.886 231.75,129.234 220.378,128.313 C222.67,154.71 226.097,178.455 226.097,178.455 L285.544,178.455 C285.544,178.455 282.094,154.586 279.806,128.104 C269.717,129.668 260.963,129.886 253.722,129.886" id="Fill-3" fill="#005BAA"></path>
+                <path d="M220.218,65.571 C192.486,63.294 166.651,59.565 166.651,59.565 L166.651,119.01 C166.651,119.01 218.06,126.738 253.726,126.738 C261.361,126.738 269.953,126.474 279.6,124.955 L220.218,65.571" id="Fill-4" fill="#005BAA"></path>
+                <path d="M226.098,0.118 L285.547,0.118 L285.547,56.42 L226.098,56.42 L226.098,0.118 Z" id="Fill-5" fill="#005BAA"></path>
+                <path d="M281.251,122.157 L282.583,123.489 L282.681,124.699 C282.763,125.676 282.845,126.649 282.929,127.62 C283.721,136.82 284.659,145.741 285.548,153.461 L285.548,122.157 L281.251,122.157" id="Fill-6" fill="#005BAA"></path>
             </g>
         </g>
     </g>
