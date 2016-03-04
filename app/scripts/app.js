@@ -30,7 +30,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'toaster',
     'ChartAngular',
     'ngMask',
     'angularMoment',
@@ -409,7 +408,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: false,// set false to development
+      enabled: true,// set false to development
       requireBase: false
     });
   });

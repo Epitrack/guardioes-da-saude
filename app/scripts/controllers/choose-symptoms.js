@@ -50,11 +50,9 @@ angular.module('gdsApp')
       Surveyapi.submitSurvey(form, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Survey', data.data.message);
         } else {
           // console.log(data.data.message);
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Survey', data.data.message);
 
           if (data.data.exantematica === true) {
@@ -102,7 +100,6 @@ angular.module('gdsApp')
           method: 'share',
           href: 'http://guardioesdasaude.org'
         }).then(function (response) {
-            // toaster.pop('success', "Obrigado por compartilhar");
             Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
             $('#modal-i-feel-good').modal('hide');
         }, function(error){console.warn("error -->", error)});

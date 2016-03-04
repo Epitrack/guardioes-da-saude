@@ -43,7 +43,6 @@ angular.module('gdsApp')
           $scope.vm.profile = $scope.vm.user;
           $scope.setCurrentThumbnail();
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atualizar imagem', data.data.message);
         }
       });
@@ -58,7 +57,6 @@ angular.module('gdsApp')
         UserApi.changeAvatar($scope.avatar, function (data) {
           if (data.data.error === false) {
             // console.log(data.data.message);
-            // toaster.pop('success', data.data.message, null);
             Notification.show('success', 'Atualizar imagem', data.data.message);
 
             $timeout(function () {
@@ -68,14 +66,12 @@ angular.module('gdsApp')
           } else {
             // console.log(data.data.message);
             Notification.show('error', 'Atualizar imagem', data.data.message);
-            // toaster.pop('error', data.data.message);
           }
         });
       } else {
         HouseholdApi.changeAvatar($scope.vm.household.id, $scope.avatar.picture, function (data) {
           if (data.data.error === false) {
             // console.log(data.data.message);
-            // toaster.pop('success', data.data.message, null);
             Notification.show('success', 'Atualizar imagem', data.data.message);
 
             $timeout(function () {
@@ -84,7 +80,6 @@ angular.module('gdsApp')
               400);
           } else {
             // console.log(data.data.message);
-            // toaster.pop('error', data.data.message);
             Notification.show('error', 'Atualizar imagem', data.data.message);
           }
         });

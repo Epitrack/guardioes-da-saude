@@ -16,7 +16,6 @@
     "chart-angular-raphaeljs-morris": "*",
     "ng-file-upload": "~10.0.2",
     "css-browser-selector": "*",
-    "AngularJS-Toaster": "angularjs-toaster#~0.4.16",
     "ngMask": "angular-mask#~3.0.16",
     "angular-moment": "1.0.0-beta.3",
     "cheet.js": "~0.3.3",
