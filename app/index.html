@@ -92,7 +92,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-71659608-1', 'auto');
+      ga('create', '{{ANALYTICS_ID}}', 'auto');
       ga('send', 'pageview');
      </script>
 
@@ -192,18 +192,5 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
-<!--
-    <script type="text/javascript">
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/anywhere.js?id="+gTWApplicationId;fjs.parentNode.insertBefore(js,fjs);}}(document, "script",'twitter-anywhere');
-      //describe the login actions
-        twttr.anywhere(function (T) {
-        T.bind("authComplete", function (e, user) {
-        var token = user.attributes._identity;
-        //define the login function on your client through Twitter
-        });
-      });
-    </script>
--->
 </body>
 </html>
