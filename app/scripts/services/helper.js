@@ -16,7 +16,7 @@ angular.module('gdsApp')
     obj.getId = function() {
       var deferred = $q.defer();
 
-      console.log('getting id');
+      // console.log('getting id');
       // $scope.analytics_id = ApiConfig.ANALYTICS_ID;
 
       $timeout(function() {

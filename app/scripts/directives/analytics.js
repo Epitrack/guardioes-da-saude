@@ -26,7 +26,7 @@ angular.module('gdsApp')
 
           function(newId, oldId) {
             if (newId) {
-              console.log('watch is calling function');
+              // console.log('watch is calling function');
               ga('create', newId, 'auto');
               // ga('create', newId, { 'cookieDomain': 'none' });
             }
@@ -36,7 +36,7 @@ angular.module('gdsApp')
         helper.getId().then(function(response) {
           id = response;
 
-          console.log('id set to ' +response);
+          // console.log('id set to ' +response);
         });
       }
     };
