@@ -16,7 +16,7 @@ angular.module('gdsApp')
       var form = {};
 
       form.no_symptom = 'Y';
-      form.ill_date = moment().format('YYYY/DD/MM');
+      form.ill_date = moment().format('YYYY-MM-DD');
       form.lat = LocalStorage.getItem('userLocation').lat;
       form.lon = LocalStorage.getItem('userLocation').lon;
 

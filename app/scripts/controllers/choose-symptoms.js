@@ -30,8 +30,7 @@ angular.module('gdsApp')
           form[symptom] = "Y";
         }
       });
-
-      form.ill_date = $scope.UTIL.unConvertDate(moment(new Date()).utc().format('DD-MM-YYYY'));
+      form.ill_date =  moment().format('YYYY-MM-DD');
       form.lat = LocalStorage.getItem('userLocation').lat;
       form.lon = LocalStorage.getItem('userLocation').lon;
 
@@ -106,7 +105,7 @@ angular.module('gdsApp')
             $('#modal-i-feel-good').modal('hide');
         }, function(error){console.warn("error -->", error)});
       } else {
-        $window.open('https://twitter.com/home?status=' + url);
+        $window.open('https://twitter.com/home?status=' + text);
       }
     };
 
