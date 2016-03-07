@@ -55,8 +55,6 @@ angular.module('gdsApp')
                   password:data.data.data[0].email,
                   picture:data.data.data[0].picture
                 };
-
-
                 UserApi.updateProfile(params);
               }
 

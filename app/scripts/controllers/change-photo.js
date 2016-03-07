@@ -113,7 +113,7 @@ angular.module('gdsApp')
       $scope.getHousehold($routeParams.household_id);
       $scope.vm.context = 'household';
     } else {
-      console.log("get from user");
+//      console.log("get from user");
       $scope.getUser($routeParams.user_id);
       $scope.vm.context = 'user';
     }
