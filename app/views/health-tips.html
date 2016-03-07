@@ -1,3 +1,4 @@
+<div ng-include src="'views/partials/modal-all-drugstores-cant-shown.html'"></div>
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 
@@ -14,7 +15,7 @@
       UPAs
     </button>
 
-    <button ng-click="aside = 'farmacias'" class="btn-tip pharmacy" ng-class="{ 'active' : aside == 'farmacias' }">
+    <button ng-click="aside = 'farmacias' ; openModal()" class="btn-tip pharmacy" ng-class="{ 'active' : aside == 'farmacias' }">
       Farmácias
     </button>
 

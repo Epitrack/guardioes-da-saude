@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage) {
+  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification) {
 
     var meuFiltro = $filter;
     var userStorage = $rootScope.user;
@@ -153,8 +153,8 @@ angular.module('gdsApp')
       HouseholdApi.getHouseholdSurveyByMonth(params, function (data) {
         $scope.lineDataLoaded = true;
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
           $scope.hhAllDays = data.data.data;
           $scope.$broadcast('hhAllDays_ok');
@@ -212,7 +212,7 @@ angular.module('gdsApp')
 
       HouseholdApi.getHouseholdSurveyByYear(params, function (data) {
         if (data.data.error === true) {
-          toaster.pop('error', data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
           $scope.monthReports = data.data.data;
         }
@@ -263,8 +263,8 @@ angular.module('gdsApp')
           }
         });
         var content;
-        if (q == 't') { content = (mal + bem); } 
-          else if (q == 'bem') {content = bem; } 
+        if (q == 't') { content = (mal + bem); }
+          else if (q == 'bem') {content = bem; }
           else { content = mal; }
         return content;
       },

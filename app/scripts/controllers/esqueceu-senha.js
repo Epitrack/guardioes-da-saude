@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('EsqueceuSenhaCtrl', ['$scope', 'UserApi', 'toaster', function ($scope, UserApi, toaster) {
+  .controller('EsqueceuSenhaCtrl', ['$scope', 'UserApi', 'Notification', function ($scope, UserApi, Notification) {
 
     $scope.forgotPass = {};
 
@@ -16,7 +16,7 @@ angular.module('gdsApp')
       UserApi.forgotPassword($scope.forgotPass, function (data) {
         if (data.data.error === false) {
           $scope.message = data.data.message;
-          toaster.pop('success', data.data.message);
+          Notification.show('success', 'Resetar senha', data.data.message);
         } else {
           $scope.messageError = data.data.message;
         }

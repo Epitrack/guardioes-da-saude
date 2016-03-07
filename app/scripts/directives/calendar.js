@@ -16,8 +16,8 @@ angular.module('gdsApp')
         CalendarInterface: "=interface"
       },
       link: function ($scope) {
-        if(!$scope.selected) $scope.selected = moment();
-          
+        if(!$scope.selected){ $scope.selected = moment(); }
+
 //        $scope.selected = _removeTime($scope.selected);
         $scope.month = $scope.selected.clone();
 

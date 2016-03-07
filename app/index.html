@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="gdsApp" ng-init="onInit()">
   <head>
     <meta charset="utf-8">
     <base href="/">
@@ -54,7 +54,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
-    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -62,7 +61,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="gdsApp" style="display:none" ng-init="onInit()">
+  <body ng-class="{ 'js-active' : body_is_ok }">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -87,14 +86,20 @@
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div analytics></div>
 
-      ga('create', 'UA-71659608-1', 'auto');
-      ga('send', 'pageview');
+     <script>
+      // var analytics_id = '{{ANALYTICS_ID}}';
+
+      // console.warn('analytics_id', analytics_id);
+
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      // ga('create', analytics_id, 'auto');
+      // ga('send', 'pageview');
      </script>
 
     <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -120,7 +125,6 @@
     <script src="bower_components/morris.js/morris.js"></script>
     <script src="bower_components/chart-angular-raphaeljs-morris/src/directives/chartangular.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
-    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
     <script src="bower_components/ngMask/dist/ngMask.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
     <script src="bower_components/cheet.js/cheet.js"></script>
@@ -181,6 +185,11 @@
     <script src="scripts/controllers/cadastro-email.js"></script>
     <script src="scripts/filters/getmonth.js"></script>
     <script src="scripts/components/components.js"></script>
+    <script src="scripts/services/notification.js"></script>
+    <script src="scripts/services/upload.js"></script>
+    <script src="scripts/directives/uploadfile.js"></script>
+    <script src="scripts/directives/analytics.js"></script>
+    <script src="scripts/services/helper.js"></script>
     <!-- endbuild -->
     <script>
       (function(d, s, id){
@@ -191,18 +200,5 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
-<!--
-    <script type="text/javascript">
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/anywhere.js?id="+gTWApplicationId;fjs.parentNode.insertBefore(js,fjs);}}(document, "script",'twitter-anywhere');
-      //describe the login actions
-        twttr.anywhere(function (T) {
-        T.bind("authComplete", function (e, user) {
-        var token = user.attributes._identity;
-        //define the login function on your client through Twitter
-        });
-      });
-    </script>
--->
 </body>
 </html>

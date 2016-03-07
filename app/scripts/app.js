@@ -30,7 +30,6 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'toaster',
     'ChartAngular',
     'ngMask',
     'angularMoment',
@@ -44,11 +43,12 @@ angular
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
-    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
-      ApiConfig.API_URL = 'http://rest.guardioesdasaude.org'
-    }
+   if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
+     ApiConfig.API_URL = 'http://rest.guardioesdasaude.org';
+     ApiConfig.ANALYTICS_ID = 'UA-71659608-1';
+   }
 
-    // console.log(ApiConfig.API_URL);
+    // console.warn('ApiConfig -> ', ApiConfig);
 
     // moment js
     amMoment.changeLocale('pt-br');
@@ -62,13 +62,16 @@ angular
       $rootScope.user = u;
     }
 
-//    console.log('app.run: user', $rootScope.user);
+   // console.log('app.run: user', $rootScope.user);
     // ====
 
+    // ====
+    $rootScope.body_is_ok = false;
 
     $rootScope.onInit = function(){
-        document.body.style.display = "block";
+      $rootScope.body_is_ok = true;
     };
+    // ====
 
     // Helpers functions
     $rootScope.UTIL = {
@@ -78,56 +81,49 @@ angular
       },
 
       convertDate: function (date) {
-//        var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
+       // var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
         var convert = new Date(parseInt(date.substr(6,4)), parseInt(date.substr(3,2))-1, parseInt(date.substr(0,2)));
         return convert;
       },
 
       checkAvatar: function (obj) {
         var gender, race, age;
-
         gender = obj.gender;
         race = obj.race;
         age = this.getAge(obj.dob);
         if (gender === 'F') {
-          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>49) { return 3; }
-              else if(age>25) { return 2; }
-              else { return 1; }
-          }
-          else if(race === 'amarelo')
-          {
-              if(age>59) { return 9; }
-              else if(age>25) { return 8; }
-              else { return 7; }
-
-          }
-          else if(race === 'branco')
-          {
-              if(age>59) { return 14; }
-              else if(age>25) { return 8; }
-              else { return 13; }
-
+          switch(race){
+              case 'branco':
+              case 'indigena':
+                  return 8;
+                  break;
+              case 'preto':
+                  return 1;
+                  break;
+              case 'pardo':
+                  return 2;
+                  break;
+              case 'amarelo':
+                  return 7;
+                  break;
           }
         }
         else if (gender === 'M') {
-          if (race === 'preto' || race === 'indigena' || race === 'pardo') {
-              if(age>59) { return 6; }
-              else if(age>25) { return 5; }
-              else { return 4; }
-          }
-          else if(race === 'amarelo')
-          {
-              if(age>59) { return 12; }
-              else if(age>25) { return 11; }
-              else { return 10; }
 
-          }
-          else if(race === 'branco')
-          {
-              if(age>59) { return 16; }
-              else if(age>25) { return 11; }
-              else { return 15; }
+            switch(race){
+              case 'branco':
+                  return 11;
+                  break;
+              case 'preto':
+                  return 5;
+                  break;
+              case 'pardo':
+              case 'indigena':
+                  return 4;
+                  break;
+              case 'amarelo':
+                  return 10;
+                  break;
           }
         }
       },
@@ -397,6 +393,11 @@ angular
         templateUrl: 'views/cadastro-email.html',
         controller: 'CadastroEmailCtrl',
         controllerAs: 'cadastroEmail'
+      })
+      .when('/submit', {
+        templateUrl: 'views/help.html',
+        controller: 'HelpCtrl',
+        controllerAs: 'help'
       })
       .otherwise({
         redirectTo: '/'

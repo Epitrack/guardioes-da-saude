@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'toaster', '$timeout', '$location', '$rootScope', 'LocalStorage', function ($scope, HouseholdApi, toaster, $timeout, $location, $rootScope, LocalStorage) {
+  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'Notification', '$timeout', '$location', '$rootScope', 'LocalStorage', function ($scope, HouseholdApi, Notification, $timeout, $location, $rootScope, LocalStorage) {
     $scope.pageClass = 'add-profile-page';
 
     // Add a new household member
@@ -39,11 +39,11 @@ angular.module('gdsApp')
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
-          console.log(data.data.message);
-          toaster.pop('success', data.data.message);
+          // console.log(data.data.message);
+          Notification.show('success', 'Atenção', data.data.message);
 
           $timeout(function () {
             $scope.params = {};
@@ -91,15 +91,16 @@ angular.module('gdsApp')
       }
 
       params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          Notification.show('error', 'Adicionar membro', data.data.message);
         } else {
-          console.log(data.data.message);
+          // console.log(data.data.message);
           hideModal();
-          toaster.pop('success', data.data.message);
+          Notification.show('success', 'Adicionar membro', data.data.message);
         }
       });
     };

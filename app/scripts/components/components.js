@@ -28,7 +28,7 @@ app.directive('gdsMaps', function() {
                 var img = {
                      url: info.icon.iconUrl,
                      size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
-                     scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
+                     scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0])
   //                 origin: new google.maps.Point(0, 0),
   //                 anchor: new google.maps.Point(0, info.icon.iconSize[1])
                }

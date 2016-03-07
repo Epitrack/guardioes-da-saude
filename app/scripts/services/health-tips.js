@@ -18,10 +18,10 @@ angular.module('gdsApp')
     obj.getUpas = function (callback) {
       $http.get(apiUrl + '/content/upas.json')
         .success(function (data) {
-          console.log('Success getUpas: ', data);
+          // console.log('Success getUpas: ', data);
           callback(data);
         }).error(function (error) {
-        console.log('Error getUpas: ', error);
+        console.warn('Error getUpas: ', error);
       });
     };
     // ====
@@ -39,10 +39,10 @@ angular.module('gdsApp')
           radius: '10000'
         }
       }).success(function (data) {
-        console.warn('Success getFarmacias: ', data);
+        // console.log('Success getFarmacias: ', data);
         callback(data);
       }).error(function (error) {
-        console.log('Error getFarmacias: ', error);
+        console.warn('Error getFarmacias: ', error);
       });
     };
     // ====

@@ -98,17 +98,20 @@
 <!---->
   <ng-map default-style="false"  zoom="12" style="height:100%" scrollwheel="false"
           styles="{{config.style}}">
+    <marker ng-repeat="m in markers" id="{{m.id}}" icon="{{m.icon}}" position="{{m.position}}" zIndex="0"></marker>
+<!--
     <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()"
-            icon="{{userLocation.icon}}"></marker>
+            icon="{{userLocation.icon}}" zIndex="99999" ></marker>
+-->
+
 
 <!--
-
-    <info-window position="current-location">
+    <info-window position="{{userLocation.coords}}">
       <span>Você está aqui!</span>
     </info-window>
 -->
 
-    <marker ng-repeat="m in markers" id="{{m.id}}" icon="{{m.icon}}" position="{{m.position}}"></marker>
+
   </ng-map>
 </div>
 
@@ -141,6 +144,3 @@
     </div>
   </article>
 </div>
-
-<!-- Toaster -->
-<div ng-include src="'views/partials/toaster.html'"></div>

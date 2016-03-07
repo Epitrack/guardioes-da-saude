@@ -7,7 +7,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'toaster', function ($scope, UserApi, $rootScope, LocalStorage, toaster) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'Notification', function ($scope, UserApi, $rootScope, LocalStorage, Notification) {
     $scope.pageClass = 'health-daily-page';
     $scope.vm = {};
     $scope.currentMonth = moment();
@@ -17,7 +17,7 @@ angular.module('gdsApp')
     if($scope.userSurvey !== undefined) {
       $scope.userSurvey = undefined;
     }
-      
+
     // ====
     $scope.getUserSurvey = function () {
       UserApi.getUserSurvey(function (data) {
@@ -117,8 +117,8 @@ angular.module('gdsApp')
       UserApi.getUserSurveyByMonth(params, function (data) {
         $scope.lineDataLoaded = true;
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
             if(data.data.data.length > 0){
               $scope.allDays = data.data.data;
@@ -180,8 +180,8 @@ angular.module('gdsApp')
 
       UserApi.getUserSurveyByYear(params, function (data) {
         if (data.data.error === true) {
-          console.warn(data.data.message);
-          toaster.pop('error', data.data.message);
+          // console.warn(data.data.message);
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
           if(data.data.data.length > 0){
             $scope.monthReports = data.data.data;
@@ -219,8 +219,8 @@ angular.module('gdsApp')
           }
         });
         var content;
-        if (q === 't') { content = (mal + bem); } 
-          else if (q === 'bem') { content = bem; } 
+        if (q === 't') { content = (mal + bem); }
+          else if (q === 'bem') { content = bem; }
           else { content = mal; }
         return content;
       },

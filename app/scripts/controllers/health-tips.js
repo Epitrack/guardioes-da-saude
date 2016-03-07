@@ -71,7 +71,11 @@ angular.module('gdsApp')
       $scope.markersPharmacy = addressPointsToMarkersPharmacy($scope._markersPharmacy);
     };
 
-
+    $scope.openModal = function(){
+      $('#modal-all-drugstores-cant-shown').modal({
+        show: 'true'
+      });
+    }
 
     $scope.$on('clickMarker.click', function (event, args) {
         $scope.markTitle = args.title;
