@@ -51,7 +51,7 @@ angular.module('gdsApp')
         icon: '../images/notifications/icon-notif-'+status+'.png'
       };
 
-      getStatus();
+      if (getStatus() === "unsupported") { return; }
       getPermission(params);
     };
 
