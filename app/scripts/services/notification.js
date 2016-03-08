@@ -20,6 +20,9 @@ angular.module('gdsApp')
     }
 
     function getPermission(params) {
+      debugger;
+      console.log("Notification.permission", Notification in window)
+
       if (Notification.permission === 'granted') {
         spawnNotification(params);
       }

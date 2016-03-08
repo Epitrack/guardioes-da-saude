@@ -32,10 +32,10 @@ angular.module('gdsApp')
         console.log("submit survey ", data.data);
         if (data.data.error !== false) {
           // console.warn(data.data.message);
-          try { Notification.show('error', 'Survey', data.data.message); }catch(e){}
+          Notification.show('error', 'Survey', data.data.message);
         } else {
           // console.log(data.data.message);
-          try { Notification.show('success', 'Survey', data.data.message); }catch(e){}
+          Notification.show('success', 'Survey', data.data.message);
         }
       });
     };
@@ -64,7 +64,7 @@ angular.module('gdsApp')
           method: 'share',
           href: 'www.guardioesdasaude.org'
         }).then(function (response) {
-            try { Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar'); }catch(e){}
+            Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
             $('#modal-i-feel-good').modal('hide');
         }, function(error){
           // console.warn("error -->", error)

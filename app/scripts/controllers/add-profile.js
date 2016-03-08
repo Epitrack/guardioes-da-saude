@@ -40,10 +40,10 @@ angular.module('gdsApp')
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('error', 'Atenção', data.data.message);
         } else {
           // console.log(data.data.message);
-          try { Notification.show('success', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('success', 'Atenção', data.data.message);
 
           $timeout(function () {
             $scope.params = {};
@@ -96,11 +96,11 @@ angular.module('gdsApp')
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          try { Notification.show('error', 'Adicionar membro', data.data.message); }catch(e){}
+          Notification.show('error', 'Adicionar membro', data.data.message);
         } else {
           // console.log(data.data.message);
           hideModal();
-          try { Notification.show('success', 'Adicionar membro', data.data.message); }catch(e){}
+          Notification.show('success', 'Adicionar membro', data.data.message);
         }
       });
     };

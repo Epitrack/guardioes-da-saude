@@ -57,11 +57,11 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
-          try { Notification.show('success', 'Cadastro', data.data.message); }catch(e){}
+          Notification.show('success', 'Cadastro', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
-          try { Notification.show('error', 'Cadastro', data.data.message); }catch(e){}
+          Notification.show('error', 'Cadastro', data.data.message);
           // console.warn(data.data.message);
         }
       });

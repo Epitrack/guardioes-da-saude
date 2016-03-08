@@ -63,7 +63,7 @@ angular.module('gdsApp')
 
     function errorGeolocation(error) {
       // console.warn('errorGeolocation', error);
-      try { Notification.show('error', 'Localização', error); }catch(e){}
+      Notification.show('error', 'Localização', error);
     }
     // ====
 

@@ -195,7 +195,7 @@ angular.module('gdsApp')
 
         } else {
          // console.warn(data.data.message);
-          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -239,7 +239,7 @@ angular.module('gdsApp')
           // $rootScope.$broadcast('build_summary');
         } else {
          // console.warn(data.data.message);
-          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -316,7 +316,7 @@ angular.module('gdsApp')
           $scope.summary = summary;
         } else {
          // console.warn(data.data.message);
-          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     }
@@ -380,7 +380,7 @@ angular.module('gdsApp')
 //            console.log("$scope.markers.length",$scope.markers.length)
 
           } else {
-            try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+            Notification.show('error', 'Atenção', data.data.message);
           }
         });
     }

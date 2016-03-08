@@ -1919,6 +1919,6 @@ p.login-email {
 // Large Desktops
 @media screen and (min-width: 1200px) {}
 @media screen and (max-width: 320px) {
-  .span-sex-op{padding-right: 30px !important}
-  button.pull-right.btn.btn-primary.cancel{float: left !important; margin-top: -34px !important;}
+  .modal-op{margin-right: 40px !important}
+  button.pull-right.btn.btn-primary.cancel{float: left !important; margin-top: 0 !important;}
 }

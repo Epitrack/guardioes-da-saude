@@ -16,7 +16,7 @@ angular.module('gdsApp')
       UserApi.forgotPassword($scope.forgotPass, function (data) {
         if (data.data.error === false) {
           $scope.message = data.data.message;
-          try { Notification.show('success', 'Resetar senha', data.data.message); }catch(e){}
+          Notification.show('success', 'Resetar senha', data.data.message);
         } else {
           $scope.messageError = data.data.message;
         }

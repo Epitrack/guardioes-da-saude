@@ -33,7 +33,7 @@ angular.module('gdsApp')
 
          // console.warn($scope.screen.user); // formato dob ok
         } else {
-          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
+          Notification.show('error', 'Atenção', data.data.message);
         }
       });
     };
@@ -71,9 +71,9 @@ angular.module('gdsApp')
       // ====
       UserApi.updateProfile(params, function (data) {
         if (data.data.error === false) {
-          try { Notification.show('success', 'Atualizar usuário', data.data.message); }catch(e){}
+          Notification.show('success', 'Atualizar usuário', data.data.message);
         } else {
-          try { Notification.show('error', 'Atualizar usuário', data.data.message); }catch(e){}
+          Notification.show('error', 'Atualizar usuário', data.data.message);
         }
 
         $scope.screen = false;

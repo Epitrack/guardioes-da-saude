@@ -49,9 +49,9 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === true) {
-            try { Notification.show('error', 'Cadastro por e-mail', data.data.message); }catch(e){}
+            Notification.show('error', 'Cadastro por e-mail', data.data.message);
         } else {
-            try { Notification.show('success', 'Cadastro por e-mail', data.data.message); }catch(e){}
+            Notification.show('success', 'Cadastro por e-mail', data.data.message);
             $location.path('/health-daily');
         }
       });
@@ -64,11 +64,11 @@ angular.module('gdsApp')
      // console.warn("======== passando aqui", $scope.userData)
       UserApi.createUser($scope.userData, function (data) {
         if (data.data.error === false) {
-          try { Notification.show('success', 'Cadastro', data.data.message); }catch(e){}
+          Notification.show('success', 'Cadastro', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
-          try { Notification.show('error', 'Cadastro', data.data.message); }catch(e){}
+          Notification.show('error', 'Cadastro', data.data.message);
           // console.warn(data.data.message);
         }
       });
