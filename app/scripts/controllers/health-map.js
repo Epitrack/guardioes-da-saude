@@ -36,9 +36,12 @@ angular.module('gdsApp')
     };
 
     $scope.mapOptions = {
-      zoom: 14
-//      ,
-//      center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng)
+      zoom: 14,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.LEFT_TOP
+      }
     };
 
     $scope.config = {
@@ -112,16 +115,31 @@ angular.module('gdsApp')
         }
       ]
     };
-    var icon=undefined;
+
+    var icon = undefined;
+
     NgMap.getMap().then(function (map) {
       $scope.map = map;
 
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
       getCoords($rootScope.city);
+
       var position = new google.maps.LatLng($scope.userLocation.coords[0], $scope.userLocation.coords[1]);
-      var info  = new google.maps.InfoWindow({content:"<b>Você está aqui!</b>", map:$scope.map, position: position, pixelOffset:new google.maps.Size(0,-20)});
-      icon = new google.maps.Marker({icon:$scope.userLocation.icon, map:$scope.map, position: position});
+
+      var info  = new google.maps.InfoWindow({
+        content: "<b>Você está aqui!</b>",
+        map: $scope.map,
+        position: position,
+        pixelOffset: new google.maps.Size(0,-20)
+      });
+
+      icon = new google.maps.Marker({
+        icon: $scope.userLocation.icon,
+        map: $scope.map,
+        position: position
+      });
+
       //TODO colocar aqui o "você está aqui"
       icon.setZIndex(100000);
       google.maps.event.addListener(map, 'idle', addNewMarkers);

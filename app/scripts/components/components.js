@@ -1,3 +1,7 @@
+//
+// Upas and Drugstore
+//
+
 'use strict';
 
 var app = angular.module('gdsApp');
@@ -9,12 +13,17 @@ app.directive('gdsMaps', function() {
      scope:{location:"=", marks:"=", size:"=", mid:"="},
      link:function(scope){
          var mapOptions = {
-                 center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
-                 zoom:scope.location.zoom,
-//                 panControl: false,
-//                 scaleControl:false,
-                 scrollwheel:false,
-                 streetViewControl: false
+           center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
+           zoom: scope.location.zoom,
+           scrollwheel: false,
+           streetViewControl: false,
+           mapTypeControl: true,
+           mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.LEFT_TOP
+          }
+          // panControl: false,
+          // scaleControl:false,
          };
 
          document.getElementById('myMap').style.width = scope.size.width;
@@ -26,11 +35,11 @@ app.directive('gdsMaps', function() {
          var createMarker = function (info, img){
             if(img === undefined) {
                 var img = {
-                     url: info.icon.iconUrl,
-                     size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
-                     scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0])
-  //                 origin: new google.maps.Point(0, 0),
-  //                 anchor: new google.maps.Point(0, info.icon.iconSize[1])
+                 url: info.icon.iconUrl,
+                 size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
+                 scaledSize: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0])
+                 // origin: new google.maps.Point(0, 0),
+                 // anchor: new google.maps.Point(0, info.icon.iconSize[1])
                }
             }
 
