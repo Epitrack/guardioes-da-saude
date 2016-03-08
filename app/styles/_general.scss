@@ -600,7 +600,6 @@ body {
   margin: auto 0;
 
   @extend .navbar-nav;
-  // background-color: red;
 
   li {
     margin-bottom: 10px;
@@ -624,10 +623,6 @@ body {
   .sidebar {
     height: 100%;
   }
-}
-
-.wrapper-nav-primary-mobile {
-  // background-color: red;
 }
 
 // ====
