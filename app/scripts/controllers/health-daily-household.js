@@ -154,7 +154,7 @@ angular.module('gdsApp')
         $scope.lineDataLoaded = true;
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          Notification.show('error', 'Atenção', data.data.message);
+          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
         } else {
           $scope.hhAllDays = data.data.data;
           $scope.$broadcast('hhAllDays_ok');
@@ -212,7 +212,7 @@ angular.module('gdsApp')
 
       HouseholdApi.getHouseholdSurveyByYear(params, function (data) {
         if (data.data.error === true) {
-          Notification.show('error', 'Atenção', data.data.message);
+          try { Notification.show('error', 'Atenção', data.data.message); }catch(e){}
         } else {
           $scope.monthReports = data.data.data;
         }

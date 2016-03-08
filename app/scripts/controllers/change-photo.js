@@ -43,7 +43,7 @@ angular.module('gdsApp')
           $scope.vm.profile = $scope.vm.user;
           $scope.setCurrentThumbnail();
         } else {
-          Notification.show('error', 'Atualizar imagem', data.data.message);
+          try { Notification.show('error', 'Atualizar imagem', data.data.message); }catch(e){}
         }
       });
     };
@@ -57,7 +57,7 @@ angular.module('gdsApp')
         UserApi.changeAvatar($scope.avatar, function (data) {
           if (data.data.error === false) {
             // console.log(data.data.message);
-            Notification.show('success', 'Atualizar imagem', data.data.message);
+            try { Notification.show('success', 'Atualizar imagem', data.data.message); }catch(e){}
 
             $timeout(function () {
                 $location.path('/profile');
@@ -65,14 +65,14 @@ angular.module('gdsApp')
               400);
           } else {
             // console.log(data.data.message);
-            Notification.show('error', 'Atualizar imagem', data.data.message);
+            try { Notification.show('error', 'Atualizar imagem', data.data.message); }catch(e){}
           }
         });
       } else {
         HouseholdApi.changeAvatar($scope.vm.household.id, $scope.avatar.picture, function (data) {
           if (data.data.error === false) {
             // console.log(data.data.message);
-            Notification.show('success', 'Atualizar imagem', data.data.message);
+            try { Notification.show('success', 'Atualizar imagem', data.data.message); }catch(e){}
 
             $timeout(function () {
                 $location.path('/profile/household/'+$scope.vm.household.id);
@@ -80,7 +80,7 @@ angular.module('gdsApp')
               400);
           } else {
             // console.log(data.data.message);
-            Notification.show('error', 'Atualizar imagem', data.data.message);
+            try { Notification.show('error', 'Atualizar imagem', data.data.message); }catch(e){}
           }
         });
       }

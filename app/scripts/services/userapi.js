@@ -213,10 +213,10 @@ angular.module('gdsApp')
                           obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true) {
                                 // toaster.pop('error', resultMail.data.message);
-                                Notification.show('error', 'Facebook', resultMail.data.message);
+                                try{ Notification.show('error', 'Facebook', resultMail.data.message); }catch(e){}
                               } else{
                                   // toaster.pop('success', resultMail.data.message);
-                                  Notification.show('success', 'Facebook', resultMail.data.message);
+                                 try {  Notification.show('success', 'Facebook', resultMail.data.message); }catch(e){}
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
@@ -264,10 +264,10 @@ angular.module('gdsApp')
                   obj.loginUser(loginPass, function(resultMail){
                       if(resultMail.data.error === true) {
                         // toaster.pop('error', resultMail.data.message);
-                        Notification.show('error', 'Twitter', resultMail.data.message);
+                        try { Notification.show('error', 'Twitter', resultMail.data.message); }catch(e){}
                       } else{
                         // toaster.pop('success', resultMail.data.message);
-                        Notification.show('success', 'Twitter', resultMail.data.message);
+                        try { Notification.show('success', 'Twitter', resultMail.data.message); }catch(e){}
                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                         $location.path('health-daily');
                       }
@@ -313,10 +313,10 @@ angular.module('gdsApp')
                   obj.loginUser(loginPass, function(resultMail){
                       if(resultMail.data.error === true) {
                         // toaster.pop('error', resultMail.data.message);
-                        Notification.show('error', 'Google', resultMail.data.message);
+                        try { Notification.show('error', 'Google', resultMail.data.message); }catch(e){}
                       } else{
                         // toaster.pop('success', resultMail.data.message);
-                        Notification.show('success', 'Google', resultMail.data.message);
+                        try { Notification.show('success', 'Google', resultMail.data.message); }catch(e){}
                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                         $location.path('health-daily');
                       }

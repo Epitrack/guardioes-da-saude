@@ -23,7 +23,7 @@ angular.module('gdsApp')
           $scope.loginError = 'Email ou usuário inválidos.';
         } else {
           $rootScope.user = data.data.user;
-          Notification.show('success', 'Login', data.data.message);
+          try { Notification.show('success', 'Login', data.data.message); }catch(e){}
 
           LocalStorage.userLogin(data.data.user, data.data.token);
           $location.path('/health-daily');

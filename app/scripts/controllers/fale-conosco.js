@@ -15,9 +15,9 @@ angular.module('gdsApp')
     $scope.sendContact = function () {
       ContactApi.faleConosco($scope.contact, function (data) {
         if (data.data.error === true) {
-          Notification.show('error', 'Contato', data.data.message);
+          try { Notification.show('error', 'Contato', data.data.message); }catch(e){}
         } else {
-          Notification.show('success', 'Contato', data.data.message);
+          try { Notification.show('success', 'Contato', data.data.message); }catch(e){}
           $scope.contact = {};
         }
       });

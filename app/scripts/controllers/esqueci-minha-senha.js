@@ -28,13 +28,13 @@ angular.module('gdsApp')
 
           UserApi.updateUserPassword(params, function (data) {
             if (data.data.error === false) {
-              Notification.show('success', 'Resetar senha', data.data.message);
+              try { Notification.show('success', 'Resetar senha', data.data.message); }catch(e){}
               $timeout(function () {
                 $location.path('login-email');
                 $location.search('hash', null);
               }, 3000);
             } else {
-              Notification.show('error', 'Resetar senha', data.data.message);
+              try { Notification.show('error', 'Resetar senha', data.data.message); }catch(e){}
             }
           });
         } else {
