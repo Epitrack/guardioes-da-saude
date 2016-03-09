@@ -178,7 +178,9 @@ angular
             if(i==='dob')
             {
               var age = this.getAge(params[i]);
-              if (isNaN(age) || age<0 || (thirteenYears && age < 13)){ ret.error = true; ret.msg = "Data de nascimento inválida."; break; }
+              if (isNaN(age) || age<0 || (thirteenYears && age < 13) || params[i].length<10) {
+                  ret.error = true; ret.msg = "Data de nascimento inválida."; break;
+              }
             }
             //validating email
             if(i==='email')
