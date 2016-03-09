@@ -11,7 +11,8 @@
               uib-typeahead="address for address in getLocation($viewValue)"
               typeahead-loading="loadingLocations"
               typeahead-no-results="noResults"
-              typeahead-on-select="setRootCity($item)">
+              typeahead-on-select="setRootCity($item)"
+              onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
           </fieldset>
 
           <!-- <fieldset class="input-group">
