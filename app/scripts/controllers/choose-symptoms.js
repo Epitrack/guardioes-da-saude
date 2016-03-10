@@ -47,7 +47,7 @@ angular.module('gdsApp')
       }
 
       Surveyapi.submitSurvey(form, function (data) {
-        console.warn(data);
+        // console.warn(data);
 
         if (data.data.error === true) {
           // console.warn(data.data.message);
@@ -56,10 +56,13 @@ angular.module('gdsApp')
           // console.log(data.data.message);
           Notification.show('success', 'Survey', data.data.message);
 
-          if(data.data.respiratoria === true || data.data.diarreica === true ){  openModalSindromes() }
-
-          if (data.data.exantematica === true) { openModalExantematica(); }
-          else { openModal(); }
+          if(data.data.respiratoria === true || data.data.diarreica === true ){
+            return openModalSindromes() ;
+          } else if (data.data.exantematica === true) {
+            return openModalExantematica();
+          } else {
+            openModal();
+          }
         }
       });
     };
@@ -75,6 +78,7 @@ angular.module('gdsApp')
         show: 'true'
       });
     }
+
     function openModalSindromes() {
       $('#modal-sindromes').modal({
         show: 'true'
