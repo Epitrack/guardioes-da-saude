@@ -22,7 +22,7 @@ angular.module('gdsApp')
       lat: LocalStorage.getItem('userLocation').lat,
       lng: LocalStorage.getItem('userLocation').lon,
       title: 'Me',
-      zoom: 10,
+      zoom: 12,
       icon: myIcon
     };
 
