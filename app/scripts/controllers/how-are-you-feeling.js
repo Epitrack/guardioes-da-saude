@@ -55,14 +55,13 @@ angular.module('gdsApp')
     };
 
     $scope.share = function (social) {
-      var text = 'Acabei de participar do Guardiões da Saúde, participe você também! www.guardioesdasaude.org';
-      // var title = 'Guardiões da Saúde';
-      // var url = 'http%3A%2F%2Fguardioesdasaude.org';
+      var text = 'Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: www.guardioesdasaude.org';
+      var url = 'http://guardioesdasaude.org';
 
       if (social === 'facebook') {
         $facebook.ui({
           method: 'share',
-          href: 'www.guardioesdasaude.org'
+          href: url
         }).then(function (response) {
             Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
             $('#modal-i-feel-good').modal('hide');

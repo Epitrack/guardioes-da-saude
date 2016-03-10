@@ -39,7 +39,7 @@ angular
     'ngFacebook'
   ])
   .config( function( $facebookProvider ) {
-    $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
+    $facebookProvider.setAppId('961547147258065');
   })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
