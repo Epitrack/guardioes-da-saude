@@ -24,6 +24,8 @@ select {
   }
 }
 
+select option{color: #000}
+
 //
 // Search home
 //
@@ -226,7 +228,7 @@ select {
 }
 
 @-moz-document url-prefix() {
-    .span-sex-op{left:0} 
+    .span-sex-op{left:0}
 }
 
 
