@@ -1034,7 +1034,8 @@ body {
 
 .frequency {
   position: relative;
-
+  margin-left: 2%;
+  width: 64.5% !important;
   h2, h3 {
     float: left;
   }
@@ -1626,6 +1627,13 @@ p.login-email {
 //
 
 // iPads
+@media screen and (max-width: 991px) {
+  .frequency {
+    margin-left: 0;
+    width: 100% !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   // Header
   .navbar-nav { float: right; }
