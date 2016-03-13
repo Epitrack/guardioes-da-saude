@@ -172,6 +172,33 @@ body {
   }
 }
 
+#btn-survey-container{
+  width:262px;
+  height:109px;
+  position: absolute;
+  right: 0;
+  display: block;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  @include path('../images/nav/participe_bg.svg');
+  .lb {
+      font-size: ($fs-normal)+.6;
+      color: #FFFFFF;
+      margin-left: 70px;
+      margin-top: 10px;
+      line-height: 62px;
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+      pointer-events: none;
+    }
+  &:hover {
+    .lb{
+      color: #000;
+    }
+  }
+}
+
 .mini-avatar-user {
   width: 40px;
   height: 40px;
@@ -187,7 +214,9 @@ body {
 
 .dropdown {
   &.dropnav {
+    margin-right: 230px;
     button {
+
       font-size: ($fs-normal)+.2;
       background: transparent;
       border: none;
@@ -609,6 +638,11 @@ body {
 
     &.dropdown {
       background-color: #fff;
+
+      &.dropnav {
+        margin-right: 0;
+      }
+
 
       a, button {
         color: $bg-header !important;
@@ -1640,7 +1674,7 @@ p.login-email {
 @media screen and (min-width: 768px) {
   // Header
   .navbar-nav { float: right; }
-  .btn-survey { margin-top: 15px; }
+  .btn-survey { margin-top: 15px; }//15px;
   // ====
 
   // Content internal
@@ -1735,6 +1769,7 @@ p.login-email {
   .main-content {
     height: auto;
     min-height: 100%;
+//    transform: translate3d(0, 0, 0) !important;
   }
   // ====
 

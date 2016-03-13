@@ -40,10 +40,13 @@
               </ul>
             </li>
 
-            <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>
+<!--            <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>-->
           </ul>
         </div>
-
+        <div ng-click="goToUrl('/survey');closeNav();" id="btn-survey-container">
+          <a class="lb">Participe Agora!</a>
+        <!--          <div class="dow-arrow-survey"></div>-->
+        </div>
         <!-- sidebar just show when user is logged and mobile -->
         <div ng-if="user.id != null" class="hidden-sm hidden-md hidden-lg">
           <div ng-include src="'views/partials/nav-primary.html'"></div>
@@ -51,4 +54,5 @@
       </div>
     </div>
   </div>
+
 </header>

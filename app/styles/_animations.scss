@@ -262,12 +262,12 @@
 }
 
 .st-menu-open {
-  .st-pusher { @include translate3d(-315px, 0, 0); }
+  .st-pusher { @include translateX(-301px); }
 
   .st-menu {
     visibility: visible;
     overflow: scroll;
-    @include translate3d(-15px, 0, 0);
+    @include translateX(-15px);
     @include transition(all, .5s, 0s, linear);
   }
 }
