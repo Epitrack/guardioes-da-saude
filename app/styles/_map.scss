@@ -12,14 +12,14 @@
   left: 0;
   background-color: $link-primary;
   z-index: 8;
-  min-height: 200px;
+  min-height: 670px;
   height: auto;
   @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
 }
 
 .health-map-container {
   height: 100%;
-  min-height: 100%;
+  min-height: 670px;
   width: 100%;
   position: absolute;
   z-index: 1;
