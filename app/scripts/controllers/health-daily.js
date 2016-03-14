@@ -229,7 +229,7 @@ angular.module('gdsApp')
           var d = day.number;
           var r = false;
           angular.forEach($scope.userCalendar, function (item, k) {
-            if (item.day === d && item.month === $scope.currentMonth.month) {
+            if (item.day === d && (day.date._d.getMonth()+1) === $scope.currentMonth.month) {
               r = true;
             }
           });
