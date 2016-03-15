@@ -197,7 +197,7 @@ select option{color: #000}
 
 .radio-primary {
     position: relative;
-    width: 30px;
+    width: 20px;
     height: 20px;
 
 //  &::before {
@@ -223,7 +223,8 @@ select option{color: #000}
     font-size: ($fs-normal)-.1 !important;
     @include bdr(3px);
     top: -5px;
-    left: -10px;
+    margin-right: 10px;
+//    left: -10px;
 
 }
 
