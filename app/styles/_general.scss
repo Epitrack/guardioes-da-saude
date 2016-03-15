@@ -49,6 +49,9 @@ body {
   height: 100%;
   display: none;
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   &.js-active { display: block !important; }
 }
 
