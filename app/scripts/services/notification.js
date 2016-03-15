@@ -40,6 +40,7 @@ angular.module('gdsApp')
       }
 
       var n = new Notification(params.title, options);
+      setTimeout(n.close.bind(n), 5000);
     }
 
     var obj = {};
