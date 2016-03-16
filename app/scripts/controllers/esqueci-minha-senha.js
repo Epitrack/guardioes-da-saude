@@ -28,14 +28,12 @@ angular.module('gdsApp')
 
           UserApi.updateUserPassword(params, function (data) {
             if (data.data.error === false) {
-              // toaster.pop('success', data.data.message);
               Notification.show('success', 'Resetar senha', data.data.message);
               $timeout(function () {
                 $location.path('login-email');
                 $location.search('hash', null);
               }, 3000);
             } else {
-              // toaster.pop('error', data.data.message);
               Notification.show('error', 'Resetar senha', data.data.message);
             }
           });

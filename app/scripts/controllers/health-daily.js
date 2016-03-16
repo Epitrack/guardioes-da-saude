@@ -118,7 +118,6 @@ angular.module('gdsApp')
         $scope.lineDataLoaded = true;
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         } else {
             if(data.data.data.length > 0){
@@ -182,7 +181,6 @@ angular.module('gdsApp')
       UserApi.getUserSurveyByYear(params, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         } else {
           if(data.data.data.length > 0){

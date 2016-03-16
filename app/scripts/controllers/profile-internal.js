@@ -18,13 +18,11 @@ angular.module('gdsApp')
     $scope.deleteHousehold = function (id) {
       HouseholdApi.deleteHousehold(id, function (data) {
         if (data.data.error === false) {
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Deletar usuário', data.data.message);
           $timeout(function () {
             $location.path('profile');
           }, 2000);
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Deletar usuário', data.data.message);
           // console.warn('Error', data.data.message);
         }
@@ -70,11 +68,9 @@ angular.module('gdsApp')
 
       HouseholdApi.updateProfile(params, function (data) {
         if (data.data.error === true) {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atualizar usuário', data.data.message);
         } else {
          // console.warn('DATA SUCCESS -> ', data);
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Atualizar usuário', data.data.message);
           $scope.screen.household = _buildObj(data.data.user[0]);
         }

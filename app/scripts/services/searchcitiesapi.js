@@ -22,7 +22,7 @@ angular.module('gdsApp')
          // console.log('Success getCities: ', data);
           callback(data);
         }).error(function (error) {
-        console.log('Error getCities: ', error);
+        console.warn('Error getCities: ', error);
       });
     };
 

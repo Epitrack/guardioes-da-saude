@@ -9,5 +9,6 @@ angular.module("gdsApp")
     'API_URL': 'https://api.guardioesdasaude.org',
     'APP_TOKEN': 'd41d8cd98f00b204e9800998ecf8427e',
     'PLATFORM': 'web',
-    'CLIENT': 'api'
+    'CLIENT': 'api',
+    'ANALYTICS_ID': 'UA-71659608-4'
 });

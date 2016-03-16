@@ -40,11 +40,9 @@ angular.module('gdsApp')
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         } else {
           // console.log(data.data.message);
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Atenção', data.data.message);
 
           $timeout(function () {
@@ -93,16 +91,15 @@ angular.module('gdsApp')
       }
 
       params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
+      params.dob = $scope.UTIL.convertDate(params.dob);
 
       HouseholdApi.createHousehold(params, function (data) {
         if (data.data.error === true) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Adicionar membro', data.data.message);
         } else {
           // console.log(data.data.message);
           hideModal();
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Adicionar membro', data.data.message);
         }
       });

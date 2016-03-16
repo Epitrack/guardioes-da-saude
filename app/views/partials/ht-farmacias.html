@@ -3,9 +3,11 @@
 -->
 
 <h3 class="subtitle primary master">Farmácias</h3>
+
 <div ng-if="markersPharmacy" >
     <gds-maps mid="mapDrugs" location="userLocation" marks="markersPharmacy" size="{height:'600px', width:'100%'}"></gds-maps>
 </div>
+
 <div ng-show="showInfo" class="map-info">
   <button ng-click="removeInfo()" type="button" class="close">
     <span aria-hidden="true">&times;</span>

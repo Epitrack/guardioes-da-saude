@@ -48,7 +48,7 @@ angular.module('gdsApp')
       var params = {
         title: title,
         message: message,
-        icon: '../images/'+status+'-notficon.png'
+        icon: '../images/notifications/icon-notif-'+status+'.png'
       };
 
       getStatus();

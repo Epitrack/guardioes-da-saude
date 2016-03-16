@@ -16,7 +16,7 @@ angular.module('gdsApp')
       var form = {};
 
       form.no_symptom = 'Y';
-      form.ill_date = moment().format('YYYY/DD/MM');
+      form.ill_date = moment().format('YYYY-MM-DD');
       form.lat = LocalStorage.getItem('userLocation').lat;
       form.lon = LocalStorage.getItem('userLocation').lon;
 
@@ -29,13 +29,12 @@ angular.module('gdsApp')
       }
 
       Surveyapi.submitSurvey(form, function (data) {
+        console.log("submit survey ", data.data);
         if (data.data.error !== false) {
           // console.warn(data.data.message);
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Survey', data.data.message);
         } else {
           // console.log(data.data.message);
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Survey', data.data.message);
         }
       });
@@ -65,7 +64,6 @@ angular.module('gdsApp')
           method: 'share',
           href: 'www.guardioesdasaude.org'
         }).then(function (response) {
-            // toaster.pop('success', "Obrigado por compartilhar");
             Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
             $('#modal-i-feel-good').modal('hide');
         }, function(error){

@@ -19,10 +19,10 @@ angular.module('gdsApp')
     obj.getNews = function (data, callback) {
       $http.get(apiUrl + '/news/get', {headers: {'app_token': app_token}})
         .success(function (data) {
-          console.log('Success getNews: ', data);
+          // console.log('Success getNews: ', data);
           callback(data);
         }).error(function (error) {
-        console.log('Error getNews: ', error);
+        console.warn('Error getNews: ', error);
       });
     };
 

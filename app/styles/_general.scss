@@ -47,6 +47,9 @@ body {
   font-family: $ff-regular;
   position: relative;
   height: 100%;
+  display: none;
+
+  &.js-active { display: block !important; }
 }
 
 .no-padding { padding: 0; }
@@ -1745,7 +1748,7 @@ p.login-email {
   // fale conosco
   .fale-conosco {
     .title-primary {
-      font-size: $fs-large;
+      font-size: ($fs-medium)+1.7;
     }
 
     .bt-login {

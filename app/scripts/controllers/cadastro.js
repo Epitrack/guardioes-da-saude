@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', ['$scope', 'UserApi', 'toaster', '$location', 'LocalStorage', '$facebook', 'Notification', function ($scope, UserApi, toaster, $location, LocalStorage, $facebook, Notification) {
+  .controller('CadastroCtrl', function ($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
     // $scope.pageClass = 'login-page';
 
     $scope.userData = {};
@@ -16,15 +16,15 @@ angular.module('gdsApp')
 
 
     $scope.facebookLogin = function () {
-        UserApi.facebookLogin($scope, toaster);
-    };
+      UserApi.facebookLogin($scope);
+    }
 
     $scope.googleLogin = function () {
-      UserApi.googleLogin($scope, toaster);
+      UserApi.googleLogin($scope);
     };
 
     $scope.twitterLogin = function () {
-      UserApi.twitterLogin($scope, toaster);
+      UserApi.twitterLogin($scope);
     };
 
     $scope.updateUserSocialData = function () {
@@ -57,15 +57,13 @@ angular.module('gdsApp')
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {
-          // toaster.pop('success', data.data.message);
           Notification.show('success', 'Cadastro', data.data.message);
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
-          // toaster.pop('error', data.data.message);
           Notification.show('error', 'Cadastro', data.data.message);
           // console.warn(data.data.message);
         }
       });
     };
-  }]);
+  });
