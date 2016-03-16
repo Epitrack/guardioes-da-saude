@@ -1567,7 +1567,6 @@ p.login-email {
   input {
     &:checked ~ label {
       @include path('../images/icon-radio-check.svg');
-      background-color: red;
     }
   }
 }
@@ -1695,7 +1694,7 @@ p.login-email {
   // Content internal
   .content-internal { float: right; }
   // ====
-  .card-avatar-content {padding-left: 50px;}
+  // .card-avatar-content {padding-left: 50px;}
 
   // Nav primary
   .sidebar {
