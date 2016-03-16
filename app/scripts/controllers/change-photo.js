@@ -50,15 +50,20 @@ angular.module('gdsApp')
 
     $scope.setCurrentThumbnail = function() {
       $scope.vm.tog = 'avatar-' + $scope.vm.profile.picture;
+
+      var element = '.avatar-' + $scope.vm.profile.picture;
+
+      $(element).addClass('photo-selected');
     };
 
     $scope.uploadPic = function () {
+      // return console.warn($scope.avatar);
+
       if($scope.vm.context === 'user') {
         UserApi.changeAvatar($scope.avatar, function (data) {
           if (data.data.error === false) {
             // console.log(data.data.message);
             Notification.show('success', 'Atualizar imagem', data.data.message);
-
             $timeout(function () {
                 $location.path('/profile');
               },
@@ -108,13 +113,27 @@ angular.module('gdsApp')
     };
 
     $scope.chooseDefaultAvatar();
+
     if($location.url().indexOf("household") > 0) {
-      console.log("get from household");
+      // console.log("get from household");
       $scope.getHousehold($routeParams.household_id);
       $scope.vm.context = 'household';
     } else {
-//      console.log("get from user");
+     // console.log("get from user");
       $scope.getUser($routeParams.user_id);
       $scope.vm.context = 'user';
     }
+
+    // ====
+    $scope.changeAvatar = function(event) {
+      $('.radio-avatar').removeClass('photo-selected');
+      $(event.currentTarget).addClass('photo-selected');
+    };
+
+    $scope.myOtherNumber = 16;
+
+    $scope.getNumber = function(num) {
+        return new Array(num);
+    }
+    // ====
   }]);

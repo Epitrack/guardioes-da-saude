@@ -1561,7 +1561,23 @@ p.login-email {
   text-align: center;
 }
 
-.form-change-photo-default { text-align: center; }
+.form-change-photo-default {
+  text-align: center;
+
+  input {
+    &:checked ~ label {
+      @include path('../images/icon-radio-check.svg');
+      background-color: red;
+    }
+  }
+}
+
+// Inputs of change photo
+@for $i from 01 through 16 {
+  .avatar-#{$i} {
+    i { @include path('avatar/avatar-'+ $i + '.svg'); }
+  }
+}
 
 .change-photo-or {
   @extend .change-photo-subtitle;
@@ -1657,13 +1673,6 @@ p.login-email {
 }
 
 // ====
-
-// Inputs of change photo
-@for $i from 01 through 16 {
-  .avatar-#{$i} {
-    i { @include path('avatar/avatar-'+ $i + '.svg'); }
-  }
-}
 
 //
 // Media queries
