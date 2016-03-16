@@ -51,10 +51,10 @@ angular.module('gdsApp')
       $scope.checkF = $scope.UTIL.checkForm(params, true);
 
       if($scope.screen.user.password && $scope.screen.user.password.length > 0 && $scope.screen.user.password.length < 6){
-        $scope.checkF = {"error":true, "msg":"A senha precisa ter no mínimo 6 dígitos"}
+        $scope.checkF = {"error":true, "msg":"A senha precisa ter no mínimo 6 dígitos"};
       }
-      if($scope.screen.user.password && $scope.screen.user.password.length >= 6 && $scope.screen.user.password !== $scope.screen.user.repeatPassword){
-        $scope.checkF = {"error":true, "msg":"As senhas digitadas precisam ser iguais."}
+      if($scope.screen.user.password && $scope.screen.user.password.length >= 6 && $scope.screen.user.password !==      $scope.screen.user.repeatPassword){
+        $scope.checkF = {"error":true, "msg":"As senhas digitadas precisam ser iguais."};
       }
 
       if($scope.checkF.error===true){return;}

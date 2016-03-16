@@ -20,7 +20,7 @@ angular.module('gdsApp')
         var year = d2.getYear() - d1.getYear();
         if (year===1){
             var m1 = 12 - d1.getMonth() + d2.getMonth()-1;
-            
+
             return m1;
         }
         if (d1 < d2){
@@ -37,10 +37,10 @@ angular.module('gdsApp')
 
       if (age === 0) {
           var retorno = monthDiff(k, new Date());
-          retorno += (retorno>1)? ' meses' : ' mês'
+          retorno += (retorno>1)? ' meses' : ' mês';
         return retorno;
       }
-       age += (age>1)? ' anos' : ' ano'
+       age += (age>1)? ' anos' : ' ano';
       return age;
     };
   });

@@ -7,7 +7,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'Notification', function ($scope, UserApi, $rootScope, LocalStorage, Notification) {
+  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'Notification', 'moment', function ($scope, UserApi, $rootScope, LocalStorage, Notification, moment) {
     $scope.pageClass = 'health-daily-page';
     $scope.vm = {};
     $scope.currentMonth = moment();
@@ -133,7 +133,7 @@ angular.module('gdsApp')
     $scope.graphicLine = function () {
       var days = [];
 
-      $scope.allDays.forEach(function (item, index, array) {
+      $scope.allDays.forEach(function (item) {
         days.push({
           y: "Dia " + item._id.day.toString(),
           total: item.count
@@ -207,7 +207,7 @@ angular.module('gdsApp')
         var mal = 0;
         var bem = 0;
         var d = day.number;
-        angular.forEach($scope.userCalendar, function (item, k) {
+        angular.forEach($scope.userCalendar, function (item) {
           if (item.day === d) {
             if (item.no_symptom) {
               if (bem === 0) {bem = item.total;}
@@ -228,7 +228,7 @@ angular.module('gdsApp')
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
-          angular.forEach($scope.userCalendar, function (item, k) {
+          angular.forEach($scope.userCalendar, function (item) {
             if (item.day === d && (day.date._d.getMonth()+1) === $scope.currentMonth.month) {
               r = true;
             }

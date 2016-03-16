@@ -17,7 +17,7 @@ angular.module('gdsApp')
 
     $scope.facebookLogin = function () {
       UserApi.facebookLogin($scope);
-    }
+    };
 
     $scope.googleLogin = function () {
       UserApi.googleLogin($scope);
@@ -38,22 +38,22 @@ angular.module('gdsApp')
 
 
       $scope.checkF = $scope.UTIL.checkForm(params, true);
-      if($scope.checkF.error===true){return;}
+      if($scope.checkF.error===true){ return; }
 
       params.picture = $scope.UTIL.checkAvatar($scope.userData);
       params.password = $scope.userData.password;
 
 
-      if($scope.userData.fb !== undefined) params.fb = $scope.userData.fb;
-      if($scope.userData.tw !== undefined) params.tw = $scope.userData.tw;
-      if($scope.userData.gl !== undefined) params.gl = $scope.userData.gl;
+      if($scope.userData.fb !== undefined) { params.fb = $scope.userData.fb; }
+      if($scope.userData.tw !== undefined) { params.tw = $scope.userData.tw; }
+      if($scope.userData.gl !== undefined) { params.gl = $scope.userData.gl; }
 
 
       if(params.password===undefined){params.password = params.email;}
 
       params.dob = $scope.UTIL.convertDate(params.dob);
 
-      $('#modal-complete-login').modal('hide');
+      angular.element('#modal-complete-login').modal('hide');
 
       UserApi.createUser(params, function (data) {
         if (data.data.error === false) {

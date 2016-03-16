@@ -8,11 +8,11 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-  .service('Upload', function ($http, ApiConfig) {
+  .service('Upload', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
-    var apiUrl = ApiConfig.API_URL;
-    var app_token = ApiConfig.APP_TOKEN;
+//    var apiUrl = ApiConfig.API_URL;
+//    var app_token = ApiConfig.APP_TOKEN;
 
     var obj = {};
 
@@ -25,8 +25,8 @@ angular.module('gdsApp')
           console.log('Success upload image: ', data);
           callback(data);
         }, function(error){
-          console.warn('Error upload image: ', error)
-      })
+          console.warn('Error upload image: ', error);
+      });
     };
 
     return obj;

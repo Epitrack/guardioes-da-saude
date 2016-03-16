@@ -25,7 +25,7 @@ angular.module('gdsApp')
       }, 2000);
 
       return deferred.promise;
-    }
+    };
 
     return obj;
   });

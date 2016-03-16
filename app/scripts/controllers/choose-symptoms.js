@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', '$rootScope', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification, $rootScope) {
+  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', '$rootScope', 'moment', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification, $rootScope, moment) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function (data) {
@@ -20,9 +20,10 @@ angular.module('gdsApp')
 
     $scope.submitSurvey = function () {
       var form = {};
+      var country;
 
       if ($scope.symptoms.travelLocation) {
-        var country = $scope.symptoms.travelLocation;
+        country = $scope.symptoms.travelLocation;
       }
 
       angular.forEach($scope.symptoms, function (v, symptom) {
@@ -55,35 +56,12 @@ angular.module('gdsApp')
         } else {
           // console.log(data.data.message);
           Notification.show('success', 'Survey', data.data.message);
-
-          if(data.data.respiratoria === true || data.data.diarreica === true ){
-            return openModalSindromes() ;
-          } else if (data.data.exantematica === true) {
-            return openModalExantematica();
-          } else {
-            openModal();
-          }
+          if( data.data.respiratoria === true || data.data.diarreica === true ){ angular.element('#modal-sindromes').modal({show: 'true'}); }
+          else if (data.data.exantematica === true) { angular.element('#modal-exantematica').modal({ show: 'true' }); }
+          else {  angular.element('#modal-thanks').modal({show: 'true'});}
         }
       });
     };
-
-    function openModal() {
-      $('#modal-thanks').modal({
-        show: 'true'
-      });
-    }
-
-    function openModalExantematica() {
-      $('#modal-exantematica').modal({
-        show: 'true'
-      });
-    }
-
-    function openModalSindromes() {
-      $('#modal-sindromes').modal({
-        show: 'true'
-      });
-    }
 
     $scope.goToUpas = function () {
       $timeout(function () {
@@ -109,10 +87,10 @@ angular.module('gdsApp')
         $facebook.ui({
           method: 'share',
           href: url
-        }).then(function (response) {
+        }).then(function () {
             Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
-            $('#modal-i-feel-good').modal('hide');
-        }, function(error){console.warn("error -->", error)});
+            angular.element('#modal-i-feel-good').modal('hide');
+        }, function(error){console.warn("error -->", error);});
       } else {
         $window.open('https://twitter.com/home?status=' + text);
       }
