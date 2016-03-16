@@ -35,7 +35,6 @@ angular
     'angularMoment',
     'ngFileUpload',
     'ngMap',
-    'angular-repeat-n',
     'ngFacebook'
   ])
   .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
