@@ -34,7 +34,7 @@ angular.module('gdsApp')
       data.user_id = $rootScope.user.id;
       data.app_token = app_token;
 
-      console.warn('Enviando...', data);
+//      console.warn('Enviando...', data);
 
       $http.post(apiUrl + '/survey/create', data, {
           headers: {
@@ -112,7 +112,7 @@ angular.module('gdsApp')
           console.warn('Error getCityByPosition: ', error);
       });
 
-    }
+    };
 
     return obj;
   });

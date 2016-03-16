@@ -92,10 +92,10 @@ angular.module('gdsApp')
     };
 
     $scope.chooseDefaultAvatar = function () {
-      $('label.radio-avatar').on('click', function () {
-        var clickedAvatar = $(this).find('i').css('background-image').replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+      angular.element('label.radio-avatar').on('click', function () {
+        var clickedAvatar = angular.element(this).find('i').css('background-image').replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
 
-        $('.avatar-image').attr('src', clickedAvatar);
+        angular.element('.avatar-image').attr('src', clickedAvatar);
       });
     };
 

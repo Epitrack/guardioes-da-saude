@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification) {
+  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', 'moment', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification, moment) {
 
     var meuFiltro = $filter;
     var userStorage = $rootScope.user;
@@ -20,8 +20,8 @@ angular.module('gdsApp')
     $scope.vm = {};
     $scope.vm.currentDay = moment();
 
-    if($scope.hhSurvey !== undefined) $scope.hhSurvey = undefined;
-    if($scope.lineOptions !== undefined) $scope.lineOptions = undefined;
+    if($scope.hhSurvey !== undefined) { $scope.hhSurvey = undefined; }
+    if($scope.lineOptions !== undefined) { $scope.lineOptions = undefined; }
 
     // ====
     $scope.getHousehold = function () {
@@ -165,7 +165,7 @@ angular.module('gdsApp')
     $scope.graphicLine = function () {
       var days = [];
 
-      $scope.hhAllDays.forEach(function (item, index, array) {
+      $scope.hhAllDays.forEach(function (item) {
         days.push({
           y: "Dia " + item._id.day.toString(),
           total: item.count
@@ -251,20 +251,20 @@ angular.module('gdsApp')
         var mal = 0;
         var bem = 0;
         var d = day.number;
-        angular.forEach($scope.householdCalendar, function (item, k) {
-          if (item.day == d) {
+        angular.forEach($scope.householdCalendar, function (item) {
+          if (item.day === d) {
             if (item.no_symptom) {
-              if (bem == 0) {bem = item.total;}
+              if (bem === 0) {bem = item.total;}
               else {bem += item.total;}
             } else {
-              if (mal == 0) {mal = item.total;}
+              if (mal === 0) {mal = item.total;}
               else {mal += item.total;}
             }
           }
         });
         var content;
-        if (q == 't') { content = (mal + bem); }
-          else if (q == 'bem') {content = bem; }
+        if (q === 't') { content = (mal + bem); }
+          else if (q === 'bem') {content = bem; }
           else { content = mal; }
         return content;
       },
@@ -272,17 +272,17 @@ angular.module('gdsApp')
         if ($scope.calendarLoaded) {
           var d = day.number;
           var r = false;
-          angular.forEach($scope.householdCalendar, function (item, k) {
-            if (item.day == d && item.month == $scope.currentMonth.month) {
+          angular.forEach($scope.householdCalendar, function (item) {
+            if (item.day === d && (day.date._d.getMonth()+1) === $scope.currentMonth.month) {
               r = true;
             }
           });
           return r;
-        } else return false;
+        } else { return false; }
       },
       onChange: function (params) {
-        if (params.month != $scope.currentMonth.month ||
-          params.year != $scope.currentMonth.year) {
+        if (params.month !== $scope.currentMonth.month ||
+          params.year !== $scope.currentMonth.year) {
           $scope.calendarLoaded = false;
           $scope.getHouseholdCalendar(params);
           $scope.currentMonth = params;

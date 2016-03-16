@@ -37,7 +37,7 @@ angular.module('gdsApp')
       var options = {
         body: params.message,
         icon: params.icon
-      }
+      };
 
       var n = new Notification(params.title, options);
       setTimeout(n.close.bind(n), 5000);

@@ -116,8 +116,8 @@ angular.module('gdsApp')
       ]
     };
 
-    var icon = undefined;
-
+    var icon;
+    var info;
     NgMap.getMap().then(function (map) {
       $scope.map = map;
 
@@ -127,7 +127,7 @@ angular.module('gdsApp')
 
       var position = new google.maps.LatLng($scope.userLocation.coords[0], $scope.userLocation.coords[1]);
 
-      var info  = new google.maps.InfoWindow({
+      info  = new google.maps.InfoWindow({
         content: "<b>Você está aqui!</b>",
         map: $scope.map,
         position: position,
@@ -167,7 +167,7 @@ angular.module('gdsApp')
     function pushingMarkers(datas) {
         for(var i in datas)
         {
-          if(!checkIfExistMarker(datas[i].id)) $scope.markers.push(datas[i]);
+          if(!checkIfExistMarker(datas[i].id)) { $scope.markers.push(datas[i]); }
         }
 
     }
@@ -352,7 +352,7 @@ angular.module('gdsApp')
     };
 
     function addNewMarkers() {
-        var bounds = $scope.map.getBounds();
+//        var bounds = $scope.map.getBounds();
 
         // var south = map.getBounds().getSouthWest();
         var south_lat = $scope.map.getBounds().getSouthWest().lat();
@@ -390,7 +390,7 @@ angular.module('gdsApp')
       getCoords(city);
       getSurveyByCity(city);
       getSurveyByCitySummary(city);
-    }
+    };
     // ====
 
     if ($rootScope.city===undefined){ $scope.getMarkersByLocation(); }

@@ -14,6 +14,6 @@ angular.module('gdsApp')
       'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
     return function (index) {
-      return months[index - 1]
-    }
+      return months[index - 1];
+    };
   });

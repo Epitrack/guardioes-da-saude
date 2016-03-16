@@ -21,7 +21,7 @@ angular.module('gdsApp')
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
-      if(data.picture === undefined) data.picture = 0;
+      if(data.picture === undefined) { data.picture = 0; }
       data.dob = data.dob;
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})

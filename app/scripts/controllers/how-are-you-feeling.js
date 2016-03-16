@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', function ($scope, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification) {
+  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', 'moment', function ($scope, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification, moment) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 
@@ -42,7 +42,6 @@ angular.module('gdsApp')
 
     $scope.iFeelBad = function () {
       var url = $location.path().replace('step-1', 'step-2');
-
       $location.path(url);
     };
 
@@ -62,11 +61,11 @@ angular.module('gdsApp')
         $facebook.ui({
           method: 'share',
           href: url
-        }).then(function (response) {
+        }).then(function () {
             Notification.show('success', 'Compartilhar', 'Obrigado por compartilhar');
-            $('#modal-i-feel-good').modal('hide');
+            angular.element('#modal-i-feel-good').modal('hide');
         }, function(error){
-          // console.warn("error -->", error)
+           console.warn("error -->", error);
         });
       } else {
         $window.open('https://twitter.com/home?status=' + text);
