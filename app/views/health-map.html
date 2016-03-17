@@ -94,27 +94,18 @@
   </div>
 </aside>
 
+<div class="health-map-container" ng-if="markers">
+  <gds-maps location="userLocation" marks="markers" size="{height:'600px', width:'100%'}"></gds-maps>
+</div>
+<!--
 <div class="health-map-container" center="current-location" map-lazy-load="https://maps.google.com/maps/api/js"
      map-lazy-load-params="{{mapOptions}}">
-<!---->
   <ng-map default-style="false"  zoom="12" style="height:100%" scrollwheel="false"
           styles="{{config.style}}">
     <marker ng-repeat="m in markers" id="{{m.id}}" icon="{{m.icon}}" position="{{m.position}}" zIndex="0"></marker>
-<!--
-    <marker position="{{userLocation.coords}}" animation="DROP" on-click="markerAnimation()"
-            icon="{{userLocation.icon}}" zIndex="99999" ></marker>
--->
-
-
-<!--
-    <info-window position="{{userLocation.coords}}">
-      <span>Você está aqui!</span>
-    </info-window>
--->
-
-
   </ng-map>
 </div>
+-->
 
 <!-- Síndromes Modal -->
 <div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">

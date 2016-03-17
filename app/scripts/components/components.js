@@ -8,9 +8,11 @@ var app = angular.module('gdsApp');
 app.directive('gdsMaps', function() {
     return {
      restict: 'E',
-     template: '<div id="myMap"></div>',
-     scope:{location:"=", marks:"=", size:"=", mid:"="},
+     template: '<div id="gdsMap"></div>',
+     scope:{location:"=", marks:"=", size:"="},
      link:function(scope){
+        console.log("scope gsd maps", scope);
+        console.log("location",location, scope.location)
          var mapOptions = {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
            zoom: scope.location.zoom,
@@ -24,12 +26,16 @@ app.directive('gdsMaps', function() {
           // panControl: false,
           // scaleControl:false,
          };
-
-         document.getElementById('myMap').style.width = scope.size.width;
-         document.getElementById('myMap').style.height = scope.size.height;
+         console.log("mapOptions", mapOptions);
+         document.getElementById('gdsMap').style.width = scope.size.width;
+         document.getElementById('gdsMap').style.height = scope.size.height;
          var mMap;
          if(mMap) { mMap = null; }
-         mMap = new google.maps.Map(document.getElementById('myMap'), mapOptions);
+         mMap = new google.maps.Map(document.getElementById('gdsMap'), mapOptions);
+         google.maps.event.addListenerOnce(mMap, 'tilesloaded', function(){
+           console.log("mapLoaded emit")
+           scope.$emit('mapLoaded', mMap);
+         });
          var markers = [];
          var createMarker = function (info, img){
             if(img === undefined) {
@@ -56,6 +62,7 @@ app.directive('gdsMaps', function() {
             markers.push(marker);
         };
 
+//        console.log("my marks", scope.marks)
         for (var i = 0; i < scope.marks.length; i++){
             createMarker(scope.marks[i]);
         }

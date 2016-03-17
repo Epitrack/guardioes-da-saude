@@ -31,8 +31,13 @@ angular.module('gdsApp')
     // ====
     // Configurações gerais do mapa
     $scope.userLocation = {
-      coords: [LocalStorage.getItem('userLocation').lat, LocalStorage.getItem('userLocation').lon],
-      icon: '/images/icon-user-location.png'
+//      coords: [LocalStorage.getItem('userLocation').lat, LocalStorage.getItem('userLocation').lon],
+      lat: LocalStorage.getItem('userLocation').lat,
+      lng: LocalStorage.getItem('userLocation').lon,
+      title: 'Me',
+      zoom: 12,
+      icon: '/images/icon-user-location.png',
+
     };
 
     $scope.mapOptions = {
@@ -165,10 +170,12 @@ angular.module('gdsApp')
     };
 
     function pushingMarkers(datas) {
+
         for(var i in datas)
         {
           if(!checkIfExistMarker(datas[i].id)) { $scope.markers.push(datas[i]); }
         }
+        console.log($scope.markers)
 
     }
 
@@ -323,6 +330,58 @@ angular.module('gdsApp')
       });
     }
 
+    function createMap() {
+      console.log(angular.element('#gdsMap'));
+      console.log('hi big one! I am createMap');
+//      getSurveyByCity($rootScope.city);
+//      getSurveyByCitySummary($rootScope.city);
+//      getCoords($rootScope.city);
+
+//      var position = new google.maps.LatLng($scope.userLocation.coords[0], $scope.userLocation.coords[1]);
+
+//      info  = new google.maps.InfoWindow({
+//        content: "<b>Você está aqui!</b>",
+//        map: $scope.map,
+//        position: position,
+//        pixelOffset: new google.maps.Size(0,-20)
+//      });
+//
+//      icon = new google.maps.Marker({
+//        icon: $scope.userLocation.icon,
+//        map: $scope.map,
+//        position: position
+//      });
+//
+//      //TODO colocar aqui o "você está aqui"
+//      icon.setZIndex(100000);
+//      google.maps.event.addListener(map, 'idle', addNewMarkers);
+    }
+
+    $scope.$on('mapLoaded', function (event, map) {
+      $scope.map = map;
+      getSurveyByCity($rootScope.city);
+      getSurveyByCitySummary($rootScope.city);
+      getCoords($rootScope.city);
+      var position = new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lon);
+
+      info  = new google.maps.InfoWindow({
+        content: "<b>Você está aqui!</b>",
+        map: $scope.map,
+        position: position,
+        pixelOffset: new google.maps.Size(0,-20)
+      });
+//
+      icon = new google.maps.Marker({
+        icon: $scope.userLocation.icon,
+        map: $scope.map,
+        position: position
+      });
+//
+//      //TODO colocar aqui o "você está aqui"
+      icon.setZIndex(100000);
+//      google.maps.event.addListener(map, 'idle', addNewMarkers);
+    });
+
     $scope.getMarkersByLocation = function () {
       var params = {
         lat: LocalStorage.getItem('userLocation').lat,
@@ -332,6 +391,7 @@ angular.module('gdsApp')
       Surveyapi.getCityByPosition(params, function(data){
         $rootScope.city =  data.data.results[1].formatted_address;
       });
+
     };
     // ====
 
@@ -397,6 +457,7 @@ angular.module('gdsApp')
     };
     // ====
 
-    if ($rootScope.city===undefined){ $scope.getMarkersByLocation(); }
+
+    if ($rootScope.city === undefined){ $scope.getMarkersByLocation(); }
 
   }]);
