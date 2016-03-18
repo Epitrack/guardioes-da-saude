@@ -7,7 +7,42 @@
  * # calendar
  */
 angular.module('gdsApp')
-  .directive('calendar', function ($rootScope) {
+  .directive('calendar', function (moment) {
+function _removeTime(date) {
+      return date.day(0).hour(0).minute(0).second(0).millisecond(0);
+    }
+
+    function _buildMonth($scope, start, month) {
+      $scope.weeks = [];
+      var done = false, date = start.clone(), monthIndex = date.month(), count = 0;
+
+      while (!done) {
+        $scope.weeks.push({days: _buildWeek(date.clone(), month)});
+        date.add(1, "w");
+        done = count++ > 2 && monthIndex !== date.month();
+        monthIndex = date.month();
+      }
+      $scope.CalendarInterface.onChange({month: $scope.month.month() + 1, year: $scope.month.year()});
+    }
+
+    function _buildWeek(date, month) {
+      var days = [];
+      for (var i = 0; i < 7; i++) {
+        days.push({
+          name: date.format("dd").substring(0, 1),
+          number: date.date(),
+          isCurrentMonth: date.month() === month.month(),
+          isToday: date.isSame(new Date(), "day"),
+          date: date
+        });
+
+        date = date.clone();
+        date.add(1, "d");
+      }
+
+      return days;
+    }
+
     return {
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
@@ -48,40 +83,4 @@ angular.module('gdsApp')
         };
       }
     };
-
-    function _removeTime(date) {
-      return date.day(0).hour(0).minute(0).second(0).millisecond(0);
-    }
-
-    function _buildMonth($scope, start, month) {
-      $scope.weeks = [];
-      var done = false, date = start.clone(), monthIndex = date.month(), count = 0;
-
-      while (!done) {
-        $scope.weeks.push({days: _buildWeek(date.clone(), month)});
-        date.add(1, "w");
-        done = count++ > 2 && monthIndex !== date.month();
-        monthIndex = date.month();
-      }
-      $scope.CalendarInterface.onChange({month: $scope.month.month() + 1, year: $scope.month.year()});
-    }
-
-    function _buildWeek(date, month) {
-      var days = [];
-      for (var i = 0; i < 7; i++) {
-        days.push({
-          name: date.format("dd").substring(0, 1),
-          number: date.date(),
-          isCurrentMonth: date.month() === month.month(),
-          isToday: date.isSame(new Date(), "day"),
-          date: date
-        });
-
-        date = date.clone();
-        date.add(1, "d");
-      }
-
-      return days;
-    }
-
   });

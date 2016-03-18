@@ -14,9 +14,9 @@ angular.module('gdsApp')
     $scope.produto = {};
 
     $scope.uploadImage = function() {
-      if ($scope.produto.image != undefined) {
-        console.log('Existe imagem')
-        $scope.uploadFile()
+      if ($scope.produto.image !== undefined) {
+//        console.log('Existe imagem');
+        $scope.uploadFile();
       } else {
         console.log($scope.produto.image);
       }
@@ -26,8 +26,8 @@ angular.module('gdsApp')
       var file = $scope.produto.image;
 
       Upload.send(file, function(data) {
-        console.log(data)
-      })
+        console.log(data);
+      });
     };
 
 

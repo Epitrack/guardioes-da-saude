@@ -121,10 +121,10 @@ angular.module('gdsApp')
     // atualiza o usuário sempre que acontece um post
     obj.updateUser = function (user) {
       // adds into storage user info/data
-      console.log("LOCAL STORAGE", user.data.data)
+      var currentUser;
       if (user.data.data.length > 0) {
         var newUser = user.data.data[0];
-        var currentUser = obj.getItem("userStorage");
+        currentUser = obj.getItem("userStorage");
 
         angular.forEach(newUser, function (v, key) {
           currentUser[key] = v;

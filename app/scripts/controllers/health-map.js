@@ -36,9 +36,12 @@ angular.module('gdsApp')
     };
 
     $scope.mapOptions = {
-      zoom: 14
-//      ,
-//      center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng)
+      zoom: 14,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.LEFT_TOP
+      }
     };
 
     $scope.config = {
@@ -112,16 +115,31 @@ angular.module('gdsApp')
         }
       ]
     };
-    var icon=undefined;
+
+    var icon;
+    var info;
     NgMap.getMap().then(function (map) {
       $scope.map = map;
 
       getSurveyByCity($rootScope.city);
       getSurveyByCitySummary($rootScope.city);
       getCoords($rootScope.city);
+
       var position = new google.maps.LatLng($scope.userLocation.coords[0], $scope.userLocation.coords[1]);
-      var info  = new google.maps.InfoWindow({content:"<b>Você está aqui!</b>", map:$scope.map, position: position, pixelOffset:new google.maps.Size(0,-20)});
-      icon = new google.maps.Marker({icon:$scope.userLocation.icon, map:$scope.map, position: position});
+
+      info  = new google.maps.InfoWindow({
+        content: "<b>Você está aqui!</b>",
+        map: $scope.map,
+        position: position,
+        pixelOffset: new google.maps.Size(0,-20)
+      });
+
+      icon = new google.maps.Marker({
+        icon: $scope.userLocation.icon,
+        map: $scope.map,
+        position: position
+      });
+
       //TODO colocar aqui o "você está aqui"
       icon.setZIndex(100000);
       google.maps.event.addListener(map, 'idle', addNewMarkers);
@@ -149,7 +167,7 @@ angular.module('gdsApp')
     function pushingMarkers(datas) {
         for(var i in datas)
         {
-          if(!checkIfExistMarker(datas[i].id)) $scope.markers.push(datas[i]);
+          if(!checkIfExistMarker(datas[i].id)) { $scope.markers.push(datas[i]); }
         }
 
     }
@@ -170,7 +188,7 @@ angular.module('gdsApp')
             var newMs = [];
             newMs = addToArray(data.data.data);
             pushingMarkers(newMs);
-//            console.log("$scope.markers.length",$scope.markers.length);
+           // console.log("$scope.markers.length",$scope.markers.length);
 
           }
           else{ $scope.markers = addToArray(data.data.data); }
@@ -182,10 +200,12 @@ angular.module('gdsApp')
       });
     }
 
-    function getSurveyByCitySummary(city) {
+    function getSurveyByCitySummary(params) {
       var summary = {};
 
-      Surveyapi.getMarkersByCitySummary(city, function (data) {
+      // console.warn('AQUI ->>>', params);
+
+      Surveyapi.getMarkersByCitySummary(params, function (data) {
         if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
@@ -233,7 +253,7 @@ angular.module('gdsApp')
             $scope.map.setCenter(results[0].geometry.location);
             if($rootScope.city) { delete $rootScope.city; }
         } else {
-//          console.log('Geocode was not successful for the following reason: ' + status);
+         // console.log('Geocode was not successful for the following reason: ' + status);
         }
       });
     }
@@ -325,7 +345,7 @@ angular.module('gdsApp')
           language: 'pt-BR'
         }
       }).then(function(response){
-//        console.log(response);
+       // console.log(response);
 
         return response.data.results.map(function(item){
           return item.formatted_address;
@@ -334,7 +354,7 @@ angular.module('gdsApp')
     };
 
     function addNewMarkers() {
-        var bounds = $scope.map.getBounds();
+       // var bounds = $scope.map.getBounds();
 
         // var south = map.getBounds().getSouthWest();
         var south_lat = $scope.map.getBounds().getSouthWest().lat();
@@ -348,10 +368,12 @@ angular.module('gdsApp')
         var center_lng = (south_lng + north_lng) / 2;
         var params = {'lat': center_lat, 'lon':center_lng };
 
-        Surveyapi.getCityByPosition(params, function(data){
-          getSurveyByCity(data.data.results[1].formatted_address);
-          getSurveyByCitySummary(data.data.results[1].formatted_address);
+        // passa a cidade de acordo com a lat/lng
+        getSurveyByCitySummary(params);
 
+        Surveyapi.getCityByPosition(params, function(data){
+          // console.warn('HEY >>>', data.data.results[1].formatted_address);
+          getSurveyByCity(data.data.results[1].formatted_address);
         });
 
         Surveyapi.getMarkersByLocation(params, function (data) {
@@ -359,7 +381,7 @@ angular.module('gdsApp')
             var newMs = [];
             newMs = addToArray(data.data.data);
             pushingMarkers(newMs);
-//            console.log("$scope.markers.length",$scope.markers.length)
+           // console.log("$scope.markers.length",$scope.markers.length)
 
           } else {
             Notification.show('error', 'Atenção', data.data.message);
@@ -368,11 +390,11 @@ angular.module('gdsApp')
     }
 
     $scope.getCityAutoComplete = function(city) {
-//      $rootScope.city = city;
+     // $rootScope.city = city;
       getCoords(city);
       getSurveyByCity(city);
       getSurveyByCitySummary(city);
-    }
+    };
     // ====
 
     if ($rootScope.city===undefined){ $scope.getMarkersByLocation(); }

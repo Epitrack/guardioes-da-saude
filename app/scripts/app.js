@@ -35,12 +35,9 @@ angular
     'angularMoment',
     'ngFileUpload',
     'ngMap',
-    'angular-repeat-n',
     'ngFacebook'
   ])
-  .config( function( $facebookProvider ) {
-    $facebookProvider.setAppId('961547147258065');//961547147258065  179676235701655
-  })
+  .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
    if($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 ) {
@@ -96,16 +93,14 @@ angular
               case 'branco':
               case 'indigena':
                   return 8;
-                  break;
               case 'preto':
                   return 1;
-                  break;
               case 'pardo':
                   return 2;
-                  break;
               case 'amarelo':
                   return 7;
-                  break;
+              default:
+                  return 0;
           }
         }
         else if (gender === 'M') {
@@ -113,22 +108,20 @@ angular
             switch(race){
               case 'branco':
                   return 11;
-                  break;
               case 'preto':
                   return 5;
-                  break;
               case 'pardo':
               case 'indigena':
                   return 4;
-                  break;
               case 'amarelo':
                   return 10;
-                  break;
+              default:
+                  return 0;
           }
         }
       },
 
-      getAge: function (dateString, canIcheckAge) {
+      getAge: function (dateString) {
         dateString = this.convertDate(dateString);
         var today, birthDate, age, m;
         today = new Date();
@@ -136,7 +129,7 @@ angular
         age = today.getFullYear() - birthDate.getFullYear();
         m = today.getMonth() - birthDate.getMonth();
 
-        if (birthDate> today) { return -1 }
+        if (birthDate > today) { return -1; }
 
         if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
           age--;
@@ -164,7 +157,7 @@ angular
           relationship: "Parentesco",
           password:"Senha",
           repeat_password:"Repita a senha"
-        }
+        };
 
         for(var i in params)
         {
@@ -178,7 +171,9 @@ angular
             if(i==='dob')
             {
               var age = this.getAge(params[i]);
-              if (isNaN(age) || age<0 || (thirteenYears && age < 13)){ ret.error = true; ret.msg = "Data de nascimento inválida."; break; }
+              if (isNaN(age) || age<0 || (thirteenYears && age < 13) || age > 120 || params[i].length<10) {
+                  ret.error = true; ret.msg = "Data de nascimento inválida."; break;
+              }
             }
             //validating email
             if(i==='email')

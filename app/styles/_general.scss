@@ -49,6 +49,9 @@ body {
   height: 100%;
   display: none;
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   &.js-active { display: block !important; }
 }
 
@@ -172,6 +175,34 @@ body {
   }
 }
 
+#btn-survey-container{
+  width:262px;
+  height:109px;
+  position: absolute;
+  right: 0;
+  display: block;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+  @include path('../images/nav/participe_bg.svg');
+  .lb {
+      font-size: ($fs-normal)+.6;
+      color: #FFFFFF;
+      margin-left: 70px;
+      margin-top: 10px;
+      line-height: 62px;
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+      pointer-events: none;
+      @include transition(all, .2s, 0s, linear);
+  }
+  &:hover {
+    .lb{
+      color: #000;
+    }
+  }
+}
+
 .mini-avatar-user {
   width: 40px;
   height: 40px;
@@ -187,7 +218,9 @@ body {
 
 .dropdown {
   &.dropnav {
+    margin-right: 230px;
     button {
+
       font-size: ($fs-normal)+.2;
       background: transparent;
       border: none;
@@ -222,6 +255,8 @@ body {
     margin: 30px 0 50px 0;
   }
 }
+
+.title-cad-email{margin-top: 10px !important}
 
 .title-secondary {
   @extend .title-primary;
@@ -318,6 +353,9 @@ body {
     color: $link-primary;
   }
 }
+
+//facebook share dialog
+.fb_dialog.fb_dialog_advanced{top: -50px !important;}
 
 // How It Works
 .wrapper-how-it-works {
@@ -600,13 +638,17 @@ body {
   margin: auto 0;
 
   @extend .navbar-nav;
-  // background-color: red;
 
   li {
     margin-bottom: 10px;
 
     &.dropdown {
       background-color: #fff;
+
+      &.dropnav {
+        margin-right: 0;
+      }
+
 
       a, button {
         color: $bg-header !important;
@@ -624,10 +666,6 @@ body {
   .sidebar {
     height: 100%;
   }
-}
-
-.wrapper-nav-primary-mobile {
-  // background-color: red;
 }
 
 // ====
@@ -1039,7 +1077,8 @@ body {
 
 .frequency {
   position: relative;
-
+  margin-left: 2%  !important;
+  width: 64.5% !important;
   h2, h3 {
     float: left;
   }
@@ -1522,7 +1561,22 @@ p.login-email {
   text-align: center;
 }
 
-.form-change-photo-default { text-align: center; }
+.form-change-photo-default {
+  text-align: center;
+
+  input {
+    &:checked ~ label {
+      @include path('../images/icon-radio-check.svg');
+    }
+  }
+}
+
+// Inputs of change photo
+@for $i from 01 through 16 {
+  .avatar-#{$i} {
+    i { @include path('avatar/avatar-'+ $i + '.svg'); }
+  }
+}
 
 .change-photo-or {
   @extend .change-photo-subtitle;
@@ -1619,28 +1673,28 @@ p.login-email {
 
 // ====
 
-// Inputs of change photo
-@for $i from 01 through 16 {
-  .avatar-#{$i} {
-    i { @include path('avatar/avatar-'+ $i + '.svg'); }
-  }
-}
-
 //
 // Media queries
 //
 
 // iPads
+@media screen and (max-width: 991px) {
+  .frequency {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}
+
 @media screen and (min-width: 768px) {
   // Header
   .navbar-nav { float: right; }
-  .btn-survey { margin-top: 15px; }
+  .btn-survey { margin-top: 15px; }//15px;
   // ====
 
   // Content internal
   .content-internal { float: right; }
   // ====
-  .card-avatar-content {padding-left: 50px;}
+  // .card-avatar-content {padding-left: 50px;}
 
   // Nav primary
   .sidebar {
@@ -1729,6 +1783,7 @@ p.login-email {
   .main-content {
     height: auto;
     min-height: 100%;
+//    transform: translate3d(0, 0, 0) !important;
   }
   // ====
 
@@ -1923,3 +1978,7 @@ p.login-email {
 
 // Large Desktops
 @media screen and (min-width: 1200px) {}
+@media screen and (max-width: 320px) {
+  .modal-op{margin-right: 60px !important}
+  button.pull-right.btn.btn-primary.cancel{float: left !important; margin-top: 0 !important;}
+}

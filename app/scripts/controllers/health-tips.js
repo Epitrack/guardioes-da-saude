@@ -22,7 +22,7 @@ angular.module('gdsApp')
       lat: LocalStorage.getItem('userLocation').lat,
       lng: LocalStorage.getItem('userLocation').lon,
       title: 'Me',
-      zoom: 10,
+      zoom: 12,
       icon: myIcon
     };
 
@@ -72,10 +72,10 @@ angular.module('gdsApp')
     };
 
     $scope.openModal = function(){
-      $('#modal-all-drugstores-cant-shown').modal({
+      angular.element('#modal-all-drugstores-cant-shown').modal({
         show: 'true'
       });
-    }
+    };
 
     $scope.$on('clickMarker.click', function (event, args) {
         $scope.markTitle = args.title;
@@ -86,7 +86,7 @@ angular.module('gdsApp')
         $scope.$apply();
     });
 
-    $scope.removeInfo = function(){delete $scope.showInfo;}
+    $scope.removeInfo = function(){delete $scope.showInfo;};
 
     function clearMap(){
         delete $scope._markersPharmacy;

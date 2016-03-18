@@ -55,7 +55,7 @@ angular.module('gdsApp')
     obj.updateUser = function (id, callback) {
       $http.get(apiUrl + '/user/get/' + id, {headers: {'app_token': app_token}})
         .then(function (result) {
-          console.log('Success updateUser: ', result);
+//          console.log('Success updateUser: ', result);
           LocalStorage.updateUser(result);
           if (callback) {
             callback(result);
@@ -184,13 +184,13 @@ angular.module('gdsApp')
         $http.get(apiUrl+'/user/get?fb='+facebook_id, {headers:{'app_token':app_token}})
         .then(function(result){callback(result);},
               function(error){console.warn('Error fbLogin: ', error);});
-    };
+    }
 
     obj.facebookLogin = function($scope){
 
-        var userFbData = {}
+        var userFbData = {};
 
-        $facebook.getLoginStatus().then(function(response){
+        $facebook.getLoginStatus().then(function(){
           // console.log("getting facebook data")
         });
 
@@ -209,14 +209,14 @@ angular.module('gdsApp')
                           var loginPass = {
                             email: dataLg.data.data[0].email,
                             password: dataLg.data.data[0].email
-                          }
+                          };
                           obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true) {
                                 // toaster.pop('error', resultMail.data.message);
-                                Notification.show('error', 'Facebook', resultMail.data.message);
+//                                  Notification.show('error', 'Facebook', resultMail.data.message);
                               } else{
                                   // toaster.pop('success', resultMail.data.message);
-                                  Notification.show('success', 'Facebook', resultMail.data.message);
+//                                  Notification.show('success', 'Facebook', resultMail.data.message);
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
@@ -225,7 +225,7 @@ angular.module('gdsApp')
 
                       } else {
                        // console.warn('Error -> ', dataLg.data.message);
-                        $('#modal-complete-login').modal('show');
+                        angular.element('#modal-complete-login').modal('show');
                       }
                     });
                 });
@@ -233,7 +233,7 @@ angular.module('gdsApp')
                 console.warn("Error ->", data);
             }
         });
-    }
+    };
     // ====
 
     // ====
@@ -241,12 +241,12 @@ angular.module('gdsApp')
         $http.get(apiUrl+'/user/get?tw='+twitter_id, {headers:{'app_token':app_token}})
         .then(function(result){callback(result);},
               function(error){console.warn('Error twLogin: ', error);});
-    };
+    }
 
     obj.twitterLogin = function ($scope) {
       OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
       var userTwData = {};
-      OAuth.popup('twitter', function(err, res){ if(err)console.warn('error tw',err); })
+      OAuth.popup('twitter', function(err){ if( err ){ console.warn('error tw',err); } } )
         .done(function(result) {
           result.me().done(function(data) {
            // console.log("me",data)
@@ -259,7 +259,7 @@ angular.module('gdsApp')
                   var loginPass = {
                     email: dataTw.data.data[0].email,
                     password: dataTw.data.data[0].email
-                  }
+                  };
 
                   obj.loginUser(loginPass, function(resultMail){
                       if(resultMail.data.error === true) {
@@ -275,11 +275,11 @@ angular.module('gdsApp')
               } else {
                 // console.warn('Error -> ', dataLg.data.message);
                 // console.log("$scope.userData",$scope.userData)
-                $('#modal-complete-login').modal('show');
+                angular.element('#modal-complete-login').modal('show');
               }
             });
-          })
-      })
+          });
+      });
     };
     // ====
 
@@ -288,12 +288,12 @@ angular.module('gdsApp')
         $http.get(apiUrl+'/user/get?gl='+google_id, {headers:{'app_token':app_token}})
         .then(function(result){callback(result);},
               function(error){console.warn('Error glLogin: ', error);});
-    };
+    }
 
     obj.googleLogin  = function ($scope) {
       OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
       var userGlData = {};
-      OAuth.popup('google', function(err, res){ if(err)console.warn('error google',err); })
+      OAuth.popup('google', function(err){ if(err){console.warn('error google',err);} })
         .done(function(result) {
           result.me().done(function(data) {
            // console.log("me",data)
@@ -308,13 +308,13 @@ angular.module('gdsApp')
                   var loginPass = {
                     email: dataGl.data.data[0].email,
                     password: dataGl.data.data[0].email
-                  }
+                  };
 
                   obj.loginUser(loginPass, function(resultMail){
                       if(resultMail.data.error === true) {
                         // toaster.pop('error', resultMail.data.message);
                         Notification.show('error', 'Google', resultMail.data.message);
-                      } else{
+                      } else {
                         // toaster.pop('success', resultMail.data.message);
                         Notification.show('success', 'Google', resultMail.data.message);
                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
@@ -324,11 +324,11 @@ angular.module('gdsApp')
               } else {
                 // console.warn('Error -> ', dataLg.data.message);
                 // console.log("$scope.userData",$scope.userData)
-                $('#modal-complete-login').modal('show');
+                angular.element('#modal-complete-login').modal('show');
               }
             });
-          })
-      })
+          });
+      });
     };
     // ====
 

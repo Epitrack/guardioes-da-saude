@@ -60,17 +60,15 @@ angular.module('gdsApp')
 
     // create user using social network
     $scope.updateUserSocialData = function () {
-      $('#modal-complete-login').modal('hide');
+      angular.element('#modal-complete-login').modal('hide');
      // console.warn("======== passando aqui", $scope.userData)
       UserApi.createUser($scope.userData, function (data) {
         if (data.data.error === false) {
           Notification.show('success', 'Cadastro', data.data.message);
-
           LocalStorage.userCreateData(data.data.user);
           $location.path('health-daily');
         } else {
           Notification.show('error', 'Cadastro', data.data.message);
-
           // console.warn(data.data.message);
         }
       });

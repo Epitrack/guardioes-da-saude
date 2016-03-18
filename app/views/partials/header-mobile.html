@@ -17,8 +17,8 @@
         <!-- visible when user not logged -->
         <div ng-if="user.id == undefined">
           <ul class="nav navbar-nav mobile-navbar">
-            <li><a class="nav-link" ng-href="/cadastro" ng-click="goToUrl('/cadastro');closeNav()">Cadastre-se</a></li>
-            <li><a class="nav-link" ng-href="/login" ng-click="goToUrl('/login');closeNav()">Entrar</a></li>
+            <li><a class="nav-link" ng-href="/cadastro" ng-click="goToUrl('/cadastro');closeNav()" id="bt-cadastrar">Cadastre-se</a></li>
+            <li><a class="nav-link" ng-href="/login" ng-click="goToUrl('/login');closeNav()" id="bt-entrar">Entrar</a></li>
           </ul>
         </div>
 

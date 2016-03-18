@@ -21,10 +21,10 @@ angular.module('gdsApp')
     obj.getSymptoms = function (callback) {
       $http.get(apiUrl + '/symptoms', {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success getSymptoms: ', data);
+         console.log('Success getSymptoms: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getSymptoms: ', error);
+          // console.warn('Error getSymptoms: ', error);
         });
     };
 
@@ -34,7 +34,7 @@ angular.module('gdsApp')
       data.user_id = $rootScope.user.id;
       data.app_token = app_token;
 
-      console.warn('Enviando...', data);
+     console.warn('Enviando...', data);
 
       $http.post(apiUrl + '/survey/create', data, {
           headers: {
@@ -43,7 +43,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (data) {
-         // console.log('Success submitSurvey ', data);
+         console.log('Success submitSurvey ', data);
           callback(data);
 
           UserApi.updateUser($rootScope.user.id, function(data){
@@ -55,14 +55,12 @@ angular.module('gdsApp')
                   password:data.data.data[0].email,
                   picture:data.data.data[0].picture
                 };
-
-
                 UserApi.updateProfile(params);
               }
 
           });
         }, function (error) {
-          console.warn('Error submitSurvey: ', error);
+          // console.warn('Error submitSurvey: ', error);
         });
     };
 
@@ -72,7 +70,7 @@ angular.module('gdsApp')
          // console.log('Success getMarkersByCity: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getMarkersByCity: ', error);
+          // console.warn('Error getMarkersByCity: ', error);
         });
     };
 
@@ -82,7 +80,7 @@ angular.module('gdsApp')
          // console.log('Success getMarkersByLocation: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getMarkersByLocation: ', error);
+          // console.warn('Error getMarkersByLocation: ', error);
         });
     };
 
@@ -92,17 +90,17 @@ angular.module('gdsApp')
          // console.log('Success getSummaryByLocation: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getSummaryByLocation: ', error);
+          // console.warn('Error getSummaryByLocation: ', error);
         });
     };
 
-    obj.getMarkersByCitySummary = function (city, callback) {
-      $http.get(apiUrl + '/surveys/summary?q=' + city, {headers: {'app_token': app_token}})
+    obj.getMarkersByCitySummary = function (params, callback) {
+      $http.get(apiUrl + '/surveys/summary?lat=' + params.lat + "&lon=" + params.lon, {headers: {'app_token': app_token}})
         .then(function (data) {
          // console.log('Success getMarkersByCitySummary: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getMarkersByCitySummary: ', error);
+          // console.warn('Error getMarkersByCitySummary: ', error);
         });
     };
 
@@ -110,11 +108,12 @@ angular.module('gdsApp')
       $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lon)
       .then(function(data){
           callback(data);
+          // console.warn('Success getCityByPosition: ', data);
       }, function(error){
-          console.warn('Error getCityByPosition: ', error);
+          // console.warn('Error getCityByPosition: ', error);
       });
 
-    }
+    };
 
     return obj;
   });

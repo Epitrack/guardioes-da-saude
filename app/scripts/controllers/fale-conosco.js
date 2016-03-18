@@ -25,7 +25,7 @@ angular.module('gdsApp')
 
     $scope.esterEgg = function () {
       cheet('e p i t r a c k', function () {
-        $('#modal-kc').modal({
+        angular.element('#modal-kc').modal({
           show: 'true'
         });
       });

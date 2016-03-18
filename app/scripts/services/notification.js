@@ -37,9 +37,10 @@ angular.module('gdsApp')
       var options = {
         body: params.message,
         icon: params.icon
-      }
+      };
 
       var n = new Notification(params.title, options);
+      setTimeout(n.close.bind(n), 5000);
     }
 
     var obj = {};
@@ -51,7 +52,7 @@ angular.module('gdsApp')
         icon: '../images/notifications/icon-notif-'+status+'.png'
       };
 
-      getStatus();
+      if (getStatus() === "unsupported") { return; }
       getPermission(params);
     };
 

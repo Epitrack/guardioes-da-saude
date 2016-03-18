@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'Notification', '$filter', '$timeout', '$location', 'LocalStorage', function ($scope, $routeParams, HouseholdApi, $rootScope, Notification, $filter, $timeout, $location, LocalStorage) {
+  .controller('ProfileInternalCtrl', ['$scope', '$routeParams', 'HouseholdApi', '$rootScope', 'Notification', '$filter', '$timeout', '$location', function ($scope, $routeParams, HouseholdApi, $rootScope, Notification, $filter, $timeout, $location) {
 
     var meuFiltro = $filter;
 

@@ -11,17 +11,14 @@
     </header>
 
     <div class="panel-body">
-      <div class="col-xs-12 col-sm-10 col-md-6 card-avatar-content">
+      <div class="col-xs-12 col-sm-12 col-md-4 card-avatar-content">
         <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
         <form class="card-form" name="change-photo-default">
           <div class="form-change-photo-default" ng-if="vm.tog">
-            <div ng-repeat-n="16">
-              <label for="input-{{$index+1}}" class="radio-avatar avatar-{{$index+1}}" ng-class="{'photo-selected':vm.tog=='avatar-{{$index+1}}'}"
-                     ng-click="vm.tog='avatar-{{$index+1}}'">
+            <div ng-repeat="i in getNumber(myOtherNumber) track by $index">
+              <label for="input-{{$index+1}}" class="radio-avatar avatar-{{$index+1}}" ng-click="changeAvatar($event)">
                 <i></i>
-                <input type="radio" name="input-change-photo" id="input-{{$index+1}}"
-                       value="input-change-photo-{{$index+1}}"
-                       ng-model="avatar.picture" ng-value='$index+1'>
+                <input type="radio" name="input-change-photo" id="input-{{$index+1}}" value="{{$index+1}}" ng-model="avatar.picture">
               </label>
             </div>
 
@@ -29,16 +26,10 @@
         </form>
       </div>
 
-      <div class="col-xs-12 col-sm-5 col-md-offset-3 col-md-3 upload-form">
+      <div class="col-xs-12 col-sm-5 col-md-offset-5 col-md-3 upload-form">
         <h3 class="change-photo-subtitle">Seu avatar:</h3>
 
         <div>
-<!--
-          <div ng-show="!vm.profile.picture">
-            <img class="avatar-image" ng-src="images/avatar/avatar-0.svg" alt="avatar">
-          </div>
--->
-
           <div ng-if="vm.tog">
             <img class="avatar-image" ng-src="images/avatar/avatar-{{vm.profile.picture}}.svg" alt="avatar">
           </div>

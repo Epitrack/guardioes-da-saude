@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'Notification', '$timeout', '$location', '$rootScope', 'LocalStorage', function ($scope, HouseholdApi, Notification, $timeout, $location, $rootScope, LocalStorage) {
+  .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'Notification', '$timeout', '$location', function ($scope, HouseholdApi, Notification, $timeout, $location) {
     $scope.pageClass = 'add-profile-page';
 
     // Add a new household member
@@ -57,7 +57,7 @@ angular.module('gdsApp')
 
     // ====
     function hideModal() {
-      $('#modal-add-profile').modal('toggle');
+      angular.element('#modal-add-profile').modal('toggle');
     }
     // ====
 
