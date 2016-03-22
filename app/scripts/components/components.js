@@ -11,8 +11,6 @@ app.directive('gdsMaps', function() {
      template: '<div id="gdsMap"></div>',
      scope:{location:"=", marks:"=", size:"="},
      link:function(scope){
-        console.log("scope gsd maps", scope);
-        console.log("location",location, scope.location)
          var mapOptions = {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
            zoom: scope.location.zoom,
@@ -26,14 +24,12 @@ app.directive('gdsMaps', function() {
           // panControl: false,
           // scaleControl:false,
          };
-         console.log("mapOptions", mapOptions);
          document.getElementById('gdsMap').style.width = scope.size.width;
          document.getElementById('gdsMap').style.height = scope.size.height;
          var mMap;
          if(mMap) { mMap = null; }
          mMap = new google.maps.Map(document.getElementById('gdsMap'), mapOptions);
          google.maps.event.addListenerOnce(mMap, 'tilesloaded', function(){
-           console.log("mapLoaded emit")
            scope.$emit('mapLoaded', mMap);
          });
          var markers = [];
@@ -60,12 +56,18 @@ app.directive('gdsMaps', function() {
                 scope.$emit('clickMarker.click', {"title":marker.title, "message":marker.content});
             });
             markers.push(marker);
+            if(info.index) { marker.setZIndex(info.index); }
         };
 
-//        console.log("my marks", scope.marks)
+        scope.$on('createMarker', function(event, data) {
+          createMarker({'lat':data.location.lat, 'lng':data.location.lng, 'title':data.title}, data.img);
+        });
+
+        if (scope.marks.length === 0) { return; }
         for (var i = 0; i < scope.marks.length; i++){
             createMarker(scope.marks[i]);
         }
+
        createMarker({'lat':scope.location.lat, 'lng':scope.location.lng, 'title':'Você está aqui!'}, '/images/icon-user-location.png' );
      }
    };
