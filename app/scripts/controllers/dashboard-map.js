@@ -24,12 +24,17 @@ angular.module('gdsApp')
 
     };
 
-//    $scope.markers;
+    $scope.markers=[];
 
     Surveyapi.getMarkersByLocation({'lat':$scope.userLocation.lat, 'lon':$scope.userLocation.lng}, function (data) {
-        console.log('markers', data);
+      console.log('markers', data.data.data);
+      for(var i in data.data.data)
+      {
+         $scope.$broadcast('createMarker', {'img':'../../images/icon-health-daily-' + data.data.data[i].no_symptom + '.svg', 'location':{'lat':data.data.data[i].lat, 'lng':data.data.data[i].lon}, 'title':data.data.data[i].city});
+        $scope.markers.push(data.data.data[i])
+      }
 
-//      $scope.$broadcast('createMarker', {'img':datas[i].icon, 'location':{'lat':datas[i].position[0], 'lng':datas[i].position[1]}, 'title':datas[i].address});
+//      $scope.$broadcast('createMarker', {'img':'../../images/icon-health-daily-' + data.data.data[i].no_symptom + '.svg', 'location':{'lat':data.data.data[i].lat, 'lng':data.data.data[i].lon}, 'title':data.data.data[i].city});
     });
 
   }]);
