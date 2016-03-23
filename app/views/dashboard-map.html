@@ -9,9 +9,26 @@
     <header class="panel-heading">
       <h3 class="panel-title">Mapa da Saúde</h3>
     </header>
+<!--    <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">-->
+<!--
+      <fieldset>
+        <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
+          onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
+      </fieldset>
+-->
+<!--    </form>-->
+<!--
+          ng-model="surveyByCity.city"
+          autocomplete="off"
+          uib-typeahead="address for address in getLocation($viewValue)"
+          typeahead-loading="loadingLocations"
+          typeahead-no-results="noResults"
+          typeahead-on-select="getCityAutoComplete($item)"
+-->
 
-    <div class="panel-body">
-      ...
+
+    <div class="panel-body" >
+      <gds-maps location="userLocation" marks="markers" size="{height:'460px', width:'100%'}"></gds-maps>
     </div>
   </article>
 
