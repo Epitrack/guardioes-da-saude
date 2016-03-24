@@ -5,17 +5,61 @@
 <section class="col-sm-9 col-md-10 content-internal">
   <h2 class="section-title">Painel de controle <span>/ Geral</span></h2>
 
-  <article class="col-md-3 card"></article>
-  <article class="col-md-8 col-md-offset-1 card"></article>
+  <div>
+    <div class="col-sm-3">
+      <article class="card">
+        <h4 class="icon user">Total de usuários</h4>
+        <p class="card-value">17.823</p>
+      </article>
+    </div>
 
-  <article class="col-xs-12 card"></article>
+    <div class="col-sm-3">
+      <article class="card">
+        <h4 class="icon house">Total de usuários + integrantes</h4>
+        <p class="card-value">17.823</p>
+      </article>
+    </div>
 
-  <div class="no-padding col-xs-12">
-    <legend class="legend-subtitle other">Esta semana</legend>
+    <div class="col-sm-6">
+      <article class="card">
+        <ul class="tabs-nav">
+          <li><a ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastro'}">Cadastros</a></li>
+          <li><a ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+        </ul>
 
-    <!-- <article class="col-xs-12 card"></article> -->
+        <div class="tabs-container">
+          <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
+            Cadastros
+          </div>
+
+          <div class="tab-content" ng-show="tab == 'descadastros'">
+            Descadastros
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 
-  <article class="col-md-8 card"></article>
-  <article class="col-md-3 col-md-offset-1 card"></article>
+  <!-- Participações por dispositivo -->
+  <div class="col-sm-12">
+    <article class="card"></article>
+  </div>
+
+  <!-- Gráfico de participações -->
+  <div class="col-sm-12">
+    <article class="card"></article>
+  </div>
+
+  <div class="col-sm-6">
+    <!-- Idade -->
+    <div class="col-sm-12 card"></div>
+
+    <!-- Raça -->
+    <div class="col-sm-12 card"></div>
+  </div>
+
+  <!-- Concentração de usuários -->
+  <div class="col-sm-6">
+    <article class="card"></article>
+  </div>
 </section>
