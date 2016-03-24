@@ -1453,6 +1453,51 @@ p.login-email {
     color: $week-days-color;
     margin: 3px 0 17px 0;
   }
+
+  // Dashboard card
+  h4 {
+    &.icon {
+      font-size: ($fs-normal)+.2;
+      color: $font-primary;
+      margin: 20px auto;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      width: 100px;
+      height: 30px;
+      background-repeat: no-repeat;
+
+      &:before {
+        content: '';
+        width: 25px;
+        height: 15px;
+        position: absolute;
+        display: inline-block;
+        vertical-align: top;
+        left: -40px;
+      }
+
+      &.user {
+        &:before {
+          @include path('dashboard/people.svg');
+        }
+      }
+
+      &.house {
+        &:before {
+          width: 18px;
+          @include path('dashboard/house.svg');
+        }
+      }
+    }
+  }
+
+  .card-value {
+    width: 100%;
+    font-family: $ff-bold;
+    font-size: ($fs-medium)+1.6;
+    color: $font-primary;
+  }
 }
 
 .content-card {

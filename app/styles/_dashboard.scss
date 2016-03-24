@@ -2,6 +2,103 @@
 //     Dashboard
 // —————————————————————————
 
+.wrapper-card-small {
+  .card {
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    text-align: center;
+  }
+}
+
+.tabs-nav {
+  width: 59px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+
+  li {
+    height: 60px;
+  }
+
+  a {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #c4ccd6;
+    color: $font-primary;
+    position: relative;
+    font-size: ($fs-normal)-.4;
+    line-height: 70px;
+    height: 100%;
+
+    &.active { background-color: #fff; }
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 10px;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      background-repeat: no-repeat;
+    }
+
+    &.down {
+      &:before { @include path('dashboard/down-under.svg'); }
+    }
+
+    &.up {
+      &:before { @include path('dashboard/up.svg'); }
+    }
+  }
+}
+
+.tab-content {
+  div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 25px 0;
+  }
+
+  span {
+    font-family: $ff-bold;
+    font-size: ($fs-medium)+.6;
+    color: #434343;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 15px;
+      height: 10px;
+      position: absolute;
+      top: 10px;
+      right: -19px;
+      background-repeat: no-repeat;
+    }
+
+    &.down {
+      &:after { @include path('dashboard/down-under.svg'); }
+    }
+
+    &.up {
+      &:after { @include path('dashboard/up.svg'); }
+    }
+  }
+
+  p {
+    font-size: ($fs-normal)+.2;
+    line-height: 0.9;
+    color: $font-primary;
+  }
+
+  .tab-graphic {
+    width: 80px;
+    height: 80px;
+    margin: auto 30px;
+    background-color: red;
+  }
+}
 
 // ====
 

@@ -5,7 +5,7 @@
 <section class="col-sm-9 col-md-10 content-internal">
   <h2 class="section-title">Painel de controle <span>/ Geral</span></h2>
 
-  <div>
+  <div class="wrapper-card-small">
     <div class="col-sm-3">
       <article class="card">
         <h4 class="icon user">Total de usuários</h4>
@@ -23,17 +23,37 @@
     <div class="col-sm-6">
       <article class="card">
         <ul class="tabs-nav">
-          <li><a ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastro'}">Cadastros</a></li>
-          <li><a ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+          <li><a class="up" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+          <li><a class="down" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
         </ul>
 
         <div class="tabs-container">
           <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
-            Cadastros
+            <div>
+              <span class="up">1800</span>
+              <p>Última semana</p>
+            </div>
+
+            <div class="tab-graphic"></div>
+
+            <div>
+              <span class="up">1800</span>
+              <p>Esta semana</p>
+            </div>
           </div>
 
           <div class="tab-content" ng-show="tab == 'descadastros'">
-            Descadastros
+            <div>
+              <span class="down">1800</span>
+              <p>Última semana</p>
+            </div>
+
+            <div class="tab-graphic"></div>
+
+            <div>
+              <span class="down">1800</span>
+              <p>Esta semana</p>
+            </div>
           </div>
         </div>
       </article>
