@@ -107,12 +107,77 @@
     <article class="card"></article>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-6 wrapper-half-card">
     <!-- Idade -->
-    <div class="col-sm-12 card"></div>
+    <div class="col-sm-12 card">
+      <header>
+        <h2>Idade</h2>
+        <div class="dropdown sort-by">
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+
+          <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+            <li ng-repeat="m in monthReports">
+              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrapper-half-content">
+        <div class="wrapper-bar female">
+          <div>
+            <h5>Mulheres</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+          </ul>
+        </div>
+
+        <div class="bar-legend">
+          <p>13-19</p>
+          <p>20-24</p>
+          <p>25-59</p>
+          <p>> 60</p>
+        </div>
+
+        <div class="wrapper-bar male">
+          <div>
+            <h5>Homens</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Raça -->
-    <div class="col-sm-12 card"></div>
+    <div class="col-sm-12 card">
+      <header>
+        <h2>Raça/Cor</h2>
+        <div class="dropdown sort-by">
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+
+          <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+            <li ng-repeat="m in monthReports">
+              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrapper-half-content"></div>
+    </div>
   </div>
 
   <!-- Concentração de usuários -->
