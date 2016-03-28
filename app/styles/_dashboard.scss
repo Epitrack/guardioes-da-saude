@@ -204,6 +204,18 @@
     }
   }
 
+  &.rc-female {
+    li { background-color: #217a38; }
+  }
+
+  &.rc-male {
+    li { background-color: #d26219; }
+  }
+
+  &.race {
+    li { width: 18% !important; }
+  }
+
   div {
     display: inline-block;
     color: $font-primary;
@@ -245,6 +257,13 @@
   width: 76%;
   height: 20px;
   margin: 20px 0 20px 20%;
+
+  &.race {
+    p {
+      width: 18%;
+      margin-right: 4px;
+    }
+  }
 
   p {
     display: inline-block;
