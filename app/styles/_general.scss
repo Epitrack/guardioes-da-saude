@@ -1459,7 +1459,7 @@ p.login-email {
     &.icon {
       font-size: ($fs-normal)+.2;
       color: $font-primary;
-      margin: 20px auto;
+      margin: 20px auto 10px auto;
       display: inline-block;
       text-align: center;
       position: relative;
@@ -1489,6 +1489,13 @@ p.login-email {
           @include path('dashboard/house.svg');
         }
       }
+    }
+
+    &.subtitle {
+      color: $font-primary;
+      font-size: ($fs-normal)+.2;
+      margin: 10px auto 5px 15px;
+      display: inline-block;
     }
   }
 

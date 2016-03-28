@@ -11,6 +11,14 @@
   }
 }
 
+.wrapper-card-smallest {
+  .card {
+    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
+  }
+}
+
 .tabs-nav {
   width: 59px;
   height: 100%;
@@ -97,6 +105,45 @@
     height: 80px;
     margin: auto 30px;
     background-color: red;
+  }
+}
+
+.wrapper-progress {
+  height: 10px;
+  width: 100%;
+  padding: 0 15px;
+
+  .progress {
+    height: 10px;
+
+    .progress-bar-web { background-color: #FFBE00; }
+    .progress-bar-ios { background-color: #1976d2; }
+    .progress-bar-android { background-color: #a4c639; }
+  }
+}
+
+.progress-legend {
+  padding: 0 15px;
+
+  figure {
+    display: inline-block;
+    margin: 10px 10px auto auto;
+    vertical-align: middle;
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  figcaption {
+    color: $font-primary;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: ($fs-normal)+.2;
   }
 }
 
