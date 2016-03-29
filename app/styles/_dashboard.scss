@@ -275,6 +275,25 @@
   }
 }
 
+.wrapper-card-map {
+  .card {
+    min-height: 710px;
+    max-height: 710px;
+  }
+
+  h3, .panel-heading {
+    margin-bottom: 0;
+  }
+
+  .panel-body {
+    padding: 15px;
+  }
+}
+
+.dash-map {
+  height: 710px;
+}
+
 // ====
 
 //
