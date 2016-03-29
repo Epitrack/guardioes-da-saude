@@ -2,6 +2,12 @@
 //     Dashboard
 // —————————————————————————
 
+%card-title {
+  color: $font-primary;
+  font-size: ($fs-medium)+.6;
+  display: inline-block;
+}
+
 .wrapper-card-small {
   .card {
     height: 120px;
@@ -148,11 +154,7 @@
 }
 
 .wrapper-half-card {
-  h2 {
-    color: $font-primary;
-    font-size: ($fs-medium)+.6;
-    display: inline-block;
-  }
+  h2 { @extend %card-title; }
 
   button { padding: 6px 40px; }
 
@@ -292,6 +294,47 @@
 
 .dash-map {
   height: 630px;
+}
+
+.wrapper-participation-graphic {
+  h2 {
+    @extend %card-title;
+    padding-left: 15px;
+  }
+}
+
+.wrapper-switch-participation {
+  display: inline-block;
+  vertical-align: middle;
+
+  div {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: ($fs-normal)+.2;
+    color: $font-primary;
+  }
+}
+
+// switch colors
+.md-sintomatico {
+  &.md-checked {
+    .md-bar { background-color: #cb1434; }
+    .md-thumb, .md-ink-ripple { background-color: #76031c; }
+  }
+}
+
+.md-assintomatico {
+  &.md-checked {
+    .md-bar { background-color: #eaea24; }
+    .md-thumb, .md-ink-ripple { background-color: #b3b500; }
+  }
+}
+
+.md-total {
+  &.md-checked {
+    .md-bar { background-color: #ffbe00; }
+    .md-thumb, .md-ink-ripple { background-color: #f5a623; }
+  }
 }
 
 // ====

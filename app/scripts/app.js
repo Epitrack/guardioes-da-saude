@@ -35,7 +35,8 @@ angular
     'angularMoment',
     'ngFileUpload',
     'ngMap',
-    'ngFacebook'
+    'ngFacebook',
+    'ngMaterial'
   ])
   .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
@@ -399,7 +400,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,// set false to development
+      enabled: false,// set false to development
       requireBase: false
     });
   });

@@ -28,6 +28,6 @@ angular.module('gdsApp')
       _initMap();
     };
 
-    $scope.loadMap();
+    // $scope.loadMap();
 
   }]);

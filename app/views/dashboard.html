@@ -103,10 +103,29 @@
   </div>
 
   <!-- Gráfico de participações -->
-  <div class="col-sm-12">
-    <article class="card"></article>
+  <div class="col-sm-12 wrapper-participation-graphic">
+    <article class="card">
+      <header>
+        <h2>Participações</h2>
+
+        <div class="pull-right wrapper-switch-participation">
+          <div>
+            <md-switch class="md-sintomatico" ng-model="data.sintomatico" aria-label="Sintomático">Sintomático</md-switch>
+          </div>
+
+          <div>
+            <md-switch class="md-assintomatico" ng-model="data.assintomatico" aria-label="Assintomático">Assintomático</md-switch>
+          </div>
+
+          <div>
+            <md-switch class="md-total" ng-model="data.total" aria-label="Total">Total</md-switch>
+          </div>
+        </div>
+      </header>
+    </article>
   </div>
 
+  <!-- Idade / Raça -->
   <div class="col-sm-6 wrapper-half-card">
     <!-- Idade -->
     <div class="col-sm-12 card">
