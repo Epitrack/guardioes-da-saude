@@ -366,6 +366,106 @@
 
 // ====
 
+
+//
+// Dashboard / map
+//
+
+.card-heading {
+  height: 40px;
+
+  h3 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  md-switch {
+    margin: -5px 0px;
+  }
+
+  .md-label {
+    color: #fff;
+  }
+
+  .md-container {
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+
+  div {
+    vertical-align: middle;
+    margin-top: -1px;
+  }
+
+  button {
+    @include apr(none);
+    border: 1px solid #fff;
+    background-color: #074c95;
+    font-size: ($fs-normal)-.2;
+    color: #fff;
+    width: 70px;
+    height: 25px;
+
+    &:first-child {
+      @include bdr(0 0 3px 3px);
+      margin-right: -4px;
+    }
+
+    &:last-child {
+      @include bdr(3px 3px 0 0);
+    }
+
+    &[disabled="disabled"] {
+      background-color: $btn-primary;
+    }
+  }
+}
+
+.sindromes-dash-map {
+  .card { min-height: auto; }
+
+  legend {
+    color: $font-primary;
+    padding: 15px 0;
+    margin-bottom: 0;
+  }
+
+  .progress-wrapper {
+    span, div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .progress-label { width: 90px; }
+
+    .progress {
+      width: 80%;
+      margin-left: 15px;
+      height: 10px;
+    }
+
+    .progress-value {
+      width: 80px;
+      text-align: right;
+    }
+  }
+
+  .progress-bar {
+    &.exantematica { background-color: #85001f; }
+    &.respiratoria { background-color: #f5a623; }
+    &.diarreica { background-color: #db1105; }
+  }
+}
+
+.dashboard-map {
+  width: 100%;
+  height: 460px;
+}
+
+// ====
+
+
+
 //
 // Media queries
 //

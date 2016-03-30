@@ -190,25 +190,32 @@ angular.module('gdsApp')
 
     var mcluster = null;
 
-    $scope.activeClusters = function(){
-      if(mcluster===null) {
+    $scope.activeClusters = function(params){
+      if (params != true) {
+        return;
+      }
 
-        var options = {styles:[
-          { url:"../../images/oval-102.svg", width:80, height:80},
-          { url:'../../images/oval-102-4.svg', width:52, height:52},
-          { url:'../../images/oval-102-8.svg', width:25, height:25}
+      if(mcluster === null) {
 
-        ]};
+        var options = {
+          styles:[
+            { url:"../../images/oval-102.svg", width:80, height:80 },
+            { url:'../../images/oval-102-4.svg', width:52, height:52 },
+            { url:'../../images/oval-102-8.svg', width:25, height:25 }
+          ]
+        };
 
         mcluster = new MarkerClusterer($scope.map, $scope.mkrs, options);
+
         mcluster.zoomOnClick_ = false;
-        console.log('mcluster', mcluster.getStyles())
+
+        // console.log('mcluster', mcluster.getStyles())
 
         google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
-          console.log('cluster', cluster)
+          // console.log('cluster', cluster)
           var content = '<div id="infoTitle">'+cluster.getMarkers().length+' Participações</div>';
-//          '<div id="infoBody">Área: 900m<br>Período:2 semanas</div>';
-          var infoWindow = new google.maps.InfoWindow({content:content});
+         // '<div id="infoBody">Área: 900m<br>Período:2 semanas</div>';
+          var infoWindow = new google.maps.InfoWindow({ content:content });
           infoWindow.setPosition(cluster.center_);
           infoWindow.open($scope.map);
         });
@@ -272,21 +279,19 @@ angular.module('gdsApp')
     };
 
     $scope.initMap = function(){
-
       var mapOptions = {
-           center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng),
-           zoom: $scope.userLocation.zoom,
-           scrollwheel: false,
-           streetViewControl: false,
-           mapTypeControl: false,
-           zoomControl: true,
-           zoomControlOptions: {
-              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-              position: google.maps.ControlPosition.LEFT_TOP
-           }
+         center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng),
+         zoom: $scope.userLocation.zoom,
+         scrollwheel: false,
+         streetViewControl: false,
+         mapTypeControl: false,
+         zoomControl: true,
+         zoomControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.LEFT_TOP
+         }
       };
-       document.getElementById('dashboard-map').style.width = '100%';
-       document.getElementById('dashboard-map').style.height = '460px';
+
       $scope.map = new google.maps.Map(document.getElementById('dashboard-map'), mapOptions);
       google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function(){
            $scope.getMarkersByLocation();
