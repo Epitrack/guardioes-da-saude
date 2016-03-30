@@ -133,11 +133,11 @@
       <header>
         <h2>Idade</h2>
         <div class="dropdown sort-by">
-          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Estados <span class="caret"></span></button>
 
           <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-            <li ng-repeat="m in monthReports">
-              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            <li ng-repeat="m in dash.usersBySate">
+              <a ng-href="" ng-click="filter('age', m._id)">{{m._id}}</a>
             </li>
           </ul>
         </div>
@@ -186,11 +186,11 @@
       <header>
         <h2>Raça/Cor</h2>
         <div class="dropdown sort-by">
-          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Estados <span class="caret"></span></button>
 
           <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-            <li ng-repeat="m in monthReports">
-              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            <li ng-repeat="m in dash.usersBySate">
+              <a ng-href="" ng-click="filter('race', m._id)">{{m._id}}</a>
             </li>
           </ul>
         </div>
