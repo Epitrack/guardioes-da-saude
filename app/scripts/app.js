@@ -35,7 +35,9 @@ angular
     'angularMoment',
     'ngFileUpload',
     'ngMap',
-    'ngFacebook'
+    'ngFacebook',
+    'ngMaterial',
+    'easypiechart'
   ])
   .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
@@ -78,7 +80,6 @@ angular
       },
 
       convertDate: function (date) {
-       // var convert = date.substr(6,4)+'-'+date.substr(3,2)+'-'+date.substr(0,2);
         var convert = new Date(parseInt(date.substr(6,4)), parseInt(date.substr(3,2))-1, parseInt(date.substr(0,2)));
         return convert;
       },
@@ -370,7 +371,7 @@ angular
       })
       .when('/dashboard/download', {
         templateUrl: 'views/data-download.html',
-      controller: 'DataDownloadCtrl',
+        controller: 'DataDownloadCtrl',
         controllerAs: 'dataDownload',
         resolve: {loggedin: checkLoggedOut}
       })
@@ -400,7 +401,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-      enabled: true,// set false to development
+      enabled: false,// set false to development
       requireBase: false
     });
   });

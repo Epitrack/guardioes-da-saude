@@ -137,7 +137,7 @@ angular.module('gdsApp')
 
       getCoords(params);
       getSurveyByCity(params);
-      getSurveyByCitySummary(params);
+      getSurveyByCitySummary($scope.cityLatLng);
     };
 
     function pushingMarkers(datas) {
