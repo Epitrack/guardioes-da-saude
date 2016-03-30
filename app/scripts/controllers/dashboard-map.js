@@ -81,10 +81,14 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           if($scope.markers){
             var newMs = [];
+//            console.log('getSurveyByCity', data)
             newMs = addToArray(data.data.data);
             pushingMarkers(newMs);
           }
-          else{ $scope.markers = addToArray(data.data.data); }
+          else {
+//            console.log('getSurveyByCity else ', data.data.data)
+            $scope.markers = addToArray(data.data.data);
+          }
 
         } else {
          // console.warn(data.data.message);
@@ -95,11 +99,15 @@ angular.module('gdsApp')
 
     function getSurveyWeek(){
       Surveyapi.getMarkersByWeek(moment().day(1).format('YYYY-MM-DD'), function(data){
+//        console.log('getSurveyWeek', data.data.data);
         if (data.data.error === false) {
           if (data.data.data.length === 0) {
             Notification.error('error', 'Atenção', 'Nenhum usuário.');
           } else {
-            $scope.markers = addToArray(data.data.data);
+            var newMs = [];
+//            console.log('getSurveyByCity', data)
+            newMs = addToArray(data.data.data);
+            pushingMarkers(newMs);
           }
         } else {
           Notification.show('error', 'Atenção', data.data.message);
@@ -111,9 +119,14 @@ angular.module('gdsApp')
 
     function getSurveyByCitySummary(params) {
       if (params === undefined) {
-        return;
+        params = {
+          lat: LocalStorage.getItem('userLocation').lat,
+          lng: LocalStorage.getItem('userLocation').lon
+        };
       }
 
+
+      if($scope.timeSelection === 'Este mês' ){params.time = moment().toDate().getTime()}
       // console.warn('controller ->> ', params);
 
       var summary = {};
@@ -166,7 +179,6 @@ angular.module('gdsApp')
     // pega a localização e mostra no mapa
     function addToArray(markers) {
       var t = [];
-
       angular.forEach(markers, function (p) {
         t.push({
           position: [p.lat, p.lon],
@@ -192,9 +204,6 @@ angular.module('gdsApp')
     var mcluster = null;
 
     $scope.activeClusters = function(params){
-      if (params != true) {
-        return;
-      }
 
       if(mcluster === null) {
 
@@ -243,7 +252,7 @@ angular.module('gdsApp')
              // anchor: new google.maps.Point(0, info.icon.iconSize[1])
          };
       }
-      console.log('img',img);
+
       var marker = new google.maps.Marker({
           map: $scope.map,
           position: new google.maps.LatLng(info.lat, info.lng),
