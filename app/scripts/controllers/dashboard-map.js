@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', function ($scope, LocalStorage, Surveyapi, $http, $rootScope) {
+  .controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification', function ($scope, LocalStorage, Surveyapi, $http, $rootScope, Notification) {
 
     $scope.userLocation = {
       lat: LocalStorage.getItem('userLocation').lat,
@@ -34,8 +34,12 @@ angular.module('gdsApp')
 
     $scope.getCityAutoComplete = function(city) {
       getCoords(city);
-      if($scope.timeSelection==='Esta semana'){getSurveyWeek();}
-      else if($scope.timeSelection==='Este mês'){ getSurveyByCity(city); }
+
+      if($scope.timeSelection === 'Esta semana'){
+        getSurveyWeek();
+      } else if($scope.timeSelection === 'Este mês'){
+        getSurveyByCity(city);
+      }
 
       getSurveyByCitySummary($scope.cityLatLng);
     };
@@ -48,10 +52,10 @@ angular.module('gdsApp')
 
     $scope.markers=[];
     $scope.timeSelection = 'Esta semana';
+
     $scope.timeSelectionClick = function(selection){
       $scope.timeSelection = selection;
       $scope.getMarkersByLocation()
-
     };
 
     function getCoords(city) {
@@ -90,21 +94,18 @@ angular.module('gdsApp')
     }
 
     function getSurveyWeek(){
-      Surveyapi.getMarkersByWeek(moment().format('YYYY-MM-DD'), function(data){
+      Surveyapi.getMarkersByWeek(moment().day(1).format('YYYY-MM-DD'), function(data){
         if (data.data.error === false) {
-          if($scope.markers){
-            var newMs = [];
-            newMs = addToArray(data.data.data);
-            pushingMarkers(newMs);
+          if (data.data.data.length === 0) {
+            Notification.error('error', 'Atenção', 'Nenhum usuário.');
+          } else {
+            $scope.markers = addToArray(data.data.data);
           }
-          else{ $scope.markers = addToArray(data.data.data); }
         } else {
-         // console.warn(data.data.message);
           Notification.show('error', 'Atenção', data.data.message);
         }
+
       });
-
-
     }
 
 
@@ -293,12 +294,10 @@ angular.module('gdsApp')
       };
 
       $scope.map = new google.maps.Map(document.getElementById('dashboard-map'), mapOptions);
+
       google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function(){
            $scope.getMarkersByLocation();
        });
     };
-
-    $scope.initMap();
-
 
   }]);
