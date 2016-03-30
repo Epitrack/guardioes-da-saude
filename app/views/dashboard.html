@@ -9,14 +9,14 @@
     <div class="col-sm-3">
       <article class="card">
         <h4 class="icon user">Total de usuários</h4>
-        <p class="card-value">17.823</p>
+        <p class="card-value">{{dash.user}}</p>
       </article>
     </div>
 
     <div class="col-sm-3">
       <article class="card">
         <h4 class="icon house">Total de usuários + integrantes</h4>
-        <p class="card-value">17.823</p>
+        <p class="card-value">{{dash.households}}</p>
       </article>
     </div>
 
@@ -34,7 +34,8 @@
               <p>Última semana</p>
             </div>
 
-            <div class="tab-graphic"></div>
+            <div class="tab-graphic chart" easypiechart options="graphicOptions" percent="73" data-legend="73%">
+            </div>
 
             <div>
               <span class="up">1800</span>
@@ -48,7 +49,7 @@
               <p>Última semana</p>
             </div>
 
-            <div class="tab-graphic"></div>
+            <div class="tab-graphic chart" easypiechart options="graphicOptionsDown" percent="29" data-legend="29%"></div>
 
             <div>
               <span class="down">1800</span>

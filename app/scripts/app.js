@@ -36,7 +36,8 @@ angular
     'ngFileUpload',
     'ngMap',
     'ngFacebook',
-    'ngMaterial'
+    'ngMaterial',
+    'easypiechart'
   ])
   .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
   .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function ($rootScope, LocalStorage, amMoment, $location, ApiConfig) {

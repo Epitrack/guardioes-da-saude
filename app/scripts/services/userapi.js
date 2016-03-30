@@ -55,7 +55,7 @@ angular.module('gdsApp')
     obj.updateUser = function (id, callback) {
       $http.get(apiUrl + '/user/get/' + id, {headers: {'app_token': app_token}})
         .then(function (result) {
-//          console.log('Success updateUser: ', result);
+         // console.log('Success updateUser: ', result);
           LocalStorage.updateUser(result);
           if (callback) {
             callback(result);
@@ -85,7 +85,7 @@ angular.module('gdsApp')
     // update user profile
     obj.updateProfile = function (params, callback) {
 
-//       console.warn('params 1 -> ', params);
+      // console.warn('params 1 -> ', params);
 
       // Adds in params obj some data to validate request
       params.client = client;
