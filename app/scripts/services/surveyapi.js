@@ -21,7 +21,7 @@ angular.module('gdsApp')
     obj.getSymptoms = function (callback) {
       $http.get(apiUrl + '/symptoms', {headers: {'app_token': app_token}})
         .then(function (data) {
-         console.log('Success getSymptoms: ', data);
+         // console.log('Success getSymptoms: ', data);
           callback(data);
         }, function (error) {
           // console.warn('Error getSymptoms: ', error);
@@ -34,7 +34,7 @@ angular.module('gdsApp')
       data.user_id = $rootScope.user.id;
       data.app_token = app_token;
 
-     console.warn('Enviando...', data);
+     // console.warn('Enviando...', data);
 
       $http.post(apiUrl + '/survey/create', data, {
           headers: {
@@ -43,7 +43,7 @@ angular.module('gdsApp')
           }
         })
         .then(function (data) {
-         console.log('Success submitSurvey ', data);
+         // console.log('Success submitSurvey ', data);
           callback(data);
 
           UserApi.updateUser($rootScope.user.id, function(data){
@@ -74,8 +74,18 @@ angular.module('gdsApp')
         });
     };
 
+    obj.getMarkersByWeek = function (week, callback) {
+      $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
+        .then(function (data) {
+         // console.log('Success getMarkersByCity: ', data);
+          callback(data);
+        }, function (error) {
+          // console.warn('Error getMarkersByCity: ', error);
+        });
+    };
+
     obj.getMarkersByLocation = function (params, callback) {
-      $http.get(apiUrl + '/surveys/l?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
+      $http.get(apiUrl + '/surveys/l?lat=' + params.lat + '&lon=' + params.lng, {headers: {'app_token': app_token}})
         .then(function (data) {
          // console.log('Success getMarkersByLocation: ', data);
           callback(data);
@@ -95,7 +105,9 @@ angular.module('gdsApp')
     };
 
     obj.getMarkersByCitySummary = function (params, callback) {
-      $http.get(apiUrl + '/surveys/summary?lat=' + params.lat + "&lon=" + params.lon, {headers: {'app_token': app_token}})
+      // return console.warn('service -> ', params);
+
+      $http.get(apiUrl + '/surveys/summary?lat=' + params.lat + "&lon=" + params.lng, {headers: {'app_token': app_token}})
         .then(function (data) {
          // console.log('Success getMarkersByCitySummary: ', data);
           callback(data);
@@ -105,14 +117,13 @@ angular.module('gdsApp')
     };
 
     obj.getCityByPosition = function(position, callback) {
-      $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lon)
+      $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lng)
       .then(function(data){
           callback(data);
           // console.warn('Success getCityByPosition: ', data);
       }, function(error){
           // console.warn('Error getCityByPosition: ', error);
       });
-
     };
 
     return obj;
