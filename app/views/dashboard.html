@@ -5,17 +5,251 @@
 <section class="col-sm-9 col-md-10 content-internal">
   <h2 class="section-title">Painel de controle <span>/ Geral</span></h2>
 
-  <article class="col-md-3 card"></article>
-  <article class="col-md-8 col-md-offset-1 card"></article>
+  <div class="wrapper-card-small">
+    <div class="col-sm-3">
+      <article class="card">
+        <h4 class="icon user">Total de usuários</h4>
+        <p class="card-value">{{dash.user}}</p>
+      </article>
+    </div>
 
-  <article class="col-xs-12 card"></article>
+    <div class="col-sm-3">
+      <article class="card">
+        <h4 class="icon house">Total de usuários + integrantes</h4>
+        <p class="card-value">{{dash.households}}</p>
+      </article>
+    </div>
 
-  <div class="no-padding col-xs-12">
-    <legend class="legend-subtitle other">Esta semana</legend>
+    <div class="col-sm-6">
+      <article class="card">
+        <ul class="tabs-nav">
+          <li><a class="up" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+          <li><a class="down" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+        </ul>
 
-    <!-- <article class="col-xs-12 card"></article> -->
+        <div class="tabs-container">
+          <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
+            <div>
+              <span class="up">1800</span>
+              <p>Última semana</p>
+            </div>
+
+            <div class="tab-graphic chart" easypiechart options="graphicOptions" percent="73" data-legend="73%">
+            </div>
+
+            <div>
+              <span class="up">1800</span>
+              <p>Esta semana</p>
+            </div>
+          </div>
+
+          <div class="tab-content" ng-show="tab == 'descadastros'">
+            <div>
+              <span class="down">1800</span>
+              <p>Última semana</p>
+            </div>
+
+            <div class="tab-graphic chart" easypiechart options="graphicOptionsDown" percent="29" data-legend="29%"></div>
+
+            <div>
+              <span class="down">1800</span>
+              <p>Esta semana</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 
-  <article class="col-md-8 card"></article>
-  <article class="col-md-3 col-md-offset-1 card"></article>
+  <!-- Participações por dispositivo -->
+  <div class="wrapper-card-smallest">
+    <div class="col-sm-12">
+      <article class="card">
+        <h4 class="subtitle">Participações por dispositivo</h4>
+
+        <div class="wrapper-progress">
+          <div class="progress">
+            <div class="progress-bar progress-bar-web" style="width: 33%">
+              <span class="sr-only">35% Complete (web)</span>
+            </div>
+
+            <div class="progress-bar progress-bar-ios" style="width: 33%">
+              <span class="sr-only">33% Complete (ios)</span>
+            </div>
+
+            <div class="progress-bar progress-bar-android" style="width: 34%">
+              <span class="sr-only">34% Complete (android)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-legend">
+          <figure>
+            <img src="../images/dashboard/web-icon.svg" alt="">
+            <figcaption>web</figcaption>
+          </figure>
+
+          <figure>
+            <img src="../images/dashboard/ios-icon.svg" alt="">
+            <figcaption>iOS</figcaption>
+          </figure>
+
+          <figure>
+            <img src="../images/dashboard/android-icon.svg" alt="">
+            <figcaption>Android</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Gráfico de participações -->
+  <div class="col-sm-12 wrapper-participation-graphic">
+    <article class="card">
+      <header>
+        <h2>Participações</h2>
+
+        <div class="pull-right wrapper-switch-participation">
+          <div>
+            <md-switch class="md-sintomatico" ng-model="data.sintomatico" aria-label="Sintomático">Sintomático</md-switch>
+          </div>
+
+          <div>
+            <md-switch class="md-assintomatico" ng-model="data.assintomatico" aria-label="Assintomático">Assintomático</md-switch>
+          </div>
+
+          <div>
+            <md-switch class="md-total" ng-model="data.total" aria-label="Total">Total</md-switch>
+          </div>
+        </div>
+      </header>
+    </article>
+  </div>
+
+  <!-- Idade / Raça -->
+  <div class="col-sm-6 wrapper-half-card">
+    <!-- Idade -->
+    <div class="col-sm-12 card">
+      <header>
+        <h2>Idade</h2>
+        <div class="dropdown sort-by">
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+
+          <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+            <li ng-repeat="m in monthReports">
+              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrapper-half-content">
+        <div class="wrapper-bar female">
+          <div>
+            <h5>Mulheres</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+          </ul>
+        </div>
+
+        <div class="bar-legend">
+          <p>13-19</p>
+          <p>20-24</p>
+          <p>25-59</p>
+          <p>> 60</p>
+        </div>
+
+        <div class="wrapper-bar male">
+          <div>
+            <h5>Homens</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raça -->
+    <div class="col-sm-12 card">
+      <header>
+        <h2>Raça/Cor</h2>
+        <div class="dropdown sort-by">
+          <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Pernambuco <span class="caret"></span></button>
+
+          <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+            <li ng-repeat="m in monthReports">
+              <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="wrapper-half-content">
+        <div class="wrapper-bar female race rc-female">
+          <div>
+            <h5>Mulheres</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 49px" data-value="49%"></li>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+          </ul>
+        </div>
+
+        <div class="bar-legend race">
+          <p>Branco</p>
+          <p>Amarelo</p>
+          <p>Preto</p>
+          <p>Pardo</p>
+          <p>Indígena</p>
+        </div>
+
+        <div class="wrapper-bar male race rc-male">
+          <div>
+            <h5>Homens</h5>
+            <h6><span>60%</span> 3.339</h6>
+          </div>
+
+          <ul>
+            <li style="height: 82px" data-value="82%"></li>
+            <li style="height: 3px" data-value="3%"></li>
+            <li style="height: 100px" data-value="100%"></li>
+            <li style="height: 11px" data-value="11%"></li>
+            <li style="height: 56px" data-value="56%"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Concentração de usuários -->
+  <div class="wrapper-card-map">
+    <div class="col-sm-6">
+      <article class="card">
+        <header class="panel-heading">
+          <h3 class="panel-title">Concentração de usuários</h3>
+        </header>
+
+        <div class="panel-body">
+          <div class="dash-map" id="dash-map"></div>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
