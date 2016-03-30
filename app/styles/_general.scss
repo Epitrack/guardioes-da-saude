@@ -231,7 +231,14 @@ body {
 }
 // ===
 
+//dashboard
 
+.search-dashboard-map {
+  width: 300px;
+  position: absolute;
+  margin-top: -470px;
+  margin-left: 45px;
+}
 
 //
 // Inside content
@@ -1579,7 +1586,7 @@ p.login-email {
   &.confirm-survey { margin-bottom: 10px; }
 }
 
-.panel-body { padding: 0; }
+.panel-body { padding: 0; margin-top: -35px}
 
 #notDataLinechart{
   display: block;

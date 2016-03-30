@@ -74,6 +74,16 @@ angular.module('gdsApp')
         });
     };
 
+    obj.getMarkersByWeek = function (week, callback) {
+      $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
+        .then(function (data) {
+         // console.log('Success getMarkersByCity: ', data);
+          callback(data);
+        }, function (error) {
+          // console.warn('Error getMarkersByCity: ', error);
+        });
+    };
+
     obj.getMarkersByLocation = function (params, callback) {
       $http.get(apiUrl + '/surveys/l?lat=' + params.lat + '&lon=' + params.lng, {headers: {'app_token': app_token}})
         .then(function (data) {

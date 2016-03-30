@@ -8,16 +8,85 @@
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading">
       <h3 class="panel-title">Mapa da Saúde</h3>
+      <button ng-click="activeClusters()">Clusters</button>
+      <button ng-click="timeSelectionClick('Esta semana')" ng-disabled='timeSelection === "Esta semana"'>Esta semana</button>
+      <button ng-click="timeSelectionClick('Este mês')"  ng-disabled='timeSelection === "Este mês"'>Este mês</button>
     </header>
-
     <div class="panel-body">
-      ...
+<!--      <gds-maps location="userLocation" marks="markers" size="{height:'460px', width:'100%'}"></gds-maps>-->
+      <div id='dashboard-map'></div>
     </div>
+
+    <form ng-submit="getMarkersByCity()" class="form-mini-dashboard search-dashboard-map" name="form-mini-dashboard">
+      <fieldset>
+        <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city"
+          autocomplete="off"
+          uib-typeahead="address for address in getLocation($viewValue)"
+          typeahead-loading="loadingLocations"
+          typeahead-no-results="noResults"
+          typeahead-on-select="getCityAutoComplete($item)"
+          onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
+      </fieldset>
+    </form>
+<!--
+
+          autocomplete="off"
+          uib-typeahead="address for address in getLocation($viewValue)"
+          typeahead-loading="loadingLocations"
+          typeahead-no-results="noResults"
+          typeahead-on-select="getCityAutoComplete($item)"
+-->
+
+
+
   </article>
 
   <div class="no-padding col-xs-12">
-    <legend class="legend-subtitle other">Esta semana</legend>
+    <legend class="legend-subtitle other">{{timeSelection}}</legend>
 
-    <article class="col-xs-12 card"></article>
+    <article class="col-xs-12 card">
+      <div class="sindromes">
+      <legend class="legend-subtitle ff-bold">Síndromes <span data-toggle="modal" data-target="#sindrome-modal"></span></legend>
+
+      <div class="progress-wrapper">
+        <span class="progress-label">Diarréica</span>
+        <span class="progress-value">{{summary.diarreica}}%</span>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar"
+               aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.diarreica}}%">
+            <span class="sr-only">{{summary.diarreica}}% Complete</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-wrapper">
+        <span class="progress-label">Exantemática</span>
+        <span class="progress-value">{{summary.exantematica}}%</span>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar"
+               aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.exantematica}}%">
+            <span class="sr-only">{{summary.exantematica}}% Complete</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-wrapper">
+        <span class="progress-label">Respiratória</span>
+        <span class="progress-value">{{summary.respiratoria}}%</span>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar"
+               aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100"
+               style="width: {{summary.respiratoria}}%">
+            <span class="sr-only">{{summary.respiratoria}}% Complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </article>
   </div>
 </section>

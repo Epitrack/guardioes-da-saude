@@ -56,6 +56,8 @@ app.directive('gdsMaps', function() {
                 scope.$emit('clickMarker.click', {"title":marker.title, "message":marker.content});
             });
             markers.push(marker);
+//            console.log('markers', markers)
+            scope.$emit('getMarkers', markers);
             if(info.index) { marker.setZIndex(info.index); }
         };
 
