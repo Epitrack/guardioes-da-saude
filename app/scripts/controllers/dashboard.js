@@ -31,19 +31,20 @@ angular.module('gdsApp')
     // mostra o mapa com o desenho
     // $scope.loadMap();
 
-
     // ====
-    // Dashboard api
-    DashboardApi.getAllData(function(data) {
-      if (data.status != 200) {
-        Notification.show('error', 'Atenção', data.statusText);
-      } else {
-        Notification.show('success', 'Dashboard', data.statusText);
+    // Get all data from dashboard
+    $scope.getAllData = function() {
+      DashboardApi.getAllData(function(data) {
+        if (data.status != 200) {
+          Notification.show('error', 'Atenção', data.statusText);
+        } else {
+          Notification.show('success', 'Dashboard', data.statusText);
 
-        var result = data.data;
-        $scope.dash = result;
-      }
-    });
+          var result = data.data;
+          $scope.dash = result;
+        }
+      });
+    }
 
     $scope.graphicOptions = {
       animate:{
@@ -69,5 +70,59 @@ angular.module('gdsApp')
       lineCap: 'butt'
     };
     // ====
+
+    // ====
+    // Filter by race or age
+    function _filterByRace(uf) {
+      var men, women, uf, objMen, objWomen;
+
+      uf = uf;
+      men = $scope.dash.menByRace;
+      women = $scope.dash.womenByRace;
+
+      objMen = {};
+      objWomen = {};
+
+      angular.forEach(men, function(m) {
+        console.log('Raça dos homens -> ', m);
+        // angular.forEach(m.races, function(mr) {
+        //   console.log('Homem -> ', mr);
+        //   $scope.mr = mr;
+        //   // objMen = mr;
+        // })
+      })
+
+      // angular.forEach(women, function(w) {
+      //   console.log('Raça das mulheres -> ', w);
+      //   // angular.forEach(w.races, function(wr) {
+      //     // console.log('Mulher -> ', wr)
+      //     // $scope.wr = wr;
+      //     // // objWomen = {
+      //     // //   race: wr.race,
+      //     // //   total: wr.total
+      //     // // }
+      //     // // objWomen = wr;
+      //     // // objWomen.total = wr.total;
+      //   // })
+      // })
+
+      // console.warn('objMen -> ', objMen);
+      // console.warn('objWomen -> ', objWomen);
+    };
+
+    // function _filterByRace(uf) {
+    // };
+
+    $scope.filter = function(type, uf) {
+      if (type === 'race') {
+        _filterByRace(uf);
+      } else if (type === 'age') {
+        _filterByAge(uf);
+      }
+    };
+    // ====
+
+    // Call functions
+    $scope.getAllData();
 
   }]);
