@@ -14,7 +14,7 @@ angular.module('gdsApp')
     $scope.loadMap = function() {
       var map, json_url;
 
-      json_url = 'https://raw.githubusercontent.com/fititnt/gis-dataset-brasil/master/uf/geojson/uf.json';
+      json_url = 'https://github.com/Epitrack/gis-dataset-brasil/blob/master/uf/geojson/uf.json';
 
       function _initMap() {
         map = new google.maps.Map(document.getElementById('dash-map'), {
@@ -28,7 +28,7 @@ angular.module('gdsApp')
       _initMap();
     };
 
-    // $scope.loadMap();
+    $scope.loadMap();
 
 
     // ====
