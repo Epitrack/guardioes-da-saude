@@ -9,14 +9,8 @@
  */
 angular.module('gdsApp')
   .controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', function ($scope, LocalStorage, Surveyapi, $http, $rootScope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
 
     $scope.userLocation = {
-//      coords: [LocalStorage.getItem('userLocation').lat, LocalStorage.getItem('userLocation').lon],
       lat: LocalStorage.getItem('userLocation').lat,
       lng: LocalStorage.getItem('userLocation').lon,
       title: 'Me',
@@ -124,7 +118,7 @@ angular.module('gdsApp')
       var summary = {};
 
       Surveyapi.getMarkersByCitySummary(params, function (data) {
-//        console.log('getMarkersByCitySummary', data);
+       // console.log('getMarkersByCitySummary', data);
         if (data.data.error === false) {
 
           summary.total_no_symptoms = data.data.data.total_no_symptoms;
