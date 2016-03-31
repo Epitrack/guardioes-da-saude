@@ -43,21 +43,63 @@ angular.module('gdsApp')
           console.log('notification OK', data.data)
           var result = data.data;
           $scope.dash = result;
+
+          organizeGrathData($scope.dash.symptomatic);
         }
       });
     };
 
+
+    var chartOps = {
+        scaleColor: "#9ebf00",
+        lineWidth: 8,
+        lineCap: 'butt',
+        barColor: '#bf172c',
+        size: 90,
+        animate: 2000
+    };
+
+    angular.element('.chart1').easyPieChart(chartOps);
+    angular.element('.chart2').easyPieChart(chartOps);
+    $scope.graphicOnePerc = 73;
+
+    angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
+    angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc+'%');
+
+    angular.element('.chart2').data('easyPieChart').update(23);
+    angular.element('.chart2').attr('data-legend', 23+'%');
+
+
     $scope.graphicOptions = {
       animate:{
-        duration: 2000,
-        enabled: true
+        duration: 0,
+        enabled: false
       },
       barColor: '#9ebf00',
       scaleColor: false,
-      lineWidth: 6,
-      size: 80,
+      lineWidth: 20,
       lineCap: 'butt'
+
     };
+
+    function organizeGrathData(data, sym) {
+      var d = {};
+
+      console.log('data',data)
+      for(var i in data){
+        console.log('ill_date', data[i].ill_date);
+//        if(data[i].ill_date) { d.push({data[i].ill_date:{sym:}})}
+
+      }
+    }
+
+
+//    $scope.dash.symptomatic
+//    $scope.dash.asymptomatic
+
+    $scope.graphlineOptions = {
+
+    }
 
     $scope.graphicOptionsDown = {
       animate:{
