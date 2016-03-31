@@ -23,14 +23,14 @@
     <div class="col-sm-6">
       <article class="card">
         <ul class="tabs-nav">
-          <li><a class="up" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
-          <li><a class="down" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+          <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+          <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
         </ul>
 
         <div class="tabs-container">
           <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
             <div>
-              <span class="up">{{dash.lastWeekRegisters}}</span><!--1800-->
+              <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span><!--1800-->
               <p>Última semana</p>
             </div>
 
@@ -43,21 +43,21 @@
 <!--            tab-graphic -->
 
             <div>
-              <span class="up">{{dash.newRegisters}}</span><!--1800-->
+              <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span><!--1800-->
               <p>Esta semana</p>
             </div>
           </div>
 
           <div class="tab-content" ng-show="tab == 'descadastros'">
             <div>
-              <span class="down">{{dash.lastWeekRegisters}}</span>
+              <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span>
               <p>Última semana</p>
             </div>
 
             <div class="tab-graphic chart2" percent="" data-legend=""></div>
 
             <div>
-              <span class="down">{{dash.newRegisters}}</span>
+              <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span>
               <p>Esta semana</p>
             </div>
           </div>

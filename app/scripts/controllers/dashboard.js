@@ -45,9 +45,30 @@ angular.module('gdsApp')
           $scope.dash = result;
 
           organizeGrathData($scope.dash.symptomatic);
+
+          setPercOps();
+
         }
       });
     };
+
+    function setPercOps(){
+
+      $scope.graphicOnePerc = ((($scope.dash.newRegisters/$scope.dash.lastWeekRegisters) - 1)*100).toFixed(1);
+
+      angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
+      angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc+'%');
+
+      $scope.graphicTwoPerc = ((($scope.dash.lastWeekRegisters/$scope.dash.newRegisters) - 1)*100).toFixed(1);
+
+      angular.element('.chart2').data('easyPieChart').update($scope.graphicTwoPerc);
+      angular.element('.chart2').attr('data-legend', $scope.graphicTwoPerc+'%');
+
+    }
+
+    $scope.seta = function(val){
+      return (val<0)? 'down' : 'up';
+    }
 
 
     var chartOps = {
@@ -61,13 +82,9 @@ angular.module('gdsApp')
 
     angular.element('.chart1').easyPieChart(chartOps);
     angular.element('.chart2').easyPieChart(chartOps);
-    $scope.graphicOnePerc = 73;
+    $scope.graphicOnePerc = 10;//(($scope.dash.newRegisters/$scope.dash.lastWeekRegisters) - 1)*100;
 
-    angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
-    angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc+'%');
 
-    angular.element('.chart2').data('easyPieChart').update(23);
-    angular.element('.chart2').attr('data-legend', 23+'%');
 
 
     $scope.graphicOptions = {
