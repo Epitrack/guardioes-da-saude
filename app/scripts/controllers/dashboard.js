@@ -35,16 +35,17 @@ angular.module('gdsApp')
     // Get all data from dashboard
     $scope.getAllData = function() {
       DashboardApi.getAllData(function(data) {
-        if (data.status != 200) {
+        console.log('getAllData', data)
+        if (data.status !== 200) {
           Notification.show('error', 'Atenção', data.statusText);
         } else {
           Notification.show('success', 'Dashboard', data.statusText);
-
+          console.log('notification OK', data.data)
           var result = data.data;
           $scope.dash = result;
         }
       });
-    }
+    };
 
     $scope.graphicOptions = {
       animate:{
@@ -69,6 +70,30 @@ angular.module('gdsApp')
       size: 80,
       lineCap: 'butt'
     };
+
+    $scope.platPercent = function(plat){
+      if(!$scope.dash){return 0;}
+      var count = 0;
+      var _c = 0;
+      for (var i in $scope.dash.platforms)
+      {
+          count += $scope.dash.platforms[i].count;
+          if($scope.dash.platforms[i]._id === plat){_c = $scope.dash.platforms[i].count}
+      }
+      return (_c*100/count).toFixed(2);
+    };
+
+    $scope.platVal = function(plat){
+      if(!$scope.dash){return 0;}
+      var val = 0;
+      for (var i in $scope.dash.platforms)
+      {
+        if($scope.dash.platforms[i]._id === plat){val = $scope.dash.platforms[i].count}
+      }
+      return val;
+    };
+
+//    $scope.template = "<div id='popUpDashPart'>{{title}}</div><div>{{content}}</div>"
     // ====
 
     // ====
@@ -114,6 +139,7 @@ angular.module('gdsApp')
     // };
 
     $scope.filter = function(type, uf) {
+      console.log('filter', type, uf)
       if (type === 'race') {
         _filterByRace(uf);
       } else if (type === 'age') {

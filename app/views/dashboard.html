@@ -30,7 +30,7 @@
         <div class="tabs-container">
           <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
             <div>
-              <span class="up">1800</span>
+              <span class="up">{{dash.lastWeekRegisters}}</span><!--1800-->
               <p>Última semana</p>
             </div>
 
@@ -38,7 +38,7 @@
             </div>
 
             <div>
-              <span class="up">1800</span>
+              <span class="up">{{dash.newRegisters}}</span><!--1800-->
               <p>Esta semana</p>
             </div>
           </div>
@@ -69,16 +69,16 @@
 
         <div class="wrapper-progress">
           <div class="progress">
-            <div class="progress-bar progress-bar-web" style="width: 33%">
-              <span class="sr-only">35% Complete (web)</span>
+            <div uib-popover="{{platPercent('web')}}%({{platVal('web')}})" popover-title="WEB" class="progress-bar progress-bar-web" style="width: {{platPercent('web')}}%" popover-trigger="mouseenter">
+              <span  class="sr-only">{{platPercent('web')}}% Complete (web)</span>
             </div>
 
-            <div class="progress-bar progress-bar-ios" style="width: 33%">
-              <span class="sr-only">33% Complete (ios)</span>
+            <div uib-popover="{{platPercent('ios')}}%({{platVal('ios')}})" popover-title="iOS" class="progress-bar progress-bar-ios" style="width: {{platPercent('ios')}}%" popover-trigger="mouseenter">
+              <span class="sr-only">{{platPercent('ios')}}% Complete (ios)</span>
             </div>
 
-            <div class="progress-bar progress-bar-android" style="width: 34%">
-              <span class="sr-only">34% Complete (android)</span>
+            <div uib-popover="{{platPercent('android')}}%({{platVal('android')}})" popover-title="ANDROID" class="progress-bar progress-bar-android" style="width: {{platPercent('android')}}%" popover-trigger="mouseenter">
+              <span class="sr-only">{{platPercent('android')}}% Complete (android)</span>
             </div>
           </div>
         </div>
