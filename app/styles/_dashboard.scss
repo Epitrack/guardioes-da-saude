@@ -478,3 +478,156 @@
 
 // Large Desktops
 @media screen and (min-width: 1200px) {}
+
+.btn-var {
+  @extend .btn-tip;
+
+  text-align: left;
+  position: relative;
+  @include bdr(5px);
+
+  &:hover {
+    background-color: #fff;
+    color: $font-primary;
+  }
+
+  &.active {
+    background-color: #fff;
+    color: $font-primary;
+    margin-bottom: 0;
+    @include bsd(0, 0, 0, rgba(0, 0, 0, 0));
+
+    &:after {
+      content: '-';
+    }
+  }
+
+  &:after {
+    content: '+';
+    width: 20px;
+    height: 20px;
+    background-color: #707478;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #FFF;
+    font-size: ($fs-medium);
+    text-align: center;
+    line-height: 21px;
+    font-family: $ff-bold;
+    @include bdr(100%);
+  }
+
+  span {
+    padding: 2px;
+    font-size: ($fs-normal)-.1;
+    color: #ffffff;
+    background-color: $btn-primary;
+    margin-left: 10px;
+    @include bdr(3px);
+  }
+}
+.carousel-inner {
+  height: 180px;
+
+  img {
+    width: 120px;
+  }
+}
+
+%carousel-control {
+  margin-top: 0 !important;
+  font-size: ($fs-large)-1 !important;
+  color: #5D6165;
+}
+
+.carousel-control {
+  width: 5%;
+  height: 40px;
+  top: 40px;
+  color: $font-primary;
+  text-shadow: none;
+  opacity: 1;
+
+  &.left {
+    left: 120px;
+
+    &:before { @extend %carousel-control; }
+  }
+
+  &.right {
+    right: 140px;
+
+    &:before { @extend %carousel-control; }
+  }
+}
+
+.carousel-indicators {
+  visibility: hidden; 
+}
+
+.carousel-caption {
+  font-size: ($fs-medium)-.2;
+  color: $font-primary;
+  top: 110px;
+  text-shadow: none;
+}
+
+.drag-area {
+  @include bdr(5px);
+  min-height: 40px;
+  margin: 0 auto 40px 0;
+  background-color: rgba(29, 135, 229, 0.2);
+  border: dashed 2px $bg-secondary;
+}
+
+.collapse-content {
+  background-color: #FFF;
+  padding: 20px;
+  margin: -2px auto 20px auto;
+  @include bdr(0 0 5px 5px);
+
+  input {
+    width: 14px;
+    height: 14px;
+    @include bdr(2px);
+    border: solid 1px $btn-primary;
+    margin-right: 10px;
+
+    &:checked {
+      background-color: $btn-primary;
+    }
+
+  }
+
+  label {
+    font-size: ($fs-normal)+.2;
+    color: $font-primary;
+  }
+}
+
+
+.imageBased input[type=checkbox]:not(old),
+      .imageBased input[type=radio   ]:not(old){
+        width   : 28px;
+        margin  : 0;
+        padding : 0;
+        opacity : 0;
+      }
+
+      .imageBased input[type=checkbox]:not(old) + label,
+      .imageBased input[type=radio   ]:not(old) + label{
+        display      : inline-block;
+        margin-left  : -28px;
+        padding-left : 28px;
+        background   : url('../images/dashboard/checks.png') no-repeat 0 0;
+        line-height  : 24px;
+      }
+
+      .imageBased input[type=checkbox]:not(old):checked + label{
+        background-position : 0 -24px;
+      }
+
+      .imageBased input[type=radio]:not(old):checked + label{
+        background-position : 0 -48px;
+      }

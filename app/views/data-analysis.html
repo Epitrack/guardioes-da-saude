@@ -5,54 +5,194 @@
 <section class="col-sm-9 col-md-10 content-internal">
   <h2 class="section-title">Painel de controle <span>/ Análise de dados</span></h2>
 
-  <aside class="col-xs-12 col-md-4 no-padding list-tips">
+  <aside ng-drop="true" class="col-xs-12 col-md-4 no-padding list-tips">
     <legend class="legend-subtitle other">Variáveis</legend>
 
-    <!-- <button ng-click="aside = 'upas'" class="btn-tip upas"
-      ng-class="{ 'active' : aside == 'upas' }">
-      Upas
-    </button>
+    <!-- Sintomas -->
+    <button ng-click="symptoms = !symptoms" class="btn-var"
+      ng-class="{ 'active' : symptoms }">Sintomas</button>
 
-    <button ng-click="aside = 'farmacias'" class="btn-tip pharmacy"
-      ng-class="{ 'active' : aside == 'farmacias' }">
-      Farmácias
-    </button>
+    <div uib-collapse="!symptoms">
+      <div class="collapse-content">
+        <fieldset ng-repeat="symptom in symptomsList">
+          <input type="checkbox" name="symptoms-list" ng-model="dash.symptom.code" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
 
-    <button ng-click="aside = 'vacina'" class="btn-tip vaccine"
-      ng-class="{ 'active' : aside == 'vacina' }">
-      Vacina
-    </button>
+          <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
+        </fieldset>
+      </div>
+    </div>
 
-    <button ng-click="aside = 'telefones'" class="btn-tip telephones"
-      ng-class="{ 'active' : aside == 'telefones' }">
-      Telefones Úteis
-    </button>
+    <!-- Sindromes -->
+    <button ng-click="sindromes = !sindromes" class="btn-var"
+      ng-class="{ 'active' : sindromes }">Síndromes</button>
 
-    <button ng-click="aside = 'cuidados'" class="btn-tip caution"
-      ng-class="{ 'active' : aside == 'cuidados' }">
-      Cuidados Básicos
-    </button>
+    <div uib-collapse="!sindromes">
+      <div class="collapse-content ">
+        <fieldset>
+          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.diarreica" value="true" id="diarreica" class="checkbox-primary">
 
-    <button ng-click="aside = 'prevencao'" class="btn-tip prevention"
-      ng-class="{ 'active' : aside == 'prevencao' }">
-      Prevenção
-    </button> -->
+          <label for="diarreica">Diarreica</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.exantematica" value="true" id="exantematica" class="checkbox-primary">
+
+          <label for="exantematica">Exantemática</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.respiratoria" value="true" id="respiratoria" class="checkbox-primary">
+
+          <label for="respiratoria">Respiratória</label>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Age -->
+    <button ng-click="age = !age" class="btn-var"
+      ng-class="{ 'active' : age }">Idade</button>
+
+    <div uib-collapse="!age">
+      <div class="collapse-content">
+        <fieldset>
+          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_1" value="13_19" id="faixa-1" class="checkbox-primary">
+          <label for="faixa-1">13 a 19 anos</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_2" value="20_24" id="faixa-2" class="checkbox-primary">
+          <label for="faixa-2">20 a 24 anos</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_3" value="25_59" id="faixa-3" class="checkbox-primary">
+          <label for="faixa-3">25 a 59 anos</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_4" value="60" id="faixa-4" class="checkbox-primary">
+          <label for="faixa-4">> 60 anos</label>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Gender -->
+    <button ng-click="gender = !gender" class="btn-var"
+      ng-class="{ 'active' : gender }">Sexo</button>
+
+    <div uib-collapse="!gender">
+      <div class="collapse-content">
+        <fieldset>
+          <input type="checkbox" name="gender" ng-model="dash.gender.masculino" value="M" id="masculino" class="checkbox-primary">
+
+          <label for="masculino">Masculino</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="gender" ng-model="dash.gender.feminino" value="F" id="feminino" class="checkbox-primary">
+
+          <label for="feminino">Feminino</label>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Race -->
+    <button ng-click="race = !race" class="btn-var"
+      ng-class="{ 'active' : race }">Raça/Cor</button>
+
+    <div uib-collapse="!race">
+      <div class="collapse-content imageBased">
+        <fieldset>
+          <input type="checkbox" name="race" ng-model="dash.race.branco" value="true" id="race-branco" class="checkbox-primary">
+          <label for="race-branco">Branco</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="race" ng-model="dash.race.preto" value="true" id="race-preto" class="checkbox-primary">
+          <label for="race-preto">Preto</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="race" ng-model="dash.race.pardo" value="true" id="race-pardo" class="checkbox-primary">
+          <label for="race-pardo">Pardo</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="race" ng-model="dash.race.amarelo" value="true" id="race-amarelo" class="checkbox-primary">
+          <label for="race-amarelo">Amarelo</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="race" ng-model="dash.race.indigena" value="true" id="race-indigena" class="checkbox-primary">
+          <label for="race-indigena">Indígena</label>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Epidemiological weeks -->
+    <button ng-click="epi_week = !epi_week" class="btn-var"
+      ng-class="{ 'active' : epi_week }">Semanas Epidemiológicas</button>
+
+    <div uib-collapse="!epi_week">
+      <div class="collapse-content">
+        <div class="range-bg"></div>
+
+        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div>
+      </div>
+    </div>
+
+    <!-- Epidemiological weeks -->
+    <button ng-click="period = !period" class="btn-var"
+      ng-class="{ 'active' : period }">Mês/Ano</button>
+
+    <div uib-collapse="!period">
+      <div class="collapse-content">
+        Mês e Ano
+      </div>
+    </div>
+
+    <!-- Local -->
+    <button ng-click="local = !local" class="btn-var"
+      ng-class="{ 'active' : local }">Local</button>
+
+    <div uib-collapse="!local">
+      <div class="collapse-content">
+        <fieldset>
+          <label for="">Adicionar regiões e estados</label>
+        </fieldset>
+
+        <fieldset>
+          <input type="checkbox" name="local" ng-model="dash.local" value="PE" id="pe" class="checkbox-primary">
+
+          <label for="pe">Pernambuco</label>
+        </fieldset>
+    </div>
   </aside>
 
   <div class="col-xs-12 col-md-7">
     <legend class="legend-subtitle other">Análise</legend>
 
-    <!-- <aside class="col-xs-12 card health-tips-default" ng-if="!aside">
-      <figure>
-        <img src="images/icon-health-tips.svg" alt="">
-      </figure>
+    <aside ng-drop="true" ng-drop-success="onDropComplete($data,$event)" class="col-xs-12 card">
+      <h4>Visualização</h4>
 
-      <h4>Bem vindo ao Dicas de Saúde</h4>
-      <p>Aqui você poderá pesquisar informações importantes para o seu bem estar.</p>
-    </aside> -->
+      <uib-carousel active="0" interval="0" no-wrap="false">
+        <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
 
-    <!-- <aside class="col-xs-12 card content-card" ng-if="aside == 'upas'">
-      <div ng-include src="'views/partials/ht-upas.html'" ng-init="loadUpas()"></div>
-    </aside> -->
+          <div class="carousel-caption">
+            <p>{{slide.text}}</p>
+          </div>
+        </uib-slide>
+      </uib-carousel>
+
+      <div id="drag-area" class="col-sm-6 drag-area"></div>
+
+      <div class="row">
+        <div class="col-sm-12 wrapper-btn-dash">
+          <button class="btn btn-default">Limpar variáveis</button>
+          <button class="btn btn-primary" ng-click="getGraphic()">Análisar variáveis</button>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
