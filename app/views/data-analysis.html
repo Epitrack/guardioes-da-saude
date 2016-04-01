@@ -1,198 +1,202 @@
+<style type="text/css">
+.in {
+    border-top: 3px solid rgb(231, 231, 231);
+}
+</style>
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
-
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Painel de controle <span>/ Análise de dados</span></h2>
-
-  <aside ng-drop="true" class="col-xs-12 col-md-4 no-padding list-tips">
-    <legend class="legend-subtitle other">Variáveis</legend>
-
-    <!-- Sintomas -->
-    <button ng-click="symptoms = !symptoms" class="btn-var"
-      ng-class="{ 'active' : symptoms }">Sintomas</button>
-
-    <div uib-collapse="!symptoms">
-      <div class="collapse-content">
-        <fieldset ng-repeat="symptom in symptomsList">
-          <input type="checkbox" name="symptoms-list" ng-model="dash.symptom.code" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
-
-          <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <!-- Sindromes -->
-    <button ng-click="sindromes = !sindromes" class="btn-var"
-      ng-class="{ 'active' : sindromes }">Síndromes</button>
-
-    <div uib-collapse="!sindromes">
-      <div class="collapse-content ">
-        <fieldset>
-          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.diarreica" value="true" id="diarreica" class="checkbox-primary">
-
-          <label for="diarreica">Diarreica</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.exantematica" value="true" id="exantematica" class="checkbox-primary">
-
-          <label for="exantematica">Exantemática</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="sindromes" ng-model="dash.sindromes.respiratoria" value="true" id="respiratoria" class="checkbox-primary">
-
-          <label for="respiratoria">Respiratória</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <!-- Age -->
-    <button ng-click="age = !age" class="btn-var"
-      ng-class="{ 'active' : age }">Idade</button>
-
-    <div uib-collapse="!age">
-      <div class="collapse-content">
-        <fieldset>
-          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_1" value="13_19" id="faixa-1" class="checkbox-primary">
-          <label for="faixa-1">13 a 19 anos</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_2" value="20_24" id="faixa-2" class="checkbox-primary">
-          <label for="faixa-2">20 a 24 anos</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_3" value="25_59" id="faixa-3" class="checkbox-primary">
-          <label for="faixa-3">25 a 59 anos</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="idade" ng-model="dash.ageGroup.period_4" value="60" id="faixa-4" class="checkbox-primary">
-          <label for="faixa-4">> 60 anos</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <!-- Gender -->
-    <button ng-click="gender = !gender" class="btn-var"
-      ng-class="{ 'active' : gender }">Sexo</button>
-
-    <div uib-collapse="!gender">
-      <div class="collapse-content">
-        <fieldset>
-          <input type="checkbox" name="gender" ng-model="dash.gender.masculino" value="M" id="masculino" class="checkbox-primary">
-
-          <label for="masculino">Masculino</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="gender" ng-model="dash.gender.feminino" value="F" id="feminino" class="checkbox-primary">
-
-          <label for="feminino">Feminino</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <!-- Race -->
-    <button ng-click="race = !race" class="btn-var"
-      ng-class="{ 'active' : race }">Raça/Cor</button>
-
-    <div uib-collapse="!race">
-      <div class="collapse-content imageBased">
-        <fieldset>
-          <input type="checkbox" name="race" ng-model="dash.race.branco" value="true" id="race-branco" class="checkbox-primary">
-          <label for="race-branco">Branco</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="race" ng-model="dash.race.preto" value="true" id="race-preto" class="checkbox-primary">
-          <label for="race-preto">Preto</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="race" ng-model="dash.race.pardo" value="true" id="race-pardo" class="checkbox-primary">
-          <label for="race-pardo">Pardo</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="race" ng-model="dash.race.amarelo" value="true" id="race-amarelo" class="checkbox-primary">
-          <label for="race-amarelo">Amarelo</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="race" ng-model="dash.race.indigena" value="true" id="race-indigena" class="checkbox-primary">
-          <label for="race-indigena">Indígena</label>
-        </fieldset>
-      </div>
-    </div>
-
-    <!-- Epidemiological weeks -->
-    <button ng-click="epi_week = !epi_week" class="btn-var"
-      ng-class="{ 'active' : epi_week }">Semanas Epidemiológicas</button>
-
-    <div uib-collapse="!epi_week">
-      <div class="collapse-content">
-        <div class="range-bg"></div>
-
-        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div>
-      </div>
-    </div>
-
-    <!-- Epidemiological weeks -->
-    <button ng-click="period = !period" class="btn-var"
-      ng-class="{ 'active' : period }">Mês/Ano</button>
-
-    <div uib-collapse="!period">
-      <div class="collapse-content">
-        Mês e Ano
-      </div>
-    </div>
-
-    <!-- Local -->
-    <button ng-click="local = !local" class="btn-var"
-      ng-class="{ 'active' : local }">Local</button>
-
-    <div uib-collapse="!local">
-      <div class="collapse-content">
-        <fieldset>
-          <label for="">Adicionar regiões e estados</label>
-        </fieldset>
-
-        <fieldset>
-          <input type="checkbox" name="local" ng-model="dash.local" value="PE" id="pe" class="checkbox-primary">
-
-          <label for="pe">Pernambuco</label>
-        </fieldset>
-    </div>
-  </aside>
-
-  <div class="col-xs-12 col-md-7">
-    <legend class="legend-subtitle other">Análise</legend>
-
-    <aside ng-drop="true" ng-drop-success="onDropComplete($data,$event)" class="col-xs-12 card">
-      <h4>Visualização</h4>
-
-      <uib-carousel active="0" interval="0" no-wrap="false">
-        <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-          <img ng-src="{{slide.image}}" style="margin:auto;">
-
-          <div class="carousel-caption">
-            <p>{{slide.text}}</p>
-          </div>
-        </uib-slide>
-      </uib-carousel>
-
-      <div id="drag-area" class="col-sm-6 drag-area"></div>
-
-      <div class="row">
-        <div class="col-sm-12 wrapper-btn-dash">
-          <button class="btn btn-default">Limpar variáveis</button>
-          <button class="btn btn-primary" ng-click="getGraphic()">Análisar variáveis</button>
-        </div>
-      </div>
+    <h2 class="section-title">Painel de controle <span>/ Análise de dados</span></h2>
+    <aside ng-drop="true" class="col-xs-12 col-md-4 no-padding list-tips">
+        <legend class="legend-subtitle other">Variáveis</legend>
+        <!-- Sintomas -->
+        <ul ng-sortable="opts">
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <button ng-click="symptoms = !symptoms" class="btn-var " ng-class="{ 'active' : symptoms }"> Sintomas</button>
+                <div uib-collapse="!symptoms">
+                    <div class="collapse-content imageBased">
+                        <fieldset ng-repeat="symptom in symptomsList">
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('sintomas',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
+                            <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <button ng-click="sindromes = !sindromes" class="btn-var" ng-class="{ 'active' : sindromes }">Síndromes</button>
+                <div uib-collapse="!sindromes">
+                    <div class="collapse-content imageBased">
+                        <fieldset>
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','diarreica')" value="true" id="diarreica" class="checkbox-primary">
+                            <label for="diarreica">Diarreica</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','exantematica')" value="true" id="exantematica" class="checkbox-primary">
+                            <label for="exantematica">Exantemática</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','respiratoria')" value="true" id="respiratoria" class="checkbox-primary">
+                            <label for="respiratoria">Respiratória</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <button ng-click="age = !age" class="btn-var" ng-class="{ 'active' : age }">Idade</button>
+                <div uib-collapse="!age">
+                    <div class="collapse-content imageBased">
+                        <fieldset>
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','13_19')" value="13_19" id="faixa-1" class="checkbox-primary">
+                            <label for="faixa-1">13 a 19 anos</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','20_24')" value="20_24" id="faixa-2" class="checkbox-primary">
+                            <label for="faixa-2">20 a 24 anos</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','25_59')" value="25_59" id="faixa-3" class="checkbox-primary">
+                            <label for="faixa-3">25 a 59 anos</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','60')" value="60" id="faixa-4" class="checkbox-primary">
+                            <label for="faixa-4">> 60 anos</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Gender -->
+                <button ng-click="gender = !gender" class="btn-var" ng-class="{ 'active' : gender }">Sexo</button>
+                <div uib-collapse="!gender">
+                    <div class="collapse-content imageBased">
+                        <fieldset>
+                            <input type="checkbox" name="gender" ng-model="dash.gender.masculino" value="M" id="masculino" class="checkbox-primary">
+                            <label for="masculino">Masculino</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="gender" ng-model="dash.gender.feminino" value="F" id="feminino" class="checkbox-primary">
+                            <label for="feminino">Feminino</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Race -->
+                <button ng-click="race = !race" class="btn-var" ng-class="{ 'active' : race }">Raça/Cor</button>
+                <div uib-collapse="!race">
+                    <div class="collapse-content imageBased">
+                        <fieldset>
+                            <input type="checkbox" name="race" ng-model="dash.race.branco" value="true" id="race-branco" class="checkbox-primary">
+                            <label for="race-branco">Branco</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="race" ng-model="dash.race.preto" value="true" id="race-preto" class="checkbox-primary">
+                            <label for="race-preto">Preto</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="race" ng-model="dash.race.pardo" value="true" id="race-pardo" class="checkbox-primary">
+                            <label for="race-pardo">Pardo</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="race" ng-model="dash.race.amarelo" value="true" id="race-amarelo" class="checkbox-primary">
+                            <label for="race-amarelo">Amarelo</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="race" ng-model="dash.race.indigena" value="true" id="race-indigena" class="checkbox-primary">
+                            <label for="race-indigena">Indígena</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Epidemiological weeks -->
+                <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }">Semanas Epidemiológicas</button>
+                <div uib-collapse="!epi_week">
+                    <div class="collapse-content imageBased">
+                        <div class="range-bg"></div>
+                        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Epidemiological weeks -->
+                <button ng-click="period = !period" class="btn-var" ng-class="{ 'active' : period }">Mês/Ano</button>
+                <div uib-collapse="!period">
+                    <div class="collapse-content imageBased">
+                        Mês e Ano
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Local -->
+                <button ng-click="local = !local" class="btn-var" ng-class="{ 'active' : local }">Local</button>
+                <div uib-collapse="!local">
+                    <div class="collapse-content imageBased">
+                        <fieldset>
+                            <label for="">Adicionar regiões e estados</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="local" ng-model="dash.local" value="PE" id="pe" class="checkbox-primary">
+                            <label for="pe">Pernambuco</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </aside>
-  </div>
+    <div class="col-xs-12 col-md-7">
+        <legend class="legend-subtitle other">Análise</legend>
+        <aside class="col-xs-12 card">
+            <h4>Visualização</h4>
+            <uib-carousel active="0" interval="0" no-wrap="false" style="height: auto!important">
+                <uib-slide style="height: auto!important">
+                    <img src="../../images/dashboard/icon_pizza.svg" style="margin:auto;">
+                    <div class="carousel-caption" style="height: 70px;">
+                        <p>Pizza</p>
+                    </div>
+                    <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
+                        <p style="font-size: 18px;">Variável</p>
+                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().d(event)">
+                        </ul>
+                                              
+                        <p style="font-size: 18px;clear: both;">Filtro(s)</p>
+                         <ul ng-sortable="opts" class="col-sm-6 drag-area">
+                        </ul>
+                        <div style="clear: both;"></div>
+                        <button class="btn btn-default">Limpar variáveis</button>
+                        <button class="btn btn-primary" ng-click="getGraphic()">Análisar variáveis</button>
+                    </div>
+                    <!-- sort: true -->
+                    <!-- sort: true -->
+                </uib-slide>
+                <uib-slide>
+                    <img src="../../images/dashboard/icon_histograma.svg" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <p>Histograma</p>
+                    </div>
+                </uib-slide>
+                <uib-slide>
+                    <img src="../../images/dashboard/icon_coluna.svg" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <p>Barras</p>
+                    </div>
+                </uib-slide>
+                <uib-slide>
+                    <img src="../../images/dashboard/icon_tabela.svg" style="margin:auto;">
+                    <div class="carousel-caption">
+                        <p>Tabela</p>
+                    </div>
+                </uib-slide>
+            </uib-carousel>
+        </aside>
+    </div>
 </section>

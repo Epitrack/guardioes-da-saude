@@ -36,7 +36,8 @@ angular
     'ngFileUpload',
     'ngMap',
     'ngFacebook',
-    'ngMaterial'
+    'ngMaterial',
+    'ng-sortable'
     // ,'easypiechart'
   ])
   .config( function( $facebookProvider ) { $facebookProvider.setAppId('961547147258065'); })
@@ -400,8 +401,8 @@ angular
       });
 
     // use the HTML5 History API
-    $locationProvider.html5Mode({
+    /*$locationProvider.html5Mode({
       enabled: true,// set false to development
       requireBase: false
-    });
+    });*/
   });

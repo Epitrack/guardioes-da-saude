@@ -1,3 +1,4 @@
+ <script async type="text/javascript" src="https://www.google.com/jsapi"></script>
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 
@@ -23,36 +24,41 @@
     <div class="col-sm-6">
       <article class="card">
         <ul class="tabs-nav">
-          <li><a class="up" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
-          <li><a class="down" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+          <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+          <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
         </ul>
 
         <div class="tabs-container">
           <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
             <div>
-              <span class="up">{{dash.lastWeekRegisters}}</span><!--1800-->
+              <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span><!--1800-->
               <p>Última semana</p>
             </div>
 
-            <div class="tab-graphic chart" easypiechart options="graphicOptions" percent="73" data-legend="73%">
+<!--            <div class="chart" data-percent=""></div>-->
+            <div class="tab-graphic chart1" percent="" data-legend=""></div>
+<!--
+            <div class="tab-graphic chart" easypiechart options="graphicOptions" percent="graphicOnePerc" data-legend="{{graphicOnePerc}}%">
             </div>
+-->
+<!--            tab-graphic -->
 
             <div>
-              <span class="up">{{dash.newRegisters}}</span><!--1800-->
+              <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span><!--1800-->
               <p>Esta semana</p>
             </div>
           </div>
 
           <div class="tab-content" ng-show="tab == 'descadastros'">
             <div>
-              <span class="down">1800</span>
+              <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span>
               <p>Última semana</p>
             </div>
 
-            <div class="tab-graphic chart" easypiechart options="graphicOptionsDown" percent="29" data-legend="29%"></div>
+            <div class="tab-graphic chart2" percent="" data-legend=""></div>
 
             <div>
-              <span class="down">1800</span>
+              <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span>
               <p>Esta semana</p>
             </div>
           </div>
@@ -81,6 +87,10 @@
               <span class="sr-only">{{platPercent('android')}}% Complete (android)</span>
             </div>
           </div>
+          <div ng-if="graphlineOptions">
+            <linechart id="line-chart-dash" data-options="graphlineOptions"></linechart>
+          </div>
+
         </div>
 
         <div class="progress-legend">
@@ -122,6 +132,7 @@
             <md-switch class="md-total" ng-model="data.total" aria-label="Total">Total</md-switch>
           </div>
         </div>
+        <div id="line-example"></div>
       </header>
     </article>
   </div>
