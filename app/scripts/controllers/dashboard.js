@@ -60,11 +60,10 @@ angular.module('gdsApp')
                     console.log('notification OK', data.data)
                     var result = data.data;
                     $scope.dash = result;
-
                     organizeGrathData($scope.dash);
-
                     setPercOps();
-
+                    $scope.filterAgeByState();
+                    $scope.filterRaceByState();
                 }
 
             });
@@ -95,7 +94,7 @@ angular.module('gdsApp')
 
         angular.element('.chart1').easyPieChart(chartOps);
         angular.element('.chart2').easyPieChart(chartOps);
-        $scope.graphicOnePerc = 10; //(($scope.dash.newRegisters/$scope.dash.lastWeekRegisters) - 1)*100;
+        $scope.graphicOnePerc = 10;
 
         $scope.graphicOptions = {
             animate: {
@@ -129,13 +128,13 @@ angular.module('gdsApp')
                     return moment(x).format("DD/MM/YYYY");
                 },
                 hoverCallback: function(index, options, content, row) {
-                    return content + "," + JSON.stringify(row);
+                    var c = "<div class='morris-hover-row-label'></div><div class='morris-hover-point' style='color: #76031c'>Sintomático: " + row.symptomatic + "</div><div class='morris-hover-point' style='color: #b3b500'>Assintomático: " + row.asymptomatic + "</div><div class='morris-hover-point' style='color: #f5a623'>Total: " + row.total + " </div>"
+                    return c;
                 }
             });
 
         }
-        //    $scope.dash.symptomatic
-        //    $scope.dash.asymptomatic
+
         $scope.graphlineOptions = {}
         $scope.graphicOptionsDown = {
             animate: {
@@ -158,7 +157,7 @@ angular.module('gdsApp')
                 count += $scope.dash.platforms[i].count;
                 if ($scope.dash.platforms[i]._id === plat) { _c = $scope.dash.platforms[i].count }
             }
-            return (_c * 100 / count).toFixed(2);
+            return (_c * 100 / count).toFixed(1);
         };
 
         $scope.platVal = function(plat) {
@@ -172,9 +171,7 @@ angular.module('gdsApp')
             // console.log(plat,val);
             return val;
         };
-        //    $scope.template = "<div id='popUpDashPart'>{{title}}</div><div>{{content}}</div>"
-        // ====
-        // ====
+
         // Filter by race or age
         function _filterByRace(uf) {
             var men, women, uf, objMen, objWomen;
@@ -188,33 +185,8 @@ angular.module('gdsApp')
 
             angular.forEach(men, function(m) {
                 console.log('Raça dos homens -> ', m);
-                // angular.forEach(m.races, function(mr) {
-                //   console.log('Homem -> ', mr);
-                //   $scope.mr = mr;
-                //   // objMen = mr;
-                // })
             })
-
-            // angular.forEach(women, function(w) {
-            //   console.log('Raça das mulheres -> ', w);
-            //   // angular.forEach(w.races, function(wr) {
-            //     // console.log('Mulher -> ', wr)
-            //     // $scope.wr = wr;
-            //     // // objWomen = {
-            //     // //   race: wr.race,
-            //     // //   total: wr.total
-            //     // // }
-            //     // // objWomen = wr;
-            //     // // objWomen.total = wr.total;
-            //   // })
-            // })
-
-            // console.warn('objMen -> ', objMen);
-            // console.warn('objWomen -> ', objWomen);
         };
-
-        // function _filterByRace(uf) {
-        // };
 
         $scope.filter = function(type, uf) {
             console.log('filter', type, uf)
@@ -224,6 +196,115 @@ angular.module('gdsApp')
                 _filterByAge(uf);
             }
         };
+
+        $scope.selectStateByAge = function(id) {
+            $scope.s = id;
+        };
+
+        $scope.filterAgeByState = function() {
+            $scope.agesates = {};
+            for (var i = 0; i < $scope.dash.menByAge.length; i++) {
+                if ($scope.agesates[$scope.dash.menByAge[i]._id] === undefined) {
+                    $scope.agesates[$scope.dash.menByAge[i]._id] = {};
+                }
+                var count = 0;
+                $scope.agesates[$scope.dash.menByAge[i]._id]['men'] = {};
+                for (var o in $scope.dash.menByAge[i].groups) {
+                    count += $scope.dash.menByAge[i].groups[o].total;
+                    $scope.agesates[$scope.dash.menByAge[i]._id]['men'][$scope.dash.menByAge[i].groups[o].ageGroup] = $scope.dash.menByAge[i].groups[o].total;
+                }
+                $scope.agesates[$scope.dash.menByAge[i]._id]['men']['total'] = count;
+            }
+            for (var i = 0; i < $scope.dash.womenByAge.length; i++) {
+                if ($scope.agesates[$scope.dash.womenByAge[i]._id] === undefined) {
+                    $scope.agesates[$scope.dash.womenByAge[i]._id] = {};
+                }
+                var count = 0;
+                $scope.agesates[$scope.dash.womenByAge[i]._id]['women'] = {};
+                for (var o in $scope.dash.womenByAge[i].groups) {
+                    count += $scope.dash.womenByAge[i].groups[o].total;
+                    $scope.agesates[$scope.dash.womenByAge[i]._id]['women'][$scope.dash.womenByAge[i].groups[o].ageGroup] = $scope.dash.womenByAge[i].groups[o].total;
+                }
+                $scope.agesates[$scope.dash.womenByAge[i]._id]['women']['total'] = count;
+            }
+
+
+            $scope._agesates = [];
+            for (var o in $scope.agesates) {
+                $scope._agesates.push({ id: o });
+            }
+            console.log($scope.agesates);
+        };
+        $scope.getAgeByStateStatsValue = function(uf, key, value, div) {
+            if ($scope.agesates !== undefined && $scope.agesates[uf] !== undefined && $scope.agesates[uf][key] !== undefined) {
+                if ($scope.agesates[uf][key][value] === undefined) {
+                    return 0;
+                } else {
+                    console.log(uf, key, value);
+                    if (div === 100) {
+                        return (($scope.agesates[uf][key][value] / $scope.agesates[uf][key]['total']) * 100).toFixed(2);
+                    } else {
+                        return $scope.agesates[uf][key][value];
+                    }
+                }
+            } else {
+                return 0;
+            }
+        }
+
+        $scope.filterRaceByState = function() {
+            $scope.racesates = {};
+            for (var i = 0; i < $scope.dash.menByRace.length; i++) {
+                if ($scope.racesates[$scope.dash.menByRace[i]._id] === undefined) {
+                    $scope.racesates[$scope.dash.menByRace[i]._id] = {};
+                }
+                var count = 0;
+                $scope.racesates[$scope.dash.menByRace[i]._id]['men'] = {};
+                for (var o in $scope.dash.menByRace[i].races) {
+                    count += $scope.dash.menByRace[i].races[o].total;
+                    $scope.racesates[$scope.dash.menByRace[i]._id]['men'][$scope.dash.menByRace[i].races[o].race] = $scope.dash.menByRace[i].races[o].total;
+                }
+                $scope.racesates[$scope.dash.menByRace[i]._id]['men']['total'] = count;
+            }
+
+            for (var i = 0; i < $scope.dash.womenByRace.length; i++) {
+                if ($scope.racesates[$scope.dash.womenByRace[i]._id] === undefined) {
+                    $scope.racesates[$scope.dash.womenByRace[i]._id] = {};
+                }
+                var count = 0;
+                $scope.racesates[$scope.dash.womenByRace[i]._id]['women'] = {};
+                for (var o in $scope.dash.womenByRace[i].races) {
+                    count += $scope.dash.womenByRace[i].races[o].total;
+                    $scope.racesates[$scope.dash.womenByRace[i]._id]['women'][$scope.dash.womenByRace[i].races[o].race] = $scope.dash.womenByRace[i].races[o].total;
+                }
+                $scope.racesates[$scope.dash.womenByRace[i]._id]['women']['total'] = count;
+            }
+
+
+            $scope._racesates = [];
+            for (var o in $scope.racesates) {
+                $scope._racesates.push({ id: o });
+            }
+            console.log($scope.racesates);
+        };
+
+        $scope.getRaceByStateStatsValue = function(uf, key, value, div) {
+            if ($scope.racesates !== undefined && $scope.racesates[uf] !== undefined && $scope.racesates[uf][key] !== undefined) {
+                if ($scope.racesates[uf][key][value] === undefined) {
+                    return 0;
+                } else {
+                    console.log(uf, key, value);
+                    if (div === 100) {
+                        return (($scope.racesates[uf][key][value] / $scope.racesates[uf][key]['total']) * 100).toFixed(2);
+                    } else {
+                        return $scope.racesates[uf][key][value];
+                    }
+                }
+            } else {
+                return 0;
+            }
+        }
+
         // ====
         // Call functions
         $scope.getAllData();
