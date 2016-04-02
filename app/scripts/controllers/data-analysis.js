@@ -63,8 +63,6 @@ angular.module('gdsApp')
             max: 52
         };
         // ====
-
-        // ====
         // Drag and drop
         $scope.getGraphic = function() {
             console.warn('Dashboard data -> ', $scope.dash)
@@ -75,13 +73,37 @@ angular.module('gdsApp')
             group: 'todo',
             animation: 150
         };
+        $scope.params = {};
+        $scope.params.variaveis = [];
+        $scope.params.filtros = [];
 
-        $scope.d = function(ev) {
-            var data = ev.dataTransfer.getData("text");
-            console.log(ev.dataTransfer);
-            alert(data);
+        $scope.remove_params = function(index, key) {
+          console.log($scope.params[key][index].c);
+            $("#variaveis").append($scope.params[key][index].c);
+            $scope.params[key].splice(index, 1);
+        };
+
+        $scope.dropaction = function(ev, key) {
+            var data = ev.dataTransfer.getData("id");
+            var comp = document.getElementById(data);
+            console.log(comp);
+            $scope.params[key].push({ label: $(comp).find("button").html(), c: comp });
+            $(comp).parent().empty();
             ev.preventDefault();
         }
+
+        $scope.drag = function(ev) {
+            ev.dataTransfer.setData("id", ev.target.id);
+        }
+
+        $scope.clear = function() {
+            for (var i = 0; i < $scope.params.variaveis.length; i++) {
+                $scope.remove_params(i, 'variaveis');
+            }
+            for (var j = 0; j < $scope.params.filtros.length; j++) {
+                $scope.remove_params(j, 'filtros');
+            }
+        };
 
     });
 /**/
