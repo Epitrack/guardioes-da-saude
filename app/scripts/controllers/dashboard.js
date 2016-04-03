@@ -11,6 +11,84 @@ angular.module('gdsApp')
     .controller('DashboardCtrl', ['$scope', 'DashboardApi', 'Notification', function($scope, DashboardApi, Notification) {
         $scope.pageClass = 'dashboard-page';
 
+        $scope.data = {};
+        $scope.data.symptomatic = true;
+        $scope.data.asymptomatic = true;
+        $scope.data.total = true;
+
+        $scope.data1 = {};
+        $scope.data1.symptomatic = true;
+        $scope.data1.asymptomatic = true;
+        $scope.data1.total = true;
+
+        $scope.graficoparticipacoes = {};
+        $scope.dadosGrafico = [];
+
+        $scope.ykeys = ['symptomatic', 'asymptomatic', 'total'];
+        $scope.labels = ['Sintomático', 'Assintomático', 'Total'];
+        $scope.colorsgraph = ['#76031c', '#b3b500', '#f5a623'];
+        /**/
+        $scope.updateParticipacoes = function(key) {
+            /**/
+            $scope.ykeys = [];
+            $scope.labels = [];
+            $scope.colorsgraph = [];
+            $scope.data[key] = !$scope.data[key];
+            /**/
+            if ($scope.data.symptomatic) {
+                $scope.ykeys.push('symptomatic');
+                $scope.labels.push('Sintomático');
+                $scope.colorsgraph.push('#76031c');
+            }
+            if ($scope.data.asymptomatic) {
+                $scope.ykeys.push('asymptomatic');
+                $scope.labels.push('Assintomático');
+                $scope.colorsgraph.push('#b3b500');
+            }
+            if ($scope.data.total) {
+                $scope.ykeys.push('total');
+                $scope.labels.push('Total');
+                $scope.colorsgraph.push('#f5a623');
+            }
+
+            $scope.dado_grafico = [];
+            for (var i = 0; i < $scope.dadosGrafico.symptomatic.length; i++) {
+                var t = parseInt($scope.dadosGrafico.symptomatic[i].total) + parseInt($scope.dadosGrafico.asymptomatic[i].total);
+                var obj = {};
+                obj['y'] = $scope.dadosGrafico.symptomatic[i]._id;
+                if ($scope.data.symptomatic) {
+                    obj['symptomatic'] = $scope.dadosGrafico.symptomatic[i].total;
+                }
+                if ($scope.data.asymptomatic) {
+                    obj['asymptomatic'] = $scope.dadosGrafico.asymptomatic[i].total;
+                }
+                if ($scope.data.total) {
+                    obj['total'] = t;
+                }
+                $scope.dado_grafico.push(obj);
+            }
+            $("#line-example").empty();
+            $scope.graficoparticipacoes = Morris.Line({
+                element: 'line-example',
+                data: $scope.dado_grafico,
+                lineColors: $scope.colorsgraph,
+                xkey: 'y',
+                ykeys: $scope.ykeys,
+                labels: $scope.labels,
+                xLabelFormat: function(x) {
+                    return moment(x).format("DD/MM/YYYY");
+                },
+                dateFormat: function(x) {
+                    return moment(x).format("DD/MM/YYYY");
+                },
+                hoverCallback: function(index, options, content, row) {
+                    var c = content; //"<div class='morris-hover-row-label'></div><div class='morris-hover-point' style='color: #76031c'>Sintomático: " + row.symptomatic + "</div><div class='morris-hover-point' style='color: #b3b500'>Assintomático: " + row.asymptomatic + "</div><div class='morris-hover-point' style='color: #f5a623'>Total: " + row.total + " </div>"
+                    return c;
+                }
+            });
+
+        };
+        /**/
         $scope.loadMap = function() {
             var map, json_url;
             json_url = 'https://s3.amazonaws.com/epitrackgeojson/uf.json';
@@ -60,7 +138,8 @@ angular.module('gdsApp')
                     console.log('notification OK', data.data)
                     var result = data.data;
                     $scope.dash = result;
-                    organizeGrathData($scope.dash);
+                    $scope.dadosGrafico = $scope.dash;
+                    $scope.updateParticipacoes();
                     setPercOps();
                     $scope.filterAgeByState();
                     $scope.filterRaceByState();
@@ -70,11 +149,12 @@ angular.module('gdsApp')
         };
 
         function setPercOps() {
-            $scope.graphicOnePerc = ((($scope.dash.newRegisters / $scope.dash.lastWeekRegisters) - 1) * 100).toFixed(1);
+            $scope.graphicOnePerc = (( ($scope.dash.newRegisters-$scope.dash.lastWeekRegisters)/$scope.dash.lastWeekRegisters)*100).toFixed(1);
+            console.log($scope.graphicOnePerc);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
-            $scope.graphicTwoPerc = ((($scope.dash.lastWeekRegisters / $scope.dash.newRegisters) - 1) * 100).toFixed(1);
+            $scope.graphicTwoPerc = (( ($scope.dash.lastWeekRegisters-$scope.dash.newRegisters)/$scope.dash.newRegisters)*100).toFixed(1);
             angular.element('.chart2').data('easyPieChart').update($scope.graphicTwoPerc);
             angular.element('.chart2').attr('data-legend', $scope.graphicTwoPerc + '%');
         }
@@ -108,32 +188,7 @@ angular.module('gdsApp')
 
         };
 
-        function organizeGrathData(data) {
-            var d = {};
 
-            console.log('data', data);
-            var dd = [];
-            for (var i = 0; i < data.symptomatic.length; i++) {
-                var t = parseInt(data.symptomatic[i].total) + parseInt(data.asymptomatic[i].total);
-                dd.push({ y: data.symptomatic[i]._id, symptomatic: data.symptomatic[i].total, asymptomatic: data.asymptomatic[i].total, total: t });
-            }
-            Morris.Line({
-                element: 'line-example',
-                data: dd,
-                lineColors: ['#76031c', '#b3b500', '#f5a623'],
-                xkey: 'y',
-                ykeys: ['symptomatic', 'asymptomatic', 'total'],
-                labels: ['Sintomático', 'Assintomático', "Total"],
-                xLabelFormat: function(x) {
-                    return moment(x).format("DD/MM/YYYY");
-                },
-                hoverCallback: function(index, options, content, row) {
-                    var c = "<div class='morris-hover-row-label'></div><div class='morris-hover-point' style='color: #76031c'>Sintomático: " + row.symptomatic + "</div><div class='morris-hover-point' style='color: #b3b500'>Assintomático: " + row.asymptomatic + "</div><div class='morris-hover-point' style='color: #f5a623'>Total: " + row.total + " </div>"
-                    return c;
-                }
-            });
-
-        }
 
         $scope.graphlineOptions = {}
         $scope.graphicOptionsDown = {
@@ -227,13 +282,10 @@ angular.module('gdsApp')
                 }
                 $scope.agesates[$scope.dash.womenByAge[i]._id]['women']['total'] = count;
             }
-
-
             $scope._agesates = [];
             for (var o in $scope.agesates) {
                 $scope._agesates.push({ id: o });
             }
-            console.log($scope.agesates);
         };
         $scope.getAgeByStateStatsValue = function(uf, key, value, div) {
             if ($scope.agesates !== undefined && $scope.agesates[uf] !== undefined && $scope.agesates[uf][key] !== undefined) {
@@ -253,6 +305,8 @@ angular.module('gdsApp')
         }
 
         $scope.filterRaceByState = function() {
+
+
             $scope.racesates = {};
             for (var i = 0; i < $scope.dash.menByRace.length; i++) {
                 if ($scope.racesates[$scope.dash.menByRace[i]._id] === undefined) {
@@ -266,7 +320,6 @@ angular.module('gdsApp')
                 }
                 $scope.racesates[$scope.dash.menByRace[i]._id]['men']['total'] = count;
             }
-
             for (var i = 0; i < $scope.dash.womenByRace.length; i++) {
                 if ($scope.racesates[$scope.dash.womenByRace[i]._id] === undefined) {
                     $scope.racesates[$scope.dash.womenByRace[i]._id] = {};
@@ -279,13 +332,10 @@ angular.module('gdsApp')
                 }
                 $scope.racesates[$scope.dash.womenByRace[i]._id]['women']['total'] = count;
             }
-
-
             $scope._racesates = [];
             for (var o in $scope.racesates) {
                 $scope._racesates.push({ id: o });
             }
-            console.log($scope.racesates);
         };
 
         $scope.getRaceByStateStatsValue = function(uf, key, value, div) {
@@ -305,16 +355,7 @@ angular.module('gdsApp')
             }
         }
 
-        // ====
-        // Call functions
         $scope.getAllData();
-        $scope.data = {};
-        $scope.data.symptomatic = true;
-        $scope.data.asymptomatic = true;
-        $scope.data.total = true;
 
-        $scope.$watch('data', function(newValue, oldValue) {
-            console.log(newValue);
-        });
 
     }]);

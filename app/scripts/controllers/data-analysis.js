@@ -76,6 +76,8 @@ angular.module('gdsApp')
         $scope.params = {};
         $scope.params.variaveis = [];
         $scope.params.filtros = [];
+        $scope.params.eixox = [];
+        $scope.params.eixoy = [];
 
         $scope.remove_params = function(index, key) {
           console.log($scope.params[key][index].c);

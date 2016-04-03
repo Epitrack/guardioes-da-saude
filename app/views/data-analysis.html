@@ -47,7 +47,7 @@
             <li id="idade" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="age = !age" class="btn-var" ng-class="{ 'active' : age }" data-toggle="collapse" data-target="#idade-content">Idade</button>
-                 <div id="idade-content" class="collapse panel-collapse">
+                <div id="idade-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
                             <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','13_19')" value="13_19" id="faixa-1" class="checkbox-primary">
@@ -89,7 +89,7 @@
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Race -->
                 <button ng-click="race = !race" class="btn-var" ng-class="{ 'active' : race }" data-toggle="collapse" data-target="#raca-content">Raça/Cor</button>
-                 <div id="raca-content" class="collapse panel-collapse">
+                <div id="raca-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
                             <input type="checkbox" name="race" ng-model="dash.race.branco" value="true" id="race-branco" class="checkbox-primary">
@@ -120,8 +120,10 @@
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
                 <div id="semanas-content" class="collapse panel-collapse">
                     <div class="collapse-content">
-                        <div class="range-bg"></div>
-                        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div>
+                        <!--  <div class="range-bg"></div>
+                        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div> -->
+                        <md-slider ng-model="myValue" min="5" max="500">
+                        </md-slider>
                     </div>
                 </div>
             </li>
@@ -129,9 +131,22 @@
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Epidemiological weeks -->
                 <button ng-click="period = !period" class="btn-var" ng-class="{ 'active' : period }" data-toggle="collapse" data-target="#mesano-content">Mês/Ano</button>
-                 <div id="mesano-content" class="collapse panel-collapse">
+                <div id="mesano-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
-                        Mês e Ano
+                        <div class="row" style="font-size: 2em; padding-left: 20px; padding-right: 10px;">
+                            <div style="float: left; width: 50%;">
+                                <p style="font-size: 1.3em;">Mês</p>
+                                <select style="height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); width: 80%;">
+                                    <option value="Selecione">Selecione</option>
+                                </select>
+                            </div>
+                            <div style="float: left; width: 50%;">
+                                <p style="font-size: 1.3em;">Ano</p>
+                                <select style="height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); width: 80%;">
+                                    <option value="Selecione">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -179,30 +194,112 @@
                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
-                        <div>
-                            <button class="btn btn-default" ng-click="clear()">Limpar variáveis</button>
-                            <button class="btn btn-primary" ng-click="getGraphic()">Análisar variáveis</button>
+                        <div style="float: right;">
+                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
                         </div>
                     </div>
-                    <!-- sort: true -->
-                    <!-- sort: true -->
                 </uib-slide>
                 <uib-slide>
                     <img src="../../images/dashboard/icon_histograma.svg" style="margin:auto;">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="height: 70px;">
                         <p>Histograma</p>
+                    </div>
+                    <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
+                        <p style="font-size: 18px;">Eixo X</p>
+                        <div class="div-selecao" ng-repeat="v in params.eixox">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'eixox')">Remover</button>
+                        </div>
+                        <ul ng-show="params.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixox')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Eixo Y</p>
+                        <div class="div-selecao" ng-repeat="v in params.eixoy">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'eixoy')">Remover</button>
+                        </div>
+                        <ul ng-show="params.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixoy')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Filtro(s)</p>
+                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                        </div>
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        </ul>
+                        <div style="clear: both;height: 30px;"></div>
+                        <div style="float: right;">
+                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                        </div>
                     </div>
                 </uib-slide>
                 <uib-slide>
                     <img src="../../images/dashboard/icon_coluna.svg" style="margin:auto;">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="height: 70px;">
                         <p>Barras</p>
+                    </div>
+                    <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
+                        <p style="font-size: 18px;">Eixo X</p>
+                        <div class="div-selecao" ng-repeat="v in params.eixox">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'eixox')">Remover</button>
+                        </div>
+                        <ul ng-show="params.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixox')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Eixo Y</p>
+                        <div class="div-selecao" ng-repeat="v in params.eixoy">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'eixoy')">Remover</button>
+                        </div>
+                        <ul ng-show="params.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixoy')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Filtro(s)</p>
+                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                        </div>
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        </ul>
+                        <div style="clear: both;height: 30px;"></div>
+                        <div style="float: right;">
+                           <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                        </div>
                     </div>
                 </uib-slide>
                 <uib-slide>
                     <img src="../../images/dashboard/icon_tabela.svg" style="margin:auto;">
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" style="height: 70px;">
                         <p>Tabela</p>
+                    </div>
+                    <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
+                        <p style="font-size: 18px;">Colunas</p>
+                        <div class="div-selecao" ng-repeat="v in params.variaveis">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'variaveis')">Remover</button>
+                        </div>
+                        <ul ng-show="params.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'variaveis')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Linhas</p>
+                        <div class="div-selecao" ng-repeat="v in params.variaveis">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'variaveis')">Remover</button>
+                        </div>
+                        <ul ng-show="params.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'variaveis')">
+                        </ul>
+                        <p style="font-size: 18px;clear: both;">Filtro(s)</p>
+                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                            <div class="btn-selecionado">{{v.label}}</div>
+                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                        </div>
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        </ul>
+                        <div style="clear: both;height: 30px;"></div>
+                        <div style="float: right;">
+                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                        </div>
                     </div>
                 </uib-slide>
             </uib-carousel>

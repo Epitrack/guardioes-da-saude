@@ -111,9 +111,10 @@
         text-align: center;
         &:before {
             content: attr(data-legend);
-            line-height: 80px;
             font-size: ($fs-normal)+.4;
             color: $font-primary;
+            line-height: 90px;
+            margin-left: 10px;
         }
         &:after {
             content: '';
@@ -584,6 +585,7 @@
     background-color: rgba(29, 135, 229, 0.2);
     border: dashed 2px #C8C8C8;
     padding-top: 16px;
+    margin-bottom: 10px;
 }
 
 .collapse-content {
@@ -675,4 +677,53 @@
 
 path {
     /*fill: rgb(197, 215, 239);*/
+}
+
+.ngrs-range-slider {
+  border: none;
+  @include bsd(0, 0, 0, transparent);
+
+  .ngrs-join {
+    @include linear-gradient(0deg, #207be9, #207be9);
+  }
+
+  .ngrs-handle {
+    background-color: #207be9;
+    @include bdr(100%);
+  }
+}
+
+%range-bg {
+  content: '';
+  width: 16px;
+  height: 16px;
+  top: -3px;
+  position: absolute;
+  z-index: 20;
+  background-color: #d7d7d7;
+  @include bdr(100%);
+}
+
+.range-bg {
+  width: 280px;
+  height: 10px;
+  background-color: #d7d7d7;
+  position: relative;
+  top: 28px;
+  left: 15px;
+  z-index: 1;
+
+  &:before {
+    @extend %range-bg;
+    left: -10px;
+  }
+
+  &:after {
+    @extend %range-bg;
+    right: -10px;
+  }
+}
+
+.btn-font{
+  font-size: 2.5em;
 }
