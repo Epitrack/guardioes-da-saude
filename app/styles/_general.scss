@@ -1235,6 +1235,16 @@ body {
 .news-tweet {
   font-size: ($fs-medium)-.4;
   margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: $week-days-color;
+    @include transition(color, .25s, 0s, linear);
+
+    &:hover {
+      color: $btn-primary;
+    }
+  }
 }
 
 .news-footer {
