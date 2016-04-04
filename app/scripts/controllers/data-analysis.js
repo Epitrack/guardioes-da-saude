@@ -8,15 +8,62 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location) {
-
-        // ====
-        // Get all symptoms
+    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope) {
+        var DEPARA = {
+                "ID_REG_SEQ": "ID_REG_SEQ",
+                "ID_REG_SEQ": "ID_REG_SEQ",
+                "APELIDO": "APELIDO",
+                "age": "IDADE",
+                "gender": "SEXO",
+                "email": "EMAIL",
+                "race": "COR",
+                "DT_CADASTRO": "DT_CADASTRO",
+                "DT_REGISTRO_DIA": "DT_REGISTRO_DIA",
+                "DT_REGISTRO_HORA": "DT_REGISTRO_HORA",
+                "LOC_REGISTRO": "LOC_REGISTRO",
+                "local": "REGIAO",
+                "EQUIPAMENTO": "EQUIPAMENTO",
+                "LAT": "LAT",
+                "LONG": "LONG",
+                "STATUS": "STATUS",
+                "febre": "FEBRE",
+                "manchas-vermelhas": "MANVERM",
+                "dor-no-corpo": "DORCORPO",
+                "dor-nas-juntas": "DORJUNTAS",
+                "dor-de-cabeca": "DORCABECA",
+                "coceira": "COCEIRA",
+                "olhos-vermelhos": "OLHOSVERM",
+                "dor-de-garganta": "DORGARGA",
+                "tosse": "TOSSE",
+                "falta-de-ar": "FALTAAR",
+                "nausea-vomito": "NAUSVOM",
+                "diarreia": "DIARREIA",
+                "sangramento": "SANGRAME",
+                "CONTATO": "CONTATO",
+                "SERVSAUDE": "SERVSAUDE",
+                "CADASTRO": "CADASTRO",
+                "SINTOMA": "SINTOMA",
+                "diarreica": "SIND_DIA",
+                "respiratoria": "SIND_RES",
+                "exantematica": "SIND_EXA",
+                "NUMPART": "NUMPART",
+                "TOTPART": "TOTPART",
+                "MEMBROS": "MEMBROS",
+                "TIPOUSUARIO": "TIPOUSUARIO",
+                "FORAPAIS": "FORAPAIS",
+            }
+            // ====
+            // Get all symptoms
         $scope.dash = {};
         $scope.analytics = {};
 
+        $scope.goback = function() {
+            $location.path('/dashboard/analysis');
+        };
+
         Surveyapi.getSymptoms(function(data) {
             $scope.symptomsList = data.data.data;
+            console.log($scope.symptomsList);
         });
 
         $scope.getAllData = function() {
@@ -27,18 +74,7 @@ angular.module('gdsApp')
             });
         };
         $scope.getAllData();
-        /**/
-        $scope.selecionarAnalytics = function(key, code) {
-            if ($scope.analytics[key] == undefined) {
-                $scope.analytics[key] = {};
-            }
-            if ($scope.analytics[key][code] === undefined) {
-                $scope.analytics[key][code] = true;
-            } else {
-                $scope.analytics[key][code] = !$scope.analytics[key][code];
-            }
-            console.log($scope.analytics);
-        };
+
         // ====
 
         // ====
@@ -95,6 +131,18 @@ angular.module('gdsApp')
         $scope.variaveis.monthyear = {};
         $scope.variaveis.local = {};
         /**/
+        $scope.selecionarAnalytics = function(key, code) {
+            if ($scope.analytics[key] == undefined) {
+                $scope.analytics[key] = {};
+            }
+            if ($scope.analytics[key][code] === undefined) {
+                $scope.analytics[key][code] = true;
+            } else {
+                $scope.analytics[key][code] = !$scope.analytics[key][code];
+            }
+            console.log($scope.analytics);
+        };
+        /**/
         $scope.initparams = function() {
             $scope.params['pizza'] = {};
             $scope.params['histograma'] = {};
@@ -126,7 +174,7 @@ angular.module('gdsApp')
             var data = ev.dataTransfer.getData("id");
             var comp = document.getElementById(data);
             console.log(comp);
-            $scope.params[type][key].push({ label: $(comp).find("button").html(), c: comp });
+            $scope.params[type][key].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
             $(comp).parent().empty();
             ev.preventDefault();
         }
@@ -143,9 +191,29 @@ angular.module('gdsApp')
             }
         };
 
+        $scope.loadfile = function(callback) {
+            if (window.localStorage.getItem('surveys') === null) {
+                var psv = d3.dsv(";", "text/plain");
+                psv("/scripts/util/surveys.csv", function(data) {
+                    window.localStorage.setItem('surveys', JSON.stringify(data));
+                    callback(data);
+                });
+            } else {
+                callback(JSON.parse(window.localStorage.getItem('surveys')));
+            }
+        }
         $scope.getGraphic = function(type) {
-            $location.path('/dashboard/analysis/result');
-        };
+            console.log($scope.params[type]);
+            console.log($scope.variaveis);
+            console.log($scope.analytics);
 
+            $scope.loadfile(function(data) {
+                console.log(_.groupByMulti(data, ['EQUIPAMENTO', 'REGIAO']));
+                // $location.path('/dashboard/analysis/result');
+                /*
+                $rootScope.$broadcast('dashboardresult');
+                $location.path("app/ipvaresult");
+                */
+            });
+        };
     });
-/**/

@@ -19,7 +19,7 @@
                     <div class="collapse-content imageBased">
                         <fieldset ng-repeat="symptom in symptomsList">
                             <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
-                            <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
+                            <label for="symptom-{{symptom.id}}">{{symptom.name}} - {{symptom.code}}</label>
                         </fieldset>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                     </div>
                     <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
                         <p style="font-size: 18px;">Eixo X</p>
-                        <div class="div-selecao" ng-repeat="v in params.eixox">
+                        <div class="div-selecao" ng-repeat="v in params.histograma.eixox">
                             <div class="btn-selecionado">{{v.label}}</div>
                             <button class="btn-remover" ng-click="remove_params($index,'histograma','eixox')">Remover</button>
                         </div>
