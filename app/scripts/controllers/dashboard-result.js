@@ -8,10 +8,8 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('DashboardResultCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
+
+        $rootScope.$on('dashboardresult', function(event, args) {
+        });
+    });

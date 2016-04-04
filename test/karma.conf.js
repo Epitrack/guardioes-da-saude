@@ -52,6 +52,12 @@ module.exports = function(config) {
       'bower_components/angular-material/angular-material.js',
       'bower_components/requirejs/require.js',
       'bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js',
+      'bower_components/Chart.js/Chart.js',
+      'bower_components/Sortable/Sortable.js',
+      'bower_components/Sortable/ng-sortable.js',
+      'bower_components/Sortable/knockout-sortable.js',
+      'bower_components/Sortable/react-sortable-mixin.js',
+      'bower_components/d3/d3.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
