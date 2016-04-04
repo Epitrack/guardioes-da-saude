@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('DataAnalysisCtrl', function(Surveyapi, $scope) {
+    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location) {
 
         // ====
         // Get all symptoms
@@ -19,6 +19,15 @@ angular.module('gdsApp')
             $scope.symptomsList = data.data.data;
         });
 
+        $scope.getAllData = function() {
+            DashboardApi.getAllData(function(data) {
+                var result = data.data;
+                $scope.dash = result;
+
+            });
+        };
+        $scope.getAllData();
+        /**/
         $scope.selecionarAnalytics = function(key, code) {
             if ($scope.analytics[key] == undefined) {
                 $scope.analytics[key] = {};
@@ -28,7 +37,7 @@ angular.module('gdsApp')
             } else {
                 $scope.analytics[key][code] = !$scope.analytics[key][code];
             }
-            console.log($scope.analytics[key]);
+            console.log($scope.analytics);
         };
         // ====
 
@@ -73,23 +82,51 @@ angular.module('gdsApp')
             group: 'todo',
             animation: 150
         };
+        /**/
         $scope.params = {};
-        $scope.params.variaveis = [];
-        $scope.params.filtros = [];
-        $scope.params.eixox = [];
-        $scope.params.eixoy = [];
+        /**/
+        $scope.variaveis = {};
+        $scope.variaveis.symptoms = {};
+        $scope.variaveis.syndromes = {};
+        $scope.variaveis.age = {};
+        $scope.variaveis.gender = {};
+        $scope.variaveis.race = {};
+        $scope.variaveis.weeks = {};
+        $scope.variaveis.monthyear = {};
+        $scope.variaveis.local = {};
+        /**/
+        $scope.initparams = function() {
+            $scope.params['pizza'] = {};
+            $scope.params['histograma'] = {};
+            $scope.params['barras'] = {};
+            $scope.params['tabela'] = {};
+            $scope.params['pizza'].variaveis = [];
+            $scope.params['pizza'].filtros = [];
+            $scope.params['histograma'].eixox = [];
+            $scope.params['histograma'].eixoy = [];
+            $scope.params['histograma'].filtros = [];
+            $scope.params['barras'].eixox = [];
+            $scope.params['barras'].eixoy = [];
+            $scope.params['barras'].filtros = [];
+            $scope.params['tabela'].colunas = [];
+            $scope.params['tabela'].linhas = [];
+            $scope.params['tabela'].filtros = [];
 
-        $scope.remove_params = function(index, key) {
-          console.log($scope.params[key][index].c);
-            $("#variaveis").append($scope.params[key][index].c);
-            $scope.params[key].splice(index, 1);
+        };
+        /**/
+        $scope.initparams();
+
+        $scope.remove_params = function(index, type, key) {
+            console.log($scope.params[type][key][index].c);
+            $("#variaveis").append($scope.params[type][key][index].c);
+            $scope.params[type][key].splice(index, 1);
         };
 
-        $scope.dropaction = function(ev, key) {
+        $scope.dropaction = function(ev, type, key) {
             var data = ev.dataTransfer.getData("id");
             var comp = document.getElementById(data);
             console.log(comp);
-            $scope.params[key].push({ label: $(comp).find("button").html(), c: comp });
+            $scope.params[type][key].push({ label: $(comp).find("button").html(), c: comp });
             $(comp).parent().empty();
             ev.preventDefault();
         }
@@ -98,13 +135,16 @@ angular.module('gdsApp')
             ev.dataTransfer.setData("id", ev.target.id);
         }
 
-        $scope.clear = function() {
-            for (var i = 0; i < $scope.params.variaveis.length; i++) {
-                $scope.remove_params(i, 'variaveis');
+        $scope.clear = function(key) {
+            for (var o in $scope.params[key]) {
+                for (var i = 0; i < $scope.params[key][o].length; i++) {
+                    $scope.remove_params(i, key, o);
+                }
             }
-            for (var j = 0; j < $scope.params.filtros.length; j++) {
-                $scope.remove_params(j, 'filtros');
-            }
+        };
+
+        $scope.getGraphic = function(type) {
+            $location.path('/dashboard/analysis/result');
         };
 
     });

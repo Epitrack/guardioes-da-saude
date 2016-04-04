@@ -12,109 +12,109 @@
         <legend class="legend-subtitle other">Variáveis</legend>
         <!-- Sintomas -->
         <ul id="variaveis" ng-sortable="opts">
-            <li id="sintomas" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="symptoms" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="symptoms = !symptoms" class="btn-var " ng-class="{ 'active' : symptoms }" data-toggle="collapse" data-target="#sintomas-content"> Sintomas</button>
                 <div id="sintomas-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset ng-repeat="symptom in symptomsList">
-                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('sintomas',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
                             <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="sindromes" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="syndromes" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="sindromes = !sindromes" class="btn-var" ng-class="{ 'active' : sindromes }" data-toggle="collapse" data-target="#sindromes-content">Síndromes</button>
                 <div id="sindromes-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','diarreica')" value="true" id="diarreica" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','diarreica')" value="true" id="diarreica" class="checkbox-primary">
                             <label for="diarreica">Diarreica</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','exantematica')" value="true" id="exantematica" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','exantematica')" value="true" id="exantematica" class="checkbox-primary">
                             <label for="exantematica">Exantemática</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('sindromes','respiratoria')" value="true" id="respiratoria" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','respiratoria')" value="true" id="respiratoria" class="checkbox-primary">
                             <label for="respiratoria">Respiratória</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="idade" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="age" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="age = !age" class="btn-var" ng-class="{ 'active' : age }" data-toggle="collapse" data-target="#idade-content">Idade</button>
                 <div id="idade-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
-                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','13_19')" value="13_19" id="faixa-1" class="checkbox-primary">
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('age','13_19')" value="13_19" id="faixa-1" class="checkbox-primary">
                             <label for="faixa-1">13 a 19 anos</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','20_24')" value="20_24" id="faixa-2" class="checkbox-primary">
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('age','20_24')" value="20_24" id="faixa-2" class="checkbox-primary">
                             <label for="faixa-2">20 a 24 anos</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','25_59')" value="25_59" id="faixa-3" class="checkbox-primary">
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('age','25_59')" value="25_59" id="faixa-3" class="checkbox-primary">
                             <label for="faixa-3">25 a 59 anos</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('idade','60')" value="60" id="faixa-4" class="checkbox-primary">
+                            <input type="checkbox" name="idade" ng-click="selecionarAnalytics('age','60')" value="60" id="faixa-4" class="checkbox-primary">
                             <label for="faixa-4">> 60 anos</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="sexo" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="gender" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Gender -->
                 <button ng-click="gender = !gender" class="btn-var" ng-class="{ 'active' : gender }" data-toggle="collapse" data-target="#sexo-content">Sexo</button>
                 <div id="sexo-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
-                            <input type="checkbox" name="gender" ng-model="dash.gender.masculino" value="M" id="masculino" class="checkbox-primary">
+                            <input type="checkbox" name="gender" ng-click="selecionarAnalytics('gender','M')" value="M" id="masculino" class="checkbox-primary">
                             <label for="masculino">Masculino</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="gender" ng-model="dash.gender.feminino" value="F" id="feminino" class="checkbox-primary">
+                            <input type="checkbox" name="gender" ng-click="selecionarAnalytics('gender','F')" value="F" id="feminino" class="checkbox-primary">
                             <label for="feminino">Feminino</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="raca" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="race" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Race -->
                 <button ng-click="race = !race" class="btn-var" ng-class="{ 'active' : race }" data-toggle="collapse" data-target="#raca-content">Raça/Cor</button>
                 <div id="raca-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
-                            <input type="checkbox" name="race" ng-model="dash.race.branco" value="true" id="race-branco" class="checkbox-primary">
+                            <input type="checkbox" name="race" ng-click="selecionarAnalytics('race','branco')" value="true" id="race-branco" class="checkbox-primary">
                             <label for="race-branco">Branco</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="race" ng-model="dash.race.preto" value="true" id="race-preto" class="checkbox-primary">
+                            <input type="checkbox" name="race" ng-click="selecionarAnalytics('race','preto')"  value="true" id="race-preto" class="checkbox-primary">
                             <label for="race-preto">Preto</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="race" ng-model="dash.race.pardo" value="true" id="race-pardo" class="checkbox-primary">
+                            <input type="checkbox" name="race" ng-click="selecionarAnalytics('race','pardo')" value="true" id="race-pardo" class="checkbox-primary">
                             <label for="race-pardo">Pardo</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="race" ng-model="dash.race.amarelo" value="true" id="race-amarelo" class="checkbox-primary">
+                            <input type="checkbox" name="race" ng-click="selecionarAnalytics('race','amarelo')" value="true" id="race-amarelo" class="checkbox-primary">
                             <label for="race-amarelo">Amarelo</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="race" ng-model="dash.race.indigena" value="true" id="race-indigena" class="checkbox-primary">
+                            <input type="checkbox" name="race" ng-click="selecionarAnalytics('race','indigena')" value="true" id="race-indigena" class="checkbox-primary">
                             <label for="race-indigena">Indígena</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="semanas" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="weeks" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Epidemiological weeks -->
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
@@ -122,12 +122,12 @@
                     <div class="collapse-content">
                         <!--  <div class="range-bg"></div>
                         <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div> -->
-                        <md-slider ng-model="myValue" min="5" max="500">
+                        <md-slider ng-model="analytics.weeks" ng-change="selecionarAnalytics('weeks',this.value)" min="1" max="52" >
                         </md-slider>
                     </div>
                 </div>
             </li>
-            <li id="mesano" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="monthyear" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Epidemiological weeks -->
                 <button ng-click="period = !period" class="btn-var" ng-class="{ 'active' : period }" data-toggle="collapse" data-target="#mesano-content">Mês/Ano</button>
@@ -159,9 +159,9 @@
                         <fieldset>
                             <label for="">Adicionar regiões e estados</label>
                         </fieldset>
-                        <fieldset>
-                            <input type="checkbox" name="local" ng-model="dash.local" value="PE" id="pe" class="checkbox-primary">
-                            <label for="pe">Pernambuco</label>
+                        <fieldset ng-repeat="l in dash.usersByState">
+                            <input type="checkbox"  name="local" ng-click="selecionarAnalytics('local',l._id)" value="true" id="local-{{l._id}}" class="checkbox-primary">
+                            <label for="local-{{l._id}}">{{l._id}}</label>
                         </fieldset>
                     </div>
                 </div>
@@ -180,23 +180,23 @@
                     </div>
                     <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
                         <p style="font-size: 18px;">Variável</p>
-                        <div class="div-selecao" ng-repeat="v in params.variaveis">
+                        <div class="div-selecao" ng-repeat="v in params.pizza.variaveis">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'variaveis')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'pizza','variaveis')">Remover</button>
                         </div>
-                        <ul ng-show="params.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'variaveis')">
+                        <ul ng-show="params.pizza.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'pizza','variaveis')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Filtro(s)</p>
-                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                        <div class="div-selecao" ng-repeat="v in params.pizza.filtros">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'pizza','filtros')">Remover</button>
                         </div>
-                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'pizza','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-click="clear('pizza')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic('pizza')">Análisar variáveis</button>
                         </div>
                     </div>
                 </uib-slide>
@@ -209,28 +209,28 @@
                         <p style="font-size: 18px;">Eixo X</p>
                         <div class="div-selecao" ng-repeat="v in params.eixox">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'eixox')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'histograma','eixox')">Remover</button>
                         </div>
-                        <ul ng-show="params.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixox')">
+                        <ul ng-show="params.histograma.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'histograma','eixox')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Eixo Y</p>
-                        <div class="div-selecao" ng-repeat="v in params.eixoy">
+                        <div class="div-selecao" ng-repeat="v in params.histograma.eixoy">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'eixoy')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'histograma','eixoy')">Remover</button>
                         </div>
-                        <ul ng-show="params.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixoy')">
+                        <ul ng-show="params.histograma.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'histograma','eixoy')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Filtro(s)</p>
-                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                        <div class="div-selecao" ng-repeat="v in params.histograma.filtros">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'histograma','filtros')">Remover</button>
                         </div>
-                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'histograma','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-click="clear('histograma')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic('histograma')">Análisar variáveis</button>
                         </div>
                     </div>
                 </uib-slide>
@@ -241,30 +241,30 @@
                     </div>
                     <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
                         <p style="font-size: 18px;">Eixo X</p>
-                        <div class="div-selecao" ng-repeat="v in params.eixox">
+                        <div class="div-selecao" ng-repeat="v in params.barras.eixox">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'eixox')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'barras','eixox')">Remover</button>
                         </div>
-                        <ul ng-show="params.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixox')">
+                        <ul ng-show="params.barras.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'barras','eixox')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Eixo Y</p>
-                        <div class="div-selecao" ng-repeat="v in params.eixoy">
+                        <div class="div-selecao" ng-repeat="v in params.barras.eixoy">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'eixoy')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'barras','eixoy')">Remover</button>
                         </div>
-                        <ul ng-show="params.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'eixoy')">
+                        <ul ng-show="params.barras.eixoy.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'barras','eixoy')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Filtro(s)</p>
-                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                        <div class="div-selecao" ng-repeat="v in params.barras.filtros">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'barras','filtros')">Remover</button>
                         </div>
-                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'barras','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
                         <div style="float: right;">
-                           <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                           <button class="btn  btn-default btn-font" ng-click="clear('barras')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic('barras')">Análisar variáveis</button>
                         </div>
                     </div>
                 </uib-slide>
@@ -275,30 +275,30 @@
                     </div>
                     <div class="col-sm-12" style="z-index: 2; text-align: justify; margin-top: 50px; margin-bottom: 40px;">
                         <p style="font-size: 18px;">Colunas</p>
-                        <div class="div-selecao" ng-repeat="v in params.variaveis">
+                        <div class="div-selecao" ng-repeat="v in params.tabela.colunas">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'variaveis')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'tabela','colunas')">Remover</button>
                         </div>
-                        <ul ng-show="params.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'variaveis')">
+                        <ul ng-show="params.tabela.colunas.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'tabela','colunas')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Linhas</p>
-                        <div class="div-selecao" ng-repeat="v in params.variaveis">
+                        <div class="div-selecao" ng-repeat="v in params.tabela.linhas">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'variaveis')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'tabela','linhas')">Remover</button>
                         </div>
-                        <ul ng-show="params.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'variaveis')">
+                        <ul ng-show="params.tabela.linhas.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'tabela','linhas')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Filtro(s)</p>
-                        <div class="div-selecao" ng-repeat="v in params.filtros">
+                        <div class="div-selecao" ng-repeat="v in params.tabela.filtros">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'filtros')">Remover</button>
+                            <button class="btn-remover" ng-click="remove_params($index,'tabela','filtros')">Remover</button>
                         </div>
-                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'filtros')">
+                        <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'tabela','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear()">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic()">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-click="clear('tabela')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-click="getGraphic('tabela')">Análisar variáveis</button>
                         </div>
                     </div>
                 </uib-slide>

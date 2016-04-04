@@ -1,18 +1,30 @@
 <!-- Menu -->
+<style type="text/css">
+.chart-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+</style>
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
     <h2 class="section-title">Painel de controle <span>/ Análise de dados / Resultados</span></h2>
-    <article class="col-xs-12 card">
+    <article class="col-xs-12 card" style="padding: 20px;">
         <div>
             <span style="width: 255px;   height: 32px;   font-family: .HelveticaNeueDeskInterface-Regular;   font-size: 26.4px;   color: #4c4c4c;">Análise de Síndromes</span>
+            <select style="width: 250px; height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); float: right; font-size: 2.5em;">
+                <option>Visualizar Filtros</option>
+            </select>
         </div>
-        <button class="btn btn-default btn-font" data-toggle="modal" data-target="#download-csv">Abrir</button>
-        <div>
-            <canvas id="myChart" width="400" height="400">s</canvas>
+        <!-- <button class="btn btn-default btn-font" data-toggle="modal" data-target="#download-csv">Abrir</button> -->
+        <div style="padding: 40px;">
+            <canvas id="myChart" width="400" height="400" style="width: 400px; height: 400px; float: left;"></canvas>
+            <div id="js-legend" class="chart-legend" style="font-size: 3em; float: left; right: 14px; margin-top: 10%; margin-left: 10%;"></div>
         </div>
-        <div>
-            <canvas id="myChart1" width="400" height="400">s</canvas>
+        <div style="display:none">
+            <canvas id="myChart1" width="400" height="400"></canvas>
         </div>
         <script type="text/javascript">
         var ctx = document.getElementById("myChart").getContext("2d");
@@ -34,15 +46,16 @@
             segmentShowStroke: true,
             segmentStrokeColor: "#fff",
             segmentStrokeWidth: 2,
-            percentageInnerCutout: 50,
+            // percentageInnerCutout: 50,
+            tooltipTemplate: "<%= value %>",
             animationSteps: 100,
             animationEasing: "easeOutBounce",
             animateRotate: true,
             animateScale: false,
             legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-
         }
         var myNewChart = new Chart(ctx).Pie(data, options);
+        document.getElementById('js-legend').innerHTML = myNewChart.generateLegend();
         var data1 = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
