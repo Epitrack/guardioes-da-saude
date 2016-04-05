@@ -196,7 +196,7 @@ angular.module('gdsApp')
         $scope.loadfile = function(callback) {
             if (window.sessionStorage.getItem('surveys') === null) {
                 var psv = d3.dsv(";", "text/plain");
-                psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.csv", function(data) {
+                psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
                     window.sessionStorage.setItem('surveys', JSON.stringify(data));
                     callback(data);
                 });

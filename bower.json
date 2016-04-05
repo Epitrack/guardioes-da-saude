@@ -43,5 +43,11 @@
         "dist/js/bootstrap.js"
       ]
     }
-  }
+  },
+  "ignore": [
+    "bower_components/Sortable/knockout-sortable.js",
+    "knockout-sortable.js",
+    "bower_components/Sortable/react-sortable-mixin.js",
+    "react-sortable-mixin.js"
+  ]
 }
