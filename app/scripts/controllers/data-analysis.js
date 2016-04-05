@@ -46,7 +46,7 @@ angular.module('gdsApp')
                 "diarreica": "SIND_DIA",
                 "respiratoria": "SIND_RES",
                 "exantematica": "SIND_EXA",
-                "NUMPART": "NUMPART",
+                "syndromes": "SINDROME",
                 "TOTPART": "TOTPART",
                 "MEMBROS": "MEMBROS",
                 "TIPOUSUARIO": "TIPOUSUARIO",
@@ -194,35 +194,30 @@ angular.module('gdsApp')
         };
 
         $scope.loadfile = function(callback) {
-            if (window.localStorage.getItem('surveys') === null) {
+            if (window.sessionStorage.getItem('surveys') === null) {
                 var psv = d3.dsv(";", "text/plain");
                 psv("/scripts/util/surveys.csv", function(data) {
-                    window.localStorage.setItem('surveys', JSON.stringify(data));
+                    window.sessionStorage.setItem('surveys', JSON.stringify(data));
                     callback(data);
                 });
             } else {
-                callback(JSON.parse(window.localStorage.getItem('surveys')));
+                callback(JSON.parse(window.sessionStorage.getItem('surveys')));
             }
         }
         $scope.getGraphic = function(type) {
-            console.log($scope.params[type]);
-            console.log($scope.variaveis);
-            console.log($scope.analytics);
-
-            var simtomas = ['febre', 'manchas-vermelhas', 'dor-no-corpo', 'dor-nas-juntas', 'dor-de-cabeca', 'coceira', 'olhos-vermelhos', 'dor-de-garganta', 'tosse', 'falta-de-ar', 'nausea-vomito', 'diarreia', 'sangramento'];
-
+            /* console.log($scope.params[type]);
+             console.log($scope.variaveis);
+             console.log($scope.analytics);*/
+            var is_sintoma = false;
             $scope.loadfile(function(data) {
                 var groups = [];
                 var obj = {};
                 for (var o in $scope.params[type]) {
                     if (o !== 'filtros') {
                         for (var i in $scope.params[type][o]) {
-                            /*var s = $scope.DEPARA[$scope.params[type][o][i].id];
-                            if (s === 'SINTOMA') {
-                                for (var si = 0; si < simtomas.length; si++) {
-                                    groups.push($scope.DEPARA[simtomas[si]]);
-                                }
-                            } else {*/
+                            if ($scope.DEPARA[$scope.params[type][o][i].id] === 'SINTOMA') {
+                                is_sintoma = true;
+                            }
                             groups.push($scope.DEPARA[$scope.params[type][o][i].id]);
                         }
                     } else {
@@ -236,19 +231,21 @@ angular.module('gdsApp')
                     }
                 }
                 /*Filtros*/
-                console.log(obj);
-                console.log(groups);
                 data = _.where(data, obj);
+                var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
-                    var result = _.groupByMulti(data, groups);
+                    if (is_sintoma) {
+                        result = _.groupBygroup(data, "SINTOMAS", ",");
+                    } else {
+                        result = _.groupByMulti(data, groups);
+                    }
                     console.log(result);
+                    /**/
                     window.localStorage.setItem('type', type);
                     window.localStorage.setItem('result', JSON.stringify(result));
-                    // $location.path('/dashboard/analysis/result');
-                    /*
-                    $location.path("app/ipvaresult");
-                    */
+                    $location.path('/dashboard/analysis/result');
+                    /**/
                 }
             });
         };

@@ -29,7 +29,7 @@ angular.module('gdsApp')
                 var data = [];
                 // console.log($scope.result);
                 for (var o in $scope.result) {
-                    data.push({ label: o, value: $scope.result[o].length,labelColor : 'white',labelFontSize : '16' });
+                    data.push({ label: o, value: $scope.result[o], labelColor: 'white', labelFontSize: '16' });
                 }
                 var ctx = document.getElementById($scope.type).getContext("2d");
                 var myNewChart = new Chart(ctx).Pie(data, options);
@@ -40,6 +40,10 @@ angular.module('gdsApp')
 
         $scope.gettype = function(t) {
             return t === $scope.type;
+        };
+
+        $scope.goback = function() {
+            $location.path('/dashboard/analysis');
         };
 
     });

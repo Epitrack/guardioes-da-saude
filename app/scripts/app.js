@@ -131,7 +131,8 @@ angular
                 m = today.getMonth() - birthDate.getMonth();
 
                 if (birthDate > today) {
-                    return -1; }
+                    return -1;
+                }
 
                 if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
                     age--;
@@ -178,17 +179,23 @@ angular
                         }
                         //validating email
                         if (i === 'email') {
-                            if (this.checkEmail(params[i]) === false) { ret.error = true;
+                            if (this.checkEmail(params[i]) === false) {
+                                ret.error = true;
                                 ret.msg = "Email inválido.";
-                                break; }
+                                break;
+                            }
                         }
                         //validating pass
-                        if (i === 'password' && params[i].length < 6) { ret.error = true;
+                        if (i === 'password' && params[i].length < 6) {
+                            ret.error = true;
                             ret.msg = "A senha precisa ter no mínimo 6 dígitos";
-                            break; }
-                        if (i === 'repeat_password' && params[i] !== params.password) { ret.error = true;
+                            break;
+                        }
+                        if (i === 'repeat_password' && params[i] !== params.password) {
+                            ret.error = true;
                             ret.msg = "As senhas digitadas precisam ser iguais.";
-                            break; }
+                            break;
+                        }
                     }
                 }
                 return ret;
@@ -419,5 +426,29 @@ _.groupByMulti = function(obj, values, context) {
     for (var prop in byFirst) {
         byFirst[prop] = _.groupByMulti(byFirst[prop], rest, context);
     }
-    return byFirst;
+    var obj = {};
+    for (var prop in byFirst) {
+        obj[prop] = byFirst[prop].length
+    }
+    return obj;
 };
+
+
+_.groupBygroup = function(data, key, delimiter) {
+    var SIM = {};
+    _.map(data, function(o) {
+        if (o[key] !== undefined) {
+            var d = o[key].split(delimiter);
+            for (var i in d) {
+                if (d[i] !== '') {
+                    if (SIM[d[i]] === undefined) {
+                        SIM[d[i]] = 0;
+                    }
+                    SIM[d[i]]++;
+                }
+                return o;
+            }
+        }
+    });
+    return SIM;
+}
