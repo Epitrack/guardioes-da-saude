@@ -29,11 +29,47 @@ angular.module('gdsApp')
                 var data = [];
                 // console.log($scope.result);
                 for (var o in $scope.result) {
-                    data.push({ label: o, value: $scope.result[o], labelColor: 'white', labelFontSize: '16' });
+                    var v = 0;
+                    if ($scope.result[o].length===undefined) {
+                        v = $scope.result[o];
+                    } else {
+                        v = $scope.result[o].length;
+                    }
+                    data.push({ label: o, value: v, labelColor: 'white', labelFontSize: '16' });
                 }
-                var ctx = document.getElementById($scope.type).getContext("2d");
+                var ctx = document.getElementById('chart').getContext("2d");
                 var myNewChart = new Chart(ctx).Pie(data, options);
-                document.getElementById('js-legend-' + $scope.type).innerHTML = myNewChart.generateLegend();
+                document.getElementById('js-legend').innerHTML = myNewChart.generateLegend();
+            } else if ($scope.type === 'histograma') {
+                var options = {}
+                var data1 = {
+                    labels: [],
+                    datasets: []
+                };
+                var data = [];
+                console.log($scope.result);
+                for (var o in $scope.result) {
+                    data1.labels.push(o);
+                    var count = 0;
+                    for (var p in $scope.result[o]) {
+                        count += $scope.result[o][p].length;
+                    }
+                    data.push(count);
+                }
+                data1.datasets.push({
+                    label: "" + window.localStorage.getItem('groups'),
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: data
+                });
+
+                console.log(data);
+                console.log(data1);
+                var ctx = document.getElementById('chart').getContext("2d");
+                var myNewChart = new Chart(ctx).Bar(data1, options);
+                document.getElementById('js-legend').innerHTML = myNewChart.generateLegend();
             }
         };
         $scope.buildgraph();

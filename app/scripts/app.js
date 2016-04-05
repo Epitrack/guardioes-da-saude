@@ -416,6 +416,23 @@ angular
         enabled: true, // set false to development
         requireBase: false
     });
+}).directive('onCarouselChange', function($parse) {
+    return {
+        require: 'carousel',
+        link: function(scope, element, attrs, carouselCtrl) {
+            var fn = $parse(attrs.onCarouselChange);
+            var origSelect = carouselCtrl.select;
+            carouselCtrl.select = function(nextSlide, direction) {
+                if (nextSlide !== this.currentSlide) {
+                    fn(scope, {
+                        nextSlide: nextSlide,
+                        direction: direction,
+                    });
+                }
+                return origSelect.apply(this, arguments);
+            };
+        }
+    };
 });
 
 _.groupByMulti = function(obj, values, context) {
@@ -426,11 +443,16 @@ _.groupByMulti = function(obj, values, context) {
     for (var prop in byFirst) {
         byFirst[prop] = _.groupByMulti(byFirst[prop], rest, context);
     }
-    var obj = {};
-    for (var prop in byFirst) {
-        obj[prop] = byFirst[prop].length
+    /*var obj = {};*/
+    /*for (var prop in byFirst) {
+        if (byFirst[prop].length === undefined) {
+            obj[prop] = byFirst[prop];
+        } else {
+            obj[prop] = byFirst[prop].length
+        }
     }
-    return obj;
+    console.log(obj);*/
+    return byFirst;
 };
 
 

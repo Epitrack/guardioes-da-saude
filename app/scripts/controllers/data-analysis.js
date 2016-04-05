@@ -9,11 +9,12 @@
  */
 angular.module('gdsApp')
     .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope) {
+        $scope.slide_active = 0;
         $scope.DEPARA = {
                 "ID_REG_SEQ": "ID_REG_SEQ",
                 "ID_REG_SEQ": "ID_REG_SEQ",
                 "APELIDO": "APELIDO",
-                "age": "IDADE",
+                "age": "FE",
                 "gender": "SEXO",
                 "email": "EMAIL",
                 "race": "COR",
@@ -48,6 +49,7 @@ angular.module('gdsApp')
                 "exantematica": "SIND_EXA",
                 "syndromes": "SINDROME",
                 "TOTPART": "TOTPART",
+                "weeks": "SEN",
                 "MEMBROS": "MEMBROS",
                 "TIPOUSUARIO": "TIPOUSUARIO",
                 "FORAPAIS": "FORAPAIS",
@@ -194,16 +196,53 @@ angular.module('gdsApp')
         };
 
         $scope.loadfile = function(callback) {
-            if (window.sessionStorage.getItem('surveys') === null) {
-                var psv = d3.dsv(";", "text/plain");
-                psv("/scripts/util/surveys.csv", function(data) {
-                    window.sessionStorage.setItem('surveys', JSON.stringify(data));
-                    callback(data);
-                });
-            } else {
-                callback(JSON.parse(window.sessionStorage.getItem('surveys')));
+                if (window.sessionStorage.getItem('surveys') === null) {
+                    var psv = d3.dsv(";", "text/plain");
+                    psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
+                        window.sessionStorage.setItem('surveys', JSON.stringify(data));
+                        callback(data);
+                    });
+                } else {
+                    callback(JSON.parse(window.sessionStorage.getItem('surveys')));
+                }
             }
-        }
+            /**/
+        $scope.prev = function() {
+            console.log($scope.slides);
+        };
+        /**/
+
+        $scope.first = 0;
+        $scope.slides = [];
+        $scope.ishistogram = function(nextSlide, direction) {
+            console.log(nextSlide, direction);
+            $scope.slide_active += 1;
+
+            if ($scope.first === 0) {
+                $scope.first = nextSlide['$id'];
+                $scope.slides.push($scope.first);
+            } else {
+                if (!_.contains($scope.slides, nextSlide['$id'])) {
+                    $scope.slides.push(nextSlide['$id']);
+                }
+            }
+
+            if (_.indexOf($scope.slides, nextSlide['$id']) === 1) {
+                var comp = document.getElementById("weeks");
+                $scope.params['histograma']['eixox'].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
+                $("#variaveis").find("#weeks").remove();
+                return true;
+            } else {
+                try {
+                    $("#variaveis").append($scope.params['histograma']['eixox'][0].c);
+                    $scope.params['histograma']['eixox'].splice(0, 1);
+                } catch (e) {}
+                return false;
+            }
+
+        };
+
+        /**/
         $scope.getGraphic = function(type) {
             /* console.log($scope.params[type]);
              console.log($scope.variaveis);
@@ -235,14 +274,17 @@ angular.module('gdsApp')
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
+                    console.log(is_sintoma);
                     if (is_sintoma) {
                         result = _.groupBygroup(data, "SINTOMAS", ",");
                     } else {
+                        console.log(data, groups);
                         result = _.groupByMulti(data, groups);
                     }
                     console.log(result);
                     /**/
                     window.localStorage.setItem('type', type);
+                    window.localStorage.setItem('groups', groups);
                     window.localStorage.setItem('result', JSON.stringify(result));
                     $location.path('/dashboard/analysis/result');
                     /**/
