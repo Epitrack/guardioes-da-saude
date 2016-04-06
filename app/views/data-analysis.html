@@ -209,7 +209,7 @@
                         <p style="font-size: 18px;">Eixo X</p>
                         <div class="div-selecao" ng-repeat="v in params.histograma.eixox">
                             <div class="btn-selecionado">{{v.label}}</div>
-                            <button class="btn-remover" ng-click="remove_params($index,'histograma','eixox')">Remover</button>
+                            <button nh-show="is_histogram" class="btn-remover" ng-click="remove_params($index,'histograma','eixox')">Remover</button>
                         </div>
                         <ul ng-show="params.histograma.eixox.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'histograma','eixox')">
                         </ul>

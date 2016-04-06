@@ -14,63 +14,180 @@ angular.module('gdsApp')
 
         $scope.buildgraph = function() {
             if ($scope.type === 'pizza') {
-                var options = {
-                    segmentShowStroke: true,
-                    segmentStrokeColor: "#fff",
-                    segmentStrokeWidth: 2,
-                    // percentageInnerCutout: 50,
-                    tooltipTemplate: "<%= value %>",
-                    animationSteps: 100,
-                    animationEasing: "easeInOutQuart",
-                    animateRotate: true,
-                    animateScale: false,
-                    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-                }
+
                 var data = [];
-                // console.log($scope.result);
                 for (var o in $scope.result) {
                     var v = 0;
-                    if ($scope.result[o].length===undefined) {
+                    if ($scope.result[o].length === undefined) {
                         v = $scope.result[o];
                     } else {
                         v = $scope.result[o].length;
                     }
-                    data.push({ label: o, value: v, labelColor: 'white', labelFontSize: '16' });
+                    data.push({ name: o, y: v });
                 }
-                var ctx = document.getElementById('chart').getContext("2d");
-                var myNewChart = new Chart(ctx).Pie(data, options);
-                document.getElementById('js-legend').innerHTML = myNewChart.generateLegend();
-            } else if ($scope.type === 'histograma') {
-                var options = {}
-                var data1 = {
-                    labels: [],
-                    datasets: []
-                };
-                var data = [];
-                console.log($scope.result);
-                for (var o in $scope.result) {
-                    data1.labels.push(o);
-                    var count = 0;
-                    for (var p in $scope.result[o]) {
-                        count += $scope.result[o][p].length;
+                Highcharts.getOptions().plotOptions.pie.colors = (function() {
+                    var colors = [],
+                        base = Highcharts.getOptions().colors[0],
+                        i;
+
+                    for (i = 0; i < 10; i += 1) {
+                        colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
                     }
-                    data.push(count);
-                }
-                data1.datasets.push({
-                    label: "" + window.localStorage.getItem('groups'),
-                    fillColor: "rgba(220,220,220,0.5)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(220,220,220,0.75)",
-                    highlightStroke: "rgba(220,220,220,1)",
-                    data: data
+                    return colors;
+                }());
+                $('#container').highcharts({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: {point.percentage:.1f}'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f}',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        name: '' + window.localStorage.getItem('groups'),
+                        data: data
+                    }]
                 });
 
-                console.log(data);
-                console.log(data1);
-                var ctx = document.getElementById('chart').getContext("2d");
-                var myNewChart = new Chart(ctx).Bar(data1, options);
-                document.getElementById('js-legend').innerHTML = myNewChart.generateLegend();
+
+            } else if ($scope.type === 'histograma') {
+                var data = {};
+                var keys = [];
+                var categories = [];
+                for (var o in $scope.result) {
+                    categories.push(o);
+                    keys = _.union(keys, _.keys($scope.result[o]))
+                }
+                var dados = [];
+                for (var o in $scope.result) {
+                    for (var j in keys) {
+                        if (data[keys[j]] === undefined) {
+                            data[keys[j]] = {};
+                            data[keys[j]]['name'] = keys[j];
+                            data[keys[j]]['data'] = [];
+                        }
+                        $scope.result[o][keys[j]] !== undefined ? data[keys[j]]['data'].push($scope.result[o][keys[j]].length) : data[keys[j]]['data'].push(0);
+                    }
+                }
+                for (var o in data) {
+                    dados.push(data[o]);
+                }
+                /**/
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        categories: categories,
+                        crosshair: true
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: ''
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0,
+                            borderWidth: 0
+                        }
+                    },
+                    series: dados
+                });
+            } else if ($scope.type === 'barras') {
+                var data = {};
+                var keys = [];
+                var categories = [];
+                for (var o in $scope.result) {
+                    categories.push(o);
+                    keys = _.union(keys, _.keys($scope.result[o]))
+                }
+                var dados = [];
+                for (var o in $scope.result) {
+                    for (var j in keys) {
+                        if (data[keys[j]] === undefined) {
+                            data[keys[j]] = {};
+                            data[keys[j]]['name'] = keys[j];
+                            data[keys[j]]['data'] = [];
+                        }
+                        $scope.result[o][keys[j]] !== undefined ? data[keys[j]]['data'].push($scope.result[o][keys[j]].length) : data[keys[j]]['data'].push(0);
+                    }
+                }
+                for (var o in data) {
+                    dados.push(data[o]);
+                }
+                /**/
+                $('#container').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        categories: categories,
+                        crosshair: true
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: ''
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                        footerFormat: '</table>',
+                        shared: true,
+                        useHTML: true
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0,
+                            borderWidth: 0
+                        }
+                    },
+                    series: dados
+                });
             }
+            console.log($("#container").find("text").last().empty());
         };
         $scope.buildgraph();
 

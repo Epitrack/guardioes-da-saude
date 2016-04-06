@@ -214,10 +214,9 @@ angular.module('gdsApp')
 
         $scope.first = 0;
         $scope.slides = [];
+        $scope.is_histogram=false;
         $scope.ishistogram = function(nextSlide, direction) {
-            console.log(nextSlide, direction);
             $scope.slide_active += 1;
-
             if ($scope.first === 0) {
                 $scope.first = nextSlide['$id'];
                 $scope.slides.push($scope.first);
@@ -226,22 +225,21 @@ angular.module('gdsApp')
                     $scope.slides.push(nextSlide['$id']);
                 }
             }
-
             if (_.indexOf($scope.slides, nextSlide['$id']) === 1) {
+                $scope.is_histogram=true;
                 var comp = document.getElementById("weeks");
                 $scope.params['histograma']['eixox'].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
                 $("#variaveis").find("#weeks").remove();
                 return true;
             } else {
+                $scope.is_histogram=false;
                 try {
                     $("#variaveis").append($scope.params['histograma']['eixox'][0].c);
                     $scope.params['histograma']['eixox'].splice(0, 1);
                 } catch (e) {}
                 return false;
             }
-
         };
-
         /**/
         $scope.getGraphic = function(type) {
             /* console.log($scope.params[type]);
