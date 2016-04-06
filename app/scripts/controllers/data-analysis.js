@@ -43,7 +43,7 @@ angular.module('gdsApp')
                 "CONTATO": "CONTATO",
                 "SERVSAUDE": "SERVSAUDE",
                 "CADASTRO": "CADASTRO",
-                "symptoms": "SINTOMA",
+                "symptoms": "SINTOMAS",
                 "diarreica": "SIND_DIA",
                 "respiratoria": "SIND_RES",
                 "exantematica": "SIND_EXA",
@@ -214,7 +214,7 @@ angular.module('gdsApp')
 
         $scope.first = 0;
         $scope.slides = [];
-        $scope.is_histogram=false;
+        $scope.is_histogram = false;
         $scope.ishistogram = function(nextSlide, direction) {
             $scope.slide_active += 1;
             if ($scope.first === 0) {
@@ -226,13 +226,13 @@ angular.module('gdsApp')
                 }
             }
             if (_.indexOf($scope.slides, nextSlide['$id']) === 1) {
-                $scope.is_histogram=true;
+                $scope.is_histogram = true;
                 var comp = document.getElementById("weeks");
                 $scope.params['histograma']['eixox'].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
                 $("#variaveis").find("#weeks").remove();
                 return true;
             } else {
-                $scope.is_histogram=false;
+                $scope.is_histogram = false;
                 try {
                     $("#variaveis").append($scope.params['histograma']['eixox'][0].c);
                     $scope.params['histograma']['eixox'].splice(0, 1);
@@ -246,16 +246,20 @@ angular.module('gdsApp')
              console.log($scope.variaveis);
              console.log($scope.analytics);*/
             var is_sintoma = false;
+            var idsintoma = 0;
+            var count = 0;
             $scope.loadfile(function(data) {
                 var groups = [];
                 var obj = {};
                 for (var o in $scope.params[type]) {
                     if (o !== 'filtros') {
                         for (var i in $scope.params[type][o]) {
-                            if ($scope.DEPARA[$scope.params[type][o][i].id] === 'SINTOMA') {
+                            if ($scope.DEPARA[$scope.params[type][o][i].id] === 'SINTOMAS') {
                                 is_sintoma = true;
+                                idsintoma = count;
                             }
                             groups.push($scope.DEPARA[$scope.params[type][o][i].id]);
+                            count++;
                         }
                     } else {
                         for (var i in $scope.params[type][o]) {
@@ -274,7 +278,7 @@ angular.module('gdsApp')
                     /*Groups*/
                     console.log(is_sintoma);
                     if (is_sintoma) {
-                        result = _.groupBygroup(data, "SINTOMAS", ",");
+                        result = _.groupBygroup(data, groups, idsintoma, ",");
                     } else {
                         console.log(data, groups);
                         result = _.groupByMulti(data, groups);

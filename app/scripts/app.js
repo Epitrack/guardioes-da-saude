@@ -455,11 +455,11 @@ _.groupByMulti = function(obj, values, context) {
 };
 
 
-_.groupBygroup = function(data, key, delimiter) {
+_.groupBygroup = function(data, key, index, delimiter) {
     var SIM = {};
     _.map(data, function(o) {
-        if (o[key] !== undefined) {
-            var d = o[key].split(delimiter);
+        if (o[key[0]] !== undefined) {
+            var d = o[key[index]].split(delimiter);
             for (var i in d) {
                 if (d[i] !== '') {
                     if (SIM[d[i]] === undefined) {
@@ -471,5 +471,26 @@ _.groupBygroup = function(data, key, delimiter) {
             }
         }
     });
-    return SIM;
+    var keys = key;
+    keys = keys.slice(1);
+    /**/
+    var obj = {};
+
+    if (key[1] !== undefined) {
+        for (var o in SIM) {
+            var f = _.filter(data, function(obj) {
+                return _.contains(obj[key[index]].split(delimiter), o)
+            });
+            var g = _.groupBy(f, function(obj) {
+                return obj[key[1]]
+            });
+            obj[o] = g;
+        }
+    } else {
+        obj = SIM;
+    }
+
+    console.log(obj);
+    /**/
+    return obj;
 }
