@@ -316,8 +316,8 @@ angular
         })
         .when('/noticias', {
             templateUrl: 'views/noticias.html',
-            controller: 'NoticiasCtrl',
-            controllerAs: 'noticias'
+            controller: 'NewsCtrl',
+            controllerAs: 'news'
         })
         .when('/profile/change-photo/:user_id', {
             templateUrl: 'views/change-photo.html',
