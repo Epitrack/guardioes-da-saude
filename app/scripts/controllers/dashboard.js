@@ -53,19 +53,23 @@ angular.module('gdsApp')
 
             $scope.dado_grafico = [];
             for (var i = 0; i < $scope.dadosGrafico.symptomatic.length; i++) {
-                var t = parseInt($scope.dadosGrafico.symptomatic[i].total) + parseInt($scope.dadosGrafico.asymptomatic[i].total);
-                var obj = {};
-                obj['y'] = $scope.dadosGrafico.symptomatic[i]._id;
-                if ($scope.data.symptomatic) {
-                    obj['symptomatic'] = $scope.dadosGrafico.symptomatic[i].total;
+                try {
+                    var t = parseInt($scope.dadosGrafico.symptomatic[i].total) + parseInt($scope.dadosGrafico.asymptomatic[i].total);
+                    var obj = {};
+                    obj['y'] = $scope.dadosGrafico.symptomatic[i]._id;
+                    if ($scope.data.symptomatic) {
+                        obj['symptomatic'] = $scope.dadosGrafico.symptomatic[i].total;
+                    }
+                    if ($scope.data.asymptomatic) {
+                        obj['asymptomatic'] = $scope.dadosGrafico.asymptomatic[i].total;
+                    }
+                    if ($scope.data.total) {
+                        obj['total'] = t;
+                    }
+                    $scope.dado_grafico.push(obj);
+                } catch (e) {
+
                 }
-                if ($scope.data.asymptomatic) {
-                    obj['asymptomatic'] = $scope.dadosGrafico.asymptomatic[i].total;
-                }
-                if ($scope.data.total) {
-                    obj['total'] = t;
-                }
-                $scope.dado_grafico.push(obj);
             }
             $("#line-example").empty();
             $scope.graficoparticipacoes = Morris.Line({
@@ -149,12 +153,12 @@ angular.module('gdsApp')
         };
 
         function setPercOps() {
-            $scope.graphicOnePerc = (( ($scope.dash.newRegisters-$scope.dash.lastWeekRegisters)/$scope.dash.lastWeekRegisters)*100).toFixed(1);
+            $scope.graphicOnePerc = ((($scope.dash.newRegisters - $scope.dash.lastWeekRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
             console.log($scope.graphicOnePerc);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
-            $scope.graphicTwoPerc = (( ($scope.dash.lastWeekRegisters-$scope.dash.newRegisters)/$scope.dash.newRegisters)*100).toFixed(1);
+            $scope.graphicTwoPerc = ((($scope.dash.lastWeekRegisters - $scope.dash.newRegisters) / $scope.dash.newRegisters) * 100).toFixed(1);
             angular.element('.chart2').data('easyPieChart').update($scope.graphicTwoPerc);
             angular.element('.chart2').attr('data-legend', $scope.graphicTwoPerc + '%');
         }
@@ -288,19 +292,98 @@ angular.module('gdsApp')
             }
         };
         $scope.getAgeByStateStatsValue = function(uf, key, value, div) {
-            if ($scope.agesates !== undefined && $scope.agesates[uf] !== undefined && $scope.agesates[uf][key] !== undefined) {
-                if ($scope.agesates[uf][key][value] === undefined) {
-                    return 0;
-                } else {
-                    console.log(uf, key, value);
-                    if (div === 100) {
-                        return (($scope.agesates[uf][key][value] / $scope.agesates[uf][key]['total']) * 100).toFixed(2);
+            // console.log(uf === '', key, value, div);
+            if (uf !== '') {
+                console.log($scope.agesates);
+                if ($scope.agesates !== undefined && $scope.agesates[uf] !== undefined && $scope.agesates[uf][key] !== undefined) {
+                    if ($scope.agesates[uf][key][value] === undefined) {
+                        return 0;
                     } else {
-                        return $scope.agesates[uf][key][value];
+                        // console.log(uf, key, value);
+                        if (div === 100) {
+                            return (($scope.agesates[uf][key][value] / $scope.agesates[uf][key]['total']) * 100).toFixed(2);
+                        } else {
+                            return $scope.agesates[uf][key][value];
+                        }
                     }
+                } else {
+                    return 0;
                 }
             } else {
-                return 0;
+                try {
+                    $scope.totalmenByAgeFundedwomenByAgeFunded = 0
+                    for (var i in $scope.dash.menByAgeFunded) {
+                        $scope.totalmenByAgeFundedwomenByAgeFunded += $scope.dash.menByAgeFunded[i].total;
+                    }
+                    for (var i in $scope.dash.womenByAgeFunded) {
+                        $scope.totalmenByAgeFundedwomenByAgeFunded += $scope.dash.womenByAgeFunded[i].total;
+                    }
+                    if (key === 'men') {
+                        if (value !== 'total') {
+                            var g = _.filter($scope.dash.menByAgeFunded, function(o) {
+                                return o['_id']['ageGroup'] === value;
+                            });
+                            return g.length === 0 ? 0 : g[0].total;
+                        } else {
+                            var totalmen = 0
+                            for (var i in $scope.dash.menByAgeFunded) {
+                                totalmen += $scope.dash.menByAgeFunded[i].total;
+                            }
+                            return (totalmen);
+                        }
+                    } else if (key === 'women') {
+                        var totalmen = 0
+                        for (var i in $scope.dash.womenByAgeFunded) {
+                            totalmen += $scope.dash.womenByAgeFunded[i].total;
+                        }
+                        if (value !== 'total') {
+                            var g = _.filter($scope.dash.womenByAgeFunded, function(o) {
+                                return o['_id']['ageGroup'] === value;
+                            });
+                            if (div === 100) {
+                                return g.length === 0 ? 0 : ((g[0].total/totalmen) * 100).toFixed(2);
+                            } else {
+                                 return g.length === 0 ? 0 : (g[0].total/totalmen).toFixed(2);
+                            }
+                        } else {
+
+                            return (totalmen);
+                        }
+                    }
+                } catch (e) {}
+
+            }
+        }
+
+        $scope.getRaceByStateStatsValue = function(uf, key, value, div) {
+            if (uf !== '') {
+                if ($scope.racesates !== undefined && $scope.racesates[uf] !== undefined && $scope.racesates[uf][key] !== undefined) {
+                    if ($scope.racesates[uf][key][value] === undefined) {
+                        return 0;
+                    } else {
+                        console.log(uf, key, value);
+                        if (div === 100) {
+                            return (($scope.racesates[uf][key][value] / $scope.racesates[uf][key]['total']) * 100).toFixed(2);
+                        } else {
+                            return $scope.racesates[uf][key][value];
+                        }
+                    }
+                } else {
+                    return 0;
+                }
+            } else {
+                try {
+                    $scope.totalbyRaceFunded = 0
+                    for (var i in $scope.dash.byRaceFunded) {
+                        $scope.totalbyRaceFunded += $scope.dash.byRaceFunded[i].total;
+                    }
+                    if (value !== 'total') {
+                        var g = _.filter($scope.dash.byRaceFunded, function(o) {
+                            return o['_id']['ageGroup'] === value;
+                        });
+                        return g.length === 0 ? 0 : g[0].total;
+                    }
+                } catch (e) {}
             }
         }
 
@@ -338,22 +421,7 @@ angular.module('gdsApp')
             }
         };
 
-        $scope.getRaceByStateStatsValue = function(uf, key, value, div) {
-            if ($scope.racesates !== undefined && $scope.racesates[uf] !== undefined && $scope.racesates[uf][key] !== undefined) {
-                if ($scope.racesates[uf][key][value] === undefined) {
-                    return 0;
-                } else {
-                    console.log(uf, key, value);
-                    if (div === 100) {
-                        return (($scope.racesates[uf][key][value] / $scope.racesates[uf][key]['total']) * 100).toFixed(2);
-                    } else {
-                        return $scope.racesates[uf][key][value];
-                    }
-                }
-            } else {
-                return 0;
-            }
-        }
+
 
         $scope.getAllData();
 

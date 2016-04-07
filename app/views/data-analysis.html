@@ -19,26 +19,26 @@
                     <div class="collapse-content imageBased">
                         <fieldset ng-repeat="symptom in symptomsList">
                             <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
-                            <label for="symptom-{{symptom.id}}">{{symptom.name}} - {{symptom.code}}</label>
+                            <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
                         </fieldset>
                     </div>
                 </div>
             </li>
             <li id="syndromes" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
-                <button class="btn-var" data-toggle="collapse" data-target="#sindromes-content">Síndromes</button>
+                <button ng-click="syndromes = !syndromes" class="btn-var" data-toggle="collapse" ng-class="{ 'active' : syndromes }" data-target="#sindromes-content">Síndromes</button>
                 <div id="sindromes-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','diarreica')" value="true" id="diarreica" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','DIARREICA')" value="true" id="diarreica" class="checkbox-primary">
                             <label for="diarreica">Diarreica</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','exantematica')" value="true" id="exantematica" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','EXANTEMATICA')" value="true" id="exantematica" class="checkbox-primary">
                             <label for="exantematica">Exantemática</label>
                         </fieldset>
                         <fieldset>
-                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','respiratoria')" value="true" id="respiratoria" class="checkbox-primary">
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','RESPIRATORIA')" value="true" id="respiratoria" class="checkbox-primary">
                             <label for="respiratoria">Respiratória</label>
                         </fieldset>
                     </div>
@@ -119,11 +119,11 @@
                 <!-- Epidemiological weeks -->
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
                 <div id="semanas-content" class="collapse panel-collapse">
-                    <div class="collapse-content">
-                        <!--  <div class="range-bg"></div>
-                        <div range-slider min="1" max="52" model-min="range.min" model-max="range.max" show-values="true" attach-handle-values="true"></div> -->
-                        <md-slider ng-model="analytics.weeks" ng-change="selecionarAnalytics('weeks',this.value)" min="1" max="52">
-                        </md-slider>
+                    <div class="collapse-content" style="padding: 40px!important;">
+                        <div class="range-slider">
+                            <input class="range-slider__range" type="range" ng-change="selecionarAnalytics('weeks',range)" ng-model="range" min="{{sem_min_max.MIN}}" max="{{sem_min_max.MAX}}" step="1">
+                            <span class="range-slider__value">{{range}}</span>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -145,7 +145,7 @@
                                 <p style="font-size: 1.3em;">Ano</p>
                                 <select style="height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); width: 80%;">
                                     <option value="Selecione">Selecione</option>
-                                     <option ng-repeat="m in anos" value="{{m}}">{{m}}</option>
+                                    <option ng-repeat="m in anos" value="{{m}}">{{m}}</option>
                                 </select>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                     </div>
                 </slide>
                 <slide>
-                    <img src="../../images/dashboard/icon_histograma.svg" style="margin:auto;">
+                    <img src="../../images/dashboard/icon_coluna.svg" style="margin:auto;">
                     <div class="carousel-caption" style="height: 70px;">
                         <p>Histograma</p>
                     </div>
@@ -237,7 +237,7 @@
                     </div>
                 </slide>
                 <slide>
-                    <img src="../../images/dashboard/icon_coluna.svg" style="margin:auto;">
+                    <img src="../../images/dashboard/icon_histograma.svg" style="margin:auto;">
                     <div class="carousel-caption" style="height: 70px;">
                         <p>Barras</p>
                     </div>
@@ -307,4 +307,21 @@
             </carousel>
         </aside>
     </div>
+    <script type="text/javascript">
+    var rangeSlider = function() {
+        var slider = $('.range-slider'),
+            range = $('.range-slider__range'),
+            value = $('.range-slider__value');
+        slider.each(function() {
+            value.each(function() {
+                var value = $(this).prev().attr('value');
+                $(this).html(value);
+            });
+            range.on('input', function() {
+                $(this).next(value).html(this.value);
+            });
+        });
+    };
+    rangeSlider();
+    </script>
 </section>

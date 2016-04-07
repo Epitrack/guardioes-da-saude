@@ -490,6 +490,7 @@ _.groupBygroup = function(data, key, index, delimiter) {
         obj = SIM;
     }
 
+    console.log(SIM);
     console.log(obj);
     /**/
     return obj;

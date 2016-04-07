@@ -20,29 +20,29 @@
         <div class="col-sm-6">
             <article class="card">
                 <ul class="tabs-nav">
-                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
-                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
                 </ul>
                 <div class="tabs-container">
                     <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
                         <div>
-                            <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span>
                             <p>Última semana</p>
                         </div>
                         <div class="tab-graphic chart1" percent="" data-legend=""></div>
                         <div>
-                            <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span>
+                            <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span>
                             <p>Esta semana</p>
                         </div>
                     </div>
                     <div class="tab-content" ng-show="tab == 'descadastros'">
                         <div>
-                            <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span>
+                            <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span>
                             <p>Última semana</p>
                         </div>
                         <div class="tab-graphic chart2" percent="" data-legend=""></div>
                         <div>
-                            <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span>
                             <p>Esta semana</p>
                         </div>
                     </div>
@@ -127,27 +127,39 @@
                 <div class="wrapper-bar female">
                     <div>
                         <h5>Mulheres</h5>
-                        <h6><span>{{((getAgeByStateStatsValue(ufage,'women','total',1)/(getAgeByStateStatsValue(ufage,'women','total',1)+getAgeByStateStatsValue(ufage,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getAgeByStateStatsValue(ufage,'women','total',1)||0}} )</h6>
+                        <h6><span>{{ ((getAgeByStateStatsValue(ufage,'women','total',1)/totalmenByAgeFundedwomenByAgeFunded)*100).toFixed(2) ||0}}%</span> ({{getAgeByStateStatsValue(ufage,'women','total',1)||0}})</h6>
                     </div>
                     <ul>
                         <li style="height:{{getAgeByStateStatsValue(ufage,'women','13_19',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','13_19',100)}} %"></li>
-                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','20_34',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','20_34',100)}}%"></li>
-                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','25_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','25_59',100)}}%"></li>
-                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','60',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','60',100)}}%"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','20_29',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','20_29',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','30_39',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','30_39',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','40_49',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','40_49',100)}}%"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','50_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','50_59',100)}} %"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','60_69',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','60_69',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','70_79',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','70_79',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','80',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','80',100)}}%"></li>
                     </ul>
                 </div>
                 <div class="bar-legend">
                     <p>13-19</p>
-                    <p>20-24</p>
-                    <p>25-59</p>
-                    <p>> 60</p>
+                    <p>20_29</p>
+                    <p>30_39</p>
+                    <p>40_49</p>
+                    <p>50_59</p>
+                    <p>60_69</p>
+                    <p>70_79</p>
+                    <p>> 80</p>
                 </div>
                 <div class="wrapper-bar male">
                     <div>
                         <h5>Homens</h5>
-                        <h6><span>{{((getAgeByStateStatsValue(ufage,'men','total',1)/(getAgeByStateStatsValue(ufage,'women','total',1)+getAgeByStateStatsValue(ufage,'men','total',1)))*100).toFixed(2) ||0}}%</span> ({{getAgeByStateStatsValue(ufage,'men','total',1)||0}})</h6>
+                        <h6><span>{{ ((getAgeByStateStatsValue(ufage,'men','total',1)/totalmenByAgeFundedwomenByAgeFunded)*100).toFixed(2) ||0}}%</span> ({{getAgeByStateStatsValue(ufage,'men','total',1)||0}})</h6>
                     </div>
                     <ul>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'men','13_19',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','13_19',100)}} %"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'men','20_34',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','20_34',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'men','25_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','25_59',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'men','60',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','60',100)}}%"></li>
                         <li style="height:{{getAgeByStateStatsValue(ufage,'men','13_19',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','13_19',100)}} %"></li>
                         <li style="height:{{getAgeByStateStatsValue(ufage,'men','20_34',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','20_34',100)}}%"></li>
                         <li style="height: {{getAgeByStateStatsValue(ufage,'men','25_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','25_59',100)}}%"></li>

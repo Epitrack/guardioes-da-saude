@@ -10,6 +10,7 @@
 angular.module('gdsApp')
     .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope) {
         $scope.slide_active = 0;
+        
         $scope.DEPARA = {
                 "ID_REG_SEQ": "ID_REG_SEQ",
                 "ID_REG_SEQ": "ID_REG_SEQ",
@@ -50,7 +51,7 @@ angular.module('gdsApp')
                 "syndromes": "SINDROME",
                 "TOTPART": "TOTPART",
                 "weeks": "SEN",
-                "monthyear": "MES",
+                "monthyear": "MESANO",
                 "TIPOUSUARIO": "TIPOUSUARIO",
                 "FORAPAIS": "FORAPAIS",
             }
@@ -141,7 +142,7 @@ angular.module('gdsApp')
             } else {
                 $scope.analytics[key][code] = !$scope.analytics[key][code];
             }
-            console.log($scope.analytics);
+            /*console.log($scope.analytics);*/
         };
         /**/
         $scope.initparams = function() {
@@ -242,6 +243,7 @@ angular.module('gdsApp')
         /**/
         $scope.meses = [];
         $scope.anos = [];
+        $scope.sem_min_max = {};
         $scope.getMesesAnos = function() {
             $scope.loadfile(function(data) {
                 $scope.meses = _.keys(_.groupBy(data, function(obj) {
@@ -252,8 +254,30 @@ angular.module('gdsApp')
                 }));
             });
         };
+
+        $scope.getSemMinMax = function() {
+            $scope.loadfile(function(data) {
+                var g = _.keys(_.groupBy(data, function(o) {
+                    return o['SEN'];
+                }));
+                $scope.sem_min_max['MAX'] = _.max(g, function(o) {
+                    return parseInt(o)
+                });
+                $scope.sem_min_max['MIN'] = _.min(g, function(o) {
+                    return parseInt(o)
+                });
+                $scope.range = 0;
+            });
+        };
+
         $scope.getMesesAnos();
+        $scope.getSemMinMax();
+
         /**/
+        $scope.t = function(r) {
+                console.log(r);
+            }
+            /**/
         $scope.getGraphic = function(type) {
             /* console.log($scope.params[type]);
              console.log($scope.variaveis);
@@ -285,7 +309,9 @@ angular.module('gdsApp')
                     }
                 }
                 /*Filtros*/
+                console.log("obj ", obj);
                 data = _.where(data, obj);
+                console.log(data);
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
