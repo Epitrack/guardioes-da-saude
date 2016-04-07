@@ -185,7 +185,7 @@
                 <div class="wrapper-bar female race rc-female">
                     <div>
                         <h5>Mulheres</h5>
-                        <h6>{{((getRaceByStateStatsValue(ufraca,'women','total',1)/(getRaceByStateStatsValue(ufraca,'women','total',1)+getRaceByStateStatsValue(ufraca,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getRaceByStateStatsValue(ufraca,'women','total',1)||0}} )</h6>
+                        <h6>{{ ((getRaceByStateStatsValue(ufraca,'women','total',1)/totalMenWoman)*100).toFixed(2) ||0}}%</span> ({{getRaceByStateStatsValue(ufraca,'women','total',1)||0}})<h6>
                     </div>
                     <ul>
                         <li style="height: {{getRaceByStateStatsValue(ufraca,'women','branco',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','branco',100)}}%"></li>
@@ -205,7 +205,7 @@
                 <div class="wrapper-bar male race rc-male">
                     <div>
                         <h5>Homens</h5>
-                        <h6>{{((getRaceByStateStatsValue(ufraca,'men','total',1)/(getRaceByStateStatsValue(ufraca,'women','total',1)+getRaceByStateStatsValue(ufraca,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getRaceByStateStatsValue(ufraca,'men','total',1)||0}} )</h6>
+                        <h6>{{ ((getRaceByStateStatsValue(ufraca,'men','total',1)/totalMenWoman)*100).toFixed(2) ||0}}%</span> ({{getRaceByStateStatsValue(ufraca,'men','total',1)||0}})<h6>
                     </div>
                     <ul>
                         <li style="height: {{getRaceByStateStatsValue(ufraca,'men','branco',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','branco',100)}}%"></li>

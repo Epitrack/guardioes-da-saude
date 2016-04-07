@@ -319,16 +319,21 @@ angular.module('gdsApp')
                         $scope.totalmenByAgeFundedwomenByAgeFunded += $scope.dash.womenByAgeFunded[i].total;
                     }
                     if (key === 'men') {
+                        var totalmen = 0
+                        for (var i in $scope.dash.menByAgeFunded) {
+                            totalmen += $scope.dash.menByAgeFunded[i].total;
+                        }
                         if (value !== 'total') {
                             var g = _.filter($scope.dash.menByAgeFunded, function(o) {
                                 return o['_id']['ageGroup'] === value;
                             });
-                            return g.length === 0 ? 0 : g[0].total;
-                        } else {
-                            var totalmen = 0
-                            for (var i in $scope.dash.menByAgeFunded) {
-                                totalmen += $scope.dash.menByAgeFunded[i].total;
+                            if (div === 100) {
+                                return g.length === 0 ? 0 : ((g[0].total / totalmen) * 100).toFixed(2);
+                            } else {
+                                return g.length === 0 ? 0 : (g[0].total / totalmen).toFixed(2);
                             }
+                        } else {
+
                             return (totalmen);
                         }
                     } else if (key === 'women') {
@@ -341,9 +346,9 @@ angular.module('gdsApp')
                                 return o['_id']['ageGroup'] === value;
                             });
                             if (div === 100) {
-                                return g.length === 0 ? 0 : ((g[0].total/totalmen) * 100).toFixed(2);
+                                return g.length === 0 ? 0 : ((g[0].total / totalmen) * 100).toFixed(2);
                             } else {
-                                 return g.length === 0 ? 0 : (g[0].total/totalmen).toFixed(2);
+                                return g.length === 0 ? 0 : (g[0].total / totalmen).toFixed(2);
                             }
                         } else {
 
@@ -373,17 +378,52 @@ angular.module('gdsApp')
                 }
             } else {
                 try {
-                    $scope.totalbyRaceFunded = 0
-                    for (var i in $scope.dash.byRaceFunded) {
-                        $scope.totalbyRaceFunded += $scope.dash.byRaceFunded[i].total;
+                    //0 - M
+                    $scope.totalMenWoman = 0
+                    for (var i in $scope.dash.byRaceFunded[0]['races']) {
+                        $scope.totalMenWoman += $scope.dash.byRaceFunded[0]['races'][i].total;
                     }
-                    if (value !== 'total') {
-                        var g = _.filter($scope.dash.byRaceFunded, function(o) {
-                            return o['_id']['ageGroup'] === value;
-                        });
-                        return g.length === 0 ? 0 : g[0].total;
+                    for (var i in $scope.dash.byRaceFunded[1]['races']) {
+                        $scope.totalMenWoman += $scope.dash.byRaceFunded[1]['races'][i].total;
                     }
-                } catch (e) {}
+                    if (key === 'men') {
+                        var totalmen = 0
+                        for (var i in $scope.dash.byRaceFunded[0]['races']) {
+                            totalmen += $scope.dash.byRaceFunded[0]['races'][i].total;
+                        }
+                        if (value !== 'total') {
+                            var g = _.filter($scope.dash.byRaceFunded[0]['races'], function(o) {
+                                return o['race'] === value;
+                            });
+                            if (div === 100) {
+                                return g.length === 0 ? 0 : ((g[0].total / totalmen) * 100).toFixed(2);
+                            } else {
+                                return g.length === 0 ? 0 : (g[0].total / totalmen).toFixed(2);
+                            }
+                        } else {
+                            return (totalmen);
+                        }
+                    } else {
+                        var totalmen = 0
+                        for (var i in $scope.dash.byRaceFunded[1]['races']) {
+                            totalmen += $scope.dash.byRaceFunded[1]['races'][i].total;
+                        }
+                        if (value !== 'total') {
+                            var g = _.filter($scope.dash.byRaceFunded[1]['races'], function(o) {
+                                return o['race'] === value;
+                            });
+                            if (div === 100) {
+                                return g.length === 0 ? 0 : ((g[0].total / totalmen) * 100).toFixed(2);
+                            } else {
+                                return g.length === 0 ? 0 : (g[0].total / totalmen).toFixed(2);
+                            }
+                        } else {
+                            return (totalmen);
+                        }
+                    }
+                } catch (e) {
+
+                }
             }
         }
 
