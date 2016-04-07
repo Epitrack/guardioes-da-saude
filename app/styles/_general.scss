@@ -131,16 +131,22 @@ body {
 }
 
 .nav-link {
-  color: $link-primary !important;
-  line-height: 40px !important;
-  font-size: ($fs-normal)+.2;
-  font-family: $ff-light;
+  color: #ffffff !important;
+  font-size: ($fs-normal)+.3;
+  font-family: $ff-regular;
   text-transform: uppercase;
-  @include transition(background, .2s, 0s, linear);
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  margin: 10px 20px auto auto;
+  @include bdr(12px);
+  @include transition(all, .25s, 0s, linear);
+
 
   &:hover,
-  &:visited,
-  &:focus { background-color: $btn-primary !important; }
+  &:focus {
+    background-color: #ffffff !important;
+    color: $btn-primary !important;
+  }
 }
 
 .btn-survey {
@@ -232,6 +238,39 @@ body {
 // ===
 
 
+// TODO
+.popover-title{
+    background-color: #1a69d3 !important;
+    font-size: 18px !important;
+	color: #ffffff !important;
+    text-align: center !important;
+}
+.popover-content{
+  font-size: 14px !important;
+  line-height: 6px !important;
+  color: #4c4c4c;
+  text-align: center !important;
+}
+
+
+.chart {
+//  position: absolute;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+//dashboard
+
+.search-dashboard-map {
+  width: 300px;
+  position: absolute;
+  margin-top: -470px;
+  margin-left: 45px;
+}
 
 //
 // Inside content
@@ -409,9 +448,10 @@ body {
   @include path('banner-download-app.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 150px;
   background-position: 100%;
   padding-top: 50px;
+  background-color: #ffffff;
+  // margin-bottom: 30px;
 }
 
 .phones {
@@ -480,6 +520,52 @@ body {
     margin-top: 5px;
   }
 }
+
+// ====
+
+//
+// Banner zikazero
+//
+
+.banner-zikazero {
+  min-height: 300px;
+  height: auto;
+  padding: 40px 0;
+  background-color: #ffffff;
+
+  figure {
+    height: auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.zika-text {
+  h3 {
+    font-size: ($fs-medium)+1.4;
+    color: #4a4a4a;
+  }
+
+  h5 {
+    color: #4a4a4a;
+
+    span {
+      font-family: $ff-light;
+      font-style: italic;
+    }
+  }
+
+  h5, a {
+    font-size: ($fs-medium)+.4;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
 
 // ====
 
@@ -1202,6 +1288,16 @@ body {
 .news-tweet {
   font-size: ($fs-medium)-.4;
   margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: $week-days-color;
+    @include transition(color, .25s, 0s, linear);
+
+    &:hover {
+      color: $btn-primary;
+    }
+  }
 }
 
 .news-footer {
@@ -1453,6 +1549,58 @@ p.login-email {
     color: $week-days-color;
     margin: 3px 0 17px 0;
   }
+
+  // Dashboard card
+  h4 {
+    &.icon {
+      font-size: ($fs-normal)+.2;
+      color: $font-primary;
+      margin: 20px auto 10px auto;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      width: 100px;
+      height: 30px;
+      background-repeat: no-repeat;
+
+      &:before {
+        content: '';
+        width: 25px;
+        height: 15px;
+        position: absolute;
+        display: inline-block;
+        vertical-align: top;
+        left: -40px;
+      }
+
+      &.user {
+        &:before {
+          @include path('dashboard/people.svg');
+        }
+      }
+
+      &.house {
+        &:before {
+          width: 18px;
+          @include path('dashboard/house.svg');
+        }
+      }
+    }
+
+    &.subtitle {
+      color: $font-primary;
+      font-size: ($fs-normal)+.2;
+      margin: 10px auto 5px 15px;
+      display: inline-block;
+    }
+  }
+
+  .card-value {
+    width: 100%;
+    font-family: $ff-bold;
+    font-size: ($fs-medium)+1.6;
+    color: $font-primary;
+  }
 }
 
 .content-card {
@@ -1527,7 +1675,7 @@ p.login-email {
   &.confirm-survey { margin-bottom: 10px; }
 }
 
-.panel-body { padding: 0; }
+.panel-body { padding: 0; margin-top: -35px}
 
 #notDataLinechart{
   display: block;
@@ -1540,7 +1688,6 @@ p.login-email {
 
   div {
     padding-top:73px;
-    position: absolute !important;
     width: 100% !important;
   }
 }

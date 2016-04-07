@@ -2,22 +2,90 @@
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 
 <!-- Content -->
-<section class="col-sm-9 col-md-10 content-internal">
+<section class="col-sm-9 col-md-10 content-internal" ng-init="initMap()">
   <h2 class="section-title">Painel de controle <span>/ Mapa</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
-    <header class="panel-heading">
+    <header class="panel-heading card-heading">
       <h3 class="panel-title">Mapa da Saúde</h3>
+
+      <div class="pull-right wrapper-switch-participation">
+        <div>
+          <md-switch class="md-assintomatico" ng-model="data.clusters" aria-label="Clusters" ng-change="activeClusters(data.clusters)">Clusters</md-switch>
+        </div>
+
+        <div>
+          <button ng-click="timeSelectionClick('Esta semana')" ng-disabled='timeSelection === "Esta semana"'>Esta semana</button>
+
+          <button ng-click="timeSelectionClick('Este mês')"  ng-disabled='timeSelection === "Este mês"'>Este mês</button>
+        </div>
+      </div>
     </header>
 
     <div class="panel-body">
-      ...
+      <div id="dashboard-map" class="dashboard-map"></div>
     </div>
+
+    <form ng-submit="getMarkersByCity()" class="form-mini-dashboard search-dashboard-map" name="form-mini-dashboard">
+      <fieldset>
+        <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city"
+          autocomplete="off"
+          uib-typeahead="address for address in getLocation($viewValue)"
+          typeahead-loading="loadingLocations"
+          typeahead-no-results="noResults"
+          typeahead-on-select="getCityAutoComplete($item)"
+          onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
+      </fieldset>
+    </form>
   </article>
 
-  <div class="no-padding col-xs-12">
-    <legend class="legend-subtitle other">Esta semana</legend>
+  <div class="no-padding col-xs-12 sindromes-dash-map">
+    <article class="col-xs-12 card">
+      <div class="sindromes">
+        <legend class="legend-subtitle ff-bold">Síndromes</legend>
 
-    <article class="col-xs-12 card"></article>
+        <div class="progress-wrapper">
+          <span class="progress-label">Diarréica</span>
+
+          <div class="progress">
+            <div class="progress-bar diarreica active" role="progressbar"
+                 aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{summary.diarreica}}%">
+              <span class="sr-only">{{summary.diarreica}}% Complete</span>
+            </div>
+          </div>
+
+          <span class="progress-value">{{summary.diarreica}}%</span>
+        </div>
+
+        <div class="progress-wrapper">
+          <span class="progress-label">Exantemática</span>
+
+          <div class="progress">
+            <div class="progress-bar exantematica active" role="progressbar"
+                 aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{summary.exantematica}}%">
+              <span class="sr-only">{{summary.exantematica}}% Complete</span>
+            </div>
+          </div>
+
+          <span class="progress-value">{{summary.exantematica}}%</span>
+        </div>
+
+        <div class="progress-wrapper">
+          <span class="progress-label">Respiratória</span>
+
+          <div class="progress">
+            <div class="progress-bar respiratoria active" role="progressbar"
+                 aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100"
+                 style="width: {{summary.respiratoria}}%">
+              <span class="sr-only">{{summary.respiratoria}}% Complete</span>
+            </div>
+          </div>
+
+          <span class="progress-value">{{summary.respiratoria}}%</span>
+        </div>
+    </div>
+    </article>
   </div>
 </section>

@@ -174,7 +174,7 @@ angular.module('gdsApp')
     }
 
     function getSurveyByCitySummary(params) {
-      if (params == undefined) {
+      if (params === undefined) {
         return;
       }
 

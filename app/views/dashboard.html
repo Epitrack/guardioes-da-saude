@@ -1,21 +1,270 @@
+<script async type="text/javascript" src="https://www.google.com/jsapi"></script>
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
-
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Painel de controle <span>/ Geral</span></h2>
-
-  <article class="col-md-3 card"></article>
-  <article class="col-md-8 col-md-offset-1 card"></article>
-
-  <article class="col-xs-12 card"></article>
-
-  <div class="no-padding col-xs-12">
-    <legend class="legend-subtitle other">Esta semana</legend>
-
-    <!-- <article class="col-xs-12 card"></article> -->
-  </div>
-
-  <article class="col-md-8 card"></article>
-  <article class="col-md-3 col-md-offset-1 card"></article>
+    <h2 class="section-title">Painel de controle <span>/ Geral</span></h2>
+    <div class="wrapper-card-small">
+        <div class="col-sm-3">
+            <article class="card">
+                <h4 class="icon user">Total de usuários</h4>
+                <p class="card-value">{{dash.user}}</p>
+            </article>
+        </div>
+        <div class="col-sm-3">
+            <article class="card">
+                <h4 class="icon house">Total de usuários + integrantes</h4>
+                <p class="card-value">{{dash.households}}</p>
+            </article>
+        </div>
+        <div class="col-sm-6">
+            <article class="card">
+                <ul class="tabs-nav">
+                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
+                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+                </ul>
+                <div class="tabs-container">
+                    <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
+                        <div>
+                            <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <p>Última semana</p>
+                        </div>
+                        <div class="tab-graphic chart1" percent="" data-legend=""></div>
+                        <div>
+                            <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span>
+                            <p>Esta semana</p>
+                        </div>
+                    </div>
+                    <div class="tab-content" ng-show="tab == 'descadastros'">
+                        <div>
+                            <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span>
+                            <p>Última semana</p>
+                        </div>
+                        <div class="tab-graphic chart2" percent="" data-legend=""></div>
+                        <div>
+                            <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <p>Esta semana</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- Participações por dispositivo -->
+    <div class="wrapper-card-smallest">
+        <div class="col-sm-12">
+            <article class="card">
+                <h4 class="subtitle">Participações por dispositivo</h4>
+                <div class="wrapper-progress">
+                    <div class="progress">
+                        <div uib-popover="{{platPercent('web')}}%({{platVal('web')}})" popover-title="WEB" class="progress-bar progress-bar-web" style="width: {{platPercent('web')}}%" popover-trigger="mouseenter">
+                            <span class="sr-only">{{platPercent('web')}}% Complete (web)</span>
+                        </div>
+                        <div uib-popover="{{platPercent('ios')}}%({{platVal('ios')}})" popover-title="iOS" class="progress-bar progress-bar-ios" style="width: {{platPercent('ios')}}%" popover-trigger="mouseenter">
+                            <span class="sr-only">{{platPercent('ios')}}% Complete (ios)</span>
+                        </div>
+                        <div uib-popover="{{platPercent('android')}}%({{platVal('android')}})" popover-title="ANDROID" class="progress-bar progress-bar-android" style="width: {{platPercent('android')}}%" popover-trigger="mouseenter">
+                            <span class="sr-only">{{platPercent('android')}}% Complete (android)</span>
+                        </div>
+                    </div>
+                    <div ng-if="graphlineOptions">
+                        <linechart id="line-chart-dash" data-options="graphlineOptions"></linechart>
+                    </div>
+                </div>
+                <div class="progress-legend">
+                    <figure>
+                        <img src="../images/dashboard/web-icon.svg" alt="">
+                        <figcaption>web</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/dashboard/ios-icon.svg" alt="">
+                        <figcaption>iOS</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/dashboard/android-icon.svg" alt="">
+                        <figcaption>Android</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- Gráfico de participações -->
+    <div class="col-sm-12 wrapper-participation-graphic">
+        <article class="card">
+            <header>
+                <h2>Participações</h2>
+                <div class="pull-right wrapper-switch-participation">
+                    <div>
+                        <md-switch class="md-sintomatico" ng-model="data1.symptomatic" ng-click="updateParticipacoes('symptomatic')" aria-label="Sintomático">Sintomático {{data.symptomatic}}</md-switch>
+                    </div>
+                    <div>
+                        <md-switch class="md-assintomatico" ng-model="data1.asymptomatic" ng-click="updateParticipacoes('asymptomatic')" aria-label="Assintomático">Assintomático {{data.asymptomatic}}</md-switch>
+                    </div>
+                    <div>
+                        <md-switch class="md-total" ng-model="data1.total" ng-click="updateParticipacoes('total')" aria-label="Total">Total {{data.total}}</md-switch>
+                    </div>
+                </div>
+                <div id="line-example" style="width:100%;height: 220px"></div>
+            </header>
+        </article>
+    </div>
+    <!-- Idade / Raça -->
+    <div class="col-sm-6 wrapper-half-card">
+        <!-- Idade -->
+        <div class="col-sm-12 card">
+            <header>
+                <h2>Idade</h2>
+                <div class="dropdown sort-by">
+                    <div>
+                        <select class="btn btn-default dropdown-toggle" ng-init="ufage=''" ng-model="ufage" style="background-color: rgb(30, 136, 229); color: white; border: 0;">
+                            <option class="dash-option" selected value="">Selecione</option>
+                            <option class="dash-option" ng-repeat="m in _agesates" value="{{m.id}}">{{m.id}}</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            <div class="wrapper-half-content">
+                <div class="wrapper-bar female">
+                    <div>
+                        <h5>Mulheres</h5>
+                        <h6><span>{{((getAgeByStateStatsValue(ufage,'women','total',1)/(getAgeByStateStatsValue(ufage,'women','total',1)+getAgeByStateStatsValue(ufage,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getAgeByStateStatsValue(ufage,'women','total',1)||0}} )</h6>
+                    </div>
+                    <ul>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','13_19',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','13_19',100)}} %"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'women','20_34',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','20_34',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','25_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','25_59',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'women','60',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'women','60',100)}}%"></li>
+                    </ul>
+                </div>
+                <div class="bar-legend">
+                    <p>13-19</p>
+                    <p>20-24</p>
+                    <p>25-59</p>
+                    <p>> 60</p>
+                </div>
+                <div class="wrapper-bar male">
+                    <div>
+                        <h5>Homens</h5>
+                        <h6><span>{{((getAgeByStateStatsValue(ufage,'men','total',1)/(getAgeByStateStatsValue(ufage,'women','total',1)+getAgeByStateStatsValue(ufage,'men','total',1)))*100).toFixed(2) ||0}}%</span> ({{getAgeByStateStatsValue(ufage,'men','total',1)||0}})</h6>
+                    </div>
+                    <ul>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'men','13_19',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','13_19',100)}} %"></li>
+                        <li style="height:{{getAgeByStateStatsValue(ufage,'men','20_34',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','20_34',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'men','25_59',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','25_59',100)}}%"></li>
+                        <li style="height: {{getAgeByStateStatsValue(ufage,'men','60',100)+1}}px" data-value="{{getAgeByStateStatsValue(ufage,'men','60',100)}}%"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Raça -->
+        <div class="col-sm-12 card">
+            <header>
+                <h2>Raça/Cor</h2>
+                <div class="dropdown sort-by">
+                    <div>
+                        <select class="btn btn-default dropdown-toggle" ng-init="ufraca=''" ng-model="ufraca" style="background-color: rgb(30, 136, 229); color: white; border: 0;">
+                            <option class="dash-option" selected value="">Selecione</option>
+                            <option class="dash-option" ng-repeat="m in _racesates" value="{{m.id}}">{{m.id}}</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            <div class="wrapper-half-content">
+                <div class="wrapper-bar female race rc-female">
+                    <div>
+                        <h5>Mulheres</h5>
+                        <h6>{{((getRaceByStateStatsValue(ufraca,'women','total',1)/(getRaceByStateStatsValue(ufraca,'women','total',1)+getRaceByStateStatsValue(ufraca,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getRaceByStateStatsValue(ufraca,'women','total',1)||0}} )</h6>
+                    </div>
+                    <ul>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'women','branco',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','branco',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'women','amarelo',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','amarelo',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'women','preto',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','preto',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'women','pardo',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','pardo',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'women','indigena',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'women','indigena',100)}}%"></li>
+                    </ul>
+                </div>
+                <div class="bar-legend race">
+                    <p>Branco</p>
+                    <p>Amarelo</p>
+                    <p>Preto</p>
+                    <p>Pardo</p>
+                    <p>Indígena</p>
+                </div>
+                <div class="wrapper-bar male race rc-male">
+                    <div>
+                        <h5>Homens</h5>
+                        <h6>{{((getRaceByStateStatsValue(ufraca,'men','total',1)/(getRaceByStateStatsValue(ufraca,'women','total',1)+getRaceByStateStatsValue(ufraca,'men','total',1)))*100).toFixed(2) ||0}}%</span> ( {{getRaceByStateStatsValue(ufraca,'men','total',1)||0}} )</h6>
+                    </div>
+                    <ul>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'men','branco',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','branco',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'men','amarelo',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','amarelo',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'men','preto',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','preto',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'men','pardo',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','pardo',100)}}%"></li>
+                        <li style="height: {{getRaceByStateStatsValue(ufraca,'men','indigena',100)+1}}px" data-value="{{getRaceByStateStatsValue(ufraca,'men','indigena',100)}}%"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Concentração de usuários -->
+    <div class="wrapper-card-map">
+        <div class="col-sm-6">
+            <article class="card" style="min-height: auto!important;">
+                <header class="panel-heading">
+                    <h3 class="panel-title">Concentração de usuários</h3>
+                </header>
+                <div class="panel-body">
+                    <div class="dash-map" id="dash-map">
+                        <object id="S" data="images/dashboard/mapa.svg" type="image/svg+xml" style="width: 531px; height: 531px; /*border: 2px solid red;*/"></object>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
+<script type="text/javascript">
+$(window).load(function() {
+    var i = j = k = l = m = 0;
+    var msg = document.getElementById('msg');
+    var D = document.getElementById('S');
+    //var D = document.getElementById('E'); // opção com uso de embed 
+    SVGDoc = D.contentDocument;
+    //SVGDoc = D.getSVGDocument(); // opção com uso de embed 
+    SVGRoot = SVGDoc.documentElement;
+    svgns = 'http://www.w3.org/2000/svg';
+    var estados = SVGRoot.getElementsByTagName('path');
+    var qdeEstados = estados.length;
+    var todasRegioes = SVGRoot.querySelectorAll('.regiao');
+    var regiaoNorte = SVGRoot.querySelector('#norte');
+    var regiaoNordeste = SVGRoot.querySelector('#nordeste');
+    var regiaoSudeste = SVGRoot.querySelector('#sudeste');
+    var regiaoCentroOeste = SVGRoot.querySelector('#centro-oeste');
+    var regiaoSul = SVGRoot.querySelector('#sul');
+
+    // hover dos estados
+    for (i = 0; i < qdeEstados; i++) {
+
+        estados[i].onmouseover = function(evt) {
+
+            var fillColor = this.getAttribute('fill');
+
+            if (fillColor != '#033491') {
+                var x = evt.pageX;
+                var y = evt.pageY + 250;
+                this.style.fill = '#96abca';
+                var siglaEstado = this.parentNode.id;
+            }
+
+        }
+
+        estados[i].onmouseout = function() {
+
+            var fillColor = this.getAttribute('fill');
+
+            this.style.fill = fillColor;
+
+        }
+
+    }
+});
+</script>

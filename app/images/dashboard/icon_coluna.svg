@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_histograma</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon_histograma" sketch:type="MSLayerGroup">
+            <path d="M40,0 C47.2366667,0 53.9246667,1.78733333 60.0673333,5.36066667 C66.2073333,8.934 71.0666667,13.7913333 74.6393333,19.9333333 C78.212,26.0746667 80,32.7633333 80,40 C80,47.2366667 78.212,53.926 74.6393333,60.0666667 C71.0666667,66.2093333 66.2073333,71.0666667 60.0673333,74.6386667 C53.9246667,78.2133333 47.2366667,80 40,80 C32.7626667,80 26.074,78.2133333 19.932,74.6386667 C13.7906667,71.0666667 8.93333333,66.2093333 5.36066667,60.0666667 C1.78666667,53.926 0,47.2366667 0,40 C0,32.7633333 1.78666667,26.0746667 5.36066667,19.9333333 C8.93333333,13.7913333 13.7906667,8.934 19.932,5.36066667 C26.074,1.78733333 32.7626667,0 40,0 Z M26,36.6666667 L32.6666667,36.6666667 L32.6666667,60 L26,60 L26,36.6666667 Z M33.3333333,60 L40,60 L40,20 L33.3333333,20 L33.3333333,60 Z M40.6666667,60 L47.3333333,60 L47.3333333,28.1908395 L40.6666667,28.1908395 L40.6666667,60 Z M48,60 L54.6666667,60 L54.6666667,40 L48,40 L48,60 Z" id="Imported-Layers-Copy" fill="#1E88E5" sketch:type="MSShapeGroup"></path>
+            <path d="M19.171875,18 L19.171875,62.4538614 L63.3333333,62.4538614" id="Path-8326" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
