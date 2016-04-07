@@ -138,12 +138,14 @@
                                 <p style="font-size: 1.3em;">Mês</p>
                                 <select style="height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); width: 80%;">
                                     <option value="Selecione">Selecione</option>
+                                    <option ng-repeat="m in meses" value="{{m}}">{{m}}</option>
                                 </select>
                             </div>
                             <div style="float: left; width: 50%;">
                                 <p style="font-size: 1.3em;">Ano</p>
                                 <select style="height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); width: 80%;">
                                     <option value="Selecione">Selecione</option>
+                                     <option ng-repeat="m in anos" value="{{m}}">{{m}}</option>
                                 </select>
                             </div>
                         </div>
@@ -200,7 +202,7 @@
                         </div>
                     </div>
                 </slide>
-                <slide >
+                <slide>
                     <img src="../../images/dashboard/icon_histograma.svg" style="margin:auto;">
                     <div class="carousel-caption" style="height: 70px;">
                         <p>Histograma</p>

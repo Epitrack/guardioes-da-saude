@@ -11,7 +11,10 @@ angular.module('gdsApp')
     .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
-
+        $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
+        $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
+        $scope.istable = false;
+        /**/
         $scope.buildgraph = function() {
             if ($scope.type === 'pizza') {
 
@@ -186,15 +189,57 @@ angular.module('gdsApp')
                     },
                     series: dados
                 });
-            }
-            console.log($("#container").find("text").last().empty());
-        };
-        $scope.buildgraph();
+            } else {
+                $scope.istable = true;
+                var data = {};
+                $scope.keys = [];
+                $scope.categories = [];
+                var dados = [];
+                /**/
+                for (var o in $scope.result) {
+                    $scope.categories.push(o);
+                    $scope.keys = _.union(keys, _.keys($scope.result[o]))
+                }
+                /**/
+                for (var o in $scope.result) {
+                    for (var j in $scope.keys) {
+                        if (data[$scope.keys[j]] === undefined) {
+                            data[$scope.keys[j]] = {};
+                            data[$scope.keys[j]]['name'] = $scope.keys[j];
+                            data[$scope.keys[j]]['data'] = [];
+                        }
+                        $scope.result[o][$scope.keys[j]] !== undefined ? data[$scope.keys[j]]['data'].push($scope.result[o][$scope.keys[j]].length) : data[$scope.keys[j]]['data'].push(0);
+                    }
+                }
+                /**/
+                for (var o in data) {
+                    dados.push(data[o]);
+                }
+                /**/
+                console.log($scope.result);
+                console.log($scope.keys);
+                console.log($scope.categories);
 
+            }
+            try { $("#container").find("text").last().empty(); } catch (e) {}
+        };
+        $scope.download = function() {
+            window.open('https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt', '_blank');
+        };
+        $scope.getdados = function(key1, value) {
+            try {
+                return $scope.result[key1][value].length;
+            } catch (e) {
+                return 0;
+            }
+        };
+        /**/
+        $scope.buildgraph();
+        /**/
         $scope.gettype = function(t) {
             return t === $scope.type;
         };
-
+        /**/
         $scope.goback = function() {
             $location.path('/dashboard/analysis');
         };

@@ -50,7 +50,7 @@ angular.module('gdsApp')
                 "syndromes": "SINDROME",
                 "TOTPART": "TOTPART",
                 "weeks": "SEN",
-                "MEMBROS": "MEMBROS",
+                "monthyear": "MES",
                 "TIPOUSUARIO": "TIPOUSUARIO",
                 "FORAPAIS": "FORAPAIS",
             }
@@ -65,7 +65,6 @@ angular.module('gdsApp')
 
         Surveyapi.getSymptoms(function(data) {
             $scope.symptomsList = data.data.data;
-            console.log($scope.symptomsList);
         });
 
         $scope.getAllData = function() {
@@ -241,6 +240,20 @@ angular.module('gdsApp')
             }
         };
         /**/
+        $scope.meses = [];
+        $scope.anos = [];
+        $scope.getMesesAnos = function() {
+            $scope.loadfile(function(data) {
+                $scope.meses = _.keys(_.groupBy(data, function(obj) {
+                    return obj['MES'];
+                }));
+                $scope.anos = _.keys(_.groupBy(data, function(obj) {
+                    return obj['ANO'];
+                }));
+            });
+        };
+        $scope.getMesesAnos();
+        /**/
         $scope.getGraphic = function(type) {
             /* console.log($scope.params[type]);
              console.log($scope.variaveis);
@@ -276,17 +289,15 @@ angular.module('gdsApp')
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
-                    console.log(is_sintoma);
                     if (is_sintoma) {
                         result = _.groupBygroup(data, groups, idsintoma, ",");
                     } else {
-                        console.log(data, groups);
                         result = _.groupByMulti(data, groups);
                     }
-                    console.log(result);
                     /**/
                     window.localStorage.setItem('type', type);
-                    window.localStorage.setItem('groups', groups);
+                    window.localStorage.setItem('groups', JSON.stringify(groups));
+                    window.localStorage.setItem('filters', JSON.stringify(_.keys(obj)));
                     window.localStorage.setItem('result', JSON.stringify(result));
                     $location.path('/dashboard/analysis/result');
                     /**/
