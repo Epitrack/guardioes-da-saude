@@ -43,7 +43,7 @@ th {
     <h2 class="section-title">Painel de controle <span>/ Análise de dados / Resultados</span></h2>
     <article class="col-xs-12 card" style="padding: 20px;">
         <div>
-            <span style="width: 255px;   height: 32px;   font-family: .HelveticaNeueDeskInterface-Regular;   font-size: 26.4px;   color: #4c4c4c;">Análise de Síndromes</span>
+            <span style="width: 255px;   height: 32px;   font-family: .HelveticaNeueDeskInterface-Regular;   font-size: 26.4px;   color: #4c4c4c;">Análise de {{labels.toString().replace(","," x ")}}</span>
             <select style="width: 250px; height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); float: right; font-size: 2.5em;">
                 <option>Visualizar Filtros</option>
                 <option ng-repeat="g in filters">{{g}}</option>

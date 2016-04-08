@@ -10,24 +10,23 @@
 angular.module('gdsApp')
     .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope) {
         $scope.slide_active = 0;
-        
+
+        $scope.DEPARALABELS = {
+            "symptoms": "Sintomas",
+            "syndromes": "Sindromes",
+            "age": "Idade",
+            "gender": "Sexo",
+            "race": "Raça",
+            "weeks": "Semana Epidemiológica",
+            "monthyear": "Mês/Ano",
+            "local": "Local"
+        };
         $scope.DEPARA = {
-                "ID_REG_SEQ": "ID_REG_SEQ",
-                "ID_REG_SEQ": "ID_REG_SEQ",
-                "APELIDO": "APELIDO",
                 "age": "FE",
                 "gender": "SEXO",
                 "email": "EMAIL",
                 "race": "COR",
-                "DT_CADASTRO": "DT_CADASTRO",
-                "DT_REGISTRO_DIA": "DT_REGISTRO_DIA",
-                "DT_REGISTRO_HORA": "DT_REGISTRO_HORA",
-                "LOC_REGISTRO": "LOC_REGISTRO",
                 "local": "REGIAO",
-                "EQUIPAMENTO": "EQUIPAMENTO",
-                "LAT": "LAT",
-                "LONG": "LONG",
-                "STATUS": "STATUS",
                 "febre": "FEBRE",
                 "manchas-vermelhas": "MANVERM",
                 "dor-no-corpo": "DORCORPO",
@@ -41,19 +40,13 @@ angular.module('gdsApp')
                 "nausea-vomito": "NAUSVOM",
                 "diarreia": "DIARREIA",
                 "sangramento": "SANGRAME",
-                "CONTATO": "CONTATO",
-                "SERVSAUDE": "SERVSAUDE",
-                "CADASTRO": "CADASTRO",
                 "symptoms": "SINTOMAS",
                 "diarreica": "SIND_DIA",
                 "respiratoria": "SIND_RES",
                 "exantematica": "SIND_EXA",
                 "syndromes": "SINDROME",
-                "TOTPART": "TOTPART",
                 "weeks": "SEN",
-                "monthyear": "MESANO",
-                "TIPOUSUARIO": "TIPOUSUARIO",
-                "FORAPAIS": "FORAPAIS",
+                "monthyear": "MESANO"
             }
             // ====
             // Get all symptoms
@@ -285,9 +278,9 @@ angular.module('gdsApp')
             var is_sintoma = false;
             var idsintoma = 0;
             var count = 0;
+            var labels = [];
             $scope.loadfile(function(data) {
                 var groups = [];
-                var obj = {};
                 for (var o in $scope.params[type]) {
                     if (o !== 'filtros') {
                         for (var i in $scope.params[type][o]) {
@@ -295,23 +288,30 @@ angular.module('gdsApp')
                                 is_sintoma = true;
                                 idsintoma = count;
                             }
+                            labels.push($scope.DEPARALABELS[$scope.params[type][o][i].id]);
                             groups.push($scope.DEPARA[$scope.params[type][o][i].id]);
                             count++;
                         }
-                    } else {
-                        for (var i in $scope.params[type][o]) {
-                            for (var key in $scope.analytics[$scope.params[type][o][i].id]) {
-                                if ($scope.analytics[$scope.params[type][o][i].id][key]) {
-                                    obj[$scope.DEPARA[$scope.params[type][o][i].id]] = key;
-                                }
-                            }
+                    }
+                }
+                var df = data;
+                for (var key in $scope.analytics) {
+                    var data_final = [];
+                    for (var value in $scope.analytics[key]) {
+                        var obj = {};
+                        obj[$scope.DEPARA[key]] = value;
+                        data_final.push(_.where(df, obj));
+                    }
+                    df = [];
+                    for (var i in data_final) {
+                        for (var ii in data_final[i]) {
+                            df.push(data_final[i][ii]);
                         }
                     }
                 }
+
+                data = df;
                 /*Filtros*/
-                console.log("obj ", obj);
-                data = _.where(data, obj);
-                console.log(data);
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
@@ -322,6 +322,7 @@ angular.module('gdsApp')
                     }
                     /**/
                     window.localStorage.setItem('type', type);
+                    window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));
                     window.localStorage.setItem('filters', JSON.stringify(_.keys(obj)));
                     window.localStorage.setItem('result', JSON.stringify(result));

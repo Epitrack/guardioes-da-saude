@@ -11,6 +11,7 @@ angular.module('gdsApp')
     .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
+        $scope.labels = JSON.parse(window.localStorage.getItem('labels'));
         $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
         $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
         $scope.istable = false;

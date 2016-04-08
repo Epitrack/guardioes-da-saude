@@ -288,8 +288,13 @@ angular.module('gdsApp')
             }
             $scope._agesates = [];
             for (var o in $scope.agesates) {
-                $scope._agesates.push({ id: o });
+                if (_.contains($scope.UFS, o)) {
+                    $scope._agesates.push({ id: o });
+                }
             }
+            $scope._agesates = _.sortBy($scope._agesates, function(o) {
+                return o.id
+            });
         };
         $scope.getAgeByStateStatsValue = function(uf, key, value, div) {
             // console.log(uf === '', key, value, div);
@@ -457,13 +462,47 @@ angular.module('gdsApp')
             }
             $scope._racesates = [];
             for (var o in $scope.racesates) {
-                $scope._racesates.push({ id: o });
+                if (_.contains($scope.UFS, o)) {
+                    $scope._racesates.push({ id: o });
+                }
             }
+            $scope._racesates = _.sortBy($scope._racesates, function(o) {
+                return o.id
+            });
+
         };
 
 
 
         $scope.getAllData();
-
+        $scope.UFS = [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PR",
+            "PB",
+            "PA",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SE",
+            "SP",
+            "TO"
+        ];
 
     }]);
