@@ -216,7 +216,11 @@ angular.module('gdsApp')
                 count += $scope.dash.platforms[i].count;
                 if ($scope.dash.platforms[i]._id === plat) { _c = $scope.dash.platforms[i].count }
             }
-            return (_c * 100 / count).toFixed(1);
+            var decimal = 0;
+            if (plat !== 'android') {
+                decimal = 1;
+            }
+            return (_c * 100 / count).toFixed(decimal);
         };
 
         $scope.platVal = function(plat) {

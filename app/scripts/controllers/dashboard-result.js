@@ -29,6 +29,8 @@ angular.module('gdsApp')
                     }
                     data.push({ name: o, y: v });
                 }
+
+                console.log(data);
                 Highcharts.getOptions().plotOptions.pie.colors = (function() {
                     var colors = [],
                         base = Highcharts.getOptions().colors[0],
