@@ -46,12 +46,7 @@ angular.module('gdsApp')
                     }
                 }
             }
-
             var index = ((colors.length-10)*$scope._usersByState[(uf + '').toUpperCase()]) / max;
-            console.log(Math.floor(index));
-
-            // colors.length/10
-
             return {
                 "max": max,
                 "min": min,
@@ -61,7 +56,6 @@ angular.module('gdsApp')
         }
 
         $scope.readusersByState = function() {
-            // console.log($scope.dash.usersByState);
             for (var i in $scope.dash.usersByState) {
                 $scope._usersByState[$scope.dash.usersByState[i]['_id']] = $scope.dash.usersByState[i]['count'];
             }
@@ -176,12 +170,10 @@ angular.module('gdsApp')
         // Get all data from dashboard
         $scope.getAllData = function() {
             DashboardApi.getAllData(function(data) {
-                console.log('getAllData', data)
                 if (data.status !== 200) {
                     Notification.show('error', 'Atenção', data.statusText);
                 } else {
                     Notification.show('success', 'Dashboard', data.statusText);
-                    console.log('notification OK', data.data)
                     var result = data.data;
                     $scope.dash = result;
                     $scope.dadosGrafico = $scope.dash;
@@ -197,7 +189,6 @@ angular.module('gdsApp')
 
         function setPercOps() {
             $scope.graphicOnePerc = ((($scope.dash.newRegisters - $scope.dash.lastWeekRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
-            console.log($scope.graphicOnePerc);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
@@ -274,7 +265,6 @@ angular.module('gdsApp')
             for (var i in $scope.dash.platforms) {
                 if ($scope.dash.platforms[i]._id === plat) { val = $scope.dash.platforms[i].count }
             }
-            // console.log(plat,val);
             return val;
         };
 
@@ -344,14 +334,11 @@ angular.module('gdsApp')
             });
         };
         $scope.getAgeByStateStatsValue = function(uf, key, value, div) {
-            // console.log(uf === '', key, value, div);
             if (uf !== '') {
-                console.log($scope.agesates);
                 if ($scope.agesates !== undefined && $scope.agesates[uf] !== undefined && $scope.agesates[uf][key] !== undefined) {
                     if ($scope.agesates[uf][key][value] === undefined) {
                         return 0;
                     } else {
-                        // console.log(uf, key, value);
                         if (div === 100) {
                             return (($scope.agesates[uf][key][value] / $scope.agesates[uf][key]['total']) * 100).toFixed(2);
                         } else {
@@ -418,7 +405,6 @@ angular.module('gdsApp')
                     if ($scope.racesates[uf][key][value] === undefined) {
                         return 0;
                     } else {
-                        console.log(uf, key, value);
                         if (div === 100) {
                             return (($scope.racesates[uf][key][value] / $scope.racesates[uf][key]['total']) * 100).toFixed(2);
                         } else {

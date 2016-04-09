@@ -321,10 +321,8 @@ $(window).load(function() {
 
     function colorizeMap(){
          for (i = 0; i < qdeEstados; i++) {
-            console.log(cores,estados[i].parentNode.id);
         var obj = angular.element($(".popover")).scope().getColorMap(cores,estados[i].parentNode.id);
         estados[i].style.fill = obj.cor;
-                console.log(obj);
          }
     }
 
