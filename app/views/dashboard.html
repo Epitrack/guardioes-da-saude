@@ -13,6 +13,20 @@
     width: 70px;
     z-index: 4;
 }
+
+#out {
+    width: 30px;
+    margin: 20px auto;
+    float: left;
+    bottom: 0px;
+    position: absolute;
+}
+
+#out div {
+    width: 30px;
+    height: 7px;
+    margin: 0;
+}
 </style>
 <script async type="text/javascript" src="https://www.google.com/jsapi"></script>
 <!-- Menu -->
@@ -242,9 +256,10 @@
                     <h3 class="panel-title">Concentração de usuários</h3>
                 </header>
                 <div class="panel-body">
+                    <div id="out" ></div>
                     <div class="dash-map" id="dash-map">
-                    <span class="popover above">Hey bro, cool popover!</span>
-                        <object id="S" data="images/dashboard/mapa.svg" type="image/svg+xml" style="width: 531px; height: 531px; /*border: 2px solid red;*/"></object>
+                    <span class="popover above"></span>
+                        <object id="S" data="images/dashboard/mapa.svg" type="image/svg+xml" style="width: 531px; height: 531px;"></object>
                     </div>
                 </div>
             </article>
@@ -277,26 +292,74 @@ $(window).load(function() {
 
             var fillColor = this.getAttribute('fill');
 
-            if (fillColor != '#033491') {
+            // if (fillColor != '#033491') {
                 var x = evt.pageX;
                 var y = evt.pageY + 250;
-                this.style.fill = '#96abca';
+                this.style.fill = 'rgb(7, 76, 149)';
                 var siglaEstado = this.parentNode.id;
-                
+                this.style.stroke="#1e88e5";
                 $(".popover").css("left",x);
                 $(".popover").css("top",(y-250));
                 $(".popover").html(''+(this.parentNode.id).toUpperCase()+' : '+angular.element($(".popover")).scope().getUserbyLocation(this.parentNode.id));
                 $(".popover").show();
-            }
+            // }
 
         }
 
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
-            this.style.fill = fillColor;
-                $(".popover").hide();
+            this.style.fill = angular.element($(".popover")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
+            this.style.stroke="white";
+            $(".popover").hide();
         }
 
+        // estados[i].style.stroke="#1e88e5";
+
     }
+
+    function colorizeMap(){
+         for (i = 0; i < qdeEstados; i++) {
+            console.log(cores,estados[i].parentNode.id);
+        var obj = angular.element($(".popover")).scope().getColorMap(cores,estados[i].parentNode.id);
+        estados[i].style.fill = obj.cor;
+                console.log(obj);
+         }
+    }
+
+
+
+function ColorLuminance(hex, lum) {
+    // validate hex string
+    hex = String(hex).replace(/[^0-9a-f]/gi, '');
+    if (hex.length < 6) {
+        hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    }
+    lum = lum || 0;
+    // convert to decimal and change luminosity
+    var rgb = "#", c, i;
+    for (i = 0; i < 3; i++) {
+        c = parseInt(hex.substr(i*2,2), 16);
+        c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+        rgb += ("00"+c).substr(c.length);
+    }
+    return rgb;
+}
+
+var color = "#074c95",
+    lum = 0.02,
+    out = document.getElementById("out");
+var i, c, nc;
+var cores = [];
+for (var i = 0; i < 80; i++) {
+    if(i%5===0){
+    var c = out.appendChild(document.createElement("div"));
+    nc = ColorLuminance(color, i*lum);
+    c.style.backgroundColor = nc;
+    c.title = nc;
+    cores.push(nc);
+    }
+}
+cores = cores.reverse();
+colorizeMap();
 });
 </script>

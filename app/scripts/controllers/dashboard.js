@@ -26,19 +26,49 @@ angular.module('gdsApp')
 
         $scope.ykeys = ['symptomatic', 'asymptomatic', 'total'];
         $scope.labels = ['Sintomático', 'Assintomático', 'Total'];
+        $scope.colorsmap = ['#ffffff', '#e3f1f9', '#b5daee', '#7bbde1', '#62b0dc', '#49a4d6', '#3098d0', '#2a86b8', '#24749f', '#1e6186'];
         $scope.colorsgraph = ['#76031c', '#b3b500', '#f5a623'];
         /**/
         $scope._usersByState = {};
 
+        $scope.getColorMap = function(colors, uf) {
+            var max = 0;
+            var min = 10000;
+            for (var i in $scope.UFS) {
+                if ($scope._usersByState[$scope.UFS[i]] !== undefined) {
+                    if ($scope._usersByState[$scope.UFS[i]] > max) {
+                        max = $scope._usersByState[$scope.UFS[i]];
+                    }
+                }
+                if ($scope._usersByState[$scope.UFS[i]] !== undefined) {
+                    if ($scope._usersByState[$scope.UFS[i]] < min) {
+                        min = $scope._usersByState[$scope.UFS[i]];
+                    }
+                }
+            }
+
+            var index = ((colors.length-10)*$scope._usersByState[(uf + '').toUpperCase()]) / max;
+            console.log(Math.floor(index));
+
+            // colors.length/10
+
+            return {
+                "max": max,
+                "min": min,
+                "value": $scope._usersByState[(uf + '').toUpperCase()],
+                "cor": colors[Math.floor(index)]
+            };
+        }
+
         $scope.readusersByState = function() {
-            console.log($scope.dash.usersByState);
+            // console.log($scope.dash.usersByState);
             for (var i in $scope.dash.usersByState) {
                 $scope._usersByState[$scope.dash.usersByState[i]['_id']] = $scope.dash.usersByState[i]['count'];
             }
         };
 
         $scope.getUserbyLocation = function(uf) {
-            return $scope._usersByState[(uf + '').toUpperCase()];
+            return $scope._usersByState[(uf + '').toUpperCase()]!==undefined ? $scope._usersByState[(uf + '').toUpperCase()] : 0;
         };
         $scope.updateParticipacoes = function(key) {
             /**/
