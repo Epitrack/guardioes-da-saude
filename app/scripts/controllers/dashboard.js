@@ -28,6 +28,18 @@ angular.module('gdsApp')
         $scope.labels = ['Sintomático', 'Assintomático', 'Total'];
         $scope.colorsgraph = ['#76031c', '#b3b500', '#f5a623'];
         /**/
+        $scope._usersByState = {};
+
+        $scope.readusersByState = function() {
+            console.log($scope.dash.usersByState);
+            for (var i in $scope.dash.usersByState) {
+                $scope._usersByState[$scope.dash.usersByState[i]['_id']] = $scope.dash.usersByState[i]['count'];
+            }
+        };
+
+        $scope.getUserbyLocation = function(uf) {
+            return $scope._usersByState[(uf + '').toUpperCase()];
+        };
         $scope.updateParticipacoes = function(key) {
             /**/
             $scope.ykeys = [];
@@ -147,6 +159,7 @@ angular.module('gdsApp')
                     setPercOps();
                     $scope.filterAgeByState();
                     $scope.filterRaceByState();
+                    $scope.readusersByState();
                 }
 
             });
