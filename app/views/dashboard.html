@@ -308,9 +308,11 @@ $(window).load(function() {
 
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
+            if(this.parentNode.id!=="canvas_background"){
             this.style.fill = angular.element($(".popover")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
             this.style.stroke="white";
             $(".popover").hide();
+            }
         }
 
         // estados[i].style.stroke="#1e88e5";
