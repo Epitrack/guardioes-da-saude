@@ -66,6 +66,12 @@
 // Health map
 //
 
+header {
+  &.modal-hm {
+    margin-bottom: 20px !important;
+  }
+}
+
 .modal-sindromes {
   @extend .modal-add-profile;
 
