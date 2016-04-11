@@ -13,7 +13,7 @@ angular.module('gdsApp')
 
         $scope.DEPARALABELS = {
             "symptoms": "Sintomas",
-            "syndromes": "Sindromes",
+            "syndromes": "Síndromes",
             "age": "Idade",
             "gender": "Sexo",
             "race": "Raça",

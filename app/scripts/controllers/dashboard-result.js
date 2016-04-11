@@ -128,7 +128,9 @@ angular.module('gdsApp')
                     plotOptions: {
                         column: {
                             pointPadding: 0,
-                            borderWidth: 0
+                            borderWidth: 0,
+                             groupPadding:0,
+                             borderWidth:1
                         }
                     },
                     series: dados

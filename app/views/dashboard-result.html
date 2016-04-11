@@ -70,11 +70,11 @@ th {
             <div id="js-legend" class="chart-legend" style="font-size: 3em; float: left; right: 14px; margin-top: 10%; margin-left: 10%;"></div>
         </div> -->
         <div style="float: right; bottom: 20px; right: 20px;margin-top: 10px;">
-            <button class="btn  btn-default btn-font" ng-click="download()">Download (.csv)</button>
+            <button class="btn  btn-default btn-font" data-toggle="modal" data-target="#download-csv">Download (.csv)</button>
             <button class="btn btn-primary btn-font" ng-click="goback()">Voltar</button>
         </div>
         <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
-            <article class="modal-dialog" role="document">
+            <article class="modal-dialog" role="document" style="margin: 100px auto;">
                 <div class="modal-content">
                     <form class="card-form" name="i-feel-bad-form">
                         <header class="modal-header panel-heading confirm-survey">
@@ -84,15 +84,15 @@ th {
                             <h3 class="modal-title panel-title ff-bold">Atenção</h3>
                         </header>
                         <div class="modal-body">
-                            <div class="panel-body">
+                            <div class="panel-body" style="margin-top: 0px;">
                                 <div class="col-xs-12">
-                                    <p class="thank-you-text left">Deseja enviar suas informações?</p>
+                                    <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados. <br/> Deseja fazer o download dos dados brutos?</p>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="pull-right btn btn-primary" data-dismiss="modal">Sim</button>
-                            <button class="pull-right btn btn-default" data-dismiss="modal">Não</button>
+                            <button class="pull-right btn btn-primary" data-dismiss="modal" ng-click="download()"> <i class="glyphicon glyphicon-ok"></i> Sim</button>
+                            <button class="pull-right btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove"></i> Não</button>
                         </div>
                     </form>
                 </div>

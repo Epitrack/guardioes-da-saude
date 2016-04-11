@@ -77,10 +77,10 @@ angular.module('gdsApp')
     obj.getMarkersByWeek = function (week, callback) {
       $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success getMarkersByCity: ', data);
+         console.log('Success getMarkersByCity: ', data);
           callback(data);
         }, function (error) {
-          // console.warn('Error getMarkersByCity: ', error);
+          console.warn('Error getMarkersByCity: ', error);
         });
     };
 

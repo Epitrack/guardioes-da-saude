@@ -101,7 +101,10 @@ angular.module('gdsApp')
                 //        console.log('getSurveyWeek', data.data.data);
                 if (data.data.error === false) {
                     if (data.data.data.length === 0) {
+                        try{
+                            
                         Notification.error('error', 'Atenção', 'Nenhum usuário.');
+                        }catch(e){}
                     } else {
                         var newMs = [];
                         //            console.log('getSurveyByCity', data)
@@ -284,6 +287,7 @@ angular.module('gdsApp')
             };
 
             Surveyapi.getCityByPosition(params, function(data) {
+                console.log(data);
                 $rootScope.city = data.data.results[1].formatted_address;
                 $scope.getCityAutoComplete($rootScope.city);
             });
