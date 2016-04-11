@@ -31,6 +31,7 @@ angular.module('gdsApp')
                 }
                 data = _.sortBy(data, function(obj) {
                     return obj.y; });
+                data = data.reverse();
 
                 Highcharts.getOptions().plotOptions.pie.colors = (function() {
                     var colors = [],
@@ -38,7 +39,7 @@ angular.module('gdsApp')
                         i;
 
                     for (i = 0; i < 10; i += 1) {
-                        colors.push(Highcharts.Color(base).brighten((i - 7) / 7).get());
+                        colors.push(Highcharts.Color(base).brighten((i - 4) / 7).get());
                     }
                     return colors;
                 }());
