@@ -29,15 +29,16 @@ angular.module('gdsApp')
                     }
                     data.push({ name: o, y: v });
                 }
+                data = _.sortBy(data, function(obj) {
+                    return obj.y; });
 
-                console.log(data);
                 Highcharts.getOptions().plotOptions.pie.colors = (function() {
                     var colors = [],
                         base = Highcharts.getOptions().colors[0],
                         i;
 
                     for (i = 0; i < 10; i += 1) {
-                        colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
+                        colors.push(Highcharts.Color(base).brighten((i - 7) / 7).get());
                     }
                     return colors;
                 }());
@@ -129,8 +130,8 @@ angular.module('gdsApp')
                         column: {
                             pointPadding: 0,
                             borderWidth: 0,
-                             groupPadding:0,
-                             borderWidth:1
+                            groupPadding: 0,
+                            borderWidth: 1
                         }
                     },
                     series: dados
