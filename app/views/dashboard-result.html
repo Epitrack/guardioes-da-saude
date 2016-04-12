@@ -73,30 +73,9 @@ th {
             <button class="btn  btn-default btn-font" data-toggle="modal" data-target="#download-csv">Download (.csv)</button>
             <button class="btn btn-primary btn-font" ng-click="goback()">Voltar</button>
         </div>
-        <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
-            <article class="modal-dialog" role="document" style="margin: 100px auto;">
-                <div class="modal-content">
-                    <form class="card-form" name="i-feel-bad-form">
-                        <header class="modal-header panel-heading confirm-survey">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <h3 class="modal-title panel-title ff-bold">Atenção</h3>
-                        </header>
-                        <div class="modal-body">
-                            <div class="panel-body" style="margin-top: 0px;">
-                                <div class="col-xs-12">
-                                    <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados. <br/> Deseja fazer o download dos dados brutos?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="pull-right btn btn-primary" data-dismiss="modal" ng-click="download()">  Sim</button>
-                            <button class="pull-right btn btn-default" data-dismiss="modal">  Não</button>
-                        </div>
-                    </form>
-                </div>
-            </article>
-        </div>
+
+        <div ng-include src="'views/partials/modal-download-csv.html'"></div>
+
+      
     </article>
 </section>

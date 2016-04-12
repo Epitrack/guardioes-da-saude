@@ -8,7 +8,7 @@
           <li><a ng-href="/dashboard" ng-click="goToUrl('/dashboard');closeNav()">Geral</a></li>
           <li><a ng-href="/dashboard/map" ng-click="goToUrl('/dashboard/map');closeNav()">Mapa</a></li>
           <li><a ng-href="/dashboard/analysis" ng-click="goToUrl('/dashboard/analysis');closeNav()">Análise de dados</a></li>
-          <li><a ng-href="/dashboard/download" ng-click="goToUrl('/dashboard/download');closeNav()">Download dos dados</a></li>
+          <li><a data-toggle="modal" data-target="#download-csv">Download dos dados</a></li>
         </ul>
        </li>
 
@@ -52,4 +52,5 @@
       </li>
     </ul>
   </nav>
+  <div ng-include src="'views/partials/modal-download-csv.html'" ng-controller="DashboardResultCtrl"></div>
 </section>

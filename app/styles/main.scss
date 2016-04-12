@@ -40,3 +40,8 @@
 
 // Crossbrowser issues
 @import '_crossbrowser';
+
+
+.modal-backdrop {
+    z-index: 0!important;
+}
