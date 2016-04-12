@@ -34,14 +34,62 @@ angular.module('gdsApp')
 
         $scope.getCityAutoComplete = function(city) {
             getCoords(city, function() {
-                if ($scope.timeSelection === 'Esta semana') {
-                    getSurveyWeek();
-                } else if ($scope.timeSelection === 'Este mês') {
-                    getSurveyByCity(city);
-                }
+                // if ($scope.timeSelection === 'Esta semana') {
+                //     // getSurveyWeek();
+                //     getSurveyByCity(city);
+                // } else if ($scope.timeSelection === 'Este mês') {
+                //     getSurveyByCity(city);
+                // }
+                getSurveyByCity($scope.cityLatLng);
                 getSurveyByCitySummary($scope.cityLatLng);
             });
         };
+
+        /* function getSurveyWeek() {
+             Surveyapi.getMarkersByWeek(moment().day(1).format('YYYY-MM-DD'), function(data) {
+                 //        console.log('getSurveyWeek', data.data.data);
+                 if (data.data.error === false) {
+                     if (data.data.data.length === 0) {
+                         try {
+
+                             Notification.error('error', 'Atenção', 'Nenhum usuário.');
+                         } catch (e) {}
+                     } else {
+                         var newMs = [];
+                         //            console.log('getSurveyByCity', data)
+                         newMs = addToArray(data.data.data);
+                         pushingMarkers(newMs);
+                     }
+                 } else {
+                     Notification.show('error', 'Atenção', data.data.message);
+                 }
+
+             });
+         }*/
+
+        function getSurveyByCity(city) {
+            Surveyapi.getMarkersByCity(city, function(data) {
+                console.log(data)
+                console.log(data.data.error)
+                if (data.data.error === false) {
+
+                    /* console.log($scope.markers)
+                     if ($scope.markers.length) {*/
+                    var newMs = [];
+                    //            console.log('getSurveyByCity', data)
+                    newMs = addToArray(data.data.data);
+                    pushingMarkers(newMs);
+                    /* } else {
+                         //            console.log('getSurveyByCity else ', data.data.data)
+                         $scope.markers = addToArray(data.data.data);
+                     }*/
+                } else {
+                    // console.warn(data.data.message);
+                    Notification.show('error', 'Atenção', data.data.message);
+                }
+            });
+        }
+
 
         $scope.surveyByCity = {};
 
@@ -57,7 +105,28 @@ angular.module('gdsApp')
             $scope.getMarkersByLocation()
         };
 
-        function getCoords(city,callback) {
+        $scope.getMarkersByLocation = function(obj) {
+
+            var params = {};
+            if (obj === null) {
+                params = obj;
+            } else {
+                params = {
+                    lat: LocalStorage.getItem('userLocation').lat,
+                    lon: LocalStorage.getItem('userLocation').lon
+                };
+            }
+            Surveyapi.getCityByPosition(params, function(data) {
+                console.log(data);
+                //pega bairro, Cidade - UF, País
+                $rootScope.city = data.data.results[1].formatted_address;
+                console.log($rootScope.city);
+
+                $scope.getCityAutoComplete($rootScope.city);
+            });
+        };
+
+        function getCoords(city, callback) {
             var geocoder = new google.maps.Geocoder();
             geocoder.geocode({ 'address': city }, function(results, status) {
                 if (status === google.maps.GeocoderStatus.OK) {
@@ -76,49 +145,6 @@ angular.module('gdsApp')
             });
         }
 
-        function getSurveyByCity(city) {
-            Surveyapi.getMarkersByCity(city, function(data) {
-                if (data.data.error === false) {
-                    if ($scope.markers) {
-                        var newMs = [];
-                        //            console.log('getSurveyByCity', data)
-                        newMs = addToArray(data.data.data);
-                        pushingMarkers(newMs);
-                    } else {
-                        //            console.log('getSurveyByCity else ', data.data.data)
-                        $scope.markers = addToArray(data.data.data);
-                    }
-
-                } else {
-                    // console.warn(data.data.message);
-                    Notification.show('error', 'Atenção', data.data.message);
-                }
-            });
-        }
-
-        function getSurveyWeek() {
-            Surveyapi.getMarkersByWeek(moment().day(1).format('YYYY-MM-DD'), function(data) {
-                //        console.log('getSurveyWeek', data.data.data);
-                if (data.data.error === false) {
-                    if (data.data.data.length === 0) {
-                        try{
-                            
-                        Notification.error('error', 'Atenção', 'Nenhum usuário.');
-                        }catch(e){}
-                    } else {
-                        var newMs = [];
-                        //            console.log('getSurveyByCity', data)
-                        newMs = addToArray(data.data.data);
-                        pushingMarkers(newMs);
-                    }
-                } else {
-                    Notification.show('error', 'Atenção', data.data.message);
-                }
-
-            });
-        }
-
-
         function getSurveyByCitySummary(params) {
             if (params === undefined) {
                 params = {
@@ -132,7 +158,7 @@ angular.module('gdsApp')
             // console.warn('controller ->> ', params);
 
             var summary = {};
-            console.log("params",params);
+            console.log("params", params);
             Surveyapi.getMarkersByCitySummary(params, function(data) {
                 console.log('getMarkersByCitySummary', data);
                 if (data.data.error === false) {
@@ -182,11 +208,12 @@ angular.module('gdsApp')
         function addToArray(markers) {
             var t = [];
             angular.forEach(markers, function(p) {
+                console.log("addToArray", p);
                 t.push({
                     position: [p.lat, p.lon],
                     address: p.formattedAddress,
                     id: p.id,
-                    icon: '../../images/icon-health-daily-' + p.no_symptom + '.svg',
+                    icon: '../../images/icon-health-daily-'+p.no_symptom+'.svg',
                     zIndex: 0
                 });
             });
@@ -195,11 +222,12 @@ angular.module('gdsApp')
         }
 
         function pushingMarkers(datas) {
+            console.log(datas);
             for (var i in datas) {
-                if (!checkIfExistMarker(datas[i].id)) {
-                    $scope.markers.push(datas[i]);
-                    createMarker({ 'lat': datas[i].position[0], 'lng': datas[i].position[1], 'title': datas[i].address }, datas[i].icon);
-                }
+                // if (!checkIfExistMarker(datas[i].id)) {
+                $scope.markers.push(datas[i]);
+                createMarker({ 'lat': datas[i].position[0], 'lng': datas[i].position[1], 'title': datas[i].address }, datas[i].icon);
+                // }
             }
         }
 
@@ -240,11 +268,13 @@ angular.module('gdsApp')
         };
 
         $scope.getClustersVisible = function() {
-            return (mcluster === null) ? false : true; };
+            return (mcluster === null) ? false : true;
+        };
 
         $scope.mkrs = [];
 
         function createMarker(info, img) {
+            console.log("createMarker", info, img);
             if (img === undefined) {
                 console.log('info.icon.iconUrl', info.icon.iconUrl);
                 img = {
@@ -255,13 +285,13 @@ angular.module('gdsApp')
                         // anchor: new google.maps.Point(0, info.icon.iconSize[1])
                 };
             }
-
             var marker = new google.maps.Marker({
                 map: $scope.map,
                 position: new google.maps.LatLng(info.lat, info.lng),
                 title: info.title,
                 icon: img
             });
+
             marker.content = info.message;
 
             google.maps.event.addListener(marker, 'click', function() {
@@ -272,26 +302,14 @@ angular.module('gdsApp')
             if (info.index) { marker.setZIndex(info.index); }
         }
 
-        function checkIfExistMarker(id) {
-            for (var i in $scope.markers) {
-                if ($scope.markers[i].id === id) {
-                    return true; }
-            }
-            return false;
-        }
-
-        $scope.getMarkersByLocation = function() {
-            var params = {
-                lat: LocalStorage.getItem('userLocation').lat,
-                lng: LocalStorage.getItem('userLocation').lon
-            };
-
-            Surveyapi.getCityByPosition(params, function(data) {
-                console.log(data);
-                $rootScope.city = data.data.results[1].formatted_address;
-                $scope.getCityAutoComplete($rootScope.city);
-            });
-        };
+        /* function checkIfExistMarker(id) {
+             for (var i in $scope.markers) {
+                 if ($scope.markers[i].id === id) {
+                     return true;
+                 }
+             }
+             return false;
+         }*/
 
         $scope.initMap = function() {
             var mapOptions = {
@@ -310,8 +328,17 @@ angular.module('gdsApp')
             $scope.map = new google.maps.Map(document.getElementById('dashboard-map'), mapOptions);
 
             google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function() {
-                $scope.getMarkersByLocation();
+                console.log($scope.map);
+                $scope.getMarkersByLocation(null);
             });
+
+           /* $scope.map.addListener('center_changed', function() {
+                window.setTimeout(function() {
+
+                    $scope.getMarkersByLocation({ lat: $scope.map.center.lat(), lon: $scope.map.center.lng() });
+                }, 3000);
+            });*/
+
         };
 
     }]);

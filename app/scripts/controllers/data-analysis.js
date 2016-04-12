@@ -259,7 +259,7 @@ angular.module('gdsApp')
                 $scope.sem_min_max['MIN'] = _.min(g, function(o) {
                     return parseInt(o)
                 });
-                $scope.range = 0;
+                $scope.range = $scope.sem_min_max['MIN'];
             });
         };
 
@@ -315,12 +315,15 @@ angular.module('gdsApp')
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
+                    console.log("is_sintoma", is_sintoma);
+                    console.log("idsintoma", idsintoma);
                     if (is_sintoma) {
                         result = _.groupBygroup(data, groups, idsintoma, ",");
                     } else {
                         result = _.groupByMulti(data, groups);
                     }
                     /**/
+                    console.log("result", result);
                     window.localStorage.setItem('type', type);
                     window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));

@@ -46,7 +46,7 @@ angular.module('gdsApp')
                     }
                 }
             }
-            var index = ((colors.length-10)*$scope._usersByState[(uf + '').toUpperCase()]) / max;
+            var index = ((colors.length - 10) * $scope._usersByState[(uf + '').toUpperCase()]) / max;
             return {
                 "max": max,
                 "min": min,
@@ -62,7 +62,7 @@ angular.module('gdsApp')
         };
 
         $scope.getUserbyLocation = function(uf) {
-            return $scope._usersByState[(uf + '').toUpperCase()]!==undefined ? $scope._usersByState[(uf + '').toUpperCase()] : 0;
+            return $scope._usersByState[(uf + '').toUpperCase()] !== undefined ? $scope._usersByState[(uf + '').toUpperCase()] : 0;
         };
         $scope.updateParticipacoes = function(key) {
             /**/
@@ -128,44 +128,7 @@ angular.module('gdsApp')
             });
 
         };
-        /**/
-        $scope.loadMap = function() {
-            var map, json_url;
-            json_url = 'https://s3.amazonaws.com/epitrackgeojson/uf.json';
 
-            function _initMap() {
-                map = new google.maps.Map(document.getElementById('dash-map'), {
-                    zoom: 4,
-                    center: { lat: -10.1033312, lng: -46.6546215 }
-                });
-                map.data.loadGeoJson(json_url);
-                /* google.load('visualization', '1', { packages: ['geochart'] });
-                 google.setOnLoadCallback(drawVisualization);
-
-                 function drawVisualization() {
-                     var data = google.visualization.arrayToDataTable([
-                         ['Região', 'Concentração de Usuários'],
-                         ['Pará', 10]
-                     ]);
-
-                     var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
-
-                     var options = {
-                         region: 'BR',
-                         resolution: 'provinces',
-                         backgroundColor: 'white',
-                         datalessRegionColor: 'white',
-                         defaultColor: '#f5f5f5',
-
-                         colorAxis: { minValue: 0, colors: ['white', '#074c95'] }
-                     };
-                     geochart.draw(data, options);
-                 }*/
-            }
-            _initMap();
-        };
-        // mostra o mapa com o desenho
-        // $scope.loadMap();
         // ====
         // Get all data from dashboard
         $scope.getAllData = function() {
@@ -251,10 +214,7 @@ angular.module('gdsApp')
                 if ($scope.dash.platforms[i]._id === plat) { _c = $scope.dash.platforms[i].count }
             }
             var decimal = 0;
-            if (plat !== 'android') {
-                decimal = 1;
-            }
-            return (_c * 100 / count).toFixed(decimal);
+            return ((_c / count)* 100).toFixed(1);
         };
 
         $scope.platVal = function(plat) {

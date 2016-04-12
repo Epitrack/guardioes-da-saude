@@ -11,7 +11,7 @@ angular.module('gdsApp')
     .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
-        $scope.labels = JSON.parse(window.localStorage.getItem('labels'));
+        $scope.labels = JSON.parse(window.localStorage.getItem('labels')).reverse();
         $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
         $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
         $scope.istable = false;
@@ -30,7 +30,8 @@ angular.module('gdsApp')
                     data.push({ name: o, y: v });
                 }
                 data = _.sortBy(data, function(obj) {
-                    return obj.y; });
+                    return obj.y;
+                });
                 data = data.reverse();
 
                 Highcharts.getOptions().plotOptions.pie.colors = (function() {
@@ -39,7 +40,7 @@ angular.module('gdsApp')
                         i;
 
                     for (i = 0; i < 10; i += 1) {
-                        colors.push(Highcharts.Color(base).brighten((i - 4) / 7).get());
+                        colors.push(Highcharts.Color(base).brighten((i - 4) / 9).get());
                     }
                     return colors;
                 }());
@@ -54,7 +55,7 @@ angular.module('gdsApp')
                         text: ''
                     },
                     tooltip: {
-                        pointFormat: '{series.name}: {point.percentage:.1f}'
+                        pointFormat: '{point.percentage:.1f}'
                     },
                     plotOptions: {
                         pie: {
@@ -62,11 +63,12 @@ angular.module('gdsApp')
                             cursor: 'pointer',
                             dataLabels: {
                                 enabled: true,
-                                format: '<b>{point.name}</b>: {point.percentage:.1f}',
+                                format: '{point.percentage:.1f}',
                                 style: {
                                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                                 }
-                            }
+                            },
+                            showInLegend: true
                         }
                     },
                     series: [{
@@ -111,19 +113,21 @@ angular.module('gdsApp')
                     },
                     xAxis: {
                         categories: categories,
-                        crosshair: true
+                        crosshair: true,
+                        title: {
+                            text: 'Semana Epidemiológica'
+                        }
                     },
                     yAxis: {
                         min: 0,
                         title: {
-                            text: ''
+                            text: 'Número de Registros'
                         }
                     },
                     tooltip: {
-                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-                        footerFormat: '</table>',
+                        headerFormat: '',
+                        pointFormat: '<b>{point.y:.1f}</b>',
+                        footerFormat: '',
                         shared: true,
                         useHTML: true
                     },
@@ -172,12 +176,15 @@ angular.module('gdsApp')
                     },
                     xAxis: {
                         categories: categories,
-                        crosshair: true
+                        crosshair: true,
+                        title: {
+                            text: $scope.groups[0]
+                        }
                     },
                     yAxis: {
                         min: 0,
                         title: {
-                            text: ''
+                            text: 'Número de Registros'
                         }
                     },
                     tooltip: {
@@ -205,7 +212,8 @@ angular.module('gdsApp')
                 /**/
                 for (var o in $scope.result) {
                     $scope.categories.push(o);
-                    $scope.keys = _.union(keys, _.keys($scope.result[o]))
+                    $scope.keys = _.union($scope.keys, _.keys($scope.result[o]));
+                    console.log($scope.keys);
                 }
                 /**/
                 for (var o in $scope.result) {

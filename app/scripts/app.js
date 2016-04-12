@@ -458,7 +458,7 @@ _.groupByMulti = function(obj, values, context) {
 _.groupBygroup = function(data, key, index, delimiter) {
     var SIM = {};
     _.map(data, function(o) {
-        if (o[key[0]] !== undefined) {
+        if (o[key[index]] !== undefined) {
             var d = o[key[index]].split(delimiter);
             for (var i in d) {
                 if (d[i] !== '') {
@@ -475,23 +475,42 @@ _.groupBygroup = function(data, key, index, delimiter) {
     keys = keys.slice(1);
     /**/
     var obj = {};
-
-    if (key[1] !== undefined) {
+    var i = index === 0 ? 1 : 0;
+    if (key[i] !== undefined) {
         for (var o in SIM) {
             var f = _.filter(data, function(obj) {
                 return _.contains(obj[key[index]].split(delimiter), o)
             });
             var g = _.groupBy(f, function(obj) {
-                return obj[key[1]]
+                return obj[key[i]]
             });
             obj[o] = g;
         }
     } else {
         obj = SIM;
     }
+    var keysall = [];
+    if (index !== 0) {
+        for (var a in obj) {
+            keysall = _.union(keysall, _.keys(obj[a]));
+        }
+        console.log(keysall);
+        var objfinal = {};
+        for (var k in keysall) {
+            console.log(keysall[k]);
+            objfinal[keysall[k]] = {};
+            for (var a in obj) {
+                if (obj[a][keysall[k]] !== undefined) {
+                    objfinal[keysall[k]][a] = obj[a][keysall[k]];
+                }
+            }
+        }
+        obj = objfinal;
+        // console.log(objfinal);
+    }
 
-    console.log(SIM);
-    console.log(obj);
+    // console.log(SIM);
+    // console.log(obj);
     /**/
     return obj;
 }

@@ -64,18 +64,9 @@ angular.module('gdsApp')
         });
     };
 
-    obj.getMarkersByCity = function (city, callback) {
-      $http.get(apiUrl + '/surveys/l?q=' + city, {headers: {'app_token': app_token}})
-        .then(function (data) {
-         // console.log('Success getMarkersByCity: ', data);
-          callback(data);
-        }, function (error) {
-          // console.warn('Error getMarkersByCity: ', error);
-        });
-    };
-
-    obj.getMarkersByWeek = function (week, callback) {
-      $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
+    obj.getMarkersByCity = function (params, callback) {
+      //lat lon 
+      $http.get(apiUrl + '/charts/pins?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
         .then(function (data) {
          console.log('Success getMarkersByCity: ', data);
           callback(data);
@@ -84,13 +75,24 @@ angular.module('gdsApp')
         });
     };
 
+    //pra nada
+    obj.getMarkersByWeek = function (week, callback) {
+      $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
+        .then(function (data) {
+         console.log('Success getMarkersByWeek: ', data);
+          callback(data);
+        }, function (error) {
+          console.warn('Error getMarkersByWeek: ', error);
+        });
+    };
+
     obj.getMarkersByLocation = function (params, callback) {
       $http.get(apiUrl + '/charts/pins?lat=' + params.lat + '&lon=' + params.lng, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success getMarkersByLocation: ', data);
+         console.log('Success getMarkersByLocation: ', data);
           callback(data);
         }, function (error) {
-          // console.warn('Error getMarkersByLocation: ', error);
+          console.warn('Error getMarkersByLocation: ', error);
         });
     };
 
@@ -121,7 +123,7 @@ angular.module('gdsApp')
     };
 
     obj.getCityByPosition = function(position, callback) {
-      $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lng)
+      $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lon)
       .then(function(data){
           callback(data);
           // console.warn('Success getCityByPosition: ', data);

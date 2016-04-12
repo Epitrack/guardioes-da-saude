@@ -1,6 +1,6 @@
 <style type="text/css">
-.popover {
-    background-color: rgba(0, 0, 0, 0.85);
+.popover-custom {
+    /* background-color: rgba(0, 0, 0, 0.85);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     color: #fff;
@@ -11,7 +11,7 @@
     padding: 7px 10px;
     position: absolute;
     width: 70px;
-    z-index: 4;
+    z-index: 4;*/
 }
 
 #out {
@@ -49,9 +49,9 @@
         </div>
         <div class="col-sm-6">
             <article class="card">
-                <ul class="tabs-nav">
-                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}">Cadastros</a></li>
-                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}">Descadastros</a></li>
+                <ul class="tabs-nav" style="width: 80px;">
+                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}" style="font-size: 1.7em;">Cadastros</a></li>
+                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}" style="font-size: 1.7em;">Descadastros</a></li>
                 </ul>
                 <div class="tabs-container">
                     <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
@@ -125,13 +125,13 @@
                 <h2>Participações</h2>
                 <div class="pull-right wrapper-switch-participation">
                     <div>
-                        <md-switch class="md-sintomatico" ng-model="data1.symptomatic" ng-click="updateParticipacoes('symptomatic')" aria-label="Sintomático">Sintomático {{data.symptomatic}}</md-switch>
+                        <md-switch class="md-sintomatico" ng-model="data1.symptomatic" ng-click="updateParticipacoes('symptomatic')" aria-label="Sintomático">Sintomático</md-switch>
                     </div>
                     <div>
-                        <md-switch class="md-assintomatico" ng-model="data1.asymptomatic" ng-click="updateParticipacoes('asymptomatic')" aria-label="Assintomático">Assintomático {{data.asymptomatic}}</md-switch>
+                        <md-switch class="md-assintomatico" ng-model="data1.asymptomatic" ng-click="updateParticipacoes('asymptomatic')" aria-label="Assintomático">Assintomático</md-switch>
                     </div>
                     <div>
-                        <md-switch class="md-total" ng-model="data1.total" ng-click="updateParticipacoes('total')" aria-label="Total">Total {{data.total}}</md-switch>
+                        <md-switch class="md-total" ng-model="data1.total" ng-click="updateParticipacoes('total')" aria-label="Total">Total</md-switch>
                     </div>
                 </div>
                 <div id="line-example" style="width:100%;height: 220px"></div>
@@ -141,7 +141,7 @@
     <!-- Idade / Raça -->
     <div class="col-sm-6 wrapper-half-card">
         <!-- Idade -->
-        <div class="col-sm-12 card">
+        <div class="col-sm-12 card" style="min-height: 295px;">
             <header>
                 <h2>Idade</h2>
                 <div class="dropdown sort-by">
@@ -199,7 +199,7 @@
             </div>
         </div>
         <!-- Raça -->
-        <div class="col-sm-12 card">
+        <div class="col-sm-12 card" style="min-height: 295px;">
             <header>
                 <h2>Raça/Cor</h2>
                 <div class="dropdown sort-by">
@@ -256,9 +256,11 @@
                     <h3 class="panel-title">Concentração de usuários</h3>
                 </header>
                 <div class="panel-body">
+                <span style="font-size: 2em; color: rgb(214, 214, 214); position: absolute; bottom: 133px; text-align: center;">Alta</span>
                     <div id="out" ></div>
+                    <span style="font-size: 2em; position: absolute; bottom: 3px; text-align: center; color: rgb(214, 214, 214);">Baixa</span>
                     <div class="dash-map" id="dash-map">
-                    <span class="popover above"></span>
+                    <div style="top: -6px; left: 444px; display: none;" class="popover popover-custom fade top in"><div class="arrow"></div><div class="popover-content popover-custom-content"></div></div>
                         <object id="S" data="images/dashboard/mapa.svg" type="image/svg+xml" style="width: 531px; height: 531px;"></object>
                     </div>
                 </div>
@@ -275,7 +277,6 @@ $(window).load(function() {
     SVGDoc = D.contentDocument;
     //SVGDoc = D.getSVGDocument(); // opção com uso de embed 
     SVGRoot = SVGDoc.documentElement;
-    svgns = 'http://www.w3.org/2000/svg';
     var estados = SVGRoot.getElementsByTagName('path');
     var qdeEstados = estados.length;
     var todasRegioes = SVGRoot.querySelectorAll('.regiao');
@@ -298,10 +299,10 @@ $(window).load(function() {
                 this.style.fill = 'rgb(7, 76, 149)';
                 var siglaEstado = this.parentNode.id;
                 this.style.stroke="#1e88e5";
-                $(".popover").css("left",x);
-                $(".popover").css("top",(y-250));
-                $(".popover").html(''+(this.parentNode.id).toUpperCase()+' : '+angular.element($(".popover")).scope().getUserbyLocation(this.parentNode.id));
-                $(".popover").show();
+                $(".popover-custom").css("left",x);
+                $(".popover-custom").css("top",(y-250));
+                $(".popover-custom-content").html(''+(this.parentNode.id).toUpperCase()+' : '+angular.element($(".popover-custom")).scope().getUserbyLocation(this.parentNode.id));
+                $(".popover-custom").show();
             // }
 
         }
@@ -309,19 +310,17 @@ $(window).load(function() {
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
             if(this.parentNode.id!=="canvas_background"){
-            this.style.fill = angular.element($(".popover")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
+            this.style.fill = angular.element($(".popover-custom")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
             this.style.stroke="white";
-            $(".popover").hide();
+            $(".popover-custom").hide();
             }
         }
-
-        // estados[i].style.stroke="#1e88e5";
 
     }
 
     function colorizeMap(){
          for (i = 0; i < qdeEstados; i++) {
-        var obj = angular.element($(".popover")).scope().getColorMap(cores,estados[i].parentNode.id);
+        var obj = angular.element($(".popover-custom")).scope().getColorMap(cores,estados[i].parentNode.id);
         estados[i].style.fill = obj.cor;
          }
     }
