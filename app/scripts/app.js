@@ -39,9 +39,8 @@ angular
         'ngMaterial',
         'ng-sortable'
     ])
-    .config(function($facebookProvider, $mdGestureProvider) {
+    .config(function($facebookProvider) {
       $facebookProvider.setAppId('961547147258065');
-      $mdGestureProvider.skipClickHijack();
     })
     .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
@@ -415,7 +414,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-        enabled: false, // set false to development
+        enabled: true, // set false to development
         requireBase: false
     });
 }).directive('onCarouselChange', function($parse) {
