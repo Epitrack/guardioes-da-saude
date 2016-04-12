@@ -116,6 +116,7 @@ angular.module('gdsApp')
         .then(function(result){
           callback(result);
         }, function(error){
+          callback(error);
           console.warn('Error getHouseholdSurveyByMonth: ', error);
       });
     };
