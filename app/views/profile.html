@@ -86,9 +86,14 @@
 
           <fieldset class="col-xs-12">
             <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
+            <button type="button" data-toggle="modal" data-target="#modal-delete-user" class="pull-right btn btn-danger">Excluir Conta
+            </button>
           </fieldset>
         </form>
       </div>
     </div>
   </article>
 </section>
+
+<!-- Modal -->
+<div ng-include src="'views/partials/modal-delete-user.html'"></div>
