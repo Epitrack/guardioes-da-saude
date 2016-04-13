@@ -231,7 +231,7 @@ angular
         })
         .when('/login', {
             templateUrl: 'views/login.html',
-            controller: 'CadastroCtrl',
+            controller: 'LoginCtrl',
             controllerAs: 'login'
         })
         .when('/cadastro', {

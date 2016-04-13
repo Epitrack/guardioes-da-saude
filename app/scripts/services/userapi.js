@@ -215,13 +215,57 @@ angular.module('gdsApp')
       });
     }
 
-    obj.facebookLogin = function($scope){
+    obj.facebookLogin = function($scope) {
+      var userFbData = {};
+
+      $facebook.login().then(function(data) {
+        if (data.status == 'connected') {
+          $facebook.api('me', { fields:'name,email,gender,ids_for_business' })
+          .then(function(response) {
+              userFbData.fb_token = data.authResponse.accessToken;
+              userFbData.nick = response.name;
+              userFbData.email = response.email;
+              userFbData.gender = response.gender[0].toUpperCase();
+              userFbData.fb = response.ids_for_business.data[0].id;//response.id;
+
+              $scope.userData = userFbData;
+
+              fbLogin(userFbData.fb, function(dataLg) {
+                if (dataLg.data.error === false && dataLg.data.data.length > 0) {
+                  // ====
+                  var loginPass = {
+                    email: dataLg.data.data[0].email,
+                    password: dataLg.data.data[0].email
+                  };
+
+                  obj.loginUser(loginPass, function(resultMail) {
+                    if (resultMail.data.error === true) {
+                    } else if (resultMail.status == 401) {
+                      angular.element('#modal-confirm-account').modal('show');
+                    } else {
+                      LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                      $location.path('health-daily');
+                    }
+                  });
+                  // ====
+                } else {
+                  angular.element('#modal-complete-login').modal('show');
+                }
+              });
+          })
+        } else {
+          console.warn('Error -> ', data);
+        }
+      });
+    }
+
+    obj.facebookLogin2 = function($scope){
 
         var userFbData = {};
 
-        $facebook.getLoginStatus().then(function(){
-          // console.log("getting facebook data")
-        });
+        // $facebook.getLoginStatus().then(function(){
+        //   // console.log("getting facebook data")
+        // });
 
         $facebook.login().then(function(data){
             if(data.status === 'connected'){
