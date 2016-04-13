@@ -47,10 +47,8 @@ angular.module('gdsApp')
       $http.post(apiUrl + '/user/login', data, {headers: {'app_token': app_token}})
         .then(function (data) {
           callback(data);
-         // console.log('Success loginUser: ', data);
         }, function (error) {
           callback(error);
-          // console.warn('Error loginUser: ', error);
         });
     };
     // ====
@@ -206,7 +204,7 @@ angular.module('gdsApp')
 
     // ====
     function fbLogin(facebook_id, callback) {
-      $http.get(apiUrl+'/user/get?fb='+facebook_id, {
+      $http.get(apiUrl+'/user/get?fb=' + facebook_id, {
         headers:{
           'app_token':app_token
         }
@@ -214,7 +212,6 @@ angular.module('gdsApp')
         callback(result);
       },function(error){
         callback(error);
-        // console.warn('Error fbLogin: ', error);
       });
     }
 
@@ -236,23 +233,24 @@ angular.module('gdsApp')
                     userFbData.gender = response.gender[0].toUpperCase();
                     userFbData.fb = response.ids_for_business.data[0].id;//response.id;
                     $scope.userData = userFbData;
+
                     fbLogin(userFbData.fb, function (dataLg) {
                       if (dataLg.data.error === false && dataLg.data.data.length>0) {
                           var loginPass = {
                             email: dataLg.data.data[0].email,
                             password: dataLg.data.data[0].email
                           };
+
                           obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true) {
-                                // toaster.pop('error', resultMail.data.message);
                                  // Notification.show('error', 'Facebook', resultMail.data.message);
-                              } else{
-                                  // toaster.pop('success', resultMail.data.message);
-                                 // Notification.show('success', 'Facebook', resultMail.data.message);
+                              } else if (resultMail.status == 401) {
+                                  angular.element('#modal-confirm-account').modal('show');
+                              } else {
+                                  // Notification.show('success', 'Facebook', resultMail.data.message);
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
-
                           });
 
                       } else {
@@ -278,7 +276,6 @@ angular.module('gdsApp')
           callback(result);
         },function(error){
           callback(error);
-          // console.warn('Error twLogin: ', error);
         });
     }
 
@@ -288,12 +285,11 @@ angular.module('gdsApp')
       OAuth.popup('twitter', function(err){ if( err ){ console.warn('error tw',err); } } )
         .done(function(result) {
           result.me().done(function(data) {
-           // console.log("me",data)
             userTwData.tw = data.id;
             userTwData.nick = data.name;
             $scope.userData = userTwData;
+
             twLogin(userTwData.tw, function(dataTw){
-             // console.log("dataTw", dataTw);
               if (dataTw.data.error === false && dataTw.data.data.length>0) {
                   var loginPass = {
                     email: dataTw.data.data[0].email,
