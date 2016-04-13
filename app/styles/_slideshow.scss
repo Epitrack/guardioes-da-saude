@@ -58,6 +58,8 @@
 
   // home slide
   .slideshow {
+    .carousel-indicators { visibility: visible; }
+
     .carousel-control { top: 35%; }
 
     .left, .right {
