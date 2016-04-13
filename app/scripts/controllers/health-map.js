@@ -411,6 +411,8 @@ angular.module('gdsApp')
     // ====
 
 
-    if ($rootScope.city === undefined){ $scope.getMarkersByLocation(); }
+    if ($rootScope.city === undefined){
+      $scope.getMarkersByLocation();
+    }
 
   }]);

@@ -23,7 +23,7 @@ angular.module('gdsApp')
           callback(data);
         }, function (error) {
           // console.warn('Error getAllData: ', error);
-          callback(data);
+          callback(error);
         });
     };
 

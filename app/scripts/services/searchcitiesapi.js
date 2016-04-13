@@ -19,10 +19,11 @@ angular.module('gdsApp')
     obj.getCities = function (limit, callback) {
       $http.get(apiUrl + '/search/cities?limit=' + limit, {headers: {'app_token': app_token}})
         .success(function (data) {
-         // console.log('Success getCities: ', data);
           callback(data);
+         // console.log('Success getCities: ', data);
         }).error(function (error) {
-        console.warn('Error getCities: ', error);
+          callback(error);
+        // console.warn('Error getCities: ', error);
       });
     };
 

@@ -21,7 +21,11 @@ angular.module('gdsApp')
       data.client = client;
       data.user = userStorage.id;
       data.user_token = userStorage.user_token;
-      if(data.picture === undefined) { data.picture = 0; }
+
+      if(data.picture === undefined) {
+        data.picture = 0;
+      }
+
       data.dob = data.dob;
 
       $http.post(apiUrl + '/household/create', data, { headers: {'app_token': app_token, 'user_token': userStorage.user_token}})
@@ -29,7 +33,8 @@ angular.module('gdsApp')
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
-          console.warn('Error createHousehold: ', error);
+          callback(error);
+          // console.warn('Error createHousehold: ', error);
       });
     };
 
@@ -48,7 +53,8 @@ angular.module('gdsApp')
           callback(result);
           UserApi.updateUser(LocalStorage.getItem('userStorage').id);
         }, function (error) {
-          console.warn('Error changeAvatar: ', error);
+          callback(error);
+          // console.warn('Error changeAvatar: ', error);
         });
     };
 
@@ -58,7 +64,8 @@ angular.module('gdsApp')
           callback(data);
           UserApi.updateUser(userStorage.id);
         }, function(error){
-          console.warn('Error deleteHousehold: ', error);
+          callback(error);
+          // console.warn('Error deleteHousehold: ', error);
       });
     };
 
@@ -67,7 +74,8 @@ angular.module('gdsApp')
       .then(function(data){
         callback(data);
         }, function(error){
-          console.warn('Error getHousehold: ', error);
+          callback(error);
+          // console.warn('Error getHousehold: ', error);
         });
     };
 
@@ -77,7 +85,8 @@ angular.module('gdsApp')
         .then(function(result){
           callback(result);
         }, function(error){
-          console.warn('Error getHouseholdSurvey: ', error);
+          callback(error);
+          // console.warn('Error getHouseholdSurvey: ', error);
       });
     };
 
@@ -92,7 +101,8 @@ angular.module('gdsApp')
           callback(result);
           UserApi.updateUser(userStorage.id);
         }, function(error){
-          console.warn('Error updateProfile: ', error);
+          callback(error);
+          // console.warn('Error updateProfile: ', error);
       });
     };
 
@@ -106,7 +116,8 @@ angular.module('gdsApp')
         .then(function(result){
           callback(result);
         }, function(error){
-          console.warn('Error getHouseholdCalendar: ', error);
+          callback(error);
+          // console.warn('Error getHouseholdCalendar: ', error);
       });
     };
 
@@ -117,7 +128,7 @@ angular.module('gdsApp')
           callback(result);
         }, function(error){
           callback(error);
-          console.warn('Error getHouseholdSurveyByMonth: ', error);
+          // console.warn('Error getHouseholdSurveyByMonth: ', error);
       });
     };
 
@@ -126,7 +137,8 @@ angular.module('gdsApp')
         .then(function(result){
           callback(result);
         }, function(error){
-          console.warn('Error getHouseholdSurveyByYear: ', error);
+          callback(error);
+          // console.warn('Error getHouseholdSurveyByYear: ', error);
       });
     };
 
