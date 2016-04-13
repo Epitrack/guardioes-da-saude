@@ -279,6 +279,7 @@ angular.module('gdsApp')
             var idsintoma = 0;
             var count = 0;
             var labels = [];
+            var filtros = [];
             $scope.loadfile(function(data) {
                 var groups = [];
                 for (var o in $scope.params[type]) {
@@ -300,6 +301,7 @@ angular.module('gdsApp')
                     for (var value in $scope.analytics[key]) {
                         var obj = {};
                         obj[$scope.DEPARA[key]] = value;
+                        filtros[$scope.DEPARALABELS[key]]=value;
                         data_final.push(_.where(df, obj));
                     }
                     df = [];
@@ -327,7 +329,7 @@ angular.module('gdsApp')
                     window.localStorage.setItem('type', type);
                     window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));
-                    window.localStorage.setItem('filters', JSON.stringify(_.keys(obj)));
+                    window.localStorage.setItem('filters', JSON.stringify(_.keys(filtros)));
                     window.localStorage.setItem('result', JSON.stringify(result));
                     $location.path('/dashboard/analysis/result');
                     /**/

@@ -63,7 +63,7 @@ angular.module('gdsApp')
                             cursor: 'pointer',
                             dataLabels: {
                                 enabled: true,
-                                format: '{point.percentage:.1f}',
+                                format: '{point.percentage:.1f} %',
                                 style: {
                                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                                 }
@@ -145,10 +145,9 @@ angular.module('gdsApp')
                 var data = {};
                 var keys = [];
                 var categories = [];
-                for (var o in $scope.result) {
-                    categories.push(o);
-                    keys = _.union(keys, _.keys($scope.result[o]))
-                }
+               
+                
+
                 var dados = [];
                 for (var o in $scope.result) {
                     for (var j in keys) {
@@ -163,6 +162,14 @@ angular.module('gdsApp')
                 for (var o in data) {
                     dados.push(data[o]);
                 }
+                console.log($scope.result);
+                console.log(dados);
+                console.log(keys);
+                console.log(categories);
+                /* data = _.sortBy(data, function(obj) {
+                    return obj.y;
+                });
+                data = data.reverse();*/
                 /**/
                 $('#container').highcharts({
                     chart: {

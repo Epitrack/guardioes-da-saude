@@ -136,8 +136,12 @@
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
                 <div id="semanas-content" class="collapse panel-collapse">
                     <div class="collapse-content" style="padding: 20px 40px 50px!important;">
+                    <input type=range multiple min=0 max=24 value=0,24 step=1.0 oninput="">
+                    <br/>
+                    <br/>
+                    <br/>
                         <div class="range-slider">
-                            <input class="range-slider__range" type="range" ng-change="selecionarAnalytics('weeks',range)" ng-model="range" min="{{sem_min_max.MIN}}" max="{{sem_min_max.MAX}}" step="1">
+                            <input class="range-slider__range" type="range" ng-change="selecionarAnalytics('weeks',range)" ng-model="range" min="{{sem_min_max.MIN}}" max="{{sem_min_max.MAX}}" step="1" multiple>
                             <span class="range-slider__value">{{range}}</span>
                             <span style="font-size: 2em; float: left; clear: both; margin-left: 5px;">{{sem_min_max.MIN}}</span>
                             <span style="font-size: 2em; float: right; margin-right: 140px;">{{sem_min_max.MAX}}</span>

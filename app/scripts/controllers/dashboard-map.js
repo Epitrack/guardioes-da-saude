@@ -108,14 +108,14 @@ angular.module('gdsApp')
         $scope.getMarkersByLocation = function(obj) {
 
             var params = {};
-            if (obj === null) {
+           /* if (obj === null) {
                 params = obj;
-            } else {
+            } else {*/
                 params = {
                     lat: LocalStorage.getItem('userLocation').lat,
                     lon: LocalStorage.getItem('userLocation').lon
                 };
-            }
+            /*}*/
             Surveyapi.getCityByPosition(params, function(data) {
                 console.log(data);
                 //pega bairro, Cidade - UF, País
