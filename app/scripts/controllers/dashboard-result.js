@@ -11,7 +11,9 @@ angular.module('gdsApp')
     .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
-        $scope.labels = JSON.parse(window.localStorage.getItem('labels')).reverse();
+        try {
+            $scope.labels = JSON.parse(window.localStorage.getItem('labels')).reverse();
+        } catch (e) {}
         $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
         $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
         $scope.istable = false;
@@ -145,10 +147,11 @@ angular.module('gdsApp')
                 var data = {};
                 var keys = [];
                 var categories = [];
-               
-                
-
                 var dados = [];
+                for (var o in $scope.result) {
+                    categories.push(o);
+                    keys = _.union(keys, _.keys($scope.result[o]))
+                }
                 for (var o in $scope.result) {
                     for (var j in keys) {
                         if (data[keys[j]] === undefined) {
@@ -164,8 +167,10 @@ angular.module('gdsApp')
                 }
                 console.log($scope.result);
                 console.log(dados);
+                /*
+                
                 console.log(keys);
-                console.log(categories);
+                console.log(categories);*/
                 /* data = _.sortBy(data, function(obj) {
                     return obj.y;
                 });
@@ -238,9 +243,9 @@ angular.module('gdsApp')
                     dados.push(data[o]);
                 }
                 /**/
-                console.log($scope.result);
-                console.log($scope.keys);
-                console.log($scope.categories);
+                // console.log($scope.result);
+                // console.log($scope.keys);
+                // console.log($scope.categories);
 
             }
             try { $("#container").find("text").last().empty(); } catch (e) {}
