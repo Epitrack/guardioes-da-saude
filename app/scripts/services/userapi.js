@@ -32,11 +32,12 @@ angular.module('gdsApp')
 
       $http.post(apiUrl + '/user/create', data, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success createUser ', data);
           callback(data);
           LocalStorage.userCreateData(data.data.user);
+         // console.log('Success createUser ', data);
         }, function (error) {
-          console.warn('Error createUser: ', error);
+          callback(error);
+          // console.warn('Error createUser: ', error);
         });
     };
 
@@ -44,10 +45,11 @@ angular.module('gdsApp')
     obj.loginUser = function (data, callback) {
       $http.post(apiUrl + '/user/login', data, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success loginUser: ', data);
           callback(data);
+         // console.log('Success loginUser: ', data);
         }, function (error) {
-          console.warn('Error loginUser: ', error);
+          callback(error);
+          // console.warn('Error loginUser: ', error);
         });
     };
 
@@ -61,7 +63,8 @@ angular.module('gdsApp')
             callback(result);
           }
         }, function (error) {
-          console.warn('Error updateUser: ', error);
+          callback(error);
+          // console.warn('Error updateUser: ', error);
         });
     };
 
@@ -74,11 +77,12 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-         // console.log('Success changeAvatar: ', result);
           callback(result);
+         // console.log('Success changeAvatar: ', result);
           obj.updateUser(LocalStorage.getItem('userStorage').id);
         }, function (error) {
-          console.warn('Error changeAvatar: ', error);
+          callback(error);
+          // console.warn('Error changeAvatar: ', error);
         });
     };
 
@@ -103,10 +107,14 @@ angular.module('gdsApp')
         })
         .then(function (result) {
          // console.log('Success updateProfile: ', result);
-          if(callback) {callback(result);}
+          if(callback) {
+            callback(result);
+          }
+
           obj.updateUser(params.id);
         }, function (error) {
-          console.warn('Error updateProfile: ', error);
+          callback(error);
+          // console.warn('Error updateProfile: ', error);
         });
     };
 
@@ -119,10 +127,11 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-         // console.log('Success getUserSurvey: ', result);
           callback(result);
+         // console.log('Success getUserSurvey: ', result);
         }, function (error) {
-          console.warn('Error getUserSurvey: ', error);
+          callback(error);
+          // console.warn('Error getUserSurvey: ', error);
         });
     };
 
@@ -137,7 +146,8 @@ angular.module('gdsApp')
         .then(function (result) {
           callback(result);
         }, function (error) {
-          console.warn('Error getUserCalendar: ', error);
+          callback(error);
+          // console.warn('Error getUserCalendar: ', error);
         });
     };
 
@@ -145,10 +155,11 @@ angular.module('gdsApp')
     obj.forgotPassword = function (email, callback) {
       $http.post(apiUrl + '/user/forgot-password', email, {headers: {'app_token': app_token}})
         .then(function (result) {
-         // console.log('Success forgotPassword: ', result);
           callback(result);
+         // console.log('Success forgotPassword: ', result);
         }, function (error) {
-          console.warn('Error forgotPassword: ', error);
+          callback(error);
+          // console.warn('Error forgotPassword: ', error);
         });
     };
 
@@ -156,10 +167,11 @@ angular.module('gdsApp')
     obj.validateHash = function (hash, callback) {
       $http.get(apiUrl + '/user/validate/hash?hash=' + hash, {headers: {'app_token': app_token}})
         .then(function (result) {
-         // console.log('Success validateHash: ', result);
           callback(result);
+         // console.log('Success validateHash: ', result);
         }, function (error) {
-          console.warn('Error validateHash: ', error);
+          callback(error);
+          // console.warn('Error validateHash: ', error);
         });
     };
 
@@ -167,11 +179,12 @@ angular.module('gdsApp')
     obj.updateUserPassword = function (params, callback) {
       $http.post(apiUrl + '/user/update/password', params, {headers: {'app_token': app_token}})
         .then(function (data) {
+          callback(data);
          // console.log('Success updateUserPassword ', data);
           // LocalStorage.userCreateData(data.data.user);
-          callback(data);
         }, function (error) {
-          console.warn('Error updateUserPassword: ', error);
+          callback(error);
+          // console.warn('Error updateUserPassword: ', error);
         });
     };
 
@@ -181,9 +194,16 @@ angular.module('gdsApp')
 
     // ====
     function fbLogin(facebook_id, callback) {
-        $http.get(apiUrl+'/user/get?fb='+facebook_id, {headers:{'app_token':app_token}})
-        .then(function(result){callback(result);},
-              function(error){console.warn('Error fbLogin: ', error);});
+      $http.get(apiUrl+'/user/get?fb='+facebook_id, {
+        headers:{
+          'app_token':app_token
+        }
+      }).then(function(result){
+        callback(result);
+      },function(error){
+        callback(error);
+        // console.warn('Error fbLogin: ', error);
+      });
     }
 
     obj.facebookLogin = function($scope){
@@ -213,10 +233,10 @@ angular.module('gdsApp')
                           obj.loginUser(loginPass, function(resultMail){
                               if(resultMail.data.error === true) {
                                 // toaster.pop('error', resultMail.data.message);
-//                                  Notification.show('error', 'Facebook', resultMail.data.message);
+                                 // Notification.show('error', 'Facebook', resultMail.data.message);
                               } else{
                                   // toaster.pop('success', resultMail.data.message);
-//                                  Notification.show('success', 'Facebook', resultMail.data.message);
+                                 // Notification.show('success', 'Facebook', resultMail.data.message);
                                   LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                   $location.path('health-daily');
                               }
@@ -238,9 +258,16 @@ angular.module('gdsApp')
 
     // ====
     function twLogin(twitter_id, callback) {
-        $http.get(apiUrl+'/user/get?tw='+twitter_id, {headers:{'app_token':app_token}})
-        .then(function(result){callback(result);},
-              function(error){console.warn('Error twLogin: ', error);});
+        $http.get(apiUrl+'/user/get?tw='+twitter_id, {
+          headers:{
+            'app_token':app_token
+          }
+        }).then(function(result){
+          callback(result);
+        },function(error){
+          callback(error);
+          // console.warn('Error twLogin: ', error);
+        });
     }
 
     obj.twitterLogin = function ($scope) {
@@ -285,9 +312,16 @@ angular.module('gdsApp')
 
     // ====
     function glLogin (google_id, callback) {
-        $http.get(apiUrl+'/user/get?gl='+google_id, {headers:{'app_token':app_token}})
-        .then(function(result){callback(result);},
-              function(error){console.warn('Error glLogin: ', error);});
+        $http.get(apiUrl+'/user/get?gl='+google_id, {
+          headers:{
+            'app_token':app_token
+          }
+        }).then(function(result){
+          callback(result);
+        },function(error){
+          callback(error);
+          // console.warn('Error glLogin: ', error);
+        });
     }
 
     obj.googleLogin  = function ($scope) {
@@ -340,10 +374,11 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-         // console.log('Success getUserSurveyByMonth: ', result);
           callback(result);
+         // console.log('Success getUserSurveyByMonth: ', result);
         }, function (error) {
-          console.warn('Error getUserSurveyByMonth: ', error);
+          callback(error);
+          // console.warn('Error getUserSurveyByMonth: ', error);
         });
     };
 
@@ -356,10 +391,11 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
-         // console.log('Success getUserSurveyByYear: ', result);
           callback(result);
+         // console.log('Success getUserSurveyByYear: ', result);
         }, function (error) {
-          console.warn('Error getUserSurveyByYear: ', error);
+          callback(error);
+          // console.warn('Error getUserSurveyByYear: ', error);
         });
     };
 

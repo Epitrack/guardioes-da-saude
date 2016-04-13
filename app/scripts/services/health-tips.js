@@ -21,7 +21,8 @@ angular.module('gdsApp')
           // console.log('Success getUpas: ', data);
           callback(data);
         }).error(function (error) {
-        console.warn('Error getUpas: ', error);
+        // console.warn('Error getUpas: ', error);
+          callback(error);
       });
     };
     // ====

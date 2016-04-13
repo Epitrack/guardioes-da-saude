@@ -24,6 +24,7 @@ angular.module('gdsApp')
          // console.log('Success getSymptoms: ', data);
           callback(data);
         }, function (error) {
+          callback(error);
           // console.warn('Error getSymptoms: ', error);
         });
     };
@@ -60,18 +61,20 @@ angular.module('gdsApp')
 
           });
         }, function (error) {
+          callback(error);
           // console.warn('Error submitSurvey: ', error);
         });
     };
 
     obj.getMarkersByCity = function (params, callback) {
-      //lat lon 
+      //lat lon
       $http.get(apiUrl + '/charts/pins?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
         .then(function (data) {
-         console.log('Success getMarkersByCity: ', data);
+         // console.log('Success getMarkersByCity: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error getMarkersByCity: ', error);
+          callback(error);
+          // console.warn('Error getMarkersByCity: ', error);
         });
     };
 
@@ -79,30 +82,33 @@ angular.module('gdsApp')
     obj.getMarkersByWeek = function (week, callback) {
       $http.get(apiUrl + '/surveys/w?week_of=' + week, {headers: {'app_token': app_token}})
         .then(function (data) {
-         console.log('Success getMarkersByWeek: ', data);
           callback(data);
+         // console.log('Success getMarkersByWeek: ', data);
         }, function (error) {
-          console.warn('Error getMarkersByWeek: ', error);
+          callback(error);
+          // console.warn('Error getMarkersByWeek: ', error);
         });
     };
 
     obj.getMarkersByLocation = function (params, callback) {
       $http.get(apiUrl + '/charts/pins?lat=' + params.lat + '&lon=' + params.lng, {headers: {'app_token': app_token}})
         .then(function (data) {
-         console.log('Success getMarkersByLocation: ', data);
           callback(data);
+         // console.log('Success getMarkersByLocation: ', data);
         }, function (error) {
-          console.warn('Error getMarkersByLocation: ', error);
+          callback(error);
+          // console.warn('Error getMarkersByLocation: ', error);
         });
     };
 
     obj.getSummaryByLocation = function (params, callback) {
       $http.get(apiUrl + '/charts/summary?lat=' + params.lat + '&lon=' + params.lon, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success getSummaryByLocation: ', data);
           callback(data);
+         // console.log('Success getSummaryByLocation: ', data);
         }, function (error) {
           // console.warn('Error getSummaryByLocation: ', error);
+          callback(error);
         });
     };
 
@@ -110,14 +116,14 @@ angular.module('gdsApp')
       // return console.warn('service -> ', params);
 
       var url = (params.time !== undefined)? apiUrl + '/charts/summary?month='+params.time+'&lat=' + params.lat + "&lon=" + params.lng : apiUrl + '/surveys/summary?lat=' + params.lat + "&lon=" + params.lng;
-//      console.log('url sumary', url, params.time);
 
 
       $http.get(url, {headers: {'app_token': app_token}})
         .then(function (data) {
-         // console.log('Success getMarkersByCitySummary: ', data);
           callback(data);
+         // console.log('Success getMarkersByCitySummary: ', data);
         }, function (error) {
+          callback(error);
           // console.warn('Error getMarkersByCitySummary: ', error);
         });
     };
@@ -128,6 +134,7 @@ angular.module('gdsApp')
           callback(data);
           // console.warn('Success getCityByPosition: ', data);
       }, function(error){
+        callback(error);
           // console.warn('Error getCityByPosition: ', error);
       });
     };
