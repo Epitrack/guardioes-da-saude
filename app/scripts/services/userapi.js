@@ -230,6 +230,8 @@ angular.module('gdsApp')
 
               $scope.userData = userFbData;
 
+              $rootScope.userEmail = $scope.userData.email;
+
               fbLogin(userFbData.fb, function(dataLg) {
                 if (dataLg.data.error === false && dataLg.data.data.length > 0) {
                   // ====
@@ -242,7 +244,6 @@ angular.module('gdsApp')
                     if (resultMail.data.error === true) {
                     } else if (resultMail.status == 401) {
                       angular.element('#modal-confirm-account').modal('show');
-                      console.log($scope.userData.email);
                     } else {
                       LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                       $location.path('health-daily');
@@ -422,7 +423,18 @@ angular.module('gdsApp')
 
     // ====
     obj.deActivateUser = function(params, callback) {
-      console.warn(params);
+      var data = {
+        email: params
+      };
+
+      $http.post(apiUrl + '/user/reactivate/', data, {
+        headers: {
+          'app_token': app_token
+        }}).then(function(data){
+          callback(data);
+        }, function(error){
+          callback(error);
+      });
     };
     // ====
 

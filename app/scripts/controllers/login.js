@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('LoginCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', 'Notification', function ($scope, UserApi, $location, LocalStorage, Notification) {
+  .controller('LoginCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', 'Notification', '$rootScope', function ($scope, UserApi, $location, LocalStorage, Notification, $rootScope) {
 
 
     $scope.facebookLogin = function () {
@@ -25,14 +25,21 @@ angular.module('gdsApp')
 
     $scope.renewAccount = function() {
       // mandar um POST pra user/delete/ passando o email do usuário e o app_token via header.
-      // var params = $scope.
 
-      return console.log($scope);
+        var params = $rootScope.userEmail;
 
-      // UserApi.deActivateUser(params, function(data) {
-      //   console.log('Retorno da API -> ', data);
-      // });
-
+        if (params) {
+          UserApi.deActivateUser(params, function (data) {
+            if (data.status == 200) {
+              Notification.show('success', 'Reativar Conta', 'Conta reativada com sucesso!');
+              angular.element('#modal-conta-reativada').modal('toggle');
+            } else {
+              Notification.show('error', 'Reativar conta', 'Tente novamente em alguns instantes.');
+            }
+          });
+        } else {
+          Notification.show('info', 'Reativar Conta', 'Tente novamente em alguns instantes.');
+        }
     };
 
   }]);
