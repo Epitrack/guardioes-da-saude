@@ -23,4 +23,16 @@ angular.module('gdsApp')
       UserApi.twitterLogin($scope);
     };
 
+    $scope.renewAccount = function() {
+      // mandar um POST pra user/delete/ passando o email do usuário e o app_token via header.
+      // var params = $scope.
+
+      return console.log($scope);
+
+      // UserApi.deActivateUser(params, function(data) {
+      //   console.log('Retorno da API -> ', data);
+      // });
+
+    };
+
   }]);
