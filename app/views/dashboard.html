@@ -296,7 +296,7 @@ $(window).load(function() {
 
             // if (fillColor != '#033491') {
                 console.log("this.parentNode.id ",this.parentNode.id,"this.id ",this.id);
-            if(this.parentNode.id!=="canvas_background"){
+            if(this.id!=="canvas_background"){
                 var x = evt.pageX;
                 var y = evt.pageY + 250;
                 this.style.fill = 'rgb(7, 76, 149)';
@@ -314,7 +314,7 @@ $(window).load(function() {
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
 
-            if(this.parentNode.id!=="canvas_background"){
+            if(this.id!=="canvas_background"){
             this.style.fill = angular.element($(".popover-custom")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
             this.style.stroke="white";
             $(".popover-custom").hide();
