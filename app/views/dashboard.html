@@ -295,6 +295,7 @@ $(window).load(function() {
             var fillColor = this.getAttribute('fill');
 
             // if (fillColor != '#033491') {
+            if(this.parentNode.id!=="canvas_background"){
                 var x = evt.pageX;
                 var y = evt.pageY + 250;
                 this.style.fill = 'rgb(7, 76, 149)';
@@ -304,12 +305,14 @@ $(window).load(function() {
                 $(".popover-custom").css("top",(y-250));
                 $(".popover-custom-content").html(''+(this.parentNode.id).toUpperCase()+' : '+angular.element($(".popover-custom")).scope().getUserbyLocation(this.parentNode.id));
                 $(".popover-custom").show();
+            }
             // }
 
         }
 
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
+
             if(this.parentNode.id!=="canvas_background"){
             this.style.fill = angular.element($(".popover-custom")).scope().getColorMap(cores,this.parentNode.id).cor||'rgb(191, 203, 227)';
             this.style.stroke="white";
