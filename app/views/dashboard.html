@@ -286,16 +286,10 @@ $(window).load(function() {
     var regiaoSudeste = SVGRoot.querySelector('#sudeste');
     var regiaoCentroOeste = SVGRoot.querySelector('#centro-oeste');
     var regiaoSul = SVGRoot.querySelector('#sul');
-
     // hover dos estados
     for (i = 0; i < qdeEstados; i++) {
-
         estados[i].onmouseover = function(evt) {
-
             var fillColor = this.getAttribute('fill');
-
-            // if (fillColor != '#033491') {
-                console.log("this.parentNode.id ",this.parentNode.id,"this.id ",this.id);
             if(this.id!=="canvas_background"){
                 var x = evt.pageX;
                 var y = evt.pageY + 250;
@@ -307,10 +301,7 @@ $(window).load(function() {
                 $(".popover-custom-content").html(''+(this.parentNode.id).toUpperCase()+' : '+angular.element($(".popover-custom")).scope().getUserbyLocation(this.parentNode.id));
                 $(".popover-custom").show();
             }
-            // }
-
         }
-
         estados[i].onmouseout = function() {
             var fillColor = this.getAttribute('fill');
 
@@ -322,7 +313,6 @@ $(window).load(function() {
         }
 
     }
-
     function colorizeMap(){
          for (i = 0; i < qdeEstados; i++) {
         var obj = angular.element($(".popover-custom")).scope().getColorMap(cores,estados[i].parentNode.id);
@@ -330,40 +320,37 @@ $(window).load(function() {
          }
     }
 
-
-
-function ColorLuminance(hex, lum) {
-    // validate hex string
-    hex = String(hex).replace(/[^0-9a-f]/gi, '');
-    if (hex.length < 6) {
-        hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    function ColorLuminance(hex, lum) {
+        // validate hex string
+        hex = String(hex).replace(/[^0-9a-f]/gi, '');
+        if (hex.length < 6) {
+            hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        }
+        lum = lum || 0;
+        // convert to decimal and change luminosity
+        var rgb = "#", c, i;
+        for (i = 0; i < 3; i++) {
+            c = parseInt(hex.substr(i*2,2), 16);
+            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+            rgb += ("00"+c).substr(c.length);
+        }
+        return rgb;
     }
-    lum = lum || 0;
-    // convert to decimal and change luminosity
-    var rgb = "#", c, i;
-    for (i = 0; i < 3; i++) {
-        c = parseInt(hex.substr(i*2,2), 16);
-        c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
-        rgb += ("00"+c).substr(c.length);
+    var color = "#074c95",
+        lum = 0.02,
+        out = document.getElementById("out");
+    var i, c, nc;
+    var cores = [];
+    for (var i = 0; i < 80; i++) {
+        if(i%5===0){
+        var c = out.appendChild(document.createElement("div"));
+        nc = ColorLuminance(color, i*lum);
+        c.style.backgroundColor = nc;
+        c.title = nc;
+        cores.push(nc);
+        }
     }
-    return rgb;
-}
-
-var color = "#074c95",
-    lum = 0.02,
-    out = document.getElementById("out");
-var i, c, nc;
-var cores = [];
-for (var i = 0; i < 80; i++) {
-    if(i%5===0){
-    var c = out.appendChild(document.createElement("div"));
-    nc = ColorLuminance(color, i*lum);
-    c.style.backgroundColor = nc;
-    c.title = nc;
-    cores.push(nc);
-    }
-}
-cores = cores.reverse();
-colorizeMap();
+    cores = cores.reverse();
+    colorizeMap();
 });
 </script>
