@@ -295,6 +295,7 @@ $(window).load(function() {
             var fillColor = this.getAttribute('fill');
 
             // if (fillColor != '#033491') {
+                console.log(this.parentNode.id,this.id);
             if(this.parentNode.id!=="canvas_background"){
                 var x = evt.pageX;
                 var y = evt.pageY + 250;
