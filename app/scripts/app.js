@@ -39,8 +39,8 @@ angular
         'ng-sortable'
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
-      $facebookProvider.setAppId('961547147258065');
-      $mdGestureProvider.skipClickHijack();
+        $facebookProvider.setAppId('961547147258065');
+        $mdGestureProvider.skipClickHijack();
     })
     .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
@@ -517,12 +517,12 @@ _.groupBygroup = function(data, key, index, delimiter) {
     return obj;
 }
 _.mixin({
-    'sortKeysBy': function (obj, comparator) {
-        var keys = _.sortBy(_.keys(obj), function (key) {
+    'sortKeysBy': function(obj, comparator) {
+        var keys = _.sortBy(_.keys(obj), function(key) {
             return comparator ? comparator(obj[key], key) : key;
         });
-    
-        return _.object(keys, _.map(keys, function (key) {
+
+        return _.object(keys, _.map(keys, function(key) {
             return obj[key];
         }));
     }

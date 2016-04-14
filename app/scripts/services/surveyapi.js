@@ -129,6 +129,7 @@ angular.module('gdsApp')
     };
 
     obj.getCityByPosition = function(position, callback) {
+      console.log("position",position);
       $http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.lat+","+position.lon)
       .then(function(data){
           callback(data);

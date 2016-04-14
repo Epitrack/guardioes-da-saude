@@ -234,9 +234,7 @@ angular.module('gdsApp')
         var mcluster = null;
 
         $scope.activeClusters = function(params) {
-
             if (mcluster === null) {
-
                 var options = {
                     styles: [
                         { url: "../../images/oval-102.svg", width: 80, height: 80 },
@@ -244,22 +242,21 @@ angular.module('gdsApp')
                         { url: '../../images/oval-102-8.svg', width: 25, height: 25 }
                     ]
                 };
-
                 mcluster = new MarkerClusterer($scope.map, $scope.mkrs, options);
 
                 mcluster.zoomOnClick_ = false;
-
-                // console.log('mcluster', mcluster.getStyles())
-
+                mcluster.setValues(0);
                 google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
-                    // console.log('cluster', cluster)
+                     console.log(cluster.getMarkerClusterer());
                     var content = '<div id="infoTitle">' + cluster.getMarkers().length + ' Participações</div>';
-                    // '<div id="infoBody">Área: 900m<br>Período:2 semanas</div>';
                     var infoWindow = new google.maps.InfoWindow({ content: content });
                     infoWindow.setPosition(cluster.center_);
                     infoWindow.open($scope.map);
                 });
 
+                google.maps.event.addListener(mcluster, 'mouseover', function(cluster) {
+                 
+                });
             } else {
                 mcluster.setMaxZoom(1);
                 mcluster.repaint();
@@ -291,17 +288,12 @@ angular.module('gdsApp')
                 title: info.title,
                 icon: img
             });
-
             marker.content = info.message;
-
             google.maps.event.addListener(marker, 'click', function() {
-
             });
-
             $scope.mkrs.push(marker);
             if (info.index) { marker.setZIndex(info.index); }
         }
-
         /* function checkIfExistMarker(id) {
              for (var i in $scope.markers) {
                  if ($scope.markers[i].id === id) {
@@ -310,7 +302,6 @@ angular.module('gdsApp')
              }
              return false;
          }*/
-
         $scope.initMap = function() {
             var mapOptions = {
                 center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng),
@@ -324,21 +315,10 @@ angular.module('gdsApp')
                     position: google.maps.ControlPosition.LEFT_TOP
                 }
             };
-
             $scope.map = new google.maps.Map(document.getElementById('dashboard-map'), mapOptions);
-
             google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function() {
                 console.log($scope.map);
                 $scope.getMarkersByLocation(null);
             });
-
-           /* $scope.map.addListener('center_changed', function() {
-                window.setTimeout(function() {
-
-                    $scope.getMarkersByLocation({ lat: $scope.map.center.lat(), lon: $scope.map.center.lng() });
-                }, 3000);
-            });*/
-
         };
-
     }]);

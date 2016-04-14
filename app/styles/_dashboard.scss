@@ -415,7 +415,7 @@ margin: 20px 0 20px 17%;
     button {
         @include apr(none);
         border: 1px solid #fff;
-        background-color: #074c95;
+        background-color: $btn-primary;
         font-size: ($fs-normal)-.2;
         color: #fff;
         width: 70px;
@@ -428,7 +428,7 @@ margin: 20px 0 20px 17%;
             @include bdr(3px 3px 0 0);
         }
         &[disabled="disabled"] {
-            background-color: $btn-primary;
+            background-color: #074c95;
         }
     }
 }
