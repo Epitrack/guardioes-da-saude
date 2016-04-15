@@ -8,9 +8,30 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'Notification', function ($scope, UserApi, $rootScope, Notification) {
+  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'Notification', '$timeout', '$location', function ($scope, UserApi, $rootScope, Notification, $timeout, $location) {
 
     $scope.pageClass = 'profile-page';
+
+    // ====
+    $scope.deleteUser = function () {
+      var params = {
+        user_token: $scope.screen.user.user_token
+      };
+
+      UserApi.deleteUser(params, function (data) {
+        if (data.status == 200) {
+          Notification.show('success', 'Excluir Conta', 'Conta deletada com sucesso!');
+          $timeout(function () {
+            delete $rootScope.user;
+            localStorage.clear();
+            $location.path('/');
+          }, 2000);
+        } else {
+          Notification.show('error', 'Excluir conta', 'Tente novamente em alguns instantes.');
+        }
+      });
+    };
+    // ====
 
     // set user with $rootScope data
     $scope.getUser = function () {
@@ -27,7 +48,8 @@ angular.module('gdsApp')
             gender: u.gender,
             email: u.email,
             race: u.race,
-            picture:u.picture
+            picture:u.picture,
+            user_token:u.user_token
            // password: ""
           };
 
@@ -37,7 +59,9 @@ angular.module('gdsApp')
         }
       });
     };
+    // ====
 
+    // ====
     $scope.editProfile = function () {
       // create a object to manipulate date and send to api
       var params = {
@@ -81,6 +105,7 @@ angular.module('gdsApp')
       });
       // ====
     };
+    // ====
 
     $scope.getUser();
   }]);
