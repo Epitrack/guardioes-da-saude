@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'Notification', function ($scope, UserApi, $rootScope, Notification) {
+  .controller('ProfileCtrl', ['$scope', 'UserApi', '$rootScope', 'Notification', '$timeout', '$location', function ($scope, UserApi, $rootScope, Notification, $timeout, $location) {
 
     $scope.pageClass = 'profile-page';
 
@@ -22,6 +22,7 @@ angular.module('gdsApp')
         if (data.status == 200) {
           Notification.show('success', 'Excluir Conta', 'Conta deletada com sucesso!');
           $timeout(function () {
+            delete $rootScope.user;
             localStorage.clear();
             $location.path('/');
           }, 2000);
