@@ -255,7 +255,7 @@ angular.module('gdsApp')
                 });
 
                 google.maps.event.addListener(mcluster, 'mouseover', function(cluster) {
-                 
+
                 });
             } else {
                 mcluster.setMaxZoom(1);
@@ -306,7 +306,7 @@ angular.module('gdsApp')
             var mapOptions = {
                 center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng),
                 zoom: $scope.userLocation.zoom,
-                scrollwheel: false,
+                scrollwheel: true,
                 streetViewControl: false,
                 mapTypeControl: false,
                 zoomControl: true,
