@@ -1,24 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: sketchtool 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
-    <title>Oval 102</title>
-    <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="10.2---dashboard" sketch:type="MSArtboardGroup" transform="translate(-621.000000, -346.000000)" fill="#F5A623">
-            <g id="content" sketch:type="MSLayerGroup" transform="translate(0.000000, 1.000000)">
-                <g id="mapa" transform="translate(239.000000, 125.000000)" sketch:type="MSShapeGroup">
-                    <g id="bgmap">
-                        <g id="Group" transform="translate(172.000000, 42.000000)">
-                            <g id="Cluster" transform="translate(179.000000, 56.000000)">
-                                <g id="amarelo" transform="translate(31.000000, 122.000000)">
-                                    <circle id="Oval-102" cx="40" cy="40" r="40"></circle>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
+<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+ <!-- Generator: sketchtool 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+ <title>Oval 102</title>
+ <desc>Created with sketchtool.</desc>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g opacity="0.6" fill-rule="evenodd" fill="none" id="GdS-md">
+   <g fill="#F5A623" id="10.2---dashboard">
+    <g id="content">
+     <g id="mapa">
+      <g id="bgmap">
+       <g id="Group">
+        <g id="Cluster">
+         <g id="amarelo">
+          <circle r="40" cy="40" cx="40" id="Oval-102"/>
+         </g>
         </g>
+       </g>
+      </g>
+     </g>
     </g>
+   </g>
+  </g>
+ </g>
 </svg>
