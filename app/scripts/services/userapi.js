@@ -40,18 +40,18 @@ angular.module('gdsApp')
           // console.warn('Error createUser: ', error);
         });
     };
+    // ====
 
     // login
     obj.loginUser = function (data, callback) {
       $http.post(apiUrl + '/user/login', data, {headers: {'app_token': app_token}})
         .then(function (data) {
           callback(data);
-         // console.log('Success loginUser: ', data);
         }, function (error) {
           callback(error);
-          // console.warn('Error loginUser: ', error);
         });
     };
+    // ====
 
     // get recent user info
     obj.updateUser = function (id, callback) {
@@ -67,6 +67,7 @@ angular.module('gdsApp')
           // console.warn('Error updateUser: ', error);
         });
     };
+    // ====
 
     obj.changeAvatar = function (avatar, callback) {
       avatar.id = LocalStorage.getItem('userStorage').id;
@@ -85,6 +86,7 @@ angular.module('gdsApp')
           // console.warn('Error changeAvatar: ', error);
         });
     };
+    // ====
 
     // update user profile
     obj.updateProfile = function (params, callback) {
@@ -117,6 +119,7 @@ angular.module('gdsApp')
           // console.warn('Error updateProfile: ', error);
         });
     };
+    // ====
 
     // get user surveys
     obj.getUserSurvey = function (callback) {
@@ -134,6 +137,7 @@ angular.module('gdsApp')
           // console.warn('Error getUserSurvey: ', error);
         });
     };
+    // ====
 
     // get calendar data
     obj.getUserCalendar = function (params, callback) {
@@ -150,6 +154,7 @@ angular.module('gdsApp')
           // console.warn('Error getUserCalendar: ', error);
         });
     };
+    // ====
 
     // forgot password
     obj.forgotPassword = function (email, callback) {
@@ -162,6 +167,7 @@ angular.module('gdsApp')
           // console.warn('Error forgotPassword: ', error);
         });
     };
+    // ====
 
     // check hash validation
     obj.validateHash = function (hash, callback) {
@@ -174,6 +180,7 @@ angular.module('gdsApp')
           // console.warn('Error validateHash: ', error);
         });
     };
+    // ====
 
     // register
     obj.updateUserPassword = function (params, callback) {
@@ -187,14 +194,17 @@ angular.module('gdsApp')
           // console.warn('Error updateUserPassword: ', error);
         });
     };
+    // ====
 
+    // ====
     obj.getSavedCalendar = function () {
       return $rootScope.userCalendar;
     };
+    // ====
 
     // ====
     function fbLogin(facebook_id, callback) {
-      $http.get(apiUrl+'/user/get?fb='+facebook_id, {
+      $http.get(apiUrl+'/user/get?fb=' + facebook_id, {
         headers:{
           'app_token':app_token
         }
@@ -202,57 +212,53 @@ angular.module('gdsApp')
         callback(result);
       },function(error){
         callback(error);
-        // console.warn('Error fbLogin: ', error);
       });
     }
 
-    obj.facebookLogin = function($scope){
+    obj.facebookLogin = function($scope) {
+      var userFbData = {};
 
-        var userFbData = {};
+      $facebook.login().then(function(data) {
+        if (data.status == 'connected') {
+          $facebook.api('me', { fields:'name,email,gender,ids_for_business' })
+          .then(function(response) {
+              userFbData.fb_token = data.authResponse.accessToken;
+              userFbData.nick = response.name;
+              userFbData.email = response.email;
+              userFbData.gender = response.gender[0].toUpperCase();
+              userFbData.fb = response.ids_for_business.data[0].id;//response.id;
 
-        $facebook.getLoginStatus().then(function(){
-          // console.log("getting facebook data")
-        });
+              $scope.userData = userFbData;
 
-        $facebook.login().then(function(data){
-            if(data.status === 'connected'){
-                $facebook.api('me', {fields:'name,email,gender,ids_for_business'})
-                .then(function(response) {
-                    userFbData.fb_token = data.authResponse.accessToken;
-                    userFbData.nick = response.name;
-                    userFbData.email = response.email;
-                    userFbData.gender = response.gender[0].toUpperCase();
-                    userFbData.fb = response.ids_for_business.data[0].id;//response.id;
-                    $scope.userData = userFbData;
-                    fbLogin(userFbData.fb, function (dataLg) {
-                      if (dataLg.data.error === false && dataLg.data.data.length>0) {
-                          var loginPass = {
-                            email: dataLg.data.data[0].email,
-                            password: dataLg.data.data[0].email
-                          };
-                          obj.loginUser(loginPass, function(resultMail){
-                              if(resultMail.data.error === true) {
-                                // toaster.pop('error', resultMail.data.message);
-                                 // Notification.show('error', 'Facebook', resultMail.data.message);
-                              } else{
-                                  // toaster.pop('success', resultMail.data.message);
-                                 // Notification.show('success', 'Facebook', resultMail.data.message);
-                                  LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                                  $location.path('health-daily');
-                              }
+              $rootScope.userEmail = $scope.userData.email;
 
-                          });
+              fbLogin(userFbData.fb, function(dataLg) {
+                if (dataLg.data.error === false && dataLg.data.data.length > 0) {
+                  // ====
+                  var loginPass = {
+                    email: dataLg.data.data[0].email,
+                    password: dataLg.data.data[0].email
+                  };
 
-                      } else {
-                       // console.warn('Error -> ', dataLg.data.message);
-                        angular.element('#modal-complete-login').modal('show');
-                      }
-                    });
-                });
-            }else{
-                console.warn("Error ->", data);
-            }
-        });
+                  obj.loginUser(loginPass, function(resultMail) {
+                    if (resultMail.data.error === true) {
+                    } else if (resultMail.status == 401) {
+                      angular.element('#modal-confirm-account').modal('show');
+                    } else {
+                      LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                      $location.path('health-daily');
+                    }
+                  });
+                  // ====
+                } else {
+                  angular.element('#modal-complete-login').modal('show');
+                }
+              });
+          })
+        } else {
+          console.warn('Error -> ', data);
+        }
+      });
     };
     // ====
 
@@ -266,7 +272,6 @@ angular.module('gdsApp')
           callback(result);
         },function(error){
           callback(error);
-          // console.warn('Error twLogin: ', error);
         });
     }
 
@@ -276,12 +281,11 @@ angular.module('gdsApp')
       OAuth.popup('twitter', function(err){ if( err ){ console.warn('error tw',err); } } )
         .done(function(result) {
           result.me().done(function(data) {
-           // console.log("me",data)
             userTwData.tw = data.id;
             userTwData.nick = data.name;
             $scope.userData = userTwData;
+
             twLogin(userTwData.tw, function(dataTw){
-             // console.log("dataTw", dataTw);
               if (dataTw.data.error === false && dataTw.data.data.length>0) {
                   var loginPass = {
                     email: dataTw.data.data[0].email,
@@ -366,6 +370,7 @@ angular.module('gdsApp')
     };
     // ====
 
+    // ====
     obj.getUserSurveyByMonth = function (params, callback) {
       $http.get(apiUrl + '/user/chart/month?month=' + params.month + '&year=' + params.year, {
           headers: {
@@ -381,7 +386,9 @@ angular.module('gdsApp')
           // console.warn('Error getUserSurveyByMonth: ', error);
         });
     };
+    // ===
 
+    // ====
     obj.getUserSurveyByYear = function (params, callback) {
 
       $http.get(apiUrl + '/user/calendar/year?year=' + params.year, {
@@ -398,6 +405,38 @@ angular.module('gdsApp')
           // console.warn('Error getUserSurveyByYear: ', error);
         });
     };
+    // ====
+
+    // ====
+    obj.deleteUser = function(params, callback) {
+      $http.delete(apiUrl + '/user/delete/', {
+        headers: {
+          'app_token': app_token,
+          'user_token': params.user_token
+        }}).then(function(data){
+          callback(data);
+        }, function(error){
+          callback(error);
+      });
+    };
+    // ====
+
+    // ====
+    obj.deActivateUser = function(params, callback) {
+      var data = {
+        email: params
+      };
+
+      $http.post(apiUrl + '/user/reactivate/', data, {
+        headers: {
+          'app_token': app_token
+        }}).then(function(data){
+          callback(data);
+        }, function(error){
+          callback(error);
+      });
+    };
+    // ====
 
     return obj;
   });
