@@ -130,11 +130,11 @@ angular.module('gdsApp')
           }
         })
         .then(function (result) {
+         console.log('Success getUserSurvey: ', result);
           callback(result);
-         // console.log('Success getUserSurvey: ', result);
         }, function (error) {
+          console.warn('Error getUserSurvey: ', error);
           callback(error);
-          // console.warn('Error getUserSurvey: ', error);
         });
     };
     // ====
