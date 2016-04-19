@@ -23,6 +23,8 @@ angular.module('gdsApp')
       UserApi.getUserSurvey(function (data) {
         $scope.userSurvey = data.data.data;
 
+        console.log("$scope.userSurvey",$scope.userSurvey);
+
         if ($scope.userSurvey.total !== 0) {
           $scope.userSurvey.pct_no_symptoms = ((($scope.userSurvey.no_symptom / $scope.userSurvey.total) * 100));
           $scope.userSurvey.pct_symptoms = ((($scope.userSurvey.symptom / $scope.userSurvey.total) * 100));

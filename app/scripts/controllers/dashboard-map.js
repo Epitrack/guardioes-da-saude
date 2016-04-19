@@ -11,6 +11,7 @@ angular.module('gdsApp')
     .controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification', function($scope, LocalStorage, Surveyapi, $http, $rootScope, Notification) {
 
         $scope.mkrs = [];
+        $scope.params = {};
         var mcluster = null;
         $scope.datemin = "01/" + (moment().month() + 1) + "/" + moment().year();
         $scope.datemax = "30/" + (moment().month() + 1) + "/" + moment().year();
@@ -121,18 +122,16 @@ angular.module('gdsApp')
             });
         };
 
-        $scope.getMarkersByLocation = function(params) {
-            if (params === undefined) {
-                params = {
-                    lat: LocalStorage.getItem('userLocation').lat,
-                    lon: LocalStorage.getItem('userLocation').lon
-                };
+        $scope.getMarkersByLocation = function() {
+            if ($scope.params.lat === undefined) {
+                $scope.params.lat = LocalStorage.getItem('userLocation').lat;
+                $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            params.min = $scope.datemin;
-            params.max = $scope.datemax;
+            $scope.params.min = $scope.datemin;
+            $scope.params.max = $scope.datemax;
             /**/
-            Surveyapi.getCityByPosition(params, function(data) {
+            Surveyapi.getCityByPosition($scope.params, function(data) {
                 console.log(data);
                 //pega bairro, Cidade - UF, País
                 $rootScope.city = data.data.results[1].formatted_address;
@@ -151,6 +150,8 @@ angular.module('gdsApp')
                         lat: results[0].geometry.location.lat(),
                         lon: results[0].geometry.location.lng()
                     };
+                    $scope.params.lat = $scope.cityLatLng.lat;
+                    $scope.params.lon = $scope.cityLatLng.lon;
                     callback();
                     if ($rootScope.city) { delete $rootScope.city; }
                 } else {}
@@ -160,24 +161,23 @@ angular.module('gdsApp')
         /*pega o endereco e converte para latitude e longitude*/
         $scope.getCityAutoComplete = function(city) {
             getCoords(city, function() {
-                getSurvey($scope.cityLatLng);
-                getSurveySummary($scope.cityLatLng);
+                getSurvey();
+                getSurveySummary();
             });
         };
 
 
-        function getSurvey(params) {
-            if (params === undefined) {
-                params = {
-                    lat: LocalStorage.getItem('userLocation').lat,
-                    lon: LocalStorage.getItem('userLocation').lon
-                };
+        function getSurvey() {
+
+            if ($scope.params.lat === undefined) {
+                $scope.params.lat = LocalStorage.getItem('userLocation').lat;
+                $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            params.min = $scope.datemin;
-            params.max = $scope.datemax;
+            $scope.params.min = $scope.datemin;
+            $scope.params.max = $scope.datemax;
             /**/
-            Surveyapi.getPins(params, function(data) {
+            Surveyapi.getPins($scope.params, function(data) {
                 console.log(data)
                 console.log(data.data.error)
                 if (data.data.error === false) {
@@ -238,19 +238,17 @@ angular.module('gdsApp')
             if (info.index) { marker.setZIndex(info.index); }
         }
 
-        function getSurveySummary(params) {
-            if (params === undefined) {
-                params = {
-                    lat: LocalStorage.getItem('userLocation').lat,
-                    lon: LocalStorage.getItem('userLocation').lon
-                };
+        function getSurveySummary() {
+            if ($scope.params.lat === undefined) {
+                $scope.params.lat = LocalStorage.getItem('userLocation').lat;
+                $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            params.datemin = $scope.datemin;
-            params.datemax = $scope.datemax;
+            $scope.params.min = $scope.datemin;
+            $scope.params.max = $scope.datemax;
             /**/
             var summary = {};
-            Surveyapi.getSummary(params, function(data) {
+            Surveyapi.getSummary($scope.params, function(data) {
                 if (data.data.error === false) {
                     summary.total_no_symptoms = data.data.data.total_no_symptoms;
                     summary.total_symptoms = data.data.data.total_symptoms;

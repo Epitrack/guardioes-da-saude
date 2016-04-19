@@ -171,20 +171,21 @@ angular.module('gdsApp')
             var summary = {};
 
             Surveyapi.getMarkersByCitySummary(params, function(data) {
-                if (data.data.error === false) {
+                console.log(data.data.summary);
+                if (data.data.summary !== false) {
 
-                    summary.total_no_symptoms = data.data.data.total_no_symptoms;
-                    summary.total_symptoms = data.data.data.total_symptoms;
-                    summary.total_surveys = data.data.data.total_surveys;
+                    summary.total_no_symptoms = data.data.summary.total_no_symptoms;
+                    summary.total_symptoms = data.data.summary.total_symptoms;
+                    summary.total_surveys = data.data.summary.total_surveys;
 
                     summary.pct_no_symptoms = 0;
                     summary.pct_symptoms = 0;
 
-                    summary.address = data.data.data.location.formattedAddress;
+                    summary.address = data.data.summary.location.formattedAddress;
 
-                    summary.diarreica = data.data.data.diseases.diarreica;
-                    summary.exantematica = data.data.data.diseases.exantematica;
-                    summary.respiratoria = data.data.data.diseases.respiratoria;
+                    summary.diarreica = data.data.summary.diseases.diarreica;
+                    summary.exantematica = data.data.summary.diseases.exantematica;
+                    summary.respiratoria = data.data.summary.diseases.respiratoria;
 
                     if (summary.total_no_symptoms > 0) {
                         summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
@@ -256,20 +257,21 @@ angular.module('gdsApp')
             var summary = {};
 
             Surveyapi.getSummaryByLocation(params, function(data) {
-                if (data.data.error === false) {
+                 console.log(data.data.summary);
+                if (data.data.summary !== false) {
 
-                    summary.total_no_symptoms = data.data.data.total_no_symptoms;
-                    summary.total_symptoms = data.data.data.total_symptoms;
-                    summary.total_surveys = data.data.data.total_surveys;
+                    summary.total_no_symptoms = data.data.summary.total_no_symptoms;
+                    summary.total_symptoms = data.data.summary.total_symptoms;
+                    summary.total_surveys = data.data.summary.total_surveys;
 
                     summary.pct_no_symptoms = 0;
                     summary.pct_symptoms = 0;
 
-                    summary.address = data.data.data.location.formattedAddress;
+                    summary.address = data.data.summary.location.formattedAddress;
 
-                    summary.diarreica = data.data.data.diseases.diarreica;
-                    summary.exantematica = data.data.data.diseases.exantematica;
-                    summary.respiratoria = data.data.data.diseases.respiratoria;
+                    summary.diarreica = data.data.summary.diseases.diarreica;
+                    summary.exantematica = data.data.summary.diseases.exantematica;
+                    summary.respiratoria = data.data.summary.diseases.respiratoria;
 
                     if (summary.total_no_symptoms > 0) {
                         summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
