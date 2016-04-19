@@ -52,7 +52,7 @@ angular.module('gdsApp')
             Notification.show('error', 'Cadastro por e-mail', data.data.message);
         } else {
             Notification.show('success', 'Cadastro por e-mail', data.data.message);
-            $location.path('/health-daily');
+            $location.path('/survey');
         }
       });
     };

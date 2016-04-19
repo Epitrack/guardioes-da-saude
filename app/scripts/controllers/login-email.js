@@ -25,8 +25,28 @@ angular.module('gdsApp')
           $rootScope.user = data.data.user;
           Notification.show('success', 'Login', data.data.message);
 
-          LocalStorage.userLogin(data.data.user, data.data.token);
-          $location.path('/health-daily');
+          var local_login = localStorage.getItem('userLastLogin_GDS');
+
+          if (!local_login) {
+            LocalStorage.setLastLogin(data.data.user.lastLogin);
+            LocalStorage.userLogin(data.data.user, data.data.token);
+            $location.path('/survey');
+          } else {
+            var last_login = moment(new Date(local_login).getTime());
+            var current_login = moment(new Date(data.data.user.lastLogin).getTime());
+
+            if (current_login.diff(last_login, 'days') > 0) {
+              $rootScope.$on('userStorage_isOk', function() {
+                $location.path('/survey');
+              })
+            } else {
+              LocalStorage.userLogin(data.data.user, data.data.token);
+              $location.path('/health-daily');
+            }
+
+            LocalStorage.setLastLogin(data.data.user.lastLogin);
+          }
+
         }
       });
     };
