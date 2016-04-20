@@ -158,5 +158,16 @@ angular.module('gdsApp')
                     callback(error);
                 });
         };
+//
+        obj.getCluster = function(params, callback) {
+            $http.get(apiUrl + '/charts/cluster?lat=' + params.lat + '&lon=' + params.lon + '&min=' + params.min + '&max=' + params.max, { headers: { 'app_token': app_token } })
+                .then(function(data) {
+                    console.log('Success getCluster: ', data);
+                    callback(data);
+                }, function(error) {
+                    // console.warn('Error getSummaryByLocation: ', error);
+                    callback(error);
+                });
+        };
         return obj;
     });

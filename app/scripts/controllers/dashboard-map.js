@@ -62,34 +62,99 @@ angular.module('gdsApp')
         };
 
         $scope.activeClusters = function(params) {
-            if (mcluster === null) {
-                var options = {
-                    styles: [
-                        { url: "../../images/oval-102.svg", width: 80, height: 80 },
-                        { url: '../../images/oval-102-4.svg', width: 52, height: 52 },
-                        { url: '../../images/oval-102-8.svg', width: 25, height: 25 }
-                    ]
-                };
-                mcluster = new MarkerClusterer($scope.map, $scope.mkrs, options);
-                /**/
-                mcluster.zoomOnClick_ = false;
-                /**/
-                google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
-                    // console.log(cluster.getMarkerClusterer());
-                    var content = '<div id="infoTitle">' + cluster.getMarkers().length + ' Participações</div>';
-                    var infoWindow = new google.maps.InfoWindow({ content: content });
-                    infoWindow.setPosition(cluster.center_);
-                    infoWindow.open($scope.map);
-                });
 
-                google.maps.event.addListener(mcluster, 'mouseover', function(cluster) {
+            $scope.clearMakers();
+            if (params) {
+                Surveyapi.getCluster($scope.params, function(data) {
+                    console.log("Surveyapi.getCluster", data);
+                    var diarreica = data.data.diarreica;
+                    var exantematica = data.data.exantematica;
+                    var respiratoria = data.data.respiratoria;
+                    /*
+                     */
+                    /*var c = new google.maps.Circle({
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.8,
+                        strokeWeight: 2,
+                        fillColor: '#FF0000',
+                        fillOpacity: 0.35,
+                        map: $scope.map,
+                        center: { lat: -15.7942287, lng: -47.882165799999996 },
+                        radius: Math.sqrt(10000) * 100
+                    });
+                    $scope.mkrs.push(c);*/
+                    for (var i = 0; i < diarreica.length; i++) {
+                        console.log(diarreica[i].coordinates[0]);
+                        var c = new google.maps.Circle({
+                            strokeColor: '#db1105',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#db1105',
+                            fillOpacity: 0.35,
+                            map: $scope.map,
+                            center: { lat: diarreica[i].coordinates[1], lng: diarreica[i].coordinates[0] },
+                            radius: Math.sqrt(200) * 100
+                        });
+                        $scope.mkrs.push(c);
 
+                    }
+
+                    for (var i = 0; i < exantematica.length; i++) {
+                        var c = new google.maps.Circle({
+                            strokeColor: '#85001f',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#85001f',
+                            fillOpacity: 0.35,
+                            map: $scope.map,
+                            center: { lat: exantematica[i].coordinates[1], lng: exantematica[i].coordinates[0] },
+                            radius: Math.sqrt(200) * 100
+                        });
+                        $scope.mkrs.push(c);
+                    }
+                    console.log("respiratoria", respiratoria);
+                    for (var i = 0; i < respiratoria.length; i++) {
+                        var c = new google.maps.Circle({
+                            strokeColor: '#f5a623',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#f5a623',
+                            fillOpacity: 0.35,
+                            map: $scope.map,
+                            center: { lat: respiratoria[i].coordinates[1], lng: respiratoria[i].coordinates[0] },
+                            radius: Math.sqrt(200) * 100
+                        });
+                        $scope.mkrs.push(c);
+                    }
                 });
             } else {
-                mcluster.setMaxZoom(1);
-                mcluster.repaint();
-                mcluster = null;
+                $scope.getMarkersByLocation();
             }
+            /*   if (mcluster === null) {
+                   var options = {
+                       styles: [
+                           { url: "../../images/oval-102.svg", width: 80, height: 80 },
+                           { url: '../../images/oval-102-4.svg', width: 52, height: 52 },
+                           { url: '../../images/oval-102-8.svg', width: 25, height: 25 }
+                       ]
+                   };
+                   mcluster = new MarkerClusterer($scope.map, $scope.mkrs, options);
+                   mcluster.zoomOnClick_ = false;
+                   google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
+                       var content = '<div id="infoTitle">' + cluster.getMarkers().length + ' Participações</div>';
+                       var infoWindow = new google.maps.InfoWindow({ content: content });
+                       infoWindow.setPosition(cluster.center_);
+                       infoWindow.open($scope.map);
+                   });
+
+                   google.maps.event.addListener(mcluster, 'mouseover', function(cluster) {
+
+                   });
+               } else {
+                   mcluster.setMaxZoom(1);
+                   mcluster.repaint();
+                   mcluster = null;
+               }*/
         };
 
         $scope.getClustersVisible = function() {
@@ -171,7 +236,7 @@ angular.module('gdsApp')
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            $scope.params.min =  $scope.ajustaDatas($scope.datemin);
+            $scope.params.min = $scope.ajustaDatas($scope.datemin);
             $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             Surveyapi.getPins($scope.params, function(data) {
@@ -241,7 +306,7 @@ angular.module('gdsApp')
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            $scope.params.min =  $scope.ajustaDatas($scope.datemin);
+            $scope.params.min = $scope.ajustaDatas($scope.datemin);
             $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             var summary = {};
