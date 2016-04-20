@@ -98,7 +98,6 @@ angular.module('gdsApp')
                         $scope.mkrs.push(c);
 
                     }
-
                     for (var i = 0; i < exantematica.length; i++) {
                         var c = new google.maps.Circle({
                             strokeColor: '#85001f',
@@ -112,7 +111,7 @@ angular.module('gdsApp')
                         });
                         $scope.mkrs.push(c);
                     }
-                    console.log("respiratoria", respiratoria);
+                    /*console.log("respiratoria", respiratoria);*/
                     for (var i = 0; i < respiratoria.length; i++) {
                         var c = new google.maps.Circle({
                             strokeColor: '#f5a623',
