@@ -48,11 +48,13 @@ angular.module('gdsApp')
       params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
       UserApi.createUser(params, function (data) {
+        var userId = data.data.user.id;
+
         if (data.data.error === true) {
             Notification.show('error', 'Cadastro por e-mail', data.data.message);
         } else {
             Notification.show('success', 'Cadastro por e-mail', data.data.message);
-            $location.path('/survey');
+            $location.path('/survey/' + userId +'/step-1');
         }
       });
     };
