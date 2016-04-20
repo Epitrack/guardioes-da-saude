@@ -242,11 +242,31 @@ angular.module('gdsApp')
 
                   obj.loginUser(loginPass, function(resultMail) {
                     if (resultMail.data.error === true) {
-                    } else if (resultMail.status == 401) {
+                    } else if (resultMail.status === 401) {
                       angular.element('#modal-confirm-account').modal('show');
                     } else {
-                      LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                      $location.path('health-daily');
+                      var local_login = localStorage.getItem('userLastLogin_GDS');
+
+                      if (!local_login) {
+                        LocalStorage.setLastLogin(resultMail.data.user.lastLogin);
+                        LocalStorage.userLogin(resultMail.data.user, resultMail.data.token);
+                        $location.path('/survey');
+                      } else {
+                        var last_login = moment(new Date(local_login).getTime());
+                        var current_login = moment(new Date(resultMail.data.user.lastLogin).getTime());
+
+                        if (current_login.diff(last_login, 'days') > 0) {
+                          $rootScope.$on('userStorage_isOk', function() {
+                            $location.path('/survey');
+                          })
+                        } else {
+                          LocalStorage.userLogin(resultMail.data.user, resultMail.data.token);
+                          $location.path('/health-daily');
+                        }
+
+                        LocalStorage.setLastLogin(resultMail.data.user.lastLogin);
+                      }
+
                     }
                   });
                   // ====

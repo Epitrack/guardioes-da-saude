@@ -116,6 +116,14 @@ angular.module('gdsApp')
       $rootScope.user = userStorage;
 
       localStorage.setItem('userStorage', JSON.stringify(userStorage));
+
+      $rootScope.$emit('userStorage_isOk');
+    };
+
+    obj.setLastLogin = function(data) {
+      var obj = data;
+      // seta a ultima vez que o car a logou
+      localStorage.setItem('userLastLogin_GDS', obj);
     };
 
     // atualiza o usuário sempre que acontece um post
