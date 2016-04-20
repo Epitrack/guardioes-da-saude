@@ -151,8 +151,8 @@ angular.module('gdsApp')
         obj.getSummary = function(params, callback) {
             $http.get(apiUrl + '/charts/summary?lat=' + params.lat + '&lon=' + params.lon + '&min=' + params.min + '&max=' + params.max, { headers: { 'app_token': app_token } })
                 .then(function(data) {
+                    console.log('Success getSummary: ', data);
                     callback(data);
-                    // console.log('Success getSummaryByLocation: ', data);
                 }, function(error) {
                     // console.warn('Error getSummaryByLocation: ', error);
                     callback(error);

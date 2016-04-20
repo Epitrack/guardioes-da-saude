@@ -75,7 +75,7 @@ angular.module('gdsApp')
                 mcluster.zoomOnClick_ = false;
                 /**/
                 google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
-                    console.log(cluster.getMarkerClusterer());
+                    // console.log(cluster.getMarkerClusterer());
                     var content = '<div id="infoTitle">' + cluster.getMarkers().length + ' Participações</div>';
                     var infoWindow = new google.maps.InfoWindow({ content: content });
                     infoWindow.setPosition(cluster.center_);
@@ -96,10 +96,6 @@ angular.module('gdsApp')
             return (mcluster === null) ? false : true;
         };
 
-
-
-
-
         $scope.initMap = function() {
             var mapOptions = {
                 center: new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lon),
@@ -115,7 +111,7 @@ angular.module('gdsApp')
             };
             $scope.map = new google.maps.Map(document.getElementById('dashboard-map'), mapOptions);
             google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function() {
-                console.log($scope.map);
+                // console.log($scope.map);
                 $scope.data = {};
                 $scope.data.clusters = null;
                 $scope.getMarkersByLocation();
@@ -132,10 +128,10 @@ angular.module('gdsApp')
             $scope.params.max = $scope.datemax;
             /**/
             Surveyapi.getCityByPosition($scope.params, function(data) {
-                console.log(data);
+                // console.log(data);
                 //pega bairro, Cidade - UF, País
                 $rootScope.city = data.data.results[1].formatted_address;
-                console.log("$rootScope.city ", $rootScope.city);
+                // console.log("$rootScope.city ", $rootScope.city);
                 $scope.getCityAutoComplete($rootScope.city);
             });
         };
@@ -160,6 +156,7 @@ angular.module('gdsApp')
 
         /*pega o endereco e converte para latitude e longitude*/
         $scope.getCityAutoComplete = function(city) {
+            $scope.clearMakers();
             getCoords(city, function() {
                 getSurvey();
                 getSurveySummary();
@@ -174,12 +171,12 @@ angular.module('gdsApp')
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            $scope.params.min = $scope.datemin;
-            $scope.params.max = $scope.datemax;
+            $scope.params.min =  $scope.ajustaDatas($scope.datemin);
+            $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             Surveyapi.getPins($scope.params, function(data) {
-                console.log(data)
-                console.log(data.data.error)
+                // console.log(data)
+                // console.log(data.data.error)
                 if (data.data.error === false) {
                     var newMs = [];
                     newMs = addToArray(data.data.data);
@@ -193,7 +190,7 @@ angular.module('gdsApp')
         function addToArray(markers) {
             var t = [];
             angular.forEach(markers, function(p) {
-                console.log("addToArray", p);
+                // console.log("addToArray", p);
                 t.push({
                     position: [p.lat, p.lon],
                     address: p.formattedAddress,
@@ -207,7 +204,7 @@ angular.module('gdsApp')
         }
 
         function pushingMarkers(datas) {
-            console.log(datas);
+            // console.log(datas);
             for (var i in datas) {
                 $scope.markers.push(datas[i]);
                 createMarker({ 'lat': datas[i].position[0], 'lng': datas[i].position[1], 'title': datas[i].address }, datas[i].icon);
@@ -215,9 +212,9 @@ angular.module('gdsApp')
         }
 
         function createMarker(info, img) {
-            console.log("createMarker", info, img);
+            // console.log("createMarker", info, img);
             if (img === undefined) {
-                console.log('info.icon.iconUrl', info.icon.iconUrl);
+                // console.log('info.icon.iconUrl', info.icon.iconUrl);
                 img = {
                     url: info.icon.iconUrl,
                     size: new google.maps.Size(info.icon.iconSize[0], info.icon.iconSize[0]),
@@ -244,11 +241,12 @@ angular.module('gdsApp')
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            $scope.params.min = $scope.datemin;
-            $scope.params.max = $scope.datemax;
+            $scope.params.min =  $scope.ajustaDatas($scope.datemin);
+            $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             var summary = {};
             Surveyapi.getSummary($scope.params, function(data) {
+                // console.log(data.data.data);
                 if (data.data.error === false) {
                     summary.total_no_symptoms = data.data.data.total_no_symptoms;
                     summary.total_symptoms = data.data.data.total_symptoms;
@@ -272,7 +270,7 @@ angular.module('gdsApp')
                         summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
                     }
                     $scope.summary = summary;
-                    console.log('$scope.summary', $scope.summary);
+                    // console.log('$scope.summary', $scope.summary);
                 } else {
                     Notification.show('error', 'Atenção', data.data.message);
                 }
@@ -283,5 +281,19 @@ angular.module('gdsApp')
             $scope.getMarkersByLocation();
         };
 
+        $scope.clearMakers = function() {
+            for (var i = 0; i < $scope.mkrs.length; i++) {
+                $scope.mkrs[i].setMap(null);
+            }
+            $scope.markers = [];
+            $scope.mkrs = [];
+        };
+
+        $scope.ajustaDatas = function(d) {
+            if (d.indexOf('/') !== -1) {
+                return moment(d).format("YYYY-DD-MM");
+            }
+            return d;
+        }
 
     }]);
