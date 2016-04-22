@@ -179,8 +179,7 @@ angular.module('gdsApp')
         };
 
         $scope.getMarkersByLocation = function() {
-            $scope.data.clusters = false;
-            $scope.map.setZoom(12);
+
             if ($scope.params.lat === undefined) {
                 $scope.params.lat = LocalStorage.getItem('userLocation').lat;
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
@@ -219,6 +218,7 @@ angular.module('gdsApp')
         /*pega o endereco e converte para latitude e longitude*/
         $scope.getCityAutoComplete = function(city) {
             $scope.clearMakers();
+
             getCoords(city, function() {
                 getSurvey();
                 getSurveySummary();
@@ -358,6 +358,8 @@ angular.module('gdsApp')
             }
             $scope.markers = [];
             $scope.mkrs = [];
+            $scope.data.clusters = false;
+            $scope.map.setZoom(12);
         };
 
         $scope.ajustaDatas = function(d) {
