@@ -76,6 +76,32 @@
         <!-- Modal App -->
         <div ng-include src="'views/partials/modal-app.html'"></div>
         <div ng-include src="'views/partials/modal-location.html'"></div>
+        <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
+            <article class="modal-dialog" role="document" style="margin: 100px auto;">
+                <div class="modal-content">
+                    <form class="card-form" name="i-feel-bad-form">
+                        <header class="modal-header panel-heading confirm-survey">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3 class="modal-title panel-title ff-bold">Atenção</h3>
+                        </header>
+                        <div class="modal-body">
+                            <div class="panel-body" style="margin-top: 0px;">
+                                <div class="col-xs-12">
+                                    <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados.
+                                        <br/> Deseja fazer o download dos dados brutos?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary"> Sim</a>
+                            <button class="pull-right btn btn-default" data-dismiss="modal"> Não</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <div analytics></div>
@@ -83,7 +109,6 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true"></script>
     <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
     <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/markerclusterer.js"></script>
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -122,10 +147,8 @@
     <script src="bower_components/Sortable/knockout-sortable.js"></script>
     <script src="bower_components/Sortable/react-sortable-mixin.js"></script>
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-    <script src="bower_components/webshim/js-webshim/dev/polyfiller.js"></script>
     <script src="bower_components/webshim/js-webshim/minified/polyfiller.js"></script>
     <!-- endbower -->
-    
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/util/daterangepicker.js"></script>
