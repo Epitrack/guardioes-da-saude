@@ -31,6 +31,13 @@ angular.module('gdsApp')
         /**/
         $scope._usersByState = {};
 
+        $scope.load_user_map = function() {
+            var myVar = setInterval(function() {
+                init_map();
+                clearInterval(myVar);
+            }, 2000);
+        };
+
         $scope.getColorMap = function(colors, uf) {
             var max = 0;
             var min = 10000;
@@ -150,7 +157,12 @@ angular.module('gdsApp')
             });
         };
 
+        $scope.init_map_users = function() {
+            init_map();
+        };
+
         function setPercOps() {
+            console.log($scope.dash.newRegisters);
             $scope.graphicOnePerc = ((($scope.dash.newRegisters - $scope.dash.lastWeekRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
@@ -214,7 +226,7 @@ angular.module('gdsApp')
                 if ($scope.dash.platforms[i]._id === plat) { _c = $scope.dash.platforms[i].count }
             }
             var decimal = 0;
-            return ((_c / count)* 100).toFixed(1);
+            return ((_c / count) * 100).toFixed(1);
         };
 
         $scope.platVal = function(plat) {

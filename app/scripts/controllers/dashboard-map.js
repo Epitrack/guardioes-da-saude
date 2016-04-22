@@ -67,93 +67,89 @@ angular.module('gdsApp')
             if (params) {
                 Surveyapi.getCluster($scope.params, function(data) {
                     console.log("Surveyapi.getCluster", data);
-                    var diarreica = data.data.diarreica;
-                    var exantematica = data.data.exantematica;
-                    var respiratoria = data.data.respiratoria;
-                    /*
-                     */
-                    /*var c = new google.maps.Circle({
-                        strokeColor: '#FF0000',
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: '#FF0000',
-                        fillOpacity: 0.35,
-                        map: $scope.map,
-                        center: { lat: -15.7942287, lng: -47.882165799999996 },
-                        radius: Math.sqrt(10000) * 100
-                    });
-                    $scope.mkrs.push(c);*/
-                    for (var i = 0; i < diarreica.length; i++) {
-                        console.log(diarreica[i].coordinates[0]);
-                        var c = new google.maps.Circle({
-                            strokeColor: '#db1105',
-                            strokeOpacity: 0.8,
-                            strokeWeight: 2,
-                            fillColor: '#db1105',
-                            fillOpacity: 0.35,
-                            map: $scope.map,
-                            center: { lat: diarreica[i].coordinates[1], lng: diarreica[i].coordinates[0] },
-                            radius: Math.sqrt(200) * 100
-                        });
-                        $scope.mkrs.push(c);
+                    if (data.data !== null) {
+                        /**/
+                        var diarreica = data.data.diarreica;
+                        var exantematica = data.data.exantematica;
+                        var respiratoria = data.data.respiratoria;
+                        /*
+                         */
+                        $scope.map.setZoom(13);
+                        /* var l = []
+                         l.push(diarreica);
+                         l.push(exantematica);
+                         l.push(respiratoria);
+                         l = _.sortBy(l, function(obj) {
+                             return obj.cluster;
+                         });*/
+                        for (var i = 0; i < diarreica.surveys.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: '#db1105',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#db1105',
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                center: { lat: diarreica.surveys[i].coordinates[1], lng: diarreica.surveys[i].coordinates[0] },
+                                radius: Math.sqrt((diarreica.cluster) * 10) * 100
+                            });
+                            var infoWindow = new google.maps.InfoWindow({
+                                content: "diarreica " + diarreica.cluster
+                            });
+                            google.maps.event.addListener(c, 'click', function(ev) {
+                                infoWindow.setPosition(c.getCenter());
+                                // infoWindow.open($scope.map);
+                            });
+                            $scope.mkrs.push(c);
 
-                    }
-                    for (var i = 0; i < exantematica.length; i++) {
-                        var c = new google.maps.Circle({
-                            strokeColor: '#85001f',
-                            strokeOpacity: 0.8,
-                            strokeWeight: 2,
-                            fillColor: '#85001f',
-                            fillOpacity: 0.35,
-                            map: $scope.map,
-                            center: { lat: exantematica[i].coordinates[1], lng: exantematica[i].coordinates[0] },
-                            radius: Math.sqrt(200) * 100
-                        });
-                        $scope.mkrs.push(c);
-                    }
-                    /*console.log("respiratoria", respiratoria);*/
-                    for (var i = 0; i < respiratoria.length; i++) {
-                        var c = new google.maps.Circle({
-                            strokeColor: '#f5a623',
-                            strokeOpacity: 0.8,
-                            strokeWeight: 2,
-                            fillColor: '#f5a623',
-                            fillOpacity: 0.35,
-                            map: $scope.map,
-                            center: { lat: respiratoria[i].coordinates[1], lng: respiratoria[i].coordinates[0] },
-                            radius: Math.sqrt(200) * 100
-                        });
-                        $scope.mkrs.push(c);
+                        }
+                        for (var i = 0; i < exantematica.surveys.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: '#85001f',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#85001f',
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                center: { lat: exantematica.surveys[i].coordinates[1], lng: exantematica.surveys[i].coordinates[0] },
+                                radius: Math.sqrt((exantematica.cluster) * 10) * 100
+                            });
+                            var infoWindow = new google.maps.InfoWindow({
+                                content: "Exantemática : " + exantematica.cluster
+                            });
+                            google.maps.event.addListener(c, 'click', function(ev) {
+                                infoWindow.setPosition(c.getCenter());
+                                // infoWindow.open($scope.map);
+                            });
+                            $scope.mkrs.push(c);
+                        }
+                        /*console.log("respiratoria", respiratoria);*/
+                        for (var i = 0; i < respiratoria.surveys.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: '#f5a623',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#f5a623',
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                center: { lat: respiratoria.surveys[i].coordinates[1], lng: respiratoria.surveys[i].coordinates[0] },
+                                radius: Math.sqrt((respiratoria.cluster) * 10) * 100
+                            });
+                            var infoWindow = new google.maps.InfoWindow({
+                                content: "respiratoria " + respiratoria.cluster
+                            });
+                            google.maps.event.addListener(c, 'click', function(ev) {
+                                infoWindow.setPosition(c.getCenter());
+                                // infoWindow.open($scope.map);
+                            });
+                            $scope.mkrs.push(c);
+                        }
                     }
                 });
             } else {
                 $scope.getMarkersByLocation();
             }
-            /*   if (mcluster === null) {
-                   var options = {
-                       styles: [
-                           { url: "../../images/oval-102.svg", width: 80, height: 80 },
-                           { url: '../../images/oval-102-4.svg', width: 52, height: 52 },
-                           { url: '../../images/oval-102-8.svg', width: 25, height: 25 }
-                       ]
-                   };
-                   mcluster = new MarkerClusterer($scope.map, $scope.mkrs, options);
-                   mcluster.zoomOnClick_ = false;
-                   google.maps.event.addListener(mcluster, 'clusterclick', function(cluster) {
-                       var content = '<div id="infoTitle">' + cluster.getMarkers().length + ' Participações</div>';
-                       var infoWindow = new google.maps.InfoWindow({ content: content });
-                       infoWindow.setPosition(cluster.center_);
-                       infoWindow.open($scope.map);
-                   });
 
-                   google.maps.event.addListener(mcluster, 'mouseover', function(cluster) {
-
-                   });
-               } else {
-                   mcluster.setMaxZoom(1);
-                   mcluster.repaint();
-                   mcluster = null;
-               }*/
         };
 
         $scope.getClustersVisible = function() {
@@ -177,12 +173,14 @@ angular.module('gdsApp')
             google.maps.event.addListenerOnce($scope.map, 'tilesloaded', function() {
                 // console.log($scope.map);
                 $scope.data = {};
-                $scope.data.clusters = null;
+
                 $scope.getMarkersByLocation();
             });
         };
 
         $scope.getMarkersByLocation = function() {
+            $scope.data.clusters = false;
+            $scope.map.setZoom(12);
             if ($scope.params.lat === undefined) {
                 $scope.params.lat = LocalStorage.getItem('userLocation').lat;
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
@@ -310,17 +308,26 @@ angular.module('gdsApp')
             /**/
             var summary = {};
             Surveyapi.getSummary($scope.params, function(data) {
-                // console.log(data.data.data);
+                console.log(data.data.data);
                 if (data.data.error === false) {
-                    summary.total_no_symptoms = data.data.data.total_no_symptoms;
-                    summary.total_symptoms = data.data.data.total_symptoms;
-                    summary.total_surveys = data.data.data.total_surveys;
+                    summary.total_no_symptoms = Math.abs(data.data.data.total_no_symptoms);
+                    summary.total_symptoms = Math.abs(data.data.data.total_symptoms);
+                    summary.total_surveys = Math.abs(data.data.data.total_surveys);
                     summary.pct_no_symptoms = 0;
                     summary.pct_symptoms = 0;
                     summary.address = data.data.data.location.formattedAddress;
                     summary.diarreica = data.data.data.diseases.diarreica;
                     summary.exantematica = data.data.data.diseases.exantematica;
                     summary.respiratoria = data.data.data.diseases.respiratoria;
+                    summary.semsindrome = (summary.total_symptoms - (summary.diarreica + summary.exantematica + summary.respiratoria));
+                    /**/
+                    var total = (summary.diarreica + summary.exantematica + summary.respiratoria + summary.semsindrome);
+                    console.log(total, summary);
+                    summary.semsindrome = ((summary.semsindrome / total) * 100).toFixed(2);
+                    summary.diarreica = ((summary.diarreica / total) * 100).toFixed(2);
+                    summary.exantematica = ((summary.exantematica / total) * 100).toFixed(2);
+                    summary.respiratoria = ((summary.respiratoria / total) * 100).toFixed(2);
+                    /**/
                     if (summary.total_no_symptoms > 0) {
                         summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
                     }
@@ -334,7 +341,7 @@ angular.module('gdsApp')
                         summary.pct_symptoms = Math.round(summary.pct_symptoms.toFixed(2));
                     }
                     $scope.summary = summary;
-                    // console.log('$scope.summary', $scope.summary);
+                    console.log('$scope.summary', $scope.summary);
                 } else {
                     Notification.show('error', 'Atenção', data.data.message);
                 }

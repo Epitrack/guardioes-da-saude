@@ -57,6 +57,15 @@
                     </div>
                     <span class="progress-value">{{summary.respiratoria}}%</span>
                 </div>
+                <div class="progress-wrapper">
+                    <span class="progress-label">Sem síndrome</span>
+                    <div class="progress">
+                        <div class="progress-bar semsindrome active" role="progressbar" aria-valuenow="{{summary.semsindrome}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.semsindrome}}%">
+                            <span class="sr-only">{{summary.semsindrome}}% Complete</span>
+                        </div>
+                    </div>
+                    <span class="progress-value">{{summary.semsindrome}}%</span>
+                </div>
             </div>
         </article>
     </div>

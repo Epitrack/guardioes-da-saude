@@ -56,23 +56,23 @@
                 <div class="tabs-container">
                     <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
                         <div style="margin-left: -10%;">
-                            <span class="{{seta(graphicTwoPerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <span class="">{{dash.lastWeekRegisters}}</span>
                             <p>Última semana</p>
                         </div>
                         <div class="tab-graphic chart1" percent="" data-legend=""></div>
                         <div>
-                            <span class="{{seta(graphicTwoPerc)}}">{{dash.newRegisters}}</span>
+                            <span class="">{{dash.newRegisters}}</span>
                             <p>Esta semana</p>
                         </div>
                     </div>
                     <div class="tab-content" ng-show="tab == 'descadastros'">
                         <div style="margin-left: -10%;">
-                            <span class="{{seta(graphicOnePerc)}}">{{dash.newRegisters}}</span>
+                            <span class="">{{dash.newRegisters}}</span>
                             <p>Última semana</p>
                         </div>
                         <div class="tab-graphic chart2" percent="" data-legend=""></div>
                         <div>
-                            <span class="{{seta(graphicOnePerc)}}">{{dash.lastWeekRegisters}}</span>
+                            <span class="">{{dash.lastWeekRegisters}}</span>
                             <p>Esta semana</p>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                 <div class="progress-legend">
                     <figure>
                         <img src="../images/dashboard/web-icon.svg" alt="">
-                        <figcaption>web</figcaption>
+                        <figcaption>Web</figcaption>
                     </figure>
                     <figure>
                         <img src="../images/dashboard/ios-icon.svg" alt="">
@@ -172,12 +172,12 @@
                 </div>
                 <div class="bar-legend">
                     <p>13-19</p>
-                    <p>20_29</p>
-                    <p>30_39</p>
-                    <p>40_49</p>
-                    <p>50_59</p>
-                    <p>60_69</p>
-                    <p>70_79</p>
+                    <p>20-29</p>
+                    <p>30-39</p>
+                    <p>40-49</p>
+                    <p>50-59</p>
+                    <p>60-69</p>
+                    <p>70-79</p>
                     <p>> 80</p>
                 </div>
                 <div class="wrapper-bar male">
@@ -249,7 +249,7 @@
         </div>
     </div>
     <!-- Concentração de usuários -->
-    <div class="wrapper-card-map">
+    <div class="wrapper-card-map" ng-init="load_user_map()">
         <div class="col-sm-6">
             <article class="card" style="min-height: auto!important;">
                 <header class="panel-heading">
@@ -272,6 +272,13 @@
 </section>
 <script type="text/javascript">
 $(window).load(function() {
+    // var myVar = setInterval(function(){ 
+    // init_map();
+    // clearInterval(myVar);
+    //  }, 2000);
+});
+
+function init_map(){
     var i = j = k = l = m = 0;
     var msg = document.getElementById('msg');
     var D = document.getElementById('S');
@@ -353,5 +360,6 @@ $(window).load(function() {
     }
     cores = cores.reverse();
     colorizeMap();
-});
+   
+}
 </script>
