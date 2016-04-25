@@ -36,8 +36,8 @@ angular
         'ngMap',
         'ngFacebook',
         'ngMaterial',
-        'ng-sortable',
-        'rzModule'
+        'rzModule',
+        'ng-sortable'
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
         $facebookProvider.setAppId('961547147258065');
