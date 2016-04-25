@@ -265,7 +265,17 @@ angular.module('gdsApp')
 
         $scope.getMesesAnos();
         $scope.getSemMinMax();
-
+        /**/
+        //Range slider config
+        $scope.minRangeSlider = {
+            minValue: 10,
+            maxValue: 90,
+            options: {
+                floor: 0,
+                ceil: 100,
+                step: 1
+            }
+        };
         /**/
         $scope.t = function(r) {
                 console.log(r);
@@ -301,7 +311,7 @@ angular.module('gdsApp')
                     for (var value in $scope.analytics[key]) {
                         var obj = {};
                         obj[$scope.DEPARA[key]] = value;
-                        filtros[$scope.DEPARALABELS[key]]=value;
+                        filtros[$scope.DEPARALABELS[key]] = value;
                         data_final.push(_.where(df, obj));
                     }
                     df = [];

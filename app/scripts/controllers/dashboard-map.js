@@ -110,7 +110,7 @@ angular.module('gdsApp')
                                 strokeWeight: 2,
                                 fillColor: '#85001f',
                                 fillOpacity: 0.35,
-                                map: $scope.map,
+                                map: $scope.map, 
                                 center: { lat: exantematica.surveys[i].coordinates[1], lng: exantematica.surveys[i].coordinates[0] },
                                 radius: Math.sqrt((exantematica.cluster) * 10) * 100
                             });
