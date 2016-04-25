@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope) {
+    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
         $scope.slide_active = 0;
 
         $scope.DEPARALABELS = {
@@ -22,34 +22,63 @@ angular.module('gdsApp')
             "local": "Local"
         };
         $scope.DEPARA = {
-                "age": "FE",
-                "gender": "SEXO",
-                "email": "EMAIL",
-                "race": "COR",
-                "local": "REGIAO",
-                "febre": "FEBRE",
-                "manchas-vermelhas": "MANVERM",
-                "dor-no-corpo": "DORCORPO",
-                "dor-nas-juntas": "DORJUNTAS",
-                "dor-de-cabeca": "DORCABECA",
-                "coceira": "COCEIRA",
-                "olhos-vermelhos": "OLHOSVERM",
-                "dor-de-garganta": "DORGARGA",
-                "tosse": "TOSSE",
-                "falta-de-ar": "FALTAAR",
-                "nausea-vomito": "NAUSVOM",
-                "diarreia": "DIARREIA",
-                "sangramento": "SANGRAME",
-                "symptoms": "SINTOMAS",
-                "diarreica": "SIND_DIA",
-                "respiratoria": "SIND_RES",
-                "exantematica": "SIND_EXA",
-                "syndromes": "SINDROME",
-                "weeks": "SEN",
-                "monthyear": "MESANO"
-            }
-            // ====
-            // Get all symptoms
+            "age": "FE",
+            "gender": "SEXO",
+            "email": "EMAIL",
+            "race": "COR",
+            "local": "REGIAO",
+            "febre": "FEBRE",
+            "manchas-vermelhas": "MANVERM",
+            "dor-no-corpo": "DORCORPO",
+            "dor-nas-juntas": "DORJUNTAS",
+            "dor-de-cabeca": "DORCABECA",
+            "coceira": "COCEIRA",
+            "olhos-vermelhos": "OLHOSVERM",
+            "dor-de-garganta": "DORGARGA",
+            "tosse": "TOSSE",
+            "falta-de-ar": "FALTAAR",
+            "nausea-vomito": "NAUSVOM",
+            "diarreia": "DIARREIA",
+            "sangramento": "SANGRAME",
+            "symptoms": "SINTOMAS",
+            "diarreica": "SIND_DIA",
+            "respiratoria": "SIND_RES",
+            "exantematica": "SIND_EXA",
+            "syndromes": "SINDROME",
+            "weeks": "SEN",
+            "monthyear": "MESANO"
+        };
+        $scope.UFS = [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PR",
+            "PB",
+            "PA",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SE",
+            "SP",
+            "TO"
+        ];
+        // ====
+        // Get all symptoms
         $scope.dash = {};
         $scope.analytics = {};
 
@@ -70,7 +99,18 @@ angular.module('gdsApp')
         };
         $scope.getAllData();
 
-        // ====
+        $scope.filterUFS = function() {
+            var u = [];
+            for (var i in $scope.dash.usersByState) {
+                if (_.contains($scope.UFS, $scope.dash.usersByState[i]._id)) {
+                    u.push($scope.dash.usersByState[i]);
+                }
+            }
+            u = _.sortBy(u, function(o) {
+                return o._id;
+            });
+            return u;
+        }
 
         // ====
         // Graphic types carousel
@@ -161,7 +201,8 @@ angular.module('gdsApp')
 
         $scope.remove_params = function(index, type, key) {
             console.log($scope.params[type][key][index].c);
-            $("#variaveis").append($scope.params[type][key][index].c);
+            var el = $compile($scope.params[type][key][index].c)($scope);
+            angular.element($("#variaveis")).append(el);
             $scope.params[type][key].splice(index, 1);
         };
 
@@ -227,9 +268,13 @@ angular.module('gdsApp')
             } else {
                 $scope.is_histogram = false;
                 try {
-                    $("#variaveis").append($scope.params['histograma']['eixox'][0].c);
+                    var el = $compile($scope.params['histograma']['eixox'][0].c)($scope);
+                    angular.element($("#variaveis")).append(el);
                     $scope.params['histograma']['eixox'].splice(0, 1);
-                } catch (e) {}
+                } catch (e) {
+                    console.log(e);
+                }
+
                 return false;
             }
         };
@@ -260,6 +305,18 @@ angular.module('gdsApp')
                     return parseInt(o)
                 });
                 $scope.range = $scope.sem_min_max['MIN'];
+                $scope.semanaepidemiologica = {
+                    minValue: parseInt($scope.sem_min_max['MIN']) + 1,
+                    maxValue: parseInt($scope.sem_min_max['MAX']) + 1,
+                    draggableRange: true,
+                    options: {
+                        floor: parseInt($scope.sem_min_max['MIN']) + 1,
+                        ceil: parseInt($scope.sem_min_max['MAX']) + 1,
+                        step: 1,
+                        showTicksValues: true
+                    }
+                };
+
             });
         };
 
@@ -267,15 +324,7 @@ angular.module('gdsApp')
         $scope.getSemMinMax();
         /**/
         //Range slider config
-        $scope.minRangeSlider = {
-            minValue: 10,
-            maxValue: 90,
-            options: {
-                floor: 0,
-                ceil: 100,
-                step: 1
-            }
-        };
+
         /**/
         $scope.t = function(r) {
                 console.log(r);
@@ -305,6 +354,16 @@ angular.module('gdsApp')
                         }
                     }
                 }
+
+                /*VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
+                if ($scope.semanaepidemiologica.minValue !== $scope.semanaepidemiologica.options.floor || $scope.semanaepidemiologica.maxValue !== $scope.semanaepidemiologica.options.ceil) {
+                    data = _.filter(data, function(obj) {
+                        return parseInt(obj['SEN']) >= $scope.semanaepidemiologica.minValue && parseInt(obj['SEN']) <= $scope.semanaepidemiologica.maxValue;
+                    });
+                    console.log("semanaepidemiologica - data", data);
+                }
+                /*\VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
+
                 var df = data;
                 for (var key in $scope.analytics) {
                     var data_final = [];

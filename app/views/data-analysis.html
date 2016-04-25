@@ -132,24 +132,15 @@
             </li>
             <li id="weeks" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
-                <!-- Epidemiological weeks -->
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
                 <div id="semanas-content" class="collapse panel-collapse">
-                    <div class="collapse-content" style="padding: 20px 40px 50px!important;">
-                        <rzslider rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options" style="font-size: 1.7em;"></rzslider>
-                        <br/>
-                        <br/>
-                        <br/>
-                        {{minRangeSlider.minValue}}
-                        <br/>
-                        {{minRangeSlider.maxValue}}
-                        <br/>
+                    <div class="collapse-content">
+                        <rzslider rz-slider-model="semanaepidemiologica.minValue" rz-slider-high="semanaepidemiologica.maxValue" rz-slider-options="semanaepidemiologica.options" style="font-size: 1.75em;width:100%"></rzslider>
                     </div>
                 </div>
             </li>
             <li id="monthyear" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
-                <!-- Epidemiological weeks -->
                 <button ng-click="period = !period" class="btn-var" ng-class="{ 'active' : period }" data-toggle="collapse" data-target="#mesano-content">Mês/Ano</button>
                 <div id="mesano-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
@@ -181,7 +172,7 @@
                         <fieldset>
                             <label for="">Adicionar regiões e estados</label>
                         </fieldset>
-                        <fieldset ng-repeat="l in dash.usersByState">
+                        <fieldset ng-repeat="l in filterUFS()">
                             <input type="checkbox" name="local" ng-click="selecionarAnalytics('local',l._id)" value="true" id="local-{{l._id}}" class="checkbox-primary">
                             <label for="local-{{l._id}}">{{l._id}}</label>
                         </fieldset>

@@ -73,10 +73,11 @@
 <script type="text/javascript">
 $(function() {
     $('input[name="daterange"]').daterangepicker({
-        "startDate": "01/"+(moment().month()+1)+"/"+moment().year(),
-        "endDate": "30/"+(moment().month()+1)+"/"+moment().year(),
+        "startDate": "01/" + (moment().month() + 1) + "/" + moment().year(),
+        "endDate": "30/" + (moment().month() + 1) + "/" + moment().year(),
         "opens": "left",
         applyLabel: 'Consultar',
+        "applyClass": "btn-primary",
         cancelLabel: 'Fechar',
         "locale": {
             "format": "DD/MM/YYYY",
