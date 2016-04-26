@@ -165,8 +165,8 @@ angular.module('gdsApp')
                 $scope.params.lon = LocalStorage.getItem('userLocation').lon;
             }
             /**/
-            $scope.params.min = $scope.datemin;
-            $scope.params.max = $scope.datemax;
+            $scope.params.min = $scope.ajustaDatas($scope.datemin);
+            $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             Surveyapi.getCityByPosition($scope.params, function(data) {
                 // console.log(data);
@@ -217,8 +217,8 @@ angular.module('gdsApp')
             $scope.params.max = $scope.ajustaDatas($scope.datemax);
             /**/
             Surveyapi.getPins($scope.params, function(data) {
-                // console.log(data)
-                // console.log(data.data.error)
+                console.log(data)
+                    // console.log(data.data.error)
                 if (data.data.error === false) {
                     var newMs = [];
                     newMs = addToArray(data.data.data);
@@ -338,10 +338,15 @@ angular.module('gdsApp')
         };
 
         $scope.ajustaDatas = function(d) {
+            var result = d;
             if (d.indexOf('/') !== -1) {
-                return moment(d).format("YYYY-DD-MM");
+                result = moment(d).format("YYYY-DD-MM");
+                if (result === 'Invalid date') {
+                    var dd = d.split('/');
+                    result = dd[2] + "-" + dd[1] + "-" + dd[0];
+                }
             }
-            return d;
+            return result;
         }
 
     }]);
