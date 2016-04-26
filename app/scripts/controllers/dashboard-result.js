@@ -20,7 +20,6 @@ angular.module('gdsApp')
         /**/
         $scope.buildgraph = function() {
             if ($scope.type === 'pizza') {
-
                 var data = [];
                 for (var o in $scope.result) {
                     var v = 0;
@@ -29,23 +28,22 @@ angular.module('gdsApp')
                     } else {
                         v = $scope.result[o].length;
                     }
-                    data.push({ name: o, y: v });
+                    data.push({ name: o.replace("_", "-").replace("_", "-").replace("_", "-"), y: v });
                 }
                 data = _.sortBy(data, function(obj) {
                     return obj.y;
                 });
                 data = data.reverse();
+                /* Highcharts.getOptions().plotOptions.pie.colors = (function() {
+                     var colors = [],
+                         base = Highcharts.getOptions().colors[0],
+                         i;
 
-                Highcharts.getOptions().plotOptions.pie.colors = (function() {
-                    var colors = [],
-                        base = Highcharts.getOptions().colors[0],
-                        i;
-
-                    for (i = 0; i < 10; i += 1) {
-                        colors.push(Highcharts.Color(base).brighten((i - 4) / 9).get());
-                    }
-                    return colors;
-                }());
+                     for (i = 0; i < 10; i += 1) {
+                         colors.push(Highcharts.Color(base).brighten((i - 4) / 9).get());
+                     }
+                     return colors;
+                 }());*/
                 $('#container').highcharts({
                     chart: {
                         plotBackgroundColor: null,
@@ -270,5 +268,59 @@ angular.module('gdsApp')
         $scope.goback = function() {
             $location.path('/dashboard/analysis');
         };
+
+
+        $scope.convertArrayOfObjectsToCSV = function(args) {
+            var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+
+            data = args.data || null;
+            if (data == null || !data.length) {
+                return null;
+            }
+
+            columnDelimiter = args.columnDelimiter || ',';
+            lineDelimiter = args.lineDelimiter || '\n';
+
+            keys = Object.keys(data[0]);
+
+            result = '';
+            result += keys.join(columnDelimiter);
+            result += lineDelimiter;
+
+            data.forEach(function(item) {
+                ctr = 0;
+                keys.forEach(function(key) {
+                    if (ctr > 0) result += columnDelimiter;
+
+                    result += item[key];
+                    ctr++;
+                });
+                result += lineDelimiter;
+            });
+
+            return result;
+        }
+
+        $scope.downloadCSV = function() {
+            var data, filename, link;
+            var dadosfiltrados = JSON.parse(window.localStorage.getItem('dadosfiltrados'));
+            var csv = $scope.convertArrayOfObjectsToCSV({
+                data: dadosfiltrados
+            });
+            // if (csv == null) return;
+            filename = 'guardioes_da_saude_analises.csv';
+            // if (!csv.match(/^data:text\/csv/i)) {
+            csv = 'data:text/csv;charset=utf-8,' + csv;
+            // }
+            data = encodeURI(csv);
+            // link = document.createElement('a');
+            // link.setAttribute('href', data);
+            // link.setAttribute('download', filename);
+            // link.click();
+            $("#btn_download").attr("href", data);
+            // console.log($("#btn_download").attr("href"));
+            // console.log(link);
+        }
+        $scope.downloadCSV();
 
     });

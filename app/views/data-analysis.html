@@ -17,9 +17,57 @@
                 <button ng-click="symptoms = !symptoms" class="btn-var " ng-class="{ 'active' : symptoms }" data-toggle="collapse" data-target="#sintomas-content"> Sintomas</button>
                 <div id="sintomas-content" class="collapse panel-collapse">
                     <div class="collapse-content imageBased">
-                        <fieldset ng-repeat="symptom in symptomsList">
-                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms',symptom.code)" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
-                            <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','febre')" value="Y" id="symptom-febre" class="checkbox-primary">
+                            <label for="symptom-febre">Febre</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','manchas-vermelhas')" value="Y" id="symptom-manchas-vermelhas" class="checkbox-primary">
+                            <label for="symptom-manchas-vermelhas">Manchas vermelhas no corpo</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','dor-no-corpo')" value="Y" id="symptom-dor-no-corpo" class="checkbox-primary">
+                            <label for="symptom-dor-no-corpo">Dor no corpo</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','dor-nas-juntas')" value="Y" id="symptom-dor-nas-juntas" class="checkbox-primary">
+                            <label for="symptom-dor-nas-juntas">Dor nas juntas</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','dor-de-cabeca')" value="Y" id="symptom-dor-de-cabeca" class="checkbox-primary">
+                            <label for="symptom-dor-de-cabeca">Dor de cabeça</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','coceira')" value="Y" id="symptom-coceira" class="checkbox-primary">
+                            <label for="symptom-coceira">Coceira</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','olhos-vermelhos')" value="Y" id="symptom-olhos-vermelhos" class="checkbox-primary">
+                            <label for="symptom-olhos-vermelhos">Olhos vermelhos </label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','dor-de-garganta')" value="Y" id="symptom-dor-de-garganta" class="checkbox-primary">
+                            <label for="symptom-dor-de-garganta">Dor de garganta</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','tosse')" value="Y" id="symptom-tosse" class="checkbox-primary">
+                            <label for="symptom-tosse">Tosse</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','falta-de-ar')" value="Y" id="symptom-falta-de-ar" class="checkbox-primary">
+                            <label for="symptom-falta-de-ar">Falta de ar</label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','nausea-vomito')" value="Y" id="symptom-nausea-vomito" class="checkbox-primary">
+                            <label for="symptom-nausea-vomito">Náusea ou Vômito </label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','diarreia')" value="Y" id="symptom-diarreia" class="checkbox-primary">
+                            <label for="symptom-diarreia">Diarréia </label>
+                        </fieldset>
+                        <fieldset>
+                            <input type="checkbox" name="symptoms-list" ng-click="selecionarAnalytics('symptoms','sangramento')" value="Y" id="symptom-sangramento" class="checkbox-primary">
+                            <label for="symptom-sangramento">Sangramento</label>
                         </fieldset>
                     </div>
                 </div>
