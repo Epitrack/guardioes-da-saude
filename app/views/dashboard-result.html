@@ -70,12 +70,9 @@ th {
             <div id="js-legend" class="chart-legend" style="font-size: 3em; float: left; right: 14px; margin-top: 10%; margin-left: 10%;"></div>
         </div> -->
         <div style="float: right; bottom: 20px; right: 20px;margin-top: 10px;">
-            <button class="btn  btn-default btn-font" data-toggle="modal" data-target="#download-csv">Download (.csv)</button>
+            <a class="btn  btn-default btn-font" href="" id="btn_download">Download (.csv)</a>
             <button class="btn btn-primary btn-font" ng-click="goback()">Voltar</button>
         </div>
-
-        <div ng-include src="'views/partials/modal-download-csv.html'"></div>
-
-      
+        <!-- <div ng-include src="'views/partials/modal-download-csv.html'"></div> -->
     </article>
 </section>

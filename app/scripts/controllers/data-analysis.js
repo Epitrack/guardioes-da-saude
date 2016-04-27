@@ -272,7 +272,6 @@ angular.module('gdsApp')
                     angular.element($("#variaveis")).append(el);
                     $scope.params['histograma']['eixox'].splice(0, 1);
                 } catch (e) {
-                    console.log(e);
                 }
 
                 return false;
@@ -324,12 +323,10 @@ angular.module('gdsApp')
         $scope.getSemMinMax();
         /**/
         //Range slider config
-
         /**/
         $scope.t = function(r) {
-                console.log(r);
-            }
-            /**/
+            console.log(r);
+        };
         $scope.getGraphic = function(type) {
             /* console.log($scope.params[type]);
              console.log($scope.variaveis);
@@ -354,7 +351,6 @@ angular.module('gdsApp')
                         }
                     }
                 }
-
                 /*VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
                 if ($scope.semanaepidemiologica.minValue !== $scope.semanaepidemiologica.options.floor || $scope.semanaepidemiologica.maxValue !== $scope.semanaepidemiologica.options.ceil) {
                     data = _.filter(data, function(obj) {
@@ -382,6 +378,8 @@ angular.module('gdsApp')
                 }
 
                 data = df;
+                /**/
+                window.localStorage.setItem('dadosfiltrados', JSON.stringify(data));
                 /*Filtros*/
                 var result = null;
                 if (groups.length !== 0) {
@@ -394,7 +392,6 @@ angular.module('gdsApp')
                         result = _.groupByMulti(data, groups);
                     }
                     /**/
-                    console.log("result", result);
                     window.localStorage.setItem('type', type);
                     window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));
