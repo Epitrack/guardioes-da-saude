@@ -37,7 +37,8 @@ angular
         'ngFacebook',
         'ngMaterial',
         'rzModule',
-        'ng-sortable'
+        'ng-sortable',
+        'pascalprecht.translate'
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
         $facebookProvider.setAppId('961547147258065');
@@ -435,7 +436,15 @@ angular
             };
         }
     };
-});
+}).config(['$translateProvider', function($translateProvider) {
+    $translateProvider.translations('en', {
+        HOME_TITLE: 'See how is health near you'
+    });
+    $translateProvider.translations('pt', {
+        HOME_TITLE: 'Veja como está a saúde perto de você'
+    });
+    $translateProvider.preferredLanguage('pt');
+}]);
 
 _.groupByMulti = function(obj, values, context) {
     if (!values.length)

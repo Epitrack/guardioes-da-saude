@@ -1,64 +1,57 @@
-<div class="wrapper-internal not-logged">
-  <div class="container">
-    <div class="row">
-      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
-        <h2 class="title-primary title-cad-email">Preparado para se tornar um Guardião da Saúde?</h2>
-
-        <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
-          <h3>Por favor, preencha todos os campos do formulário abaixo.</h3>
-
-          <fieldset class="input-group mainform signup">
-            <input class="form-control mainform-input" name="nick" placeholder="Apelido"
-                   ng-model="createData.nick">
-            <input class="form-control mainform-input" name="email" placeholder="E-mail"
-                   ng-model="createData.email">
-            <input class="form-control mainform-input" type="tel" placeholder="Data de Nascimento"
-                   ng-model="createData.dob" mask="99-99-9999" >
-
-            <select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race">
-              <option ng-selected="true" disabled>Cor/Raça</option>
-              <option value="branco">Branco</option>
-              <option value="preto">Preto</option>
-              <option value="pardo">Pardo</option>
-              <option value="amarelo">Amarelo</option>
-              <option value="indigena">Indígena</option>
-            </select>
-
-            <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
-              <option ng-selected="true" disabled>Sexo</option>
-              <option value="M">Masculino</option>
-              <option value="F">Feminino</option>
-            </select>
-
-            <input class="form-control mainform-input" name="password" type="password" placeholder="Senha"
-                   ng-model="createData.password">
-            <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="Repetir Senha"
-                   ng-model="createData.repeat_password">
-          </fieldset>
-
-          <!-- form validation -->
-
-          <div ng-show="checkF.error" class="alert alert-warning" role="alert">
-            <span>{{checkF.msg}}</span>
-          </div>
-
-          <fieldset class="btn-group btn-group-justified" role="group">
-            <div class="btn-group" role="group">
-              <button type="submit" class="btn btn-signup" ng-disabled="!agree">Cadastre-se</button>
-            </div>
-          </fieldset>
-
-          <fieldset class="register-agree" role="group">
-            <input type="checkbox" id="register-agree" ng-model="agree">
-            <label for="register-agree">Concordo com os <a href="politica-de-privacidade"
-                                                           title="Clique para visualizar os termos de uso"
-                                                           target="_blank">Termos de Uso</a>.</label>
-          </fieldset>
-        </form>
-      </section>
+<div class="wrapper-internal not-logged" style="padding-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
+                <h2 class="title-primary title-cad-email">Preparado para se tornar um Guardião da Saúde?</h2>
+                <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
+                    <h3>Por favor, preencha todos os campos do formulário abaixo.</h3>
+                    <fieldset class="input-group mainform signup">
+                        <input class="form-control mainform-input" name="nick" placeholder="Apelido" ng-model="createData.nick">
+                        <input class="form-control mainform-input" name="email" placeholder="E-mail" ng-model="createData.email">
+                        <input class="form-control mainform-input" type="tel" placeholder="Data de Nascimento" ng-model="createData.dob" mask="99-99-9999">
+                        <select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race">
+                            <option ng-selected="true" disabled>Cor/Raça</option>
+                            <option value="branco">Branco</option>
+                            <option value="preto">Preto</option>
+                            <option value="pardo">Pardo</option>
+                            <option value="amarelo">Amarelo</option>
+                            <option value="indigena">Indígena</option>
+                        </select>
+                        <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
+                            <option ng-selected="true" disabled>Sexo</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select>
+                        <input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password">
+                        <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="Repetir Senha" ng-model="createData.repeat_password">
+                        <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country" ng-change="selectstate(createData.country)">
+                            <option ng-selected="true" disabled>Selecione o País</option>
+                            <option ng-selected="false" value="{{c.nome_pais}}" ng-repeat="c in countries">{{c.nome_pais}}</option>
+                        </select>
+                        <select class="form-control mainform-input icon-arrow" name="state" ng-model="createData.state" ng-show="states.length>0">
+                            <option ng-selected="true" disabled>Estado</option>
+                             <option ng-selected="false" value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
+                        </select>
+                       
+                    </fieldset>
+                    <!-- form validation -->
+                    <div ng-show="checkF.error" class="alert alert-warning" role="alert">
+                        <span>{{checkF.msg}}</span>
+                    </div>
+                    <fieldset class="btn-group btn-group-justified" role="group">
+                        <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-signup" ng-disabled="!agree">Cadastre-se</button>
+                        </div>
+                    </fieldset>
+                    <fieldset class="register-agree" role="group">
+                        <input type="checkbox" id="register-agree" ng-model="agree">
+                        <label for="register-agree">Concordo com os <a href="politica-de-privacidade" title="Clique para visualizar os termos de uso" target="_blank">Termos de Uso</a>.</label>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
     </div>
-  </div>
 </div>
-
+<div ng-include src="'views/partials/olympics-faixa.html'"></div>
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

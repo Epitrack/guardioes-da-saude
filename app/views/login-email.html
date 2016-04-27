@@ -17,7 +17,7 @@
           <fieldset class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
               <button type="submit" class="btn btn-signup"
-                      ng-disabled="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid || formLoginEmail.password.$dirty && formLoginEmail.password.$invalid">
+                      ng-disabled="formLoginEmail.email.$dirty && formLoginEmail.email.$invalid || formLoginEmail.password.$dirty && formLoginEmail.password.$invalid" style=" ">
                 Entrar
               </button>
             </div>
@@ -47,6 +47,6 @@
     </div>
   </div>
 </div>
-
+<div ng-include src="'views/partials/olympics-faixa.html'"></div>
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

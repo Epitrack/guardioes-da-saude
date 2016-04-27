@@ -1,34 +1,26 @@
 <div class="wrapper-internal not-logged">
-  <div class="container">
-    <div class="row">
-      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 near-you-box">
-        <h2 class="title-primary">Veja como está a saúde perto de você</h2>
-
-        <form ng-submit="setRootCity()" name="form-search-home" class="form-search-home">
-          <fieldset class="input-group">
-            <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade"
-            autocomplete="off"
-              uib-typeahead="address for address in getLocation($viewValue)"
-              typeahead-loading="loadingLocations"
-              typeahead-no-results="noResults"
-              typeahead-on-select="setRootCity($item)"
-              onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
-          </fieldset>
-        </form>
-
-        <div class="last-cities">
-          <h4>Cidades mais acessadas</h4>
-          <ul>
-            <li ng-repeat="city in cities">
-              <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{
+    <div class="container">
+        <div class="row">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 near-you-box">
+                <h2 class="title-primary">{{'HOME_TITLE' | translate}}</h2>
+                <form ng-submit="setRootCity()" name="form-search-home" class="form-search-home">
+                    <fieldset class="input-group">
+                        <input type="text" ng-model="city" class="search-home" placeholder="Pesquise pela sua cidade" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="setRootCity($item)" onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
+                    </fieldset>
+                </form>
+                <div class="last-cities">
+                    <h4>Cidades mais acessadas</h4>
+                    <ul>
+                        <li ng-repeat="city in cities">
+                            <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{
                 city._id }}</a>
-            </li>
-          </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
-      </section>
     </div>
-  </div>
 </div>
-
+<div ng-include src="'views/partials/olympics-faixa.html'"></div>
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

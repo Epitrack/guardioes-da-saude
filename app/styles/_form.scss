@@ -87,12 +87,13 @@ select option{color: #000}
 }
 
 .btn-signup, .btn-confirm {
-  color: $bg-header;
+  color: white;
   font-family: $ff-light;
   font-size: ($fs-medium)-.2;
   background-color: $link-primary;
   @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
-
+  background-color: #fcb315;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.4);
   &:hover { color: $bg-header; }
 }
 
