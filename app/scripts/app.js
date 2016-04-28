@@ -438,10 +438,12 @@ angular
     };
 }).config(['$translateProvider', function($translateProvider) {
     $translateProvider.translations('en', {
-        HOME_TITLE: 'See how is health near you'
+        HOME_TITLE: 'See how is health near you',
+        HOME_SUBTITLE: 'Most accessible cities'
     });
     $translateProvider.translations('pt', {
-        HOME_TITLE: 'Veja como está a saúde perto de você'
+        HOME_TITLE: 'Veja como está a saúde perto de você',
+        HOME_SUBTITLE: 'Cidades mais acessadas'
     });
     $translateProvider.preferredLanguage('pt');
 }]);
@@ -454,15 +456,6 @@ _.groupByMulti = function(obj, values, context) {
     for (var prop in byFirst) {
         byFirst[prop] = _.groupByMulti(byFirst[prop], rest, context);
     }
-    /*var obj = {};*/
-    /*for (var prop in byFirst) {
-        if (byFirst[prop].length === undefined) {
-            obj[prop] = byFirst[prop];
-        } else {
-            obj[prop] = byFirst[prop].length
-        }
-    }
-    console.log(obj);*/
     return byFirst;
 };
 

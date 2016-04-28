@@ -9,11 +9,10 @@
                     </fieldset>
                 </form>
                 <div class="last-cities">
-                    <h4>Cidades mais acessadas</h4>
+                    <h4>{{'HOME_SUBTITLE' | translate}}</h4>
                     <ul>
                         <li ng-repeat="city in cities">
-                            <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{
-                city._id }}</a>
+                            <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{city._id}}</a>
                         </li>
                     </ul>
                 </div>
