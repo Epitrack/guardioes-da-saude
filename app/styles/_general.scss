@@ -436,6 +436,15 @@ body {
     @include path('bg-map.png');
 }
 
+// How It Works
+.game-tutorial {
+    background: url("../images/game/bg-game.svg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .how-it-works {
     position: relative;
     min-height: 600px;
@@ -512,14 +521,20 @@ body {
     img {
         max-width: 100%;
         opacity: 1;
-        @include transition(opacity, .2s, linear, 0s);
+        @include transition(opacity,
+        .2s,
+        linear,
+        0s);
     }
     a {
         padding: 0;
         margin-right: 20px;
         background-repeat: no-repeat;
         background-size: 100%;
-        @include transition(background, .2s, linear, 0s);
+        @include transition(background,
+        .2s,
+        linear,
+        0s);
         &:hover {
             text-decoration: none;
             &.google-play {
@@ -640,8 +655,13 @@ body {
     z-index: 1;
     height: auto;
     position: relative;
-    @include bsd(2px, 2px, 6px, rgba(0, 0, 0, .3));
-    @include linear-gradient(-60deg, #1976D2, $bg-header);
+    @include bsd(2px,
+    2px,
+    6px,
+    rgba(0, 0, 0, .3));
+    @include linear-gradient(-60deg,
+    #1976D2,
+    $bg-header);
 }
 
 .nav-primary {
@@ -654,7 +674,10 @@ body {
         letter-spacing: 0.5px;
         position: relative;
         font-size: ($fs-normal)+.2;
-        @include transition(all, .2s, 0s, linear);
+        @include transition(all,
+        .2s,
+        0s,
+        linear);
         &:hover,
         &.active {
             text-decoration: none;
@@ -774,7 +797,10 @@ body {
 .sub-nav {
     background-color: $bg-header;
     overflow: hidden;
-    @include transition(all, .2s, 0s, linear);
+    @include transition(all,
+    .2s,
+    0s,
+    linear);
     li {
         position: relative;
         &::before {
@@ -825,7 +851,10 @@ body {
     font-size: ($fs-medium)-.2;
     @extend .card;
     @include apr(none);
-    @include transition(all, .2s, 0s, linear);
+    @include transition(all,
+    .2s,
+    0s,
+    linear);
     &:hover,
     &.active {
         color: $link-primary;
@@ -948,7 +977,10 @@ body {
     height: 90px;
     z-index: 9999;
     background-color: $link-primary;
-    @include bsd(0, -3px, 3px, rgba(0, 0, 0, .3));
+    @include bsd(0,
+    -3px,
+    3px,
+    rgba(0, 0, 0, .3));
     h5 {
         font-family: $ff-bold;
         font-size: ($fs-medium)-.2;
@@ -1087,7 +1119,10 @@ body {
             figure {
                 img {
                     @include bdr(100%);
-                    @include bsd(0px, 7px, 12px, rgba(0, 0, 0, .3));
+                    @include bsd(0px,
+                    7px,
+                    12px,
+                    rgba(0, 0, 0, .3));
                 }
             }
             ul {
@@ -1249,7 +1284,10 @@ body {
     a {
         text-decoration: none;
         color: $week-days-color;
-        @include transition(color, .25s, 0s, linear);
+        @include transition(color,
+        .25s,
+        0s,
+        linear);
         &:hover {
             color: $btn-primary;
         }
@@ -1304,7 +1342,10 @@ body {
     img {
         max-width: 100%;
         @include bdr(100%);
-        @include bsd(0, 4px, 6px, rgba(0, 0, 0, .5));
+        @include bsd(0,
+        4px,
+        6px,
+        rgba(0, 0, 0, .5));
     }
     figcaption {
         text-align: center;
@@ -1400,7 +1441,10 @@ body {
     font-family: $ff-light;
     @include apr(none);
     @include bdr(5px);
-    @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+    @include bsd(0,
+    3px,
+    6px,
+    rgba(0, 0, 0, .4));
     &.facebook {
         background-color: $btn-facebook;
         background-size: 4%;
@@ -1456,7 +1500,10 @@ p.login-email {
     margin-bottom: 20px;
     position: relative;
     @include bdr(3px);
-    @include bsd(0, 3px, 6px, rgba(0, 0, 0, .4));
+    @include bsd(0,
+    3px,
+    6px,
+    rgba(0, 0, 0, .4));
     &.half {
         margin-right: 20px;
     }
@@ -2031,7 +2078,8 @@ p.login-email {
     }
 }
 
-.olympics-faixa {
+.olympics-faixa,
+.olympics-faixa-2 {
     background-color: rgba(255, 255, 255, 0);
     position: absolute;
     width: 100%;
@@ -2045,4 +2093,24 @@ p.login-email {
     height: 100%;
     position: relative;
     max-height: 309px;
+}
+
+.btn-game-tuto {
+    width: 240px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #fcb315;
+    color: white
+}
+
+.btn-game-tuto:hover {
+    color: white;
+}
+
+.page::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

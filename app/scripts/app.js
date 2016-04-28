@@ -410,6 +410,11 @@ angular
             controller: 'HelpCtrl',
             controllerAs: 'help'
         })
+        .when('/game/tutorial', {
+            templateUrl: 'views/game/tutorial.html',
+            controller: 'GameCtrl',
+            controllerAs: 'game'
+        })
         .otherwise({
             redirectTo: '/'
         });

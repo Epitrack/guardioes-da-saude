@@ -17,6 +17,12 @@
                             <option value="amarelo">Amarelo</option>
                             <option value="indigena">Indígena</option>
                         </select>
+                        <select class="form-control mainform-input icon-arrow" name="perfil" ng-model="createData.profile">
+                            <option ng-selected="true" disabled>Perfil</option>
+                            <option value="Atleta/Delegação">Atleta/Delegação</option>
+                            <option value="Trabalhador/Voluntário">Trabalhador/Voluntário</option>
+                            <option value="Fã/Espectador">Fã/Espectador</option>
+                        </select>
                         <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
                             <option ng-selected="true" disabled>Sexo</option>
                             <option value="M">Masculino</option>
@@ -24,15 +30,14 @@
                         </select>
                         <input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password">
                         <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="Repetir Senha" ng-model="createData.repeat_password">
-                        <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country" ng-change="selectstate(createData.country)">
-                            <option ng-selected="true" disabled>Selecione o País</option>
-                            <option ng-selected="false" value="{{c.nome_pais}}" ng-repeat="c in countries">{{c.nome_pais}}</option>
+                        <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country">
+                            <option selected="true">Selecione o País</option>
+                            <option value="{{c.nome_pais}}" ng-repeat="c in countries">{{c.nome_pais}}</option>
                         </select>
-                        <select class="form-control mainform-input icon-arrow" name="state" ng-model="createData.state" ng-show="states.length>0">
-                            <option ng-selected="true" disabled>Estado</option>
-                             <option ng-selected="false" value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
+                        <select class="form-control mainform-input icon-arrow" name="state" ng-model="createData.state" ng-show="isbrasil()">
+                            <option selected>Selecione o Estado</option>
+                            <option value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
                         </select>
-                       
                     </fieldset>
                     <!-- form validation -->
                     <div ng-show="checkF.error" class="alert alert-warning" role="alert">
