@@ -66,15 +66,71 @@ angular.module('gdsApp')
             $scope.clearMakers();
             if (params) {
                 Surveyapi.getCluster($scope.params, function(data) {
+                    console.log(data);
                     console.log("Surveyapi.getCluster", data);
                     if (data.data !== null) {
                         /**/
-                        var diarreica = data.data.diarreica;
-                        var exantematica = data.data.exantematica;
-                        var respiratoria = data.data.respiratoria;
+                        var diarreica = data.data.diarreicas;
+                        var exantematica = data.data.exantematicas;
+                        var respiratoria = data.data.respiratorias;
                         /*
                          */
-                        var total = (diarreica.surveys.length + exantematica.surveys.length + respiratoria.surveys.length);
+                        var totals = [];
+                        /**/
+                        for (var i = 0; i < diarreica.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: "#db1105",
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: "#db1105",
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                clickable: true,
+                                center: { lat: diarreica[i].centroid[1], lng: diarreica[i].centroid[0] },
+                                radius: Math.sqrt(diarreica[i].points.length) * 100
+                            });
+                            totals.push(diarreica[i].points.length);
+                            createClickableCircle($scope.map, c, "Diarreica " + diarreica[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                            $scope.mkrs.push(c);
+                        }
+                        /*
+                         */
+                        for (var i = 0; i < exantematica.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: "#85001f",
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: "#85001f",
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                clickable: true,
+                                center: { lat: exantematica[i].centroid[1], lng: exantematica[i].centroid[0] },
+                                radius: Math.sqrt(exantematica[i].points.length) * 100
+                            });
+                            totals.push(exantematica[i].points.length);
+                            createClickableCircle($scope.map, c, "Exantemática " + exantematica[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                            $scope.mkrs.push(c);
+                        }
+                        /*
+                         */
+                        for (var i = 0; i < respiratoria.length; i++) {
+                            var c = new google.maps.Circle({
+                                strokeColor: "#f5a623",
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: "#f5a623",
+                                fillOpacity: 0.35,
+                                map: $scope.map,
+                                clickable: true,
+                                center: { lat: respiratoria[i].centroid[1], lng: respiratoria[i].centroid[0] },
+                                radius: Math.sqrt(respiratoria[i].points.length) * 100
+                            });
+                            totals.push(respiratoria[i].points.length);
+                            createClickableCircle($scope.map, c, "Respiratória " + respiratoria[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                            $scope.mkrs.push(c);
+                        }
+                        console.log(totals,_.max(totals));
+                        /*var total = (diarreica.surveys.length + exantematica.surveys.length + respiratoria.surveys.length);
                         console.log(total);
                         if (total < 10) {
                             $scope.map.setZoom(14);
@@ -88,7 +144,6 @@ angular.module('gdsApp')
                         exantematica.color = "#85001f";
                         respiratoria.tipo = "Respiratória";
                         respiratoria.color = "#f5a623";
-                        /**/
                         l.push(diarreica);
                         l.push(exantematica);
                         l.push(respiratoria);
@@ -112,7 +167,7 @@ angular.module('gdsApp')
                                 createClickableCircle($scope.map, c, l[index].tipo); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
                                 $scope.mkrs.push(c);
                             }
-                        }
+                        }*/
                     }
                 });
             } else {
