@@ -1,0 +1,46 @@
+<div class="game-home" style="height: 100%;z-index: 99999999;">
+    <div class="game-home-points" style="z-index: 99999999;">
+        <a href="" data-toggle="modal" data-target="#trofeu-modal">
+            <div class="game-home-medalha"></div>
+        </a>
+        <div class="game-home-trofeu"></div>
+        <div class="game-home-points-label">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="trofeu-modal" tabindex="-1" role="dialog" aria-labelledby="trofeumodal">
+    <article class="modal-dialog" role="document" style="margin: 100px auto;">
+        <div class="modal-content">
+            <form class="card-form" name="i-feel-bad-form">
+                <header class="modal-header panel-heading confirm-survey" style="background-color: white !important;">
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+                        <img src="../images/game/fechar.svg" style="position: absolute; right: -90px; top: -70px;">
+                    <!-- </button> -->
+                    <img src="../images/game/meus-trofeus.svg" style="width: 408px; height: 194px;z-index: 9; position: absolute; top: -85px; left: -80px;">
+                    <img src="../images/game/meus-trofeus-1.svg" style="width: 30px; height: auto; position: absolute; left: -29px; top: 32px;">
+
+                </header>
+                <div class="modal-body">
+                    <div class="panel-body" style="margin-top: 0px;">
+                        <div class="col-xs-12">
+                            <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados.
+                                <br/> Deseja fazer o download dos dados brutos?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="pull-right btn btn-default" data-dismiss="modal" style="margin-left: 5px;"> Não</a>
+                    <a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
+                    <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
+                </div>
+            </form>
+        </div>
+    </article>
+</div>
+<div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 0;">
+    <img src="images/olympics-colors-2.svg">
+</div>

@@ -3,7 +3,7 @@
         <div class="row">
             <section class="col-xs-12 how-it-works" style="text-align:center;z-index: 9999;" align="center">
                 <aside id="slideshow" class="col-xs-12 hidden-xs slideshow">
-                    <uib-carousel interval="0" no-wrap="false" active="slide_active">
+                    <uib-carousel interval="0" no-wrap="false" active="slide_active" after-render="updateslide()">
                         <uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
                             <img ng-src="{{slide.image}}" style="width:100%;min-height:461px;max-height:461px;">
                             <p style="width: 60%; height: 52px; font-size: 3.5em; color: rgb(255, 255, 255); margin-left: 20%;margin-bottom: 25px;">
@@ -17,25 +17,11 @@
         </div>
     </div>
     <script type="text/javascript">
-    $(window).load(function() {
-        $("#slideshow .carousel-control").css({
-            'display': 'none'
-        });
-        $("#slideshow .carousel-indicators li.active").css({
-            'border': '1px solid white'
-        });
-        $("#slideshow .carousel-indicators li").css({
-            'border': '1px solid white'
-        });
-
-        $(".carousel").on('slid.bs.carousel', function() {
-            var currentIndex = $('div.active').index() + 1;
-            angular.element($(".game-tutorial")).scope().setcurrent(currentIndex);
-        });
-
-    });
+    // $(window).load(function() {
+    // function 
+    // });
     </script>
 </div>
-<div class="wrapper-interna olympics-faixa" style="margin-top: -180px;z-index: 1;">
+<div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 1;">
     <img src="images/olympics-colors-2.svg">
 </div>

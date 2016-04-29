@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', 'Notification', function($scope, Notification) {
+    .controller('GameCtrl', ['$scope', '$location', 'Notification', function($scope, $location, Notification) {
 
         $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
@@ -44,7 +44,7 @@ angular.module('gdsApp')
             if ($scope.current < 6) {
                 $(".carousel").carousel('next');
             } else {
-                alert("próxima tela");
+                $location.path('/game/home');
             }
         }
 
@@ -52,4 +52,20 @@ angular.module('gdsApp')
             $scope.current = index;
             console.log($scope.current);
         }
+
+        $scope.updateslide = function() {
+            $("#slideshow .carousel-control").css({
+                'display': 'none'
+            });
+            $("#slideshow .carousel-indicators li.active").css({
+                'border': '1px solid white'
+            });
+            $("#slideshow .carousel-indicators li").css({
+                'border': '1px solid white'
+            });
+            $(".carousel").on('slid.bs.carousel', function() {
+                var currentIndex = $('div.active').index() + 1;
+                angular.element($(".game-tutorial")).scope().setcurrent(currentIndex);
+            });
+        };
     }]);

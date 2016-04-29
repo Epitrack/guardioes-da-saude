@@ -7,7 +7,7 @@
         </h1>
             </div>
             <div class="navbar-collapse" id="js-navbar-collapse">
-            <div>
+                <div>
                     <ul class="nav navbar-nav">
                         <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;" ng-model="lang.current" ng-change="changeLanguage()">
                             <option ng-selected="true" value="pt">PT</option>
@@ -38,6 +38,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a ng-href="health-daily">Diário da Saúde</a></li>
+                                <li><a ng-href="game/tutorial">Game</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a ng-href="/" ng-click="clearStorage()">Sair</a></li>
                             </ul>
@@ -53,7 +54,6 @@
                 <div ng-if="user.id != null" class="hidden-sm hidden-md hidden-lg">
                     <div ng-include src="'views/partials/nav-primary.html'"></div>
                 </div>
-                
             </div>
         </div>
     </div>

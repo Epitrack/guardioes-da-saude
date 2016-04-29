@@ -415,6 +415,11 @@ angular
             controller: 'GameCtrl',
             controllerAs: 'game'
         })
+        .when('/game/home', {
+            templateUrl: 'views/game/home.html',
+            controller: 'GameCtrl',
+            controllerAs: 'game'
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -441,7 +446,17 @@ angular
             };
         }
     };
-}).config(['$translateProvider', function($translateProvider) {
+}).directive('afterRender', ['$timeout', function($timeout) {
+    var def = {
+        restrict: 'A',
+        terminal: true,
+        transclude: false,
+        link: function(scope, element, attrs) {
+            $timeout(scope.$eval(attrs.afterRender), 1); //Calling a scoped method
+        }
+    };
+    return def;
+}]).config(['$translateProvider', function($translateProvider) {
     $translateProvider.translations('en', {
         HOME_TITLE: 'See how is health near you',
         HOME_SUBTITLE: 'Most accessible cities',
