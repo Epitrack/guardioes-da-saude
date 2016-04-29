@@ -444,11 +444,13 @@ angular
 }).config(['$translateProvider', function($translateProvider) {
     $translateProvider.translations('en', {
         HOME_TITLE: 'See how is health near you',
-        HOME_SUBTITLE: 'Most accessible cities'
+        HOME_SUBTITLE: 'Most accessible cities',
+        LOGIN_TITLE: 'Welcome, we missed you!'
     });
     $translateProvider.translations('pt', {
         HOME_TITLE: 'Veja como está a saúde perto de você',
-        HOME_SUBTITLE: 'Cidades mais acessadas'
+        HOME_SUBTITLE: 'Cidades mais acessadas',
+        LOGIN_TITLE: 'Bem-vindo, nós sentimos a sua falta!'
     });
     $translateProvider.preferredLanguage('pt');
 }]);

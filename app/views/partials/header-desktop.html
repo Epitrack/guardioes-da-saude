@@ -7,15 +7,19 @@
         </h1>
             </div>
             <div class="navbar-collapse" id="js-navbar-collapse">
+            <div>
+                    <ul class="nav navbar-nav">
+                        <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;" ng-model="lang.current" ng-change="changeLanguage()">
+                            <option ng-selected="true" value="pt">PT</option>
+                            <option value="en">EN</option>
+                        </select>
+                    </ul>
+                </div>
                 <!-- visible when user not logged -->
                 <div ng-if="user.id == undefined">
                     <ul class="nav navbar-nav">
                         <li><a class="nav-link" ng-href="/cadastro" id="bt-cadastrar" style="background-color: rgb(252, 179, 21) !important;">Cadastre-se</a></li>
                         <li><a class="nav-link" ng-href="/login" id="bt-entrar">Entrar</a></li>
-                        <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;" ng-model="lang.current" ng-change="changeLanguage()">
-                            <option ng-selected="true" value="pt">PT</option>
-                            <option value="en">EN</option>
-                        </select>
                     </ul>
                 </div>
                 <!-- visible when user is logged -->
@@ -49,6 +53,7 @@
                 <div ng-if="user.id != null" class="hidden-sm hidden-md hidden-lg">
                     <div ng-include src="'views/partials/nav-primary.html'"></div>
                 </div>
+                
             </div>
         </div>
     </div>
