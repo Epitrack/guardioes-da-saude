@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="305px" height="82px" viewBox="0 0 305 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="306px" height="80px" viewBox="0 0 306 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
-    <title>85ECCE26-B86C-470A-B877-CC25C83BF1B6</title>
+    <title>C7244E3F-A8B5-44A4-8228-6DDF31B09441</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <polygon id="path-1" points="0 75.0699301 294.576286 75.0699301 294.576286 0.217237762 0 0.217237762"></polygon>
         <text id="text-3" font-family="Foco-Black, Foco" font-size="35" font-weight="700" fill="#01579B">
-            <tspan x="29.2153076" y="48">Meus troféus</tspan>
+            <tspan x="26.6875" y="51">Ranking Geral</tspan>
         </text>
         <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
             <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
@@ -14,9 +14,9 @@
         </filter>
     </defs>
     <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="08---game_trofeus" transform="translate(-330.000000, -131.000000)">
-            <g id="Group-2" transform="translate(330.000000, 131.000000)">
-                <g id="Page-1" transform="translate(3.662192, 5.000000)">
+        <g id="09---game_ranking" transform="translate(-328.000000, -133.000000)">
+            <g id="Group-2" transform="translate(328.000000, 133.000000)">
+                <g id="Page-1" transform="translate(5.662192, 3.000000)">
                     <g id="Group-3" transform="translate(0.000000, 0.447098)">
                         <mask id="mask-2" fill="white">
                             <use xlink:href="#path-1"></use>
@@ -30,10 +30,10 @@
                     </g>
                     <path d="M0,5.34305245 L0,64.8588916 C6.18818792,66.7542413 12.7558121,67.7773182 19.5624877,67.7773182 C56.5088501,67.7773182 86.4591499,37.7300804 86.4591499,0.664800699 L4.66382103,0.664800699 C2.08789262,0.664800699 0,2.75945105 0,5.34305245" id="Fill-9" fill="#FFFFFF" opacity="0.3"></path>
                     <path d="M0,5.34305245 L0,23.5206049 C5.25648322,28.0527028 12.08766,30.7984021 19.5624877,30.7984021 C36.1517315,30.7984021 49.5995347,17.3070734 49.5995347,0.664800699 L4.66382103,0.664800699 C2.08789262,0.664800699 0,2.75945105 0,5.34305245" id="Fill-11" fill="#FFFFFF" opacity="0.3"></path>
-                    <g id="Meus-troféus" fill-opacity="1" fill="#01579B">
-                        <use filter="url(#filter-4)" xlink:href="#text-3"></use>
-                        <use xlink:href="#text-3"></use>
-                    </g>
+                </g>
+                <g id="Ranking-Geral" fill-opacity="1" fill="#01579B">
+                    <use filter="url(#filter-4)" xlink:href="#text-3"></use>
+                    <use xlink:href="#text-3"></use>
                 </g>
             </g>
         </g>

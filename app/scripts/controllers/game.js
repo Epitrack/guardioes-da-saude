@@ -10,6 +10,7 @@
 angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$location', 'Notification', function($scope, $location, Notification) {
 
+        /*controle do slide - TUTORIAL*/
         $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
         $scope.slide_active = 0;
@@ -57,6 +58,9 @@ angular.module('gdsApp')
             $("#slideshow .carousel-control").css({
                 'display': 'none'
             });
+            $("#slideshow .carousel-indicators").css({
+                'display': 'none'
+            });
             $("#slideshow .carousel-indicators li.active").css({
                 'border': '1px solid white'
             });
@@ -68,4 +72,96 @@ angular.module('gdsApp')
                 angular.element($(".game-tutorial")).scope().setcurrent(currentIndex);
             });
         };
+        /*\controle do slide - TUTORIAL*/
+        $scope.current_fase = 1;
+        $scope.questions_view = [];
+        $scope.questions = {
+            1: [{
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: true,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }]
+        }
+
+        $scope.setfase = function(val, $event) {
+            $scope.current_fase = val;
+            $scope.prepareQuestions();
+            // $event.stopPropagation();
+        }
+
+        $scope.prepareQuestions = function() {
+            var count = 0;
+            var objs = [];
+            $scope.questions_view = [];
+            for (var i = 0; i < $scope.questions[$scope.current_fase].length; i++) {
+                if (count < 3) {
+                    objs.push($scope.questions[$scope.current_fase][i]);
+                    count++;
+                } else {
+                    $scope.questions_view.push(objs);
+                    objs = [];
+                    count = 0;
+                    //
+                    objs.push($scope.questions[$scope.current_fase][i]);
+                    count++;
+                }
+            }
+            $scope.questions_view.push(objs);
+        };
+        $scope.escolher = function(k, k1) {
+            $scope.questions_view[k][k1].active = !$scope.questions_view[k][k1].active;
+            console.log(k, k1, $scope.questions_view[k][k1].active);
+            console.log(k, k1, $scope.questions_view[k][k1]);
+        }
+
     }]);
