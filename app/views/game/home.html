@@ -1,6 +1,6 @@
-<a id="game-1" ng-click="setfase(1,$event)" data-toggle="modal" href="" data-target="#game-1-modal" style="width: 4%; height: 15%; border:0px solid black;position: absolute; bottom: 23%; left: 27.2%;">
-</a>
-<div class="game-home" style="height: 100%;z-index: 99999999;">
+<div class="game-home" style="height: 100%;z-index: 99999999;margin-top: -10px;">
+    <a id="game-1" ng-click="openmodal('fase',1,$event)" data-toggle="modal" href="" data-target="#game-1-modal" style="width: 100%; height: 10%; border: 0px solid black; position: absolute; bottom: -4342px;">
+    </a>
     <div class="game-home-points" style="z-index: 99999999;">
         <a href="" data-toggle="modal" data-target="#trofeu-modal">
             <div class="game-home-medalha"></div>
@@ -9,7 +9,9 @@
             <div class="game-home-trofeu"></div>
         </a>
         <div class="game-home-points-label">
-            <span style="width: 100%;font-family: inherit; font-size: 15.1px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.6);text-align: center; display: block; padding-top: 6px;font-weight: bold;">10 Energias</span>
+            <a href="" ng-click="openmodal('points',1,$event)" data-toggle="modal" href="" data-target="#game-1-modal">
+                <span>10 Energias</span>
+            </a>
         </div>
     </div>
     <div class="container">
@@ -17,6 +19,7 @@
         </div>
     </div>
 </div>
+<div id="start" style="border:0px solid red;"></div>
 <div class="modal fade" id="trofeu-modal" tabindex="-1" role="dialog" aria-labelledby="trofeumodal" style="top: 10%;">
     <article class="modal-dialog" role="document" style="margin: 100px auto;">
         <div class="modal-content">
@@ -71,20 +74,61 @@
     <article class="modal-dialog" role="document" style="margin: 100px auto;">
         <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
             <form class="card-form ng-pristine ng-valid" name="i-feel-bad-form">
-                <header class="modal-header panel-heading confirm-survey" style="background-color: rgba(255, 255, 255, 0) ! important; border-bottom: 0; padding: 40px 30px 0px;">
-                    <a data-dismiss="modal" aria-label="Close">
-                        <img src="../images/game/fechar.svg" style="right: 63px; top: 8px;position: absolute;">
+                <header id="panel_header_game" class="modal-header panel-heading confirm-survey" style="background-color: rgba(255, 255, 255, 0) ! important; border-bottom: 0; padding: 40px 30px 0px;">
+                    <a href="" style="right: 63px; top: 8px;position: absolute;z-index: 99999;" data-dismiss="modal" aria-label="Close">
+                        <img src="../images/game/fechar.svg">
                     </a>
                     <img src="../images/game/faixa.svg" style="z-index: 9; position: absolute; top: 0px; left: 50%; width: 324px; height: 77px; margin-left: -182px;">
-                    <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: absolute; display: block; text-align: center; z-index: 99; left: -5%; top: 7%;">Nível 01</span>
+                    <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: block; text-align: center; z-index: 99; left: -5%; top: 7%;">Nível 01</span>
                 </header>
                 <div class="modal-body" align="center" style="margin-top: 9%; margin-left: -9%;">
-                    <div class="panel-body" style="margin-top: 0px;max-width: 318px;">
+                    <div id="panel_mosaico" class="panel-body panel_internal_game" style="margin-top: 0px;max-width: 318px;">
                         <div class="row" ng-repeat="(key, qs) in questions_view" style="margin-bottom: 10px;">
                             <div class="col-md-4" ng-repeat="(key1, q) in qs">
-                                <a href="" ng-click="q.active=!q.active">
-                                    <img src="{{q.img1}}" ng-hide="{{q.active}}">
-                                    <img src="{{q.img2}}" ng-show="{{q.active}}">
+                                <a href="" ng-click="escolher(key,key1)">
+                                    <img src="{{q.img1}}" ng-hide="q.active">
+                                    <img src="{{q.img2}}" ng-show="q.active">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel_pergunta" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-6">
+                                <div class="game-card-neutro" id="pergunta">
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-top: 4%;">
+                                <a href="" style="text-decoration: none;" ng-click="responder(0)">
+                                    <div id="op1" class="game-resposta-neutro"></div>
+                                </a>
+                                <a href="" style="text-decoration: none;" ng-click="responder(1)">
+                                    <div id="op2" class="game-resposta-neutro"></div>
+                                </a>
+                                <a href="" style="text-decoration: none;" ng-click="responder(2)">
+                                    <div id="op3" class="game-resposta-neutro"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel_card" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div id="panel_card_img" class="col-md-12">
+                                <img src="" id="panel_card_img">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel_resultado" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-md-12 ">
+                                <div class="card_energia_positive">
+                                    <div style="letter-spacing: 0px;color: rgb(255, 255, 255);font-size: 5em;padding: 10%;font-weight: bold;">Você possui 5 pontos de energia!</div>
+                                    <div style="font-size: 20px; letter-spacing: 0px; color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px; margin-top: -20px;">Participe diariamente do Guardiões da Saúde para restaurá-las!</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="" ng-click="openmodal('fase',1,$event)" style="text-decoration: none">
+                                    <img style="margin-left: -8%;" src="../images/game/cards/btn_participe.svg">
                                 </a>
                             </div>
                         </div>
@@ -97,6 +141,9 @@
 </div>
 </article>
 </div>
-<div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 0;">
+<div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 0;position: fixed;">
     <img src="images/olympics-colors-2.svg">
 </div>
+<script type="text/javascript">
+window.location = "/game/home#start";
+</script>

@@ -2041,6 +2041,14 @@ p.login-email {
     max-height: 309px;
 }
 
+.olympics-faixa-2 {
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
+    width: 100%;
+    max-height: 309px;
+    bottom: 0 !important;
+}
+
 .olympics-faixa img {
     background-color: rgba(255, 255, 255, 0);
     width: 100%;
@@ -2055,6 +2063,10 @@ p.login-email {
     border-radius: 12px;
     background-color: #fcb315;
     color: white
+}
+
+.btn-game-tuto:active {
+    color: white;
 }
 
 .btn-game-tuto:hover {
@@ -2084,7 +2096,6 @@ p.login-email {
     max-height: 309px;
 }
 
-//GAME
 .game-tutorial {
     background: url("../images/game/bg-game.svg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -2094,7 +2105,9 @@ p.login-email {
 }
 
 .game-home {
-    background: url("../images/game/bg-game-2.svg") no-repeat center center fixed;
+    /*background: url("../images/game/bg-game-2.svg") no-repeat center center fixed;*/
+    background: url("../images/game/bg-game-2.svg") no-repeat;
+    height: 5500px!important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2106,7 +2119,7 @@ p.login-email {
     background-size: cover;
     width: 277px;
     height: 101px;
-    position: absolute;
+    position: fixed;
     bottom: 35px;
     left: 50%;
     margin-left: -138.5px;
@@ -2143,4 +2156,84 @@ p.login-email {
     position: absolute;
     right: -37px;
     top: -10px;
+}
+
+.game-card-neutro {
+    background-image: url(../images/game/pergunta/card.svg);
+    width: 385px;
+    height: 268px;
+    font-size: 4em;
+    padding: 70px 20px 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.game-card-certa {
+    background-image: url(../images/game/pergunta/card_certa.svg);
+    width: 385px;
+    height: 268px;
+    font-size: 4em;
+    padding: 70px 20px 20px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.game-resposta-certa {
+    background-image: url(../images/game/pergunta/certa.svg);
+    width: 339px;
+    height: 68.4px;
+    font-size: 4em;
+    padding: 13px;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.game-resposta-errada {
+    background-image: url(../images/game/pergunta/errada.svg);
+    width: 339px;
+    height: 68.4px;
+    font-size: 4em;
+    padding: 13px;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.game-resposta-neutro {
+    background-image: url(../images/game/pergunta/question.svg);
+    width: 339px;
+    height: 68.4px;
+    font-size: 4em;
+    padding: 13px;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.result-natacao {
+    background-image: url(../images/game/cards/natacao.svg);
+    width: 324.7px;
+    height: 317.2px;
+}
+
+.game-home-points-label > a {
+    text-decoration: none;
+    ;
+    width: 100%;
+    font-family: inherit;
+    font-size: 15.1px;
+    color: rgb(24, 108, 183);
+    text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.6);
+    text-align: center;
+    display: block;
+    padding-top: 6px;
+    font-weight: bold;
+}
+
+.card_energia_positive {
+    background-image: url(../images/game/cards/card_energia_positive.svg);
+    margin-left: -8%;
+    width: 385px;
+    height: 268px;
 }

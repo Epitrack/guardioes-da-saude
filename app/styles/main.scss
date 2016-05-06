@@ -1,47 +1,36 @@
 // Reset
 @import '_reset';
-
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 // Typography styles
 @import '_typography';
-
 // Base styles
 @import '_base';
-
 // Form styles
 @import '_form';
-
 // Modal | components
 @import '_modal';
-
 // General styles
 @import '_general';
-
 // Dashboard styles
 @import '_dashboard';
-
 // Map interactions
 @import '_map';
-
 // Animations
 @import '_animations';
-
 // Components
 @import '_calendar';
-
 // Charts
 @import '_charts';
-
 // Slideshow
 @import '_slideshow';
-
 // Crossbrowser issues
 @import '_crossbrowser';
-
-
 .modal-backdrop {
     z-index: 0!important;
+}
+
+.st-content {
+   
 }

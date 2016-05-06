@@ -75,6 +75,8 @@ angular.module('gdsApp')
         /*\controle do slide - TUTORIAL*/
         $scope.current_fase = 1;
         $scope.questions_view = [];
+        $scope.k = 0;
+        $scope.k1 = 0;
         $scope.questions = {
             1: [{
                 question: "Qual tipo de micro-organismo é responsável pela dengue?",
@@ -83,49 +85,49 @@ angular.module('gdsApp')
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "1Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
-                img1: "../images/game/btn_questao.svg",
-                img2: "../images/game/quebracabeca/natacao1.svg",
-                active: true,
-                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
-            }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "2Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "3Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "4Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "5Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "6Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
                 options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
             }, {
-                question: "Qual tipo de micro-organismo é responsável pela dengue?",
+                question: "7Qual tipo de micro-organismo é responsável pela dengue?",
+                img1: "../images/game/btn_questao.svg",
+                img2: "../images/game/quebracabeca/natacao1.svg",
+                active: false,
+                options: [{ label: "Virus", iscorrect: true }, { label: "Bactéria", iscorrect: false }, { label: "Fungo", iscorrect: false }]
+            }, {
+                question: "8Qual tipo de micro-organismo é responsável pela dengue?",
                 img1: "../images/game/btn_questao.svg",
                 img2: "../images/game/quebracabeca/natacao1.svg",
                 active: false,
@@ -133,10 +135,14 @@ angular.module('gdsApp')
             }]
         }
 
-        $scope.setfase = function(val, $event) {
-            $scope.current_fase = val;
-            $scope.prepareQuestions();
-            // $event.stopPropagation();
+        $scope.openmodal = function(key, val, $event) {
+            $scope.clean(key);
+            if (key === 'fase') {
+                $scope.current_fase = val;
+                $scope.prepareQuestions();
+            } else if (key === 'points') {
+
+            }
         }
 
         $scope.prepareQuestions = function() {
@@ -158,10 +164,52 @@ angular.module('gdsApp')
             }
             $scope.questions_view.push(objs);
         };
+
+        $scope.clean = function(key) {
+            $(".panel_internal_game").each(function() {
+                $(this).hide();
+            });
+            $("#panel_header_game").show();
+            if (key === 'fase') {
+                $scope.show("panel_mosaico", true);
+                $("#op1").attr("class", "game-resposta-neutro");
+                $("#op2").attr("class", "game-resposta-neutro");
+                $("#op3").attr("class", "game-resposta-neutro");
+                $("#pergunta").attr("class", "game-card-neutro");
+            } else if (key === 'points') {
+                $scope.show("panel_resultado", true);
+                $("#panel_header_game").hide();
+            }
+        };
+
+        $scope.responder = function(op) {
+            if ($scope.questions_view[$scope.k][$scope.k1].options[op].iscorrect) {
+                $("#op" + (op + 1)).attr("class", "game-resposta-certa");
+                $("#pergunta").attr("class", "game-card-certa");
+                $("#pergunta").html("");
+            } else {
+                $("#op" + (op + 1)).attr("class", "game-resposta-errada");
+            }
+        };
+
         $scope.escolher = function(k, k1) {
-            $scope.questions_view[k][k1].active = !$scope.questions_view[k][k1].active;
-            console.log(k, k1, $scope.questions_view[k][k1].active);
-            console.log(k, k1, $scope.questions_view[k][k1]);
+            $scope.k = k;
+            $scope.k1 = k1;
+            $("#pergunta").html($scope.questions_view[k][k1].question);
+            $("#op1").html($scope.questions_view[k][k1].options[0].label);
+            $("#op2").html($scope.questions_view[k][k1].options[1].label);
+            $("#op3").html($scope.questions_view[k][k1].options[2].label);
+            $scope.show("panel_mosaico", false);
+            $scope.show("panel_pergunta", true);
+            setTimeout(function() { $scope.$apply(); });
+        };
+
+        $scope.show = function(key, flag) {
+            if (flag) {
+                $("#" + key).show();
+            } else {
+                $("#" + key).hide();
+            }
         }
 
     }]);
