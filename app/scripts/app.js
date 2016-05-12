@@ -384,6 +384,12 @@ angular
             controllerAs: 'dashboardMap',
             resolve: { loggedin: checkLoggedOut }
         })
+        .when('/dashboard/inteligencia', {
+            templateUrl: 'views/dashboard-inteligencia.html',
+            controller: 'DashboardInteligenciaCtrl',
+            controllerAs: 'dashboardInteligencia',
+            resolve: { loggedin: checkLoggedOut }
+        })
         .when('/dashboard/download', {
             templateUrl: 'views/data-download.html',
             controller: 'DataDownloadCtrl',

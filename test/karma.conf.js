@@ -59,6 +59,7 @@ module.exports = function(config) {
       'bower_components/Sortable/knockout-sortable.js',
       'bower_components/Sortable/react-sortable-mixin.js',
       'bower_components/html5shiv/dist/html5shiv.js',
+      'bower_components/webshim/js-webshim/dev/polyfiller.js',
       'bower_components/webshim/js-webshim/minified/polyfiller.js',
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/angular-mocks/angular-mocks.js',
