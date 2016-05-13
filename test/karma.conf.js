@@ -62,6 +62,9 @@ module.exports = function(config) {
       'bower_components/webshim/js-webshim/dev/polyfiller.js',
       'bower_components/webshim/js-webshim/minified/polyfiller.js',
       'bower_components/angular-translate/angular-translate.js',
+      'bower_components/crossfilter/crossfilter.js',
+      'bower_components/dcjs/dc.js',
+      'bower_components/d3-tip/index.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
