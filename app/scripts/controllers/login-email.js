@@ -24,7 +24,6 @@ angular.module('gdsApp')
                 } else {
                     $rootScope.user = data.data.user;
                     Notification.show('success', 'Login', data.data.message);
-
                     LocalStorage.userLogin(data.data.user, data.data.token);
                     if (LocalStorage.isFirstAccess()) {
                         $location.path('survey');
@@ -34,6 +33,5 @@ angular.module('gdsApp')
                 }
             });
         };
-        // ====
 
     }]);

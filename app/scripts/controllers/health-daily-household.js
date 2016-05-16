@@ -30,7 +30,9 @@ angular.module('gdsApp')
           id: $routeParams.id
         })[0];
 
-        $scope.$broadcast('hh_ok', $scope.household);
+        // return console.warn('$scope.household', $scope.household);
+
+        $scope.$broadcast('hh_ok', $scope.household.id);
       });
     };
     // ====
@@ -145,7 +147,7 @@ angular.module('gdsApp')
         month: month,
         year: new Date().getFullYear(),
         hh_id: $scope.household.id,
-        user_token: $scope.household.user_token
+        user_token: $scope.household.user.user_token
       };
 
       $rootScope.frequencyMonth = month;
@@ -189,16 +191,14 @@ angular.module('gdsApp')
     };
 
     $scope.graphicDonuts = function () {
-//      if($scope.hhSurvey.no_symptom > 0 && $scope.hhSurvey.symptom > 0) {
-        $scope.hhDonutOptions = {
-          data: [
-          {label: "Bem", value: $scope.hhSurvey.no_symptom},
-          {label: "Mal", value: $scope.hhSurvey.symptom}
-          ],
-          colors: ['#E0D433', '#C81204'],
-          resize: true
-        };
-//      }
+      $scope.hhDonutOptions = {
+        data: [
+        {label: "Bem", value: $scope.hhSurvey.no_symptom},
+        {label: "Mal", value: $scope.hhSurvey.symptom}
+        ],
+        colors: ['#E0D433', '#C81204'],
+        resize: true
+      };
     };
     // ====
 
@@ -222,7 +222,9 @@ angular.module('gdsApp')
 
     $scope.getHousehold();
 
-    $scope.$on('hh_ok', function (hhId) {
+    $scope.$on('hh_ok', function () {
+      var hhId = $scope.household.id;
+
       $scope.getHouseholdSurvey(hhId);
       $scope.getHouseholdCalendar({
         household_id: hhId,

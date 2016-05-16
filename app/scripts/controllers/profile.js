@@ -12,6 +12,7 @@ angular.module('gdsApp')
 
         $scope.pageClass = 'profile-page';
 
+
         $scope.deleteUser = function() {
             var u = $rootScope.user;
             UserApi.deleteUser(function(data) {

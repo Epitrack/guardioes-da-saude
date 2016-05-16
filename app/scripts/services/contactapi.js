@@ -22,7 +22,8 @@ angular.module('gdsApp')
           // console.log('Success faleConosco: ', data);
           callback(data);
         }, function (error) {
-          console.warn('Error faleConosco: ', error);
+          // console.warn('Error faleConosco: ', error);
+          callback(error);
         });
     };
 

@@ -131,20 +131,22 @@ body {
 }
 
 .nav-link {
-  color: $link-primary !important;
+
+  color: #ffffff !important;
   font-size: ($fs-normal)+.3;
-  font-family: $ff-light;
+  font-family: $ff-regular;
   text-transform: uppercase;
-
-  @include transition(background, .2s, 0s, linear);
-
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  margin: 10px 20px auto auto;
+  @include bdr(12px);
+  @include transition(all, .25s, 0s, linear);
   &:hover,
-  &:visited,
-  &:focus { background-color: $btn-primary !important; }
-  border: 1px solid #fff;
-margin: 10px 20px auto auto;
-border-radius: 12px;
-transition: all .25s 0s linear;
+  &:focus {
+    background-color: #ffffff !important;
+    color: $btn-primary !important;
+  }
+
 }
 
 .btn-survey {
@@ -179,31 +181,61 @@ transition: all .25s 0s linear;
   }
 }
 
-#btn-survey-container{
-  width:262px;
-  height:109px;
+.btn-survey-container{
+  width: 240px;
+  height: 109px;
   position: absolute;
-  right: 0;
+  right: 30px;
   display: block;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100%;
-  @include path('../images/nav/participe_bg.svg');
+  top: -20px;
+  @include transition(top, .25s, linear, 0s);
+
+  &:hover { top: -15px; }
+
   .lb {
-      font-size: ($fs-normal)+.6;
-      color: #FFFFFF;
-      margin-left: 70px;
-      margin-top: 10px;
-      line-height: 62px;
-      text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
-      pointer-events: none;
-      @include transition(all, .2s, 0s, linear);
+    font-size: ($fs-normal)+.6;
+    color: #FFFFFF;
+    margin-left: 60px;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+    pointer-events: none;
+    z-index: 10;
+    line-height: 110px;
+    position: relative;
+    @include transition(all, .2s, 0s, linear);
   }
-  &:hover {
-    .lb{
-      color: #000;
-    }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: #C0C340;
+    -webkit-transform: skew(0deg, 10deg);
+    -moz-transform: skew(0deg, 10deg);
+    -ms-transform: skew(0deg, 10deg);
+    -o-transform: skew(0deg, 10deg);
+    transform: skew(0deg, 10deg);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: #C0C340;
+    -webkit-transform: skew(0deg, -10deg);
+    -moz-transform: skew(0deg, -10deg);
+    -ms-transform: skew(0deg, -10deg);
+    -o-transform: skew(0deg, -10deg);
+    transform: skew(0deg, -10deg);
   }
 }
 
@@ -236,6 +268,39 @@ transition: all .25s 0s linear;
 // ===
 
 
+// TODO
+.popover-title{
+    background-color: #1a69d3 !important;
+    font-size: 18px !important;
+	color: #ffffff !important;
+    text-align: center !important;
+}
+.popover-content{
+  font-size: 14px !important;
+  line-height: 6px !important;
+  color: #4c4c4c;
+  text-align: center !important;
+}
+
+
+.chart {
+//  position: absolute;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+//dashboard
+
+.search-dashboard-map {
+  width: 300px;
+  position: absolute;
+  margin-top: -470px;
+  margin-left: 45px;
+}
 
 //
 // Inside content
@@ -528,6 +593,52 @@ transition: all .25s 0s linear;
     margin-top: 5px;
   }
 }
+
+// ====
+
+//
+// Banner zikazero
+//
+
+.banner-zikazero {
+  min-height: 300px;
+  height: auto;
+  padding: 40px 0;
+  background-color: #ffffff;
+
+  figure {
+    height: auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.zika-text {
+  h3 {
+    font-size: ($fs-medium)+1.4;
+    color: #4a4a4a;
+  }
+
+  h5 {
+    color: #4a4a4a;
+
+    span {
+      font-family: $ff-light;
+      font-style: italic;
+    }
+  }
+
+  h5, a {
+    font-size: ($fs-medium)+.4;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
 
 // ====
 
@@ -1250,6 +1361,16 @@ transition: all .25s 0s linear;
 .news-tweet {
   font-size: ($fs-medium)-.4;
   margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: $week-days-color;
+    @include transition(color, .25s, 0s, linear);
+
+    &:hover {
+      color: $btn-primary;
+    }
+  }
 }
 
 .news-footer {
@@ -1501,6 +1622,58 @@ p.login-email {
     color: $week-days-color;
     margin: 3px 0 17px 0;
   }
+
+  // Dashboard card
+  h4 {
+    &.icon {
+      font-size: ($fs-normal)+.2;
+      color: $font-primary;
+      margin: 20px auto 10px auto;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      width: 100px;
+      height: 30px;
+      background-repeat: no-repeat;
+
+      &:before {
+        content: '';
+        width: 25px;
+        height: 15px;
+        position: absolute;
+        display: inline-block;
+        vertical-align: top;
+        left: -40px;
+      }
+
+      &.user {
+        &:before {
+          @include path('dashboard/people.svg');
+        }
+      }
+
+      &.house {
+        &:before {
+          width: 18px;
+          @include path('dashboard/house.svg');
+        }
+      }
+    }
+
+    &.subtitle {
+      color: $font-primary;
+      font-size: ($fs-normal)+.2;
+      margin: 10px auto 5px 15px;
+      display: inline-block;
+    }
+  }
+
+  .card-value {
+    width: 100%;
+    font-family: $ff-bold;
+    font-size: ($fs-medium)+1.6;
+    color: $font-primary;
+  }
 }
 
 .content-card {
@@ -1575,7 +1748,7 @@ p.login-email {
   &.confirm-survey { margin-bottom: 10px; }
 }
 
-.panel-body { padding: 0; }
+.panel-body { padding: 0;}
 
 #notDataLinechart{
   display: block;
@@ -1588,7 +1761,6 @@ p.login-email {
 
   div {
     padding-top:73px;
-    position: absolute !important;
     width: 100% !important;
   }
 }
@@ -1910,6 +2082,10 @@ p.login-email {
   // Survey
   .survey-content {
     .title-primary{ font-size: ($fs-large)+1; }
+  }
+
+  .second-step-wrapper {
+    .title-primary { margin-top: 40px; }
   }
   // ====
 

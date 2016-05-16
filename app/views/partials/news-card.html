@@ -6,12 +6,15 @@
 </header>
 
 <article class="col-xs-12 col-md-9 col-md-offset-2 news-card" ng-repeat="noticia in news">
-  <time datetime="{{noticia.date}}" class="news-date">
+
+  <time datetime="{{noticia.created_at | amDateFormat:'DD/MM/YYYY'}}" class="news-date">
     {{noticia.created_at | amDateFormat:'DD/MM/YYYY'}}
   </time>
 
   <p class="news-tweet">
-    {{noticia.text}}
+    <a ng-href="{{noticia.url}}" title="Clique para visualizar esta notícia no Twitter." target="_blank">
+      {{noticia.text}}
+    </a>
   </p>
 
   <footer class="news-footer">
@@ -29,7 +32,6 @@
       </figure>
 
       <span am-time-ago="noticia.created_at"></span>
-      <!-- {{noticia.created_at | amDateFormat:'DD/MM/YYYY'}} -->
     </span>
   </footer>
 </article>

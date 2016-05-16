@@ -47,10 +47,10 @@ angular.module('gdsApp')
     // get user location
     $scope.getUserLocation = function () {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getPosition, errorGeolocation);
-      } else {
-        $window.alert('Seu navegador não suporta geolocation');
-    }
+          navigator.geolocation.getCurrentPosition(getPosition, errorGeolocation);
+        } else {
+          $window.alert('Seu navegador não suporta geolocation');
+      }
     };
 
     function getPosition(position) {

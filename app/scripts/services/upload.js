@@ -22,10 +22,11 @@ angular.module('gdsApp')
 
       $http.post('http://posttestserver.com/post.php', fd, { transformRequest: angular.identity, headers: {'Content-Type': undefined }})
         .then(function(data){
-          console.log('Success upload image: ', data);
           callback(data);
+          // console.log('Success upload image: ', data);
         }, function(error){
-          console.warn('Error upload image: ', error);
+          callback(error);
+          // console.warn('Error upload image: ', error);
       });
     };
 

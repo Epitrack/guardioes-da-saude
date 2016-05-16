@@ -13,9 +13,11 @@ app.directive('gdsMaps', function() {
      link:function(scope){
          var mapOptions = {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
-           zoom: scope.location.zoom,
+           zoom: 11,
            scrollwheel: false,
+           disableDoubleClickZoom: true,
            streetViewControl: false,
+           zoomControl: false,
            mapTypeControl: true,
            mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -56,6 +58,8 @@ app.directive('gdsMaps', function() {
                 scope.$emit('clickMarker.click', {"title":marker.title, "message":marker.content});
             });
             markers.push(marker);
+//            console.log('markers', markers)
+            scope.$emit('getMarkers', markers);
             if(info.index) { marker.setZIndex(info.index); }
         };
 

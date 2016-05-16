@@ -1,9 +1,78 @@
 <!-- Menu -->
-<div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
+<style type="text/css">
+.chart-legend li span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
 
+td,
+th {
+    width: 4rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background: #2a88e5;
+    border-color: #2a88e5;
+    color: white;
+}
+
+.head:nth-child(odd) {
+    background: #2971b8;
+}
+
+.head:nth-child(even) {
+    background: #074c95;
+}
+
+.tablecontent:nth-child(odd) {
+    background: #f7f7f7;
+}
+
+.tablecontent:nth-child(even) {
+    background: white;
+}
+</style>
+<div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Painel de controle <span>/ Análise de dados / Resultados</span></h2>
-
-  <article class="col-xs-12 card"></article>
+    <h2 class="section-title">Painel de controle <span>/ Análise de dados / Resultados</span></h2>
+    <article class="col-xs-12 card" style="padding: 20px;">
+        <div>
+            <span style="width: 255px;   height: 32px;   font-family: .HelveticaNeueDeskInterface-Regular;   font-size: 26.4px;   color: #4c4c4c;">Análise de {{labels.toString().replace(","," x ")}}</span>
+            <select style="width: 250px; height: 34px; border-radius: 3px; border: 1px solid rgb(151, 151, 151); float: right; font-size: 2.5em;">
+                <option>Visualizar Filtros</option>
+                <option ng-repeat="g in filters">{{g}}</option>
+            </select>
+        </div>
+        <table class="table table-bordered" ng-show="istable" style="font-size: 2.5em; margin-top: 2%;">
+            <thead>
+                <tr>
+                    <th class="head" style="width: 15%;border:0;"></th>
+                    <th class="head" ng-repeat="i in categories">{{i}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(key,value) in keys">
+                    <th>{{value}}</th>
+                    <td class="tablecontent" ng-repeat="(key1, value1) in categories">{{getdados(value1,value)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="container" ng-hide="istable" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        <!-- <button class="btn btn-default btn-font" data-toggle="modal" data-target="#download-csv">Abrir</button> -->
+        <!--  <div style="padding: 40px;">
+            <canvas id="chart" width="400" height="400" style="width: 400px; height: 400px; float: left;"></canvas>
+            <div id="js-legend" class="chart-legend" style="font-size: 3em; float: left; right: 14px; margin-top: 10%; margin-left: 10%;"></div>
+        </div> -->
+        <div style="float: right; bottom: 20px; right: 20px;margin-top: 10px;">
+            <a class="btn  btn-default btn-font" href="" id="btn_download">Download (.csv)</a>
+            <button class="btn btn-primary btn-font" ng-click="goback()">Voltar</button>
+        </div>
+        <!-- <div ng-include src="'views/partials/modal-download-csv.html'"></div> -->
+    </article>
 </section>

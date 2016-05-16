@@ -1,11 +1,10 @@
 <!doctype html>
 <html ng-app="gdsApp" ng-init="onInit()">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <base href="/">
     <title>Guardiões da Saúde</title>
-
-    <!-- META TAGS -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -22,15 +21,12 @@
     <meta name="rating" content="general">
     <meta name="distribution" content="global">
     <meta name="copyright" content="Guardiões da Saúde - Todos os direitos reservados">
-
-    <!-- FACEBOOK  -->
     <meta property="fb:app_id" content="961547147258065" />
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://guardioesdasaude.org">
     <meta property="og:title" content="Guardiões da Saúde">
     <meta property="og:image" content="https://s3.amazonaws.com/guardioesdasaude.org/gds-share.png">
     <meta property="og:description" content="Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero">
-    <!-- TWITTER -->
     <meta name="twitter:card" value="summary_large_image">
     <meta name="twitter:card" value="summary">
     <meta name="twitter:creator" value="@minsaude">
@@ -38,58 +34,76 @@
     <meta name="twitter:title" content="Guardiões da Saúde">
     <meta name="twitter:description" content="Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero.">
     <meta name="twitter:image:src" content="https://s3.amazonaws.com/guardioesdasaude.org/gds-share.png">
-
-    <!-- APPLE TOUCH ICON -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="touch-icon@2x.png">
     <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="120x120" href="touch-icon@2x.png">
     <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad@2x.png">
-
-    <!-- HUMANS -->
     <link type="text/plain" rel="author" href="humans.txt" />
-
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-class="{ 'js-active' : body_is_ok }">
+</head>
+
+<body ng-class="{ 'js-active' : body_is_ok }">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
     <div class="wrapper-body" id="wrapper-body">
-      <!-- mobile header -->
-      <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
-
-      <!-- desktop header -->
-      <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
-
-      <main class="container-fluid main-content st-pusher">
-        <div class="row st-content">
-          <div class="page {{ pageClass }}" ng-view="" autoscroll="true"></div>
+        <!-- mobile header -->
+        <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
+        <!-- desktop header -->
+        <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
+        <main class="container-fluid main-content st-pusher">
+            <div class="row st-content">
+                <div class="page {{ pageClass }}" ng-view="" autoscroll="true"></div>
+            </div>
+        </main>
+        <!-- Modal App -->
+        <div ng-include src="'views/partials/modal-app.html'"></div>
+        <div ng-include src="'views/partials/modal-location.html'"></div>
+        <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
+            <article class="modal-dialog" role="document" style="margin: 100px auto;">
+                <div class="modal-content">
+                    <form class="card-form" name="i-feel-bad-form">
+                        <header class="modal-header panel-heading confirm-survey">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3 class="modal-title panel-title ff-bold">Atenção</h3>
+                        </header>
+                        <div class="modal-body">
+                            <div class="panel-body" style="margin-top: 0px;">
+                                <div class="col-xs-12">
+                                    <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados.
+                                        <br/> Deseja fazer o download dos dados brutos?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="pull-right btn btn-default" data-dismiss="modal" style="margin-left: 5px;"> Não</a>
+                            <a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
+                            <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
+                        </div>
+                    </form>
+                </div>
+            </article>
         </div>
-      </main>
-
-      <!-- Modal App -->
-      <div ng-include src="'views/partials/modal-app.html'"></div>
-      <div ng-include src="'views/partials/modal-location.html'"></div>
     </div>
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <div analytics></div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true" async></script>
-    <script src="https://oauth.io/auth/download/latest/oauth.min.js" async></script>
-
+    <script async src="https://oauth.io/auth/download/latest/oauth.min.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true"></script>
+    <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
+    <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/markerclusterer.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -116,12 +130,25 @@
     <script src="bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
     <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+    <script src="bower_components/js-marker-clusterer/src/markerclusterer.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="bower_components/webshim/js-webshim/minified/polyfiller.js"></script>
     <!-- endbower -->
-
-    <script src="bower_components/moment/locale/pt-br.js"></script>
     <!-- endbuild -->
-
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/util/Sortable.min.js"></script>
+    <script src="scripts/util/ng-sortable.js"></script>
+    <script src="scripts/util/rzslider.min.js"></script>
+    <script src="scripts/util/daterangepicker.js"></script>
+    <script src="scripts/util/highcharts.js"></script>
+    <script src="scripts/util/highcharts-more.js"></script>
+    <script src="scripts/util/exporting.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/app.config.js"></script>
     <script src="scripts/controllers/main.js"></script>
@@ -173,15 +200,23 @@
     <script src="scripts/directives/uploadfile.js"></script>
     <script src="scripts/directives/analytics.js"></script>
     <script src="scripts/services/helper.js"></script>
+    <script src="scripts/services/dashboard-api.js"></script>
+    <script src="scripts/controllers/login.js"></script>
     <!-- endbuild -->
+    <script src="bower_components/moment/locale/pt-br.js"></script>
+    <script src="bower_components/requirejs/require.js"></script>
     <script>
-      (function(d, s, id){
+    (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+    }(document, 'script', 'facebook-jssdk'));
     </script>
-  </body>
+</body>
+
 </html>
