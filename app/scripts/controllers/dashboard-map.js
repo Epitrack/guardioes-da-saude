@@ -200,6 +200,7 @@ angular.module('gdsApp')
                 streetViewControl: false,
                 mapTypeControl: false,
                 zoomControl: true,
+                maxZoom: 14,
                 zoomControlOptions: {
                     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
                     position: google.maps.ControlPosition.LEFT_TOP

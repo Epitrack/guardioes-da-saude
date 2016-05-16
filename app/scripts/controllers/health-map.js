@@ -45,6 +45,7 @@ angular.module('gdsApp')
 
         $scope.mapOptions = {
             zoom: 14,
+            maxZoom: 16,
             mapTypeControl: true,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
