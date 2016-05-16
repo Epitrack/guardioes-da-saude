@@ -132,15 +132,19 @@ body {
 
 .nav-link {
   color: $link-primary !important;
-  line-height: 40px !important;
-  font-size: ($fs-normal)+.2;
+  font-size: ($fs-normal)+.3;
   font-family: $ff-light;
   text-transform: uppercase;
+
   @include transition(background, .2s, 0s, linear);
 
   &:hover,
   &:visited,
   &:focus { background-color: $btn-primary !important; }
+  border: 1px solid #fff;
+margin: 10px 20px auto auto;
+border-radius: 12px;
+transition: all .25s 0s linear;
 }
 
 .btn-survey {

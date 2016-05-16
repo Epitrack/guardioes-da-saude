@@ -19,7 +19,6 @@
 
 .health-map-container {
   height: 100%;
-  min-height: 670px;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -130,6 +129,7 @@
   .progress {
     clear: both;
     background-color: $bg-secondary;
+    height: 4px;
   }
 
   .progress-label {

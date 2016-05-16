@@ -14,7 +14,7 @@ angular.module('gdsApp')
     $scope.userData = {};
     $scope.userData.gender = "M";
 
-
+       
     $scope.facebookLogin = function () {
       UserApi.facebookLogin($scope);
     };
@@ -59,7 +59,7 @@ angular.module('gdsApp')
         if (data.data.error === false) {
           Notification.show('success', 'Cadastro', data.data.message);
           LocalStorage.userCreateData(data.data.user);
-          $location.path('health-daily');
+          $location.path('survey');
         } else {
           Notification.show('error', 'Cadastro', data.data.message);
           // console.warn(data.data.message);

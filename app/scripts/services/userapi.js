@@ -66,10 +66,10 @@ angular.module('gdsApp')
         };
 
         obj.deleteUser = function(callback) {
-            $http.delete(apiUrl + '/user/delete/', { headers: { 'app_token': app_token,'user_token': LocalStorage.getItem('userStorage').user_token } })
+            $http.delete(apiUrl + '/user/delete/', { headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token } })
                 .then(function(result) {
                     if (callback) {
-                    callback(result);
+                        callback(result);
                     }
                 }, function(error) {
                     console.warn('Error updateUser: ', error);
@@ -229,7 +229,11 @@ angular.module('gdsApp')
                                             // toaster.pop('success', resultMail.data.message);
                                             //                                  Notification.show('success', 'Facebook', resultMail.data.message);
                                             LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                                            $location.path('health-daily');
+                                            if (LocalStorage.isFirstAccess()) {
+                                                $location.path('survey');
+                                            } else {
+                                                $location.path('health-daily');
+                                            }
                                         }
 
                                     });
@@ -282,7 +286,11 @@ angular.module('gdsApp')
                                         // toaster.pop('success', resultMail.data.message);
                                         Notification.show('success', 'Twitter', resultMail.data.message);
                                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                                        $location.path('health-daily');
+                                        if (LocalStorage.isFirstAccess()) {
+                                            $location.path('survey');
+                                        } else {
+                                            $location.path('health-daily');
+                                        }
                                     }
                                 });
                             } else {
@@ -333,7 +341,11 @@ angular.module('gdsApp')
                                         // toaster.pop('success', resultMail.data.message);
                                         Notification.show('success', 'Google', resultMail.data.message);
                                         LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                                        $location.path('health-daily');
+                                        if (LocalStorage.isFirstAccess()) {
+                                            $location.path('survey');
+                                        } else {
+                                            $location.path('health-daily');
+                                        }
                                     }
                                 });
                             } else {
