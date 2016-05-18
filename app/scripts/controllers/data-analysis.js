@@ -201,6 +201,7 @@ angular.module('gdsApp')
 
         $scope.remove_params = function(index, type, key) {
             console.log($scope.params[type][key][index].c);
+            $scope.params[type][key][index].c.style.opacity = 1;
             var el = $compile($scope.params[type][key][index].c)($scope);
             angular.element($("#variaveis")).append(el);
             $scope.params[type][key].splice(index, 1);
@@ -211,15 +212,46 @@ angular.module('gdsApp')
             var comp = document.getElementById(data);
             console.log(comp);
             $scope.params[type][key].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
-            $(comp).parent().empty();
+            comp.parentNode.removeChild(comp);
             ev.preventDefault();
         }
 
         $scope.drag = function(ev) {
             $scope[ev.target.id] = false;
+            ev.target.style.opacity = .8;
             // $("#"+ev.target.id).find("button").removeClass('active');
             ev.dataTransfer.setData("id", ev.target.id);
         }
+
+        var dragged;
+
+        /* events fired on the draggable target */
+        document.addEventListener("drag", function(event) {
+        }, false);
+
+        document.addEventListener("dragstart", function(event) {
+            dragged = event.target;
+            event.target.style.opacity = .8;
+        }, false);
+
+        document.addEventListener("dragend", function(event) {
+            event.target.style.opacity = "";
+        }, false);
+
+        /* events fired on the drop targets */
+        document.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        }, false);
+
+        document.addEventListener("dragenter", function(event) {
+            if (event.target.className == "drag-area") {
+            }
+        }, false);
+
+        document.addEventListener("dragleave", function(event) {
+            if (event.target.className == "drag-area") {
+            }
+        }, false);
 
         $scope.clear = function(key) {
             for (var o in $scope.params[key]) {
@@ -271,8 +303,7 @@ angular.module('gdsApp')
                     var el = $compile($scope.params['histograma']['eixox'][0].c)($scope);
                     angular.element($("#variaveis")).append(el);
                     $scope.params['histograma']['eixox'].splice(0, 1);
-                } catch (e) {
-                }
+                } catch (e) {}
 
                 return false;
             }

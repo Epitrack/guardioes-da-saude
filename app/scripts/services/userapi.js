@@ -20,16 +20,14 @@ angular.module('gdsApp')
 
         // register
         obj.createUser = function(data, callback) {
-
             data.app_token = app_token;
             data.platform = platform;
             data.client = client;
-
-            data.lat = LocalStorage.getItem('userLocation').lat;
-            data.lon = LocalStorage.getItem('userLocation').lon;
-
+            try {
+                data.lat = LocalStorage.getItem('userLocation').lat;
+                data.lon = LocalStorage.getItem('userLocation').lon;
+            } catch (e) {}
             // return console.warn('createUser -> ', data);
-
             $http.post(apiUrl + '/user/create', data, { headers: { 'app_token': app_token } })
                 .then(function(data) {
                     // console.log('Success createUser ', data);

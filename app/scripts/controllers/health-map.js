@@ -305,47 +305,51 @@ angular.module('gdsApp')
         }
 
         $scope.$on('mapLoaded', function(event, map) {
-            $scope.map = map;
+            try {
+                $scope.map = map;
 
-            getCoords($rootScope.city, function() {
-                getSurveyByCity($scope.cityLatLng);
-                getSurveyByCitySummary($scope.cityLatLng);
-            });
-            // console.log($scope.userLocation.lat, $scope.userLocation.lng);
-            var position = new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng);
+                getCoords($rootScope.city, function() {
+                    getSurveyByCity($scope.cityLatLng);
+                    getSurveyByCitySummary($scope.cityLatLng);
+                });
+                // console.log($scope.userLocation.lat, $scope.userLocation.lng);
+                var position = new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng);
 
-            info = new google.maps.InfoWindow({
-                content: "<b>Você está aqui!</b>",
-                map: $scope.map,
-                position: position,
-                pixelOffset: new google.maps.Size(0, -20)
-            });
+                info = new google.maps.InfoWindow({
+                    content: "<b>Você está aqui!</b>",
+                    map: $scope.map,
+                    position: position,
+                    pixelOffset: new google.maps.Size(0, -20)
+                });
 
 
-            $scope.$broadcast('createMarker', {
-                'img': $scope.userLocation.icon,
-                'location': {
-                    'lat': $scope.userLocation.lat,
-                    'lng': $scope.userLocation.lng
-                },
-                'title': '',
-                index: 100000
-            });
+                $scope.$broadcast('createMarker', {
+                    'img': $scope.userLocation.icon,
+                    'location': {
+                        'lat': $scope.userLocation.lat,
+                        'lng': $scope.userLocation.lng
+                    },
+                    'title': '',
+                    index: 100000
+                });
 
-            // //TODO colocar aqui o "você está aqui"
-            google.maps.event.addListener(map, 'idle', addNewMarkers);
+                // //TODO colocar aqui o "você está aqui"
+                google.maps.event.addListener(map, 'idle', addNewMarkers);
+            } catch (e) { console.log(e) }
         });
 
         $scope.getMarkersByLocation = function() {
             try {
-                var params = {
-                    lat: LocalStorage.getItem('userLocation').lat,
-                    lon: LocalStorage.getItem('userLocation').lon
-                };
+                try {
+                    var params = {
+                        lat: LocalStorage.getItem('userLocation').lat,
+                        lon: LocalStorage.getItem('userLocation').lon
+                    };
 
-                Surveyapi.getCityByPosition(params, function(data) {
-                    $rootScope.city = data.data.results[1].formatted_address;
-                });
+                    Surveyapi.getCityByPosition(params, function(data) {
+                        $rootScope.city = data.data.results[1].formatted_address;
+                    });
+                } catch (e) { console.log(e) }
             } catch (e) { console.log(e) }
         };
         // ====
