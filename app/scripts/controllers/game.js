@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$location', 'Notification', function($scope, $location, Notification) {
+    .controller('GameCtrl', ['$scope', '$location','$http', 'Notification', function($scope, $location, $http, Notification) {
 
         /*controle do slide - TUTORIAL*/
         $scope.myInterval = 5000;
@@ -40,6 +40,8 @@ angular.module('gdsApp')
             image: '../../images/game/tutorial-step-6.svg',
             text: 'Colecione figurinhas dos esportes olímpicos após concluir cada fase!'
         }];
+
+
 
         $scope.next = function() {
             if ($scope.current < 6) {
@@ -210,6 +212,14 @@ angular.module('gdsApp')
             } else {
                 $("#" + key).hide();
             }
-        }
+        };
 
+        $scope.getRanking = function() {
+            $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
+                console.log(result);
+            }, function(err) {
+                console.log(err);
+            });
+        };
+        $scope.getRanking();
     }]);

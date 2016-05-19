@@ -217,7 +217,6 @@ angular.module('gdsApp')
 
         $scope.drag = function(ev) {
             $scope[ev.target.id] = false;
-            // $("#"+ev.target.id).find("button").removeClass('active');
             ev.dataTransfer.setData("id", ev.target.id);
         }
 
@@ -230,22 +229,21 @@ angular.module('gdsApp')
         };
 
         $scope.loadfile = function(callback) {
-                if (window.sessionStorage.getItem('surveys') === null) {
-                    var psv = d3.dsv(";", "text/plain");
-                    psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
-                        window.sessionStorage.setItem('surveys', JSON.stringify(data));
-                        callback(data);
-                    });
-                } else {
-                    callback(JSON.parse(window.sessionStorage.getItem('surveys')));
-                }
+            if (window.sessionStorage.getItem('surveys') === null) {
+                var psv = d3.dsv(";", "text/plain");
+                psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
+                    window.sessionStorage.setItem('surveys', JSON.stringify(data));
+                    callback(data);
+                });
+            } else {
+                callback(JSON.parse(window.sessionStorage.getItem('surveys')));
             }
-            /**/
+        };
+        /**/
         $scope.prev = function() {
             console.log($scope.slides);
         };
         /**/
-
         $scope.first = 0;
         $scope.slides = [];
         $scope.is_histogram = false;
@@ -271,8 +269,7 @@ angular.module('gdsApp')
                     var el = $compile($scope.params['histograma']['eixox'][0].c)($scope);
                     angular.element($("#variaveis")).append(el);
                     $scope.params['histograma']['eixox'].splice(0, 1);
-                } catch (e) {
-                }
+                } catch (e) {}
 
                 return false;
             }
