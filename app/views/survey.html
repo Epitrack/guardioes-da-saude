@@ -1,45 +1,39 @@
 <div class="wrapper-internal wrapper-full-page survey-content">
-  <div class="container-fluid">
-    <div class="row">
-      <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
-        <h2 class="title-primary">Quem vai participar?</h2>
-        <aside class="survey-avatar my-user">
-          <a href="survey/{{ screen.user.id }}/step-1" title="Clique para realizar a survey de {{ screen.user.nick }}">
-            <figure>
-              <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg"
-                   alt="Avatar de {{ screen.user.nick }}">
-              <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Defaul">
-              <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | ageFilter }}</span></figcaption>
-            </figure>
-          </a>
-        </aside>
-
-        <div class="col-xs-12">
-          <h3 class="survey-subtitle">Integrantes do domicílio</h3>
-          <aside class="survey-avatar">
-            <a data-toggle="modal" data-target="#modal-add-profile">
-              <figure>
-                <img src="../images/btn-add-member.svg" alt="Adicionar novo integrante">
-                <figcaption>Adicionar <span>novo integrante</span></figcaption>
-              </figure>
-            </a>
-          </aside>
-
-          <aside class="survey-avatar" ng-repeat="member in user.household">
-            <a ng-href="survey/household/{{ member.id }}/step-1"
-               title="Clique para realizar a survey de {{ member.nick }}">
-              <figure>
-                <img ng-src="images/avatar/avatar-{{member.picture}}.svg"
-                     alt="{{ member.nick }} - {{ member.dob | ageFilter }}">
-                <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }}</span></figcaption>
-              </figure>
-            </a>
-          </aside>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
+                <h2 class="title-primary">Quem vai participar?</h2>
+                <aside class="survey-avatar my-user">
+                    <a href="survey/{{ screen.user.id }}/step-1" title="Clique para realizar a survey de {{ screen.user.nick }}">
+                        <figure>
+                            <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar de {{ screen.user.nick }}">
+                            <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Defaul">
+                            <figcaption>{{ screen.user.nick }} <span>{{ screen.user.dob | ageFilter }}</span></figcaption>
+                        </figure>
+                    </a>
+                </aside>
+                <div class="col-xs-12">
+                    <h3 class="survey-subtitle">Integrantes do domicílio</h3>
+                    <aside class="survey-avatar" ng-hide="user.household==10">
+                        <a data-toggle="modal" data-target="#modal-add-profile">
+                            <figure>
+                                <img src="../images/btn-add-member.svg" alt="Adicionar novo integrante">
+                                <figcaption>Adicionar <span>novo integrante</span></figcaption>
+                            </figure>
+                        </a>
+                    </aside>
+                    <aside class="survey-avatar" ng-repeat="member in user.household">
+                        <a ng-href="survey/household/{{ member.id }}/step-1" title="Clique para realizar a survey de {{ member.nick }}">
+                            <figure>
+                                <img ng-src="images/avatar/avatar-{{member.picture}}.svg" alt="{{ member.nick }} - {{ member.dob | ageFilter }}">
+                                <figcaption>{{ member.nick }} <span>{{ member.dob | ageFilter }}</span></figcaption>
+                            </figure>
+                        </a>
+                    </aside>
+                </div>
+            </section>
         </div>
-      </section>
     </div>
-  </div>
 </div>
-
 <!-- Modal add member -->
 <div ng-include src="'views/partials/modal-add-profile.html'"></div>
