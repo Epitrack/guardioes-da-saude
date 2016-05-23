@@ -1,0 +1,569 @@
+<style type="text/css">
+.in {
+    border-top: 3px solid rgb(231, 231, 231);
+}
+
+.vermelho {
+    background-color: #d0021b;
+}
+
+.laranja {
+    background-color: #f47821;
+}
+
+.amarelo {
+    background-color: #e8a512;
+}
+
+.verde {
+    background-color: #68ba44;
+}
+
+.box-alert {
+    height: 190px;
+    border-radius: 3px;
+    margin: 0px;
+    padding: 10px;
+    overflow: unset;
+}
+
+.rio {
+    height: 403px;
+    max-height: 403px;
+    border-radius: 3px;
+}
+
+.linha-inferior {
+    margin-top: 22px;
+}
+
+.box-alert-title {
+    width: 120px;
+    height: 24px;
+    font-family: inherit;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.box-alert-content {
+    font-family: inherit;
+    color: #FFF;
+    display: block;
+    width: 90%;
+    font-size: 2.6em;
+}
+
+.box-alert-date {
+    width: 211px;
+    height: 12px;
+    opacity: 0.5;
+    font-family: inherit;
+    font-size: 1.9em;
+    color: #FFF;
+    display: block;
+}
+
+.box-scroll {
+    height: 90%;
+    display: block;
+    overflow: hidden;
+}
+
+.box-scroll:hover {
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.box-scroll-min {
+    height: 80%;
+    display: block;
+    overflow: hidden;
+}
+
+.box-scroll-min:hover {
+    height: 80%;
+    display: block;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.dc-chart g.row text {
+    fill: #1B1919!important;
+    font-size: 14px;
+}
+</style>
+<!-- Menu -->
+<div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
+<!-- Content -->
+<section class="col-sm-9 col-md-10 content-internal">
+    <h2 class="section-title">Painel de controle <span>/ Inteligência epidemiológica</span></h2>
+    <aside class="col-xs-12 col-md-12">
+        <div class="row">
+            <div class="col-xs-12 col-md-3" style="padding-right: 0;">
+                <div class="box-alert rio verde" id="rio">
+                    <span class="box-alert-title">Rio de Janeiro</span>
+                    <div class="box-scroll">
+                        <div ng-repeat="a in alerts['Rio de Janeiro']">
+                            <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                            <span class="box-alert-content">{{a.msg}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-9">
+                <div class="col-xs-12 col-md-4">
+                    <div class="box-alert amarelo" id="brasil">
+                        <span class="box-alert-title">Brasil</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['Brasil']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="box-alert verde" id="belohorizonte">
+                        <span class="box-alert-title">Belo Horizonte</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['Belo Horizonte']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4" style="padding-right: 0">
+                    <div class="box-alert laranja" id="brasilia">
+                        <span class="box-alert-title">Brasília</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['Brasília']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-9 linha-inferior">
+                <div class="col-xs-12 col-md-4">
+                    <div class="box-alert vermelho" id="saopaulo">
+                        <span class="box-alert-title">São Paulo</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['São Paulo']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="box-alert amarelo" id="manaus">
+                        <span class="box-alert-title">Manaus</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['Manaus']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4" style="padding-right: 0">
+                    <div class="box-alert verde" id="salvador">
+                        <span class="box-alert-title">Salvador</span>
+                        <div class="box-scroll-min">
+                            <div ng-repeat="a in alerts['Salvador']">
+                                <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
+                                <span class="box-alert-content">{{a.msg}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <aside class="col-xs-12 col-md-12" style="margin-top: 20px;">
+        <article class="col-xs-12 panel panel-default no-padding card">
+            <header class="panel-heading card-heading" style="margin-bottom: 0px">
+                <h3 class="panel-title">Casos ao longo do tempo</h3>
+                <div class="pull-right wrapper-switch-participation">
+                    <div>
+                        <button ng-disabled="types['sindrome']" ng-click="selectgraph('sindrome')">Sindrome</button>
+                        <button ng-disabled="types['sintomas']" ng-click="selectgraph('sintomas')">Sintomas</button>
+                        <button ng-disabled="types['customize']" ng-click="selectgraph('customize')" style="margin-left: -4px;">Customize</button>
+                    </div>
+                </div>
+            </header>
+            <div class="panel-body">
+                <div class="row charts-row" style="margin:0" ng-show="types['sindrome']">
+                    <div class="col-md-9">
+                        <div id="syndromesTimeSeries" style="width:100%">
+                            <h4 class="text-center">Número de Casos por Síndrome</h4>
+                        </div>
+                        <div id="syndromesTimeNavigation" style="width:100%"></div>
+                    </div>
+                    <div class="col-md-3" id="syndromesChart">
+                    </div>
+                </div>
+                 <div class="row charts-row" style="margin:0;display:none" ng-show="types['sintomas']">
+                    <div class="col-md-9">
+                        <div id="symptomsTimeSeries" style="width:100%">
+                            <h4 class="text-center">Número de Casos por Sintomas</h4>
+                        </div>
+                        <div id="symptomsTimeNavigation" style="width:100%"></div>
+                    </div>
+                    <div class="col-md-3" id="symptomsChart">
+                    </div>
+                </div>
+                <!--  <div class="row charts-row">
+                    <div class="col-md-9">
+                        <div id="symptomsTimeSeries">
+                            <h4 class="text-center">Número de Casos por Síndrome</h4>
+                        </div>
+                        <div id="symptomsTimeNavigation"></div>
+                    </div>
+                    <div class="col-md-3" id="symptomsChart">
+                    </div>
+                </div> -->
+            </div>
+        </article>
+    </aside>
+    <div class="wrapper-card-map">
+        <div class="col-sm-6">
+            <article class="card" style="min-height: auto!important;">
+                <header class="panel-heading card-heading">
+                    <h3 class="panel-title">Por Idade</h3>
+                    <div class="pull-right wrapper-switch-participation">
+                        <div>
+                            <button ng-disabled='true'>Idade</button>
+                            <button>Sexo</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="panel-body" style="padding:0;padding-left: 20px;">
+                    <div id="syndromesAgeChart" style="height: 387px;width: 100%;">
+                        <h4 class="text-center"></h4>
+                        <!-- <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(including: <span class='filter'></span>)</span></h5> -->
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="wrapper-card-map">
+        <div class="col-sm-6">
+            <article class="card" style="min-height: auto!important;">
+                <header class="panel-heading">
+                    <h3 class="panel-title">Por Distrito de Saúde</h3>
+                </header>
+                <div class="panel-body" style="padding:0;padding-left: 20px;">
+                    <div id="syndromesMap" class="map" style="height: 387px;">
+                        <h4 class="text-center"></h4>
+                        <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(in area(s): <span class='filter'></span>)</span></h5>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <div class="wrapper-card-map">
+        <div class="col-sm-12">
+            <article class="card" style="min-height: auto!important;">
+                <header class="panel-heading">
+                    <h3 class="panel-title">Tabela de Dados</h3>
+                </header>
+                <div class="panel-body" style="padding:0;padding-left: 20px;">
+                    <br/>  
+                    <br/>  
+                    <br/>  
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<script>
+var classesColorScale = d3.scale.category10();
+var maxDate, minDate, symptomsCases, syndromesCases, symptomsDataset, allSymptoms, syndromesDataset, allSyndromes, symptomsDimension, symptomsGroup, symptomsDateDimension, syndromesDimension, syndromesGroup, syndromesDateDimension, regions, regionsGroup;
+var ageSteps = [5, 10, 15, 20, 25, 30, 40, 50, 60];
+
+function initdash() {
+    $.ajax('http://rest.guardioesdasaude.org/ei/symptoms/', {
+        async: false,
+        ifModified: true,
+        dataType: 'json'
+    }).done(function(data) {
+        symptomsCases = data;
+    });
+    $.ajax('http://rest.guardioesdasaude.org/ei/syndrome/', {
+        async: false,
+        ifModified: true,
+        dataType: 'json'
+    }).done(function(data) {
+        syndromesCases = data;
+    });
+    /**/
+    console.log("symptomsCases", symptomsCases);
+    console.log("syndromesCases", syndromesCases);
+    /**/
+    maxDate = _.max(syndromesCases, function(obj) {
+        return new Date(obj.date_reported);
+    });
+    minDate = _.min(syndromesCases, function(obj) {
+        return new Date(obj.date_reported);
+    });
+    maxDate = new Date(maxDate.date_reported);
+    minDate = new Date(minDate.date_reported);
+    symptomsCases.forEach(function(s) {
+        s.ageGroup = Math.floor(s.age / 10) * 10;
+    });
+    syndromesCases.forEach(function(s) {
+        s.ageGroup = Math.floor(s.age / 10) * 10;
+    });
+    symptomsDataset = crossfilter(symptomsCases);
+    allSymptoms = symptomsDataset.groupAll();
+    syndromesDataset = crossfilter(syndromesCases);
+    allSyndromes = syndromesDataset.groupAll();
+    symptomsDimension = symptomsDataset.dimension(function(d) {
+        return d.symptom;
+    });
+    symptomsGroup = symptomsDimension.group();
+    symptomsDateDimension = symptomsDataset.dimension(function(d) {
+        return new Date(d.date_onset);
+    });
+    syndromesDimension = syndromesDataset.dimension(function(d) {
+        return d.syndrome;
+    });
+    syndromesGroup = syndromesDimension.group();
+    syndromesDateDimension = syndromesDataset.dimension(function(d) {
+        return new Date(d.date_onset);
+    });
+};
+
+// Utils
+var setDefaultColors = function(chart, group) {
+    var range = [0, group.top(1)[0].value];
+    return chart.colors(d3.scale.quantize().domain(range).range(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]))
+};
+
+// Row charts
+var buildRowChart = function(target, dimension, group) {
+    var chart = dc.rowChart(target)
+        .width(260)
+        .height(384)
+        .margins({
+            top: 40,
+            left: 10,
+            right: 10,
+            bottom: 20
+        })
+        .colors(classesColorScale)
+        .colorAccessor(function(d, i) {
+            return i;
+        })
+        .group(group)
+        .dimension(dimension)
+        .label(function(d) {
+            return d.key;
+        })
+        .title(function(d) {
+            return d.value;
+        })
+        .elasticX(true);
+    /**/
+    return chart;
+};
+
+// Maps
+function loadgeojson() {
+    d3.json("scripts/util/rio_aps.geojson", function(geojson) {
+        var buildMap = function(target, dataset) {
+            regions = dataset.dimension(function(d) {
+                return d.region;
+            });
+            regionsGroup = regions.group();
+
+            var width = $(target).width(),
+                height = 350;
+            var projection = d3.geo.mercator()
+                .center([-43.30, -23.00])
+                .scale(45000);
+
+            var chart = dc.geoChoroplethChart(target)
+                .width(width)
+                .height(height)
+                .dimension(regions)
+                .group(regionsGroup)
+                .colorAccessor(function(d) {
+                    return d;
+                })
+                .overlayGeoJson(geojson.features, "region", function(d) {
+                    return d.properties.NOME;
+                })
+                .projection(projection)
+                .title(function(d) {
+                    return "Region: " + d.key + "\nCount: " + (d.value || 0);
+                });
+            // setDefaultColors(chart, regionsGroup);
+            return chart;
+        }
+
+        var syndromesMap = buildMap('#syndromesMap', syndromesDataset);
+        var symptomsMap = buildMap('#symptomsMap', symptomsDataset);
+
+        syndromesMap.render();
+        symptomsMap.render();
+    });
+};
+
+
+// Age group charts
+
+var buildAgeChart = function(target, dataset) {
+    var dimension = dataset.dimension(function(d) {
+        return d.ageGroup;
+    });
+
+    var group = dimension.group(function(d) {
+        return Math.floor(d / 10) * 10;
+    });
+
+    var chart = dc.rowChart(target)
+        .width($(target).width())
+        .height(300).margins({
+            top: 25,
+            right: 40,
+            bottom: 30,
+            left: 40
+        })
+        .dimension(dimension)
+        // .dimension(dimension2)
+        .colorAccessor(function(d) {
+            return d.value;
+        })
+        .group(group)
+        .label(function(d) {
+            return d.key + " - " + (d.key + 9);
+        });
+
+    return chart;
+};
+
+// Time series chart
+var buildTimeChart = function(dataset, group, accessor, target, navigation, dateDimension) {
+    var precision = ['days', d3.time.days];
+    var symptomsTimeChart = dc.compositeChart(target);
+    var symptomsNavChart = dc.barChart(navigation);
+    var volumeByHour = dateDimension;
+    var volumeByHourGroup = volumeByHour.group(
+        function(the_date) {
+            return d3.time.day(the_date); // TODO make the granularity easier to see
+        }
+    );
+    var symptomGroupsTimeSeries =
+        volumeByHour
+        .group(function(date) {
+            return d3.time.day(date); // TODO make the granularity easier to see
+        })
+        .reduce(
+            function(p, d) {
+                p[d[accessor]] = (p[d[accessor]] || 0) + 1;
+                return p;
+            },
+            function(p, d) {
+                --p[d[accessor]];
+                return p;
+            },
+            function() {
+                return {};
+            }
+        );
+    var observed_symptoms = group.all().map(function(obj) {
+        return obj.key;
+    });
+
+    symptomsTimeChart
+        .width($(target).width())
+        .height(300)
+        .margins({
+            top: 10,
+            right: 120,
+            bottom: 20,
+            left: 40
+        })
+        .rangeChart(symptomsNavChart)
+        .shareTitle(false)
+        .transitionDuration(100)
+        .elasticY(true)
+        .x(d3.time.scale())
+        .xUnits(d3.time.days)
+        //.xAxisLabel('date (' + precision[0] + ')') // (optional) render an axis label below the x axis
+        .yAxisLabel('no. cases')
+        .xAxis();
+
+    var theLines = [];
+    observed_symptoms.forEach(function(field, i) {
+        theLines.push(
+            dc.lineChart(symptomsTimeChart)
+            .dimension(volumeByHour)
+            .colors(classesColorScale(i))
+            .group(symptomGroupsTimeSeries, observed_symptoms[i], function(d) {
+                return d.value[field] || null;
+            })
+            .defined(function(d) {
+                return !isNaN(d.y)
+            })
+            .interpolate("monotone")
+        );
+    });
+
+    symptomsTimeChart
+        .compose(theLines)
+        .brushOn(false);
+
+    symptomsTimeChart
+        .rangeChart(symptomsNavChart)
+        .transitionDuration(100)
+        .x(d3.time.scale().domain([minDate, maxDate]))
+        .xUnits(d3.time.days)
+        .xAxis();
+
+    symptomsNavChart.width(850)
+        .height(60)
+        .margins({
+            top: 10,
+            right: 20,
+            bottom: 20,
+            left: 50
+        })
+        .dimension(volumeByHour)
+        .group(volumeByHourGroup)
+        .centerBar(true)
+        .gap(1)
+        .x(d3.time.scale().domain([minDate, maxDate]))
+        .round(d3.time.days.round)
+        .alwaysUseRounding(true)
+        .xUnits(d3.time.days)
+        .yAxis().ticks(0);
+
+    return symptomsTimeChart;
+};
+
+function builds() {
+    buildRowChart('#syndromesChart', syndromesDimension, syndromesGroup);
+    buildRowChart('#symptomsChart', symptomsDimension, symptomsGroup);
+    dc.dataCount('#syndromesCount').dimension(syndromesDataset).group(allSyndromes);
+    dc.dataCount('#symptomsCount').dimension(symptomsDataset).group(allSymptoms);
+    buildAgeChart('#syndromesAgeChart', syndromesDataset);
+    buildAgeChart('#symptomsAgeChart', symptomsDataset);
+    buildTimeChart(syndromesDataset, syndromesGroup, 'syndrome', '#syndromesTimeSeries', '#syndromesTimeNavigation', syndromesDateDimension);
+    buildTimeChart(symptomsDataset, symptomsGroup, 'symptom', '#symptomsTimeSeries', '#symptomsTimeNavigation', symptomsDateDimension);
+};
+//
+initdash();
+loadgeojson();
+builds();
+
+dc.renderAll();
+window.setTimeout(function() {
+    dc.redrawAll();
+}, 1000);
+</script>

@@ -384,6 +384,12 @@ angular
             controllerAs: 'dashboardMap',
             resolve: { loggedin: checkLoggedOut }
         })
+        .when('/dashboard/inteligencia', {
+            templateUrl: 'views/dashboard-inteligencia.html',
+            controller: 'DashboardInteligenciaCtrl',
+            controllerAs: 'dashboardInteligencia',
+            resolve: { loggedin: checkLoggedOut }
+        })
         .when('/dashboard/download', {
             templateUrl: 'views/data-download.html',
             controller: 'DataDownloadCtrl',
@@ -426,7 +432,7 @@ angular
 
     // use the HTML5 History API
     $locationProvider.html5Mode({
-        enabled: true, // set false to development
+        enabled: false, // set false to development
         requireBase: false
     });
 }).directive('onCarouselChange', function($parse) {
