@@ -31,6 +31,6 @@ angular.module('gdsApp')
       });
     };
 
-    $scope.esterEgg();
+    // $scope.esterEgg();
 
   }]);
