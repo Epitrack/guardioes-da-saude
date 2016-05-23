@@ -476,6 +476,7 @@ body {
 // Banner download app
 //
 .banner-download-app {
+
     height: 630px;
     @include path('banner-download-app.svg');
     background-repeat: no-repeat;
@@ -484,6 +485,7 @@ body {
     padding-top: 50px;
     background-color: #ffffff;
     // margin-bottom: 30px;
+
 }
 
 .phones {
@@ -492,6 +494,50 @@ body {
         max-width: 100%;
     }
 }
+
+//
+// Banner zikazero
+//
+
+.banner-zikazero {
+  min-height: 300px;
+  height: auto;
+  padding: 40px 0;
+  background-color: #ffffff;
+
+  figure {
+    height: auto;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
+
+.zika-text {
+  h3 {
+    font-size: ($fs-medium)+1.4;
+    color: #4a4a4a;
+  }
+
+  h5 {
+    color: #4a4a4a;
+
+    span {
+      font-family: $ff-light;
+      font-style: italic;
+    }
+  }
+
+  h5, a {
+    font-size: ($fs-medium)+.4;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+// ====
 
 .cta-download-app {
     color: #ffffff;

@@ -1,33 +1,24 @@
 <div class="wrapper-internal not-logged">
-  <div class="container">
-    <div class="row">
-      <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box" style="z-index: 9999;">
-      <h2 class="title-primary">{{'LOGIN_TITLE' | translate}}</h2>
-
-        <h3 class="login-subtitle">Cadastre-se rapidamente com:</h3>
-
-        <button ng-click="facebookLogin()"
-                class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook
-        </button>
-
-        <button ng-click="googleLogin()"
-                class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google
-        </button>
-
-        <button ng-click="twitterLogin()"
-                class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter
-        </button>
-
-        <p class="login-email">Ou cadastre-se <a ng-href="cadastro/email">usando seu email</a></p>
-      </section>
+    <div class="container">
+        <div class="row">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box" style="z-index: 9999;">
+                <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
+                <h3 class="login-subtitle">Cadastre-se rapidamente com:</h3>
+                <button ng-click="facebookLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook
+                </button>
+                <button ng-click="googleLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google
+                </button>
+                <button ng-click="twitterLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter
+                </button>
+                <p class="login-email">Ou cadastre-se <a ng-href="cadastro/email">usando seu email</a></p>
+            </section>
+        </div>
     </div>
-  </div>
 </div>
 <div class="wrapper-interna olympics-faixa">
     <img src="images/olympics-colors.png">
 </div>
 <!-- Modal Complete login -->
 <div ng-include src="'views/partials/modal-complete-login.html'"></div>
-
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

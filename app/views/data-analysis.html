@@ -11,8 +11,8 @@
     <aside ng-drop="true" class="col-xs-12 col-md-4 no-padding list-tips">
         <legend class="legend-subtitle other">Variáveis</legend>
         <!-- Sintomas -->
-        <ul id="variaveis" ng-sortable="opts">
-            <li id="symptoms" ondragstart="angular.element(this).scope().drag(event)">
+        <ul id="variaveis">
+            <li id="symptoms" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="symptoms = !symptoms" class="btn-var " ng-class="{ 'active' : symptoms }" data-toggle="collapse" data-target="#sintomas-content"> Sintomas</button>
                 <div id="sintomas-content" class="collapse panel-collapse">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </li>
-            <li id="syndromes" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="syndromes" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="syndromes = !syndromes" class="btn-var" data-toggle="collapse" ng-class="{ 'active' : syndromes }" data-target="#sindromes-content">Síndromes</button>
                 <div id="sindromes-content" class="collapse panel-collapse">
@@ -89,10 +89,14 @@
                             <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','RESPIRATORIA')" value="true" id="respiratoria" class="checkbox-primary">
                             <label for="respiratoria">Respiratória</label>
                         </fieldset>
+                          <fieldset>
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','Nenhuma sindrome')" value="true" id="nenhuma" class="checkbox-primary">
+                            <label for="nenhuma">Nenhuma sindrome</label>
+                        </fieldset>
                     </div>
                 </div>
             </li>
-            <li id="age" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="age" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="age = !age" class="btn-var" ng-class="{ 'active' : age }" data-toggle="collapse" data-target="#idade-content">Idade</button>
                 <div id="idade-content" class="collapse panel-collapse">
@@ -132,7 +136,7 @@
                     </div>
                 </div>
             </li>
-            <li id="gender" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="gender" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Gender -->
                 <button ng-click="gender = !gender" class="btn-var" ng-class="{ 'active' : gender }" data-toggle="collapse" data-target="#sexo-content">Sexo</button>
@@ -149,7 +153,7 @@
                     </div>
                 </div>
             </li>
-            <li id="race" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="race" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Race -->
                 <button ng-click="race = !race" class="btn-var" ng-class="{ 'active' : race }" data-toggle="collapse" data-target="#raca-content">Raça/Cor</button>
@@ -178,7 +182,7 @@
                     </div>
                 </div>
             </li>
-            <li id="weeks" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="weeks" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="epi_week = !epi_week" class="btn-var" ng-class="{ 'active' : epi_week }" data-toggle="collapse" data-target="#semanas-content">Semanas Epidemiológicas</button>
                 <div id="semanas-content" class="collapse panel-collapse">
@@ -187,7 +191,7 @@
                     </div>
                 </div>
             </li>
-            <li id="monthyear" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="monthyear" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <button ng-click="period = !period" class="btn-var" ng-class="{ 'active' : period }" data-toggle="collapse" data-target="#mesano-content">Mês/Ano</button>
                 <div id="mesano-content" class="collapse panel-collapse">
@@ -211,7 +215,7 @@
                     </div>
                 </div>
             </li>
-            <li id="local" ondragstart="angular.element(this).scope().drag(event)">
+            <li id="local" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
                 <span class="drag-handle drag-btn">☰</span>
                 <!-- Local -->
                 <button ng-click="local = !local" class="btn-var" ng-class="{ 'active' : local }" data-toggle="collapse" data-target="#local-content">Local</button>
@@ -245,7 +249,7 @@
                             <div class="btn-selecionado">{{v.label}}</div>
                             <button class="btn-remover" ng-click="remove_params($index,'pizza','variaveis')">Remover</button>
                         </div>
-                        <ul ng-show="params.pizza.variaveis.length==0" ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'pizza','variaveis')">
+                        <ul ng-show="params.pizza.variaveis.length==0" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'pizza','variaveis')">
                         </ul>
                         <p style="font-size: 18px;clear: both;">Filtro(s)</p>
                         <div class="div-selecao" ng-repeat="v in params.pizza.filtros">

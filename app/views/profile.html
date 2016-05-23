@@ -1,99 +1,79 @@
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
-
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ {{screen.user.nick}}</span></h2>
-
-  <article class="col-xs-12 panel panel-default no-padding card">
-    <header class="panel-heading">
-      <h3 class="panel-title">Geral</h3>
-    </header>
-
-    <div class="panel-body">
-      <a ng-href="profile/change-photo/{{user.id}}" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
-        <figure class="card-avatar-image edit">
-          <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
-          <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Default">
-          <figcaption>Editar foto</figcaption>
-        </figure>
-      </a>
-
-      <div class="col-xs-12 col-md-9 card-avatar-content">
-        <form ng-submit="editProfile()" class="card-form" name="formProfile">
-          <fieldset class="col-xs-12">
-            <label for="profile-nickname">Apelido</label>
-            <input class="input-primary" id="profile-nickname" name="profile-nickname" type="text"
-                   ng-model="screen.user.nick">
-          </fieldset>
-
-          <div class="no-padding col-xs-12">
-            <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-birthdate">Data de nascimento</label>
-              <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text"
-                     ng-model="screen.user.dob" mask="99-99-9999">
-            </fieldset>
-
-            <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-gender">Sexo</label>
-
-                <input class="radio-primary" type="radio" ng-model="screen.user.gender" name="profile-gender" value="M" id="selected-m">
-                <label for="selected-m" class="span-sex-op">Masculino</label>
-                <input class="radio-primary" type="radio" ng-model="screen.user.gender" name="profile-gender" value="F" id="selected-f">
-                <label for="selected-f" class="span-sex-op">Feminino</label>
-            </fieldset>
-          </div>
-
-          <div class="no-padding col-xs-12">
-            <fieldset class="col-xs-12 col-sm-6">
-              <label for="profile-email">E-mail</label>
-              <input class="input-primary" id="profile-email" name="profile-email" type="email"
-                     ng-model="screen.user.email">
-            </fieldset>
-
-            <fieldset class="col-xs-12 col-sm-6">
-              <label for="profileRace">Raça/Cor</label>
-
-              <select class="select-primary" name="profileRace" id="profileRace"
-                      ng-model="screen.user.race">
-                <option disabled selected>Cor/Raça</option>
-                <option value="branco">Branco</option>
-                <option value="preto">Preto</option>
-                <option value="pardo">Pardo</option>
-                <option value="amarelo">Amarelo</option>
-                <option value="indigena">Indígena</option>
-              </select>
-            </fieldset>
-          </div>
-
-          <fieldset class="col-xs-12 col-sm-6">
-            <label for="profile-pass">Redefinir senha</label>
-            <input class="input-primary" id="profile-pass" name="profilePass" type="password"
-                   ng-model="screen.user.password">
-          </fieldset>
-
-          <fieldset class="col-xs-12 col-sm-6">
-            <label for="profile-pass-again">Repetir Senha</label>
-            <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password"
-                   ng-model="screen.user.repeatPassword">
-          </fieldset>
-
-          <fieldset class="col-xs-12">
-            <div ng-show="checkF.error" class="alert alert-warning" role="alert">
-              <span>{{checkF.msg}}</span>
+    <h2 class="section-title">Perfil <span>/ {{screen.user.nick}}</span></h2>
+    <article class="col-xs-12 panel panel-default no-padding card">
+        <header class="panel-heading">
+            <h3 class="panel-title">Geral</h3>
+        </header>
+        <div class="panel-body">
+            <a ng-href="profile/change-photo/{{user.id}}" class="col-xs-12 col-md-3" class="link-figure" title="Clique para editar a foto">
+                <figure class="card-avatar-image edit">
+                    <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar 01">
+                    <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Default">
+                    <figcaption>Editar foto</figcaption>
+                </figure>
+            </a>
+            <div class="col-xs-12 col-md-9 card-avatar-content">
+                <form ng-submit="editProfile()" class="card-form" name="formProfile">
+                    <fieldset class="col-xs-12">
+                        <label for="profile-nickname">Apelido</label>
+                        <input class="input-primary" id="profile-nickname" name="profile-nickname" type="text" ng-model="screen.user.nick">
+                    </fieldset>
+                    <div class="no-padding col-xs-12">
+                        <fieldset class="col-xs-12 col-sm-6">
+                            <label for="profile-birthdate">Data de nascimento (dd-mm-aaaa)</label>
+                            <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" type="text" ng-model="screen.user.dob" mask="99-99-9999">
+                            <!-- <span class="icon-birthdate"></span> -->
+                        </fieldset>
+                        <fieldset class="col-xs-12 col-sm-6">
+                            <label for="profile-gender">Sexo</label>
+                            <input class="radio-primary" type="radio" ng-model="screen.user.gender" name="profile-gender" value="M" id="selected-m">
+                            <label for="selected-m" class="span-sex-op">Masculino</label>
+                            <input class="radio-primary" type="radio" ng-model="screen.user.gender" name="profile-gender" value="F" id="selected-f">
+                            <label for="selected-f" class="span-sex-op">Feminino</label>
+                        </fieldset>
+                    </div>
+                    <div class="no-padding col-xs-12">
+                        <fieldset class="col-xs-12 col-sm-6">
+                            <label for="profile-email">Email</label>
+                            <input class="input-primary" id="profile-email" name="profile-email" type="email" ng-model="screen.user.email">
+                        </fieldset>
+                        <fieldset class="col-xs-12 col-sm-6">
+                            <label for="profileRace">Raça/Cor</label>
+                            <select class="select-primary" name="profileRace" id="profileRace" ng-model="screen.user.race">
+                                <option disabled selected>Cor/Raça</option>
+                                <option value="branco">Branco</option>
+                                <option value="preto">Preto</option>
+                                <option value="pardo">Pardo</option>
+                                <option value="amarelo">Amarelo</option>
+                                <option value="indigena">Indígena</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <fieldset class="col-xs-12 col-sm-6">
+                        <label for="profile-pass">Redefinir senha (opcional)</label>
+                        <input class="input-primary" id="profile-pass" name="profilePass" type="password" ng-model="screen.user.password">
+                    </fieldset>
+                    <fieldset class="col-xs-12 col-sm-6">
+                        <label for="profile-pass-again">Repetir Senha</label>
+                        <input class="input-primary" id="profile-pass-again" name="profilePassAgain" type="password" ng-model="screen.user.repeatPassword">
+                    </fieldset>
+                    <fieldset class="col-xs-12">
+                        <div ng-show="checkF.error" class="alert alert-warning" role="alert">
+                            <span>{{checkF.msg}}</span>
+                        </div>
+                    </fieldset>
+                    <fieldset class="col-xs-12">
+                        <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
+                        <button type="button" data-toggle="modal" data-target="#modal-desativar-conta" class="pull-right btn btn-danger">Destivar Conta
+                        </button>
+                    </fieldset>
+                </form>
             </div>
-          </fieldset>
-
-          <fieldset class="col-xs-12">
-            <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
-            <button type="button" data-toggle="modal" data-target="#modal-delete-user" class="pull-right btn btn-danger">Desativar Conta
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </article>
+        </div>
+    </article>
 </section>
-
 <!-- Modal -->
-<div ng-include src="'views/partials/modal-delete-user.html'"></div>
+<div ng-include src="'views/partials/modal-desativar-conta.html'"></div>

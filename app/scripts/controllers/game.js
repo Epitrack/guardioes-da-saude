@@ -11,6 +11,7 @@ angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$location','$http', 'Notification', function($scope, $location, $http, Notification) {
 
         /*controle do slide - TUTORIAL*/
+
         $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
         $scope.slide_active = 0;
@@ -42,7 +43,6 @@ angular.module('gdsApp')
         }];
 
 
-
         $scope.next = function() {
             if ($scope.current < 6) {
                 $(".carousel").carousel('next');
@@ -55,6 +55,7 @@ angular.module('gdsApp')
             $scope.current = index;
             console.log($scope.current);
         }
+
 
         $scope.updateslide = function() {
             $("#slideshow .carousel-control").css({
@@ -222,4 +223,5 @@ angular.module('gdsApp')
             });
         };
         $scope.getRanking();
+
     }]);

@@ -66,53 +66,109 @@ angular.module('gdsApp')
             $scope.clearMakers();
             if (params) {
                 Surveyapi.getCluster($scope.params, function(data) {
+                    console.log(data);
                     console.log("Surveyapi.getCluster", data);
                     if (data.data !== null) {
                         /**/
-                        var diarreica = data.data.diarreica;
-                        var exantematica = data.data.exantematica;
-                        var respiratoria = data.data.respiratoria;
+                        var diarreica = data.data.diarreicas;
+                        var exantematica = data.data.exantematicas;
+                        var respiratoria = data.data.respiratorias;
                         /*
                          */
-                        var total = (diarreica.surveys.length + exantematica.surveys.length + respiratoria.surveys.length);
-                        console.log(total);
-                        if (total < 10) {
+                        var totals = [];
+                        var max = 0;
+                        var objmax = {};
+                        /**/
+                        for (var i = 0; i < diarreica.length; i++) {
+                            try {
+                                if (diarreica[i].points.length > 1) {
+
+                                    if (diarreica[i].points.length > max) {
+                                        max = diarreica[i].points.length;
+                                        objmax = diarreica[i];
+                                        objmax.center = { lat: diarreica[i].centroid[1], lng: diarreica[i].centroid[0] };
+                                    }
+
+                                    var c = new google.maps.Circle({
+                                        strokeColor: "#db1105",
+                                        strokeOpacity: 0.8,
+                                        strokeWeight: 2,
+                                        fillColor: "#db1105",
+                                        fillOpacity: 0.35,
+                                        map: $scope.map,
+                                        clickable: true,
+                                        center: { lat: diarreica[i].centroid[1], lng: diarreica[i].centroid[0] },
+                                        radius: Math.sqrt(diarreica[i].points.length) * 100
+                                    });
+                                    totals.push(diarreica[i].points.length);
+                                    createClickableCircle($scope.map, c, "Diarreica " + diarreica[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                                    $scope.mkrs.push(c);
+                                }
+                            } catch (e) {}
+                        }
+                        /*
+                         */
+                        for (var i = 0; i < exantematica.length; i++) {
+                            try {
+                                if (exantematica[i].points.length > 1) {
+                                    if (exantematica[i].points.length > max) {
+                                        max = exantematica[i].points.length;
+                                        objmax = exantematica[i];
+                                        objmax.center = { lat: exantematica[i].centroid[1], lng: exantematica[i].centroid[0] };
+                                    }
+                                    var c = new google.maps.Circle({
+                                        strokeColor: "#85001f",
+                                        strokeOpacity: 0.8,
+                                        strokeWeight: 2,
+                                        fillColor: "#85001f",
+                                        fillOpacity: 0.35,
+                                        map: $scope.map,
+                                        clickable: true,
+                                        center: { lat: exantematica[i].centroid[1], lng: exantematica[i].centroid[0] },
+                                        radius: Math.sqrt(exantematica[i].points.length) * 100
+                                    });
+                                    totals.push(exantematica[i].points.length);
+                                    createClickableCircle($scope.map, c, "Exantemática " + exantematica[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                                    $scope.mkrs.push(c);
+                                }
+                            } catch (e) {}
+                        }
+                        /*
+                         */
+                        for (var i = 0; i < respiratoria.length; i++) {
+                            try {
+                                if (respiratoria[i].points.length > 1) {
+                                    if (respiratoria[i].points.length > max) {
+                                        max = respiratoria[i].points.length;
+                                        objmax = respiratoria[i];
+                                        objmax.center = { lat: respiratoria[i].centroid[1], lng: respiratoria[i].centroid[0] };
+                                    }
+                                    var c = new google.maps.Circle({
+                                        strokeColor: "#f5a623",
+                                        strokeOpacity: 0.8,
+                                        strokeWeight: 2,
+                                        fillColor: "#f5a623",
+                                        fillOpacity: 0.35,
+                                        map: $scope.map,
+                                        clickable: true,
+                                        center: { lat: respiratoria[i].centroid[1], lng: respiratoria[i].centroid[0] },
+                                        radius: Math.sqrt(respiratoria[i].points.length) * 100
+                                    });
+                                    totals.push(respiratoria[i].points.length);
+                                    createClickableCircle($scope.map, c, "Respiratória " + respiratoria[i].points.length); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
+                                    $scope.mkrs.push(c);
+                                }
+                            } catch (e) {}
+                        }
+
+                        if (max < 10) {
                             $scope.map.setZoom(14);
                         } else {
-                            $scope.map.setZoom(12);
+                            $scope.map.setZoom(15);
+                            $scope.map.setCenter(new google.maps.LatLng(objmax.center.lat, objmax.center.lng));
+
                         }
-                        var l = []
-                        diarreica.tipo = "Diarreica";
-                        diarreica.color = "#db1105";
-                        exantematica.tipo = "Exantemática";
-                        exantematica.color = "#85001f";
-                        respiratoria.tipo = "Respiratória";
-                        respiratoria.color = "#f5a623";
-                        /**/
-                        l.push(diarreica);
-                        l.push(exantematica);
-                        l.push(respiratoria);
-                        l = _.sortBy(l, function(obj) {
-                            return obj.cluster;
-                        });
-                        console.log(l);
-                        for (var index in l) {
-                            for (var i = 0; i < l[index].surveys.length; i++) {
-                                var c = new google.maps.Circle({
-                                    strokeColor: l[index].color,
-                                    strokeOpacity: 0.8,
-                                    strokeWeight: 2,
-                                    fillColor: l[index].color,
-                                    fillOpacity: 0.35,
-                                    map: $scope.map,
-                                    clickable: true,
-                                    center: { lat: l[index].surveys[i].coordinates[1], lng: l[index].surveys[i].coordinates[0] },
-                                    radius: Math.sqrt(l[index].cluster) * 100
-                                });
-                                createClickableCircle($scope.map, c, l[index].tipo); // + diarreica.surveys[i].cluster===undefined?'':diarreica.surveys[i].cluster);
-                                $scope.mkrs.push(c);
-                            }
-                        }
+
                     }
                 });
             } else {
@@ -144,6 +200,7 @@ angular.module('gdsApp')
                 streetViewControl: false,
                 mapTypeControl: false,
                 zoomControl: true,
+                maxZoom: 14,
                 zoomControlOptions: {
                     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
                     position: google.maps.ControlPosition.LEFT_TOP
@@ -339,13 +396,18 @@ angular.module('gdsApp')
 
         $scope.ajustaDatas = function(d) {
             var result = d;
-            if (d.indexOf('/') !== -1) {
-                result = moment(d).format("YYYY-DD-MM");
-                if (result === 'Invalid date') {
+            /*if (d.indexOf('/') !== -1) {
+                try {
+                    result = moment(d).format("YYYY-DD-MM");
+                    if (result === 'Invalid date') {*/
+            var dd = d.split('/');
+            result = dd[2] + "-" + dd[1] + "-" + dd[0];
+            /* }
+                } catch (e) {
                     var dd = d.split('/');
                     result = dd[2] + "-" + dd[1] + "-" + dd[0];
                 }
-            }
+            }*/
             return result;
         }
 

@@ -6,7 +6,7 @@
                 <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
                     <h3>Por favor, preencha todos os campos do formulário abaixo.</h3>
                     <fieldset class="input-group mainform signup">
-                        <input class="form-control mainform-input" name="nick" placeholder="Apelido" ng-model="createData.nick">
+                        <input class="form-control mainform-input" name="nick" maxlength="10" placeholder="Apelido" ng-model="createData.nick">
                         <input class="form-control mainform-input" name="email" placeholder="E-mail" ng-model="createData.email">
                         <input class="form-control mainform-input" type="tel" placeholder="Data de Nascimento" ng-model="createData.dob" mask="99-99-9999">
                         <select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race">

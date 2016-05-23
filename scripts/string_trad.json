@@ -1,0 +1,5906 @@
+[
+    {
+      "Português": "10 Anos",
+      "Inglês": "10 Years",
+      "Espanhol": "10 Años",
+      "Chinês": "10 年",
+      "Árabe": "10 سنوات",
+      "Russo": "10 лет",
+      "Francês": "10 ans"
+    },
+    {
+      "Português": "A data de aniversário deve ser menor que hoje.",
+      "Inglês": "The date of birth must be earlier than the current date.",
+      "Espanhol": "La fecha de aniversario debe ser menor que hoy.",
+      "Chinês": "出生日期必須早于當前日期。",
+      "Árabe": "يجب أن يكون تاريخ الميلاد أقدم من التاريخ الحالي.",
+      "Russo": "Дата рождения должна предшествовать сегодняшнему дню.",
+      "Francês": "La date d'anniversaire doit être inférieure à aujourd'hui."
+    },
+    {
+      "Português": "A desativação da conta desabilitará o seu perfil. Você não poderá mais ajudar sua comunidade ou acompanhar como anda a sua saúde e dos integrantes do seu domicílio a menos que a conta seja reativada. Deseja continuar?",
+      "Inglês": "Deactivating the account will disable your profile. You will no longer be able to help the community or keep track of your health or the health of your household members unless the account is reactivated. Continue?",
+      "Espanhol": "La desactivación de la cuenta deshabilitará su perfil. Usted ya no podrá ayudar su comunidad ni ver cómo está su salud y la de los integrantes de su domicilio a menos que la cuenta sea reactivada. ¿Desea continuar?",
+      "Chinês": "停用帳戶將禁用您的設定檔。您將不再能夠幫助社區或跟蹤您的健康或您家庭成員的健康情況，除非重新啟動該帳戶。繼續？",
+      "Árabe": "سيؤدي إلغاء تنشيط الحساب إلى تعطيل ملف تعريفك. لن تكون قادرًا على مساعدة المجتمع أو تتبع صحتك أو صحة أحد أفراد عائلتك بعد الآن ما لم يتم إعادة تنشيط حسابك. هل تريد المتابعة؟",
+      "Russo": "Дезактивация вашего счёта отключит ваш профиль. Вы больше не сможете помогать сообществу или отслеживать, в каком состоянии находится ваше здоровье и членов вашей семьи, если только счёт не будет возобновлён. Вы хотите продолжить?",
+      "Francês": "La désactivation du compte désactivera votre profil. Vous ne pourrez plus aider votre collectivité ou suivre votre santé et celle de vos proches à moins que le compte ne soit réactivé. Voulez-vous continuer ?"
+    },
+    {
+      "Português": "A idade máxima para o usuário principal é 120 anos.",
+      "Inglês": "The maximum age limit of the primary user is 120 years.",
+      "Espanhol": "La edad máxima para el usuario principal es 120 años.",
+      "Chinês": "主使用者的最高年齡限制是 120 歲。",
+      "Árabe": "أقصى حد عمري للمستخدم الرئيسي هو 120 عامًا.",
+      "Russo": "Максимальный возраст для основного пользователя - 120 лет.",
+      "Francês": "L'âge maximum pour l'utilisateur principal est de 120 ans."
+    },
+    {
+      "Português": "A idade mínima para o usuário principal é 13 anos.",
+      "Inglês": "The minimum age limit of the primary user is 13 years.",
+      "Espanhol": "La edad mínima para el usuario principal es 13 años.",
+      "Chinês": "主使用者的最低年齡限制是 13 歲。",
+      "Árabe": "أدنى حد عمري للمستخدم الرئيسي هو 13 عامًا.",
+      "Russo": "Минимальный возраст для основного пользователя - 13 лет.",
+      "Francês": "L'âge minimum pour l'utilisateur principal est de 13 ans."
+    },
+    {
+      "Português": "A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade.",
+      "Inglês": "The score indicates each phase unlocked by all users, based on their respective nationality.",
+      "Espanhol": "La puntuación es equivalente a cada fase desbloqueada por todos los usuarios tomando en cuenta su nacionalidad.",
+      "Chinês": "評分表示由所有使用者，基於其各自的國籍，解除鎖定的每個階段。",
+      "Árabe": "تشير النتيجة إلى أن كل مرحلة مفتوحة لكل المستخدمين، وفقًا لجنسيتهم.",
+      "Russo": "Счет эквивалентен каждой разблокированной фазе всеми пользователями с учетом их национальной принадлежности.",
+      "Francês": "Les points correspondent à chaque étape débloquée par tous les utilisateurs en fonction de leur nationalité."
+    },
+    {
+      "Português": "A senha deve ter mais de 6 caracteres.",
+      "Inglês": "The password must have more than 6 characters.",
+      "Espanhol": "La contraseña debe tener más de 6 caracteres.",
+      "Chinês": "密碼必須超過 6 個字元。",
+      "Árabe": "يجب أن تحتوي كلمة المرور على أكثر من 6 أحرف.",
+      "Russo": "Пароль должен быть больше 6 символов.",
+      "Francês": "Le mot de passe doit contenir plus de 6 caractères."
+    },
+    {
+      "Português": "A senha e a confirmação devem ser iguais.",
+      "Inglês": "The password and confirmation must be the same.",
+      "Espanhol": "La contraseña y la confirmación deben ser iguales.",
+      "Chinês": "密碼和確認密碼必須相同。",
+      "Árabe": "يجب أن تكون كلمة المرور والتأكيد متماثلتين.",
+      "Russo": "Пароль и подтверждение должны быть идентичны.",
+      "Francês": "Le mot de passe et la confirmation doivent être identiques"
+    },
+    {
+      "Português": "Abr",
+      "Inglês": "Apr",
+      "Espanhol": "Abr",
+      "Chinês": "4 月",
+      "Árabe": "أبريل",
+      "Russo": "Апр",
+      "Francês": "Avr"
+    },
+    {
+      "Português": "Abril",
+      "Inglês": "April",
+      "Espanhol": "Abril",
+      "Chinês": "4 月",
+      "Árabe": "أبريل",
+      "Russo": "Апрель",
+      "Francês": "Avril"
+    },
+    {
+      "Português": "Aceito",
+      "Inglês": "Accepted",
+      "Espanhol": "Acepto",
+      "Chinês": "已接受",
+      "Árabe": "مقبول",
+      "Russo": "Принимаю",
+      "Francês": "J’accepte"
+    },
+    {
+      "Português": "Acompanhe em tempo real a situação da saúde perto de você.",
+      "Inglês": "Follow the healthcare status near you in real time.",
+      "Espanhol": "Siga en tiempo real la situación de la salud cerca de usted.",
+      "Chinês": "實時遵循您附近的醫療狀態。",
+      "Árabe": "تابع حالة الرعاية الصحية بالقرب منك في الوقت المناسب.",
+      "Russo": "Отслеживайте в режиме реального времени ситуацию в области здравоохранения рядом с вами.",
+      "Francês": "Suivez en temps réel la situation de la Santé près de chez vous."
+    },
+    {
+      "Português": "Acompanhe os casos de doenças em seu bairro ou em um determinado local.",
+      "Inglês": "Keep track of diseases in your neighborhood or at a specific location.",
+      "Espanhol": "Siga los casos de enfermedades en su barrio o en un determinado local.",
+      "Chinês": "跟蹤您的鄰居或在特定位置的疾病。",
+      "Árabe": "تابع حالة الأمراض الموجودة في الحي الخاص بك في موقع معين.",
+      "Russo": "Следите за случаями заболеваний в вашем районе или в определенном месте.",
+      "Francês": "Suivez les cas de maladie dans votre quartier ou à un endroit donné."
+    },
+    {
+      "Português": "Adicionar Integrante",
+      "Inglês": "Add Member",
+      "Espanhol": "Adicionar Integrante",
+      "Chinês": "添加成員",
+      "Árabe": "إضافة عضو",
+      "Russo": "Добавить Участника",
+      "Francês": "Ajouter un membre"
+    },
+    {
+      "Português": "Afeganistão",
+      "Inglês": "Afghanistan",
+      "Espanhol": "Afganistán",
+      "Chinês": "阿富汗",
+      "Árabe": "أفغانستان",
+      "Russo": "Афганистан",
+      "Francês": "Afghanistan"
+    },
+    {
+      "Português": "África do Sul",
+      "Inglês": "South Africa",
+      "Espanhol": "Sudáfrica",
+      "Chinês": "南非",
+      "Árabe": "جنوب أفريقيا",
+      "Russo": "Южная Африка",
+      "Francês": "Afrique du Sud"
+    },
+    {
+      "Português": "Ago",
+      "Inglês": "Aug",
+      "Espanhol": "Ago",
+      "Chinês": "8 月",
+      "Árabe": "أغسطس",
+      "Russo": "Авг",
+      "Francês": "Août"
+    },
+    {
+      "Português": "Agora não",
+      "Inglês": "Not now",
+      "Espanhol": "Ahora no",
+      "Chinês": "不是現在",
+      "Árabe": "ليس الآن",
+      "Russo": "Не сейчас",
+      "Francês": "Pas maintenant"
+    },
+    {
+      "Português": "Agosto",
+      "Inglês": "August",
+      "Espanhol": "Agosto",
+      "Chinês": "8 月",
+      "Árabe": "أغسطس",
+      "Russo": "Август",
+      "Francês": "Août"
+    },
+    {
+      "Português": "Ajuda",
+      "Inglês": "Help",
+      "Espanhol": "Ayuda",
+      "Chinês": "幫助",
+      "Árabe": "تعليمات",
+      "Russo": "Помощь",
+      "Francês": "Aide"
+    },
+    {
+      "Português": "Albânia",
+      "Inglês": "Albania",
+      "Espanhol": "Albania",
+      "Chinês": "阿爾巴尼亞",
+      "Árabe": "ألبانيا",
+      "Russo": "Албания",
+      "Francês": "Albanie"
+    },
+    {
+      "Português": "Além de conter dicas relevantes sobre cuidados com a saúde, prevenção de doenças e vacinação, o Guardião localiza as UPAs e farmácias mais próximas, com auxílio de mapas.",
+      "Inglês": "In addition to providing important tips on healthcare, disease prevention and vaccines, the Guardian also locates and maps the nearest UPAs and drugstores.",
+      "Espanhol": "Además de contener consejos relevantes sobre cuidados con la salud, prevención de enfermedades y vacunación, el Guardián localiza las UPAs y farmacias más cercanas, con la ayuda de mapas.",
+      "Chinês": "除了提供保健、預防疾病和疫苗的重要技巧，《衛士》也定位最近的 UPA 和藥店。",
+      "Árabe": "بالإضافة إلى تقديم نصائح هامة حول الرعاية الصحية والوقاية من الأمراض واللقاحات، يحدد تطبيق المدير أيضًا الموقع ويوضح خريطة أقرب UPA والصيدليات.",
+      "Russo": "Помимо советов советы по медико-санитарной помощи, профилактике заболеваний и вакцинации, Страж, с помощью карт, находит Пункты Скорой Помощи и ближайшие аптеки.",
+      "Francês": "En plus de contenir des conseils judicieux sur la santé, la prévention des maladies et la vaccination, le Gardien localise, à l'aide de cartes, les urgences et les pharmacies les plus proches."
+    },
+    {
+      "Português": "Alemanha",
+      "Inglês": "Germany",
+      "Espanhol": "Alemania",
+      "Chinês": "德國",
+      "Árabe": "ألمانيا",
+      "Russo": "Германия",
+      "Francês": "Allemagne"
+    },
+    {
+      "Português": "Algumas farmácias podem não ser exibidas no mapa.",
+      "Inglês": "Some drugstores may not be shown in the map.",
+      "Espanhol": "Algunas farmacias pueden no exhibirse en el mapa.",
+      "Chinês": "有些藥店可能不在地圖中顯示。",
+      "Árabe": "قد لا تظهر بعض الصيدليات على الخريطة.",
+      "Russo": "Некоторые аптеки могут не отображаться на карте.",
+      "Francês": "Certaines pharmacies peuvent ne pas s'afficher sur la carte."
+    },
+    {
+      "Português": "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.",
+      "Inglês": "Some signs and symptoms are shown in the next screen if the “Illness” option is enabled.",
+      "Espanhol": "Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal\" sea seleccionada.",
+      "Chinês": "如果啟用了\"疾病\"選項，有些跡象和症狀在下一螢幕中顯示。",
+      "Árabe": "يتم عرض بعض العلامات والأعراض في الشاشة التالية عند تمكين الخيار \"المرض\".",
+      "Russo": "Некоторые признаки и симптомы будут отображаться на следующем экране, если выбрана опция «Плохо».",
+      "Francês": "Certains signes et symptômes seront présentés sur l'écran suivant si l'option « Mal » est sélectionnée."
+    },
+    {
+      "Português": "Amarelo",
+      "Inglês": "Yellow",
+      "Espanhol": "Amarillo",
+      "Chinês": "黃色",
+      "Árabe": "أصفر",
+      "Russo": "Жёлтый",
+      "Francês": "Jaune"
+    },
+    {
+      "Português": "Andorra",
+      "Inglês": "Andorra",
+      "Espanhol": "Andorra",
+      "Chinês": "安道爾",
+      "Árabe": "أندورا",
+      "Russo": "Андорра",
+      "Francês": "Andorre"
+    },
+    {
+      "Português": "Android 4.4 ou superior",
+      "Inglês": "Android 4.4 or greater",
+      "Espanhol": "Android 4.4 o superior",
+      "Chinês": "Android 4.4 或更高版本",
+      "Árabe": "نظام التشغيل Android 4.4 أو أحدث",
+      "Russo": "Android 4.4 и выше",
+      "Francês": "Android 4.4 ou supérieur"
+    },
+    {
+      "Português": "Angola",
+      "Inglês": "Angola",
+      "Espanhol": "Angola",
+      "Chinês": "安哥拉",
+      "Árabe": "أنغوﻻ",
+      "Russo": "Ангола",
+      "Francês": "Angola"
+    },
+    {
+      "Português": "Anguilla",
+      "Inglês": "Anguilla",
+      "Espanhol": "Anguila",
+      "Chinês": "安圭拉",
+      "Árabe": "أنغويلا",
+      "Russo": "Ангилья",
+      "Francês": "Anguilla"
+    },
+    {
+      "Português": "Antártida",
+      "Inglês": "Antarctica",
+      "Espanhol": "Antártida",
+      "Chinês": "南極洲",
+      "Árabe": "القارة القطبية الجنوبية",
+      "Russo": "Антарктида",
+      "Francês": "Antarctique"
+    },
+    {
+      "Português": "Antígua e Barbuda",
+      "Inglês": "Antigua and Barbuda",
+      "Espanhol": "Antigua y Barbuda",
+      "Chinês": "安地卡及巴布達",
+      "Árabe": "أنتيغوا وباربودا",
+      "Russo": "Антигуа и Барбуда",
+      "Francês": "Antigua et Barbuda"
+    },
+    {
+      "Português": "Ao excluir o perfil do integrante do domicílio, todas as informações serão perdidas.",
+      "Inglês": "All related information will be lost after deleting a household member’s profile.",
+      "Espanhol": "Al excluir el perfil del integrante del domicilio, toda la información se perderá.",
+      "Chinês": "家庭成員的設定檔刪除後，所有相關資訊將會丟失。",
+      "Árabe": "ستُفقد جميع المعلومات ذات الصلة بعد حذف ملف تعريف أحد أفراد الأسرة.",
+      "Russo": "При удалении профиля члена семьи, вся информация будет потеряна.",
+      "Francês": "En supprimant le profil du membre du domicile, toutes les informations seront perdues."
+    },
+    {
+      "Português": "Apelido",
+      "Inglês": "Nickname",
+      "Espanhol": "Mote",
+      "Chinês": "昵稱",
+      "Árabe": "الاسم المستعار",
+      "Russo": "Фамилия",
+      "Francês": "Surnom"
+    },
+    {
+      "Português": "Apelido é um campo obrigatório",
+      "Inglês": "Nickname is a required field",
+      "Espanhol": "Mote es un campo obligatorio",
+      "Chinês": "昵稱是必填欄位",
+      "Árabe": "الاسم المستعار حقل مطلوب",
+      "Russo": "Фамилия является обязательной ячейкой",
+      "Francês": "Surnom est un champ obligatoire"
+    },
+    {
+      "Português": "Apenas os campos habilitados poderão ser alterados.",
+      "Inglês": "Only enabled fields can be edited.",
+      "Espanhol": "Sólo los campos habilitados podrán ser alterados.",
+      "Chinês": "僅啟用的欄位可以編輯。",
+      "Árabe": "يمكن تعديل الحقول الممكنة فقط.",
+      "Russo": "Только активированные ячейки могут быть изменены.",
+      "Francês": "Seuls les champs activés peuvent être changés."
+    },
+    {
+      "Português": "App Store",
+      "Inglês": "App Store",
+      "Espanhol": "App Store",
+      "Chinês": "應用程式商店",
+      "Árabe": "متجر التطبيقات",
+      "Russo": "App Store",
+      "Francês": "App Store"
+    },
+    {
+      "Português": "Arábia Saudita",
+      "Inglês": "Saudi Arabia",
+      "Espanhol": "Arabia Saudita",
+      "Chinês": "沙烏地阿拉伯",
+      "Árabe": "السعودية",
+      "Russo": "Саудовская Аравия",
+      "Francês": "Arabie Saoudite"
+    },
+    {
+      "Português": "Argélia",
+      "Inglês": "Algeria",
+      "Espanhol": "Argelia",
+      "Chinês": "阿爾及利亞",
+      "Árabe": "الجزائر",
+      "Russo": "Алжир",
+      "Francês": "Algérie"
+    },
+    {
+      "Português": "Argentina",
+      "Inglês": "Argentina",
+      "Espanhol": "Argentina",
+      "Chinês": "阿根廷",
+      "Árabe": "الأرجنتين",
+      "Russo": "Аргентина",
+      "Francês": "Argentine"
+    },
+    {
+      "Português": "Armênia",
+      "Inglês": "Armenia",
+      "Espanhol": "Armenia",
+      "Chinês": "亞美尼亞",
+      "Árabe": "أرمينيا",
+      "Russo": "Армения",
+      "Francês": "Arménie"
+    },
+    {
+      "Português": "Aruba",
+      "Inglês": "Aruba",
+      "Espanhol": "Aruba",
+      "Chinês": "阿路巴",
+      "Árabe": "أروبا",
+      "Russo": "Aruba",
+      "Francês": "Aruba"
+    },
+    {
+      "Português": "As senhas não estão iguais.",
+      "Inglês": "The passwords are not the same.",
+      "Espanhol": "Las contraseñas no son iguales.",
+      "Chinês": "密碼不相同。",
+      "Árabe": "كلمات المرور غير متطابقة.",
+      "Russo": "Пароли не совпадают.",
+      "Francês": "Les mots de passe sont différents."
+    },
+    {
+      "Português": "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: ",
+      "Inglês": "Syndromes are groups of clinical signs common to a number of diseases, including: ",
+      "Espanhol": "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas: ",
+      "Chinês": "綜合征是許多疾病常見的一組臨床症狀，包括 ︰ ",
+      "Árabe": "الأعراض هي مجموعة من العلامات المرضية الشائعة لعدد من الأمراض، وتشتمل على: ",
+      "Russo": "Синдромы являются общим набором клинических проявлений ряда заболеваний, в том числе: ",
+      "Francês": "Les syndromes sont des ensembles de signes cliniques communs à un certain nombre de maladies, comme par exemple : "
+    },
+    {
+      "Português": "Assim, você contribui ativamente com a vigilância em saúde no Brasil. Ajude a melhorar a saúde da sua comunidade.",
+      "Inglês": "You can actively contribute to health surveillance in Brazil. Help improve healthcare in your community.",
+      "Espanhol": "De esta manera, usted contribuye activamente a la vigilancia en salud en Brasil. Ayude a mejorar la salud de su comunidad.",
+      "Chinês": "您可以積極促進巴西的健康監護。幫助提高您的社區的醫療服務。",
+      "Árabe": "يمكنك المساهمة بفاعلية في الرقابة الصحية في البرازيل. ساعد على تحسين الرعاية الصحية في مجتمعك.",
+      "Russo": "Таким образом, вы активно вносите свой вклад в наблюдение за состоянием здоровья в Бразилии. Помогите улучшить здоровье своего сообщества.",
+      "Francês": "Ainsi, vous contribuez activement à la surveillance de la santé au Brésil. Participez à l’amélioration de la santé de votre collectivité."
+    },
+    {
+      "Português": "Assunto",
+      "Inglês": "Subject",
+      "Espanhol": "Asunto",
+      "Chinês": "主題",
+      "Árabe": "الموضوع",
+      "Russo": "Тема",
+      "Francês": "Sujet"
+    },
+    {
+      "Português": "Assunto e/ou mensagem não informados.",
+      "Inglês": "Subject and/or message not provided.",
+      "Espanhol": "Asunto y/o mensaje no informados.",
+      "Chinês": "未提供主題和/或消息。",
+      "Árabe": "لم يتم تقديم الموضوع و/أو الرسالة.",
+      "Russo": "Тема и/или сообщение не были указаны.",
+      "Francês": "Sujet et/ou message non informés"
+    },
+    {
+      "Português": "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.",
+      "Inglês": "Attention: The symptoms reported may be related to infection by Zika virus. Seek out assistance at the nearest Emergency Care Unit.",
+      "Espanhol": "Atención: Los síntomas informados pueden estar relacionados al Zika virus. Busque la Unidad de Urgencias más cercana.",
+      "Chinês": "注意 ︰報告的症狀可能與寨卡病毒感染有關。尋求最近緊急護理單位的援助。",
+      "Árabe": "انتبه: الأعراض التي تم الإبلاغ عنها قد تكون مرتبطة بالإصابة بفيروس زيكا. اطلب المساعدة في أقرب وحدة رعاية طوارئ.",
+      "Russo": "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.",
+      "Francês": "Attention : Les symptômes rapportés peuvent être apparentés au virus Zika. Dirigez-vous vers le service des urgences le plus proche."
+    },
+    {
+      "Português": "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.",
+      "Inglês": "Attention: Seek out assistance at the nearest Emergency Care Unit.",
+      "Espanhol": "Atención: Busque la Unidad de Urgencias más cercana.",
+      "Chinês": "注意 ︰尋求最近緊急護理單位的援助。",
+      "Árabe": "انتبه: اطلب المساعدة في أقرب وحدة رعاية طوارئ.",
+      "Russo": "Внимание: Найдите ближайший Пункт Скорой Помощи.",
+      "Francês": "Attention : Dirigez-vous vers le service des urgences le plus proche."
+    },
+    {
+      "Português": "Atleta / Delegação",
+      "Inglês": "Athlete / Delegation",
+      "Espanhol": "Atleta / Delegación",
+      "Chinês": "運動員 / 代表團",
+      "Árabe": "رياضي/بعثة",
+      "Russo": "Спортсмен / Делегация",
+      "Francês": "Athlète/Délégation"
+    },
+    {
+      "Português": "Atletismo",
+      "Inglês": "Athletics",
+      "Espanhol": "Atletismo",
+      "Chinês": "田徑",
+      "Árabe": "الألعاب الرياضية",
+      "Russo": "Легкая атлетика",
+      "Francês": "Athlétisme"
+    },
+    {
+      "Português": "Austrália",
+      "Inglês": "Australia",
+      "Espanhol": "Australia",
+      "Chinês": "澳大利亞",
+      "Árabe": "أستراليا",
+      "Russo": "Австралия",
+      "Francês": "Australie"
+    },
+    {
+      "Português": "Áustria",
+      "Inglês": "Austria",
+      "Espanhol": "Austria",
+      "Chinês": "奧地利",
+      "Árabe": "النمسا",
+      "Russo": "Австрия",
+      "Francês": "Autriche"
+    },
+    {
+      "Português": "Avó",
+      "Inglês": "Grandmother",
+      "Espanhol": "Abuela",
+      "Chinês": "祖母",
+      "Árabe": "جدة",
+      "Russo": "Бабушка",
+      "Francês": "Grand-mère"
+    },
+    {
+      "Português": "Avô",
+      "Inglês": "Grandfather",
+      "Espanhol": "Abuelo",
+      "Chinês": "祖父",
+      "Árabe": "جد",
+      "Russo": "Дедушка",
+      "Francês": "Grand-père"
+    },
+    {
+      "Português": "Azerbaijão",
+      "Inglês": "Azerbaijan",
+      "Espanhol": "Azerbaiyán",
+      "Chinês": "亞塞拜然",
+      "Árabe": "أذربيجان",
+      "Russo": "Азербайджан ",
+      "Francês": "Azerbaïdjan"
+    },
+    {
+      "Português": "Badminton",
+      "Inglês": "Badminton",
+      "Espanhol": "Bádminton",
+      "Chinês": "羽毛球",
+      "Árabe": "تنس الريشة",
+      "Russo": "Бадминтон",
+      "Francês": "Badminton"
+    },
+    {
+      "Português": "Bahamas",
+      "Inglês": "Bahamas",
+      "Espanhol": "Bahamas",
+      "Chinês": "巴哈馬",
+      "Árabe": "جزر البهاما",
+      "Russo": "Багамские Острова",
+      "Francês": "Bahamas"
+    },
+    {
+      "Português": "Bahrein",
+      "Inglês": "Bahrain",
+      "Espanhol": "Bahréin",
+      "Chinês": "巴林",
+      "Árabe": "البحرين",
+      "Russo": "Бахрейн",
+      "Francês": "Bahreïn"
+    },
+    {
+      "Português": "Bangladesh",
+      "Inglês": "Bangladesh",
+      "Espanhol": "Bangladesh",
+      "Chinês": "孟加拉國",
+      "Árabe": "بنغلاديش",
+      "Russo": "Бангладеш",
+      "Francês": "Bangladesh"
+    },
+    {
+      "Português": "Barbados",
+      "Inglês": "Barbados",
+      "Espanhol": "Barbados",
+      "Chinês": "巴巴多斯",
+      "Árabe": "باربادوس",
+      "Russo": "Барбадос",
+      "Francês": "Barbade"
+    },
+    {
+      "Português": "Basquetebol",
+      "Inglês": "Basketball",
+      "Espanhol": "Baloncesto",
+      "Chinês": "籃球",
+      "Árabe": "كرة السلة",
+      "Russo": "Баскетбол",
+      "Francês": "Basketball"
+    },
+    {
+      "Português": "Bélgica",
+      "Inglês": "Belgium",
+      "Espanhol": "Bélgica",
+      "Chinês": "比利時",
+      "Árabe": "بلجيكا",
+      "Russo": "Бельгия",
+      "Francês": "Belgique"
+    },
+    {
+      "Português": "Belize",
+      "Inglês": "Belize",
+      "Espanhol": "Belice",
+      "Chinês": "貝里斯",
+      "Árabe": "بليز",
+      "Russo": "Белиз",
+      "Francês": "Belize"
+    },
+    {
+      "Português": "Bem",
+      "Inglês": "Well being",
+      "Espanhol": "Bien",
+      "Chinês": "福祉",
+      "Árabe": "الصحة",
+      "Russo": "Хорошо",
+      "Francês": "Bien"
+    },
+    {
+      "Português": "Bem vindo ao  Dicas de Saúde / Aqui você poderá pesquisar informações importantes para seu bem estar.",
+      "Inglês": "Welcome to Health Tips / Use this area to search for important information for your well-being.",
+      "Espanhol": "Bienvenido a Consejos de Salud / Aquí usted podrá buscar información importante para su bienestar.",
+      "Chinês": "歡迎來到健康小貼士/使用此區域搜索有關您的福祉的重要資訊。",
+      "Árabe": "مرحبًا بكم في نصائح عن الصحة / استخدم هذه الساحة للبحث عن معلومات هامة لصحتك.",
+      "Russo": "Добро пожаловать в Советы для Здоровья / Здесь вы можете найти важную информацию для вашего хорошего самочувствия.",
+      "Francês": "Bienvenue à Conseils Santé / Ici vous pourrez trouver des informations importantes pour votre bien-être."
+    },
+    {
+      "Português": "Bem-vindo a nossa pista de corrida! Arraste para saber mais sobre como jogar.",
+      "Inglês": "Welcome to our race track! Swipe to learn more about how to play.",
+      "Espanhol": "¡Bienvenido a nuestra pista de carreras! Arrastre para saber más sobre cómo jugar.",
+      "Chinês": "歡迎來到我們賽道 ！刷卡以瞭解更多關於如何游戲。",
+      "Árabe": "مرحبًا بكم في حلبة السباق الخاصة بنا! اسحب للتعرف على المزيد حول كيفية التشغيل.",
+      "Russo": "Добро пожаловать на нашу беговую дорожку! Перетащите, чтобы узнать больше о том, как играть.",
+      "Francês": "Bienvenue sur notre piste de course ! Faites glisser pour en savoir plus sur la façon de jouer."
+    },
+    {
+      "Português": "Bem-vindo, nós sentimos a sua falta!",
+      "Inglês": "Welcome back, we missed you!",
+      "Espanhol": "Bienvenido, ¡lo echamos de menos!",
+      "Chinês": "歡迎回來，我們想念您 ！",
+      "Árabe": "مرحبًا بكم مرة أخرى، نفتقدكم!",
+      "Russo": "Добро пожаловать, нам вас не хватало!",
+      "Francês": "Bienvenue, vous nous avez manqué !"
+    },
+    {
+      "Português": "Bem-vindo!",
+      "Inglês": "Welcome!",
+      "Espanhol": "¡Bienvenido!",
+      "Chinês": "歡迎 ！",
+      "Árabe": "مرحبًا!",
+      "Russo": "Добро пожаловать!",
+      "Francês": "Bienvenue !"
+    },
+    {
+      "Português": "Benin",
+      "Inglês": "Benin",
+      "Espanhol": "Benín",
+      "Chinês": "貝寧",
+      "Árabe": "بنين",
+      "Russo": "Бенин",
+      "Francês": "Bénin"
+    },
+    {
+      "Português": "Bermudas",
+      "Inglês": "Bermuda",
+      "Espanhol": "Bermudas",
+      "Chinês": "百慕達",
+      "Árabe": "برمودا",
+      "Russo": "Бермудские острова",
+      "Francês": "Bermudes"
+    },
+    {
+      "Português": "Bielorrússia",
+      "Inglês": "Belarus",
+      "Espanhol": "Bielorrusia",
+      "Chinês": "白俄羅斯",
+      "Árabe": "روسيا البيضاء",
+      "Russo": "Беларусь",
+      "Francês": "Biélorussie"
+    },
+    {
+      "Português": "Bisavó",
+      "Inglês": "Great-grandmother",
+      "Espanhol": "Bisabuela",
+      "Chinês": "曾祖母",
+      "Árabe": "أم الجدة",
+      "Russo": "Прабабушка",
+      "Francês": "Arrière-grand-mère"
+    },
+    {
+      "Português": "Bisavô",
+      "Inglês": "Great-grandfather",
+      "Espanhol": "Bisabuelo",
+      "Chinês": "曾祖父",
+      "Árabe": "أم الجد",
+      "Russo": "Прадед",
+      "Francês": "Arrière-grand-père"
+    },
+    {
+      "Português": "Bisneta",
+      "Inglês": "Great-granddaughter",
+      "Espanhol": "Bisnieta",
+      "Chinês": "大孫女",
+      "Árabe": "ابنة الحفيد",
+      "Russo": "Правнучка",
+      "Francês": "Arrière petite-fille"
+    },
+    {
+      "Português": "Bisneto",
+      "Inglês": "Great-grandson",
+      "Espanhol": "Bisnieto",
+      "Chinês": "大孫子",
+      "Árabe": "ابن الحفيد",
+      "Russo": "Правнук",
+      "Francês": "Arrière petite-fils"
+    },
+    {
+      "Português": "Bolívia",
+      "Inglês": "Bolivia",
+      "Espanhol": "Bolivia",
+      "Chinês": "玻利維亞",
+      "Árabe": "بوليفيا",
+      "Russo": "Боливия",
+      "Francês": "Bolivie"
+    },
+    {
+      "Português": "Bombeiro Civil",
+      "Inglês": "Firefighter",
+      "Espanhol": "Bombero Civil",
+      "Chinês": "消防員",
+      "Árabe": "رجل الإطفاء",
+      "Russo": "Гражданский пожарным",
+      "Francês": "Pompier civil"
+    },
+    {
+      "Português": "Bósnia e Herzegovina",
+      "Inglês": "Bosnia and Herzegovina",
+      "Espanhol": "Bosnia y Herzegovina",
+      "Chinês": "波士尼亞和黑塞哥維那",
+      "Árabe": "البوسنة والهرسك",
+      "Russo": "Босния и Герцеговина",
+      "Francês": "Bosnie-Herzégovine"
+    },
+    {
+      "Português": "Botsuana",
+      "Inglês": "Botswana",
+      "Espanhol": "Botsuana",
+      "Chinês": "博茨瓦納",
+      "Árabe": "بوتسوانا",
+      "Russo": "Ботсвана",
+      "Francês": "Botswana"
+    },
+    {
+      "Português": "Boxe",
+      "Inglês": "Boxing",
+      "Espanhol": "Box",
+      "Chinês": "拳擊",
+      "Árabe": "الملاكمة",
+      "Russo": "Бокс",
+      "Francês": "Boxe"
+    },
+    {
+      "Português": "Branco",
+      "Inglês": "White",
+      "Espanhol": "Blanco",
+      "Chinês": "白色",
+      "Árabe": "أبيض",
+      "Russo": "Белый",
+      "Francês": "Blanc"
+    },
+    {
+      "Português": "Brunei",
+      "Inglês": "Brunei",
+      "Espanhol": "Brunei",
+      "Chinês": "汶萊",
+      "Árabe": "بروناي",
+      "Russo": "Бруней",
+      "Francês": "Brunei"
+    },
+    {
+      "Português": "Bulgária",
+      "Inglês": "Bulgaria",
+      "Espanhol": "Bulgaria",
+      "Chinês": "保加利亞",
+      "Árabe": "بلغاريا",
+      "Russo": "Болгария",
+      "Francês": "Bulgarie"
+    },
+    {
+      "Português": "Burquina Faso",
+      "Inglês": "Burkina Faso",
+      "Espanhol": "Burquina Faso",
+      "Chinês": "布吉納法索",
+      "Árabe": "بوركينا فاسو",
+      "Russo": "Буркина-Фасо",
+      "Francês": "Burkina Faso"
+    },
+    {
+      "Português": "Burundi",
+      "Inglês": "Burundi",
+      "Espanhol": "Burundi",
+      "Chinês": "蒲隆地",
+      "Árabe": "بروناي",
+      "Russo": "Бурунди",
+      "Francês": "Burundi"
+    },
+    {
+      "Português": "Butão",
+      "Inglês": "Bhutan",
+      "Espanhol": "Bután",
+      "Chinês": "不丹",
+      "Árabe": "بوتان",
+      "Russo": "Бутан",
+      "Francês": "Bhoutan"
+    },
+    {
+      "Português": "Cabo Verde",
+      "Inglês": "Cape Verde",
+      "Espanhol": "Cabo Verde",
+      "Chinês": "維德角",
+      "Árabe": "جمهورية الرأس الأخضر",
+      "Russo": "Кабо-Верде",
+      "Francês": "Cap-Vert"
+    },
+    {
+      "Português": "Cada fase contém um quebra-cabeça. Complete-o para passar de fase.",
+      "Inglês": "Each phase contains a puzzle. Complete it to advance to the next phase.",
+      "Espanhol": "Cada fase contiene un rompecabezas. Complételo para pasar de fase.",
+      "Chinês": "每個階段都包含一個謎題。完成它以推進到下一個階段。",
+      "Árabe": "تحتوي كل مرحلة على لغز. أكمل اللغز للانتقال إلى المرحلة التالية.",
+      "Russo": "Каждая фаза содержит задачку.  Завершите, чтобы перейти к другому этапу.",
+      "Francês": "Chaque étape contient un puzzle. Terminez pour passer à l’étape suivante"
+    },
+    {
+      "Português": "Cadastre-se",
+      "Inglês": "Sign up",
+      "Espanhol": "Regístrese",
+      "Chinês": "登錄",
+      "Árabe": "تسجيل الاشتراك",
+      "Russo": "Регистрация",
+      "Francês": "Inscrivez-vous"
+    },
+    {
+      "Português": "Cadastre-se rapidamente com:",
+      "Inglês": "Sign up quickly with:",
+      "Espanhol": "Regístrese rápidamente con:",
+      "Chinês": "快速登錄 ︰",
+      "Árabe": "تسجيل الاشتراك سريعًا باستخدام:",
+      "Russo": "Быстрая регистрация с:",
+      "Francês": "Inscrivez-vous rapidement avec :"
+    },
+    {
+      "Português": "Cadastro não encontrado!",
+      "Inglês": "Registration not found!",
+      "Espanhol": "¡Registro no encontrado!",
+      "Chinês": "找不到註冊信息 ！",
+      "Árabe": "لم يتم العثور على التسجيل!",
+      "Russo": "Регистрация не найдена!",
+      "Francês": "Enregistrement non trouvé !"
+    },
+    {
+      "Português": "Cadastro realizado anteriormente com essa rede social.",
+      "Inglês": "Previous registration found for this social network.",
+      "Espanhol": "Registro realizado anteriormente con esa red social.",
+      "Chinês": "找到了上次在這個社交網路上的註冊信息。",
+      "Árabe": "تم العثور على تسجيل سابق لهذه الشبكة الاجتماعية.",
+      "Russo": "Ранее заполненный кадастр с этой социальной сети.",
+      "Francês": "Vous vous êtes déjà inscrit à ce réseau social"
+    },
+    {
+      "Português": "Calendário",
+      "Inglês": "Calendar",
+      "Espanhol": "Calendario",
+      "Chinês": "日曆",
+      "Árabe": "التقويم",
+      "Russo": "Календарь",
+      "Francês": "Calendrier"
+    },
+    {
+      "Português": "Camboja",
+      "Inglês": "Cambodia",
+      "Espanhol": "Camboya",
+      "Chinês": "柬埔寨",
+      "Árabe": "كمبوديا",
+      "Russo": "Камбоджа",
+      "Francês": "Cambodge"
+    },
+    {
+      "Português": "Canadá",
+      "Inglês": "Canada",
+      "Espanhol": "Canadá",
+      "Chinês": "加拿大",
+      "Árabe": "كندا",
+      "Russo": "Канада",
+      "Francês": "Canada"
+    },
+    {
+      "Português": "Cancelar",
+      "Inglês": "Cancel",
+      "Espanhol": "Cancelar",
+      "Chinês": "取消",
+      "Árabe": "إلغاء",
+      "Russo": "Отменить",
+      "Francês": "Annuler"
+    },
+    {
+      "Português": "Canoagem Slalom",
+      "Inglês": "Canoe Slalom",
+      "Espanhol": "Piragüismo de Slalom",
+      "Chinês": "皮划艇激流迴旋",
+      "Árabe": "سباق التعرج المائي",
+      "Russo": "Гребной Слалом",
+      "Francês": "Slalom (canoë-kayak)"
+    },
+    {
+      "Português": "Canoagem Velocidade",
+      "Inglês": "Canoe Sprint",
+      "Espanhol": "Canotaje de velocidad",
+      "Chinês": "獨木舟衝刺",
+      "Árabe": "سباق القوارب",
+      "Russo": "Скоростная Гребля",
+      "Francês": "Canoë-kayak vitesse"
+    },
+    {
+      "Português": "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.",
+      "Inglês": "If you have any trouble using the Guardians of Health app, please fill out the form below and send it to our team of experts.",
+      "Espanhol": "En caso de que usted haya encontrado alguna dificultad en utilizar Guardianes de la Salud, rellene el formulario de abajo y envíe su mensaje a nuestro equipo de especialistas.",
+      "Chinês": "如果在使用健康衛士應用程式時有任何麻煩，請填寫下面的表單並將其發送給我們的專家團隊。",
+      "Árabe": "إذا كنت تواجه أي مشكلة في استخدام تطبيق \"مدير الصحة\"، يرجى تعبئة النموذج التالي وإرساله إلى فريق الخبراء لدينا.",
+      "Russo": "Если вы обнаружили какие-либо трудности с использованием приложения «Стражи Здоровья», заполните форму ниже и отправьте сообщение нашей команде специалистов.",
+      "Francês": "Si vous avez rencontré des difficultés d’utilisation de Les Gardiens de la Santé, veuillez remplir le formulaire ci-dessous et envoyez votre message à notre équipe d'experts."
+    },
+    {
+      "Português": "Catar",
+      "Inglês": "Qatar",
+      "Espanhol": "Qatar",
+      "Chinês": "卡塔爾",
+      "Árabe": "قطر",
+      "Russo": "Катар",
+      "Francês": "Qatar"
+    },
+    {
+      "Português": "Cazaquistão",
+      "Inglês": "Kazakhstan",
+      "Espanhol": "Kazajstán",
+      "Chinês": "哈薩克斯坦",
+      "Árabe": "كازاخستان",
+      "Russo": "Казахстан",
+      "Francês": "Kazakhstan"
+    },
+    {
+      "Português": "Chade",
+      "Inglês": "Chad",
+      "Espanhol": "Chad",
+      "Chinês": "乍得",
+      "Árabe": "تشاد",
+      "Russo": "Чад",
+      "Francês": "Tchad"
+    },
+    {
+      "Português": "Chile",
+      "Inglês": "Chile",
+      "Espanhol": "Chile",
+      "Chinês": "智利",
+      "Árabe": "شيلي",
+      "Russo": "Чили",
+      "Francês": "Chili"
+    },
+    {
+      "Português": "China",
+      "Inglês": "China",
+      "Espanhol": "China",
+      "Chinês": "中國",
+      "Árabe": "الصين",
+      "Russo": "Китай",
+      "Francês": "Chine"
+    },
+    {
+      "Português": "Chipre",
+      "Inglês": "Cyprus",
+      "Espanhol": "Chipre",
+      "Chinês": "賽普勒斯",
+      "Árabe": "قبرص",
+      "Russo": "Кипр",
+      "Francês": "Chypre"
+    },
+    {
+      "Português": "Ciclismo BMX",
+      "Inglês": "BMX Cycling",
+      "Espanhol": "Ciclismo BMX",
+      "Chinês": "登山自行車",
+      "Árabe": "سباق الدراجات الهوائية",
+      "Russo": "Велосипедный Мотокросс ",
+      "Francês": "Cyclisme BMX"
+    },
+    {
+      "Português": "Ciclismo de Estrada",
+      "Inglês": "Road Cycling",
+      "Espanhol": "Ciclismo de Carretera",
+      "Chinês": "公路自行車",
+      "Árabe": "ركوب الدراجات على الطرق",
+      "Russo": "Дорожный Велоспорт",
+      "Francês": "Cyclisme sur route"
+    },
+    {
+      "Português": "Ciclismo de Mountain Bike",
+      "Inglês": "Mountain Bike Cycling",
+      "Espanhol": "Ciclismo de Mountain Bike",
+      "Chinês": "山地自行車",
+      "Árabe": "ركوب الدراجات على الجبال",
+      "Russo": "Горный Велоспорт",
+      "Francês": "VTT"
+    },
+    {
+      "Português": "Ciclismo de Pista",
+      "Inglês": "Track Cycling",
+      "Espanhol": "Ciclismo de Pista",
+      "Chinês": "場地自行車",
+      "Árabe": "ركوب الدراجات في المضمار",
+      "Russo": "Велотрек",
+      "Francês": "Cyclisme sur piste"
+    },
+    {
+      "Português": "Cidade do Vaticano",
+      "Inglês": "Vatican City",
+      "Espanhol": "Ciudad del Vaticano",
+      "Chinês": "梵蒂岡城",
+      "Árabe": "مدينة الفاتيكان",
+      "Russo": "Ватикан",
+      "Francês": "Cité du Vatican"
+    },
+    {
+      "Português": "Cidades mais acessadas",
+      "Inglês": "Most popular cities",
+      "Espanhol": "Ciudades más accedidas",
+      "Chinês": "最受歡迎的城市",
+      "Árabe": "المدن الأكثر شعبية",
+      "Russo": "Наиболее посещаемые города",
+      "Francês": "Villes les plus fréquentées"
+    },
+    {
+      "Português": "Cingapura",
+      "Inglês": "Singapore",
+      "Espanhol": "Singapur",
+      "Chinês": "新加坡",
+      "Árabe": "سنغافورة",
+      "Russo": "Сингапур",
+      "Francês": "Singapour"
+    },
+    {
+      "Português": "Coceira",
+      "Inglês": "Itching",
+      "Espanhol": "Comezón",
+      "Chinês": "瘙癢",
+      "Árabe": "حكة",
+      "Russo": "Зуд",
+      "Francês": "Démangeaisons"
+    },
+    {
+      "Português": "Colecione figurinhas dos esportes olímpicos após concluir cada fase!",
+      "Inglês": "Collect Olympic sports stickers after completing each phase!",
+      "Espanhol": "¡Coleccione estampitas de los deportes olímpicos después de concluir cada fase!",
+      "Chinês": "在完成每個階段後收集奧林匹克運動貼紙 ！",
+      "Árabe": "جمع ملصقات الرياضيات الأولمبية بعد الانتهاء من كل مرحلة!",
+      "Russo": "Собирайте фигурки олимпийских видов спорта после завершения каждого этапа!",
+      "Francês": "Collectionnez des figurines des sports olympiques après avoir terminé chaque étape."
+    },
+    {
+      "Português": "Colômbia",
+      "Inglês": "Colombia",
+      "Espanhol": "Colombia",
+      "Chinês": "哥倫比亞",
+      "Árabe": "كولومبيا",
+      "Russo": "Колумбия ",
+      "Francês": "Colombie"
+    },
+    {
+      "Português": "Como está a saúde de ... nesse momento?",
+      "Inglês": "How is the health of ... at the moment?",
+      "Espanhol": "¿Cómo está la salud de ... en este momento?",
+      "Chinês": "目前，......的健康如何？",
+      "Árabe": "كيف حال صحة.. في هذه اللحظة؟",
+      "Russo": "Как себя чувствует ... прямо сейчас?",
+      "Francês": "Comment va la santé de... en ce moment ?"
+    },
+    {
+      "Português": "Como está sua saúde nesse momento?",
+      "Inglês": "How is your health at the moment?",
+      "Espanhol": "¿Cómo está su salud en este momento?",
+      "Chinês": "目前您的健康如何？",
+      "Árabe": "كيف حال صحتك في هذه اللحظة؟",
+      "Russo": "Как вы себя чувствуете прямо сейчас?",
+      "Francês": "Comment va votre santé en ce moment ?"
+    },
+    {
+      "Português": "Como está sua saúde?",
+      "Inglês": "How is your health?",
+      "Espanhol": "¿Cómo está su salud?",
+      "Chinês": "您的健康如何？",
+      "Árabe": "كيف حال صحتك؟",
+      "Russo": "Как ваше здоровье?",
+      "Francês": "Comment va votre santé ?"
+    },
+    {
+      "Português": "Como Funciona?",
+      "Inglês": "How does it work?",
+      "Espanhol": "¿Cómo Funciona?",
+      "Chinês": "它是如何工作的？",
+      "Árabe": "ما هي طريقة العمل؟",
+      "Russo": "Как это Работает?",
+      "Francês": "Comment ça marche ?"
+    },
+    {
+      "Português": "Como jogar",
+      "Inglês": "How to play",
+      "Espanhol": "Cómo jugar",
+      "Chinês": "如何游戲",
+      "Árabe": "كيفية اللعب",
+      "Russo": "Как играть?",
+      "Francês": "Comment jouer"
+    },
+    {
+      "Português": "Como Participar",
+      "Inglês": "How to join",
+      "Espanhol": "Cómo Participar",
+      "Chinês": "如何加入",
+      "Árabe": "كيفية الانضمام",
+      "Russo": "Как Принять Участие",
+      "Francês": "Comment participer"
+    },
+    {
+      "Português": "Comores",
+      "Inglês": "Comoros",
+      "Espanhol": "Comoras",
+      "Chinês": "科摩羅",
+      "Árabe": "جزر القمر",
+      "Russo": "Коморские острова",
+      "Francês": "Comores"
+    },
+    {
+      "Português": "Concluir",
+      "Inglês": "Complete",
+      "Espanhol": "Concluir",
+      "Chinês": "完成",
+      "Árabe": "إكمال",
+      "Russo": "Завершить",
+      "Francês": "Terminer"
+    },
+    {
+      "Português": "Concordo com os Termos de Uso.",
+      "Inglês": "I agree to the Terms of Use.",
+      "Espanhol": "Estoy de acuerdo con los Términos de Uso.",
+      "Chinês": "我同意使用條款。",
+      "Árabe": "أوافق على شروط الاستخدام.",
+      "Russo": "Я согласен с Условиями Использования.",
+      "Francês": "J'accepte les Conditions d'utilisation."
+    },
+    {
+      "Português": "Configurações",
+      "Inglês": "Settings",
+      "Espanhol": "Configuraciones",
+      "Chinês": "設置",
+      "Árabe": "إعدادات",
+      "Russo": "Настройки",
+      "Francês": "Paramètres"
+    },
+    {
+      "Português": "Confirmar",
+      "Inglês": "Confirm",
+      "Espanhol": "Confirmar",
+      "Chinês": "確認",
+      "Árabe": "تأكيد",
+      "Russo": "Подтвердите",
+      "Francês": "Confirmer"
+    },
+    {
+      "Português": "Congo - Brazzaville",
+      "Inglês": "Congo - Brazzaville",
+      "Espanhol": "Congo - Brazzaville",
+      "Chinês": "剛果-布拉柴維爾",
+      "Árabe": "الكونغو - برازافيل",
+      "Russo": "Конго - Браззавиль",
+      "Francês": "Congo-Brazzaville"
+    },
+    {
+      "Português": "Congo - Kinshasa",
+      "Inglês": "Congo - Kinshasa",
+      "Espanhol": "Congo - Kinshasa",
+      "Chinês": "剛果-金夏沙",
+      "Árabe": "الكونغو - كينشاسا",
+      "Russo": "Конго - Киншаса",
+      "Francês": "Congo-Kinshasa"
+    },
+    {
+      "Português": "Cônjuge",
+      "Inglês": "Spouse",
+      "Espanhol": "Conyugue",
+      "Chinês": "配偶",
+      "Árabe": "الزوج",
+      "Russo": "Супруг",
+      "Francês": "Conjoint"
+    },
+    {
+      "Português": "Continuar",
+      "Inglês": "Continue",
+      "Espanhol": "Continuar",
+      "Chinês": "繼續",
+      "Árabe": "متابعة",
+      "Russo": "Продолжить",
+      "Francês": "Continuer"
+    },
+    {
+      "Português": "Continue informando diariamente como está sua saúde.",
+      "Inglês": "Continue reporting your daily health status.",
+      "Espanhol": "Continuar informando diariamente cómo está su salud.",
+      "Chinês": "繼續報告您每日的健康情況。",
+      "Árabe": "تابع إبلاغ حالتك الصحية اليومية.",
+      "Russo": "Продолжайте сообщать ежедневно, о вашем самочувствии.",
+      "Francês": "Continuer à informer quotidiennement votre état de santé."
+    },
+    {
+      "Português": "Convide seus amigos para serem Guardiões da Saúde.",
+      "Inglês": "Invite your friends to become Guardians of Health.",
+      "Espanhol": "Invite a sus amigos a ser Guardianes de la Salud.",
+      "Chinês": "邀請您的朋友成為健康衛士。",
+      "Árabe": "ادع أصدقائك للاشتراك في تطبيق مدير الصحة.",
+      "Russo": "Пригласите своих друзей стать Стражами Здоровья.",
+      "Francês": "Invitez vos amis à devenir des Gardiens de la Santé."
+    },
+    {
+      "Português": "Cor/Raça",
+      "Inglês": "Color/Race",
+      "Espanhol": "Color/Raza",
+      "Chinês": "膚色/種族",
+      "Árabe": "اللون/العرق",
+      "Russo": "Цвет Кожи / Раса",
+      "Francês": "Couleur/Race"
+    },
+    {
+      "Português": "Cor/Raça é um campo obrigatório",
+      "Inglês": "Color/Race is a required field",
+      "Espanhol": "Color/Raza es un campo obligatorio",
+      "Chinês": "膚色/種族是必填欄位",
+      "Árabe": "اللون/العرق حقل مطلوب",
+      "Russo": "Цвет Кожи / Раса является обязательной ячейкой",
+      "Francês": "Couleur/Race est un champ obligatoire"
+    },
+    {
+      "Português": "Coreia do Norte",
+      "Inglês": "North Korea",
+      "Espanhol": "Corea del Norte",
+      "Chinês": "朝鮮",
+      "Árabe": "كوريا الشمالية",
+      "Russo": "Северная Корея",
+      "Francês": "Corée du Nord"
+    },
+    {
+      "Português": "Coreia do Sul",
+      "Inglês": "South Korea",
+      "Espanhol": "Corea del Sur",
+      "Chinês": "韓國",
+      "Árabe": "كوريا الجنوبية",
+      "Russo": "Южная Корея",
+      "Francês": "Corée du Sud"
+    },
+    {
+      "Português": "Corrida",
+      "Inglês": "Race",
+      "Espanhol": "Carrera",
+      "Chinês": "競賽",
+      "Árabe": "العرق",
+      "Russo": "Гонка",
+      "Francês": "Course"
+    },
+    {
+      "Português": "Costa do Marfim",
+      "Inglês": "Ivory Coast",
+      "Espanhol": "Costa de Marfil",
+      "Chinês": "象牙海岸",
+      "Árabe": "ساحل العاج",
+      "Russo": "Берег Слоновой Кости",
+      "Francês": "Côte d'Ivoire"
+    },
+    {
+      "Português": "Costa Rica",
+      "Inglês": "Costa Rica",
+      "Espanhol": "Costa Rica",
+      "Chinês": "哥斯大黎加",
+      "Árabe": "كوستاريكا",
+      "Russo": "Коста-Рика",
+      "Francês": "Costa Rica"
+    },
+    {
+      "Português": "Croácia",
+      "Inglês": "Croatia",
+      "Espanhol": "Croacia",
+      "Chinês": "克羅地亞",
+      "Árabe": "كرواتيا",
+      "Russo": "Хорватия",
+      "Francês": "Croatie"
+    },
+    {
+      "Português": "Cuba",
+      "Inglês": "Cuba",
+      "Espanhol": "Cuba",
+      "Chinês": "古巴",
+      "Árabe": "كوبا",
+      "Russo": "Куба",
+      "Francês": "Cuba"
+    },
+    {
+      "Português": "Cuidados Básicos",
+      "Inglês": "Basic Care",
+      "Espanhol": "Cuidados Básicos",
+      "Chinês": "基本護理",
+      "Árabe": "الرعاية الأساسية",
+      "Russo": "Общий Уход",
+      "Francês": "Soins de base"
+    },
+    {
+      "Português": "Curaçau",
+      "Inglês": "Curaçao",
+      "Espanhol": "Curazao",
+      "Chinês": "古拉梳島",
+      "Árabe": "كوراساو",
+      "Russo": "Кюрасао ",
+      "Francês": "Curaçao"
+    },
+    {
+      "Português": "Data de Nascimento",
+      "Inglês": "Date of Birth",
+      "Espanhol": "Fecha de Nacimiento",
+      "Chinês": "出生日期",
+      "Árabe": "تاريخ الميلاد",
+      "Russo": "Дата Рождения",
+      "Francês": "Date de naissance"
+    },
+    {
+      "Português": "Data de Nascimento é um campo obrigatório",
+      "Inglês": "Date of Birth is a required field",
+      "Espanhol": "Fecha de Nacimiento es un campo obligatorio",
+      "Chinês": "出生日期是必填欄位",
+      "Árabe": "تاريخ الميلاد حقل مطلوب",
+      "Russo": "Дата Рождения является обязательной ячейкой ",
+      "Francês": "Date de naissance est un champ obligatoire"
+    },
+    {
+      "Português": "Defesa Civil",
+      "Inglês": "Civil Defense",
+      "Espanhol": "Defensa Civil",
+      "Chinês": "民防",
+      "Árabe": "الدفاع المدني",
+      "Russo": "Гражданская Защита",
+      "Francês": "Défense civile"
+    },
+    {
+      "Português": "Deletar",
+      "Inglês": "Delete",
+      "Espanhol": "Suprimir",
+      "Chinês": "刪除",
+      "Árabe": "حذف",
+      "Russo": "Удалить",
+      "Francês": "Supprimer"
+    },
+    {
+      "Português": "Dengue, Zika e Chikungunya",
+      "Inglês": "Dengue fever, Zika and Chikungunya",
+      "Espanhol": "Dengue, Zika y Chikungunya",
+      "Chinês": "登革熱、寨卡 和基孔肯亞病",
+      "Árabe": "حمى الضنك، وزيكا، وشيكونجونيا",
+      "Russo": "Денге, Чикунгунья и Зика",
+      "Francês": "Dengue, Zika et Chikungunya"
+    },
+    {
+      "Português": "Desativar sua conta",
+      "Inglês": "Deactivate your account",
+      "Espanhol": "Desactivar su cuenta",
+      "Chinês": "停用您的帳戶",
+      "Árabe": "إلغاء تنشيط حسابك",
+      "Russo": "Отключить свой аккаунт",
+      "Francês": "Désactiver son compte"
+    },
+    {
+      "Português": "Descreva o problema",
+      "Inglês": "Describe the problem",
+      "Espanhol": "Describa el problema",
+      "Chinês": "描述問題",
+      "Árabe": "صف المشكلة",
+      "Russo": "Опишите проблему",
+      "Francês": "Décrirez le problème"
+    },
+    {
+      "Português": "Deseja abrir o link da notícia?",
+      "Inglês": "Open the news article link?",
+      "Espanhol": "¿Desea abrir el link de la noticia?",
+      "Chinês": "打開新聞文章連結？",
+      "Árabe": "هل تريد فتح رابط مقالة الأخبار؟",
+      "Russo": "Чтобы открыть ссылку новостей?",
+      "Francês": "Souhaitez-vous ouvrir le lien de l’info ?"
+    },
+    {
+      "Português": "Deseja enviar suas informações?",
+      "Inglês": "Send your information?",
+      "Espanhol": "¿Desea enviar su información?",
+      "Chinês": "發送您的資訊？",
+      "Árabe": "هل تريد إرسال معلوماتك؟",
+      "Russo": "Вы хотите отправить свою информацию?",
+      "Francês": "Souhaitez-vous envoyer vos informations ?"
+    },
+    {
+      "Português": "Deseja registrar suas informações?",
+      "Inglês": "Register your information?",
+      "Espanhol": "¿Desea registrar su información?",
+      "Chinês": "註冊您的資訊？",
+      "Árabe": "هل تريد تسجيل معلوماتك؟",
+      "Russo": "Вы хотите зарегистрировать свою информацию?",
+      "Francês": "Souhaitez-vous enregistrer vos informations ?"
+    },
+    {
+      "Português": "Deseja remover o perfil definitivamente?",
+      "Inglês": "Permanently delete the profile?",
+      "Espanhol": "¿Desea remover el perfil definitivamente?",
+      "Chinês": "永久刪除該設定檔？",
+      "Árabe": "هل تريد حذف ملف التعريف بشكل دائم؟",
+      "Russo": "Вы хотите навсегда удалить профиль?",
+      "Francês": "Souhaitez-vous supprimer définitivement le profil ?"
+    },
+    {
+      "Português": "Deseja remover o perfil definitivamente? Essa operação é irreversível.",
+      "Inglês": "Permanently delete the profile? This operation is irreversible.",
+      "Espanhol": "¿Desea remover el perfil definitivamente? Esta operación es irreversible.",
+      "Chinês": "永久刪除該設定檔？此操作不可逆。",
+      "Árabe": "هل تريد حذف ملف التعريف بشكل دائم؟ لا يمكن التراجع عن هذه العملية.",
+      "Russo": "Вы хотите навсегда удалить профиль? Эта операция необратима",
+      "Francês": "Souhaitez-vous supprimer définitivement le profil ? Cette opération est irréversible."
+    },
+    {
+      "Português": "Dez",
+      "Inglês": "Dec",
+      "Espanhol": "Diez",
+      "Chinês": "12 月",
+      "Árabe": "ديسمبر",
+      "Russo": "Дек",
+      "Francês": "Dix"
+    },
+    {
+      "Português": "Dezembro",
+      "Inglês": "December",
+      "Espanhol": "Diciembre",
+      "Chinês": "12 月",
+      "Árabe": "ديسمبر",
+      "Russo": "Декабрь",
+      "Francês": "Décembre"
+    },
+    {
+      "Português": "Diário da Saúde",
+      "Inglês": "Health Journal",
+      "Espanhol": "Diario de Salud",
+      "Chinês": "健康雜誌",
+      "Árabe": "المجلة الصحية",
+      "Russo": "Дневник Здоровья",
+      "Francês": "Quotidien de la Santé"
+    },
+    {
+      "Português": "Diarreia",
+      "Inglês": "Diarrhea",
+      "Espanhol": "Diarrea",
+      "Chinês": "腹瀉",
+      "Árabe": "إسهال",
+      "Russo": "Диарея",
+      "Francês": "La diarrhée"
+    },
+    {
+      "Português": "Diarreica",
+      "Inglês": "Diarrheic",
+      "Espanhol": "Diarreica",
+      "Chinês": "腹瀉型",
+      "Árabe": "مصاب بالإسهار",
+      "Russo": "Вызывающий диарею",
+      "Francês": "Diarrhéique"
+    },
+    {
+      "Português": "Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)",
+      "Inglês": "Diarrheic (fever and nausea or vomiting, as well as any of the following symptoms: body pains or headaches)",
+      "Espanhol": "Diarreica (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza)",
+      "Chinês": "腹瀉型 (發燒和噁心或嘔吐，以及任何以下症狀 ︰ 身體痛或頭痛)",
+      "Árabe": "المصاب بالإسهال (يعاني من الحمى والغثيان أو القيء، فضلاً عن أي من الأعراض التالية: آلام في الجسم أو الصداع)",
+      "Russo": "Вызывающий диарею (лихорадка, тошнота или рвота, и любой другой из этих симптомов: боли в теле или головная боль)",
+      "Francês": "Maladie diarrhéique (fièvre et nausées ou vomissements, en plus de quelques uns de ces symptômes : maux de tête ou douleurs dans le corps)"
+    },
+    {
+      "Português": "Dicas",
+      "Inglês": "Tips",
+      "Espanhol": "Consejos",
+      "Chinês": "小貼士",
+      "Árabe": "نصائح",
+      "Russo": "Советы",
+      "Francês": "Conseils"
+    },
+    {
+      "Português": "Dicas de Saúde",
+      "Inglês": "Health Tips",
+      "Espanhol": "Consejos de Salud",
+      "Chinês": "健康小貼士",
+      "Árabe": "نصائح صحية",
+      "Russo": "Советы для Здоровья",
+      "Francês": "Conseils Santé"
+    },
+    {
+      "Português": "Digite aqui a sua mensagem.",
+      "Inglês": "Enter your message here.",
+      "Espanhol": "Digite aquí su mensaje.",
+      "Chinês": "在此輸入消息。",
+      "Árabe": "أدخل رسالتك هنا.",
+      "Russo": "Введите здесь своё сообщение.",
+      "Francês": "Tapez ici votre message."
+    },
+    {
+      "Português": "Digite seu e-mail e verifique a sua caixa de entrada.",
+      "Inglês": "Enter your email address and check your inbox.",
+      "Espanhol": "Digite su e-mail y verifique su buzón de entrada.",
+      "Chinês": "輸入您的電子郵件地址，並檢查您的收件匣。",
+      "Árabe": "أدخل عنوان بريدك الإلكتروني وتحقق من صندوق بريدك.",
+      "Russo": "Введите адрес электронной почты и проверьте свой почтовый ящик.",
+      "Francês": "Entrez votre adresse e-mail et vérifiez votre boîte de réception."
+    },
+    {
+      "Português": "Dinamarca",
+      "Inglês": "Denmark",
+      "Espanhol": "Dinamarca",
+      "Chinês": "丹麥",
+      "Árabe": "الدانمارك",
+      "Russo": "Дания",
+      "Francês": "Danemark"
+    },
+    {
+      "Português": "Divirta-se",
+      "Inglês": "Have fun",
+      "Espanhol": "Diviértase",
+      "Chinês": "玩得愉快",
+      "Árabe": "استمتع",
+      "Russo": "Получайте удовольствие",
+      "Francês": "Amusez-vous"
+    },
+    {
+      "Português": "Djibuti",
+      "Inglês": "Djibouti",
+      "Espanhol": "Yibuti",
+      "Chinês": "吉布地",
+      "Árabe": "جيبوتي",
+      "Russo": "Джибути",
+      "Francês": "Djibouti"
+    },
+    {
+      "Português": "Dom",
+      "Inglês": "Sun",
+      "Espanhol": "Dom",
+      "Chinês": "太陽",
+      "Árabe": "الأحد",
+      "Russo": "Воскр",
+      "Francês": "DOM"
+    },
+    {
+      "Português": "Domingo",
+      "Inglês": "Sunday",
+      "Espanhol": "Domingo",
+      "Chinês": "星期日",
+      "Árabe": "الأحد",
+      "Russo": "Воскресенье",
+      "Francês": "Dimanche"
+    },
+    {
+      "Português": "Dominica",
+      "Inglês": "Dominica",
+      "Espanhol": "Dominica",
+      "Chinês": "多米尼克",
+      "Árabe": "دومينيكا",
+      "Russo": "Доминика",
+      "Francês": "Dominique"
+    },
+    {
+      "Português": "Dor de cabeça",
+      "Inglês": "Headache",
+      "Espanhol": "Dolor de cabeza",
+      "Chinês": "頭痛",
+      "Árabe": "صداع",
+      "Russo": "Головная боль",
+      "Francês": "Les maux de tête"
+    },
+    {
+      "Português": "Dor de garganta",
+      "Inglês": "Sore throat",
+      "Espanhol": "Dolor de garganta",
+      "Chinês": "喉嚨痛",
+      "Árabe": "التهاب في الحلق",
+      "Russo": "Боль в горле",
+      "Francês": "Mal de gorge"
+    },
+    {
+      "Português": "Dor nas juntas",
+      "Inglês": "Joint pains",
+      "Espanhol": "Dolor en las articulaciones",
+      "Chinês": "關節痛",
+      "Árabe": "ألم في المفاصل",
+      "Russo": "Боль в суставах",
+      "Francês": "Les douleurs articulaires"
+    },
+    {
+      "Português": "Dor no corpo",
+      "Inglês": "Body aches",
+      "Espanhol": "Dolor en el cuerpo",
+      "Chinês": "全身酸痛",
+      "Árabe": "آلام في الجسم",
+      "Russo": "Боль в теле",
+      "Francês": "Douleur dans le corps"
+    },
+    {
+      "Português": "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!",
+      "Inglês": "You must be logged in to use this feature. Check your network connection.",
+      "Espanhol": "Es necesario estar conectado para acceder a esta función. Por favor, ¡verifique su red!",
+      "Chinês": "您必須登錄才能使用此功能。請檢查您的網路連接。",
+      "Árabe": "يجب أن تكون سجلت الدخول لاستخدام هذه الميزة. تحقق من اتصال شبكتك.",
+      "Russo": "Вы должны быть подключены для того, чтобы иметь доступ к этой функции. Пожалуйста, проверьте сеть!",
+      "Francês": "Vous devez être connecté pour accéder à cette fonction. S'il vous plaît, vérifiez votre réseau !"
+    },
+    {
+      "Português": "E-mail",
+      "Inglês": "Email",
+      "Espanhol": "E-mail",
+      "Chinês": "電子郵件",
+      "Árabe": "البريد الإلكتروني",
+      "Russo": "Электронная почта",
+      "Francês": "E-mail"
+    },
+    {
+      "Português": "E-mail é um campo obrigatório",
+      "Inglês": "Email is a required field",
+      "Espanhol": "E-mail es un campo obligatorio",
+      "Chinês": "電子郵件是必填欄位",
+      "Árabe": "البريد الإلكتروني حقل مطلوب",
+      "Russo": "Электронная почта является обязательной ячейкой ",
+      "Francês": "E-mail est un champ obligatoire"
+    },
+    {
+      "Português": "E-mail e/ou senha não informados",
+      "Inglês": "Email and/or password not provided",
+      "Espanhol": "E-mail y/o contraseña no informados",
+      "Chinês": "未提供電子郵件和/或密碼",
+      "Árabe": "لم يتم توفير البريد الإلكتروني و/أو كلمة المرور",
+      "Russo": "Электронная почта и/или пароль не были указаны",
+      "Francês": "E-mail et/ou mot de passe non informés"
+    },
+    {
+      "Português": "E-mail enviado com sucesso.",
+      "Inglês": "Email successfully sent.",
+      "Espanhol": "E-mail enviado con éxito.",
+      "Chinês": "成功發送電子郵件。",
+      "Árabe": "تم إرسال البريد الإلكتروني بنجاح.",
+      "Russo": "Письмо по электронной почте успешно отправлено.",
+      "Francês": "E-mail envoyé avec succès."
+    },
+    {
+      "Português": "E-mail inválido!",
+      "Inglês": "Invalid email.",
+      "Espanhol": "¡E-mail inválido!",
+      "Chinês": "無效電子郵件。",
+      "Árabe": "بريد إلكتروني غير صالح.",
+      "Russo": "Не верно указана электронная почта!",
+      "Francês": "E-mail non valide !"
+    },
+    {
+      "Português": "E-mail não encontrado!",
+      "Inglês": "Email not found.",
+      "Espanhol": "¡E-mail no encontrado!",
+      "Chinês": "找不到電子郵件。",
+      "Árabe": "لم يتم العثور على البريد الإلكتروني.",
+      "Russo": "Электронная почта не найдена!",
+      "Francês": "E-mail non trouvé !"
+    },
+    {
+      "Português": "Editar",
+      "Inglês": "Edit",
+      "Espanhol": "Editar",
+      "Chinês": "編輯",
+      "Árabe": "تحرير",
+      "Russo": "Редактировать",
+      "Francês": "Modifier"
+    },
+    {
+      "Português": "Editar Foto",
+      "Inglês": "Edit Photo",
+      "Espanhol": "Editar Foto",
+      "Chinês": "編輯照片",
+      "Árabe": "تحرير الصورة",
+      "Russo": "Изменить Фотографию",
+      "Francês": "Modifier la photo"
+    },
+    {
+      "Português": "Editar Perfil",
+      "Inglês": "Edit Profile",
+      "Espanhol": "Editar Perfil",
+      "Chinês": "編輯設定檔",
+      "Árabe": "تحرير ملف التعريف",
+      "Russo": "Изменить Профиль",
+      "Francês": "Modifier le profil"
+    },
+    {
+      "Português": "Egito",
+      "Inglês": "Egypt",
+      "Espanhol": "Egipto",
+      "Chinês": "埃及",
+      "Árabe": "مصر",
+      "Russo": "Египет",
+      "Francês": "Égypte"
+    },
+    {
+      "Português": "El Salvador",
+      "Inglês": "El Salvador",
+      "Espanhol": "El Salvador",
+      "Chinês": "薩爾瓦多",
+      "Árabe": "السلفادور",
+      "Russo": "Сальвадор",
+      "Francês": "Salvador"
+    },
+    {
+      "Português": "email@exemplo.com.br",
+      "Inglês": "email@exemplo.com.br",
+      "Espanhol": "email@exemplo.com.br",
+      "Chinês": "email@exemplo.com.br",
+      "Árabe": "email@exemplo.com.br",
+      "Russo": "email@exemplo.com.br",
+      "Francês": "email@exemple.fr"
+    },
+    {
+      "Português": "Emirados Árabes Unidos",
+      "Inglês": "United Arab Emirates",
+      "Espanhol": "Emiratos Árabes Unidos",
+      "Chinês": "阿拉伯聯合大公國",
+      "Árabe": "الإمارات العربية المتحدة",
+      "Russo": "Объединенные Арабские Эмираты",
+      "Francês": "Émirats Arabes Unis"
+    },
+    {
+      "Português": "Energia",
+      "Inglês": "Energy",
+      "Espanhol": "Energía",
+      "Chinês": "能量",
+      "Árabe": "الطاقة",
+      "Russo": "Энергия",
+      "Francês": "Énergie"
+    },
+    {
+      "Português": "Energias",
+      "Inglês": "Energies",
+      "Espanhol": "Energías",
+      "Chinês": "能量",
+      "Árabe": "الطاقات",
+      "Russo": "Энергия",
+      "Francês": "Énergies"
+    },
+    {
+      "Português": "Enteada",
+      "Inglês": "Stepdaughter",
+      "Espanhol": "Hijastra",
+      "Chinês": "繼女",
+      "Árabe": "بنت الزوج",
+      "Russo": "Падчерица ",
+      "Francês": "Belle-fille"
+    },
+    {
+      "Português": "Enteado",
+      "Inglês": "Stepson",
+      "Espanhol": "Hijastro",
+      "Chinês": "繼子",
+      "Árabe": "ابن الزوج",
+      "Russo": "Пасынок",
+      "Francês": "Beau-fils"
+    },
+    {
+      "Português": "Entrar",
+      "Inglês": "Login",
+      "Espanhol": "Entrar",
+      "Chinês": "登錄",
+      "Árabe": "تسجيل الدخول",
+      "Russo": "Войти",
+      "Francês": "Se connecter"
+    },
+    {
+      "Português": "Entrar com o Facebook",
+      "Inglês": "Login with Facebook",
+      "Espanhol": "Entrar con Facebook",
+      "Chinês": "使用 Facebook 登錄",
+      "Árabe": "تسجيل الدخول باستخدام حساب Facebook",
+      "Russo": "Войти через Facebook",
+      "Francês": "Connectez-vous avec Facebook"
+    },
+    {
+      "Português": "Entre com seu e-mail e senha:",
+      "Inglês": "Login with email and password:",
+      "Espanhol": "Entre con su e-mail y contraseña:",
+      "Chinês": "使用電子郵件和密碼登錄 ︰",
+      "Árabe": "تسجيل الدخول باستخدام البريد الإلكتروني وكلمة المرور:",
+      "Russo": "Введите адрес электронной почты и пароль:",
+      "Francês": "Connectez-vous avec votre e-mail et mot de passe :"
+    },
+    {
+      "Português": "Entre em contato",
+      "Inglês": "Contact",
+      "Espanhol": "Entre en contacto",
+      "Chinês": "連絡",
+      "Árabe": "جهة الاتصال",
+      "Russo": "Свяжитесь ",
+      "Francês": "Entrez en contact"
+    },
+    {
+      "Português": "Entre em contato através do formulário.",
+      "Inglês": "Contact us via the form.",
+      "Espanhol": "Entre en contacto a través del formulario.",
+      "Chinês": "通過表單與我們聯繫。",
+      "Árabe": "اتصل بنا عبر النموذج.",
+      "Russo": "Свяжитесь заполнив форму.",
+      "Francês": "Entrez en contact via le formulaire."
+    },
+    {
+      "Português": "Entre rapidamente com",
+      "Inglês": "Quick login with",
+      "Espanhol": "Entre rápidamente con",
+      "Chinês": "快速登錄",
+      "Árabe": "تسجيل الدخول سريعًا باستخدام",
+      "Russo": "Войдите быстро с",
+      "Francês": "Entrez rapidement avec :"
+    },
+    {
+      "Português": "Enviar",
+      "Inglês": "Send",
+      "Espanhol": "Enviar",
+      "Chinês": "發送",
+      "Árabe": "أرسل",
+      "Russo": "Отправить ",
+      "Francês": "Envoyer"
+    },
+    {
+      "Português": "Equador",
+      "Inglês": "Ecuador",
+      "Espanhol": "Ecuador",
+      "Chinês": "厄瓜多爾",
+      "Árabe": "الإكوادور",
+      "Russo": "Эквадор",
+      "Francês": "Équateur"
+    },
+    {
+      "Português": "Eritreia",
+      "Inglês": "Eritrea",
+      "Espanhol": "Eritrea",
+      "Chinês": "厄立特里亞",
+      "Árabe": "إريتريا",
+      "Russo": "Эритрея",
+      "Francês": "Érythrée"
+    },
+    {
+      "Português": "Erro ao logar com o Facebook.",
+      "Inglês": "Failure to log in with Facebook.",
+      "Espanhol": "Error al hacer el login con Facebook.",
+      "Chinês": "未登錄 Facebook。",
+      "Árabe": "فشل تسجيل الدخول باستخدام Facebook.",
+      "Russo": "Ошибка входа через Facebook.",
+      "Francês": "Erreurs de connexion avec Facebook."
+    },
+    {
+      "Português": "Erro ao logar com o Twitter.",
+      "Inglês": "Failure to log in with Twitter.",
+      "Espanhol": "Error al hacer el login con Twitter.",
+      "Chinês": "未登錄 Twitter。",
+      "Árabe": "فشل تسجيل الدخول باستخدام Facebook.",
+      "Russo": "Ошибка входа через Twitter.",
+      "Francês": "Erreurs de connexion avec Twitter."
+    },
+    {
+      "Português": "Escolha algum sintoma antes de confirmar.",
+      "Inglês": "Choose a symptom and confirm.",
+      "Espanhol": "Escoja algún síntoma antes de confirmar.",
+      "Chinês": "選擇症狀并確認。",
+      "Árabe": "اختر أحد الأعراض وقم بالتأكيد.",
+      "Russo": "Выберите какие-либо симптомы, прежде чем подтвердить.",
+      "Francês": "Choisissez quelques symptômes avant de confirmer."
+    },
+    {
+      "Português": "Escolha seu avatar",
+      "Inglês": "Choose your avatar",
+      "Espanhol": "Escoja su avatar",
+      "Chinês": "選擇頭像",
+      "Árabe": "اختر صورتك الرمزية",
+      "Russo": "Выберите себе аватарку",
+      "Francês": "Choisissez votre avatar"
+    },
+    {
+      "Português": "Escolha um assunto",
+      "Inglês": "Choose a subject",
+      "Espanhol": "Escoja un asunto",
+      "Chinês": "選擇主題",
+      "Árabe": "اختر موضوعًا",
+      "Russo": "Выберите тему",
+      "Francês": "Choisissez un sujet"
+    },
+    {
+      "Português": "Escolha uma foto",
+      "Inglês": "Choose a photo",
+      "Espanhol": "Escoja una foto",
+      "Chinês": "選擇照片",
+      "Árabe": "اختر صورة",
+      "Russo": "Выберите фотографию",
+      "Francês": "Choisissez une photo"
+    },
+    {
+      "Português": "Esgrima",
+      "Inglês": "Fencing",
+      "Espanhol": "Esgrima",
+      "Chinês": "擊劍",
+      "Árabe": "مبارزة",
+      "Russo": "Фехтование",
+      "Francês": "Escrime"
+    },
+    {
+      "Português": "Eslováquia",
+      "Inglês": "Slovakia",
+      "Espanhol": "Eslovaquia",
+      "Chinês": "斯洛伐克",
+      "Árabe": "سلوفاكيا",
+      "Russo": "Словакия",
+      "Francês": "Slovaquie"
+    },
+    {
+      "Português": "Eslovênia",
+      "Inglês": "Slovenia",
+      "Espanhol": "Eslovenia",
+      "Chinês": "斯洛維尼亞",
+      "Árabe": "سلوفينيا",
+      "Russo": "Словения",
+      "Francês": "Slovénie"
+    },
+    {
+      "Português": "Espanha",
+      "Inglês": "Spain",
+      "Espanhol": "España",
+      "Chinês": "西班牙",
+      "Árabe": "إسبانيا",
+      "Russo": "Испания",
+      "Francês": "Espagne"
+    },
+    {
+      "Português": "Esqueceu a senha?",
+      "Inglês": "Forgot your password?",
+      "Espanhol": "¿Olvidó la contraseña?",
+      "Chinês": "忘記密碼？",
+      "Árabe": "هل نسيت كلمة مرورك؟",
+      "Russo": "Забыли пароль?",
+      "Francês": "Mot de passe oublié ?"
+    },
+    {
+      "Português": "Esqueceu sua senha?",
+      "Inglês": "Forgot your password?",
+      "Espanhol": "¿Olvidó su contraseña?",
+      "Chinês": "忘記密碼？",
+      "Árabe": "هل نسيت كلمة مرورك؟",
+      "Russo": "Забыли свой пароль?",
+      "Francês": "Mot de passe oublié ?"
+    },
+    {
+      "Português": "Esta configuração afeta apenas este aplicativo. Deseja continuar?",
+      "Inglês": "This setting only affects this application. Continue?",
+      "Espanhol": "Esta configuración sólo afecta a esta aplicación. ¿Desea continuar?",
+      "Chinês": "此設置僅影響此應用程式。繼續？",
+      "Árabe": "لا يؤثر هذا الإعداد إلا على هذا التطبيق. هل تريد المتابعة؟",
+      "Russo": "Этот параметр влияет только на это приложение. Вы хотите продолжить?",
+      "Francês": "Ce paramètre affecte uniquement cette application. Voulez-vous continuer ?"
+    },
+    {
+      "Português": "Esta conta foi desativada, reative e volte a ajudar a melhorar a saúde da sua comunidade. Deseja reativá-la?",
+      "Inglês": "This account has been deactivated. Reactivate it to help improve healthcare in your community. Reactivate this account?",
+      "Espanhol": "Esta cuenta fue desactivada, reactívela y vuelva a ayudar a mejorar la salud de su comunidad. ¿Desea reactivarla?",
+      "Chinês": "此帳戶已停用。重新啟用以幫助改進您的社區醫療服務。重新啟用此帳戶？",
+      "Árabe": "تم إلغاء تنشيط هذا الحساب. أعد تنشيطه لتحسين الرعاية الصحية في مجتمعك. هل تريد إعادة تنشيط الحساب؟",
+      "Russo": "Данный аккаунт был отключен, активируйте его и снова помогайте улучшить здоровье своего сообщества. Хотите активировать его?",
+      "Francês": "Ce compte a été désactivé, réactivez-le et recommencez à améliorer la santé de votre collectivité. Souhaitez-vous le réactiver ?"
+    },
+    {
+      "Português": "Estados Unidos",
+      "Inglês": "United States",
+      "Espanhol": "Estados Unidos",
+      "Chinês": "美國",
+      "Árabe": "الولايات المتحدة",
+      "Russo": "США",
+      "Francês": "États-Unis"
+    },
+    {
+      "Português": "Estatísticas das participações",
+      "Inglês": "Participation statistics",
+      "Espanhol": "Estadísticas de las participaciones",
+      "Chinês": "參與統計",
+      "Árabe": "إحصائيات المشاركة",
+      "Russo": "Статистика участия",
+      "Francês": "Statistiques de participation"
+    },
+    {
+      "Português": "Este é o máximo de pontos que você pode obter. Bom jogo!",
+      "Inglês": "You reached the maximum score. Good game!",
+      "Espanhol": "Este es el máximo de puntos que usted puede obtener. ¡Buen juego!",
+      "Chinês": "您達到了最高分。好成績！",
+      "Árabe": "لقد وصلت إلى أقصى درجة. لعبة جيدة!",
+      "Russo": "Это максимальное количество очков, которое вы можете получить. Хорошей игры!",
+      "Francês": "Vous avez le maximum de points qu’il est possible d’obtenir. Bon jeu !"
+    },
+    {
+      "Português": "Estive fora do Brasil nos últimos 14 dias",
+      "Inglês": "I have been out of Brazil in the last 14 days",
+      "Espanhol": "Estuve fuera de Brasil los últimos 14 días",
+      "Chinês": "過去的 14 天我已不在巴西",
+      "Árabe": "لقد كنت خارج البرازيل في آخر 14 يومًا",
+      "Russo": "Я не был в Бразилии в течение последних 14 дней",
+      "Francês": "J'étais hors du Brésil dans les 14 derniers jours"
+    },
+    {
+      "Português": "Estônia",
+      "Inglês": "Estonia",
+      "Espanhol": "Estonia",
+      "Chinês": "愛沙尼亞",
+      "Árabe": "إستونيا",
+      "Russo": "Эстония",
+      "Francês": "Estonie"
+    },
+    {
+      "Português": "Etiópia",
+      "Inglês": "Ethiopia",
+      "Espanhol": "Etiopía",
+      "Chinês": "埃塞俄比亞",
+      "Árabe": "إثيوبيا",
+      "Russo": "Эфиопия",
+      "Francês": "Éthiopie"
+    },
+    {
+      "Português": "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org",
+      "Inglês": "I do my part. Make sure you do yours in our fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org",
+      "Espanhol": "Yo hago mi parte, haga su parte también en el combate al mosquito Aedes aegypti #ZikaZero. Acceda: http://www.guardioesdasaude.org",
+      "Chinês": "我參與了。請確保您在我們與埃及伊蚊 #ZikaZero 的戰斗中發揮作用。轉到 HTTP://www.guardioesdasaude.org",
+      "Árabe": "أقوم بعملي. تأكد من أنك تؤدي ما عليك القيام به في كفاحنا ضد بعوض الزاعجة المصرية #ZikaZero. انتقل إلى http://www.guardioesdasaude.org",
+      "Russo": "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org",
+      "Francês": "Je fais ma part, faites aussi votre part dans la lutte contre le moustique Aedes aegypti #ZikaZero. Aller à: http://www.guardioesdasaude.org"
+    },
+    {
+      "Português": "Exantemática",
+      "Inglês": "Exanthematic",
+      "Espanhol": "Exantemática",
+      "Chinês": "疹病",
+      "Árabe": "طفحي",
+      "Russo": "Сыпь",
+      "Francês": "Exanthématique."
+    },
+    {
+      "Português": "Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)",
+      "Inglês": "Exanthematic (red spots across the body, as well as any of the following symptoms: fever or body/joint pains, headache, itching, bloodshot eyes, or bleeding)",
+      "Espanhol": "Exantemática (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado)",
+      "Chinês": "疹病（身體上的紅色斑點，以及任何以下症狀 ︰發燒或身體/關節痛、頭痛、皮膚瘙癢、眼睛充血，或出血）",
+      "Árabe": "طفحي (بقع حمراء على الجسم، فضلاً عن أي من الأعراض التالية: حمى أو آلام في الجسم/المفاصل، صداع، حكة، احمرار العينين أو نزيف)",
+      "Russo": "Сыпь (красные пятна на теле, и любые из этих симптомов: жар, боли в теле или в суставах, головная боль, зуд, покраснение глаз или кровотечение)",
+      "Francês": "Exanthème (taches rouges sur le corps, en plus de quelques uns de ces symptômes : fièvre ou douleur dans le corps ou douleurs articulaires ou maux de tête ou démangeaisons ou yeux rouges ou saignements)"
+    },
+    {
+      "Português": "Excluir Conta",
+      "Inglês": "Delete Account",
+      "Espanhol": "Excluir Cuenta",
+      "Chinês": "刪除帳戶",
+      "Árabe": "حذف الحساب",
+      "Russo": "Удалить Аккаунт",
+      "Francês": "Supprimer le compte"
+    },
+    {
+      "Português": "Fã / Espectador",
+      "Inglês": "Fan / Spectator",
+      "Espanhol": "Fan / Espectador",
+      "Chinês": "愛好者 / 觀眾",
+      "Árabe": "مروحة/متفرج",
+      "Russo": "Болельщик / Зритель",
+      "Francês": "Fan/Spectateur"
+    },
+    {
+      "Português": "Fale Conosco",
+      "Inglês": "Contact us",
+      "Espanhol": "Hable con nosotros",
+      "Chinês": "聯繫我們",
+      "Árabe": "اتصل بنا",
+      "Russo": "Свяжитесь с Нами",
+      "Francês": "Contactez-nous"
+    },
+    {
+      "Português": "Falta de ar",
+      "Inglês": "Shortness of breath",
+      "Espanhol": "Falta de aire",
+      "Chinês": "呼吸急促",
+      "Árabe": "ضيق التنفس",
+      "Russo": "Одышка",
+      "Francês": "L’essoufflement"
+    },
+    {
+      "Português": "Farmácias",
+      "Inglês": "Drugstores",
+      "Espanhol": "Farmacias",
+      "Chinês": "藥店",
+      "Árabe": "صيدليات",
+      "Russo": "Аптеки",
+      "Francês": "Pharmacies"
+    },
+    {
+      "Português": "Febre",
+      "Inglês": "Fever",
+      "Espanhol": "Fiebre",
+      "Chinês": "發燒",
+      "Árabe": "حمى",
+      "Russo": "Жар",
+      "Francês": "La fièvre"
+    },
+    {
+      "Português": "Feminino",
+      "Inglês": "Female",
+      "Espanhol": "Femenino",
+      "Chinês": "女性",
+      "Árabe": "أنثى",
+      "Russo": "Женского Пола",
+      "Francês": "Féminin"
+    },
+    {
+      "Português": "Fev",
+      "Inglês": "Feb",
+      "Espanhol": "Feb",
+      "Chinês": "2 月",
+      "Árabe": "فبراير",
+      "Russo": "Фев",
+      "Francês": "Fév"
+    },
+    {
+      "Português": "Fevereiro",
+      "Inglês": "February",
+      "Espanhol": "Febrero",
+      "Chinês": "2 月",
+      "Árabe": "فبراير",
+      "Russo": "Февраль",
+      "Francês": "Février"
+    },
+    {
+      "Português": "Fiji",
+      "Inglês": "Fiji",
+      "Espanhol": "Fiji",
+      "Chinês": "斐濟",
+      "Árabe": "فيجي",
+      "Russo": "Фиджи",
+      "Francês": "Fidji"
+    },
+    {
+      "Português": "Filha",
+      "Inglês": "Daughter",
+      "Espanhol": "Hija",
+      "Chinês": "女兒",
+      "Árabe": "ابنة",
+      "Russo": "Дочь",
+      "Francês": "Fille"
+    },
+    {
+      "Português": "Filho",
+      "Inglês": "Son",
+      "Espanhol": "Hijo",
+      "Chinês": "兒子",
+      "Árabe": "ابن",
+      "Russo": "Сын",
+      "Francês": "Fils"
+    },
+    {
+      "Português": "Filipinas",
+      "Inglês": "Philippines",
+      "Espanhol": "Filipinas",
+      "Chinês": "菲律賓",
+      "Árabe": "الفلبين",
+      "Russo": "Филиппины",
+      "Francês": "Philippines"
+    },
+    {
+      "Português": "Finlândia",
+      "Inglês": "Finland",
+      "Espanhol": "Finlandia",
+      "Chinês": "芬蘭",
+      "Árabe": "فنلندا",
+      "Russo": "Финляндия",
+      "Francês": "Finlande"
+    },
+    {
+      "Português": "Fique do olho no Mapa e acompanhe, em tempo real, a situação da saúde próximo à você. Não esqueça de colaborar diariamente como você está se sentindo, para que as estatísticas estejam sempre atualizadas!",
+      "Inglês": "Check out the Map to follow the healthcare status near you in real time. Don’t forget to contribute every day by reporting your health status and help keep statistical data up to date.",
+      "Espanhol": "Observe el Mapa y siga, en tiempo real, la situación de la salud cerca de usted. No olvide colaborar diariamente informando cómo se siente, ¡para que las estadísticas siempre estén actualizadas!",
+      "Chinês": "查閱地圖，實時遵循您附近的醫療狀態。別忘了每天報告您的健康情況，幫助保持統計資料最新。",
+      "Árabe": "تحقق من الخريطة لمتابعة الحالة الصحية بالقرب منك في الوقت المناسب. لا تنس المشاركة يوميًا من خلال إرسال تقرير بحالتك الصحية والمساعدة في تحديث البيانات الإحصائية.",
+      "Russo": "Смотрите по Карте и отслеживайте в режиме реального времени, положение в области здравоохранения рядом с вами. Не забывайте ежедневно сотрудничать информируя как вы себя чувствуете, чтобы статистика всегда обновлялась!",
+      "Francês": "Surveillez la carte et suivez, en temps réel, la situation de la Santé près de vous . N'oubliez pas de rapporter votre état de santé tous les jours, pour que les statistiques soient toujours à jour !"
+    },
+    {
+      "Português": "Fique por dentro das notícias de saúde! O Guardião tem acesso direto aos tweets do Ministério da Saúde, podendo compartilhá-los com seus amigos nas redes sociais.",
+      "Inglês": "Stay tuned to healthcare news! The Guardian app has direct access to tweets posted by the Department of Health, allowing you to share them with your friends in social networks.",
+      "Espanhol": "¡Entérese da las noticias de salud! El Guardián tiene acceso directo a los tweets del Ministerio de Salud, y puede compartirlos con sus amigos en las redes sociales.",
+      "Chinês": "請繼續接收保健新聞 ！衛士應用程式可直達由衛生署張貼的微博，允許您將其分享給您在社交網路中的朋友。",
+      "Árabe": "ابق على اطلاع بأخبار الرعاية الصحية! يتميز تطبيق المدير بإمكانية الوصول إلى التغريدات التي نشرتها وزارة الصحة، مما يسمح لك بمشاركتها مع الأصدقاء على الشبكات الاجتماعية.",
+      "Russo": "Следите за новостями здравоохранения! Страж имеет прямой доступ к твитам Министерства Здравоохранения и может поделиться ими со своими друзьями в социальных сетях.",
+      "Francês": "Ne perdez pas les nouvelles Santé ! Le Gardien a un accès direct aux tweets du Ministère de la santé et peut les partager avec ses amis sur les réseaux sociaux."
+    },
+    {
+      "Português": "França",
+      "Inglês": "France",
+      "Espanhol": "Francia",
+      "Chinês": "法國",
+      "Árabe": "فرنسا",
+      "Russo": "Франция",
+      "Francês": "France"
+    },
+    {
+      "Português": "Frequência de participações em 2016",
+      "Inglês": "Participation frequency in 2016",
+      "Espanhol": "Frecuencia de participaciones en 2016",
+      "Chinês": "2016 年參與頻率",
+      "Árabe": "تردد مشاركة في عام 2016",
+      "Russo": "Частота участия в 2016 году",
+      "Francês": "Fréquence de la participation en 2016"
+    },
+    {
+      "Português": "Futebol",
+      "Inglês": "Soccer",
+      "Espanhol": "Fútbol",
+      "Chinês": "足球",
+      "Árabe": "كرة القدم",
+      "Russo": "Футбол",
+      "Francês": "Football"
+    },
+    {
+      "Português": "Gabão",
+      "Inglês": "Gabon",
+      "Espanhol": "Gabón",
+      "Chinês": "加蓬",
+      "Árabe": "الغابون",
+      "Russo": "Габон",
+      "Francês": "Gabon"
+    },
+    {
+      "Português": "Gâmbia",
+      "Inglês": "Gambia",
+      "Espanhol": "Gambia",
+      "Chinês": "岡比亞",
+      "Árabe": "غامبيا",
+      "Russo": "Гамбия",
+      "Francês": "Gambie"
+    },
+    {
+      "Português": "Gana",
+      "Inglês": "Ghana",
+      "Espanhol": "Ghana",
+      "Chinês": "加納",
+      "Árabe": "غانا",
+      "Russo": "Гана",
+      "Francês": "Ghana"
+    },
+    {
+      "Português": "Genro",
+      "Inglês": "Son-in-law",
+      "Espanhol": "Yerno",
+      "Chinês": "女婿",
+      "Árabe": "صهر",
+      "Russo": "Зять",
+      "Francês": "Gendre"
+    },
+    {
+      "Português": "Geórgia",
+      "Inglês": "Georgia",
+      "Espanhol": "Georgia",
+      "Chinês": "格魯吉亞",
+      "Árabe": "جورجيا",
+      "Russo": "Грузия",
+      "Francês": "Géorgie"
+    },
+    {
+      "Português": "Geral",
+      "Inglês": "General",
+      "Espanhol": "General",
+      "Chinês": "一般",
+      "Árabe": "عام",
+      "Russo": "Общий",
+      "Francês": "Général"
+    },
+    {
+      "Português": "Gibraltar",
+      "Inglês": "Gibraltar",
+      "Espanhol": "Gibraltar",
+      "Chinês": "直布羅陀",
+      "Árabe": "جبل طارق",
+      "Russo": "Гибралтар",
+      "Francês": "Gibraltar"
+    },
+    {
+      "Português": "Ginástica Artística",
+      "Inglês": "Gymnastics",
+      "Espanhol": "Gimnasia Artística",
+      "Chinês": "體操",
+      "Árabe": "الجمباز",
+      "Russo": "Художественная Гимнастика",
+      "Francês": "Gymnastique artistique"
+    },
+    {
+      "Português": "Ginástica de Trampolim",
+      "Inglês": "Trampoline Gymnastics",
+      "Espanhol": "Gimnasia de Trampolín",
+      "Chinês": "體操蹦床",
+      "Árabe": "جمباز الترامبولين",
+      "Russo": "Прыжки на Батуте",
+      "Francês": "Trampoline"
+    },
+    {
+      "Português": "Ginástica Rítmica",
+      "Inglês": "Rhythmic Gymnastics",
+      "Espanhol": "Gimnasia Rítmica",
+      "Chinês": "藝術體操",
+      "Árabe": "الجمباز الإيقاعي",
+      "Russo": "Ритмическая Гимнастика",
+      "Francês": "Gymnastique rythmique"
+    },
+    {
+      "Português": "Golfe",
+      "Inglês": "Golf",
+      "Espanhol": "Golf",
+      "Chinês": "高爾夫",
+      "Árabe": "لعب الجولف",
+      "Russo": "Гольф",
+      "Francês": "Golf"
+    },
+    {
+      "Português": "Google Play",
+      "Inglês": "Google Play",
+      "Espanhol": "Google Play",
+      "Chinês": "Google Play",
+      "Árabe": "متجر Google Play",
+      "Russo": "Google Play",
+      "Francês": "Google Play"
+    },
+    {
+      "Português": "Granada",
+      "Inglês": "Granada",
+      "Espanhol": "Granada",
+      "Chinês": "格蘭納達",
+      "Árabe": "غرناطة",
+      "Russo": "Гранада",
+      "Francês": "Granada"
+    },
+    {
+      "Português": "Grécia",
+      "Inglês": "Greece",
+      "Espanhol": "Grecia",
+      "Chinês": "希臘",
+      "Árabe": "اليونان",
+      "Russo": "Греция",
+      "Francês": "Grèce"
+    },
+    {
+      "Português": "Groenlândia",
+      "Inglês": "Greenland",
+      "Espanhol": "Groenlandia",
+      "Chinês": "格陵蘭島",
+      "Árabe": "جرينلاند",
+      "Russo": "Гренландия",
+      "Francês": "Groenland"
+    },
+    {
+      "Português": "Guadalupe",
+      "Inglês": "Guadalupe",
+      "Espanhol": "Guadalupe",
+      "Chinês": "瓜達羅佩",
+      "Árabe": "غوادلوبي",
+      "Russo": "Гваделупа",
+      "Francês": "Guadalupe"
+    },
+    {
+      "Português": "Guam",
+      "Inglês": "Guam",
+      "Espanhol": "Guam",
+      "Chinês": "關島",
+      "Árabe": "غوام",
+      "Russo": "Гуам",
+      "Francês": "Guam"
+    },
+    {
+      "Português": "Guardiões da Saúde",
+      "Inglês": "Guardians of Health",
+      "Espanhol": "Guardianes de la Salud",
+      "Chinês": "健康衛士",
+      "Árabe": "تطبيق مدير الصحة",
+      "Russo": "Стражи Здоровья",
+      "Francês": "Les Gardiens de la Santé"
+    },
+    {
+      "Português": "Guatemala",
+      "Inglês": "Guatemala",
+      "Espanhol": "Guatemala",
+      "Chinês": "瓜地馬拉",
+      "Árabe": "غواتيمالا",
+      "Russo": "Гватемала",
+      "Francês": "Guatemala"
+    },
+    {
+      "Português": "Guernsey",
+      "Inglês": "Guernsey",
+      "Espanhol": "Guernsey",
+      "Chinês": "根西島",
+      "Árabe": "غيرنزي",
+      "Russo": "Гернси",
+      "Francês": "Guernesey"
+    },
+    {
+      "Português": "Guiana",
+      "Inglês": "Guyana",
+      "Espanhol": "Guyana",
+      "Chinês": "蓋亞納",
+      "Árabe": "غيانا",
+      "Russo": "Гайана",
+      "Francês": "Guyana"
+    },
+    {
+      "Português": "Guiana Francesa",
+      "Inglês": "French Guiana",
+      "Espanhol": "Guayana Francesa",
+      "Chinês": "法屬圭亞那",
+      "Árabe": "غويانا الفرنسية",
+      "Russo": "Французская Гвиана",
+      "Francês": "Guyane française"
+    },
+    {
+      "Português": "Guiné",
+      "Inglês": "Guinea",
+      "Espanhol": "Guinea",
+      "Chinês": "幾內亞",
+      "Árabe": "غينيا",
+      "Russo": "Гвинея",
+      "Francês": "Guinée"
+    },
+    {
+      "Português": "Guiné Equatorial",
+      "Inglês": "Equatorial Guinea",
+      "Espanhol": "Guinea Ecuatorial",
+      "Chinês": "赤道幾內亞",
+      "Árabe": "غينيا الاستوائية",
+      "Russo": "Экваториальная Гвинея",
+      "Francês": "Guinée équatoriale"
+    },
+    {
+      "Português": "Guiné-Bissau",
+      "Inglês": "Guinea-Bissau",
+      "Espanhol": "Guinea Bissau",
+      "Chinês": "幾內亞比索",
+      "Árabe": "غينيا بيساو",
+      "Russo": "Гвинея-Бисау",
+      "Francês": "Guinée-Bissau"
+    },
+    {
+      "Português": "Haiti",
+      "Inglês": "Haiti",
+      "Espanhol": "Haití",
+      "Chinês": "海地",
+      "Árabe": "هايتي",
+      "Russo": "Гаити",
+      "Francês": "Haïti"
+    },
+    {
+      "Português": "Handebol",
+      "Inglês": "Handball",
+      "Espanhol": "Balonmano",
+      "Chinês": "手球",
+      "Árabe": "كرة اليد",
+      "Russo": "Гандбол",
+      "Francês": "Handball"
+    },
+    {
+      "Português": "Hipismo Adestramento",
+      "Inglês": "Equestrian Dressage",
+      "Espanhol": "Hipismo Adiestramiento",
+      "Chinês": "馬術盛裝舞步賽",
+      "Árabe": "ملابس الفروسية",
+      "Russo": "Конный Спорт",
+      "Francês": "Dressage équestre"
+    },
+    {
+      "Português": "Hipismo CCE",
+      "Inglês": "Equestrian Eventing",
+      "Espanhol": "Hipismo CCE",
+      "Chinês": "馬術三項賽",
+      "Árabe": "سباق الفروسية",
+      "Russo": "Конное троеборье",
+      "Francês": "Concours complet d’équitation"
+    },
+    {
+      "Português": "Hipismo Saltos",
+      "Inglês": "Equestrian Jumping",
+      "Espanhol": "Hipismo Saltos",
+      "Chinês": "馬術跳",
+      "Árabe": "سباق القفز للفروسية",
+      "Russo": "Конку́р",
+      "Francês": "Sauts d’obstacles"
+    },
+    {
+      "Português": "Histórico de participações",
+      "Inglês": "History of participations",
+      "Espanhol": "Histórico de participaciones",
+      "Chinês": "參與歷史",
+      "Árabe": "تاريخ المشاركات",
+      "Russo": "История участия",
+      "Francês": "Historique des participations"
+    },
+    {
+      "Português": "Holanda",
+      "Inglês": "Netherlands",
+      "Espanhol": "Holanda",
+      "Chinês": "荷蘭",
+      "Árabe": "هولندا",
+      "Russo": "Нидерланды",
+      "Francês": "Pays-Bas"
+    },
+    {
+      "Português": "Honduras",
+      "Inglês": "Honduras",
+      "Espanhol": "Honduras",
+      "Chinês": "宏都拉斯",
+      "Árabe": "هندوراس",
+      "Russo": "Гондурас",
+      "Francês": "Honduras"
+    },
+    {
+      "Português": "Hong Kong, RAE da China",
+      "Inglês": "Hong Kong, SAR of China",
+      "Espanhol": "Hong Kong, RAE de China",
+      "Chinês": "中國香港特別行政區",
+      "Árabe": "هونغ كونغ، جمهورية الصين الشعبية",
+      "Russo": "Гонконг, Китай SAR",
+      "Francês": "Hong Kong, RAS de Chine"
+    },
+    {
+      "Português": "Hóquei Sobre Grama",
+      "Inglês": "Field Hockey",
+      "Espanhol": "Hockey Sobre Césped",
+      "Chinês": "曲棍球",
+      "Árabe": "الهوكي الأرضي",
+      "Russo": "Хоккей на Траве",
+      "Francês": "Hockey sur gazon"
+    },
+    {
+      "Português": "Hungria",
+      "Inglês": "Hungary",
+      "Espanhol": "Hungría",
+      "Chinês": "匈牙利",
+      "Árabe": "المجر",
+      "Russo": "Венгрия",
+      "Francês": "Hongrie"
+    },
+    {
+      "Português": "Idioma",
+      "Inglês": "Language",
+      "Espanhol": "Idioma",
+      "Chinês": "語言",
+      "Árabe": "اللغة",
+      "Russo": "Язык",
+      "Francês": "Langue"
+    },
+    {
+      "Português": "Iêmen",
+      "Inglês": "Yemen",
+      "Espanhol": "Yemen",
+      "Chinês": "葉門",
+      "Árabe": "اليمن",
+      "Russo": "Йемен",
+      "Francês": "Yémen"
+    },
+    {
+      "Português": "Ilha Bouvet",
+      "Inglês": "Bouvet Island",
+      "Espanhol": "Isla Bouvet",
+      "Chinês": "布維島",
+      "Árabe": "جزيرة بوفيت",
+      "Russo": "Остров Буве",
+      "Francês": "Île Bouvet"
+    },
+    {
+      "Português": "Ilha Christmas",
+      "Inglês": "Christmas Island",
+      "Espanhol": "Isla de Navidad",
+      "Chinês": "聖誕島",
+      "Árabe": "جزيرة عيد الميلاد",
+      "Russo": "Остров Рождества",
+      "Francês": "Île Christmas"
+    },
+    {
+      "Português": "Ilha de Man",
+      "Inglês": "Isle of Man",
+      "Espanhol": "Isla de Man",
+      "Chinês": "曼城島",
+      "Árabe": "جزيرة مان",
+      "Russo": "Остров Мэн",
+      "Francês": "Île de Man"
+    },
+    {
+      "Português": "Ilha Norfolk",
+      "Inglês": "Norfolk Island",
+      "Espanhol": "Isla Norfolk",
+      "Chinês": "諾福克島",
+      "Árabe": "جزيرة نورفولك",
+      "Russo": "Остров Норфолк",
+      "Francês": "Île Norfolk"
+    },
+    {
+      "Português": "Ilhas Åland",
+      "Inglês": "Åland Islands",
+      "Espanhol": "Islas Åland",
+      "Chinês": "奧蘭群島",
+      "Árabe": "جزر أولاند",
+      "Russo": "Аландские Острова",
+      "Francês": "Îles d'Åland"
+    },
+    {
+      "Português": "Ilhas Cayman",
+      "Inglês": "Cayman Islands",
+      "Espanhol": "Islas Caimán",
+      "Chinês": "開曼群島",
+      "Árabe": "جزر كايمان",
+      "Russo": "Каймановы Острова",
+      "Francês": "Îles Caïmans"
+    },
+    {
+      "Português": "Ilhas Cocos (Keeling)",
+      "Inglês": "Cocos (Keeling) Islands",
+      "Espanhol": "Islas Cocos (Keeling)",
+      "Chinês": "科科斯 （基林） 群島",
+      "Árabe": "جزر كوكوس (كيلينغ)",
+      "Russo": "Кокосовые (Килинг) Острова",
+      "Francês": "Îles Cocos (Keeling)"
+    },
+    {
+      "Português": "Ilhas Cook",
+      "Inglês": "Cook Islands",
+      "Espanhol": "Islas Cook",
+      "Chinês": "科克群島",
+      "Árabe": "جزر كوك",
+      "Russo": "Острова Кука",
+      "Francês": "Îles Cook"
+    },
+    {
+      "Português": "Ilhas Faroe",
+      "Inglês": "Faroe Islands",
+      "Espanhol": "Islas Faroe",
+      "Chinês": "法羅群島",
+      "Árabe": "جزر فارو",
+      "Russo": "Фарерские острова",
+      "Francês": "Îles Féroé"
+    },
+    {
+      "Português": "Ilhas Geórgia do Sul e Sandwich do Sul",
+      "Inglês": "South Georgia and South Sandwich Islands",
+      "Espanhol": "Islas Georgia del Sur y Sándwich del Sur",
+      "Chinês": "南喬治亞島和南桑威奇群島",
+      "Árabe": "جورجيا الجنوبية وجزر ساندويتش الجنوبية",
+      "Russo": "Южная Георгия и Южные Сандвичевы Острова",
+      "Francês": "Îles Géorgie du Sud et îles Sandwich du Sud"
+    },
+    {
+      "Português": "Ilhas Heard e McDonald",
+      "Inglês": "Heard and McDonald Islands",
+      "Espanhol": "Islas Heard y McDonald",
+      "Chinês": "赫德和麥克唐納群島",
+      "Árabe": "جزيرة هيرد وجزر ماكدونالد",
+      "Russo": "Остров Херд и острова Макдональд",
+      "Francês": "Îles Heard et McDonald"
+    },
+    {
+      "Português": "Ilhas Malvinas",
+      "Inglês": "Falkland Islands",
+      "Espanhol": "Islas Malvinas",
+      "Chinês": "福克蘭群島",
+      "Árabe": "جزر فوكلاند",
+      "Russo": "Фолклендские Острова",
+      "Francês": "Îles Malouines"
+    },
+    {
+      "Português": "Ilhas Marianas do Norte",
+      "Inglês": "Northern Mariana Islands",
+      "Espanhol": "Islas Marianas del Norte",
+      "Chinês": "北馬里安納群島",
+      "Árabe": "جزر ماريانا الشمالية",
+      "Russo": "Северные Марианские Острова",
+      "Francês": "Îles Mariannes du Nord"
+    },
+    {
+      "Português": "Ilhas Marshall",
+      "Inglês": "Marshall Islands",
+      "Espanhol": "Islas Marshall",
+      "Chinês": "馬紹爾群島",
+      "Árabe": "جزر مارشال",
+      "Russo": "Маршалловы Острова",
+      "Francês": "Îles Marshall"
+    },
+    {
+      "Português": "Ilhas Menores Distantes dos EUA",
+      "Inglês": "United States Minor Outlying Islands",
+      "Espanhol": "Islas Ultramarinas de los Estados Unidos",
+      "Chinês": "美國本土以外的小島嶼",
+      "Árabe": "جزر الولايات المتحدة الصغيرة النائية",
+      "Russo": "Малые Тихоокеанские Отдаленные Острова США",
+      "Francês": "Îles mineures éloignées des États-Unis"
+    },
+    {
+      "Português": "Ilhas Pitcairn",
+      "Inglês": "Pitcairn Islands",
+      "Espanhol": "Islas Pitcairn",
+      "Chinês": "皮特凱恩群島",
+      "Árabe": "جزر بيتكيرن",
+      "Russo": "Острова Питкэрн",
+      "Francês": "Îles Pitcairn"
+    },
+    {
+      "Português": "Ilhas Salomão",
+      "Inglês": "Solomon Islands",
+      "Espanhol": "Islas Salomón",
+      "Chinês": "索羅門群島",
+      "Árabe": "جزر سليمان",
+      "Russo": "Соломоновы Острова",
+      "Francês": "Îles Salomon"
+    },
+    {
+      "Português": "Ilhas Turks e Caicos",
+      "Inglês": "Turks and Caicos Islands",
+      "Espanhol": "Islas Turcas y Caicos",
+      "Chinês": "土克斯及開科斯群島",
+      "Árabe": "جزر توركس وكايكوس",
+      "Russo": "Острова Теркс и Кайкос",
+      "Francês": "Îles Turques et Caïques"
+    },
+    {
+      "Português": "Ilhas Virgens Britânicas",
+      "Inglês": "British Virgin Islands",
+      "Espanhol": "Islas Vírgenes Británicas",
+      "Chinês": "英屬維爾京群島",
+      "Árabe": "الجزر العذراء البريطانية",
+      "Russo": "Британские Виргинские Острова",
+      "Francês": "Îles Vierges britanniques"
+    },
+    {
+      "Português": "Ilhas Virgens dos EUA",
+      "Inglês": "United States Virgin Islands",
+      "Espanhol": "Islas Vírgenes de los EE. UU.",
+      "Chinês": "美屬維爾京群島",
+      "Árabe": "الجزر العذراء الأمريكية",
+      "Russo": "Американские Виргинские Острова",
+      "Francês": "Îles Vierges des États-Unis"
+    },
+    {
+      "Português": "Índia",
+      "Inglês": "India",
+      "Espanhol": "India",
+      "Chinês": "印度",
+      "Árabe": "الهند",
+      "Russo": "Индия",
+      "Francês": "Inde"
+    },
+    {
+      "Português": "Indígena",
+      "Inglês": "Indigenous",
+      "Espanhol": "Indígena",
+      "Chinês": "土著",
+      "Árabe": "السكان الأصليون",
+      "Russo": "Индейская",
+      "Francês": "Indigène"
+    },
+    {
+      "Português": "Indonésia",
+      "Inglês": "Indonesia",
+      "Espanhol": "Indonesia",
+      "Chinês": "印尼",
+      "Árabe": "أندونيسيا",
+      "Russo": "Индонезия",
+      "Francês": "Indonésie"
+    },
+    {
+      "Português": "Informando sintomas diariamente, você contribui ativamente para o aprimoramento da vigilância participativa em saúde no Brasil. Seja um Guardião e ajude a melhorar a saúde da sua comunidade.",
+      "Inglês": "By informing your daily symptoms, you actively help promote collective health surveillance in Brazil. Become a Guardian and help improve healthcare in your community.",
+      "Espanhol": "Informando síntomas diariamente, usted contribuye activamente para el perfeccionamiento de la vigilancia participativa de la salud en Brasil. Sea un Guardián y ayude a mejorar la salud de su comunidad.",
+      "Chinês": "通過通知您每日的症狀，積極幫助促進巴西的集體健康監測。成為一名衛士并幫助改進社區醫療服務。",
+      "Árabe": "تساعد بفاعلية على ترقية المراقبة الصحية الجماعية في البرازيل، من خلال الإبلاغ عن الأعراض اليومية التي تتعرض لها. كن أحد مديري الصحة وساعد على تحسين الرعاية الصحية في مجتمعك.",
+      "Russo": "Информируя о своих симптомах ежедневно, вы активно содействуете улучшению надзора за состоянием здоровья в Бразилии. Будьте Стражем и помогайте улучшить здоровье своего сообщества.",
+      "Francês": "En informant des symptômes tous les jours, vous contribuez activement à l'amélioration de la surveillance participative de la santé au Brésil. Devenez Gardien et participez à l’amélioration de la santé de votre collectivité."
+    },
+    {
+      "Português": "Informe sintomas, acompanhe a saúde da sua região e obtenha dicas e informações sobre saúde.",
+      "Inglês": "Report symptoms, monitor healthcare conditions in your area and read up on health tips and news.",
+      "Espanhol": "Informe síntomas, siga la salud de su región y obtenga consejos e información sobre salud.",
+      "Chinês": "報告症狀，監測您所在地區的醫療條件并閱讀健康提示和新聞。",
+      "Árabe": "أبلغ عن الأعراض، وراقب حالات الرعاية الصحية في منطقتك، وتعرف على النصائح والأخبار الصحية.",
+      "Russo": "Информируйте о своих симптомах, отслеживая состояние здоровья вашего региона и получайте советы и информацию о здоровье.",
+      "Francês": "Informez-nous des symptômes, suivez la santé de votre région et recevez des conseils et des informations santé."
+    },
+    {
+      "Português": "Início",
+      "Inglês": "Home",
+      "Espanhol": "Inicio",
+      "Chinês": "首頁",
+      "Árabe": "الصفحة الرئيسية",
+      "Russo": "Главная",
+      "Francês": "Accueil"
+    },
+    {
+      "Português": "Integrantes do domicílio",
+      "Inglês": "Household members",
+      "Espanhol": "Integrantes del domicilio",
+      "Chinês": "家庭成員",
+      "Árabe": "أفراد الأسرة",
+      "Russo": "Члены семьи",
+      "Francês": "Membres du domicile"
+    },
+    {
+      "Português": "iOS 9",
+      "Inglês": "iOS 9",
+      "Espanhol": "iOS 9",
+      "Chinês": "iOS 9",
+      "Árabe": "iOS 9",
+      "Russo": "iOS 9",
+      "Francês": "iOS 9"
+    },
+    {
+      "Português": "Irã",
+      "Inglês": "Iran",
+      "Espanhol": "Irán",
+      "Chinês": "伊朗",
+      "Árabe": "إيران",
+      "Russo": "Иран",
+      "Francês": "Iran"
+    },
+    {
+      "Português": "Iraque",
+      "Inglês": "Iraq",
+      "Espanhol": "Irak",
+      "Chinês": "伊拉克",
+      "Árabe": "العراق",
+      "Russo": "Ирак",
+      "Francês": "Irak"
+    },
+    {
+      "Português": "Irlanda",
+      "Inglês": "Ireland",
+      "Espanhol": "Irlanda",
+      "Chinês": "愛爾蘭",
+      "Árabe": "أيرلندا",
+      "Russo": "Ирландия",
+      "Francês": "Irlande"
+    },
+    {
+      "Português": "Irmã",
+      "Inglês": "Sister",
+      "Espanhol": "Hermana",
+      "Chinês": "姐妹",
+      "Árabe": "أخت",
+      "Russo": "Сестра",
+      "Francês": "Sœur"
+    },
+    {
+      "Português": "Irmão",
+      "Inglês": "Brother",
+      "Espanhol": "Hermano",
+      "Chinês": "兄弟",
+      "Árabe": "أخ",
+      "Russo": "Брат",
+      "Francês": "Frère"
+    },
+    {
+      "Português": "Islândia",
+      "Inglês": "Iceland",
+      "Espanhol": "Islandia",
+      "Chinês": "冰島",
+      "Árabe": "أيسلندا",
+      "Russo": "Исландия",
+      "Francês": "Islande"
+    },
+    {
+      "Português": "Israel",
+      "Inglês": "Israel",
+      "Espanhol": "Israel",
+      "Chinês": "以色列",
+      "Árabe": "إسرائيل",
+      "Russo": "Израиль",
+      "Francês": "Israël"
+    },
+    {
+      "Português": "Itália",
+      "Inglês": "Italy",
+      "Espanhol": "Italia",
+      "Chinês": "義大利",
+      "Árabe": "إيطاليا",
+      "Russo": "Италия",
+      "Francês": "Italie"
+    },
+    {
+      "Português": "Já disponível para dispositivos iOS e Android.",
+      "Inglês": "Now available for iOS and Android devices.",
+      "Espanhol": "Ya disponible para dispositivos iOS y Android.",
+      "Chinês": "現在可供 iOS 和 Android 設備使用。",
+      "Árabe": "متوفر الآن لأجهزة iOS وAndroid.",
+      "Russo": "В настоящее время доступны для устройств iOS и Android.",
+      "Francês": "Maintenant disponible pour appareils iOS et Android."
+    },
+    {
+      "Português": "Jamaica",
+      "Inglês": "Jamaica",
+      "Espanhol": "Jamaica",
+      "Chinês": "牙買加",
+      "Árabe": "جامايكا",
+      "Russo": "Ямайка",
+      "Francês": "Jamaïque"
+    },
+    {
+      "Português": "Jan",
+      "Inglês": "Jan",
+      "Espanhol": "Ene",
+      "Chinês": "1 月",
+      "Árabe": "يناير",
+      "Russo": "Янв",
+      "Francês": "Jan"
+    },
+    {
+      "Português": "Janeiro",
+      "Inglês": "January",
+      "Espanhol": "Enero",
+      "Chinês": "1 月",
+      "Árabe": "يناير",
+      "Russo": "Январь",
+      "Francês": "Janvier"
+    },
+    {
+      "Português": "Japão",
+      "Inglês": "Japan",
+      "Espanhol": "Japón",
+      "Chinês": "日本",
+      "Árabe": "اليابان",
+      "Russo": "Япония",
+      "Francês": "Japon"
+    },
+    {
+      "Português": "Jersey",
+      "Inglês": "Jersey",
+      "Espanhol": "Jersey",
+      "Chinês": "澤西島",
+      "Árabe": "جيرسي",
+      "Russo": "Джерси",
+      "Francês": "Jersey"
+    },
+    {
+      "Português": "Jordânia",
+      "Inglês": "Jordan",
+      "Espanhol": "Jordania",
+      "Chinês": "約旦",
+      "Árabe": "الأردن",
+      "Russo": "Иордания",
+      "Francês": "Jordanie"
+    },
+    {
+      "Português": "Judô",
+      "Inglês": "Judo",
+      "Espanhol": "Judo",
+      "Chinês": "柔道",
+      "Árabe": "الجودو",
+      "Russo": "Дзюдо",
+      "Francês": "Judo"
+    },
+    {
+      "Português": "Jul",
+      "Inglês": "Jul",
+      "Espanhol": "Jul",
+      "Chinês": "7 月",
+      "Árabe": "يوليو",
+      "Russo": "Июл",
+      "Francês": "Juil"
+    },
+    {
+      "Português": "Julho",
+      "Inglês": "July",
+      "Espanhol": "Julio",
+      "Chinês": "7 月",
+      "Árabe": "يوليو",
+      "Russo": "Июль",
+      "Francês": "Juillet"
+    },
+    {
+      "Português": "Jun",
+      "Inglês": "Jun",
+      "Espanhol": "Jun",
+      "Chinês": "6 月",
+      "Árabe": "يونيو",
+      "Russo": "Июн",
+      "Francês": "Jun"
+    },
+    {
+      "Português": "Junho",
+      "Inglês": "June",
+      "Espanhol": "Junio",
+      "Chinês": "6 月",
+      "Árabe": "يونيو",
+      "Russo": "Июнь",
+      "Francês": "Juin"
+    },
+    {
+      "Português": "Kuwait",
+      "Inglês": "Kuwait",
+      "Espanhol": "Kuwait",
+      "Chinês": "科威特",
+      "Árabe": "الكويت",
+      "Russo": "Кувейт",
+      "Francês": "Koweït"
+    },
+    {
+      "Português": "Laos",
+      "Inglês": "Laos",
+      "Espanhol": "Laos",
+      "Chinês": "老撾",
+      "Árabe": "لاوس",
+      "Russo": "Лаос",
+      "Francês": "Laos"
+    },
+    {
+      "Português": "Lesoto",
+      "Inglês": "Lesotho",
+      "Espanhol": "Lesoto",
+      "Chinês": "賴索托",
+      "Árabe": "ليسوتو",
+      "Russo": "Лесото",
+      "Francês": "Lesotho"
+    },
+    {
+      "Português": "Letônia",
+      "Inglês": "Latvia",
+      "Espanhol": "Letonia",
+      "Chinês": "拉托維亞",
+      "Árabe": "لاتفيا",
+      "Russo": "Латвия",
+      "Francês": "Lettonie"
+    },
+    {
+      "Português": "Levantamento de Peso",
+      "Inglês": "Weightlifting",
+      "Espanhol": "Levantamiento de Peso",
+      "Chinês": "舉重",
+      "Árabe": "رفع الأثقال",
+      "Russo": "Тяжелая атлетика",
+      "Francês": "Haltérophilie"
+    },
+    {
+      "Português": "Líbano",
+      "Inglês": "Lebanon",
+      "Espanhol": "Líbano",
+      "Chinês": "黎巴嫩",
+      "Árabe": "لبنان",
+      "Russo": "Ливан",
+      "Francês": "Liban"
+    },
+    {
+      "Português": "Libéria",
+      "Inglês": "Liberia",
+      "Espanhol": "Liberia",
+      "Chinês": "賴比瑞亞",
+      "Árabe": "ليبريا",
+      "Russo": "Либерия",
+      "Francês": "Libéria"
+    },
+    {
+      "Português": "Líbia",
+      "Inglês": "Libya",
+      "Espanhol": "Libia",
+      "Chinês": "利比亞",
+      "Árabe": "ليبيا",
+      "Russo": "Ливия",
+      "Francês": "Libye"
+    },
+    {
+      "Português": "Liechtenstein",
+      "Inglês": "Liechtenstein",
+      "Espanhol": "Liechtenstein",
+      "Chinês": "列支敦斯登",
+      "Árabe": "ليختنشتاين",
+      "Russo": "Лихтенштейн",
+      "Francês": "Liechtenstein"
+    },
+    {
+      "Português": "Lituânia",
+      "Inglês": "Lithuania",
+      "Espanhol": "Lituania",
+      "Chinês": "立陶宛",
+      "Árabe": "ليتوانيا",
+      "Russo": "Литва",
+      "Francês": "Lituanie"
+    },
+    {
+      "Português": "Luta Estilo Livre",
+      "Inglês": "Freestyle Wrestling",
+      "Espanhol": "Lucha Estilo Libre",
+      "Chinês": "自由式摔跤",
+      "Árabe": "المصارعة الحرة",
+      "Russo": "Вольная борьба",
+      "Francês": "Lutte libre"
+    },
+    {
+      "Português": "Luta Greco-Romana",
+      "Inglês": "Greco-Roman Wrestling",
+      "Espanhol": "Lucha Greco-Romana",
+      "Chinês": "古典式摔跤",
+      "Árabe": "المصارعة اليونانية والرومانية",
+      "Russo": "Греко-римская борьба",
+      "Francês": "Lutte gréco-romaine"
+    },
+    {
+      "Português": "Luxemburgo",
+      "Inglês": "Luxembourg",
+      "Espanhol": "Luxemburgo",
+      "Chinês": "盧森堡",
+      "Árabe": "لوكسمبورج",
+      "Russo": "Люксембург",
+      "Francês": "Luxembourg"
+    },
+    {
+      "Português": "Macau, RAE da China",
+      "Inglês": "Macao, SAR of China",
+      "Espanhol": "Macao, RAE de China",
+      "Chinês": "中國澳門特別行政區",
+      "Árabe": "ماكاو، جمهورية الصين الشعبية",
+      "Russo": "Макао, САР Китая ",
+      "Francês": "Macao, RAS de Chine"
+    },
+    {
+      "Português": "Macedônia",
+      "Inglês": "Macedonia",
+      "Espanhol": "Macedonia",
+      "Chinês": "馬其頓",
+      "Árabe": "مقدونيا",
+      "Russo": "Македония",
+      "Francês": "Macédoine"
+    },
+    {
+      "Português": "Madagascar",
+      "Inglês": "Madagascar",
+      "Espanhol": "Madagascar",
+      "Chinês": "馬達加斯加",
+      "Árabe": "مدغشقر",
+      "Russo": "Мадагаскар",
+      "Francês": "Madagascar"
+    },
+    {
+      "Português": "Madrasta",
+      "Inglês": "Stepmother",
+      "Espanhol": "Madrastra",
+      "Chinês": "繼母",
+      "Árabe": "زوجة الأب",
+      "Russo": "Мачеха",
+      "Francês": "Belle-mère"
+    },
+    {
+      "Português": "Mãe",
+      "Inglês": "Mother",
+      "Espanhol": "Madre",
+      "Chinês": "母親",
+      "Árabe": "الأم",
+      "Russo": "Мать",
+      "Francês": "Mère"
+    },
+    {
+      "Português": "Mai",
+      "Inglês": "May",
+      "Espanhol": "May",
+      "Chinês": "5 月",
+      "Árabe": "مايو",
+      "Russo": "Май",
+      "Francês": "Mai"
+    },
+    {
+      "Português": "Maio",
+      "Inglês": "May",
+      "Espanhol": "Mayo",
+      "Chinês": "5 月",
+      "Árabe": "مايو",
+      "Russo": "Май",
+      "Francês": "Mai"
+    },
+    {
+      "Português": "Mal",
+      "Inglês": "Illness",
+      "Espanhol": "Mal",
+      "Chinês": "疾病",
+      "Árabe": "مرض",
+      "Russo": "Плохо",
+      "Francês": "Mal"
+    },
+    {
+      "Português": "Malásia",
+      "Inglês": "Malaysia",
+      "Espanhol": "Malasia",
+      "Chinês": "馬來西亞",
+      "Árabe": "ماليزيا",
+      "Russo": "Малайзия",
+      "Francês": "Malaisie"
+    },
+    {
+      "Português": "Malawi",
+      "Inglês": "Malawi",
+      "Espanhol": "Malawi",
+      "Chinês": "馬拉威",
+      "Árabe": "ملاوي",
+      "Russo": "Малави",
+      "Francês": "Malawi"
+    },
+    {
+      "Português": "Maldivas",
+      "Inglês": "Maldives",
+      "Espanhol": "Maldivas",
+      "Chinês": "馬爾地夫",
+      "Árabe": "جزر المالديف",
+      "Russo": "Мальдивы",
+      "Francês": "Maldives"
+    },
+    {
+      "Português": "Mali",
+      "Inglês": "Mali",
+      "Espanhol": "Malí",
+      "Chinês": "馬里",
+      "Árabe": "مالي",
+      "Russo": "Мали",
+      "Francês": "Mali"
+    },
+    {
+      "Português": "Malta",
+      "Inglês": "Malta",
+      "Espanhol": "Malta",
+      "Chinês": "馬爾他",
+      "Árabe": "مالطا",
+      "Russo": "Мальта",
+      "Francês": "Malte"
+    },
+    {
+      "Português": "Manchas vermelhas no corpo",
+      "Inglês": "Red spots on the body",
+      "Espanhol": "Manchas rojas en el cuerpo",
+      "Chinês": "身體上的紅點",
+      "Árabe": "بقع حمراء على الجسم",
+      "Russo": "Красные пятна на теле",
+      "Francês": "Taches rouges sur le corps"
+    },
+    {
+      "Português": "Mapa da Saúde",
+      "Inglês": "Health Map",
+      "Espanhol": "Mapa de la Salud",
+      "Chinês": "健康地圖",
+      "Árabe": "الخريطة الصحية",
+      "Russo": "Карта здоровья",
+      "Francês": "Carte de la Santé"
+    },
+    {
+      "Português": "Mar",
+      "Inglês": "Mar",
+      "Espanhol": "Mar",
+      "Chinês": "3 月",
+      "Árabe": "مارس",
+      "Russo": "Море",
+      "Francês": "Mars"
+    },
+    {
+      "Português": "Maratonas Aquáticas",
+      "Inglês": "Aquatic Marathons",
+      "Espanhol": "Maratones Acuáticos",
+      "Chinês": "水上馬拉松",
+      "Árabe": "سباقات الماراثون المائية",
+      "Russo": "Водный Марафон",
+      "Francês": "Marathons aquatiques"
+    },
+    {
+      "Português": "Março",
+      "Inglês": "March",
+      "Espanhol": "Marzo",
+      "Chinês": "3 月",
+      "Árabe": "مارس",
+      "Russo": "Март",
+      "Francês": "Mars"
+    },
+    {
+      "Português": "Marque abaixo oque você está sentindo nesse momento:",
+      "Inglês": "Check the items below that describe how you’re feeling at the moment:",
+      "Espanhol": "Marque abajo lo que usted está sintiendo en este momento:",
+      "Chinês": "請選擇下面可描述您此刻感覺的項目︰",
+      "Árabe": "تحقق من العناصر التالية التي تصف شعورك في هذه اللحظة:",
+      "Russo": "Отметьте ниже, что вы сейчас чувствуете:",
+      "Francês": "Écrivez ci-dessous ce que vous ressentez en ce moment :"
+    },
+    {
+      "Português": "Marque na lista os sintomas que você apresenta.",
+      "Inglês": "Select your symptoms from the list.",
+      "Espanhol": "Marque en la lista los síntomas que usted presenta.",
+      "Chinês": "從清單中選擇您的症狀。",
+      "Árabe": "حدد الأعراض من القائمة.",
+      "Russo": "Проверьте список своих симптомов.",
+      "Francês": "Sélectionnez dans la liste les symptômes que vous présentez."
+    },
+    {
+      "Português": "Marrocos",
+      "Inglês": "Morocco",
+      "Espanhol": "Marruecos",
+      "Chinês": "摩洛哥",
+      "Árabe": "المغرب",
+      "Russo": "Марокко",
+      "Francês": "Maroc"
+    },
+    {
+      "Português": "Martinica",
+      "Inglês": "Martinique",
+      "Espanhol": "Martinica",
+      "Chinês": "馬丁尼克島",
+      "Árabe": "مارتينيك",
+      "Russo": "Мартиника",
+      "Francês": "Martinique"
+    },
+    {
+      "Português": "Masculino",
+      "Inglês": "Male",
+      "Espanhol": "Masculino",
+      "Chinês": "男性",
+      "Árabe": "ذكر",
+      "Russo": "Мужского пола",
+      "Francês": "Masculin"
+    },
+    {
+      "Português": "Maurício",
+      "Inglês": "Mauritius",
+      "Espanhol": "Mauricio",
+      "Chinês": "模里西斯",
+      "Árabe": "موريشيوس",
+      "Russo": "Маврикий",
+      "Francês": "Île Maurice"
+    },
+    {
+      "Português": "Mauritânia",
+      "Inglês": "Mauritania",
+      "Espanhol": "Mauritania",
+      "Chinês": "茅利塔尼亞",
+      "Árabe": "موريتانيا",
+      "Russo": "Мавритания",
+      "Francês": "Mauritanie"
+    },
+    {
+      "Português": "Mayotte",
+      "Inglês": "Mayotte",
+      "Espanhol": "Mayotte",
+      "Chinês": "馬約特",
+      "Árabe": "جزيرة مايوت",
+      "Russo": "Майотта",
+      "Francês": "Mayotte"
+    },
+    {
+      "Português": "Mensagem",
+      "Inglês": "Message",
+      "Espanhol": "Mensaje",
+      "Chinês": "消息",
+      "Árabe": "رسالة",
+      "Russo": "Сообщение",
+      "Francês": "Message"
+    },
+    {
+      "Português": "Mensagem enviada com sucesso. Obrigado!",
+      "Inglês": "Message successfully sent. Thank you!",
+      "Espanhol": "Mensaje enviado con éxito. ¡Gracias!",
+      "Chinês": "成功發送消息。謝謝！",
+      "Árabe": "تم إرسال الرسالة بنجاح. شكرا!",
+      "Russo": "Сообщение успешно отправлено. Спасибо!",
+      "Francês": "Message envoyé avec succès. Merci!"
+    },
+    {
+      "Português": "Meus Troféus",
+      "Inglês": "My Trophies",
+      "Espanhol": "Mis Trofeos",
+      "Chinês": "我的戰利品",
+      "Árabe": "انتصاراتي",
+      "Russo": "Мои Призы ",
+      "Francês": "Mes trophées"
+    },
+    {
+      "Português": "México",
+      "Inglês": "Mexico",
+      "Espanhol": "México",
+      "Chinês": "墨西哥",
+      "Árabe": "المكسيك",
+      "Russo": "Мексика",
+      "Francês": "Mexique"
+    },
+    {
+      "Português": "Mianmar (Birmânia)",
+      "Inglês": "Myanmar (Burma)",
+      "Espanhol": "Myanmar (Birmania)",
+      "Chinês": "緬甸",
+      "Árabe": "ميانمار (بورما)",
+      "Russo": "Мьянма (Бирма)",
+      "Francês": "Myanmar (Birmanie)"
+    },
+    {
+      "Português": "Micronésia",
+      "Inglês": "Micronesia",
+      "Espanhol": "Micronesia",
+      "Chinês": "密克羅尼西亞",
+      "Árabe": "ولايات ميكرونيسيا المتحدة",
+      "Russo": "Микронезия",
+      "Francês": "Micronésie"
+    },
+    {
+      "Português": "Moçambique",
+      "Inglês": "Mozambique",
+      "Espanhol": "Mozambique",
+      "Chinês": "莫三比克",
+      "Árabe": "موزامبيق",
+      "Russo": "Мозамбик",
+      "Francês": "Mozambique"
+    },
+    {
+      "Português": "Moldávia",
+      "Inglês": "Moldova",
+      "Espanhol": "Moldava",
+      "Chinês": "摩爾多瓦",
+      "Árabe": "مولدافيا",
+      "Russo": "Молдавия",
+      "Francês": "Moldavie"
+    },
+    {
+      "Português": "Mônaco",
+      "Inglês": "Monaco",
+      "Espanhol": "Mónaco",
+      "Chinês": "摩納哥",
+      "Árabe": "موناكو",
+      "Russo": "Монако",
+      "Francês": "Monaco"
+    },
+    {
+      "Português": "Mongólia",
+      "Inglês": "Mongolia",
+      "Espanhol": "Mongolia",
+      "Chinês": "蒙古",
+      "Árabe": "منغوليا",
+      "Russo": "Монголия",
+      "Francês": "Mongolie"
+    },
+    {
+      "Português": "Monitore seu histórico de saúde e dos integrantes do seu domicílio. Todos os seus registros serão salvos, permitindo que você os acesse a qualquer lugar e ocasião.",
+      "Inglês": "Monitor the health history of your household members. All records will be stored and may be accessed from anywhere and at any time.",
+      "Espanhol": "Monitoree su histórico de salud y de los integrantes de su domicilio. Todos sus registros serán guardados, permitiendo que usted los acceda desde cualquier lugar y en cualquier momento.",
+      "Chinês": "監控您家庭成員的健康史。將存儲所有記錄，並可從隨時隨地訪問。",
+      "Árabe": "راقب السجل الصحي لأفراد أسرتك. سيتم تخزين جميع السجلات ويمكن الوصول إليها من أي مكان وفي أي وقت.",
+      "Russo": "Следите за своей историей здоровья и членов вашей семьи. Все ваши записи будут сохранены, что позволит вам получить доступ к ним когда и где угодно.",
+      "Francês": "Surveiller vos antécédents de santé et ceux des membres de votre domicile. Tous vos rapports seront sauvegardés, vous permettant d'y accéder en tout lieu et à tout moment."
+    },
+    {
+      "Português": "Montenegro",
+      "Inglês": "Montenegro",
+      "Espanhol": "Montenegro",
+      "Chinês": "黑山",
+      "Árabe": "الجبل الأسود",
+      "Russo": "Черногория",
+      "Francês": "Monténégro"
+    },
+    {
+      "Português": "Montserrat",
+      "Inglês": "Montserrat",
+      "Espanhol": "Montserrat",
+      "Chinês": "蒙特塞拉特",
+      "Árabe": "مونتسرات",
+      "Russo": "Монсеррат",
+      "Francês": "Montserrat"
+    },
+    {
+      "Português": "Nado Sincronizado",
+      "Inglês": "Synchronized Swimming",
+      "Espanhol": "Nado Sincronizado",
+      "Chinês": "花樣游泳",
+      "Árabe": "السباحة المتزامنة",
+      "Russo": "Синхронное Плавание",
+      "Francês": "Natation synchronisée"
+    },
+    {
+      "Português": "Namíbia",
+      "Inglês": "Namibia",
+      "Espanhol": "Namibia",
+      "Chinês": "納米比亞",
+      "Árabe": "ناميبيا",
+      "Russo": "Намибия",
+      "Francês": "Namibie"
+    },
+    {
+      "Português": "Não",
+      "Inglês": "No",
+      "Espanhol": "No",
+      "Chinês": "否",
+      "Árabe": "لا",
+      "Russo": "Нет",
+      "Francês": "Non"
+    },
+    {
+      "Português": "Não aceito",
+      "Inglês": "Not accepted",
+      "Espanhol": "No acepto",
+      "Chinês": "未接受",
+      "Árabe": "غير مقبول",
+      "Russo": "Не принимаю",
+      "Francês": "Je n’accepte pas"
+    },
+    {
+      "Português": "Não deixe de procurar o serviço de saúde mais próximo.",
+      "Inglês": "Be sure to seek out the nearest healthcare service.",
+      "Espanhol": "No deje de buscar el servicio de salud más cercano.",
+      "Chinês": "確保找出最近的醫療服務。",
+      "Árabe": "تأكد من البحث عن أقرب خدمة رعاية صحية.",
+      "Russo": "Обязательно обратитесь в ближайшей пункт медпомощи.",
+      "Francês": "Il est essentiel de rechercher le service de santé le plus proche."
+    },
+    {
+      "Português": "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.",
+      "Inglês": "We were unable to track your location. Check if tracking services are enabled in the device.",
+      "Espanhol": "No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.",
+      "Chinês": "我們不能跟蹤您所在的位置。請確認跟蹤服務在該設備是否啟用。",
+      "Árabe": "لم نتمكن من تتبع موقعك. تحقق ما إذا كانت خدمات التتبع ممكنة في الجهاز.",
+      "Russo": "Не можем определить ваше местоположение. Убедитесь в том, что на устройстве все службы включены.",
+      "Francês": "Nous n’arrivons pas à vous localiser. Vérifiez que les services sont validés sur l’appareil."
+    },
+    {
+      "Português": "Não foi possível compartilhar sua participação.",
+      "Inglês": "Unable to share your participation.",
+      "Espanhol": "No fue posible compartir su participación.",
+      "Chinês": "無法分享您的參與。",
+      "Árabe": "تعذر مشاركة مشاركتك.",
+      "Russo": "Не удалось поделиться вашим участием.",
+      "Francês": "Impossible de partager votre participation."
+    },
+    {
+      "Português": "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.",
+      "Inglês": "Unable to read the email. Try again in a few minutes.",
+      "Espanhol": "No fue posible enviar el e-mail. Intente nuevamente en algunos minutos.",
+      "Chinês": "無法讀取電子郵件。幾分鐘後再試。",
+      "Árabe": "تعذر قراءة البريد الإلكتروني. حاول مرة أخرى بعد بضع دقائق.",
+      "Russo": "Не удалось отправить электронное письмо. Пожалуйста, повторите попытку через несколько минут.",
+      "Francês": "Impossible d'envoyer l’e-mail. Réessayer dans quelques minutes."
+    },
+    {
+      "Português": "Não foi possível fazer o login. E-mail e/ou senha inválidos.",
+      "Inglês": "Unable to log in. Invalid email and/or password.",
+      "Espanhol": "No fue posible realizar el login. E-mail y/o contraseña inválidos.",
+      "Chinês": "無法登錄。無效電子郵件和/或密碼。",
+      "Árabe": "تعذر تسجيل الدخول. بريد إلكتروني و/أو كلمة مرور غير صالحة.",
+      "Russo": "Невозможно войти в систему. Неверная электронная почта и / или  пароль.",
+      "Francês": "Impossible de se connecter. E-mail et/ou mot de passe non valide."
+    },
+    {
+      "Português": "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!",
+      "Inglês": "The sign-up process could not be completed. Try again in a few minutes.",
+      "Espanhol": "No fue posible realizar el registro. ¡Intente nuevamente en algunos minutos!",
+      "Chinês": "無法完成註冊過程。幾分鐘後再試。",
+      "Árabe": "تعذر إكمال عملية التسجيل. حاول مرة أخرى بعد بضع دقائق.",
+      "Russo": "Не удалось выполнить регистрацию. Пожалуйста, повторите попытку через несколько минут!",
+      "Francês": "Impossible de faire l’enregistrement. Réessayer dans quelques minutes !"
+    },
+    {
+      "Português": "Natação",
+      "Inglês": "Swimming",
+      "Espanhol": "Natación",
+      "Chinês": "游泳",
+      "Árabe": "سباحة",
+      "Russo": "Плавание",
+      "Francês": "Natation"
+    },
+    {
+      "Português": "Nauru",
+      "Inglês": "Nauru",
+      "Espanhol": "Nauru",
+      "Chinês": "瑙魯",
+      "Árabe": "جزيرة ناورو",
+      "Russo": "Науру",
+      "Francês": "Nauru"
+    },
+    {
+      "Português": "Náusea ou vômito",
+      "Inglês": "Nausea or vomiting",
+      "Espanhol": "Nauseas o vómito",
+      "Chinês": "噁心或嘔吐",
+      "Árabe": "الغثيان أو القيء",
+      "Russo": "Тошнота или рвота",
+      "Francês": "Nausée ou vomissements"
+    },
+    {
+      "Português": "Nepal",
+      "Inglês": "Nepal",
+      "Espanhol": "Nepal",
+      "Chinês": "尼泊爾",
+      "Árabe": "نيبال",
+      "Russo": "Непал",
+      "Francês": "Népal"
+    },
+    {
+      "Português": "Neta",
+      "Inglês": "Granddaughter",
+      "Espanhol": "Nieta",
+      "Chinês": "孫女",
+      "Árabe": "حفيدة",
+      "Russo": "Внучка",
+      "Francês": "Petite-fille"
+    },
+    {
+      "Português": "Neto",
+      "Inglês": "Grandson",
+      "Espanhol": "Nieto",
+      "Chinês": "孫子",
+      "Árabe": "حفيد",
+      "Russo": "Внук",
+      "Francês": "Petit-fils"
+    },
+    {
+      "Português": "Nicarágua",
+      "Inglês": "Nicaragua",
+      "Espanhol": "Nicaragua",
+      "Chinês": "尼加拉瓜",
+      "Árabe": "نيكارجوا",
+      "Russo": "Никарагуа",
+      "Francês": "Nicaragua"
+    },
+    {
+      "Português": "Níger",
+      "Inglês": "Niger",
+      "Espanhol": "Níger",
+      "Chinês": "尼日爾",
+      "Árabe": "النيجر",
+      "Russo": "Нигер",
+      "Francês": "Niger"
+    },
+    {
+      "Português": "Nigéria",
+      "Inglês": "Nigeria",
+      "Espanhol": "Nigeria",
+      "Chinês": "奈及利亞",
+      "Árabe": "نيجيريا",
+      "Russo": "Нигерия",
+      "Francês": "Nigeria"
+    },
+    {
+      "Português": "Niue",
+      "Inglês": "Niue",
+      "Espanhol": "Niue",
+      "Chinês": "紐埃",
+      "Árabe": "نييوي",
+      "Russo": "Ниуэ",
+      "Francês": "Niue"
+    },
+    {
+      "Português": "Nora",
+      "Inglês": "Daughter-in-law",
+      "Espanhol": "Nuera",
+      "Chinês": "媳婦",
+      "Árabe": "زوجة الابن",
+      "Russo": "Невестка",
+      "Francês": "Belle-fille"
+    },
+    {
+      "Português": "Noruega",
+      "Inglês": "Norway",
+      "Espanhol": "Noruega",
+      "Chinês": "挪威",
+      "Árabe": "النرويج",
+      "Russo": "Норвегия",
+      "Francês": "Norvège"
+    },
+    {
+      "Português": "Nós nos preocupamos com a sua privacidade",
+      "Inglês": "We care about your privacy",
+      "Espanhol": "Nos preocupa su privacidad",
+      "Chinês": "我們重視您的隱私",
+      "Árabe": "نهتم بخصوصيتك",
+      "Russo": "Мы заботимся о вашей конфиденциальности",
+      "Francês": "Nous nous soucions de votre vie privée"
+    },
+    {
+      "Português": "Nossa pista de corrida é formada por fases. Conclua cada fase para chegar mais longe na corrida!",
+      "Inglês": "Our race track has several different phases. Complete each phase to get further in the race!",
+      "Espanhol": "Nuestra pista de carreras está formada por fases. ¡Concluya cada fase para llegar más lejos en la carrera!",
+      "Chinês": "我們的賽道有幾個不同階段。完成每個階段進入下一個比賽 ！",
+      "Árabe": "يتضمن تتبع المسار لدينا عدة مراحل مختلفة. أكمل كل مرحلة للوصول إلى مراحل أخرى في السباق!",
+      "Russo": "Наша беговая дорожка состоит из этапов. Завершите каждый этап, чтобы дальше продвинуться в соревновании!",
+      "Francês": "Notre piste de course est formé de plusieurs étapes. Terminer chaque étape pour aller le plus loin possible dans la course."
+    },
+    {
+      "Português": "Notícias",
+      "Inglês": "News",
+      "Espanhol": "Noticias",
+      "Chinês": "新聞",
+      "Árabe": "أخبار",
+      "Russo": "Новости",
+      "Francês": "Nouvelles"
+    },
+    {
+      "Português": "Nov",
+      "Inglês": "Nov",
+      "Espanhol": "Nov",
+      "Chinês": "11 月",
+      "Árabe": "نوفمبر",
+      "Russo": "Нояб",
+      "Francês": "Nov"
+    },
+    {
+      "Português": "Nova Caledônia",
+      "Inglês": "New Caledonia",
+      "Espanhol": "Nueva Caledonia",
+      "Chinês": "新赫里多尼亞",
+      "Árabe": "كاليدونيا الجديدة",
+      "Russo": "Новая Каледония",
+      "Francês": "Nouvelle Calédonie"
+    },
+    {
+      "Português": "Nova Senha",
+      "Inglês": "New Password",
+      "Espanhol": "Nueva Contraseña",
+      "Chinês": "新密碼",
+      "Árabe": "كلمة المرور الجديدة",
+      "Russo": "Новый пароль",
+      "Francês": "Nouveau mot de passe"
+    },
+    {
+      "Português": "Nova Zelândia",
+      "Inglês": "New Zealand",
+      "Espanhol": "Nueva Zelanda",
+      "Chinês": "紐西蘭",
+      "Árabe": "نيوزيلندا",
+      "Russo": "Новая Зеландия",
+      "Francês": "Nouvelle-Zélande"
+    },
+    {
+      "Português": "Novembro",
+      "Inglês": "November",
+      "Espanhol": "Noviembre",
+      "Chinês": "11 月",
+      "Árabe": "نوفمبر",
+      "Russo": "Ноябрь",
+      "Francês": "Novembre"
+    },
+    {
+      "Português": "Novo integrante",
+      "Inglês": "New member",
+      "Espanhol": "Nuevo integrante",
+      "Chinês": "新成員",
+      "Árabe": "عضو جديد",
+      "Russo": "Новый участник",
+      "Francês": "Nouveau membre"
+    },
+    {
+      "Português": "O Aplicativo não tem permissão para gravar a foto.",
+      "Inglês": "The Application does not have permission to store photos.",
+      "Espanhol": "La Aplicación no tiene permiso para grabar la foto.",
+      "Chinês": "應用程式無存儲照片的許可權。",
+      "Árabe": "لا يمتلك التطبيق الإذن لتخزين الصور.",
+      "Russo": "Приложение не имеет право сохранить изображение.",
+      "Francês": "L'Application n'a pas l'autorisation d’enregistrer la photo."
+    },
+    {
+      "Português": "O aplicativo precisa ser reiniciado para aplicar a mudança de idioma. Deseja continuar?",
+      "Inglês": "Restart the application to apply changes in language settings. Continue?",
+      "Espanhol": "La aplicación necesita ser reiniciada para aplicar el cambio de idioma. ¿Desea continuar?",
+      "Chinês": "重新打開應用程式以應用語言設置中的更改。繼續？",
+      "Árabe": "أعد تشغيل التطبيق لتطبيق التغييرات التي تمت في إعدادات اللغة. هل تريد المتابعة؟",
+      "Russo": "Приложение должно быть перезапущено, чтобы поменять язык. Вы хотите продолжить?",
+      "Francês": "L'application doit être redémarrée pour appliquer la modification de la langue. Voulez-vous continuer ?"
+    },
+    {
+      "Português": "O e-mail usado já está em uso",
+      "Inglês": "The email address is already in use",
+      "Espanhol": "El e-mail usado ya está en uso",
+      "Chinês": "電子郵件地址已在使用中",
+      "Árabe": "عنوان البريد الإلكتروني قيد الاستخدام بالفعل",
+      "Russo": "Электронная почта уже используется",
+      "Francês": "L'e-mail est déjà en cours d’utilisation"
+    },
+    {
+      "Português": "O Guardiões da Saúde",
+      "Inglês": "The Guardians of Health",
+      "Espanhol": "Guardianes de la Salud",
+      "Chinês": "健康衛士",
+      "Árabe": "تطبيق مدير الصحة",
+      "Russo": "Стражи Здоровья",
+      "Francês": "Les Gardiens de la Santé"
+    },
+    {
+      "Português": "O Whatsapp não está instalado neste dispositivo.",
+      "Inglês": "Whatsapp not installed in this device.",
+      "Espanhol": "Whatsapp no está instalado en este dispositivo.",
+      "Chinês": "Whatsapp 未安裝在此設備上。",
+      "Árabe": "تطبيق Whatsapp غير مثبت على هذا الجهاز.",
+      "Russo": "На этом устройстве Whatsapp не установлен.",
+      "Francês": "WhatsApp n'est pas installé sur cet appareil."
+    },
+    {
+      "Português": "Obrigado pela informação!",
+      "Inglês": "Thanks for sharing the information!",
+      "Espanhol": "¡Gracias por la información!",
+      "Chinês": "謝謝分享資訊 ！",
+      "Árabe": "نشكرك على مشاركة المعلومات!",
+      "Russo": "Спасибо за информацию!",
+      "Francês": "Merci pour l'information !"
+    },
+    {
+      "Português": "Obrigado por compartilhar!",
+      "Inglês": "Thanks for sharing!",
+      "Espanhol": "¡Gracias por compartir!",
+      "Chinês": "謝謝分享 ！",
+      "Árabe": "نشكرك على المشاركة!",
+      "Russo": "Спасибо за то, что поделились!",
+      "Francês": "Merci pour le partage !"
+    },
+    {
+      "Português": "Ocorreu um erro ao atualizar o usuário.",
+      "Inglês": "An error occurred while updating the user.",
+      "Espanhol": "Sucedió un error al actualizar el usuario.",
+      "Chinês": "更新使用者時出錯。",
+      "Árabe": "حدث خطأ أثناء تحديث المستخدم.",
+      "Russo": "При обновлении пользователя произошла ошибка.",
+      "Francês": "Une erreur s'est produite pendant la mise à jour de l'utilisateur."
+    },
+    {
+      "Português": "Ocorreu um erro de comunicação!",
+      "Inglês": "A communication error occurred.",
+      "Espanhol": "¡Sucedió un error de comunicación!",
+      "Chinês": "出現通信錯誤。",
+      "Árabe": "حدث خطأ في الاتصال.",
+      "Russo": "Произошла ошибка связи!",
+      "Francês": "Une erreur de communication s'est produite."
+    },
+    {
+      "Português": "Ocorreu um problema de comunicação, por favor verifique sua conexão!",
+      "Inglês": "A communication error occurred. Please check your connection.",
+      "Espanhol": "Sucedió un problema de comunicación, ¡por favor verifique su conexión!",
+      "Chinês": "出現通信錯誤。請檢查您的連接。",
+      "Árabe": "حدث خطأ في الاتصال. يرجى التحقق من اتصالك.",
+      "Russo": "Произошла проблема связи, пожалуйста, проверьте соединение!",
+      "Francês": "Une erreur de communication s'est produite, veuillez vérifier votre connexion !"
+    },
+    {
+      "Português": "Ok",
+      "Inglês": "Ok",
+      "Espanhol": "Ok",
+      "Chinês": "確定",
+      "Árabe": "موافق",
+      "Russo": "Хорошо",
+      "Francês": "Ok"
+    },
+    {
+      "Português": "Olá",
+      "Inglês": "Hello",
+      "Espanhol": "Hola",
+      "Chinês": "您好",
+      "Árabe": "مرحبًا",
+      "Russo": "Здравствуйте",
+      "Francês": "Salut"
+    },
+    {
+      "Português": "Olhos vermelhos",
+      "Inglês": "Bloodshot eyes",
+      "Espanhol": "Ojos rojos",
+      "Chinês": "充血的雙眼",
+      "Árabe": "عيون حمراء",
+      "Russo": "Красные глаза",
+      "Francês": "Yeux rouges"
+    },
+    {
+      "Português": "Omã",
+      "Inglês": "Oman",
+      "Espanhol": "Omán",
+      "Chinês": "阿曼",
+      "Árabe": "عُمان",
+      "Russo": "Оман",
+      "Francês": "Oman"
+    },
+    {
+      "Português": "Opções",
+      "Inglês": "Options",
+      "Espanhol": "Opciones",
+      "Chinês": "選項",
+      "Árabe": "خيارات",
+      "Russo": "Параметры",
+      "Francês": "Options"
+    },
+    {
+      "Português": "Operação cancelada.",
+      "Inglês": "Operation canceled.",
+      "Espanhol": "Operación cancelada.",
+      "Chinês": "操作取消。",
+      "Árabe": "تم إلغاء العملية.",
+      "Russo": "Операция отменена.",
+      "Francês": "Opération annulée."
+    },
+    {
+      "Português": "Operação realizada com sucesso.",
+      "Inglês": "Operation successfully completed.",
+      "Espanhol": "Operación realizada con éxito.",
+      "Chinês": "已成功完成操作。",
+      "Árabe": "اكتملت العملية بنجاح.",
+      "Russo": "Операция выполнена успешно.",
+      "Francês": "Opération réalisée avec succès."
+    },
+    {
+      "Português": "Os dados fornecidos serão utilizados para promover uma comunidade mais saudável",
+      "Inglês": "The data provided will be used to build a healthier community",
+      "Espanhol": "Los dados proporcionados serán utilizados para promover una comunidad más saludable",
+      "Chinês": "提供的資料將用于建立一個更健康的社區",
+      "Árabe": "ستُستخدم المعلومات المُقدمة لخلق مجتمع أكثر صحة.",
+      "Russo": "Предоставленные данные, будут содействовать оздоровлению сообщества",
+      "Francês": "Les données fournies serviront à favoriser la santé de la collectivité"
+    },
+    {
+      "Português": "Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima.",
+      "Inglês": "The symptoms reported may be related to infection by Zika virus. Seek out assistance at the nearest emergency care unit.",
+      "Espanhol": "Los síntomas informados pueden estar relacionados al Zika virus. Busque la unidad de urgencias más cercana.",
+      "Chinês": "報告的症狀可能與寨卡病毒感染相關。在最近的緊急護理單位尋求援助。",
+      "Árabe": "الأعراض التي تم الإبلاغ عنها قد تكون مرتبطة بالإصابة بفيروس زيكا. اطلب المساعدة في أقرب وحدة رعاية طوارئ.",
+      "Russo": "Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.",
+      "Francês": "Les symptômes rapportés peuvent être apparentés au virus Zika. Dirigez-vous vers le service des urgences le plus proche."
+    },
+    {
+      "Português": "ou",
+      "Inglês": "or",
+      "Espanhol": "o",
+      "Chinês": "或者",
+      "Árabe": "أو",
+      "Russo": "или",
+      "Francês": "ou"
+    },
+    {
+      "Português": "Ou cadastre-se usando seu e-mail",
+      "Inglês": "Or sign up using your email",
+      "Espanhol": "O regístrese usando su e-mail",
+      "Chinês": "或使用您的電子郵件註冊",
+      "Árabe": "أو سجل الاشتراك باستخدام بريدك الإلكتروني",
+      "Russo": "Или зарегистрироваться с помощью электронной почты",
+      "Francês": "Ou inscrivez-vous en utilisant votre e-mail"
+    },
+    {
+      "Português": "Ou use o seu e-mail",
+      "Inglês": "Or use your email",
+      "Espanhol": "O use su e-mail",
+      "Chinês": "或使用您的電子郵件",
+      "Árabe": "أو استخدم بريدك الإلكتروني",
+      "Russo": "Или использовать ваш электронный адрес",
+      "Francês": "Ou utilisez votre e-mail"
+    },
+    {
+      "Português": "Out",
+      "Inglês": "Oct",
+      "Espanhol": "Oct",
+      "Chinês": "10 月",
+      "Árabe": "أكتوبر",
+      "Russo": "Окт",
+      "Francês": "Oct"
+    },
+    {
+      "Português": "Outros",
+      "Inglês": "Others",
+      "Espanhol": "Otros",
+      "Chinês": "其他",
+      "Árabe": "أخرى",
+      "Russo": "Другие ",
+      "Francês": "Autres"
+    },
+    {
+      "Português": "Outubro",
+      "Inglês": "October",
+      "Espanhol": "Octubre",
+      "Chinês": "10 月",
+      "Árabe": "أكتوبر",
+      "Russo": "Октябрь",
+      "Francês": "Octobre"
+    },
+    {
+      "Português": "Padrasto",
+      "Inglês": "Stepfather",
+      "Espanhol": "Padrastro",
+      "Chinês": "繼父",
+      "Árabe": "زوج الأم",
+      "Russo": "Отчим",
+      "Francês": "Beau-père"
+    },
+    {
+      "Português": "Pai",
+      "Inglês": "Father",
+      "Espanhol": "Padre",
+      "Chinês": "父親",
+      "Árabe": "الأب",
+      "Russo": "Отец",
+      "Francês": "Père"
+    },
+    {
+      "Português": "País",
+      "Inglês": "Country",
+      "Espanhol": "País",
+      "Chinês": "國家",
+      "Árabe": "البلد",
+      "Russo": "Страна",
+      "Francês": "Pays"
+    },
+    {
+      "Português": "País de origem",
+      "Inglês": "Country of origin",
+      "Espanhol": "País de origen",
+      "Chinês": "原籍國",
+      "Árabe": "بلد المنشأ",
+      "Russo": "Страна происхождения",
+      "Francês": "Pays d'origine"
+    },
+    {
+      "Português": "Países Baixos Caribenhos",
+      "Inglês": "Caribbean Netherlands",
+      "Espanhol": "Países Bajos Caribeños",
+      "Chinês": "荷蘭加勒比區",
+      "Árabe": "الجزر الكاريبية الهولندية",
+      "Russo": "Карибские Нидерланды",
+      "Francês": "Antilles néerlandaises"
+    },
+    {
+      "Português": "Palau",
+      "Inglês": "Palau",
+      "Espanhol": "Palau",
+      "Chinês": "帕勞",
+      "Árabe": "باﻻو",
+      "Russo": "Палау",
+      "Francês": "Palaos"
+    },
+    {
+      "Português": "Panamá",
+      "Inglês": "Panama",
+      "Espanhol": "Panamá",
+      "Chinês": "巴拿馬",
+      "Árabe": "بنما",
+      "Russo": "Панама",
+      "Francês": "Panama"
+    },
+    {
+      "Português": "Papua-Nova Guiné",
+      "Inglês": "Papua New Guinea",
+      "Espanhol": "Papua Nueva Guinea",
+      "Chinês": "巴布亞紐幾內亞",
+      "Árabe": "بابوا غينيا الجديدة",
+      "Russo": "Папуа-Новая Гвинея",
+      "Francês": "Papouasie-Nouvelle Guinée"
+    },
+    {
+      "Português": "Paquistão",
+      "Inglês": "Pakistan",
+      "Espanhol": "Pakistán",
+      "Chinês": "巴基斯坦",
+      "Árabe": "باكستان",
+      "Russo": "Пакистан",
+      "Francês": "Pakistan"
+    },
+    {
+      "Português": "Para jogar, é preciso ter pontos de energia. Participe diariamente do Guardiões da Saúde para ganhá-los!",
+      "Inglês": "You must have energy points to play. Participate in Guardians of Health every day to earn points!",
+      "Espanhol": "Para jugar se necesita tener puntos de energía. ¡Participe diariamente en Guardianes de la Salud para ganarlos!",
+      "Chinês": "您必須有能量點數才能玩。參加健康衛士每天都要賺取積分 ！",
+      "Árabe": "يجب أن تتوفر لديك نقاط طاقة للعب. شارك في تطبيق \"مدير الصحة\" يوميًا للحصول على النقاط!",
+      "Russo": "Чтобы играть, вы должны иметь заряд энергии. Будьте ежедневно Стражами Здоровья, чтобы их заработать!",
+      "Francês": "Pour jouer, vous devez avoir des points d’énergie. Rejoignez les Gardiens de la Santé tous les jours pour en gagner !"
+    },
+    {
+      "Português": "Para maiores informações, consulte os Termos de Uso",
+      "Inglês": "Read the Terms of Use for more information",
+      "Espanhol": "Para obtener más información, consulte los Términos de Uso",
+      "Chinês": "閱讀使用條款了解詳細資訊",
+      "Árabe": "اقرأ شروط الاستخدام للحصول على مزيد من المعلومات",
+      "Russo": "Для получения дополнительной информации смотрите Условия Использования",
+      "Francês": "Pour plus d'informations, consultez les conditions d'utilisation"
+    },
+    {
+      "Português": "Parabéns, você chegou ao final do jogo! Agradecemos por você ter cumprido este desafio e ficamos muito felizes com a sua participação! Continue participando diariamente do Guardiões da Saúde e ajude a melhorar a saúde da sua comunidade.",
+      "Inglês": "Congratulations, you reached the end of the game! Thank you for facing this challenge. We appreciate your participation! Continue participating in Guardians of Health every day and help improve healthcare in your community.",
+      "Espanhol": "Felicidades, ¡usted llegó al final del juego! ¡Le agradecemos por haber cumplido este desafío y nos alegra mucho su participación! Continúe participando diariamente en Guardianes de la Salud y ayude a mejorar la salud de su comunidad.",
+      "Chinês": "恭喜，您已通關 ！謝謝您面對挑戰。我們非常感謝您的參與 ！每天繼續參加健康衛士，幫助改進社區醫療服務。",
+      "Árabe": "تهانينا، لقد وصلت إلى نهاية اللعبة! نشكرك على مواجهة هذا التحدي. نقدر مشاركتك! تابع المشاركة في تطبيق مدير الصحة يوميًا وساعد في تحسين الرعاية الصحية في مجتمعك.",
+      "Russo": "Поздравляем, вы дошли до конца игры! Благодарим Вас за то, что вы приняли этот вызов, и мы очень рады вашему участию! Продолжить участвовать в приложении «Стражи Здоровья», помогая тем самым улучшить здоровье своего сообщества.",
+      "Francês": "Félicitations, vous êtes arrivé jusqu’au bout du jeu ! Merci d’avoir relevé ce défi et nous avons vraiment apprécié votre participation ! Continuez à participer aux Gardiens de la Santé tous les jours et contribuez à améliorer la santé de votre collectivité."
+    },
+    {
+      "Português": "Paraguai",
+      "Inglês": "Paraguay",
+      "Espanhol": "Paraguay",
+      "Chinês": "巴拉圭",
+      "Árabe": "باراجواي",
+      "Russo": "Парагвай",
+      "Francês": "Paraguay"
+    },
+    {
+      "Português": "Pardo",
+      "Inglês": "Mixed",
+      "Espanhol": "Pardo",
+      "Chinês": "混合",
+      "Árabe": "مختلط",
+      "Russo": "Пардо",
+      "Francês": "Brun"
+    },
+    {
+      "Português": "Parentesco",
+      "Inglês": "Kinship",
+      "Espanhol": "Parentesco",
+      "Chinês": "親屬關係",
+      "Árabe": "صلة القرابة",
+      "Russo": "Родство",
+      "Francês": "Lien de parenté"
+    },
+    {
+      "Português": "Participações",
+      "Inglês": "Participations",
+      "Espanhol": "Participaciones",
+      "Chinês": "參與",
+      "Árabe": "مشاركات",
+      "Russo": "Участие ",
+      "Francês": "Participations"
+    },
+    {
+      "Português": "Participe Agora!",
+      "Inglês": "Participate Now!",
+      "Espanhol": "¡Participe Ahora!",
+      "Chinês": "現在參與 ！",
+      "Árabe": "شارك الآن!",
+      "Russo": "Присоединяйтесь к нам сейчас!",
+      "Francês": "Participez dès maintenant !"
+    },
+    {
+      "Português": "Participe ativamente na prevenção de doenças.",
+      "Inglês": "Actively participate in preventing diseases.",
+      "Espanhol": "Participe activamente en la prevención de enfermedades.",
+      "Chinês": "積極參與疾病預防。",
+      "Árabe": "شارك بفاعلية في الوقاية من الأمراض.",
+      "Russo": "Принимайте активное участие в профилактике заболеваний. ",
+      "Francês": "Participez activement à la prévention des maladies."
+    },
+    {
+      "Português": "Participe diariamente do Guardiões da Saúde para restaurá-las!",
+      "Inglês": "Participate in Guardians of Health every day to restore them!",
+      "Espanhol": "¡Participe diariamente en Guardianes de la Salud para restaurarlas!",
+      "Chinês": "每天參加健康衛士以恢復它們 ！",
+      "Árabe": "شارك في تطبيق \"مدير الصحة\" يوميًا لاستعادتها!",
+      "Russo": "Будьте ежедневно Стражами Здоровья, чтобы его восстановить!",
+      "Francês": "Rejoignez Les Gardiens de la Santé tous les jours pour les restaurer !"
+    },
+    {
+      "Português": "Participe na prevenção de doenças, contribuindo ativamente com a vigilância em saúde no Brasil.",
+      "Inglês": "Participate in preventing diseases and actively help promote health surveillance in Brazil.",
+      "Espanhol": "Participe en la prevención de enfermedades, contribuyendo activamente a la vigilancia de la salud en Brasil.",
+      "Chinês": "參與疾病預防，積極幫助促進巴西的健康監測。",
+      "Árabe": "شارك في الوقاية من الأمراض وساعد بفاعلية في تعزيز الرقابة الصحية في البرازيل.",
+      "Russo": "Принимайте участие в профилактике заболеваний, активно участвуя в надзоре за состоянием здоровья в Бразилии.",
+      "Francês": "Participez à la prévention des maladies, en contribuant activement à la surveillance de la santé au Brésil."
+    },
+    {
+      "Português": "Pentatlo Moderno",
+      "Inglês": "Modern Pentathlon",
+      "Espanhol": "Pentatlón Moderno",
+      "Chinês": "現代五項運動",
+      "Árabe": "الخماسي الحديث",
+      "Russo": "Современное Пятиборье",
+      "Francês": "Pentathlon moderne"
+    },
+    {
+      "Português": "Perfil",
+      "Inglês": "Profile",
+      "Espanhol": "Perfil",
+      "Chinês": "設定檔",
+      "Árabe": "ملف التعريف",
+      "Russo": "Профиль",
+      "Francês": "Profil"
+    },
+    {
+      "Português": "Peru",
+      "Inglês": "Peru",
+      "Espanhol": "Perú",
+      "Chinês": "秘魯",
+      "Árabe": "بيرو",
+      "Russo": "Перу",
+      "Francês": "Pérou"
+    },
+    {
+      "Português": "Pesquise pela sua cidade",
+      "Inglês": "Search your city",
+      "Espanhol": "Busque su ciudad",
+      "Chinês": "搜索您的城市",
+      "Árabe": "البحث في مدينتك",
+      "Russo": "Ищите по своему городу",
+      "Francês": "Recherchez par votre ville"
+    },
+    {
+      "Português": "Polícia Militar",
+      "Inglês": "Military Police",
+      "Espanhol": "Policía Militar",
+      "Chinês": "軍警",
+      "Árabe": "الشرطة العسكرية",
+      "Russo": "Полиция",
+      "Francês": "Police militaire"
+    },
+    {
+      "Português": "Polinésia Francesa",
+      "Inglês": "French Polynesia",
+      "Espanhol": "Polinesia Francesa",
+      "Chinês": "法屬玻里尼西亞",
+      "Árabe": "بولينزيا الفرنسية",
+      "Russo": "Французская Полинезия",
+      "Francês": "Polynésie française"
+    },
+    {
+      "Português": "Política de Privacidade",
+      "Inglês": "Privacy Policy",
+      "Espanhol": "Política de Privacidad",
+      "Chinês": "隱私權原則",
+      "Árabe": "سياسة الخصوصية",
+      "Russo": "Политика Конфиденциальности",
+      "Francês": "Politique de confidentialité"
+    },
+    {
+      "Português": "Polo Aquático",
+      "Inglês": "Water Polo",
+      "Espanhol": "Polo Acuático",
+      "Chinês": "水球運動",
+      "Árabe": "كرة الماء",
+      "Russo": "Водное Поло",
+      "Francês": "Water-polo"
+    },
+    {
+      "Português": "Polônia",
+      "Inglês": "Poland",
+      "Espanhol": "Polonia",
+      "Chinês": "波蘭",
+      "Árabe": "بولندا",
+      "Russo": "Польша",
+      "Francês": "Pologne"
+    },
+    {
+      "Português": "Pontuação",
+      "Inglês": "Score",
+      "Espanhol": "Puntuación",
+      "Chinês": "得分",
+      "Árabe": "النتيجة",
+      "Russo": "Оценка",
+      "Francês": "Score"
+    },
+    {
+      "Português": "Por favor verifique sua conexão!",
+      "Inglês": "Please check your connection.",
+      "Espanhol": "¡Por favor verifique su conexión!",
+      "Chinês": "請檢查您的連接。",
+      "Árabe": "يرجى التحقق من اتصالك.",
+      "Russo": "Пожалуйста, проверьте соединение!",
+      "Francês": "Veuillez vérifier votre connexion !"
+    },
+    {
+      "Português": "Por favor, preencha todos os campos do formulário abaixo.",
+      "Inglês": "Please fill out all fields in the form below.",
+      "Espanhol": "Por favor, rellene todos los campos del formulario de abajo.",
+      "Chinês": "請填寫下面表格中的所有欄位。",
+      "Árabe": "يرجى ملء جميع الحقول في النموذج التالي.",
+      "Russo": "Пожалуйста, заполните все ячейки в форме ниже.",
+      "Francês": "Veuillez remplir tous les champs du formulaire ci-dessous."
+    },
+    {
+      "Português": "Por favor, selecione o pais!",
+      "Inglês": "Please select the country.",
+      "Espanhol": "Por favor, ¡seleccione el país!",
+      "Chinês": "請選擇國家/地區。",
+      "Árabe": "يرجى تحديد الدولة.",
+      "Russo": "Пожалуйста, выберите страну!",
+      "Francês": "Veuillez sélectionner le pays !"
+    },
+    {
+      "Português": "Porto Rico",
+      "Inglês": "Puerto Rico",
+      "Espanhol": "Puerto Rico",
+      "Chinês": "波多黎各",
+      "Árabe": "بورتوريكو",
+      "Russo": "Пуэрто-Рико",
+      "Francês": "Porto Rico"
+    },
+    {
+      "Português": "Portugal",
+      "Inglês": "Portugal",
+      "Espanhol": "Portugal",
+      "Chinês": "葡萄牙",
+      "Árabe": "البرتغال",
+      "Russo": "Португалия",
+      "Francês": "Portugal"
+    },
+    {
+      "Português": "Pratique sexo de forma segura",
+      "Inglês": "Practice safe sex",
+      "Espanhol": "Practique sexo de forma segura",
+      "Chinês": "進行安全性行為",
+      "Árabe": "الممارسة الجنسية الآمنة",
+      "Russo": "Практикуйте безопасный секс ",
+      "Francês": "Avoir des rapports sexuels sûrs"
+    },
+    {
+      "Português": "Preencha todos os campos abaixo para adicionar um novo integrante.",
+      "Inglês": "Fill out all of the fields below to add a new member.",
+      "Espanhol": "Rellene todos los campos de abajo para adicionar un nuevo integrante.",
+      "Chinês": "填寫下面的所有欄位以添加新成員。",
+      "Árabe": "املأ جميع الحقول التالية لإضافة عضو جديد.",
+      "Russo": "Заполните все ячейки, чтобы добавить нового участника.",
+      "Francês": "Remplissez tous les champs ci-dessous pour ajouter un nouveau membre."
+    },
+    {
+      "Português": "Preencha todos os campos do formulário.",
+      "Inglês": "Fill out all form fields.",
+      "Espanhol": "Rellene todos los campos del formulario.",
+      "Chinês": "請填寫所有表單欄位。",
+      "Árabe": "املأ جميع حقول الموذج.",
+      "Russo": "Заполните все ячейки формы.",
+      "Francês": "Veuillez remplir tous les champs du formulaire."
+    },
+    {
+      "Português": "Preparado para se tornar um Guardião da Saúde?",
+      "Inglês": "Are you ready to become a Guardian of Health?",
+      "Espanhol": "¿Preparado para tornarse un Guardián de la Salud?",
+      "Chinês": "您是否準備好了成為一個健康衛士？",
+      "Árabe": "هل أنت مستعد لتصبح مديرًا للصحة؟",
+      "Russo": "Готов стать Стражем Здоровья?",
+      "Francês": "Prêt à devenir un Gardien de la Santé ?"
+    },
+    {
+      "Português": "Preto",
+      "Inglês": "Black",
+      "Espanhol": "Negro",
+      "Chinês": "黑色",
+      "Árabe": "أسود",
+      "Russo": "Черный",
+      "Francês": "Noir"
+    },
+    {
+      "Português": "Prevenção",
+      "Inglês": "Prevention",
+      "Espanhol": "Prevención",
+      "Chinês": "預防",
+      "Árabe": "الوقاية",
+      "Russo": "Профилактика ",
+      "Francês": "Prévention"
+    },
+    {
+      "Português": "Prima",
+      "Inglês": "Cousin",
+      "Espanhol": "Prima",
+      "Chinês": "表親",
+      "Árabe": "ابن العم",
+      "Russo": "Двоюродная Сестра",
+      "Francês": "Cousine"
+    },
+    {
+      "Português": "Primo",
+      "Inglês": "Cousin",
+      "Espanhol": "Primo",
+      "Chinês": "表親",
+      "Árabe": "ابن العم",
+      "Russo": "Двоюродный Брат",
+      "Francês": "Cousin"
+    },
+    {
+      "Português": "Procurar UPAs",
+      "Inglês": "Find UPAs",
+      "Espanhol": "Buscar UPAs",
+      "Chinês": "發現 UPA",
+      "Árabe": "البحث عن أماكن UPA",
+      "Russo": "Найти Пункт Скорой Помощи",
+      "Francês": "Contacter les urgences"
+    },
+    {
+      "Português": "Procurei um serviço de saúde",
+      "Inglês": "I searched a healthcare service",
+      "Espanhol": "Busqué un servicio de salud",
+      "Chinês": "我搜索到醫療保健服務",
+      "Árabe": "لقد بحثت عن خدمة رعاية صحية",
+      "Russo": "Найти Медицинское Обслуживание",
+      "Francês": "J'ai cherché un service de santé"
+    },
+    {
+      "Português": "Próximo",
+      "Inglês": "Nearby",
+      "Espanhol": "Cercano",
+      "Chinês": "附近",
+      "Árabe": "مجاورة",
+      "Russo": "Ближайшее",
+      "Francês": "Suivant"
+    },
+    {
+      "Português": "Qua",
+      "Inglês": "Wed",
+      "Espanhol": "Mie",
+      "Chinês": "結婚",
+      "Árabe": "الأربعاء",
+      "Russo": "Сре",
+      "Francês": "Mer"
+    },
+    {
+      "Português": "Qual tipo de micro-organismo é responsável pela dengue?",
+      "Inglês": "Which type of microorganism is responsible for dengue fever?",
+      "Espanhol": "¿Cuál tipo de microorganismo es responsable por el dengue?",
+      "Chinês": "哪種類型的微生物會引起登革熱病？",
+      "Árabe": "أي نوع من أنواع البكتريا مسؤول عن حمى الضنك؟",
+      "Russo": "Какой тип микроорганизма отвечает за Денге?",
+      "Francês": "Quel type de micro-organisme est responsable de la dengue ?"
+    },
+    {
+      "Português": "Quarta-Feira",
+      "Inglês": "Wednesday",
+      "Espanhol": "Miércoles",
+      "Chinês": "星期三",
+      "Árabe": "الأربعاء",
+      "Russo": "Среда",
+      "Francês": "Mercredi"
+    },
+    {
+      "Português": "Quem vai participar?",
+      "Inglês": "Who will participate?",
+      "Espanhol": "¿Quién participará?",
+      "Chinês": "誰會參加？",
+      "Árabe": "من الذي سيشارك؟",
+      "Russo": "Кто будет участвовать?",
+      "Francês": "Qui va participer ?"
+    },
+    {
+      "Português": "Quênia",
+      "Inglês": "Kenya",
+      "Espanhol": "Kenia",
+      "Chinês": "肯尼雅",
+      "Árabe": "كينيا",
+      "Russo": "Кения",
+      "Francês": "Kenya"
+    },
+    {
+      "Português": "Qui",
+      "Inglês": "Thur",
+      "Espanhol": "Jue",
+      "Chinês": "星期四",
+      "Árabe": "الخميس",
+      "Russo": "Чет",
+      "Francês": "Jeu"
+    },
+    {
+      "Português": "Quinta-Feira",
+      "Inglês": "Thursday",
+      "Espanhol": "Jueves",
+      "Chinês": "星期四",
+      "Árabe": "الخميس",
+      "Russo": "Четверг",
+      "Francês": "Jeudi"
+    },
+    {
+      "Português": "Quirguistão",
+      "Inglês": "Kyrgyzstan",
+      "Espanhol": "Kirguizistán",
+      "Chinês": "吉爾吉斯斯坦",
+      "Árabe": "قرجستان",
+      "Russo": "Киргизия",
+      "Francês": "Kirghizistan"
+    },
+    {
+      "Português": "Quiribati",
+      "Inglês": "Kiribati",
+      "Espanhol": "Kiribati",
+      "Chinês": "吉里巴斯",
+      "Árabe": "كريباتي",
+      "Russo": "Кирибати",
+      "Francês": "Kiribati"
+    },
+    {
+      "Português": "Ranking Geral",
+      "Inglês": "General Ranking",
+      "Espanhol": "Ranking General",
+      "Chinês": "一般排名",
+      "Árabe": "الترتيب العام",
+      "Russo": "Общий Рейтинг",
+      "Francês": "Classement général"
+    },
+    {
+      "Português": "Redefinir senha",
+      "Inglês": "Reset password",
+      "Espanhol": "Redefinir contraseña",
+      "Chinês": "重置密碼",
+      "Árabe": "إعادة تعيين كلمة المرور",
+      "Russo": "Восстановление Пароля",
+      "Francês": "Redéfinir le mot de passe"
+    },
+    {
+      "Português": "Registrar",
+      "Inglês": "Register",
+      "Espanhol": "Registrar",
+      "Chinês": "雷吉斯特",
+      "Árabe": "تسجيل",
+      "Russo": "Зарегистрировать ",
+      "Francês": "Enregistrer"
+    },
+    {
+      "Português": "Reino Unido",
+      "Inglês": "United Kingdom",
+      "Espanhol": "Reino Unido",
+      "Chinês": "英國",
+      "Árabe": "المملكة المتحدة",
+      "Russo": "Великобритания",
+      "Francês": "Royaume-Uni"
+    },
+    {
+      "Português": "Relação de participações por mês",
+      "Inglês": "List of participations per month",
+      "Espanhol": "Relación de participaciones por mes",
+      "Chinês": "每月參與清單",
+      "Árabe": "قائمة المشاركات حسب الشهر",
+      "Russo": "Статистика участия за месяц",
+      "Francês": "Relation de participations par mois"
+    },
+    {
+      "Português": "Relatar Erros",
+      "Inglês": "Report Errors",
+      "Espanhol": "Relatar Errores",
+      "Chinês": "報告錯誤",
+      "Árabe": "تقرير الأخطاء",
+      "Russo": "Отчёт об Ошибках",
+      "Francês": "Signaler des erreurs"
+    },
+    {
+      "Português": "Relatórios",
+      "Inglês": "Reports",
+      "Espanhol": "Informes",
+      "Chinês": "報告",
+      "Árabe": "التقارير",
+      "Russo": "Отчеты",
+      "Francês": "Rapports"
+    },
+    {
+      "Português": "Remo",
+      "Inglês": "Rowing",
+      "Espanhol": "Remo",
+      "Chinês": "賽艇",
+      "Árabe": "التجديف",
+      "Russo": "Гребля",
+      "Francês": "Aviron"
+    },
+    {
+      "Português": "Repetir Senha",
+      "Inglês": "Repeat Password",
+      "Espanhol": "Repetir Contraseña",
+      "Chinês": "請重複輸入密碼",
+      "Árabe": "إعادة تكرار كلمة المرور",
+      "Russo": "Повторить Пароль",
+      "Francês": "Retaper le mot de passe"
+    },
+    {
+      "Português": "República Centro-Africana",
+      "Inglês": "Central African Republic",
+      "Espanhol": "República Centroafricana.",
+      "Chinês": "中非共和國",
+      "Árabe": "جمهورية أفريقيا الوسطى",
+      "Russo": "Центрально-Африканская Республика",
+      "Francês": "République centrafricaine."
+    },
+    {
+      "Português": "República Dominicana",
+      "Inglês": "Dominican Republic",
+      "Espanhol": "República Dominicana",
+      "Chinês": "多明尼加共和國",
+      "Árabe": "جمهورية الدومينيكان",
+      "Russo": "Доминиканская Республика",
+      "Francês": "République dominicaine"
+    },
+    {
+      "Português": "República dos Camarões",
+      "Inglês": "Republic of Cameroon",
+      "Espanhol": "República de Camerún",
+      "Chinês": "喀麥隆共和國",
+      "Árabe": "جمهورية الكاميرون",
+      "Russo": "Камерун",
+      "Francês": "République du Cameroun"
+    },
+    {
+      "Português": "República Tcheca",
+      "Inglês": "Czech Republic",
+      "Espanhol": "República Checa",
+      "Chinês": "捷克共和國",
+      "Árabe": "جمهورية التشيك",
+      "Russo": "Чехия",
+      "Francês": "République tchèque"
+    },
+    {
+      "Português": "Respiratória",
+      "Inglês": "Respiratory",
+      "Espanhol": "Respiratoria",
+      "Chinês": "呼吸",
+      "Árabe": "الجهاز التنفسي",
+      "Russo": "Респираторный",
+      "Francês": "Respiratoire"
+    },
+    {
+      "Português": "Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)",
+      "Inglês": "Respiratory (fever, as well as any of the following symptoms: coughing, sore throat, shortness of breath, or red spots on the body)",
+      "Espanhol": "Respiratoria (fiebre, además de alguno de estos síntomas: tos o dolor de garganta o falta de aire o manchas rojas en el cuerpo)",
+      "Chinês": "呼吸（發燒，以及任何以下症狀︰咳嗽、喉嚨痛、呼吸急促或身體上的紅點）",
+      "Árabe": "الجهاز التنفسي (حمى، فضلا عن أي من الأعراض التالية: الكحة، أو التهاب الحلق، أو ضيق في التنفس، أو بقع حمراء على الجسم)",
+      "Russo": "Респираторный (лихорадка, или любой из этих симптомов: кашель, боль в горле, затрудненное дыхание или красные пятна на теле)",
+      "Francês": "Respiratoire (fièvre, en plus de quelques uns de ces symptômes : toux ou mal de gorge ou essoufflement ou taches rouges sur le corps)"
+    },
+    {
+      "Português": "Responda corretamente as perguntas sobre saúde para revelar peças.",
+      "Inglês": "Answer the healthcare questions correctly to reveal pieces.",
+      "Espanhol": "Responda correctamente a las preguntas sobre salud para revelar piezas.",
+      "Chinês": "正確回答醫療保健問題以揭示真相。",
+      "Árabe": "أجب عن أسئلة الرعاية الصحية بشكل صحيح للكشف عن القطع.",
+      "Russo": "Отвечайте правильно на вопросы, касающиеся здоровья, чтобы выявить детали.",
+      "Francês": "Répondez correctement aux questions sur la santé pour révéler des parties."
+    },
+    {
+      "Português": "Resumo",
+      "Inglês": "Summary",
+      "Espanhol": "Resumen",
+      "Chinês": "摘要",
+      "Árabe": "ملخص",
+      "Russo": "Выводы",
+      "Francês": "Résumé"
+    },
+    {
+      "Português": "Reunião",
+      "Inglês": "Meeting",
+      "Espanhol": "Reunión",
+      "Chinês": "會議",
+      "Árabe": "الاجتماع",
+      "Russo": "Совещание",
+      "Francês": "Réunion"
+    },
+    {
+      "Português": "Romênia",
+      "Inglês": "Romania",
+      "Espanhol": "Rumania",
+      "Chinês": "羅馬尼亞",
+      "Árabe": "رومانيا",
+      "Russo": "Румыния",
+      "Francês": "Roumanie"
+    },
+    {
+      "Português": "Ruanda",
+      "Inglês": "Rwanda",
+      "Espanhol": "Ruanda",
+      "Chinês": "盧安達",
+      "Árabe": "رواندا",
+      "Russo": "Руанда",
+      "Francês": "Rwanda"
+    },
+    {
+      "Português": "Rubgy",
+      "Inglês": "Rubgy",
+      "Espanhol": "Rubgy",
+      "Chinês": "Rubgy",
+      "Árabe": "الرجبي",
+      "Russo": "Регби",
+      "Francês": "Rubgy"
+    },
+    {
+      "Português": "Rússia",
+      "Inglês": "Russia",
+      "Espanhol": "Rusia",
+      "Chinês": "俄羅斯",
+      "Árabe": "روسيا",
+      "Russo": "Россия",
+      "Francês": "Russie"
+    },
+    {
+      "Português": "Saara Ocidental",
+      "Inglês": "Western Sahara",
+      "Espanhol": "Sáhara Occidental",
+      "Chinês": "西撒哈拉",
+      "Árabe": "الصحراء الغربية",
+      "Russo": "Западная Сахара",
+      "Francês": "Sahara occidental"
+    },
+    {
+      "Português": "Sáb",
+      "Inglês": "Sat",
+      "Espanhol": "Sáb",
+      "Chinês": "星期六",
+      "Árabe": "السبت",
+      "Russo": "Суб",
+      "Francês": "Sam"
+    },
+    {
+      "Português": "Sábado",
+      "Inglês": "Saturday",
+      "Espanhol": "Sábado",
+      "Chinês": "星期六",
+      "Árabe": "السبت",
+      "Russo": "Суббота",
+      "Francês": "Samedi"
+    },
+    {
+      "Português": "Saint Pierre e Miquelon",
+      "Inglês": "Saint Pierre and Miquelon",
+      "Espanhol": "Saint Pierre y Miquelon",
+      "Chinês": "聖皮爾和密克隆",
+      "Árabe": "سان بيير وميكلون",
+      "Russo": "Сен-Пьер и Микелон",
+      "Francês": "Saint Pierre et Miquelon"
+    },
+    {
+      "Português": "Saint-Martin",
+      "Inglês": "Saint-Martin",
+      "Espanhol": "Saint-Martin",
+      "Chinês": "聖馬丁島",
+      "Árabe": "سان مارتن",
+      "Russo": "Сен Мартен",
+      "Francês": "Saint-Martin"
+    },
+    {
+      "Português": "Sair",
+      "Inglês": "Exit",
+      "Espanhol": "Salir",
+      "Chinês": "退出",
+      "Árabe": "خروج",
+      "Russo": "Выход",
+      "Francês": "Sortir"
+    },
+    {
+      "Português": "Saltos Ornamentais",
+      "Inglês": "Diving",
+      "Espanhol": "Saltos Ornamentales",
+      "Chinês": "跳水",
+      "Árabe": "الغطس",
+      "Russo": "Прыжки в Воду",
+      "Francês": "Plongeon artistique"
+    },
+    {
+      "Português": "Salvar",
+      "Inglês": "Save",
+      "Espanhol": "Guardar",
+      "Chinês": "保存",
+      "Árabe": "حفظ",
+      "Russo": "Сохранить",
+      "Francês": "Enregistrer"
+    },
+    {
+      "Português": "Salvar Alterações",
+      "Inglês": "Save Changes",
+      "Espanhol": "Guardar Alteraciones",
+      "Chinês": "保存更改",
+      "Árabe": "حفظ التغييرات",
+      "Russo": "Сохранить Изменения",
+      "Francês": "Enregistrer les modifications"
+    },
+    {
+      "Português": "Salvar foto",
+      "Inglês": "Save photo",
+      "Espanhol": "Guardar foto",
+      "Chinês": "保存照片",
+      "Árabe": "حفظ الصورة",
+      "Russo": "Сохранить Фото",
+      "Francês": "Enregistrer la photo"
+    },
+    {
+      "Português": "Samoa",
+      "Inglês": "Samoa",
+      "Espanhol": "Samoa",
+      "Chinês": "薩摩亞",
+      "Árabe": "ساموا",
+      "Russo": "Самоа",
+      "Francês": "Samoa"
+    },
+    {
+      "Português": "Samoa Americana",
+      "Inglês": "American Samoa",
+      "Espanhol": "Samoa Americana",
+      "Chinês": "美屬薩摩亞",
+      "Árabe": "ساموا الأمريكية",
+      "Russo": "Американское Самоа",
+      "Francês": "Samoa américaines"
+    },
+    {
+      "Português": "San Marino",
+      "Inglês": "San Marino",
+      "Espanhol": "San Marino",
+      "Chinês": "聖馬利諾",
+      "Árabe": "سان مارينو",
+      "Russo": "Сан - Марино",
+      "Francês": "Saint-Marin"
+    },
+    {
+      "Português": "Sangramento",
+      "Inglês": "Bleeding",
+      "Espanhol": "Sangrado",
+      "Chinês": "出血",
+      "Árabe": "نزيف",
+      "Russo": "Кровотечение",
+      "Francês": "Le saignement"
+    },
+    {
+      "Português": "Sangramento",
+      "Inglês": "Bleeding",
+      "Espanhol": "Sangrado",
+      "Chinês": "出血",
+      "Árabe": "نزيف",
+      "Russo": "Кровотечение",
+      "Francês": "Le saignement"
+    },
+    {
+      "Português": "Santa Helena",
+      "Inglês": "Saint Helena",
+      "Espanhol": "Santa Helena",
+      "Chinês": "聖海倫娜",
+      "Árabe": "سانت هيلينا",
+      "Russo": "Святой Елены",
+      "Francês": "Sainte-Hélène"
+    },
+    {
+      "Português": "Santa Lúcia",
+      "Inglês": "Saint Lucia",
+      "Espanhol": "Santa Lucía",
+      "Chinês": "聖露西亞",
+      "Árabe": "سانت لوسيا",
+      "Russo": "Сент-Люсия",
+      "Francês": "Sainte-Lucie"
+    },
+    {
+      "Português": "São Bartolomeu",
+      "Inglês": "São Bartolomeu",
+      "Espanhol": "San Bartolomé",
+      "Chinês": "聖巴托洛梅烏",
+      "Árabe": "سانت بارثولوميو",
+      "Russo": "Святого Варфоломея",
+      "Francês": "São Bartolomeu"
+    },
+    {
+      "Português": "São Cristóvão e Nevis",
+      "Inglês": "Saint Kitts and Nevis",
+      "Espanhol": "Saint Kitts y Nevis",
+      "Chinês": "聖基茨和尼維斯",
+      "Árabe": "سانت كيتس ونيفيس",
+      "Russo": "Сент-Китс и Невис",
+      "Francês": "Saint-Kitts-et-Nevis"
+    },
+    {
+      "Português": "São Tomé e Príncipe",
+      "Inglês": "São Tomé and Príncipe",
+      "Espanhol": "Santo Tomé y Príncipe",
+      "Chinês": "聖多美及普林西比島",
+      "Árabe": "ساو تومي وبرينسيب",
+      "Russo": "Демократическая Республика Сан-Томе и Принсипи",
+      "Francês": "São Tomé et Príncipe"
+    },
+    {
+      "Português": "São Vicente e Granadinas",
+      "Inglês": "Saint Vincent and the Grenadines",
+      "Espanhol": "San Vicente y Granadinas",
+      "Chinês": "聖文森特和格林納丁斯群島",
+      "Árabe": "سانت فينسنت والغرينادين",
+      "Russo": "Сент-Винсент и Гренадины",
+      "Francês": "Saint Vincent et les Grenadines"
+    },
+    {
+      "Português": "Saúde do viajante",
+      "Inglês": "Traveler health",
+      "Espanhol": "Salud del viajero",
+      "Chinês": "旅行者健康",
+      "Árabe": "صحة المسافر",
+      "Russo": "Здоровье путешественника",
+      "Francês": "Santé des voyageurs"
+    },
+    {
+      "Português": "Seg",
+      "Inglês": "Mon",
+      "Espanhol": "Lun",
+      "Chinês": "星期一",
+      "Árabe": "الاثنين",
+      "Russo": "Пон",
+      "Francês": "Lun"
+    },
+    {
+      "Português": "Segunda-Feira",
+      "Inglês": "Monday",
+      "Espanhol": "Lunes",
+      "Chinês": "星期一",
+      "Árabe": "الاثنين",
+      "Russo": "Понедельник",
+      "Francês": "Lundi"
+    },
+    {
+      "Português": "Seja um Guardião da Saúde da sua comunidade, baixe o aplicativo!",
+      "Inglês": "Download the app and become a Guardian of Health for your community!",
+      "Espanhol": "Sea un Guardián de la Salud de su comunidad, ¡baje la aplicación!",
+      "Chinês": "下載應用程式并成為您的社區的一個健康衛士 ！",
+      "Árabe": "نزل التطبيق وكن مديرًا للصحة في مجتمعك!",
+      "Russo": "Станьте Стражем Здоровья в вашем сообществе, скачать приложение!",
+      "Francês": "Devenez un Gardien de la Santé de votre collectivité, téléchargez l'application."
+    },
+    {
+      "Português": "Selecionar",
+      "Inglês": "Select",
+      "Espanhol": "Seleccionar",
+      "Chinês": "選擇",
+      "Árabe": "تحديد",
+      "Russo": "Выбрать",
+      "Francês": "Sélectionner"
+    },
+    {
+      "Português": "Selecionar Integrante",
+      "Inglês": "Select Member",
+      "Espanhol": "Seleccionar Integrante",
+      "Chinês": "選擇成員",
+      "Árabe": "حدد عضوًا",
+      "Russo": "Выберите Участника",
+      "Francês": "Sélectionner un membre"
+    },
+    {
+      "Português": "Selecione algum dos perfis abaixo para começar a participar.",
+      "Inglês": "Select one of the following profiles to participate.",
+      "Espanhol": "Seleccione alguno de los perfiles de abajo para comenzar a participar.",
+      "Chinês": "選擇下列設定檔之一才能參加。",
+      "Árabe": "حدد أحد ملفات التعريف التالية للمشاركة.",
+      "Russo": "Выберите некоторые из приведенных ниже профилей, чтобы начать участвовать.",
+      "Francês": "Sélectionnez l'un des profils ci-dessous pour commencer à participer."
+    },
+    {
+      "Português": "Selecione o idioma",
+      "Inglês": "Select the language",
+      "Espanhol": "Seleccione el idioma",
+      "Chinês": "選擇語言",
+      "Árabe": "حدد اللغة",
+      "Russo": "Выберите язык",
+      "Francês": "Sélectionnez la langue"
+    },
+    {
+      "Português": "Selecione o país",
+      "Inglês": "Select the country",
+      "Espanhol": "Seleccione el país",
+      "Chinês": "選擇國家/地區",
+      "Árabe": "حدد الدولة",
+      "Russo": "Выберите страну",
+      "Francês": "Sélectionnez le pays"
+    },
+    {
+      "Português": "Selecione o parentesco",
+      "Inglês": "Select the kinship",
+      "Espanhol": "Seleccione el parentesco",
+      "Chinês": "選擇親屬",
+      "Árabe": "حدد القرابة",
+      "Russo": "Выберите родственные связи",
+      "Francês": "Sélectionnez le lien de parenté"
+    },
+    {
+      "Português": "Selecione o perfil",
+      "Inglês": "Select the profile",
+      "Espanhol": "Seleccione el perfil",
+      "Chinês": "選擇設定檔",
+      "Árabe": "حدد ملف التعريف",
+      "Russo": "Выберите профиль",
+      "Francês": "Sélectionnez le profil"
+    },
+    {
+      "Português": "Selecione qual dos perfis abaixo quer editar.",
+      "Inglês": "Select which of the following profiles you want to edit.",
+      "Espanhol": "Seleccione cuál de los perfiles de abajo desea editar.",
+      "Chinês": "選擇下面要編輯的設定檔。",
+      "Árabe": "حدد أي من ملفات التعريف التالية تريد تعديلها.",
+      "Russo": "Выберите, какой из профилей ниже хотите редактировать.",
+      "Francês": "Sélectionnez le profil ci-dessous que vous souhaitez modifier."
+    },
+    {
+      "Português": "Selecione seu sexo",
+      "Inglês": "Select your gender",
+      "Espanhol": "Seleccione su sexo",
+      "Chinês": "選擇性別",
+      "Árabe": "حدد الجنس",
+      "Russo": "Выберите пол",
+      "Francês": "Sélectionnez votre sexe"
+    },
+    {
+      "Português": "Selecione sua Cor/Raça",
+      "Inglês": "Select your Color/Race",
+      "Espanhol": "Seleccione su Color/Raza",
+      "Chinês": "選擇膚色/種族",
+      "Árabe": "حدد اللون/العرق",
+      "Russo": "Выберите Цвет Кожи / Расу",
+      "Francês": "Sélectionnez votre couleur/race"
+    },
+    {
+      "Português": "Selecione sua data de nascimento",
+      "Inglês": "Select your date of birth",
+      "Espanhol": "Seleccione su fecha de nacimiento",
+      "Chinês": "選擇出生日期",
+      "Árabe": "حدد تاريخ ميلادك",
+      "Russo": "Выберите дату рождения",
+      "Francês": "Sélectionnez votre date de naissance"
+    },
+    {
+      "Português": "Selecione um integrante",
+      "Inglês": "Select a member",
+      "Espanhol": "Seleccione un integrante",
+      "Chinês": "選擇成員",
+      "Árabe": "حدد عضوًا",
+      "Russo": "Выберите участника ",
+      "Francês": "Sélectionnez un membre"
+    },
+    {
+      "Português": "Senegal",
+      "Inglês": "Senegal",
+      "Espanhol": "Senegal",
+      "Chinês": "塞內加爾",
+      "Árabe": "السنغال",
+      "Russo": "Сенегал",
+      "Francês": "Sénégal"
+    },
+    {
+      "Português": "Senha",
+      "Inglês": "Password",
+      "Espanhol": "Contraseña",
+      "Chinês": "密碼",
+      "Árabe": "كلمة المرور",
+      "Russo": "Пароль",
+      "Francês": "Mot de passe"
+    },
+    {
+      "Português": "Senha Atual",
+      "Inglês": "Current Password",
+      "Espanhol": "Contraseña Actual",
+      "Chinês": "當前密碼",
+      "Árabe": "كلمة المرور الحالية",
+      "Russo": "Текущий Пароль",
+      "Francês": "Mot de passe actuel"
+    },
+    {
+      "Português": "Senha atual é um campo obrigatório.",
+      "Inglês": "Current password is a required field",
+      "Espanhol": "Contraseña actual es un campo obligatorio.",
+      "Chinês": "當前密碼是必填欄位",
+      "Árabe": "كلمة المرور الحالية حقل مطلوب",
+      "Russo": "Текущий пароль является обязательной ячейкой.",
+      "Francês": "Le mot de passe actuel est un champ obligatoire."
+    },
+    {
+      "Português": "Senha atual incorreta.",
+      "Inglês": "Incorrect current password.",
+      "Espanhol": "Contraseña actual incorrecta.",
+      "Chinês": "當前密碼不正確。",
+      "Árabe": "كلمة المرور الحالية غير صحيحة.",
+      "Russo": "Неверный пароль.",
+      "Francês": "Mot de passe actuel incorrect."
+    },
+    {
+      "Português": "Senha atualizada com sucesso.",
+      "Inglês": "Password successfully updated.",
+      "Espanhol": "Contraseña actualizada con éxito.",
+      "Chinês": "已成功更新密碼。",
+      "Árabe": "تم تحديث كلمة المرور بنجاح.",
+      "Russo": "Пароль успешно обновлен.",
+      "Francês": "Mot de passe mis à jour avec succès."
+    },
+    {
+      "Português": "Senha é um campo obrigatório",
+      "Inglês": "Password is a required field",
+      "Espanhol": "Contraseña es un campo obligatorio",
+      "Chinês": "密碼是必填欄位",
+      "Árabe": "كلمة المرور حقل مطلوب.",
+      "Russo": "Пароль является обязательной ячейкой ",
+      "Francês": "Le mot de passe est un champ obligatoire"
+    },
+    {
+      "Português": "Senha precisa ter pelo menos 6 caracteres",
+      "Inglês": "The password must have at least 6 characters",
+      "Espanhol": "Contraseña necesita tener por lo menos 6 caracteres",
+      "Chinês": "密碼必須至少 6 個字元",
+      "Árabe": "يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.",
+      "Russo": "Пароль должен содержать не менее 6 символов",
+      "Francês": "Le mot de passe doit avoir au moins 6 caractères"
+    },
+    {
+      "Português": "Sentimos sua falta",
+      "Inglês": "We missed you",
+      "Espanhol": "Lo echamos de menos",
+      "Chinês": "我們錯過了您",
+      "Árabe": "نفتقدك",
+      "Russo": "Нам вас не хватает",
+      "Francês": "Vous nous avez manqué"
+    },
+    {
+      "Português": "Serra Leoa",
+      "Inglês": "Sierra Leone",
+      "Espanhol": "Sierra Leona",
+      "Chinês": "塞拉里昂",
+      "Árabe": "سيراليون",
+      "Russo": "Сьерра-Леоне",
+      "Francês": "Sierra Leone"
+    },
+    {
+      "Português": "Sérvia",
+      "Inglês": "Serbia",
+      "Espanhol": "Serbia",
+      "Chinês": "塞爾維亞",
+      "Árabe": "صربيا",
+      "Russo": "Сербия",
+      "Francês": "Serbie"
+    },
+    {
+      "Português": "Set",
+      "Inglês": "Sep",
+      "Espanhol": "Sep",
+      "Chinês": "9 月",
+      "Árabe": "سبتمبر",
+      "Russo": "Сент",
+      "Francês": "Sept"
+    },
+    {
+      "Português": "Setembro",
+      "Inglês": "September",
+      "Espanhol": "Septiembre",
+      "Chinês": "9 月",
+      "Árabe": "سبتمبر",
+      "Russo": "Сентябрь",
+      "Francês": "Septembre"
+    },
+    {
+      "Português": "Sex",
+      "Inglês": "Fri",
+      "Espanhol": "Sex",
+      "Chinês": "星期五",
+      "Árabe": "الجمعة",
+      "Russo": "Пят",
+      "Francês": "Vend."
+    },
+    {
+      "Português": "Sexo",
+      "Inglês": "Gender",
+      "Espanhol": "Sexo",
+      "Chinês": "性別",
+      "Árabe": "النوع",
+      "Russo": "Пол",
+      "Francês": "Sexe"
+    },
+    {
+      "Português": "Sexo é um campo obrigatório.",
+      "Inglês": "Gender is a required field.",
+      "Espanhol": "Sexo es un campo obligatorio.",
+      "Chinês": "性別是必填欄位。",
+      "Árabe": "النوع حقل مطلوب.",
+      "Russo": "Пол является обязательной ячейкой.",
+      "Francês": "Le sexe est un champ obligatoire."
+    },
+    {
+      "Português": "Sexta-Feira",
+      "Inglês": "Friday",
+      "Espanhol": "Viernes",
+      "Chinês": "星期五",
+      "Árabe": "الجمعة",
+      "Russo": "Пятница ",
+      "Francês": "Vendredi"
+    },
+    {
+      "Português": "Seychelles",
+      "Inglês": "Seychelles",
+      "Espanhol": "Seychelles",
+      "Chinês": "塞席爾",
+      "Árabe": "سيشل",
+      "Russo": "Сейшельские Острова",
+      "Francês": "Seychelles"
+    },
+    {
+      "Português": "Sim",
+      "Inglês": "Yes",
+      "Espanhol": "Sí",
+      "Chinês": "是",
+      "Árabe": "نعم",
+      "Russo": "Да",
+      "Francês": "Oui"
+    },
+    {
+      "Português": "Síndromes",
+      "Inglês": "Syndromes",
+      "Espanhol": "Síndromes",
+      "Chinês": "綜合征",
+      "Árabe": "الأعراض",
+      "Russo": "Синдромы",
+      "Francês": "Syndromes"
+    },
+    {
+      "Português": "Síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: Diarreica(febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)",
+      "Inglês": "Syndromes: groups of clinical signs common to a number of diseases, including: Diarrheic (fever and nausea or vomiting, as well as any of the following symptoms: body pains or headaches)",
+      "Espanhol": "Síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas: Diarreica(fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza)",
+      "Chinês": "綜合征：許多疾病常見的一組臨床症狀，包括 ︰腹瀉型 (發燒和噁心或嘔吐，以及任何以下症狀 ︰ 身體痛或頭痛)",
+      "Árabe": "الأعراض: مجموعة من العلامات المرضية الشائعة لعدد من الأمراض، وتشتمل على: المصاب بالإسهال (يعاني من الحمى والغثيان أو القيء، فضلاً عن أي من الأعراض التالية: آلام في الجسم أو الصداع)",
+      "Russo": "Синдромы являются набором общих клинических проявлений ряда заболеваний, в том числе: Вызывающий диарею (жар, тошнота, рвота, а также любой из этих симптомов: боли в теле или головная боль)",
+      "Francês": "Les syndromes sont des ensembles de signes cliniques communs à un certain nombre de maladies, comme par exemple : Maladie diarrhéique (fièvre et nausées ou vomissements, en plus de quelques uns de ces symptômes : douleurs dans le corps ou à la tête)"
+    },
+    {
+      "Português": "Sint Maarten",
+      "Inglês": "Sint Maarten",
+      "Espanhol": "Saint Maarten",
+      "Chinês": "聖馬丁",
+      "Árabe": "سانت مارتن",
+      "Russo": "Синт-Маартен",
+      "Francês": "Sint Maarten"
+    },
+    {
+      "Português": "Sintomas",
+      "Inglês": "Symptoms",
+      "Espanhol": "Síntomas",
+      "Chinês": "症狀",
+      "Árabe": "الأعراض",
+      "Russo": "Симптомы",
+      "Francês": "Symptômes"
+    },
+    {
+      "Português": "Síria",
+      "Inglês": "Syria",
+      "Espanhol": "Siria",
+      "Chinês": "敘利亞",
+      "Árabe": "سوريا",
+      "Russo": "Сирия",
+      "Francês": "Syrie"
+    },
+    {
+      "Português": "Só é possível adicionar 10 integrantes!",
+      "Inglês": "Only 10 members can be added!",
+      "Espanhol": "¡Sólo se permite adicionar a 10 integrantes!",
+      "Chinês": "僅可以添加 10 名成員 ！",
+      "Árabe": "يمكن إضافة 10 أعضاء فقط!",
+      "Russo": "Вы можете добавить только 10 членов!",
+      "Francês": "Vous ne pouvez ajouter que 10 membres !"
+    },
+    {
+      "Português": "Sobre",
+      "Inglês": "About",
+      "Espanhol": "Sobre",
+      "Chinês": "關於",
+      "Árabe": "حول",
+      "Russo": "О",
+      "Francês": "Sur"
+    },
+    {
+      "Português": "Sobrinha",
+      "Inglês": "Niece",
+      "Espanhol": "Sobrina",
+      "Chinês": "侄女",
+      "Árabe": "ابنة الأخ",
+      "Russo": "Племянница",
+      "Francês": "Nièce"
+    },
+    {
+      "Português": "Sobrinho",
+      "Inglês": "Nephew",
+      "Espanhol": "Sobrino",
+      "Chinês": "侄子",
+      "Árabe": "ابن الأخ",
+      "Russo": "Племянник",
+      "Francês": "Neveu"
+    },
+    {
+      "Português": "Sogra",
+      "Inglês": "Mother-in-law",
+      "Espanhol": "Suegra",
+      "Chinês": "婆婆",
+      "Árabe": "حماة",
+      "Russo": "Свекровь ",
+      "Francês": "Belle-mère"
+    },
+    {
+      "Português": "Sogro",
+      "Inglês": "Father-in-law",
+      "Espanhol": "Suegro",
+      "Chinês": "岳父",
+      "Árabe": "الحمو",
+      "Russo": "Свёкор",
+      "Francês": "Beau-père"
+    },
+    {
+      "Português": "Somália",
+      "Inglês": "Somalia",
+      "Espanhol": "Somalia",
+      "Chinês": "索馬里",
+      "Árabe": "الصومال",
+      "Russo": "Сомали",
+      "Francês": "Somalie"
+    },
+    {
+      "Português": "Sri Lanka",
+      "Inglês": "Sri Lanka",
+      "Espanhol": "Sri Lanka",
+      "Chinês": "斯里蘭卡",
+      "Árabe": "سريلانكا",
+      "Russo": "Шри Ланка",
+      "Francês": "Sri Lanka"
+    },
+    {
+      "Português": "Sua conta foi desativada com sucesso.",
+      "Inglês": "Your account has been successfully deactivated.",
+      "Espanhol": "Su cuenta fue desactivada con éxito.",
+      "Chinês": "您的帳戶已被成功停用。",
+      "Árabe": "تم إلغاء تنشيط حسابك بنجاح.",
+      "Russo": "Ваш аккаунт был успешно отключен.",
+      "Francês": "Votre compte a été désactivé avec succès."
+    },
+    {
+      "Português": "Sua participação é voluntária e anônima",
+      "Inglês": "Your participation is voluntary and anonymous",
+      "Espanhol": "Su participación es voluntaria y anónima",
+      "Chinês": "您的參與是自願和匿名的",
+      "Árabe": "مشاركتك طوعية ومجهولة الهوية",
+      "Russo": "Ваше участие является добровольным и анонимным",
+      "Francês": "Votre participation est volontaire et anonyme"
+    },
+    {
+      "Português": "Suazilândia",
+      "Inglês": "Swaziland",
+      "Espanhol": "Suazilandia",
+      "Chinês": "史瓦濟蘭",
+      "Árabe": "سوازيلاند",
+      "Russo": "Свазиленд",
+      "Francês": "Swaziland"
+    },
+    {
+      "Português": "Sudão",
+      "Inglês": "Sudan",
+      "Espanhol": "Sudán",
+      "Chinês": "蘇丹",
+      "Árabe": "السودان",
+      "Russo": "Судан",
+      "Francês": "Soudan"
+    },
+    {
+      "Português": "Sudão do Sul",
+      "Inglês": "South Sudan",
+      "Espanhol": "Sudán del Sur",
+      "Chinês": "南蘇丹",
+      "Árabe": "جنوب السودان",
+      "Russo": "Южный Судан",
+      "Francês": "Soudan du Sud"
+    },
+    {
+      "Português": "Suécia",
+      "Inglês": "Sweden",
+      "Espanhol": "Suecia",
+      "Chinês": "瑞典",
+      "Árabe": "السويد",
+      "Russo": "Швеция",
+      "Francês": "Suède"
+    },
+    {
+      "Português": "Suíça",
+      "Inglês": "Switzerland",
+      "Espanhol": "Suiza",
+      "Chinês": "瑞士",
+      "Árabe": "سويسرا",
+      "Russo": "Швейцария",
+      "Francês": "Suisse"
+    },
+    {
+      "Português": "Suriname",
+      "Inglês": "Suriname",
+      "Espanhol": "Surinam",
+      "Chinês": "蘇利南",
+      "Árabe": "سورينام",
+      "Russo": "Суринам",
+      "Francês": "Suriname"
+    },
+    {
+      "Português": "Svalbard e Jan Mayen",
+      "Inglês": "Svalbard and Jan Mayen",
+      "Espanhol": "Svalbard y Jan Mayen",
+      "Chinês": "斯瓦爾巴和揚馬延島",
+      "Árabe": "سفالبارد ويان ماين",
+      "Russo": "Шпицберген и Ян-Майен",
+      "Francês": "Svalbard et Jan Mayen"
+    },
+    {
+      "Português": "Taekwondo",
+      "Inglês": "Taekwondo",
+      "Espanhol": "Taekwondo",
+      "Chinês": "跆拳道",
+      "Árabe": "التايكوندو",
+      "Russo": "Тхэквондо",
+      "Francês": "Taekwondo"
+    },
+    {
+      "Português": "Tailândia",
+      "Inglês": "Thailand",
+      "Espanhol": "Tailandia",
+      "Chinês": "泰國",
+      "Árabe": "تايلاند",
+      "Russo": "Королевство Таиланд",
+      "Francês": "Thaïlande"
+    },
+    {
+      "Português": "Taiwan",
+      "Inglês": "Taiwan",
+      "Espanhol": "Taiwán",
+      "Chinês": "臺灣",
+      "Árabe": "تايوان",
+      "Russo": "Тайвань",
+      "Francês": "Taiwan"
+    },
+    {
+      "Português": "Tajiquistão",
+      "Inglês": "Tajikistan",
+      "Espanhol": "Tayikistán",
+      "Chinês": "塔吉克斯坦",
+      "Árabe": "طاجيكستان",
+      "Russo": "Таджикистан",
+      "Francês": "Tadjikistan"
+    },
+    {
+      "Português": "Tanzânia",
+      "Inglês": "Tanzania",
+      "Espanhol": "Tanzania",
+      "Chinês": "坦尚尼亞",
+      "Árabe": "تنزانيا",
+      "Russo": "Танзания",
+      "Francês": "Tanzanie"
+    },
+    {
+      "Português": "Telefones Úteis",
+      "Inglês": "Useful Phone Numbers",
+      "Espanhol": "Teléfonos Útiles",
+      "Chinês": "有用的電話號碼",
+      "Árabe": "أرقام هواتف مفيدة",
+      "Russo": "Полезные Телефоны",
+      "Francês": "Numéros utiles"
+    },
+    {
+      "Português": "Tem cereza que deseja sair do aplicativo?",
+      "Inglês": "Are you sure you wish to exit the app?",
+      "Espanhol": "¿Está seguro de que desea salir de la aplicación?",
+      "Chinês": "您確實要退出該應用程式嗎？",
+      "Árabe": "هل ترغب بالتأكيد في الخروج من التطبيق؟",
+      "Russo": "Вы уверены, что хотите выйти из приложения?",
+      "Francês": "Voulez-vous vraiment quitter l'application ?"
+    },
+    {
+      "Português": "Tênis",
+      "Inglês": "Tennis",
+      "Espanhol": "Tenis",
+      "Chinês": "網球",
+      "Árabe": "التنس",
+      "Russo": "Теннис",
+      "Francês": "Tennis"
+    },
+    {
+      "Português": "Tênis de Mesa",
+      "Inglês": "Table tennis",
+      "Espanhol": "Tenis de Mesa",
+      "Chinês": "乒乓球",
+      "Árabe": "تنس الطاولة",
+      "Russo": "Настольный Теннис",
+      "Francês": "Tennis de table"
+    },
+    {
+      "Português": "Ter",
+      "Inglês": "Tue",
+      "Espanhol": "Mar",
+      "Chinês": "星期二",
+      "Árabe": "الثلاثاء",
+      "Russo": "Втор",
+      "Francês": "Mar"
+    },
+    {
+      "Português": "Terça-Feira",
+      "Inglês": "Tuesday",
+      "Espanhol": "Martes",
+      "Chinês": "星期二",
+      "Árabe": "الثلاثاء",
+      "Russo": "Вторник",
+      "Francês": "Mardi"
+    },
+    {
+      "Português": "Termos e Políticas",
+      "Inglês": "Terms and Policies",
+      "Espanhol": "Términos y Políticas",
+      "Chinês": "條款和政策",
+      "Árabe": "الشروط والسياسات",
+      "Russo": "Правила и Условия",
+      "Francês": "Termes et politique"
+    },
+    {
+      "Português": "Território Britânico do Oceano Índico",
+      "Inglês": "British Indian Ocean Territory",
+      "Espanhol": "Territorio Británico del Océano Índico",
+      "Chinês": "英屬印度洋領地",
+      "Árabe": "إقليم المحيط الهندي البريطاني",
+      "Russo": "Британская Территория в Индийском Океане",
+      "Francês": "Territoire britannique de l’Océan Indien"
+    },
+    {
+      "Português": "Territórios Franceses do Sul",
+      "Inglês": "French Southern and Antarctic Lands",
+      "Espanhol": "Territorios Franceses del Sur",
+      "Chinês": "法屬南半球和南極領地",
+      "Árabe": "أراض فرنسية جنوبية وأنتارتيكية",
+      "Russo": "Французские Южные Территории",
+      "Francês": "Territoires français du Sud"
+    },
+    {
+      "Português": "Territórios palestinos",
+      "Inglês": "Palestinian territories",
+      "Espanhol": "Territorios Palestinos",
+      "Chinês": "巴勒斯坦領地",
+      "Árabe": "الأراضي الفلسطينية",
+      "Russo": "Палестинские территории",
+      "Francês": "Territoires palestiniens"
+    },
+    {
+      "Português": "Tia",
+      "Inglês": "Aunt",
+      "Espanhol": "Tía",
+      "Chinês": "姑媽",
+      "Árabe": "العمة",
+      "Russo": "Тётя",
+      "Francês": "Tante"
+    },
+    {
+      "Português": "Timor-Leste",
+      "Inglês": "East Timor",
+      "Espanhol": "Timor Este",
+      "Chinês": "東帝汶",
+      "Árabe": "تيمور الشرقية",
+      "Russo": "Восточный Тимор",
+      "Francês": "Timor oriental"
+    },
+    {
+      "Português": "Tio",
+      "Inglês": "Uncle",
+      "Espanhol": "Tío",
+      "Chinês": "叔叔",
+      "Árabe": "العم",
+      "Russo": "Дядя",
+      "Francês": "Oncle"
+    },
+    {
+      "Português": "Tiro com Arco",
+      "Inglês": "Archery",
+      "Espanhol": "Tiro con Arco",
+      "Chinês": "射箭",
+      "Árabe": "الرماية",
+      "Russo": "Стрельба из Лука",
+      "Francês": "Tir à l'arc"
+    },
+    {
+      "Português": "Tiro Esportivo",
+      "Inglês": "Shooting",
+      "Espanhol": "Tiro Deportivo",
+      "Chinês": "射擊",
+      "Árabe": "إطلاق النار",
+      "Russo": "Спортивная Стрельба",
+      "Francês": "Tir sportif"
+    },
+    {
+      "Português": "Tive contato com alguém com um desses sintomas",
+      "Inglês": "I came into contact with someone with these symptoms",
+      "Espanhol": "Tuve contacto con alguien que tiene uno de estos síntomas",
+      "Chinês": "我接觸過有這些症狀的人",
+      "Árabe": "اتصلت مع أحد الأفراد الذين يعانون من هذه الأعراض",
+      "Russo": "У меня был контакт с кем-то у кого есть эти симптомы",
+      "Francês": "J'ai été en contact avec une personne présentant l’un de ces symptômes"
+    },
+    {
+      "Português": "Togo",
+      "Inglês": "Togo",
+      "Espanhol": "Togo",
+      "Chinês": "多哥",
+      "Árabe": "توغو",
+      "Russo": "Того",
+      "Francês": "Togo"
+    },
+    {
+      "Português": "Tokelau",
+      "Inglês": "Tokelau",
+      "Espanhol": "Tokelau",
+      "Chinês": "托克勞",
+      "Árabe": "توكيلاو",
+      "Russo": "Токелау",
+      "Francês": "Tokelau"
+    },
+    {
+      "Português": "Tonga",
+      "Inglês": "Tonga",
+      "Espanhol": "Tonga",
+      "Chinês": "湯加",
+      "Árabe": "تونغا",
+      "Russo": "Тонга",
+      "Francês": "Tonga"
+    },
+    {
+      "Português": "Tornar-se um Guardião da Saúde é muito fácil: seu cadastro pode ser feito através do nosso site ou diretamente no aplicativo do seu smartphone. Cadastre-se e nos ajude a contribuir para o aprimoramento da vigilância participativa em saúde no Brasil.",
+      "Inglês": "It’s very easy to become a Guardian of Health: sign up on our website or directly through the smartphone app. Sign up and help us promote collective health surveillance in Brazil.",
+      "Espanhol": "Convertirse en un Guardián de la Salud es muy fácil: su registro puede realizarse a través de nuestro sitio o directamente en la aplicación de su smartphone. Regístrese y ayúdenos a contribuir para el perfeccionamiento de la vigilancia participativa de salud en Brasil.",
+      "Chinês": "成為健康衛士很容易 : 註冊我們的網站，直接通過智慧手機應用程式。註冊，並幫助我們促進巴西的集體健康監測。",
+      "Árabe": "من السهل للغاية أن تصبح مديرًا للصحة: ما عليك سوى تسجيل الاشتراك على موقعنا أو من خلال تطبيق الهاتف الذكي مباشرة. سجل الاشتراك وساعدنا في تعزيز الرقابة الصحية الجماعية في البرازيل.",
+      "Russo": "Стать Стражем Здоровья очень легко: вы можете зарегистрироваться через наш сайт или непосредственно через приложение на вашем смартфоне. Зарегистрируйтесь и внесите свой вклад в улучшение надзора за состоянием здоровья в Бразилии.",
+      "Francês": "Devenir Gardien de la Santé est très simple : votre inscription peut se faire sur notre site Web ou directement dans l'application de votre smartphone. Inscrivez-vous et aidez-nous à améliorer la surveillance participative de la santé au Brésil."
+    },
+    {
+      "Português": "Torne-se um Guardião da Saúde.",
+      "Inglês": "Become a Guardian of Health now.",
+      "Espanhol": "Conviértase en un Guardián de la Salud.",
+      "Chinês": "現在成為一名健康衛士。",
+      "Árabe": "هل أنت مستعد لتصبح مديرًا للصحة الآن.",
+      "Russo": "Станьте Стражем Здоровья.",
+      "Francês": "Devenez Gardien de la Santé"
+    },
+    {
+      "Português": "Tosse",
+      "Inglês": "Coughing",
+      "Espanhol": "Tos",
+      "Chinês": "咳嗽",
+      "Árabe": "السعال",
+      "Russo": "Кашель",
+      "Francês": "La toux"
+    },
+    {
+      "Português": "Total de Participações",
+      "Inglês": "Total Participations",
+      "Espanhol": "Total de Participaciones",
+      "Chinês": "總參與數",
+      "Árabe": "إجمالي المشاركات",
+      "Russo": "Всего Участия ",
+      "Francês": "Total des participations"
+    },
+    {
+      "Português": "Trabalhador / Voluntário",
+      "Inglês": "Worker / Volunteer",
+      "Espanhol": "Trabajador / Voluntario",
+      "Chinês": "工人 / 志願者",
+      "Árabe": "عامل / متطوع",
+      "Russo": "Работающий / Доброволец",
+      "Francês": "Travailleur/bénévole"
+    },
+    {
+      "Português": "Triatlo",
+      "Inglês": "Triathlon",
+      "Espanhol": "Triatlón",
+      "Chinês": "鐵人三項",
+      "Árabe": "سباق ثلاثي",
+      "Russo": "Троеборье",
+      "Francês": "Triathlon"
+    },
+    {
+      "Português": "Trinidad e Tobago",
+      "Inglês": "Trinidad and Tobago",
+      "Espanhol": "Trinidad y Tobago",
+      "Chinês": "特立尼達和多巴哥",
+      "Árabe": "ترينيداد وتوباغو",
+      "Russo": "Тринидад и Тобаго",
+      "Francês": "Trinité-et-Tobago"
+    },
+    {
+      "Português": "Tunísia",
+      "Inglês": "Tunisia",
+      "Espanhol": "Túnez",
+      "Chinês": "突尼斯",
+      "Árabe": "تونس",
+      "Russo": "Тунис",
+      "Francês": "Tunisie"
+    },
+    {
+      "Português": "Turcomenistão",
+      "Inglês": "Turkmenistan",
+      "Espanhol": "Turkmenistán",
+      "Chinês": "土庫曼斯坦",
+      "Árabe": "تركمانستان",
+      "Russo": "Туркменистан",
+      "Francês": "Turkménistan"
+    },
+    {
+      "Português": "Turquia",
+      "Inglês": "Turkey",
+      "Espanhol": "Turquía",
+      "Chinês": "土耳其",
+      "Árabe": "تركيا",
+      "Russo": "Турция",
+      "Francês": "Turquie"
+    },
+    {
+      "Português": "Tutorial",
+      "Inglês": "Tutorial",
+      "Espanhol": "Tutorial",
+      "Chinês": "教程",
+      "Árabe": "برنامج تعليمي",
+      "Russo": "Обучающий материал ",
+      "Francês": "Tutoriel"
+    },
+    {
+      "Português": "Tuvalu",
+      "Inglês": "Tuvalu",
+      "Espanhol": "Tuvalu",
+      "Chinês": "吐瓦魯",
+      "Árabe": "توفالو",
+      "Russo": "Тувалу",
+      "Francês": "Tuvalu"
+    },
+    {
+      "Português": "Ucrânia",
+      "Inglês": "Ukraine",
+      "Espanhol": "Ucrania",
+      "Chinês": "烏克蘭",
+      "Árabe": "أوكرانيا",
+      "Russo": "Украина",
+      "Francês": "Ukraine"
+    },
+    {
+      "Português": "Uganda",
+      "Inglês": "Uganda",
+      "Espanhol": "Uganda",
+      "Chinês": "烏干達",
+      "Árabe": "أوغندا",
+      "Russo": "Уганда",
+      "Francês": "Ouganda"
+    },
+    {
+      "Português": "Um mapa da saúde no seu bolso.",
+      "Inglês": "A handy health map in your pocket.",
+      "Espanhol": "Un mapa de la salud en su bolsillo.",
+      "Chinês": "方便的袖珍型健康地圖。",
+      "Árabe": "خريطة صحية مفيدة في جيبك.",
+      "Russo": "Карта здоровья в вашем кармане.",
+      "Francês": "Une carte de la santé dans votre poche."
+    },
+    {
+      "Português": "Um mosquito não é mais forte que um país inteiro. Todo dia é dia de combater o Aedes aegypti. Clique para saber mais.",
+      "Inglês": "A mosquito cannot be stronger than a whole country. Every day is a good day to fight against the Aedes aegypti. Click to learn more.",
+      "Espanhol": "Un mosquito no es más fuerte que un país entero. Todos los días son el día de combatir al Aedes aegypti. Haga clic para saber más.",
+      "Chinês": "一隻蚊子無法強過整個國家。每天都是對付伊蚊的好日子。點擊以瞭解更多。",
+      "Árabe": "لا يمكن أن يكون البعوض أقوى من بلد بأكمله. يُعد كل يوم يومًا جيدًا لمكافحة بعوض الزاعجة المصرية. انقر لمعرفة المزيد.",
+      "Russo": "Комар не сильнее целой страны. Каждый день это день борьбы с комаром жёлтой лихорадки. Нажмите, чтобы узнать побольше.",
+      "Francês": "Un moustique n'est pas plus fort que tout un pays. Chaque jour est un jour de lutte contre l'Aedes aegypti. Cliquez pour en savoir plus."
+    },
+    {
+      "Português": "UPAs",
+      "Inglês": "UPAs",
+      "Espanhol": "UPAs",
+      "Chinês": "UPA",
+      "Árabe": "UPAs",
+      "Russo": "Пункты Скорой Помощи",
+      "Francês": "Les urgences"
+    },
+    {
+      "Português": "Uruguai",
+      "Inglês": "Uruguay",
+      "Espanhol": "Uruguay",
+      "Chinês": "烏拉圭",
+      "Árabe": "أوروغواي",
+      "Russo": "Уругвай",
+      "Francês": "Uruguay"
+    },
+    {
+      "Português": "Uzbequistão",
+      "Inglês": "Uzbekistan",
+      "Espanhol": "Uzbekistán",
+      "Chinês": "烏茲別克斯坦",
+      "Árabe": "أوزبكستان",
+      "Russo": "Узбекистан",
+      "Francês": "Ouzbékistan"
+    },
+    {
+      "Português": "Vacina",
+      "Inglês": "Vaccine",
+      "Espanhol": "Vacuna",
+      "Chinês": "疫苗",
+      "Árabe": "لقاح",
+      "Russo": "Прививка",
+      "Francês": "Le vaccin"
+    },
+    {
+      "Português": "Vacinas",
+      "Inglês": "Vaccines",
+      "Espanhol": "Vacunas",
+      "Chinês": "疫苗",
+      "Árabe": "لقاحات",
+      "Russo": "Прививки",
+      "Francês": "Vaccins"
+    },
+    {
+      "Português": "Vanuatu",
+      "Inglês": "Vanuatu",
+      "Espanhol": "Vanuatu",
+      "Chinês": "瓦努阿圖",
+      "Árabe": "فانواتو",
+      "Russo": "Вануату",
+      "Francês": "Vanuatu"
+    },
+    {
+      "Português": "Veja como está a saúde perto de você",
+      "Inglês": "Check out healthcare conditions near you",
+      "Espanhol": "Vea cómo está la salud cerca de usted",
+      "Chinês": "查閱您附近的衛生保健條件",
+      "Árabe": "تحقق من حالات الرعاية الصحية القريبة منك",
+      "Russo": "Проверьте ситуацию в области здравоохранения рядом с вами.",
+      "Francês": "Découvrez la santé près de chez vous"
+    },
+    {
+      "Português": "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.",
+      "Inglês": "Learn how to prevent diseases, find the nearest UPAs and drugstores, and view useful phone numbers to call in case of emergency.",
+      "Espanhol": "Vea cómo prevenirse de enfermedades, qué UPAs y farmacias están más cerca de usted y los teléfonos útiles para casos de emergencia.",
+      "Chinês": "瞭解如何預防疾病，查找最近的UPA和藥店，並查看有用的電話號碼以在緊急情況下撥打。",
+      "Árabe": "تعرف على كيفية الوقاية من الأمراض، وتعرف على أماكن UPA والصيدليات القريبة منك، وتعرف على أرقام هواتف مفيدة للاتصال بها في حالة الطوارئ.",
+      "Russo": "Посмотрите, как предотвратить заболевания, какие Пункты Скорой Помощи находятся ближе к вам, а также полезные телефоны для экстренных случаев.",
+      "Francês": "Découvrez comment prévenir les maladies, quels services des urgences et pharmacies sont les plus proches de chez vous et les numéros utiles en cas d'urgence."
+    },
+    {
+      "Português": "Vela",
+      "Inglês": "Sailing",
+      "Espanhol": "Vela",
+      "Chinês": "帆船",
+      "Árabe": "الإبحار",
+      "Russo": "Свеча",
+      "Francês": "Voile"
+    },
+    {
+      "Português": "Venezuela",
+      "Inglês": "Venezuela",
+      "Espanhol": "Venezuela",
+      "Chinês": "委內瑞拉",
+      "Árabe": "فنزويلا",
+      "Russo": "Венесуэла",
+      "Francês": "Venezuela"
+    },
+    {
+      "Português": "Verifique as permissões da galeria 'Fotos'.",
+      "Inglês": "Check ‘Photo’ gallery permissions.",
+      "Espanhol": "Verifique los permisos de la galería 'Fotos'.",
+      "Chinês": "檢查“照片”庫的許可權。",
+      "Árabe": "تحقق من أذونات معرض الصور.",
+      "Russo": "Проверьте права доступа к галерее «Фотографии».",
+      "Francês": "Vérifiez les autorisations de la galerie ’Photos’."
+    },
+    {
+      "Português": "Vietnã",
+      "Inglês": "Vietnam",
+      "Espanhol": "Vietnam",
+      "Chinês": "越南",
+      "Árabe": "فيتنام",
+      "Russo": "Вьетнам",
+      "Francês": "Vietnam"
+    },
+    {
+      "Português": "Vírus",
+      "Inglês": "Virus",
+      "Espanhol": "Virus",
+      "Chinês": "病毒",
+      "Árabe": "فيروس",
+      "Russo": "Вирус",
+      "Francês": "Un virus"
+    },
+    {
+      "Português": "Você ainda não possui participações. Ajude a melhorar a saúde da sua comunidade!",
+      "Inglês": "You still don’t have participations. Help improve healthcare in your community!",
+      "Espanhol": "Usted todavía no posee participaciones. ¡Ayude a mejorar la salud de su comunidad!",
+      "Chinês": "您還沒有參與。幫助提高您的社區的醫療服務 ！",
+      "Árabe": "ليس لديك مشاركات بعد. ساعد على تحسين الرعاية الصحية في مجتمعك!",
+      "Russo": "Вы до сих пор не участвовали. Помогите улучшить здоровье вашего сообщества!",
+      "Francês": "Vous n'avez encore aucune participation Participez à l’amélioration de la santé de votre collectivité !"
+    },
+    {
+      "Português": "Você está aqui!",
+      "Inglês": "You are here!",
+      "Espanhol": "¡Usted está aquí!",
+      "Chinês": "您在這裡 ！",
+      "Árabe": "أنت هنا!",
+      "Russo": "Вы находитесь здесь!",
+      "Francês": "Vous êtes ici!"
+    },
+    {
+      "Português": "Você está sem energias!",
+      "Inglês": "You don’t have energy points!",
+      "Espanhol": "¡Usted no tiene energía!",
+      "Chinês": "您沒有能量點 ！",
+      "Árabe": "ليس لديك نقاط طاقة!",
+      "Russo": "У вас больше нет энергии!",
+      "Francês": "Vous êtes sans énergie !"
+    },
+    {
+      "Português": "Você possui 10 pontos de energia!",
+      "Inglês": "You have 10 energy points!",
+      "Espanhol": "¡Usted tiene 10 puntos de energía!",
+      "Chinês": "您有 10 個能量點 ！",
+      "Árabe": "لديك 10 نقاط طاقة!",
+      "Russo": "У вас есть 10 очков энергии!",
+      "Francês": "Vous avez 10 points d’énergie !"
+    },
+    {
+      "Português": "Vôlei de Praia",
+      "Inglês": "Beach Volleyball",
+      "Espanhol": "Voleibol de Playa",
+      "Chinês": "沙灘排球",
+      "Árabe": "الكرة الطائرة الشاطئية",
+      "Russo": "Пляжный Волейбол",
+      "Francês": "Beach-volley"
+    },
+    {
+      "Português": "Voleibol",
+      "Inglês": "Volleyball",
+      "Espanhol": "Voleibol",
+      "Chinês": "排球",
+      "Árabe": "الكرة الطائرة",
+      "Russo": "Волейбол",
+      "Francês": "Volley-ball"
+    },
+    {
+      "Português": "Wallis e Futuna",
+      "Inglês": "Wallis and Futuna Islands",
+      "Espanhol": "Wallis y Futuna",
+      "Chinês": "瓦利斯群島和富圖納群島",
+      "Árabe": "جزر والس وفوتونا",
+      "Russo": "Уоллис и Футуна",
+      "Francês": "Wallis et Futuna"
+    },
+    {
+      "Português": "Zâmbia",
+      "Inglês": "Zambia",
+      "Espanhol": "Zambia",
+      "Chinês": "尚比亞",
+      "Árabe": "زامبيا",
+      "Russo": "Замбия",
+      "Francês": "Zambie"
+    },
+    {
+      "Português": "Zimbábue",
+      "Inglês": "Zimbabwe",
+      "Espanhol": "Zimbabue",
+      "Chinês": "辛巴威",
+      "Árabe": "زيمبابوي",
+      "Russo": "Зимбабве",
+      "Francês": "Zimbabwe"
+    }
+  ]
