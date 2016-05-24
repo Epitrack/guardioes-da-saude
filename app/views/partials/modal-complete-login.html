@@ -18,13 +18,13 @@
             <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
               <div class="no-padding col-xs-12">
                 <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-nickname">Apelido</label>
+                  <label for="profile-nickname"> {{'00033' | translate}}</label>
                   <input ng-required="true" class="input-primary" id="profile-nickname" name="add-profile-nickname"
                          ng-model="userData.nick">
                 </fieldset>
 
                 <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-gender">Sexo</label>
+                  <label for="profile-gender">{{'00567' | translate}}</label>
 
 <!--
                   <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
@@ -33,38 +33,38 @@
                          data-label="Feminino" ng-model="userData.gender">
 -->
                     <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="M" id="selected-m">
-                    <label for="selected-m" class="span-sex-op  modal-op">Masculino</label>
+                    <label for="selected-m" class="span-sex-op  modal-op">{{'00366' | translate}}</label>
                     <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="F" id="selected-f">
-                    <label for="selected-f" class="span-sex-op">Feminino</label>
+                    <label for="selected-f" class="span-sex-op">{{'00144' | translate}}</label>
 
                 </fieldset>
               </div>
 
               <div class="no-padding col-xs-12">
                 <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-birthdate">Data de nascimento</label>
+                  <label for="profile-birthdate">{{'00232' | translate}}</label>
                   <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate"
                          ng-model="userData.dob" mask="99-99-9999" >
                   <!-- <span class="icon-birthdate"></span> -->
                 </fieldset>
 
                 <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-raca-cor">Raça/Cor</label>
+                  <label for="profile-raca-cor">{{'00133' | translate}}</label>
 
                   <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
                           ng-model="userData.race">
                     <option ng-selected="true" disabled>Escolha uma Raça/Cor</option>
-                    <option value="branco">Branco</option>
-                    <option value="preto">Preto</option>
-                    <option value="pardo">Pardo</option>
-                    <option value="amarelo">Amarelo</option>
-                    <option value="indigena">Indígena</option>
+                    <option value="branco">{{'00081' | translate}}</option>
+                    <option value="preto">{{'00478' | translate}}</option>
+                    <option value="pardo">{{'00452' | translate}}</option>
+                    <option value="amarelo">{{'00025' | translate}}</option>
+                    <option value="indigena">{{'00304' | translate}}</option>
                   </select>
                 </fieldset>
               </div>
 
               <fieldset class="col-xs-12">
-                <label for="profile-email">Email</label>
+                <label for="profile-email">{{'00177' | translate}}</</label>
                 <input class="input-primary" id="profile-email" name="add-profile-email"
                        ng-model="userData.email">
               </fieldset>
@@ -95,8 +95,8 @@
         </div>
 
         <div class="modal-footer">
-          <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
-          <button class="pull-right btn btn-primary cancel" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="pull-right btn btn-primary">{{'00524' | translate}}</button>
+          <button class="pull-right btn btn-primary cancel" data-dismiss="modal">{{'00096' | translate}}</button>
         </div>
       </form>
     </div>
