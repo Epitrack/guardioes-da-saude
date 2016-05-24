@@ -38,6 +38,8 @@ angular.module('gdsApp')
 
         // create new user
         $scope.createData = {};
+        $scope.createData.country = "Selecione";
+        $scope.createData.state = "Selecione";
 
         $scope.createUser = function() {
             var params = {
