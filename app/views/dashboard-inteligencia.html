@@ -92,6 +92,18 @@
     fill: #1B1919!important;
     font-size: 14px;
 }
+
+.rodape {
+    height: 10px;
+    width: 100%;
+    border: 0px solid white;
+    text-align: right;
+    padding-right: 17px;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin-top: -8px;
+}
 </style>
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
@@ -106,8 +118,13 @@
                     <div class="box-scroll">
                         <div ng-repeat="a in alerts['Rio de Janeiro']">
                             <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                            <span class="box-alert-content">{{a.msg}}</span>
+                            <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                         </div>
+                    </div>
+                    <div class="rodape">
+                        <span><img src="/images/dashboard/olympics/atletas.svg"/> <span>300</span></span>
+                        <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                        <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                     </div>
                 </div>
             </div>
@@ -118,8 +135,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasil']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -129,8 +151,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Belo Horizonte']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -140,8 +167,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasília']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -153,8 +185,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['São Paulo']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -164,8 +201,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Manaus']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -175,8 +217,13 @@
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Salvador']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
-                                <span class="box-alert-content">{{a.msg}}</span>
+                                <span class="box-alert-content">{{a.msg}} : {{a.sintoma}}</span>
                             </div>
+                        </div>
+                        <div class="rodape">
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
                         </div>
                     </div>
                 </div>
@@ -206,7 +253,7 @@
                     <div class="col-md-3" id="syndromesChart">
                     </div>
                 </div>
-                 <div class="row charts-row" style="margin:0;display:none" ng-show="types['sintomas']">
+                <div class="row charts-row" style="margin:0;display:none" ng-show="types['sintomas']">
                     <div class="col-md-9">
                         <div id="symptomsTimeSeries" style="width:100%">
                             <h4 class="text-center">Número de Casos por Sintomas</h4>
@@ -265,16 +312,37 @@
             </article>
         </div>
     </div>
-    <div class="wrapper-card-map">
+    <div>
         <div class="col-sm-12">
             <article class="card" style="min-height: auto!important;">
                 <header class="panel-heading">
                     <h3 class="panel-title">Tabela de Dados</h3>
                 </header>
                 <div class="panel-body" style="padding:0;padding-left: 20px;">
-                    <br/>  
-                    <br/>  
-                    <br/>  
+                    <table class="table table-striped" style="font-size:2.5em">
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Lat</th>
+                                <th>Lng</th>
+                                <th>Date Reported</th>
+                                <th>Symptoms</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="s in _symptoms">
+                                <td>{{s.city}}</td>
+                                <td>{{s.age}}</td>
+                                <td>{{s.gender}}</td>
+                                <td>{{s.lat_reported}}</td>
+                                <td>{{s.lng_reported}}</td>
+                                <td>{{s.date_reported | date:"dd/MM/yyyy"}}</td>
+                                <td>{{s.symptom}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </article>
         </div>
