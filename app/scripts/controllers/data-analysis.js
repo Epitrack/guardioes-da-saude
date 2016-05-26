@@ -226,8 +226,7 @@ angular.module('gdsApp')
         var dragged;
 
         /* events fired on the draggable target */
-        document.addEventListener("drag", function(event) {
-        }, false);
+        document.addEventListener("drag", function(event) {}, false);
 
         document.addEventListener("dragstart", function(event) {
             dragged = event.target;
@@ -244,13 +243,11 @@ angular.module('gdsApp')
         }, false);
 
         document.addEventListener("dragenter", function(event) {
-            if (event.target.className == "drag-area") {
-            }
+            if (event.target.className == "drag-area") {}
         }, false);
 
         document.addEventListener("dragleave", function(event) {
-            if (event.target.className == "drag-area") {
-            }
+            if (event.target.className == "drag-area") {}
         }, false);
 
         $scope.clear = function(key) {
@@ -291,6 +288,7 @@ angular.module('gdsApp')
                     $scope.slides.push(nextSlide['$id']);
                 }
             }
+            // console.log($scope.slides, _.indexOf($scope.slides, nextSlide['$id']), nextSlide['$id']);
             if (_.indexOf($scope.slides, nextSlide['$id']) === 1) {
                 $scope.is_histogram = true;
                 var comp = document.getElementById("weeks");
@@ -359,9 +357,6 @@ angular.module('gdsApp')
             console.log(r);
         };
         $scope.getGraphic = function(type) {
-            /* console.log($scope.params[type]);
-             console.log($scope.variaveis);
-             console.log($scope.analytics);*/
             var is_sintoma = false;
             var idsintoma = 0;
             var count = 0;
@@ -387,10 +382,8 @@ angular.module('gdsApp')
                     data = _.filter(data, function(obj) {
                         return parseInt(obj['SEN']) >= $scope.semanaepidemiologica.minValue && parseInt(obj['SEN']) <= $scope.semanaepidemiologica.maxValue;
                     });
-                    console.log("semanaepidemiologica - data", data);
                 }
                 /*\VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
-
                 var df = data;
                 for (var key in $scope.analytics) {
                     var data_final = [];
@@ -407,9 +400,7 @@ angular.module('gdsApp')
                         }
                     }
                 }
-
                 data = df;
-                /**/
                 window.localStorage.setItem('dadosfiltrados', JSON.stringify(data));
                 /*Filtros*/
                 var result = null;
