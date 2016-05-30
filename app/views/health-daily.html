@@ -1,109 +1,92 @@
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
-
 <!-- nent -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Diário da Saúde <span>/ {{user.nick}}</span></h2>
-
-  <article class="col-xs-12 col-md-12 card">
-    <aside class="col-md-4 health-daily-avatar">
-      <figure>
-        <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar de {{user.nick}}">
-        <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Defaul">
-        <figcaption>{{user.nick}} <span>{{ user.dob | ageFilter }}</span></figcaption>
-      </figure>
-    </aside>
-
-    <aside class="col-md-7 total-participants">
-      <div class="total">
-        <h2>Total de participações</h2>
-        <h1>
+    <h2 class="section-title">{{'00158'|translate}} <span>/ {{user.nick}}</span></h2>
+    <article class="col-xs-12 col-md-12 card">
+        <aside class="col-md-4 health-daily-avatar">
+            <figure>
+                <img ng-if="user.picture" ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="Avatar de {{user.nick}}">
+                <img ng-if="!user.picture" ng-src="images/avatar/avatar-0.svg" alt="Avatar Defaul">
+                <figcaption>{{user.nick}} <span>{{ user.dob | ageFilter }}</span></figcaption>
+            </figure>
+        </aside>
+        <aside class="col-md-7 total-participants">
+            <div class="total">
+                <h2>{{'00621'|translate}}</h2>
+                <h1>
           <span>{{ userSurvey.total }}</span>
           <span class="spelling">{{ totalSpelling }}</span>
         </h1>
-      </div>
-
-      <div class="dropdown sort-by">
-        <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-          <li><a href="#">2014</a></li>
-          <li><a href="#">2013</a></li>
-          <li><a href="#">2012</a></li>
-          <li><a href="#">2011</a></li>
-        </ul>
-      </div>
-
-      <div class="geral" ><!--ng-if="roundedGoodSymptoms || roundedBadSymptoms"-->
-        <h2>Geral</h2>
-        <h3>Estatísticas das participações</h3>
-        <div ng-if="userSurvey.no_symptom > 0 || userSurvey.symptom > 0">
-          <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+            </div>
+            <div class="dropdown sort-by">
+                <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+                    <li><a href="#">2014</a></li>
+                    <li><a href="#">2013</a></li>
+                    <li><a href="#">2012</a></li>
+                    <li><a href="#">2011</a></li>
+                </ul>
+            </div>
+            <div class="geral">
+                <!--ng-if="roundedGoodSymptoms || roundedBadSymptoms"-->
+                <h2>{{'00250'|translate}}</h2>
+                <h3>{{'00218'|translate}}</h3>
+                <div ng-if="userSurvey.no_symptom > 0 || userSurvey.symptom > 0">
+                    <donutchart id="donut-chart-diario" data-options="donutOptions"></donutchart>
+                </div>
+                <div class="status">
+                    <ul>
+                        <li>
+                            <figure>
+                                <img src="../images/icon-health-daily-good.svg" alt="Bem">
+                                <figcaption>
+                                    <span>{{ roundedGoodSymptoms }}%</span> {{'00064'|translate}}
+                                    <p>{{ userSurvey.no_symptom }} <span class="spelling">{{ goodSpelling }}</span></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="../images/icon-health-daily-bad.svg" alt="Mal">
+                                <figcaption>
+                                    <span>{{ roundedBadSymptoms }}%</span> {{'00351'|translate}}
+                                    <p>{{ userSurvey.symptom }} <span class="spelling">{{ badSpelling }}</span></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </article>
+    <article class="col-xs-12 col-md-4 card">
+        <div class="calendar-wrapper">
+            <h2>{{'00093'|translate}}</h2>
+            <h3>{{'00275'|translate}}</h3>
+            <calendar class="calendar-directive" ng-hide="!calendarLoaded" interface="vm.CalendarInterface" selected="vm.currentDay"></calendar>
         </div>
-
-        <div class="status">
-          <ul>
-            <li>
-              <figure>
-                <img src="../images/icon-health-daily-good.svg" alt="Bem">
-                <figcaption>
-                  <span>{{ roundedGoodSymptoms }}%</span> Bem
-                  <p>{{ userSurvey.no_symptom }} <span class="spelling">{{ goodSpelling }}</span></p>
-                </figcaption>
-              </figure>
-            </li>
-
-            <li>
-              <figure>
-                <img src="../images/icon-health-daily-bad.svg" alt="Mal">
-                <figcaption>
-                  <span>{{ roundedBadSymptoms }}%</span> Mal
-                  <p>{{ userSurvey.symptom }} <span class="spelling">{{ badSpelling }}</span></p>
-                </figcaption>
-              </figure>
-            </li>
-          </ul>
+    </article>
+    <article class="col-xs-12 col-md-7  card frequency">
+        <!--col-md-offset-1-->
+        <h2>Frequência</h2>
+        <h3>Relação de participação do mês {{frequencyMonth | getMonth}}</h3>
+        <div class="dropdown sort-by">
+            <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Mês <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="sort-by-year">
+                <li ng-repeat="m in monthReports">
+                    <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </aside>
-  </article>
-
-  <article class="col-xs-12 col-md-4 card">
-    <div class="calendar-wrapper">
-      <h2>Calendário</h2>
-      <h3>Histórico de participações</h3>
-
-      <calendar class="calendar-directive"
-                ng-hide="!calendarLoaded"
-                interface="vm.CalendarInterface"
-                selected="vm.currentDay"></calendar>
-    </div>
-  </article>
-
-  <article class="col-xs-12 col-md-7  card frequency"><!--col-md-offset-1-->
-    <h2>Frequência</h2>
-    <h3>Relação de participação do mês {{frequencyMonth | getMonth}}</h3>
-
-    <div class="dropdown sort-by">
-      <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="true"> Mês <span class="caret"></span>
-      </button>
-
-      <ul class="dropdown-menu" aria-labelledby="sort-by-year">
-        <li ng-repeat="m in monthReports">
-          <a ng-href="" ng-click="getSurveysByMonth(m._id.month); $scope.monthValue = '{{m._id.month | getMonth}}'">{{m._id.month | getMonth}}</a>
-        </li>
-      </ul>
-    </div>
-
-    <div ng-if="lineOptions">
-      <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
-    </div>
-
-    <div ng-if="!lineOptions" >
-      <div id="notDataLinechart">
-        <div ng-if="lineDataLoaded">Não há dados para suficientes. Participe agora!</div>
-        <div ng-if="!lineDataLoaded">Carregando...</div>
-      </div>
-    </div>
-
-  </article>
+        <div ng-if="lineOptions">
+            <linechart id="line-chart-diario" data-options="lineOptions"></linechart>
+        </div>
+        <div ng-if="!lineOptions">
+            <div id="notDataLinechart">
+                <div ng-if="lineDataLoaded">Não há dados para suficientes. Participe agora!</div>
+                <div ng-if="!lineDataLoaded">Carregando...</div>
+            </div>
+        </div>
+    </article>
 </section>

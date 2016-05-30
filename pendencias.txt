@@ -1,7 +1,5 @@
 Complete suas informações para efetuar o cadastro
 Sua conta foi reativada com sucesso, agora você poderá fazer login normalmente.
-Nenhuma análise foi aplicada a esta base de dados
-Deseja fazer o download dos dados brutos?
 Obrigado pela sua contribuição
 Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização
 Não compartilhar implicará no mau funcionamento do Guardiões da Saúde
@@ -10,3 +8,25 @@ Painel de Controle
 Mapa
 Análise de dados
 Inteligência epidemiológica
+Adicionar Integrante do Domicílio
+Estado de origem
+Qual país
+Foi enviada uma mensagem para o email , siga as instruções enviadas para recuperar sua senha.
+Crie uma nova senha para sua conta
+Sua senha precisa ter no mínimo 6 dígitos
+Trocar senha
+Informações
+Sugestões
+Reclamações
+Elogios
+Serviço/Solicitações
+Frequência
+Relação de participação do mês
+Mês
+Não há dados para suficientes. Participe agora!
+Carregando
+Quer maiores detalhes dos dados?
+Eu Faço a Minha Parte
+Bem vindo ao Dicas de Saúde
+Aqui você poderá pesquisar informações importantes para o seu bem estar
+Política de Privacidade e Termos de Uso
