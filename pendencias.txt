@@ -1,2 +1,12 @@
 Complete suas informações para efetuar o cadastro
 Sua conta foi reativada com sucesso, agora você poderá fazer login normalmente.
+Nenhuma análise foi aplicada a esta base de dados
+Deseja fazer o download dos dados brutos?
+Obrigado pela sua contribuição
+Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização
+Não compartilhar implicará no mau funcionamento do Guardiões da Saúde
+Como permitir sua localização
+Painel de Controle
+Mapa
+Análise de dados
+Inteligência epidemiológica

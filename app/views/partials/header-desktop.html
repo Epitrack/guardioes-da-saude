@@ -30,11 +30,12 @@
                 <!-- visible when user is logged -->
                 <div ng-if="user.id != null">
                     <ul class="nav navbar-nav">
+                         <li><a class="nav-link" ng-href="game/tutorial"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a></li>
                         <li ng-show="!user.picture || user.picture == '0'">
-                            <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
+                            <figure class="mini-avatar-user hidden-xs" style="margin: 15px 0px 0 0!important"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
                         </li>
                         <li ng-show="user.picture">
-                            <figure class="mini-avatar-user  hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
+                            <figure class="mini-avatar-user  hidden-xs" style="margin: 15px 0px 0 0!important;"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
                         </li>
                         <li ng-show="user" class="dropdown dropnav">
                             <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
