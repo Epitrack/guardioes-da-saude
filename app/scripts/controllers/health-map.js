@@ -12,11 +12,9 @@ angular.module('gdsApp')
 
         $scope.pageClass = 'health-map';
         $scope.markers = [];
-
         //
         // Graphic
         //
-
         $scope.donutOptions = {
             data: [
                 { label: "Bem", value: 77, participants: 10 },
@@ -33,15 +31,20 @@ angular.module('gdsApp')
             lon = position.coords.longitude;
 
             LocalStorage.saveLocation(lat, lon);
+
+            $scope.userLocation = {
+                lat: lat,
+                lng: lon,
+                title: 'Você está aqui',
+                zoom: 12,
+                icon: '/images/icon-user-location.png'
+            };
         }
 
         function errorGeolocation(error) {
             // console.warn('errorGeolocation', error);
             Notification.show('error', 'Localização', error);
         }
-
-
-
 
         $scope.mapOptions = {
             zoom: 14,
@@ -313,26 +316,24 @@ angular.module('gdsApp')
                     getSurveyByCitySummary($scope.cityLatLng);
                 });
                 // console.log($scope.userLocation.lat, $scope.userLocation.lng);
-                var position = new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng);
-
-                info = new google.maps.InfoWindow({
-                    content: "<b>Você está aqui!</b>",
-                    map: $scope.map,
-                    position: position,
-                    pixelOffset: new google.maps.Size(0, -20)
-                });
-
-
-                $scope.$broadcast('createMarker', {
-                    'img': $scope.userLocation.icon,
-                    'location': {
-                        'lat': $scope.userLocation.lat,
-                        'lng': $scope.userLocation.lng
-                    },
-                    'title': '',
-                    index: 100000
-                });
-
+                if ($scope.userLocation !== null) {
+                    var position = new google.maps.LatLng($scope.userLocation.lat, $scope.userLocation.lng);
+                    info = new google.maps.InfoWindow({
+                        content: "<b>Você está aqui!</b>",
+                        map: $scope.map,
+                        position: position,
+                        pixelOffset: new google.maps.Size(0, -20)
+                    });
+                    $scope.$broadcast('createMarker', {
+                        'img': $scope.userLocation.icon,
+                        'location': {
+                            'lat': $scope.userLocation.lat,
+                            'lng': $scope.userLocation.lng
+                        },
+                        'title': '',
+                        index: 100000
+                    });
+                }
                 // //TODO colocar aqui o "você está aqui"
                 google.maps.event.addListener(map, 'idle', addNewMarkers);
             } catch (e) { console.log(e) }

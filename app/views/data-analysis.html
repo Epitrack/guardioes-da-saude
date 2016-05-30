@@ -89,6 +89,10 @@
                             <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','RESPIRATORIA')" value="true" id="respiratoria" class="checkbox-primary">
                             <label for="respiratoria">Respiratória</label>
                         </fieldset>
+                          <fieldset>
+                            <input type="checkbox" name="sindromes" ng-click="selecionarAnalytics('syndromes','Nenhuma sindrome')" value="true" id="nenhuma" class="checkbox-primary">
+                            <label for="nenhuma">Nenhuma sindrome</label>
+                        </fieldset>
                     </div>
                 </div>
             </li>
@@ -233,7 +237,7 @@
         <legend class="legend-subtitle other">Análise</legend>
         <aside class="col-xs-12 card">
             <h4>Visualização</h4>
-            <carousel id="myCarousel" active="slide_active" interval="0" on-carousel-change="ishistogram(nextSlide, direction)" no-wrap="false" style="height: auto!important">
+            <carousel id="myCarousel" active="slide_active" interval="0" on-carousel-change="ishistogram(nextSlide, direction)" no-wrap="true" style="height: auto!important">
                 <slide style="height: auto!important">
                     <img src="../../images/dashboard/icon_pizza.svg" style="margin:auto;">
                     <div class="carousel-caption" style="height: 70px;">
