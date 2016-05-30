@@ -26,7 +26,7 @@
                     <li ng-if="user.household" ng-repeat="hh in user.household">
                         <a ng-href="/profile/household/{{ hh.id }}" ng-click="goToUrl('/profile/household/{{ hh.id }}');closeNav()">{{ hh.nick }}</a>
                     </li>
-                    <li><a ng-href="/profile/add" ng-click="goToUrl('/profile/add');closeNav()" ng-hide="user.household==10">Adicionar Integrante</a></li>
+                    <li><a ng-href="/profile/add" ng-click="goToUrl('/profile/add');closeNav()" ng-hide="user.household.length==10">Adicionar Integrante</a></li>
                 </ul>
             </li>
             <li>
