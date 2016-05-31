@@ -13,9 +13,10 @@ angular.module('gdsApp')
         // to hide menu
         $scope.logged = LocalStorage.getItem('userLogged');
         $scope.lang = {};
-        $scope.lang.current = "PT";
+        $scope.lang.current = $translate.use();
         $scope.changeLanguage = function() {
             console.log($scope.lang.current);
+            window.sessionStorage.setItem('lang', $scope.lang.current);
             $translate.use($scope.lang.current);
         };
 

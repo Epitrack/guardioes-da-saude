@@ -211,7 +211,6 @@ body {
     .lb {
         font-size: ($fs-normal)+.6;
         color: #FFFFFF;
-        margin-left: 60px;
         text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
         pointer-events: none;
         z-index: 10;
@@ -2142,7 +2141,7 @@ p.login-email {
 }
 
 .game-tutorial {
-    background: url("../images/game/bg-game.svg") no-repeat center center fixed;
+    background: url("../images/game/bg-game.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2151,7 +2150,7 @@ p.login-email {
 
 .game-home {
     /*background: url("../images/game/bg-game-2.svg") no-repeat center center fixed;*/
-    background: url("../images/game/bg-game-2.svg") no-repeat;
+    background: url("../images/game/bg-game-2.png") no-repeat;
     height: 5500px!important;
     -webkit-background-size: cover;
     -moz-background-size: cover;

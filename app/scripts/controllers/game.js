@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$location','$http', 'Notification', function($scope, $location, $http, Notification) {
+    .controller('GameCtrl', ['$scope', '$translate', '$location', '$http', 'Notification', function($scope, $translate, $location, $http, Notification) {
 
         /*controle do slide - TUTORIAL*/
 
@@ -16,31 +16,37 @@ angular.module('gdsApp')
         $scope.noWrapSlides = false;
         $scope.slide_active = 0;
         $scope.current = 0;
-        $scope.slides = [{
-            index: 0,
-            image: '../../images/game/tutorial-step-1.svg',
-            text: 'Bem-vindo à nossa pista de corrida! Arraste para saber mais sobre como jogar.'
-        }, {
-            index: 1,
-            image: '../../images/game/tutorial-step-2.svg',
-            text: 'Para jogar, é preciso ter pontos de energia. Participe diariamente do Guardiões da Saúde para ganhá-los!'
-        }, {
-            index: 2,
-            image: '../../images/game/tutorial-step-3.svg',
-            text: 'Nossa pista de corrida é formada por fases. Conclua cada fase para chegar mais longe na corrida!'
-        }, {
-            index: 3,
-            image: '../../images/game/tutorial-step-4.svg',
-            text: 'Cada fase contém um quebra-cabeça. Complete-o para passar de fase.'
-        }, {
-            index: 4,
-            image: '../../images/game/tutorial-step-5.svg',
-            text: 'Responda corretamente as perguntas sobre saúde para revelar peças.'
-        }, {
-            index: 5,
-            image: '../../images/game/tutorial-step-6.svg',
-            text: 'Colecione figurinhas dos esportes olímpicos após concluir cada fase!'
-        }];
+        $scope.slides = [];
+        //slide1-00066; slide2-00448; slide3-00406; slide4-00088; slide5-00509;slide6-00114;
+        $translate(['00066', '00448', '00406', '00088', '00509', '00114']).then(function(translations) {
+            $scope.slides = [{
+                index: 0,
+                image: '../../images/game/tutorial-step-1.svg',
+                text: translations['00066']
+            }, {
+                index: 1,
+                image: '../../images/game/tutorial-step-2.svg',
+                text: translations['00448']
+            }, {
+                index: 2,
+                image: '../../images/game/tutorial-step-3.svg',
+                text: translations['00406']
+            }, {
+                index: 3,
+                image: '../../images/game/tutorial-step-4.svg',
+                text: translations['00088']
+            }, {
+                index: 4,
+                image: '../../images/game/tutorial-step-5.svg',
+                text: translations['00509']
+            }, {
+                index: 5,
+                image: '../../images/game/tutorial-step-6.svg',
+                text: translations['00114']
+            }];
+        });
+
+
 
 
         $scope.next = function() {
