@@ -2,9 +2,7 @@
     <div class="navbar navbar-default not-logged" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <h1 class="logo-primary">
-          <a href="/" title="Voltar para a Home">{{'00262' | translate}}</a>
-        </h1>
+                <h1 class="logo-primary"><a href="/" title="Voltar para a Home">{{'00262' | translate}}</a></h1>
             </div>
             <div class="navbar-collapse" id="js-navbar-collapse">
                 <div>
@@ -30,7 +28,9 @@
                 <!-- visible when user is logged -->
                 <div ng-if="user.id != null">
                     <ul class="nav navbar-nav">
-                         <li><a class="nav-link" ng-href="game/tutorial"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a></li>
+                        <li>
+                            <a class="nav-link" ng-href="game/tutorial"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a>
+                        </li>
                         <li ng-show="!user.picture || user.picture == '0'">
                             <figure class="mini-avatar-user hidden-xs" style="margin: 15px 0px 0 0!important"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
                         </li>
