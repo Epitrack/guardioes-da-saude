@@ -9,15 +9,15 @@ app.directive('gdsMaps', function() {
     return {
      restict: 'E',
      template: '<div id="gdsMap"></div>',
-     scope:{location:"=", marks:"=", size:"="},
+     scope:{location:"=", marks:"=", size:"=",zoom:"="},
      link:function(scope){
          var mapOptions = {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
            zoom: 11,
            scrollwheel: false,
-           disableDoubleClickZoom: true,
+           // disableDoubleClickZoom: true,
            streetViewControl: false,
-           zoomControl: false,
+           zoomControl: scope.zoom||false,
            mapTypeControl: true,
            mapTypeControlOptions: {
             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
