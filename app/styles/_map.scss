@@ -12,7 +12,6 @@
   left: 0;
   background-color: $link-primary;
   z-index: 8;
-  min-height: 670px;
   height: auto;
   @include bsd(0, 1px, 1px, rgba(0, 0, 0, .2));
 }
