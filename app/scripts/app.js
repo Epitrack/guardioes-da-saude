@@ -37,7 +37,8 @@ angular
         'ngFacebook',
         'ngMaterial',
         'rzModule',
-        'ng-sortable'
+        'ng-sortable',
+        'directive.g+signin'
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
         $facebookProvider.setAppId('961547147258065');

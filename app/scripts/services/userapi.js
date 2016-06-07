@@ -257,14 +257,15 @@ angular.module('gdsApp')
         }
 
         obj.twitterLogin = function($scope) {
-            OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+            // OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+            OAuth.initialize('jGUgHZ1coQaSW9UZQxhGmZaN5dA');
             var userTwData = {};
             OAuth.popup('twitter', function(err) {
                     if (err) { console.warn('error tw', err); }
                 })
                 .done(function(result) {
                     result.me().done(function(data) {
-                        // console.log("me",data)
+                        console.log("me",data)
                         userTwData.tw = data.id;
                         userTwData.nick = data.name;
                         $scope.userData = userTwData;
@@ -309,51 +310,39 @@ angular.module('gdsApp')
                     function(error) { console.warn('Error glLogin: ', error); });
         }
 
-        obj.googleLogin = function($scope) {
-            OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+        obj.googleLogin = function($scope, data) {
             var userGlData = {};
-            OAuth.popup('google', function(err) {
-                    if (err) { console.warn('error google', err); }
-                })
-                .done(function(result) {
-                    result.me().done(function(data) {
-                        // console.log("me",data)
-                        userGlData.gl = data.id;
-                        userGlData.nick = data.name;
-                        userGlData.gender = (data.gender === 0) ? 'M' : 'F';
-                        userGlData.email = data.email;
-                        $scope.userData = userGlData;
-                        glLogin(userGlData.gl, function(dataGl) {
-                            // console.log("dataGl", dataGl);
-                            if (dataGl.data.error === false && dataGl.data.data.length > 0) {
-                                var loginPass = {
-                                    email: dataGl.data.data[0].email,
-                                    password: dataGl.data.data[0].email
-                                };
-
-                                obj.loginUser(loginPass, function(resultMail) {
-                                    if (resultMail.data.error === true) {
-                                        // toaster.pop('error', resultMail.data.message);
-                                        Notification.show('error', 'Google', resultMail.data.message);
-                                    } else {
-                                        // toaster.pop('success', resultMail.data.message);
-                                        Notification.show('success', 'Google', resultMail.data.message);
-                                        LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
-                                        if (LocalStorage.isFirstAccess()) {
-                                            $location.path('survey');
-                                        } else {
-                                            $location.path('health-daily');
-                                        }
-                                    }
-                                });
+            userGlData.gl = data.id;
+            userGlData.nick = data.displayName;
+            userGlData.gender = data.gender;
+            userGlData.email = data.email;
+            $scope.userData = userGlData;
+            glLogin(userGlData.gl, function(dataGl) {
+                console.log("dataGl", dataGl);
+                if (dataGl.data.error === false && dataGl.data.data.length > 0) {
+                    var loginPass = {
+                        email: data.email,
+                        password: data.email
+                    };
+                    obj.loginUser(loginPass, function(resultMail) {
+                        if (resultMail.data.error === true) {
+                            Notification.show('error', 'Google', resultMail.data.message);
+                        } else {
+                            Notification.show('success', 'Google', resultMail.data.message);
+                            LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
+                            if (LocalStorage.isFirstAccess()) {
+                                $location.path('survey');
                             } else {
-                                // console.warn('Error -> ', dataLg.data.message);
-                                // console.log("$scope.userData",$scope.userData)
-                                angular.element('#modal-complete-login').modal('show');
+                                $location.path('health-daily');
                             }
-                        });
+                        }
                     });
-                });
+                } else {
+                    // console.warn('Error -> ', dataLg.data.message);
+                    // console.log("$scope.userData",$scope.userData)
+                    angular.element('#modal-complete-login').modal('show');
+                }
+            });
         };
         // ====
 
