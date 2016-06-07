@@ -257,14 +257,15 @@ angular.module('gdsApp')
         }
 
         obj.twitterLogin = function($scope) {
-            OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+            // OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+            OAuth.initialize('jGUgHZ1coQaSW9UZQxhGmZaN5dA');
             var userTwData = {};
             OAuth.popup('twitter', function(err) {
                     if (err) { console.warn('error tw', err); }
                 })
                 .done(function(result) {
                     result.me().done(function(data) {
-                        // console.log("me",data)
+                        console.log("me",data)
                         userTwData.tw = data.id;
                         userTwData.nick = data.name;
                         $scope.userData = userTwData;
