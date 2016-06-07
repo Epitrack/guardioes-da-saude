@@ -56,6 +56,7 @@ module.exports = function(config) {
       'bower_components/d3/d3.js',
       'bower_components/html5shiv/dist/html5shiv.js',
       'bower_components/webshim/js-webshim/minified/polyfiller.js',
+      'bower_components/angular-directive.g-signin/google-plus-signin.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
