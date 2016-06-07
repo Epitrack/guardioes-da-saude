@@ -38,7 +38,8 @@ angular
         'ngMaterial',
         'rzModule',
         'ng-sortable',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'directive.g+signin'
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
         $facebookProvider.setAppId('961547147258065');

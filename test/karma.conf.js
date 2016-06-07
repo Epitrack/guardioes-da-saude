@@ -65,6 +65,7 @@ module.exports = function(config) {
       'bower_components/dcjs/dc.js',
       'bower_components/leaflet/dist/leaflet-src.js',
       'bower_components/d3-tip/index.js',
+      'bower_components/angular-directive.g-signin/google-plus-signin.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
