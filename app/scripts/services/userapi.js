@@ -257,7 +257,7 @@ angular.module('gdsApp')
         }
 
         obj.twitterLogin = function($scope) {
-            OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
+            OAuth.initialize('jGUgHZ1coQaSW9UZQxhGmZaN5dA');
             var userTwData = {};
             OAuth.popup('twitter', function(err) {
                     if (err) { console.warn('error tw', err); }
