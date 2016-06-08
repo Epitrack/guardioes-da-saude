@@ -6,8 +6,10 @@
                 <h3 class="login-subtitle">{{'00090'|translate}} </h3>
                 <button ng-click="facebookLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login facebook">Facebook
                 </button>
-                <button ng-click="googleLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google
-                </button>
+                <google-plus-signin clientid="761648787941-jdm3cgeaagadt1p13dsi54mnrc7pbf3j.apps.googleusercontent.com" autorender="false" customtargetid="my-custom-element">
+                    <button id="my-custom-element" ng-click="googleLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login google">Google
+                    </button>
+                </google-plus-signin>
                 <button ng-click="twitterLogin()" class="col-xs-12 col-sm-6 col-sm-offset-3 btn-login twitter">Twitter
                 </button>
                 <p class="login-email"><a ng-href="cadastro/email">{{'00434'|translate}}</a></p>
