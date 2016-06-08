@@ -2,11 +2,17 @@
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
 <!-- Content -->
-<section class="col-sm-9 col-md-10 content-internal">
+<section class="col-sm-9 col-md-10 content-internal" style="overflow-y: auto;">
     <h2 class="section-title">{{'00163'|translate}}</h2>
     <aside class="col-xs-12 col-md-4 no-padding list-tips">
         <button ng-click="aside = 'zika'" class="btn-tip zika" ng-class="{ 'active' : aside == 'zika' }">
             {{'00148'|translate}}
+        </button>
+        <button onclick="window.open('http://portalsaude.saude.gov.br/index.php/o-ministerio/principal/secretarias/svs/viajante','_blank');" class="btn-tip zika" ng-class="{ 'active' : aside == 'viajante' }">
+            Saúde do Viajante
+        </button>
+        <button ng-click="aside = 'sexo'" class="btn-tip prevention" ng-class="{ 'active' : aside == 'sexo' }">
+            Pratique sexo de forma segura
         </button>
         <button ng-click="aside = 'upas'" class="btn-tip upas" ng-class="{ 'active' : aside == 'upas' }">
             {{'00634'|translate}}
@@ -15,7 +21,7 @@
             {{'00230'|translate}}
         </button>
         <button ng-click="aside = 'vacina'" class="btn-tip vaccine" ng-class="{ 'active' : aside == 'vacina' }">
-            {{'00637'|translate}}
+            {{'00638'|translate}}
         </button>
         <button ng-click="aside = 'telefones'" class="btn-tip telephones" ng-class="{ 'active' : aside == 'telefones' }">
             {{'00599'|translate}}
@@ -25,9 +31,6 @@
         </button>
         <button ng-click="aside = 'prevencao'" class="btn-tip prevention" ng-class="{ 'active' : aside == 'prevencao' }">
             {{'00479'|translate}}
-        </button>
-        <button ng-click="aside = 'sexo'" class="btn-tip prevention" ng-class="{ 'active' : aside == 'sexo' }">
-            {{'00474'|translate}}
         </button>
     </aside>
     <aside class="col-xs-12 col-md-7 card health-tips-default" ng-if="!aside">

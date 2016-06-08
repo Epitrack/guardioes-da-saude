@@ -23,6 +23,7 @@ angular.module('gdsApp')
         $scope.slides = [];
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+        var w = $("#img_bg").width();
         $scope.fasespics = [{
             "name": "vitoria",
             "path": "/images/game/fases/aquaticas/",
