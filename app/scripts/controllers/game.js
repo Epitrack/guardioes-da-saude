@@ -10,19 +10,7 @@
 angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$timeout', '$translate', '$location', '$http', 'Notification', function($scope, $timeout, $translate, $location, $http, Notification) {
 
-        /*controle do slide - TUTORIAL*/
-        $scope.myInterval = 5000;
-        $scope.noWrapSlides = false;
-        $scope.slide_active = 0;
-        $scope.current = 0;
-        /*\controle do slide - TUTORIAL*/
-        $scope.current_fase = 1;
-        $scope.questions_view = [];
-        $scope.k = 0;
-        $scope.k1 = 0;
-        $scope.slides = [];
-        $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+
         var w = $("#img_bg").width();
         $scope.fasespics = [{
             "name": "vitoria",
@@ -273,6 +261,20 @@ angular.module('gdsApp')
                 text: translations['00114']
             }];
         });
+
+        /*controle do slide - TUTORIAL*/
+        $scope.myInterval = 5000;
+        $scope.noWrapSlides = false;
+        $scope.slide_active = 0;
+        $scope.current = 0;
+        /*\controle do slide - TUTORIAL*/
+        $scope.current_fase = 1;
+        $scope.questions_view = [];
+        $scope.k = 0;
+        $scope.k1 = 0;
+        $scope.slides = [];
+        $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
 
         $scope.setstage = function() {
 
