@@ -9,10 +9,10 @@
             {{'00148'|translate}}
         </button>
         <button onclick="window.open('http://portalsaude.saude.gov.br/index.php/o-ministerio/principal/secretarias/svs/viajante','_blank');" class="btn-tip zika" ng-class="{ 'active' : aside == 'viajante' }">
-            Saúde do Viajante
+            {{"00537"|translate}}
         </button>
         <button ng-click="aside = 'sexo'" class="btn-tip prevention" ng-class="{ 'active' : aside == 'sexo' }">
-            Pratique sexo de forma segura
+            {{"00474"|translate}}
         </button>
         <button ng-click="aside = 'upas'" class="btn-tip upas" ng-class="{ 'active' : aside == 'upas' }">
             {{'00634'|translate}}
@@ -37,8 +37,8 @@
         <figure>
             <img src="images/icon-health-tips.svg" alt="">
         </figure>
-        <h4>Bem vindo ao Dicas de Saúde</h4>
-        <p>Aqui você poderá pesquisar informações importantes para o seu bem estar.</p>
+        <h4>{{"00690"|translate}}</h4>
+        <p>{{"00691"|translate}}</p>
     </aside>
     <aside class="col-xs-12 col-md-7 card content-card" ng-if="aside == 'zika'">
         <div ng-include src="'views/partials/ht-zika.html'"></div>

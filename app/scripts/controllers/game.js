@@ -11,6 +11,7 @@ angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$timeout', '$translate', '$location', '$http', 'Notification', function($scope, $timeout, $translate, $location, $http, Notification) {
 
 
+
         var w = $("#img_bg").width();
         $scope.fasespics = [{
             "name": "vitoria",
@@ -233,7 +234,10 @@ angular.module('gdsApp')
             left: "41.8%"
         }];
 
-
+        $scope.pontos_total="";
+        $translate(['00650']).then(function(translations) {
+            $scope.pontos_total=translations['00650'].replace("10","5");
+        });
         $translate(['00066', '00448', '00406', '00088', '00509', '00114']).then(function(translations) {
             $scope.slides = [{
                 index: 0,

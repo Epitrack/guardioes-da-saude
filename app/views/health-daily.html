@@ -68,10 +68,10 @@
     </article>
     <article class="col-xs-12 col-md-7  card frequency">
         <!--col-md-offset-1-->
-        <h2>Frequência</h2>
-        <h3>Relação de participação do mês {{frequencyMonth | getMonth}}</h3>
+        <h2>{{"00683"|translate}}</h2>
+        <h3>{{"00684"|translate}} {{frequencyMonth | getMonth}}</h3>
         <div class="dropdown sort-by">
-            <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Mês <span class="caret"></span>
+            <button class="btn btn-default dropdown-toggle" type="button" id="sort-by-year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> {{"00685"|translate}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="sort-by-year">
                 <li ng-repeat="m in monthReports">
@@ -84,8 +84,8 @@
         </div>
         <div ng-if="!lineOptions">
             <div id="notDataLinechart">
-                <div ng-if="lineDataLoaded">Não há dados para suficientes. Participe agora!</div>
-                <div ng-if="!lineDataLoaded">Carregando...</div>
+                <div ng-if="lineDataLoaded">{{"00686"|translate}}</div>
+                <div ng-if="!lineDataLoaded">{{"00687"|translate}}...</div>
             </div>
         </div>
     </article>

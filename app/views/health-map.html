@@ -1,7 +1,7 @@
 <aside class="col-sm-5 col-md-3 map-mini-dashboard">
     <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
         <fieldset>
-            <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
+            <input class="input-primary" placeholder="{{'00462'|translate}}" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder='{{\"00462\"|translate}}'">
         </fieldset>
     </form>
     <div class="info-mini-dashboard">
@@ -9,7 +9,7 @@
             <span class="icon"></span>
             <div>
                 <h4 class="value">{{summary.total_surveys}}</h4>
-                <h5>Participações nos últimos dias</h5>
+                <h5>{{"00696"|translate}}</h5>
             </div>
         </div>
         <div class="geral">
@@ -17,12 +17,12 @@
             <div class="metrics col-sm-6">
                 <img class="icon-medium icon-shadow" src="../images/icon-health-daily-good.svg" alt="Good">
                 <span class="total-percentage">{{summary.pct_no_symptoms}}% <span class="light">{{'00064'|translate}}</span></span>
-                <span class="total-users">{{summary.total_no_symptoms}} Participações</span>
+                <span class="total-users"> {{"00621"|translate}}: {{summary.total_no_symptoms}}</span>
             </div>
             <div class="metrics col-sm-6">
                 <img class="icon-medium icon-shadow" src="../images/icon-health-daily-bad.svg" alt="Bad">
                 <span class="total-percentage">{{summary.pct_symptoms}}% <span class="light">{{'00351'|translate}}<span></span>
-                <span class="total-users">{{summary.total_symptoms}} Participações</span>
+                <span class="total-users">{{"00621"|translate}}: {{summary.total_symptoms}}</span>
             </div>
         </div>
         <div class="sindromes">
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="contact">
-            Quer maiores detalhes dos dados?
+            {{"00688"|translate}}
             <a href="/fale-conosco" title="">{{'00197'|translate}}</a>
         </div>
     </div>

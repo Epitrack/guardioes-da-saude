@@ -16,7 +16,7 @@
         </a>
         <div class="game-home-points-label">
             <a href="" ng-click="openmodal('points',1,$event)" data-toggle="modal" href="" data-target="#game-1-modal">
-                <span>10 Energias</span>
+                <span>10 {{"00191"|translate}}</span>
             </a>
         </div>
     </div>
@@ -54,9 +54,9 @@
                         <img src="../images/game/ranking-geral.svg" style="z-index: 9; position: absolute; top: -43px; left: -35px; width: 306px;   height: 80px;">
                         <img src="../images/game/meus-trofeus-1.svg" style="width: 30px; height: auto; position: absolute; left: -29px; top: 28px;">
                         <p style="font-family: inherit;   font-size: 20px;   color: #ffffff;">
-                            Pontuação
+                            {{"00468"|translate}}
                         </p>
-                        <p style="font-family: inherit;   font-size: 16px;   color: #ffffff;">A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade.</p>
+                        <p style="font-family: inherit;   font-size: 16px;   color: #ffffff;"> {{"00005"|translate}}</p>
                     </header>
                     <div class="modal-body">
                         <div class="panel-body" style="margin-top: 0px;">
@@ -79,7 +79,7 @@
                             <img src="../images/game/fechar.svg">
                         </a>
                         <img src="../images/game/faixa.svg" style="z-index: 9; position: absolute; top: 0px; left: 50%; width: 324px; height: 77px; margin-left: -182px;">
-                        <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: block; text-align: center; z-index: 99; left: -5%; top: 7%;">Nível 01</span>
+                        <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: block; text-align: center; z-index: 99; left: -5%; top: 7%;">{{"00693"|translate}} 01</span>
                     </header>
                     <div class="modal-body" align="center" style="margin-top: 9%; margin-left: -9%;">
                         <div id="panel_mosaico" class="panel-body panel_internal_game" style="margin-top: 0px;max-width: 318px;">
@@ -122,8 +122,8 @@
                             <div class="row" style="margin-bottom: 10px;">
                                 <div class="col-md-12 ">
                                     <div class="card_energia_positive">
-                                        <div style="letter-spacing: 0px;color: rgb(255, 255, 255);font-size: 5em;padding: 10%;font-weight: bold;">Você possui 5 pontos de energia!</div>
-                                        <div style="font-size: 20px; letter-spacing: 0px; color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px; margin-top: -20px;">Participe diariamente do Guardiões da Saúde para restaurá-las!</div>
+                                        <div style="letter-spacing: 0px;color: rgb(255, 255, 255);font-size: 5em;padding: 10%;font-weight: bold;">{{pontos_total}}</div>
+                                        <div style="font-size: 20px; letter-spacing: 0px; color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px; margin-top: -20px;">{{"00457"|translate}</div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
