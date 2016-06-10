@@ -477,7 +477,14 @@ angular.module('gdsApp')
                 $("#pergunta").attr("class", "game-card-certa");
                 $("#pergunta").html('<div style="width: 190px; color: white; font-weight: bold; font-size: 1.8em; line-height: 45px;"> Resposta CORRETA!</div>');
                 $scope.questions_view[$scope.k][$scope.k1].active = true;
-                var indice = Math.floor((($scope.k * (7 / 2)) + ($scope.k1 * (3 / 2))));
+
+                var indice = (Math.floor((($scope.k * (7 / 2)) + ($scope.k1 * (3 / 2)))) - 1);
+                if (indice == 0) {
+                    indice = 1;
+                } else if (indice == -1) {
+                    indice = 0;
+                }
+                console.log("indice - resposta", indice);
                 $scope.responses[indice] = 1;
                 $scope.current_question_id = $scope.questions_view[$scope.k][$scope.k1].id;
                 $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
