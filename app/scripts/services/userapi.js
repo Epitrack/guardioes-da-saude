@@ -264,7 +264,7 @@ angular.module('gdsApp')
                 })
                 .done(function(result) {
                     result.me().done(function(data) {
-                        // console.log("me",data)
+                        console.log("me",data)
                         userTwData.tw = data.id;
                         userTwData.nick = data.name;
                         $scope.userData = userTwData;

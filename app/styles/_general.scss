@@ -74,10 +74,10 @@ body {
 }
 
 .content-internal {
-    min-height: 700px;
-    height: 100%;
-    float: none;
-    @extend .col-xs-12;
+  min-height: 700px;
+  height: auto;
+  float: none;
+  @extend .col-xs-12;
 }
 
 .page {

@@ -1,4 +1,4 @@
-<aside class="col-sm-5 col-md-3 map-mini-dashboard">
+<aside class="col-sm-5 col-md-3 map-mini-dashboard" style="padding-left: 30px; overflow-y: auto;">
     <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
         <fieldset>
             <input class="input-primary" placeholder="{{'00462'|translate}}" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder='{{\"00462\"|translate}}'">

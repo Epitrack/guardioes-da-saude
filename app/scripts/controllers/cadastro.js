@@ -8,20 +8,19 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('CadastroCtrl', function ($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
-    // $scope.pageClass = 'login-page';
+    .controller('CadastroCtrl', function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
+        // $scope.pageClass = 'login-page';
 
-    $scope.userData = {};
-    $scope.userData.gender = "M";
+        $scope.userData = {};
+        $scope.userData.gender = "M";
 
-       
-    $scope.facebookLogin = function () {
-      UserApi.facebookLogin($scope);
-    };
 
-    $scope.googleLogin = function() {
+        $scope.facebookLogin = function() {
+            UserApi.facebookLogin($scope);
+        };
+
+        $scope.googleLogin = function() {
             $scope.$on('event:google-plus-signin-success', function(event, authResult) {
-                console.log("google-plus-signin-success", event, authResult);
                 gapi.client.load('plus', 'v1', function() {
                     var request = gapi.client.plus.people.get({
                         'userId': 'me'
@@ -43,47 +42,49 @@ angular.module('gdsApp')
             });
         };
 
-    $scope.twitterLogin = function () {
-      UserApi.twitterLogin($scope);
-    };
+        $scope.twitterLogin = function() {
+            UserApi.twitterLogin($scope);
+        };
 
-    $scope.updateUserSocialData = function () {
-      var params = {
-            nick: $scope.userData.nick,
-            gender: $scope.userData.gender,
-            dob: $scope.userData.dob,
-            race: $scope.userData.race,
-            email: $scope.userData.email,
-      };
-
-
-      $scope.checkF = $scope.UTIL.checkForm(params, true);
-      if($scope.checkF.error===true){ return; }
-
-      params.picture = $scope.UTIL.checkAvatar($scope.userData);
-      params.password = $scope.userData.password;
+        $scope.updateUserSocialData = function() {
+            var params = {
+                nick: $scope.userData.nick,
+                gender: $scope.userData.gender,
+                dob: $scope.userData.dob,
+                race: $scope.userData.race,
+                email: $scope.userData.email,
+            };
 
 
-      if($scope.userData.fb !== undefined) { params.fb = $scope.userData.fb; }
-      if($scope.userData.tw !== undefined) { params.tw = $scope.userData.tw; }
-      if($scope.userData.gl !== undefined) { params.gl = $scope.userData.gl; }
+            $scope.checkF = $scope.UTIL.checkForm(params, true);
+            if ($scope.checkF.error === true) {
+                return;
+            }
+
+            params.picture = $scope.UTIL.checkAvatar($scope.userData);
+            params.password = $scope.userData.password;
 
 
-      if(params.password===undefined){params.password = params.email;}
+            if ($scope.userData.fb !== undefined) { params.fb = $scope.userData.fb; }
+            if ($scope.userData.tw !== undefined) { params.tw = $scope.userData.tw; }
+            if ($scope.userData.gl !== undefined) { params.gl = $scope.userData.gl; }
 
-      params.dob = $scope.UTIL.convertDate(params.dob);
 
-      angular.element('#modal-complete-login').modal('hide');
+            if (params.password === undefined) { params.password = params.email; }
 
-      UserApi.createUser(params, function (data) {
-        if (data.data.error === false) {
-          Notification.show('success', 'Cadastro', data.data.message);
-          LocalStorage.userCreateData(data.data.user);
-          $location.path('survey');
-        } else {
-          Notification.show('error', 'Cadastro', data.data.message);
-          // console.warn(data.data.message);
-        }
-      });
-    };
-  });
+            params.dob = $scope.UTIL.convertDate(params.dob);
+
+            angular.element('#modal-complete-login').modal('hide');
+
+            UserApi.createUser(params, function(data) {
+                if (data.data.error === false) {
+                    Notification.show('success', 'Cadastro', data.data.message);
+                    LocalStorage.userCreateData(data.data.user);
+                    $location.path('survey');
+                } else {
+                    Notification.show('error', 'Cadastro', data.data.message);
+                    // console.warn(data.data.message);
+                }
+            });
+        };
+    });

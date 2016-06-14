@@ -9,7 +9,6 @@
  */
 angular.module('gdsApp')
     .controller('LoginCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', '$rootScope', function($scope, $http, UserApi, $location, LocalStorage, Notification, $rootScope) {
-
         $scope.cangoogle = false;
         $scope.facebookLogin = function() {
             UserApi.facebookLogin($scope);
@@ -43,11 +42,8 @@ angular.module('gdsApp')
             UserApi.twitterLogin($scope);
         };
 
-
-
         $scope.renewAccount = function() {
             // mandar um POST pra user/delete/ passando o email do usuário e o app_token via header.
-
             var params = $rootScope.userEmail;
 
             if (params) {
@@ -63,7 +59,6 @@ angular.module('gdsApp')
                 Notification.show('info', 'Reativar Conta', 'Tente novamente em alguns instantes.');
             }
         };
-
 
 
     }]);

@@ -59,47 +59,47 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div class="wrapper-body" id="wrapper-body">
-        <!-- mobile header -->
-        <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
-        <!-- desktop header -->
-        <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
-        <main class="container-fluid main-content st-pusher">
-            <div class="row st-content">
-                <div class="page {{ pageClass }}" ng-view="" autoscroll="true"></div>
-            </div>
-        </main>
-        <!-- Modal App -->
-        <div ng-include src="'views/partials/modal-app.html'"></div>
-        <div ng-include src="'views/partials/modal-location.html'"></div>
-        <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
-            <article class="modal-dialog" role="document" style="margin: 100px auto;">
-                <div class="modal-content">
-                    <form class="card-form" name="i-feel-bad-form">
-                        <header class="modal-header panel-heading confirm-survey">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <h3 class="modal-title panel-title ff-bold">Atenção</h3>
-                        </header>
-                        <div class="modal-body">
-                            <div class="panel-body" style="margin-top: 0px;">
-                                <div class="col-xs-12">
-                                    <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados.
-                                        <br/> Deseja fazer o download dos dados brutos?</p>
-                                </div>
+    <!-- <div class="wrapper-body" id="wrapper-body"> -->
+    <!-- mobile header -->
+    <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
+    <!-- desktop header -->
+    <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
+    <!--  <div class="container-fluid main-content st-pusher">
+        <div class="row st-content"> -->
+    <div class="page {{ pageClass }}" ng-view="" autoscroll="true" style="background-color: #D9E0E7;"></div>
+    <!-- </div>
+    </div> -->
+    <!-- Modal App -->
+    <div ng-include src="'views/partials/modal-app.html'"></div>
+    <div ng-include src="'views/partials/modal-location.html'"></div>
+    <div class="modal fade" id="download-csv" tabindex="-1" role="dialog" aria-labelledby="modaldownload">
+        <article class="modal-dialog" role="document" style="margin: 100px auto;">
+            <div class="modal-content">
+                <form class="card-form" name="i-feel-bad-form">
+                    <header class="modal-header panel-heading confirm-survey">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h3 class="modal-title panel-title ff-bold">Atenção</h3>
+                    </header>
+                    <div class="modal-body">
+                        <div class="panel-body" style="margin-top: 0px;">
+                            <div class="col-xs-12">
+                                <p class="thank-you-text left">Nenhuma análise foi aplicada a esta base de dados.
+                                    <br/> Deseja fazer o download dos dados brutos?</p>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <a class="pull-right btn btn-default" data-dismiss="modal" style="margin-left: 5px;"> Não</a>
-                            <a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
-                            <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
-                        </div>
-                    </form>
-                </div>
-            </article>
-        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="pull-right btn btn-default" data-dismiss="modal" style="margin-left: 5px;"> Não</a>
+                        <a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
+                        <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
+                    </div>
+                </form>
+            </div>
+        </article>
     </div>
+    <!-- </div> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <div analytics></div>
     <script async src="https://oauth.io/auth/download/latest/oauth.min.js"></script>
@@ -232,6 +232,9 @@
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="">
+        $(document).ready(function () { $('.scrollup').click(function () { $("html, body").animate({ scrollTop: 0 }, 600); return false; }); });
     </script>
 </body>
 

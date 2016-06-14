@@ -10,7 +10,7 @@
                 </form>
                 <div class="last-cities">
                     <h4>{{'00111' | translate}}</h4>
-                    <ul>
+                    <ul style="z-index: 9999;">
                         <li ng-repeat="city in cities">
                             <a ng-href="" title="Clique para ver como está a saúde em {{city._id}}" ng-click="setRootCity(city._id)">{{city._id}}</a>
                         </li>

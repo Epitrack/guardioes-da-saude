@@ -368,19 +368,35 @@ var pins = [{
     top: (3.096 * w) + "px",
     left: "41.8%"
 }];
-console.log("pins", pins.length);
+var vencidos = [];
+var count = 0;
 
 $(document).ready(function() {
-    // $("#img_pin").css('top', pins[p].top);
-    // $("#img_pin").css('left', pins[p].left);
+    $("html, body").animate({
+        scrollTop: parseInt(pins[p].top) - 180
+    }, 400);
 });
-
-var el = document.querySelector('#img_bg');
-el.scrollTop = 500;
 
 function nextPin() {
     p--;
     $("#img_pin").css('top', pins[p].top);
     $("#img_pin").css('left', pins[p].left);
+    $("html, body").animate({
+        scrollTop: parseInt(pins[p].top) - 180
+    }, 400);
+    vencidos = pins.slice(p, pins.length);
+    var index = p + 1;
+    addVencido(index, pins[index]);
+}
+
+function addVencido(i, obj) {
+    console.log(i, obj);
+    // for (var i = 0; i < vencidos.length; i++) {
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "../images/game/pin-venceu.png");
+    elem.setAttribute("id", "img_pin" + (count++));
+    elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
+    document.getElementById("div_game").appendChild(elem);
+    // }
 }
 </script>

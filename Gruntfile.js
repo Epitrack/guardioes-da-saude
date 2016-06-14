@@ -391,24 +391,32 @@ module.exports = function(grunt) {
             images: {
                 files: [{
                     expand: true,
-                    cwd: 'app/images/',
+                    cwd: 'app/images/game/pergunta/*',
                     src: ['**/*.{png,jpg,svg}'],
-                    dest: 'dist/images/'
+                    dest: 'dist/images/game/pergunta/'
                 }]
             },
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'app/images/',
-                    src: ['**/**/*.{png,jpg,svg}'],
+                    cwd: 'app/images/game/pergunta/*',
+                    src: ['**/*.{png,jpg,svg}'],
+                    dest: 'dist/images/game/pergunta/'
+                },{
+                    expand: true,
+                    cwd: 'app/images/*',
+                    src: ['**/*.{png,jpg,svg}'],
+                    dest: 'dist/images/'
+                },{
+                    expand: true,
+                    cwd: 'app/images/*',
+                    src: ['**/*.{png,jpg,svg}'],
                     dest: 'dist/images/'
                 }, {
                     expand: true,
                     cwd: 'app/images/',
-                    src: ['**/*'],
-                    dest: 'dist/images/',
-                    filter: 'isFile',
-                    flatten: true
+                    src: ['**/**/*.{png,jpg,svg}'],
+                    dest: 'dist/images/'
                 }, {
                     expand: true,
                     dot: true,
