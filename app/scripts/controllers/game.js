@@ -8,7 +8,7 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$timeout', 'ApiConfig', '$translate', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, ApiConfig, $translate, $location, $http, Notification, LocalStorage) {
+    .controller('GameCtrl', ['$scope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
 
 
         var app_token = ApiConfig.APP_TOKEN;
@@ -279,7 +279,6 @@ angular.module('gdsApp')
         }];
 
         $scope.fasespics = $scope.fasespics.reverse();
-        console.log($scope.fasespics);
         /*controle do slide - TUTORIAL*/
         $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
@@ -296,7 +295,8 @@ angular.module('gdsApp')
         $scope.slides = [];
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
-
+        $scope.questions = [];
+        var count = 0;
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
         $scope.savestatus = function(level, puzzleMatriz, questionId) {
             console.log(level, puzzleMatriz, questionId);
@@ -398,12 +398,8 @@ angular.module('gdsApp')
             });
         };
 
-
         $scope.buildquestions = function(callback) {
-            /*
-            rest.guardioesdasaude.org/game/questions/?lang=pt_BR
-            */
-            $http.get("http://rest.guardioesdasaude.org/game/questions/?lang=pt_BR").then(function(result) {
+            $http.get("http://rest.guardioesdasaude.org/game/questions/?lang="+$scope.getLanguage()).then(function(result) {
                 $scope.questions = result.data;
                 for (var i = 0; i < $scope.questions.length; i++) {
                     $scope.questions[i].img1 = "../images/game/btn_questao.svg";
@@ -419,7 +415,15 @@ angular.module('gdsApp')
             });
         };
 
-        $scope.questions = [];
+        $scope.finalizou = function() {
+            var r = true;
+            for (var i = 0; i < $scope.responses.length; i++) {
+                if ($scope.responses[i] === 0) {
+                    r = false;
+                }
+            }
+            return r;
+        };
 
         $scope.openmodal = function(key, val, $event) {
             $scope.current_fase = val;
@@ -431,7 +435,7 @@ angular.module('gdsApp')
 
                 }
             });
-        }
+        };
 
         $scope.prepareQuestions = function() {
             var count = 0;
@@ -491,12 +495,16 @@ angular.module('gdsApp')
                 $timeout(function() {
                     $scope.clean('fase');
                 }, 1000);
+                $timeout(function() {
+                    if ($scope.finalizou()) {
+                        $scope.clean('points');
+                    }
+                }, 1000);
 
             } else {
                 $("#op" + (op + 1)).attr("class", "game-resposta-errada");
             }
         };
-
 
         $scope.escolher = function(k, k1) {
             console.log("k, k1", k, k1);
@@ -526,5 +534,43 @@ angular.module('gdsApp')
                 console.log(err);
             });
         };
+        $scope.getRanking();
+        
+        $scope.nextPin = function() {
+            $scope.current_fase++;
+            console.log("$scope.current_fase", $scope.current_fase - 1);
+            $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
+            $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
+            $("html, body").animate({
+                scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
+            }, 400);
+            var index = $scope.current_fase - 2;
+            $scope.addVencido(index, $scope.fasespics[index]);
+        };
+
+        $scope.addVencido = function(i, obj) {
+            var elem = document.createElement("img");
+            elem.setAttribute("src", "../images/game/pin-venceu.png");
+            elem.setAttribute("id", "img_pin" + (count++));
+            elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
+            document.getElementById("div_game").appendChild(elem);
+        };
+
+        $scope.getLanguage = function() {
+
+            var ln = "";
+            if ($translate.use() === 'pt') {
+                ln = 'pt_BR';
+            } else {
+                ln = $translate.use();
+            }
+            return ln;
+        };
+
+        $(document).ready(function() {
+            $("html, body").animate({
+                scrollTop: parseInt($scope.fasespics[$scope.current_fase].top) - 180
+            }, 400);
+        });
 
     }]);

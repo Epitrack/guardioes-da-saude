@@ -8,17 +8,31 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
+    .controller('HealthMapCtrl', ['$scope', '$translate', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, $translate, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
 
         $scope.pageClass = 'health-map';
         $scope.markers = [];
+
+        $scope.bemstring = "Bem";
+        $scope.malstring = "Mal";
+        $scope.vcestaaquistring = 'Você está aqui';
+        $translate(['00648']).then(function(translations) {
+            $scope.bemstring = translations['00648'];
+        });
+
+        $translate(['00064']).then(function(translations) {
+            $scope.bemstring = translations['00064'];
+        });
+        $translate(['00351']).then(function(translations) {
+            $scope.malstring = translations['00351'];
+        });
         //
         // Graphic
         //
         $scope.donutOptions = {
             data: [
-                { label: "Bem", value: 77, participants: 10 },
-                { label: "Mal", value: 23, participants: 5 }
+                { label: $scope.bemstring, value: 77, participants: 10 },
+                { label: $scope.malstring, value: 23, participants: 5 }
             ],
             colors: ['#E0D433', '#C81204'],
             resize: true
@@ -35,7 +49,7 @@ angular.module('gdsApp')
             $scope.userLocation = {
                 lat: lat,
                 lng: lon,
-                title: 'Você está aqui',
+                title: $scope.vcestaaquistring,
                 zoom: 12,
                 icon: '/images/icon-user-location.png'
             };
@@ -197,6 +211,13 @@ angular.module('gdsApp')
                     summary.exantematica = data.data.summary.diseases.exantematica;
                     summary.respiratoria = data.data.summary.diseases.respiratoria;
 
+                    try {
+                        var total = summary.diarreica + summary.exantematica + summary.respiratoria;
+                        summary.diarreica = ((summary.diarreica / total) * 100).toFixed(2);
+                        summary.exantematica = ((summary.exantematica / total) * 100).toFixed(2);
+                        summary.respiratoria = ((summary.respiratoria / total) * 100).toFixed(2);
+                    } catch (e) {}
+
                     if (summary.total_no_symptoms > 0) {
                         summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
                     }
@@ -282,6 +303,13 @@ angular.module('gdsApp')
                     summary.diarreica = data.data.summary.diseases.diarreica;
                     summary.exantematica = data.data.summary.diseases.exantematica;
                     summary.respiratoria = data.data.summary.diseases.respiratoria;
+
+                    try {
+                        var total = summary.diarreica + summary.exantematica + summary.respiratoria;
+                        summary.diarreica = ((summary.diarreica / total) * 100).toFixed(2);
+                        summary.exantematica = ((summary.exantematica / total) * 100).toFixed(2);
+                        summary.respiratoria = ((summary.respiratoria / total) * 100).toFixed(2);
+                    } catch (e) {}
 
                     if (summary.total_no_symptoms > 0) {
                         summary.pct_no_symptoms = Math.round((((summary.total_no_symptoms / summary.total_surveys) * 100)));
