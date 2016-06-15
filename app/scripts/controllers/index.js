@@ -7,8 +7,8 @@
  * # IndexCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('IndexCtrl', ['$scope', '$translate', 'LocalStorage', '$rootScope', '$location', 'Notification', '$window', function($scope, $translate, LocalStorage, $rootScope, $location, Notification, $window) {
+angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'LocalStorage', '$rootScope', '$location', 'Notification', '$window', 
+    function($scope, $translate, LocalStorage, $rootScope, $location, Notification, $window) {
 
         // to hide menu
         $scope.logged = LocalStorage.getItem('userLogged');

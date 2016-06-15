@@ -6,8 +6,7 @@
  * @description
  * # analytics
  */
-angular.module('gdsApp')
-  .directive('analytics', function (helper) {
+angular.module('gdsApp').directive('analytics', function (helper) {
     return {
       restrict: 'A',
       link: function(scope, iElement, iAttrs) {

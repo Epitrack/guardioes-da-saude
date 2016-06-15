@@ -7,8 +7,8 @@
  * # HealthDailyHouseholdCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', 'moment', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification, moment) {
+angular.module('gdsApp').controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', 'moment', 
+  function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification, moment) {
 
     var meuFiltro = $filter;
     var userStorage = $rootScope.user;

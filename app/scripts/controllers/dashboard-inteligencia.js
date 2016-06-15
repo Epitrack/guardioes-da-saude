@@ -7,16 +7,18 @@
  * # DashboardInteligenciaCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DashboardInteligenciaCtrl', function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
+angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
+    function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
+        
         /**/
-        var apiUrl = ApiConfig.API_URL;
+        var apiUrl    = ApiConfig.API_URL;
         var app_token = ApiConfig.APP_TOKEN;
         /**/
-        $scope.alerts = {};
+        
+        $scope.alerts    = {};
         $scope.usersType = {};
         $scope._symptoms = [];
-        $scope.types = {
+        $scope.types     = {
             sindrome: true,
             sintomas: false,
             customize: false
@@ -147,4 +149,4 @@ angular.module('gdsApp')
             }
         };
 
-    });
+    }]);

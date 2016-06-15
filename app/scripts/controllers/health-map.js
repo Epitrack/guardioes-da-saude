@@ -9,7 +9,6 @@
  */
 angular.module('gdsApp')
     .controller('HealthMapCtrl', ['$scope', '$translate', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, $translate, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
-
         $scope.pageClass = 'health-map';
         $scope.markers = [];
 
@@ -464,5 +463,4 @@ angular.module('gdsApp')
             };
             if ($rootScope.city === undefined) { $scope.getMarkersByLocation(); }
         }
-
     }]);

@@ -182,7 +182,7 @@ angular.module('gdsApp')
 
         // ====
         $scope.graphicDonuts = function() {
-        
+
             $scope.donutOptions = {
                 data: [
                     { label: $scope.bemstring, value: $scope.userSurvey.no_symptom },

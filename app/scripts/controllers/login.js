@@ -7,8 +7,8 @@
  * # LoginCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('LoginCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', '$rootScope', function($scope, $http, UserApi, $location, LocalStorage, Notification, $rootScope) {
+angular.module('gdsApp').controller('LoginCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', '$rootScope', 
+    function($scope, $http, UserApi, $location, LocalStorage, Notification, $rootScope) {
         $scope.cangoogle = false;
         $scope.facebookLogin = function() {
             UserApi.facebookLogin($scope);

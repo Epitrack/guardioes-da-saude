@@ -7,8 +7,8 @@
  * # FaleConoscoCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 'Notification', function ($scope, ContactApi, Notification) {
+angular.module('gdsApp').controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 'Notification', 
+  function ($scope, ContactApi, Notification) {
 
     $scope.contact = {};
 

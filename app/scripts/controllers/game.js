@@ -9,8 +9,6 @@
  */
 angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
-
-
         var app_token = ApiConfig.APP_TOKEN;
 
         var w = $("#img_bg").width();
@@ -399,7 +397,7 @@ angular.module('gdsApp')
         };
 
         $scope.buildquestions = function(callback) {
-            $http.get("http://rest.guardioesdasaude.org/game/questions/?lang="+$scope.getLanguage()).then(function(result) {
+            $http.get("http://rest.guardioesdasaude.org/game/questions/?lang=" + $scope.getLanguage()).then(function(result) {
                 $scope.questions = result.data;
                 for (var i = 0; i < $scope.questions.length; i++) {
                     $scope.questions[i].img1 = "../images/game/btn_questao.svg";
@@ -535,7 +533,7 @@ angular.module('gdsApp')
             });
         };
         $scope.getRanking();
-        
+
         $scope.nextPin = function() {
             $scope.current_fase++;
             console.log("$scope.current_fase", $scope.current_fase - 1);

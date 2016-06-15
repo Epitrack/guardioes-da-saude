@@ -7,8 +7,7 @@
  * # DataDownloadCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('DataDownloadCtrl', function () {
+angular.module('gdsApp').controller('DataDownloadCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

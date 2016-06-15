@@ -7,8 +7,8 @@
  * # HowAreYouFeelingCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', 'moment', function ($scope, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification, moment) {
+angular.module('gdsApp').controller('HowAreYouFeelingCtrl', ['$scope', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', 'moment', 
+  function ($scope, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification, moment) {
 
     $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
 

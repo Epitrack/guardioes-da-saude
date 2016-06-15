@@ -7,8 +7,7 @@
  * # SurveyCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('SurveyCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+angular.module('gdsApp').controller('SurveyCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $scope.pageClass = 'survey-page';
 
