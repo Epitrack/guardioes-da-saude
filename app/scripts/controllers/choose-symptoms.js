@@ -7,8 +7,8 @@
  * # ChooseSymptomsCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', '$rootScope', 'moment', function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification, $rootScope, moment) {
+angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', 'Surveyapi', '$location', 'LocalStorage', '$timeout', '$window', '$facebook', 'Notification', '$rootScope', 'moment', 
+  function ($scope, Surveyapi, $location, LocalStorage, $timeout, $window, $facebook, Notification, $rootScope, moment) {
 
     // get all symptoms
     Surveyapi.getSymptoms(function (data) {

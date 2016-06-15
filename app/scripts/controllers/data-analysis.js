@@ -7,8 +7,8 @@
  * # DataAnalysisCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
+angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'DashboardApi', '$scope', '$location', '$rootScope', '$compile',
+    function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
         $scope.slide_active = 0;
 
         $scope.DEPARALABELS = {
@@ -423,4 +423,4 @@ angular.module('gdsApp')
                 }
             });
         };
-    });
+    }]);

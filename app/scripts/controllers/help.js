@@ -7,8 +7,7 @@
  * # HelpCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HelpCtrl', ['$scope', 'Upload', function ($scope, Upload) {
+angular.module('gdsApp').controller('HelpCtrl', ['$scope', 'Upload', function ($scope, Upload) {
     $scope.pageClass = 'help-page';
 
     $scope.produto = {};

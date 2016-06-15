@@ -6,8 +6,8 @@
  * # HealthDailyCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'Notification', 'moment', function ($scope, UserApi, $rootScope, LocalStorage, Notification, moment) {
+angular.module('gdsApp').controller('HealthDailyCtrl', ['$scope', 'UserApi', '$rootScope', 'LocalStorage', 'Notification', 'moment', 
+  function ($scope, UserApi, $rootScope, LocalStorage, Notification, moment) {
     $scope.pageClass = 'health-daily-page';
     $scope.vm = {};
     $scope.currentMonth = moment();

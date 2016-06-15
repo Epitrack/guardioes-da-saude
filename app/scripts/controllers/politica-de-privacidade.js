@@ -7,8 +7,7 @@
  * # PoliticaDePrivacidadeCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('PoliticaDePrivacidadeCtrl', function () {
+angular.module('gdsApp').controller('PoliticaDePrivacidadeCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

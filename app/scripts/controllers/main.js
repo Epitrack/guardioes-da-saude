@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http', function ($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
+angular.module('gdsApp').controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http', 
+  function ($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
 
     $scope.pageClass = 'main-page';
 

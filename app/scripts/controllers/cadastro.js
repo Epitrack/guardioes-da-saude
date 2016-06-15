@@ -7,8 +7,8 @@
  * # CadastroCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('CadastroCtrl', function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
+angular.module('gdsApp').controller('CadastroCtrl', [ '$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification',
+    function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
         // $scope.pageClass = 'login-page';
 
         $scope.userData = {};
@@ -87,4 +87,4 @@ angular.module('gdsApp')
                 }
             });
         };
-    });
+    }]);

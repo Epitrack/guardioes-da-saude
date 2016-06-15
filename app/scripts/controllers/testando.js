@@ -7,8 +7,7 @@
  * # TestandoCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('TestandoCtrl', function () {
+angular.module('gdsApp').controller('TestandoCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

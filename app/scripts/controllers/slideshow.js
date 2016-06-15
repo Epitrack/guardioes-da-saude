@@ -7,8 +7,7 @@
  * # SlideshowCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('SlideshowCtrl', ['$scope', function ($scope) {
+angular.module('gdsApp').controller('SlideshowCtrl', ['$scope', function ($scope) {
 
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;

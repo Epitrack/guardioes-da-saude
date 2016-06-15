@@ -7,8 +7,8 @@
  * # NoticiasCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('NoticiasCtrl', ['$scope', 'NewsApi', function ($scope, NewsApi) {
+angular.module('gdsApp').controller('NoticiasCtrl', ['$scope', 'NewsApi', 
+  function ($scope, NewsApi) {
 
     $scope.pageClass = 'noticias-page';
 

@@ -7,8 +7,8 @@
  * # LoginEmailCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('LoginEmailCtrl', ['$scope', 'UserApi', '$translate', '$location', '$rootScope', 'LocalStorage', 'Notification', function($scope, UserApi, $translate, $location, $rootScope, LocalStorage, Notification) {
+angular.module('gdsApp').controller('LoginEmailCtrl', ['$scope', 'UserApi', '$translate', '$location', '$rootScope', 'LocalStorage', 'Notification', 
+    function($scope, UserApi, $translate, $location, $rootScope, LocalStorage, Notification) {
 
         $scope.pageClass = 'login-email-page';
 

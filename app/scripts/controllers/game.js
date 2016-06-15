@@ -7,8 +7,8 @@
  * # FaleConoscoCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$timeout', 'ApiConfig', '$translate', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, ApiConfig, $translate, $location, $http, Notification, LocalStorage) {
+angular.module('gdsApp').controller('GameCtrl', ['$scope', '$timeout', 'ApiConfig', '$translate', '$location', '$http', 'Notification', 'LocalStorage', 
+    function($scope, $timeout, ApiConfig, $translate, $location, $http, Notification, LocalStorage) {
 
 
         var app_token = ApiConfig.APP_TOKEN;

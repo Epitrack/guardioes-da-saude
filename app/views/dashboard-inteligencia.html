@@ -348,6 +348,7 @@
         </div>
     </div>
 </section>
+
 <script>
 var classesColorScale = d3.scale.category10();
 var maxDate, minDate, symptomsCases, syndromesCases, symptomsDataset, allSymptoms, syndromesDataset, allSyndromes, symptomsDimension, symptomsGroup, symptomsDateDimension, syndromesDimension, syndromesGroup, syndromesDateDimension, regions, regionsGroup;
@@ -368,10 +369,12 @@ function initdash() {
     }).done(function(data) {
         syndromesCases = data;
     });
+
     /**/
     console.log("symptomsCases", symptomsCases);
     console.log("syndromesCases", syndromesCases);
     /**/
+    
     maxDate = _.max(syndromesCases, function(obj) {
         return new Date(obj.date_reported);
     });

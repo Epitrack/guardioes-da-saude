@@ -7,8 +7,8 @@
  * # DashboardCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DashboardCtrl', ['$scope', 'DashboardApi', 'Notification', function($scope, DashboardApi, Notification) {
+angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 'Notification', 
+    function($scope, DashboardApi, Notification) {
         $scope.pageClass = 'dashboard-page';
 
         $scope.data = {};

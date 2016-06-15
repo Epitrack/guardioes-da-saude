@@ -7,8 +7,8 @@
  * # EsqueceuSenhaCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('EsqueceuSenhaCtrl', ['$scope', 'UserApi', 'Notification', function ($scope, UserApi, Notification) {
+angular.module('gdsApp').controller('EsqueceuSenhaCtrl', ['$scope', 'UserApi', 'Notification', 
+  function ($scope, UserApi, Notification) {
 
     $scope.forgotPass = {};
 

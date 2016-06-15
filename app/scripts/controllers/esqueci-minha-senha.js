@@ -7,8 +7,8 @@
  * # EsqueciMinhaSenhaCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('EsqueciMinhaSenhaCtrl', ['$scope', 'UserApi', '$location', '$timeout', 'Notification', function ($scope, UserApi, $location, $timeout, Notification) {
+angular.module('gdsApp').controller('EsqueciMinhaSenhaCtrl', ['$scope', 'UserApi', '$location', '$timeout', 'Notification', 
+  function ($scope, UserApi, $location, $timeout, Notification) {
 
     $scope.screen = {};
 

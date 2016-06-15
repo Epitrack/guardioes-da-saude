@@ -7,8 +7,8 @@
  * # HealthMapCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
+angular.module('gdsApp').controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', 
+    function($scope, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
 
         $scope.pageClass = 'health-map';
         $scope.markers = [];
