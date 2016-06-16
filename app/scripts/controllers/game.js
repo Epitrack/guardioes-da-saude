@@ -294,6 +294,13 @@ angular.module('gdsApp')
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
         $scope.questions = [];
+        $scope.ranking = [
+            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
+            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
+            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
+            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
+            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }]
+        ];
         var count = 0;
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
         $scope.savestatus = function(level, puzzleMatriz, questionId) {
@@ -527,7 +534,7 @@ angular.module('gdsApp')
 
         $scope.getRanking = function() {
             $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
-                console.log(result);
+                $scope.ranking = $scope.montaRanking(result);
             }, function(err) {
                 console.log(err);
             });
@@ -563,6 +570,26 @@ angular.module('gdsApp')
                 ln = $translate.use();
             }
             return ln;
+        };
+
+        $scope.montaRanking = function(rankings) {
+            var _ranking = [];
+            var count = 0;
+            var objs = [];
+            for (var i = 0; i < rankings.length; i++) {
+                if (count < 2) {
+                    objs.push(rankings[i]);
+                    count++;
+                } else {
+                    _ranking.push(objs);
+                    objs = [];
+                    count = 0;
+                    objs.push(rankings[i]);
+                    count++;
+                }
+            }
+            _ranking.push(objs);
+            return _ranking;
         };
 
         $(document).ready(function() {
