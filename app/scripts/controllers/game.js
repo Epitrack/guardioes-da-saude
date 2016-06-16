@@ -294,6 +294,17 @@ angular.module('gdsApp')
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
         $scope.questions = [];
+        $scope.deparapuzzle = {
+            "00": 0,
+            "01": 1,
+            "02": 2,
+            "10": 3,
+            "11": 4,
+            "12": 5,
+            "20": 6,
+            "21": 7,
+            "22": 8
+        };
         $scope.ranking = [
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
@@ -326,9 +337,8 @@ angular.module('gdsApp')
                     $scope.current_fase_obj = $scope.fasespics[(o['level'] - 1)];
                 }
                 if (o['answers'] !== undefined) {
-                    $scope.responses = o['answers'];
+                    // $scope.responses = o['answers'];
                 }
-                console.log(o, o['answers']);
                 $scope.current_fase = $scope.current_fase_obj.id;
                 $("#img_pin").css('top', $scope.current_fase_obj.top);
                 $("#img_pin").css('left', $scope.current_fase_obj.left);
@@ -430,14 +440,17 @@ angular.module('gdsApp')
             return r;
         };
 
+        /*
+        $('#game_modal_panel_card').modal('show')
+        $('#game-modal').modal('show') 
+        game-modal
+        game_modal_panel_card
+        */
         $scope.openmodal = function(key, val, $event) {
-            $scope.current_fase = val;
             $scope.buildquestions(function() {
                 $scope.clean(key);
                 if (key === 'fase') {
                     $scope.prepareQuestions();
-                } else if (key === 'points') {
-
                 }
             });
         };
@@ -477,6 +490,10 @@ angular.module('gdsApp')
             } else if (key === 'points') {
                 $scope.show("panel_resultado", true);
                 $("#panel_header_game").hide();
+            } else if (key === "card") {
+                $("#panel_card_img").attr("src", $scope.current_fase_obj.path + "card.png");
+                $('#game_modal_panel_card').modal('show');
+                $('#game-modal').modal('hide');
             }
         };
 
@@ -486,25 +503,22 @@ angular.module('gdsApp')
                 $("#pergunta").attr("class", "game-card-certa");
                 $("#pergunta").html('<div style="width: 190px; color: white; font-weight: bold; font-size: 1.8em; line-height: 45px;"> Resposta CORRETA!</div>');
                 $scope.questions_view[$scope.k][$scope.k1].active = true;
-
-                var indice = (Math.floor((($scope.k * (7 / 2)) + ($scope.k1 * (3 / 2)))) - 1);
-                if (indice == 0) {
-                    indice = 1;
-                } else if (indice == -1) {
+                var indice = $scope.deparapuzzle['' + $scope.k + '' + $scope.k1];
+                if (indice === -1) {
                     indice = 0;
                 }
-                console.log("indice - resposta", indice);
                 $scope.responses[indice] = 1;
                 $scope.current_question_id = $scope.questions_view[$scope.k][$scope.k1].id;
-                $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
+                // $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
                 $timeout(function() {
                     $scope.clean('fase');
-                }, 1000);
+                }, 500);
                 $timeout(function() {
                     if ($scope.finalizou()) {
-                        $scope.clean('points');
+                        $scope.clean('card');
+                        $scope.nextPin();
                     }
-                }, 1000);
+                }, 500);
 
             } else {
                 $("#op" + (op + 1)).attr("class", "game-resposta-errada");
@@ -512,7 +526,6 @@ angular.module('gdsApp')
         };
 
         $scope.escolher = function(k, k1) {
-            console.log("k, k1", k, k1);
             $scope.k = k;
             $scope.k1 = k1;
             $("#pergunta").html($scope.questions_view[k][k1].title);
@@ -535,6 +548,7 @@ angular.module('gdsApp')
         $scope.getRanking = function() {
             $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
                 $scope.ranking = $scope.montaRanking(result);
+                console.log($scope.ranking);
             }, function(err) {
                 console.log(err);
             });
@@ -543,7 +557,8 @@ angular.module('gdsApp')
 
         $scope.nextPin = function() {
             $scope.current_fase++;
-            console.log("$scope.current_fase", $scope.current_fase - 1);
+            $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
             $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
             $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
             $("html, body").animate({
