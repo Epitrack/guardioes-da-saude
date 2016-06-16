@@ -198,10 +198,11 @@ angular.module('gdsApp')
                     summary.respiratoria = data.data.summary.diseases.respiratoria;
 
                     try {
-                        // var total = summary.diarreica + summary.exantematica + summary.respiratoria;
-                        summary.diarreica = ((summary.diarreica / summary.total_surveys) * 100).toFixed(2);
-                        summary.exantematica = ((summary.exantematica / summary.total_surveys) * 100).toFixed(2);
-                        summary.respiratoria = ((summary.respiratoria / summary.total_surveys) * 100).toFixed(2);
+                        if (summary.total_surveys > 0) {
+                            summary.diarreica = ((summary.diarreica / summary.total_surveys) * 100).toFixed(2);
+                            summary.exantematica = ((summary.exantematica / summary.total_surveys) * 100).toFixed(2);
+                            summary.respiratoria = ((summary.respiratoria / summary.total_surveys) * 100).toFixed(2);
+                        }
                     } catch (e) {}
 
                     if (summary.total_no_symptoms > 0) {
@@ -290,10 +291,12 @@ angular.module('gdsApp')
                     summary.exantematica = data.data.summary.diseases.exantematica;
                     summary.respiratoria = data.data.summary.diseases.respiratoria;
 
-                    try {
-                        summary.diarreica = ((summary.diarreica / summary.total_surveys) * 100).toFixed(2);
-                        summary.exantematica = ((summary.exantematica / summary.total_surveys) * 100).toFixed(2);
-                        summary.respiratoria = ((summary.respiratoria / summary.total_surveys) * 100).toFixed(2);
+                     try {
+                        if (summary.total_surveys > 0) {
+                            summary.diarreica = ((summary.diarreica / summary.total_surveys) * 100).toFixed(2);
+                            summary.exantematica = ((summary.exantematica / summary.total_surveys) * 100).toFixed(2);
+                            summary.respiratoria = ((summary.respiratoria / summary.total_surveys) * 100).toFixed(2);
+                        }
                     } catch (e) {}
 
                     if (summary.total_no_symptoms > 0) {
