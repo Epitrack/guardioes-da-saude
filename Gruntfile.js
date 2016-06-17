@@ -430,7 +430,10 @@ module.exports = function(grunt) {
                         '*.html',
                         'images/{,*/}*.{webp}',
                         'images/{,*/}*.{png,jpg,svg}',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'fonts/bootstrap/{,*/}*.*',
+                        'scripts/util/{,*/}*.*'
+
                     ]
                 }, {
                     expand: true,
@@ -506,6 +509,7 @@ module.exports = function(grunt) {
         'karma'
     ]);
 
+    
     grunt.registerTask('build', [
         'clean:dist',
         'wiredep',

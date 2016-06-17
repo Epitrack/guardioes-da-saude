@@ -18,7 +18,7 @@ textarea {
 select {
   &.icon-arrow {
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size: 12px;
     background-position: 95% center;
     @include path('select-arrow.svg');
   }

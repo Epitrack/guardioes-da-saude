@@ -10,9 +10,13 @@
 angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
     function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
         
+        // Init
+        $scope.loadingGrafycs = true;
+
         /**/
         var apiUrl    = ApiConfig.API_URL;
         var app_token = ApiConfig.APP_TOKEN;
+        var classesColorScale = d3.scale.category10();        
         /**/
         
         $scope.alerts    = {};
@@ -51,6 +55,8 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
                     console.warn('Error getAllData: ', error);
                 });
         };
+
+
         $scope.inputDadosFicticios = function() {
             if ($scope.alerts['São Paulo'] === undefined) {
                 $scope.alerts['São Paulo'] = [];
@@ -96,16 +102,303 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
 
         };
 
-        $scope.findData = function() {
-            $http.get(apiUrl + '/ei/symptoms/')
-                .then(function(data) {
-                    $scope._symptoms = data.data.slice(0, 100);
-                    console.log($scope._symptoms)
-                }, function(error) {
-                    console.warn('Error getAllData: ', error);
-                });
+        $scope.getSymptoms = function() {
+            $http.get(apiUrl + '/ei/symptoms/').success(function(data, status){
+                $scope.symptomsCases = data;
+                if (data) {
+                    $scope.getSyndrome($scope.symptomsCases)
+                };
+            });
+        };
+
+        $scope.getSyndrome = function(symptomsCases){
+            $http.get(apiUrl + '/ei/syndrome/').success(function(data, status){
+                $scope.syndromesCases = data
+                $scope.createGrafyc(symptomsCases, $scope.syndromesCases);
+            });
         }
-        $scope.findData();
+
+        $scope.createGrafyc = function(symptomsCases, syndromesCases){
+            // console.log(symptomsCases);
+            // console.log(syndromesCases);
+
+            var ageSteps = [5, 10, 15, 20, 25, 30, 40, 50, 60];
+            var maxDate, 
+                minDate, 
+                symptomsCases, 
+                syndromesCases,
+                symptomsDataset,
+                allSymptoms,
+                syndromesDataset,
+                allSyndromes,
+                symptomsDimension,
+                symptomsGroup,
+                symptomsDateDimension,
+                syndromesDimension,
+                syndromesGroup,
+                syndromesDateDimension,
+                regions,
+                regionsGroup;
+
+            maxDate = _.max(syndromesCases, function(obj) {
+                return new Date(obj.date_reported);
+            });
+
+            minDate = _.min(syndromesCases, function(obj) {
+                return new Date(obj.date_reported);
+            });
+
+            maxDate = new Date(maxDate.date_reported);
+            minDate = new Date(minDate.date_reported);
+
+            
+            symptomsCases.forEach(function(s) {
+                s.ageGroup = Math.floor(s.age / 10) * 10;
+            });
+            syndromesCases.forEach(function(s) {
+                s.ageGroup = Math.floor(s.age / 10) * 10;
+            });
+            symptomsDataset = crossfilter(symptomsCases);
+            allSymptoms = symptomsDataset.groupAll();
+            syndromesDataset = crossfilter(syndromesCases);
+            allSyndromes = syndromesDataset.groupAll();
+            symptomsDimension = symptomsDataset.dimension(function(d) {
+                return d.symptom;
+            });
+            symptomsGroup = symptomsDimension.group();
+            symptomsDateDimension = symptomsDataset.dimension(function(d) {
+                return new Date(d.date_onset);
+            });
+            syndromesDimension = syndromesDataset.dimension(function(d) {
+                return d.syndrome;
+            });
+            syndromesGroup = syndromesDimension.group();
+            syndromesDateDimension = syndromesDataset.dimension(function(d) {
+                return new Date(d.date_onset);
+            });
+
+            // Row charts
+            var buildRowChart = function(target, dimension, group) {
+                var chart = dc.rowChart(target)
+                    .width(260)
+                    .height(384)
+                    .margins({
+                        top: 40,
+                        left: 10,
+                        right: 10,
+                        bottom: 20
+                    })
+                    .colors(classesColorScale)
+                    .colorAccessor(function(d, i) {
+                        return i;
+                    })
+                    .group(group)
+                    .dimension(dimension)
+                    .label(function(d) {
+                        return d.key;
+                    })
+                    .title(function(d) {
+                        return d.value;
+                    })
+                    .elasticX(true);
+                /**/
+                return chart;
+            };
+
+            // Maps
+            function loadgeojson() {
+                d3.json("scripts/util/rio_aps.geojson", function(geojson) {
+                    var buildMap = function(target, dataset) {
+                        regions = dataset.dimension(function(d) {
+                            return d.region;
+                        });
+                        regionsGroup = regions.group();
+
+                        var width = $(target).width(),
+                            height = 350;
+                        var projection = d3.geo.mercator()
+                            .center([-43.30, -23.00])
+                            .scale(45000);
+
+                        var chart = dc.geoChoroplethChart(target)
+                            .width(width)
+                            .height(height)
+                            .dimension(regions)
+                            .group(regionsGroup)
+                            .colorAccessor(function(d) {
+                                return d;
+                            })
+                            .overlayGeoJson(geojson.features, "region", function(d) {
+                                return d.properties.NOME;
+                            })
+                            .projection(projection)
+                            .title(function(d) {
+                                return "Region: " + d.key + "\nCount: " + (d.value || 0);
+                            });
+                        // setDefaultColors(chart, regionsGroup);
+                        return chart;
+                    }
+
+                    var syndromesMap = buildMap('#syndromesMap', syndromesDataset);
+                    var symptomsMap = buildMap('#symptomsMap', symptomsDataset);
+
+                    syndromesMap.render();
+                    symptomsMap.render();
+                });
+            };
+
+
+            // Age group charts
+
+            var buildAgeChart = function(target, dataset) {
+                var dimension = dataset.dimension(function(d) {
+                    return d.ageGroup;
+                });
+
+                var group = dimension.group(function(d) {
+                    return Math.floor(d / 10) * 10;
+                });
+
+                var chart = dc.rowChart(target)
+                    .width($(target).width())
+                    .height(300).margins({
+                        top: 25,
+                        right: 40,
+                        bottom: 30,
+                        left: 40
+                    })
+                    .dimension(dimension)
+                    // .dimension(dimension2)
+                    .colorAccessor(function(d) {
+                        return d.value;
+                    })
+                    .group(group)
+                    .label(function(d) {
+                        return d.key + " - " + (d.key + 9);
+                    });
+
+                return chart;
+            };
+
+            // Time series chart
+            var buildTimeChart = function(dataset, group, accessor, target, navigation, dateDimension) {
+                var precision = ['days', d3.time.days];
+                var symptomsTimeChart = dc.compositeChart(target);
+                var symptomsNavChart = dc.barChart(navigation);
+                var volumeByHour = dateDimension;
+                var volumeByHourGroup = volumeByHour.group(
+                    function(the_date) {
+                        return d3.time.day(the_date); // TODO make the granularity easier to see
+                    }
+                );
+                var symptomGroupsTimeSeries =
+                    volumeByHour
+                    .group(function(date) {
+                        return d3.time.day(date); // TODO make the granularity easier to see
+                    })
+                    .reduce(
+                        function(p, d) {
+                            p[d[accessor]] = (p[d[accessor]] || 0) + 1;
+                            return p;
+                        },
+                        function(p, d) {
+                            --p[d[accessor]];
+                            return p;
+                        },
+                        function() {
+                            return {};
+                        }
+                    );
+                var observed_symptoms = group.all().map(function(obj) {
+                    return obj.key;
+                });
+
+                symptomsTimeChart
+                    .width($(target).width())
+                    .height(300)
+                    .margins({
+                        top: 10,
+                        right: 120,
+                        bottom: 20,
+                        left: 40
+                    })
+                    .rangeChart(symptomsNavChart)
+                    .shareTitle(false)
+                    .transitionDuration(100)
+                    .elasticY(true)
+                    .x(d3.time.scale())
+                    .xUnits(d3.time.days)
+                    //.xAxisLabel('date (' + precision[0] + ')') // (optional) render an axis label below the x axis
+                    .yAxisLabel('no. cases')
+                    .xAxis();
+
+                var theLines = [];
+                observed_symptoms.forEach(function(field, i) {
+                    theLines.push(
+                        dc.lineChart(symptomsTimeChart)
+                        .dimension(volumeByHour)
+                        .colors(classesColorScale(i))
+                        .group(symptomGroupsTimeSeries, observed_symptoms[i], function(d) {
+                            return d.value[field] || null;
+                        })
+                        .defined(function(d) {
+                            return !isNaN(d.y)
+                        })
+                        .interpolate("monotone")
+                    );
+                });
+
+                symptomsTimeChart
+                    .compose(theLines)
+                    .brushOn(false);
+
+                symptomsTimeChart
+                    .rangeChart(symptomsNavChart)
+                    .transitionDuration(100)
+                    .x(d3.time.scale().domain([minDate, maxDate]))
+                    .xUnits(d3.time.days)
+                    .xAxis();
+
+                symptomsNavChart.width(850)
+                    .height(60)
+                    .margins({
+                        top: 10,
+                        right: 20,
+                        bottom: 20,
+                        left: 50
+                    })
+                    .dimension(volumeByHour)
+                    .group(volumeByHourGroup)
+                    .centerBar(true)
+                    .gap(1)
+                    .x(d3.time.scale().domain([minDate, maxDate]))
+                    .round(d3.time.days.round)
+                    .alwaysUseRounding(true)
+                    .xUnits(d3.time.days)
+                    .yAxis().ticks(0);
+
+                return symptomsTimeChart;
+            };
+
+            function builds() {
+                buildRowChart('#syndromesChart', syndromesDimension, syndromesGroup);
+                buildRowChart('#symptomsChart', symptomsDimension, symptomsGroup);
+                dc.dataCount('#syndromesCount').dimension(syndromesDataset).group(allSyndromes);
+                dc.dataCount('#symptomsCount').dimension(symptomsDataset).group(allSymptoms);
+                buildAgeChart('#syndromesAgeChart', syndromesDataset);
+                buildAgeChart('#symptomsAgeChart', symptomsDataset);
+                buildTimeChart(syndromesDataset, syndromesGroup, 'syndrome', '#syndromesTimeSeries', '#syndromesTimeNavigation', syndromesDateDimension);
+                buildTimeChart(symptomsDataset, symptomsGroup, 'symptom', '#symptomsTimeSeries', '#symptomsTimeNavigation', symptomsDateDimension);
+
+            };
+            
+            loadgeojson();
+            builds();
+            $scope.loadingGrafycs = false;
+            dc.renderAll();
+        };
+
+        
         /*1- atleta 2- voluntario, 3- fa*/
         $scope.findUsersType = function() {
             $http.get(apiUrl + '/ei/users/')
@@ -149,4 +442,5 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
             }
         };
 
+        $scope.getSymptoms();
     }]);
