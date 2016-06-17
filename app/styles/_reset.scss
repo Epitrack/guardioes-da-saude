@@ -28,6 +28,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+html, body{
+  min-height: 1700px!important
+}
+
 body {
   line-height: 1;
 }
