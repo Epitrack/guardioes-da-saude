@@ -5908,27 +5908,27 @@
       "Inglês": "Every day is a day of combat Aedes aegypti",
       "Espanhol": "Cada día es un día de combate Aedes aegypti",
       "Chinês": "每一天都是戰鬥埃及伊蚊的一天",
-      "Árabe": "كل يوم هو يوم للقتال الزاعجة المصرية",
+      "Árabe": "\nكل يوم هو يوم للقتال الزاعجة المصرية",
       "Russo": "Каждый день это день боевого комар жёлтолихорадочный",
       "Francês": "Chaque jour est un jour de combat Aedes aegypti"
     },
     {
       "Português": "Clique para saber mais",
-      "Inglês": "Click to learn more",
+      "Inglês": "\nClick to learn more",
       "Espanhol": "Haga clic para obtener más información",
       "Chinês": "點擊了解更多",
-      "Árabe": "انقر لمعرفة المزيد",
+      "Árabe": "\nانقر لمعرفة المزيد",
       "Russo": "Нажмите, чтобы узнать больше",
       "Francês": "Cliquez ici pour en savoir plus"
     },
     {
       "Português": "Um mosquito não é mais forte que um país inteiro.",
       "Inglês": "A mosquito is not stronger than an entire country.",
-      "Espanhol": "Un mosquito no es más fuerte que todo un país.",
-      "Chinês": "蚊子是不是比整個國家更強大。",
+      "Espanhol": "\nUn mosquito no es más fuerte que todo un país.",
+      "Chinês": "\n蚊子是不是比整個國家更強大。",
       "Árabe": "والبعوض ليست أقوى من بلد بأكمله.",
-      "Russo": "Комар не сильнее целой страны.",
-      "Francês": "Un moustique est pas plus fort que tout un pays."
+      "Russo": "\nКомар не сильнее целой страны.",
+      "Francês": "\nUn moustique est pas plus fort que tout un pays."
     },
     {
       "Português": "Atenção",
@@ -5937,14 +5937,14 @@
       "Chinês": "警告",
       "Árabe": "الحذر",
       "Russo": "осторожность",
-      "Francês": "prudence"
+      "Francês": "\nprudence"
     },
     {
       "Português": "opcional",
       "Inglês": "optional",
       "Espanhol": "opcional",
-      "Chinês": "自選",
-      "Árabe": "اختياري",
+      "Chinês": "\n自選",
+      "Árabe": "\nاختياري",
       "Russo": "необязательный",
       "Francês": "optionnel"
     },
@@ -5953,7 +5953,7 @@
       "Inglês": "Help improve the health of your community.",
       "Espanhol": "Ayudar a mejorar la salud de su comunidad.",
       "Chinês": "幫助您提高市民的健康。",
-      "Árabe": "تساعد على تحسين صحة مجتمعك.",
+      "Árabe": "\nتساعد على تحسين صحة مجتمعك.",
       "Russo": "Помогите улучшить здоровье вашего сообщества.",
       "Francês": "Aider à améliorer la santé de votre collectivité."
     },
@@ -5961,7 +5961,7 @@
       "Português": "Continuar no site",
       "Inglês": "Continue on the site",
       "Espanhol": "Continuar en el sitio",
-      "Chinês": "繼續在網站上",
+      "Chinês": "\n繼續在網站上",
       "Árabe": "تواصل على الموقع",
       "Russo": "Продолжить на сайте",
       "Francês": "Continuer sur le site"
@@ -5977,7 +5977,7 @@
     },
     {
       "Português": "Sua conta foi reativada com sucesso, agora você poderá fazer login normalmente.",
-      "Inglês": "Your account has been reactivated successfully, you can now log in as normal.",
+      "Inglês": "\nYour account has been reactivated successfully, you can now log in as normal.",
       "Espanhol": "Su cuenta ha sido reactivada con éxito, ahora puede conectarse de forma normal.",
       "Chinês": "您的帳戶已重新啟動成功，你現在可以登錄正常",
       "Árabe": "تم تفعيل حسابك بنجاح، يمكنك الآن تسجيل الدخول كالمعتاد.",
@@ -5986,10 +5986,10 @@
     },
     {
       "Português": "Obrigado pela sua contribuição",
-      "Inglês": "Thank you for your contribution",
+      "Inglês": "\nThank you for your contribution",
       "Espanhol": "Gracias por su contribución",
       "Chinês": "感謝您的貢獻",
-      "Árabe": "شكرا لمساهمتك",
+      "Árabe": "\nشكرا لمساهمتك",
       "Russo": "Благодарим Вас за Ваш вклад",
       "Francês": "Nous vous remercions de votre contribution"
     },
@@ -5998,49 +5998,49 @@
       "Inglês": "To actively contribute to the health surveillance in Brazil you need to share your location",
       "Espanhol": "Para contribuir activamente a la vigilancia de la salud en Brasil tiene que compartir su ubicación",
       "Chinês": "要積極促進在巴西，你需要分享你的位置的衛生監督",
-      "Árabe": "إلى المساهمة بنشاط في المراقبة الصحية في البرازيل تحتاج إلى مشاركة موقعك",
+      "Árabe": "\nإلى المساهمة بنشاط في المراقبة الصحية في البرازيل تحتاج إلى مشاركة موقعك",
       "Russo": "Для того, чтобы активно участвовать в наблюдения за состоянием здоровья в Бразилии, Вы должны сообщить о своем местоположении",
       "Francês": "Pour contribuer activement à la surveillance de la santé au Brésil vous devez partager votre position"
     },
     {
       "Português": "Não compartilhar implicará no mau funcionamento do Guardiões da Saúde",
       "Inglês": "Do not share result in the malfunction of the Health Guardians",
-      "Espanhol": "No comparta resultado en el mal funcionamiento de los Guardianes de la Salud",
+      "Espanhol": "\nNo comparta resultado en el mal funcionamiento de los Guardianes de la Salud",
       "Chinês": "不要在衛生監護人的故障分享結果",
-      "Árabe": "لا نشارك النتيجة في عطل من حراس الصحة",
+      "Árabe": "\nلا نشارك النتيجة في عطل من حراس الصحة",
       "Russo": "Не делите результат в неисправности Стражи здоровья",
       "Francês": "Ne pas partager les résultats dans le dysfonctionnement des Gardiens de la santé"
     },
     {
       "Português": "Como permitir sua localização",
       "Inglês": "Allowing your location",
-      "Espanhol": "Lo que permite su ubicación",
-      "Chinês": "讓你的位置",
-      "Árabe": "السماح موقعك",
+      "Espanhol": "\nLo que permite su ubicación",
+      "Chinês": "\n讓你的位置",
+      "Árabe": "\nالسماح موقعك",
       "Russo": "С учетом вашего местоположения",
       "Francês": "Permettre à votre emplacement"
     },
     {
       "Português": "Painel de Controle",
-      "Inglês": "Control panel",
+      "Inglês": "\nControl panel",
       "Espanhol": "Panel de control",
       "Chinês": "控制面板",
-      "Árabe": "لوحة التحكم",
+      "Árabe": "\nلوحة التحكم",
       "Russo": "Пульт управления",
       "Francês": "Panneau de configuration"
     },
     {
       "Português": "Mapa",
       "Inglês": "Map",
-      "Espanhol": "Mapa",
+      "Espanhol": "\nMapa",
       "Chinês": "地圖",
       "Árabe": "خريطة",
-      "Russo": "карта",
-      "Francês": "Carte"
+      "Russo": "\nкарта",
+      "Francês": "\nCarte"
     },
     {
       "Português": "Adicionar Integrante do Domicílio",
-      "Inglês": "Add Member of Domicile",
+      "Inglês": "\nAdd Member of Domicile",
       "Espanhol": "Añadir miembro del domicilio",
       "Chinês": "添加住所會員",
       "Árabe": "إضافة عضو من الموطن",
@@ -6049,19 +6049,19 @@
     },
     {
       "Português": "Estado de origem",
-      "Inglês": "State",
-      "Espanhol": "Estado",
+      "Inglês": "\nState",
+      "Espanhol": "\nEstado",
       "Chinês": "狀態",
-      "Árabe": "دولة",
+      "Árabe": "\nدولة",
       "Russo": "Состояние",
       "Francês": "État"
     },
     {
       "Português": "Qual país",
-      "Inglês": "Which country",
+      "Inglês": "\nWhich country",
       "Espanhol": "Cual país",
       "Chinês": "哪個國家",
-      "Árabe": "أي بلد",
+      "Árabe": "\nأي بلد",
       "Russo": "в какой стране",
       "Francês": "Quel pays"
     },
@@ -6069,8 +6069,8 @@
       "Português": "Foi enviada uma mensagem para o email , siga as instruções enviadas para recuperar sua senha.",
       "Inglês": "A message to the e-mail was sent, follow the instructions sent to retrieve your password.",
       "Espanhol": "Un mensaje a la dirección de e-mail fue enviado, siga las instrucciones enviadas para recuperar su contraseña.",
-      "Chinês": "被發送到電子郵件的消息，按照發送找回密碼的說明。",
-      "Árabe": "تم إرسال رسالة على البريد الإلكتروني، اتبع التعليمات المرسلة لاسترداد كلمة المرور الخاصة بك.",
+      "Chinês": "\n被發送到電子郵件的消息，按照發送找回密碼的說明。",
+      "Árabe": "\nتم إرسال رسالة على البريد الإلكتروني، اتبع التعليمات المرسلة لاسترداد كلمة المرور الخاصة بك.",
       "Russo": "сообщение по электронной почте было отправлено, следуйте инструкциям, отправленным для получения пароля.",
       "Francês": "Un message à l'adresse e-mail a été envoyé, suivez les instructions envoyées pour récupérer votre mot de passe."
     },
@@ -6079,31 +6079,31 @@
       "Inglês": "Create a new password for your account",
       "Espanhol": "Crear una nueva contraseña para su cuenta",
       "Chinês": "創建一個新的帳戶密碼",
-      "Árabe": "إنشاء كلمة مرور جديدة لحسابك",
+      "Árabe": "\nإنشاء كلمة مرور جديدة لحسابك",
       "Russo": "Создайте новый пароль для вашей учетной записи",
       "Francês": "Créer un nouveau mot de passe pour votre compte"
     },
     {
       "Português": "Sua senha precisa ter no mínimo 6 dígitos",
       "Inglês": "Your password must be at least 6 digits",
-      "Espanhol": "La contraseña debe tener al menos 6 dígitos",
+      "Espanhol": "\nLa contraseña debe tener al menos 6 dígitos",
       "Chinês": "您的密碼必須至少6位數",
-      "Árabe": "يجب أن تكون كلمة المرور الخاصة بك لا يقل عن 6 ارقام",
+      "Árabe": "\nيجب أن تكون كلمة المرور الخاصة بك لا يقل عن 6 ارقام",
       "Russo": "Ваш пароль должен быть не менее 6 цифр",
       "Francês": "Votre mot de passe doit être d'au moins 6 chiffres"
     },
     {
       "Português": "Trocar senha",
       "Inglês": "Change Password",
-      "Espanhol": "Cambio de contraseña",
+      "Espanhol": "\nCambio de contraseña",
       "Chinês": "更改密碼",
-      "Árabe": "تغيير كلمة المرور",
+      "Árabe": "\nتغيير كلمة المرور",
       "Russo": "изменение пароля",
-      "Francês": "Changement mot de passe"
+      "Francês": "\nChangement mot de passe"
     },
     {
       "Português": "Informações",
-      "Inglês": "Information",
+      "Inglês": "\nInformation",
       "Espanhol": "Información",
       "Chinês": "信息",
       "Árabe": "معلومات",
@@ -6114,35 +6114,35 @@
       "Português": "Sugestões",
       "Inglês": "Suggestions",
       "Espanhol": "Sugerencias",
-      "Chinês": "建議",
-      "Árabe": "اقتراحات",
+      "Chinês": "\n建議",
+      "Árabe": "\nاقتراحات",
       "Russo": "предложения",
-      "Francês": "Suggestions"
+      "Francês": "\nSuggestions"
     },
     {
       "Português": "Reclamações",
-      "Inglês": "Claims",
-      "Espanhol": "Quejas",
-      "Chinês": "投訴",
-      "Árabe": "الشكاوى",
+      "Inglês": "\nClaims",
+      "Espanhol": "\nQuejas",
+      "Chinês": "\n投訴",
+      "Árabe": "\nالشكاوى",
       "Russo": "жалобы",
-      "Francês": "Plaintes"
+      "Francês": "\nPlaintes"
     },
     {
       "Português": "Elogios",
       "Inglês": "Compliments",
-      "Espanhol": "Cumplidos",
-      "Chinês": "讚美",
-      "Árabe": "المجاملات",
-      "Russo": "поздравление",
-      "Francês": "Compliments"
+      "Espanhol": "\nCumplidos",
+      "Chinês": "\n讚美",
+      "Árabe": "\nالمجاملات",
+      "Russo": "\nпоздравление",
+      "Francês": "\nCompliments"
     },
     {
       "Português": "Serviço/Solicitações",
       "Inglês": "Service / Requests",
-      "Espanhol": "Las solicitudes de servicio",
+      "Espanhol": "\nLas solicitudes de servicio",
       "Chinês": "服務/採購信息",
-      "Árabe": "الخدمة / طلبات",
+      "Árabe": "\nالخدمة / طلبات",
       "Russo": "Услуги / Запросы",
       "Francês": "Services / Demandes"
     },
@@ -6151,7 +6151,7 @@
       "Inglês": "Frequency",
       "Espanhol": "Frecuencia",
       "Chinês": "頻率",
-      "Árabe": "تردد",
+      "Árabe": "\nتردد",
       "Russo": "частота",
       "Francês": "Fréquence"
     },
@@ -6159,17 +6159,17 @@
       "Português": "Relação de participação do mês",
       "Inglês": "Month participation ratio",
       "Espanhol": "Tasa de participación Mes",
-      "Chinês": "本月參與率",
+      "Chinês": "\n本月參與率",
       "Árabe": "نسبة المشاركة أشهر",
       "Russo": "Коэффициент участия месяц",
       "Francês": "Mois taux de participation"
     },
     {
       "Português": "Mês",
-      "Inglês": "Month",
+      "Inglês": "\nMonth",
       "Espanhol": "Mes",
       "Chinês": "月",
-      "Árabe": "شهر",
+      "Árabe": "\nشهر",
       "Russo": "месяц",
       "Francês": "Mois"
     },
@@ -6178,7 +6178,7 @@
       "Inglês": "No data to enough. Join now!",
       "Espanhol": "No hay datos que suficiente. Únete ahora!",
       "Chinês": "沒有數據就夠了。現在加入！",
-      "Árabe": "لا توجد بيانات لما يكفي. اشترك الآن!",
+      "Árabe": "\nلا توجد بيانات لما يكفي. اشترك الآن!",
       "Russo": "Нет данных достаточно. Присоединяйтесь!",
       "Francês": "Pas de données suffisantes. Inscris-toi maintenant!"
     },
@@ -6187,7 +6187,7 @@
       "Inglês": "Loading",
       "Espanhol": "Cargando",
       "Chinês": "加載",
-      "Árabe": "تحميل",
+      "Árabe": "\nتحميل",
       "Russo": "загрузка",
       "Francês": "Chargement"
     },
@@ -6195,18 +6195,18 @@
       "Português": "Quer maiores detalhes dos dados?",
       "Inglês": "Want more details of the data?",
       "Espanhol": "¿Quieres más detalles de los datos?",
-      "Chinês": "要的數據的詳細信息要的數據的詳細信息",
-      "Árabe": "هل تريد المزيد من تفاصيل البيانات؟",
+      "Chinês": "\n要的數據的詳細信息\n要的數據的詳細信息",
+      "Árabe": "\nهل تريد المزيد من تفاصيل البيانات؟",
       "Russo": "Хотите более подробную информацию о данных?",
-      "Francês": "Vous voulez plus de détails sur les données?"
+      "Francês": "\nVous voulez plus de détails sur les données?"
     },
     {
       "Português": "Eu Faço a Minha Parte",
       "Inglês": "I Do My Part",
       "Espanhol": "Hago mi parte",
       "Chinês": "我做我的第一部分",
-      "Árabe": "هل أنا من جهتي",
-      "Russo": "Я выполню свою часть",
+      "Árabe": "\nهل أنا من جهتي",
+      "Russo": "\nЯ выполню свою часть",
       "Francês": "I Do My Part"
     },
     {
@@ -6214,7 +6214,7 @@
       "Inglês": "Welcome to Health Tips",
       "Espanhol": "Bienvenido a Consejos de Salud",
       "Chinês": "歡迎到健康小貼士",
-      "Árabe": "مرحبا بكم في نصائح صحية",
+      "Árabe": "\nمرحبا بكم في نصائح صحية",
       "Russo": "Добро пожаловать в Советы для здоровья",
       "Francês": "Bienvenue sur Conseils santé"
     },
@@ -6229,47 +6229,47 @@
     },
     {
       "Português": "Política de Privacidade e Termos de Uso",
-      "Inglês": "Privacy Policy and Terms of Use",
-      "Espanhol": "Política de Privacidad y Condiciones de Uso",
+      "Inglês": "\nPrivacy Policy and Terms of Use",
+      "Espanhol": "\nPolítica de Privacidad y Condiciones de Uso",
       "Chinês": "隱私政策和使用條款",
-      "Árabe": "سياسة الخصوصية وشروط الاستخدام",
+      "Árabe": "\nسياسة الخصوصية وشروط الاستخدام",
       "Russo": "Политика конфиденциальности и условия использования",
-      "Francês": "Politique de confidentialité et Conditions d'utilisation"
+      "Francês": "\nPolitique de confidentialité et Conditions d'utilisation"
     },
     {
       "Português": "anos",
       "Inglês": "years",
-      "Espanhol": "años",
+      "Espanhol": "\naños",
       "Chinês": "歲月",
-      "Árabe": "سنوات",
+      "Árabe": "\nسنوات",
       "Russo": "лет",
       "Francês": "ans"
     },
     {
       "Português": "Participação",
-      "Inglês": "Participation",
+      "Inglês": "\nParticipation",
       "Espanhol": "Participación",
       "Chinês": "參與",
       "Árabe": "مشاركة",
-      "Russo": "участие",
-      "Francês": "Participation"
+      "Russo": "\nучастие",
+      "Francês": "\nParticipation"
     },
     {
       "Português": "Nível",
       "Inglês": "Level",
       "Espanhol": "Nivel",
       "Chinês": "水平",
-      "Árabe": "مستوى",
+      "Árabe": "\nمستوى",
       "Russo": "уровень",
-      "Francês": "Niveau"
+      "Francês": "\nNiveau"
     },
     {
       "Português": "Participações nos últimos dias",
       "Inglês": "Participation in last days",
       "Espanhol": "La participación en los últimos días",
       "Chinês": "參加最後的日子",
-      "Árabe": "المشاركة في الأيام الأخيرة",
-      "Russo": "Участие в последние дни",
+      "Árabe": "\nالمشاركة في الأيام الأخيرة",
+      "Russo": "\nУчастие в последние дни",
       "Francês": "Participation à derniers jours"
     },
     {
@@ -8014,7 +8014,7 @@
       "Inglês": "total",
       "Espanhol": "total",
       "Chinês": "總",
-      "Árabe": "مجموع",
+      "Árabe": "\nمجموع",
       "Russo": "общий",
       "Francês": "total"
     },
@@ -8024,7 +8024,43 @@
       "Espanhol": "Felicitaciones",
       "Chinês": "祝賀",
       "Árabe": "تهنئة",
-      "Russo": "Поздравляю",
+      "Russo": "\nПоздравляю",
       "Francês": "Félicitations"
+    },
+    {
+      "Português": "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas:",
+      "Inglês": "\nThe syndromes are common sets of clinical manifestations to a number of diseases, including:",
+      "Espanhol": "Los síndromes son grupos comunes de las manifestaciones clínicas de una serie de enfermedades, incluyendo:",
+      "Chinês": "校正子是臨床表現的公共集的若干疾病，包括：",
+      "Árabe": "   المتلازمات هي مجموعات مشتركة من المظاهر السريرية لعدد من الأمراض، بما في ذلك:",
+      "Russo": "   Синдромы являются общие наборы клинических проявлений ряда заболеваний, в том числе:",
+      "Francês": "Les syndromes sont des ensembles communs de manifestations cliniques à un certain nombre de maladies, y compris:"
+    },
+    {
+      "Português": "Diarreica (febre e náusea ou vômito e diarreia, além de algum destes sintomas: dores no corpo ou dor de cabeça)",
+      "Inglês": "Diarrhea (fever and nausea or vomiting and diarrhea, as well as any of these symptoms: body aches or headache)",
+      "Espanhol": "Diarrea (fiebre y náuseas o vómitos y diarrea, así como cualquiera de los siguientes síntomas: dolor en el cuerpo o dolor de cabeza)",
+      "Chinês": "腹瀉（發熱，噁心，嘔吐和腹瀉，以及這些症狀：身體疼痛或頭痛）",
+      "Árabe": "الإسهال (الحمى والغثيان أو القيء والإسهال، وكذلك أي من هذه الأعراض: أوجاع الجسم أو الصداع)",
+      "Russo": "Диарея (лихорадка и тошнота или рвота и понос, а также любой из этих симптомов: боли в теле или головная боль)",
+      "Francês": "Diarrhée (fièvre et des nausées ou des vomissements et la diarrhée, ainsi que l'un de ces symptômes: douleurs corporelles ou des maux de tête)"
+    },
+    {
+      "Português": "Respiratória (febre e tosse, além de algum destes sintomas: dor de garganta ou falta de ar)",
+      "Inglês": "Respiratory (fever and cough, and some of these symptoms: sore throat or shortness of breath)",
+      "Espanhol": "Respiratorias (fiebre y tos, y algunos de estos síntomas: dolor de garganta o dificultad para respirar)",
+      "Chinês": "呼吸道（發熱，咳嗽，和其中的一些症狀：咽部或氣短瘡）",
+      "Árabe": "الجهاز التنفسي (الحمى والسعال، وبعض من هذه الأعراض: التهاب الحلق أو ضيق في التنفس)",
+      "Russo": "Дыхательная (лихорадка и кашель, и некоторые из этих симптомов: боль в горле или одышка)",
+      "Francês": "Respiratory (fever and cough, and some of these symptoms: sore throat or shortness of breath)"
+    },
+    {
+      "Português": "Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)",
+      "Inglês": "Rash (red spots on the body, and any of these symptoms: fever or body aches or joint pain or headache or itchy or red eyes or bleeding)",
+      "Espanhol": "Erupción cutánea (manchas rojas en el cuerpo, y cualquiera de estos síntomas: fiebre o dolores en el cuerpo o dolor en las articulaciones o dolor de cabeza o picazón en los ojos o rojas o sangrado)",
+      "Chinês": "皮疹（在身上的紅色斑點，而這些症狀：發熱或全身酸痛或關節痛或頭痛，或癢或眼睛發紅或出血）",
+      "Árabe": "طفح جلدي (بقع حمراء على الجسم، وأي من هذه الأعراض: الحمى أو آلام في الجسم أو آلام المفاصل أو الصداع أو حكة ",
+      "Russo": "Сыпь (красные пятна на теле, и любой из этих симптомов: лихорадка или боли в теле или боли в суставах или головная боль или зуд или покраснение глаз или кровотечение)",
+      "Francês": "Rash (Les taches rouges sur le corps, et un de ces symptômes: la fièvre ou des courbatures ou des douleurs articulaires ou des maux de tête ou les yeux qui piquent ou rouge ou des saignements)"
     }
   ]
