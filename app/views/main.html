@@ -9,9 +9,7 @@
                         uib-typeahead="address for address in getLocation($viewValue)" 
                         typeahead-loading="loadingLocations" 
                         typeahead-no-results="noResults" 
-                        typeahead-on-select="setRootCity($item)" 
-                        onfocus="this.placeholder=''" 
-                        onblur="this.placeholder='{{ '00462' | translate}}'">
+                        typeahead-on-select="setRootCity($item)">
                     </fieldset>
                 </form>
                 <div class="last-cities">
