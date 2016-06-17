@@ -8,7 +8,7 @@
                 <div>
                     <ul class="nav navbar-nav">
                         <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;" ng-model="lang.current" ng-change="changeLanguage()">
-                            <option ng-selected="true" value="pt">PT</option>
+                            <option value="pt">PT</option>
                             <option value="en">EN</option>
                             <option value="es">ES</option>
                             <option value="zh">ZH</option>
@@ -44,7 +44,6 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <li><a ng-href="health-daily"> {{'00158' | translate}} </a></li>
-                                <li><a ng-href="game/tutorial"> {{'00167' | translate}}</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a ng-href="/" ng-click="clearStorage()"> {{'00521' | translate}}</a></li>
                             </ul>
