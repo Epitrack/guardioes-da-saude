@@ -62,7 +62,7 @@
     </div>
 </aside>
 <div class="health-map-container" ng-if="markers">
-    <gds-maps location="userLocation" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
+    <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
 </div>
 <!-- Síndromes Modal -->
 <div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">
