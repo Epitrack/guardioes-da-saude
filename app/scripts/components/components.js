@@ -9,13 +9,13 @@ app.directive('gdsMaps', function() {
     return {
      restict: 'E',
      template: '<div id="gdsMap"></div>',
-     scope:{location:"=", marks:"=", size:"=",zoom:"="},
+    scope:{location:"=", marks:"=", size:"=",zoom:"=",doubleclick:"="},
      link:function(scope){
          var mapOptions = {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
            zoom: 11,
            scrollwheel: false,
-           // disableDoubleClickZoom: true,
+           disableDoubleClickZoom: scope.doubleclick||true,
            streetViewControl: false,
            zoomControl: scope.zoom||false,
            mapTypeControl: true,
@@ -25,7 +25,7 @@ app.directive('gdsMaps', function() {
           }
           // panControl: false,
           // scaleControl:false,
-         };
+};
          document.getElementById('gdsMap').style.width = scope.size.width;
          document.getElementById('gdsMap').style.height = scope.size.height;
          var mMap;

@@ -12,6 +12,7 @@ angular.module('gdsApp')
         var app_token = ApiConfig.APP_TOKEN;
 
         var w = $("#img_bg").width();
+        var firstLoad = true;
         $scope.fasespics = [{
             "name": "vitoria",
             "path": "/images/game/fases/aquaticas/",
@@ -342,6 +343,17 @@ angular.module('gdsApp')
                 $scope.current_fase = $scope.current_fase_obj.id;
                 $("#img_pin").css('top', $scope.current_fase_obj.top);
                 $("#img_pin").css('left', $scope.current_fase_obj.left);
+                $("html, body").animate({
+                    scrollTop: parseInt($scope.current_fase_obj.top) - 180
+                }, 400);
+                /*insercao */
+                if (firstLoad) {
+                    for (var i = 0; i < ($scope.current_fase-1); i++) {
+                        $scope.addVencido($scope.fasespics[i]);
+                    }
+                    firstLoad = false;
+                }
+                console.log("$scope.current_fase", $scope.current_fase);
                 console.log("getstatus ok ", result, $scope.current_fase_obj);
             }, function(error) {
                 console.log("getstatus error", error);
@@ -447,6 +459,7 @@ angular.module('gdsApp')
         game_modal_panel_card
         */
         $scope.openmodal = function(key, val, $event) {
+            // $scope.clean("respostacerta");
             $scope.buildquestions(function() {
                 $scope.clean(key);
                 if (key === 'fase') {
@@ -482,6 +495,7 @@ angular.module('gdsApp')
             });
             $("#panel_header_game").show();
             if (key === 'fase') {
+                $scope.show("nivel_label", true);
                 $scope.show("panel_mosaico", true);
                 $("#op1").attr("class", "game-resposta-neutro");
                 $("#op2").attr("class", "game-resposta-neutro");
@@ -494,7 +508,30 @@ angular.module('gdsApp')
                 $("#panel_card_img").attr("src", $scope.current_fase_obj.path + "card.png");
                 $('#game_modal_panel_card').modal('show');
                 $('#game-modal').modal('hide');
+            } else if (key === 'pergunta') {
+                $scope.show("nivel_label", true);
+                $scope.show("panel_pergunta", true);
+            } else if (key === 'respostacerta') {
+                $scope.show("panel_resposta_certa", true);
+                $("#nivel_label").hide();
+                $("#parabens_label").show();
             }
+        };
+
+        $scope.repetirPergunta = function() {
+            $scope.clean('fase');
+            $scope.escolher($scope.k, $scope.k1);
+        };
+
+        $scope.proximaPergunta = function() {
+            $scope.clean('fase');
+            if ($scope.k1 < 2) {
+                $scope.k1++;
+            } else {
+                $scope.k++;
+                $scope.k1 = 0;
+            }
+            $scope.escolher($scope.k, $scope.k1);
         };
 
         $scope.responder = function(op) {
@@ -509,9 +546,9 @@ angular.module('gdsApp')
                 }
                 $scope.responses[indice] = 1;
                 $scope.current_question_id = $scope.questions_view[$scope.k][$scope.k1].id;
-                // $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
+                $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
                 $timeout(function() {
-                    $scope.clean('fase');
+                    $scope.clean('respostacerta');
                 }, 500);
                 $timeout(function() {
                     if ($scope.finalizou()) {
@@ -526,14 +563,14 @@ angular.module('gdsApp')
         };
 
         $scope.escolher = function(k, k1) {
+            console.log("k, k1", k, k1);
             $scope.k = k;
             $scope.k1 = k1;
             $("#pergunta").html($scope.questions_view[k][k1].title);
             $("#op1").html($scope.questions_view[k][k1].alternatives[0].option);
             $("#op2").html($scope.questions_view[k][k1].alternatives[1].option);
             $("#op3").html($scope.questions_view[k][k1].alternatives[2].option);
-            $scope.show("panel_mosaico", false);
-            $scope.show("panel_pergunta", true);
+            $scope.clean("pergunta");
             setTimeout(function() { $scope.$apply(); });
         };
 
@@ -558,6 +595,7 @@ angular.module('gdsApp')
         $scope.nextPin = function() {
             $scope.current_fase++;
             $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            $scope.savestatus($scope.current_fase, $scope.responses, "");
             $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
             $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
             $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
@@ -565,10 +603,10 @@ angular.module('gdsApp')
                 scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
             }, 400);
             var index = $scope.current_fase - 2;
-            $scope.addVencido(index, $scope.fasespics[index]);
+            $scope.addVencido($scope.fasespics[index]);
         };
 
-        $scope.addVencido = function(i, obj) {
+        $scope.addVencido = function(obj) {
             var elem = document.createElement("img");
             elem.setAttribute("src", "../images/game/pin-venceu.png");
             elem.setAttribute("id", "img_pin" + (count++));
@@ -607,10 +645,11 @@ angular.module('gdsApp')
             return _ranking;
         };
 
-        $(document).ready(function() {
+        $timeout(function() {
             $("html, body").animate({
                 scrollTop: parseInt($scope.fasespics[$scope.current_fase].top) - 180
             }, 400);
-        });
+            $scope.$apply();
+        }, 500);
 
     }]);

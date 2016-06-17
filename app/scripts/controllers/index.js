@@ -7,7 +7,7 @@
  * # IndexCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'LocalStorage', '$rootScope', '$location', 'Notification', '$window', 
+angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'LocalStorage', '$rootScope', '$location', 'Notification', '$window',
     function($scope, $translate, LocalStorage, $rootScope, $location, Notification, $window) {
 
         // to hide menu
@@ -16,7 +16,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
         $scope.lang.current = $translate.use();
         if (window.sessionStorage.getItem('lang') !== null) {
             $scope.lang.current = window.sessionStorage.getItem('lang');
-        console.log("$scope.lang.current",$scope.lang.current);
+            console.log("$scope.lang.current", $scope.lang.current);
         }
 
         $scope.changeLanguage = function() {
@@ -140,4 +140,5 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
         };
         // ====
 
-    }]);
+    }
+]);

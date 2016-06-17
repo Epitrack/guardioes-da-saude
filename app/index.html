@@ -60,13 +60,16 @@
     <![endif]-->
     <!-- Add your site or application content here -->
     <!-- <div class="wrapper-body" id="wrapper-body"> -->
-    <!-- mobile header -->
-    <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
-    <!-- desktop header -->
-    <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
-    <!--  <div class="container-fluid main-content st-pusher">
+    <div id="wrapper-body" class="wrapper-body main-content" style="position: initial!important;overflow: hidden!important;height: auto;">
+        <!-- mobile header -->
+        <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
+        <!-- desktop header -->
+        <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
+        <!--  <div class="container-fluid main-content st-pusher">
         <div class="row st-content"> -->
-    <div class="page {{ pageClass }}" ng-view="" autoscroll="true" style="background-color: #D9E0E7;"></div>
+        <div class="page {{ pageClass }}" ng-view="" autoscroll="true" style="background-color: #D9E0E7;">
+        </div>
+    </div>
     <!-- </div>
     </div> -->
     <!-- Modal App -->
@@ -104,7 +107,7 @@
     <div analytics></div>
     <script async src="https://oauth.io/auth/download/latest/oauth.min.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true"></script>
-   <!--  <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
+    <!--  <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
     <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/markerclusterer.js"></script> -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -151,7 +154,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    
     <script src="scripts/util/angular-translate.min.js"></script>
     <script src="scripts/util/Sortable.min.js"></script>
     <script src="scripts/util/ng-sortable.js"></script>
@@ -160,10 +162,8 @@
     <script src="scripts/util/highcharts.js"></script>
     <script src="scripts/util/highcharts-more.js"></script>
     <script src="scripts/util/exporting.js"></script>
-
     <script src="scripts/app.js"></script>
     <script src="scripts/app.config.js"></script>
-
     <!-- Services -->
     <script src="scripts/services/health-tips.js"></script>
     <script src="scripts/services/news.js"></script>
@@ -177,17 +177,13 @@
     <script src="scripts/services/upload.js"></script>
     <script src="scripts/services/helper.js"></script>
     <script src="scripts/services/dashboard-api.js"></script>
-    
     <!-- Filters -->
     <script src="scripts/filters/agefilter.js"></script>
     <script src="scripts/filters/getmonth.js"></script>
-    
-
     <!-- Directives -->
     <script src="scripts/directives/calendar.js"></script>
     <script src="scripts/directives/uploadfile.js"></script>
     <script src="scripts/directives/analytics.js"></script>
-
     <!-- Controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/components.js"></script>
@@ -224,12 +220,11 @@
     <script src="scripts/controllers/cadastro-email.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/game.js"></script>
-
     <script src="scripts/components/components.js"></script>
+
+    <!-- endbuild -->
     <script src="bower_components/moment/locale/pt-br.js"></script>
     <script src="bower_components/requirejs/require.js"></script>
-    <!-- endbuild -->
-    
 
     <script>
     (function(d, s, id) {
