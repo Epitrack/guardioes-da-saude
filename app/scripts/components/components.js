@@ -15,7 +15,7 @@ app.directive('gdsMaps', function() {
            center: new google.maps.LatLng(scope.location.lat, scope.location.lng),
            zoom: 11,
            scrollwheel: false,
-           disableDoubleClickZoom: scope.doubleclick||false,
+           disableDoubleClickZoom: scope.doubleclick||true,
            streetViewControl: false,
            zoomControl: scope.zoom||false,
            mapTypeControl: true,
