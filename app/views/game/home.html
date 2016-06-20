@@ -8,7 +8,7 @@
     </a>
     <div class="game-home-points" style="z-index: 99999999;">
         <a href="" data-toggle="modal" data-target="#trofeu-modal">
-        <!-- <a href="" ng-click="nextPin()"> -->
+            <!-- <a href="" ng-click="nextPin()"> -->
             <div class="game-home-medalha"></div>
         </a>
         <a href="" data-toggle="modal" data-target="#ranking-modal">
@@ -31,13 +31,18 @@
                         <img src="../images/game/meus-trofeus.svg" style="z-index: 9; position: absolute; top: -43px; left: -35px; width: 305px; height: 82px;">
                         <img src="../images/game/meus-trofeus-1.svg" style="width: 30px; height: auto; position: absolute; left: -29px; top: 32px;">
                     </header>
-                    <div class="modal-body">
-                        <div class="panel-body" style="margin-top: 0px;">
-                            <div class="col-xs-12">
+                    <div class="modal-body" style="padding-bottom: 0;">
+                        <div style="font-size: 2.3em; max-height: 270px; height: 100%; overflow-y: auto; padding-left: 35px; padding-right: 35px;">
+                            <div class="row" style="border-bottom: 1px solid rgb(214, 214, 214); padding-bottom: 10px; margin-bottom: 10px;" ng-repeat="r in trofeus">
+                                <div class="col-md-6" ng-repeat="c in r">
+                                    <div style="width: 67px; border-radius: 100%; height: 67px; overflow: hidden;float: left;">
+                                        <img src="../images/game/fases/{{c.name}}/card.png" style="width: 150%; position: relative; left: -15px; top: -15px;">
+                                    </div>
+                                    <span style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title}}</span>
+                                </div>
                             </div>
+                            
                         </div>
-                    </div>
-                    <div class="modal-footer" style="border-top:0px">
                     </div>
                 </form>
             </div>
@@ -72,7 +77,7 @@
             </div>
         </article>
     </div>
-    <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-1gmodal" style="top: 10%; ">
+    <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-1gmodal" style="top: 10%; overflow: hidden;">
         <article class="modal-dialog" role="document" style="margin: 70px auto;left: 10px;">
             <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
                 <form class="card-form ng-pristine ng-valid" name="i-feel-bad-form">
@@ -86,6 +91,7 @@
                     </header>
                     <div class="modal-body" align="center" style="margin-top: 9%; margin-left: -9%;">
                         <div id="panel_mosaico" class="panel-body panel_internal_game" style="margin-top: 0px;max-width: 318px;">
+                            <span ng-show="loading" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;     margin-left: -39px;     color: #f47820;top: 80px;"></span>
                             <div class="row" ng-repeat="(key, qs) in questions_view" style="margin-bottom: 10px;">
                                 <div class="col-xs-4" ng-repeat="(key1, q) in qs">
                                     <a href="" ng-click="escolher(key,key1)">
@@ -98,6 +104,13 @@
                         <div id="panel_pergunta" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
                             <div class="row" style="margin-bottom: 10px;">
                                 <div class="col-md-6">
+                                    <div id="counter" class="c100 p6 small orange" style="position: absolute; left: 50%; margin-left: -24px; top: -24px;">
+                                        <span style="width: 2.4em; line-height: 2.4em;font-weight: 900;font-style: italic;font-size: 0.38em;color:#f47820">12</span>
+                                        <div class="slice">
+                                            <div class="bar" style="border-color: #f47820 !important;"></div>
+                                            <div class="fill"></div>
+                                        </div>
+                                    </div>
                                     <div class="game-card-neutro" id="pergunta" align="center">
                                     </div>
                                 </div>
@@ -170,7 +183,7 @@
                         <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: block; text-align: center; z-index: 99; left: -5%; top: 30px;">{{"00891"|translate}}</span>
                     </header>
                     <div class="modal-body" align="center">
-                        <img src="../images/game/fases/aquaticas/card.png" id="panel_card_img">
+                        <img src="" id="panel_card_img">
                     </div>
                 </form>
             </div>
