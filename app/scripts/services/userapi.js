@@ -209,6 +209,9 @@ angular.module('gdsApp')
                         .then(function(response) {
                             userFbData.fb_token = data.authResponse.accessToken;
                             userFbData.nick = response.name;
+                            try {
+                                userFbData.nick = response.name.slice(0, 10);
+                            } catch (e) {}
                             userFbData.email = response.email;
                             userFbData.gender = response.gender[0].toUpperCase();
                             userFbData.fb = response.ids_for_business.data[0].id; //response.id;
@@ -264,9 +267,12 @@ angular.module('gdsApp')
                 })
                 .done(function(result) {
                     result.me().done(function(data) {
-                        console.log("me",data)
+                        console.log("me", data)
                         userTwData.tw = data.id;
                         userTwData.nick = data.name;
+                        try {
+                            userTwData.nick = data.name.slice(0, 10);
+                        } catch (e) {}
                         $scope.userData = userTwData;
                         twLogin(userTwData.tw, function(dataTw) {
                             // console.log("dataTw", dataTw);
@@ -313,6 +319,9 @@ angular.module('gdsApp')
             var userGlData = {};
             userGlData.gl = data.id;
             userGlData.nick = data.displayName;
+            try {
+                userGlData.nick = data.displayName.slice(0, 10);
+            } catch (e) {}
             userGlData.gender = data.gender;
             userGlData.email = data.email;
             $scope.userData = userGlData;

@@ -13,265 +13,310 @@ angular.module('gdsApp')
 
         var w = $("#img_bg").width();
         var firstLoad = true;
+        $scope.loading = true;
         $scope.fasespics = [{
+            "title": "Vitória",
             "name": "vitoria",
-            "path": "/images/game/fases/aquaticas/",
+            "path": "/images/game/fases/vitoria/",
             top: (0.33 * w) + "px",
             left: "45.6%",
             "id": 43
         }, {
+            "title": "Aquáticas",
             "name": "aquaticas",
             "path": "/images/game/fases/aquaticas/",
             top: (0.3901 * w) + "px",
             left: "70.4%",
             "id": 42
         }, {
+            "title": "Atletismos",
             "name": "atletismo",
             "path": "/images/game/fases/atletismo/",
             top: (0.53 * w) + "px",
             left: "37.2%",
             "id": 41
         }, {
+            "title": "Badminton",
             "name": "badminton",
             "path": "/images/game/fases/badminton/",
             top: (0.5604 * w) + "px",
             left: "18.2%",
             "id": 40
         }, {
+            "title": "Basquete",
             "name": "basquete",
             "path": "/images/game/fases/basquete/",
             top: (0.70 * w) + "px",
             left: "14.9%",
             "id": 39
         }, {
+            "title": "Boxe",
             "name": "boxe",
             "path": "/images/game/fases/boxe/",
             top: (0.7404 * w) + "px",
             left: "34.1%",
             "id": 38
         }, {
+            "title": "Canoagem",
             "name": "canoagem",
             "path": "/images/game/fases/canoagem/",
             top: (0.7744 * w) + "px",
             left: "63.1%",
             "id": 37
         }, {
+            "title": "Canoagem Slalon",
             "name": "canoagemslalon",
             "path": "/images/game/fases/canoagemslalon/",
             top: (0.8704 * w) + "px",
             left: "77.29%",
             "id": 36
         }, {
+            "title": "Ciclismo",
             "name": "ciclismo",
             "path": "/images/game/fases/ciclismo/",
             top: (1.0192 * w) + "px",
             left: "74.6%",
             "id": 35
         }, {
+            "title": "Ciclismo BMX",
             "name": "ciclismoBMX",
             "path": "/images/game/fases/ciclismoBMX/",
             top: (1.1492 * w) + "px",
             left: "21.8%",
             "id": 34
         }, {
+            "title": "Ciclismo Estrada",
             "name": "ciclismoestrada",
             "path": "/images/game/fases/ciclismoestrada/",
             top: (1.2392 * w) + "px",
             left: "12.3%",
             "id": 33
         }, {
+            "title": "Esgrima",
             "name": "esgrima",
             "path": "/images/game/fases/esgrima/",
             top: (1.3312 * w) + "px",
             left: "15.9%",
             "id": 32
         }, {
+            "title": "Futebol",
             "name": "futebol",
             "path": "/images/game/fases/futebol/",
             top: (1.3652 * w) + "px",
             left: "28.9%",
             "id": 31
         }, {
+            "title": "Ginástica Artística",
             "name": "ginasticaartistica",
             "path": "/images/game/fases/ginasticaartistica/",
             top: (1.3732 * w) + "px",
             left: "42.4%",
             "id": 30
         }, {
+            "title": "Ginástica de Trampolim",
             "name": "ginasticadetrampolim",
             "path": "/images/game/fases/ginasticadetrampolim/",
             top: (1.3772 * w) + "px",
             left: "55.8%",
             "id": 29
         }, {
+            "title": "Ginástica Rítmica",
             "name": "ginasticaritmca",
             "path": "/images/game/fases/ginasticaritmca/",
             top: (1.3952 * w) + "px",
             left: "68.3%",
             "id": 28
         }, {
+            "title": "Golfe",
             "name": "golfe",
             "path": "/images/game/fases/golfe/",
             top: (1.4572 * w) + "px",
             left: "78.1%",
             "id": 27
         }, {
+            "title": "Greco Romana",
             "name": "grecoromana",
             "path": "/images/game/fases/grecoromana/",
             top: (1.4572 * w) + "px",
             left: "78.1%"
         }, {
+            "title": "Handball",
             "name": "handball",
             "path": "/images/game/fases/handball/",
             top: (1.5672 * w) + "px",
             left: "78.6%",
             "id": 26
         }, {
+            "title": "Hipismo",
             "name": "hipismo",
             "path": "/images/game/fases/hipismo/",
             top: (1.6412 * w) + "px",
             left: "70.6%",
             "id": 25
         }, {
+            "title": "Hipismo CCE",
             "name": "hipismoCCE",
             "path": "/images/game/fases/hipismoCCE/",
             top: (1.6532 * w) + "px",
             left: "56.1%",
             "id": 24
         }, {
+            "title": "Hipismo Salto",
             "name": "hipismosalto",
             "path": "/images/game/fases/hipismosalto/",
             top: (1.6412 * w) + "px",
             left: "42%",
             "id": 23
         }, {
+            "title": "Hoquei de Grama",
             "name": "hoqueidegrama",
             "path": "/images/game/fases/hoqueidegrama/",
             top: (1.6351999999999998 * w) + "px",
             left: "26.5%",
             "id": 22
         }, {
+            "title": "Judô",
             "name": "judo",
             "path": "/images/game/fases/judo/",
             top: (1.6712 * w) + "px",
             left: "13.9%",
             "id": 21
         }, {
+            "title": "Levantamento de Peso",
             "name": "levantamentodepeso",
             "path": "/images/game/fases/levantamentodepeso/",
             top: (1.7631999999999999 * w) + "px",
             left: "10.2%",
             "id": 20
         }, {
+            "title": "Luta livre",
             "name": "lutalivre",
             "path": "/images/game/fases/lutalivre/",
             top: (1.8732 * w) + "px",
             left: "16.5%",
             "id": 19
         }, {
+            "title": "Nado sincronizado",
             "name": "nadosincronizado",
             "path": "/images/game/fases/nadosincronizado/",
             top: (1.9932000000000003 * w) + "px",
             left: "69.7%",
             "id": 18
         }, {
+            "title": "Natação",
             "name": "natacao",
             top: (2.0658000000000003 * w) + "px",
             left: "77.8%",
             "id": 17
         }, {
+            "title": "Pentlato Moderno",
             "name": "pentlatomoderno",
             "path": "/images/game/fases/pentlatomoderno/",
             top: (2.1718 * w) + "px",
             left: "76.8%",
             "id": 16
         }, {
+            "title": "Pólo Aquático",
             "name": "poloaquatico",
             "path": "/images/game/fases/poloaquatico/",
             top: (2.2538 * w) + "px",
             left: "69%",
             "id": 15
         }, {
+            "title": "Remo",
             "name": "remo",
             "path": "/images/game/fases/remo/",
             top: (2.2978000000000005 * w) + "px",
             left: "55.69%",
             "id": 14
         }, {
+            "title": "Rugby",
             "name": "rugby",
             "path": "/images/game/fases/rugby/",
             top: (2.32 * w) + "px",
             left: "41.3%",
             "id": 13
         }, {
+            "title": "Saltos Ornamentais",
             "name": "saltosornamentais",
             "path": "/images/game/fases/saltosornamentais/",
             top: (2.3480000000000003 * w) + "px",
             left: "27.8%",
             "id": 12
         }, {
+            "title": "Taekwondo",
             "name": "taekwondo",
             "path": "/images/game/fases/taekwondo/",
             top: (2.404 * w) + "px",
             left: "14.5%",
             "id": 11
         }, {
+            "title": "Tênis",
             "name": "tenis",
             "path": "/images/game/fases/tenis/",
             top: (2.54 * w) + "px",
             left: "12.2%",
             "id": 10
         }, {
+            "title": "Tênis de mesa",
             "name": "tenisdemesa",
             "path": "/images/game/fases/tenisdemesa/",
             top: (2.6319999999999997 * w) + "px",
             left: "20.9%",
             "id": 9
         }, {
+            "title": "Tiro com Arco",
             "name": "tirocomarco",
             "path": "/images/game/fases/tirocomarco/",
             top: (2.674 * w) + "px",
             left: "34.9%",
             "id": 8
         }, {
+            "title": "Tiro esportivo",
             "name": "tiroesportivo",
             "path": "/images/game/fases/tiroesportivo/",
             top: (2.696 * w) + "px",
             left: "49.9%",
             "id": 7
         }, {
+            "title": "Triatlo",
             "name": "triatlo",
             "path": "/images/game/fases/triatlo/",
             top: (2.7239999999999998 * w) + "px",
             left: "64.9%",
             "id": 6
         }, {
+            "title": "Vela",
             "name": "vela",
             "path": "/images/game/fases/vela/",
             top: (2.7960000000000003 * w) + "px",
             left: "76.2%",
             "id": 5
         }, {
+            "title": "Voleyball",
             "name": "voleyball",
             "path": "/images/game/fases/voleyball/",
             top: (2.904 * w) + "px",
             left: "78.7%",
             "id": 4
         }, {
+            "title": "Voley de Praia",
             "name": "voleypraia",
             "path": "/images/game/fases/voleypraia/",
             top: (2.998 * w) + "px",
             left: "71.8%",
             "id": 3
         }, {
-            "name": "voleypraia",
-            "path": "/images/game/fases/voleypraia/",
+            "title": "Pólo Aquático",
+            "name": "poloaquatico",
+            "path": "/images/game/fases/poloaquatico/",
             top: (3.062 * w) + "px",
             left: "58.8%",
             "id": 2
         }, {
-            "name": "voleypraia",
-            "path": "/images/game/fases/voleypraia/",
+            "title": "Tênis de mesa",
+            "name": "tenisdemesa",
+            "path": "/images/game/fases/tenisdemesa/",
             top: (3.096 * w) + "px",
             left: "41.8%",
             "id": 1
@@ -295,6 +340,9 @@ angular.module('gdsApp')
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
         $scope.questions = [];
+        $scope.trofeus = [];
+        $scope.trofeusaux = [];
+        $scope.url = "http://rest.guardioesdasaude.org";
         $scope.deparapuzzle = {
             "00": 0,
             "01": 1,
@@ -314,6 +362,8 @@ angular.module('gdsApp')
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }]
         ];
         var count = 0;
+        var ctd; //function counter down
+
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
         $scope.savestatus = function(level, puzzleMatriz, questionId) {
             console.log(level, puzzleMatriz, questionId);
@@ -322,7 +372,7 @@ angular.module('gdsApp')
                 "puzzleMatriz": puzzleMatriz,
                 "questionId": questionId
             }
-            $http.post("http://rest.guardioesdasaude.org/game/", obj, { headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token } }).then(function(result) {
+            $http.post($scope.url + "/game/", obj, { headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token } }).then(function(result) {
                 console.log("game ok ", result)
             }, function(error) {
                 console.log("game error", error);
@@ -330,15 +380,16 @@ angular.module('gdsApp')
         };
 
         $scope.getstatus = function() {
-            $http.get("http://rest.guardioesdasaude.org/user/lookup", { headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token } }).then(function(result) {
+            $http.get($scope.url + "/user/lookup", { headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token } }).then(function(result) {
                 var o = result.data.data;
+                $scope.current_fase_obj = $scope.fasespics[0];
                 if (o['level'] === undefined) {
                     $scope.current_fase_obj = $scope.fasespics[0];
                 } else {
                     $scope.current_fase_obj = $scope.fasespics[(o['level'] - 1)];
                 }
                 if (o['answers'] !== undefined) {
-                    // $scope.responses = o['answers'];
+                    $scope.responses = o['answers'];
                 }
                 $scope.current_fase = $scope.current_fase_obj.id;
                 $("#img_pin").css('top', $scope.current_fase_obj.top);
@@ -348,7 +399,7 @@ angular.module('gdsApp')
                 }, 400);
                 /*insercao */
                 if (firstLoad) {
-                    for (var i = 0; i < ($scope.current_fase-1); i++) {
+                    for (var i = 0; i < ($scope.current_fase - 1); i++) {
                         $scope.addVencido($scope.fasespics[i]);
                     }
                     firstLoad = false;
@@ -426,7 +477,8 @@ angular.module('gdsApp')
         };
 
         $scope.buildquestions = function(callback) {
-            $http.get("http://rest.guardioesdasaude.org/game/questions/?lang=" + $scope.getLanguage()).then(function(result) {
+            $scope.loading = true;
+            $http.get($scope.url + "/game/questions/?lang=" + $scope.getLanguage()).then(function(result) {
                 $scope.questions = result.data;
                 for (var i = 0; i < $scope.questions.length; i++) {
                     $scope.questions[i].img1 = "../images/game/btn_questao.svg";
@@ -435,7 +487,7 @@ angular.module('gdsApp')
                         $scope.questions[i].active = true;
                     }
                 }
-                console.log($scope.questions);
+                $scope.loading = false;
                 callback();
             }, function(err) {
                 console.log(err);
@@ -452,14 +504,7 @@ angular.module('gdsApp')
             return r;
         };
 
-        /*
-        $('#game_modal_panel_card').modal('show')
-        $('#game-modal').modal('show') 
-        game-modal
-        game_modal_panel_card
-        */
         $scope.openmodal = function(key, val, $event) {
-            // $scope.clean("respostacerta");
             $scope.buildquestions(function() {
                 $scope.clean(key);
                 if (key === 'fase') {
@@ -536,6 +581,9 @@ angular.module('gdsApp')
 
         $scope.responder = function(op) {
             if ($scope.questions_view[$scope.k][$scope.k1].alternatives[op].correct) {
+                //para cronometro
+                clearInterval(ctd);
+                //
                 $("#op" + (op + 1)).attr("class", "game-resposta-certa");
                 $("#pergunta").attr("class", "game-card-certa");
                 $("#pergunta").html('<div style="width: 190px; color: white; font-weight: bold; font-size: 1.8em; line-height: 45px;"> Resposta CORRETA!</div>');
@@ -571,6 +619,7 @@ angular.module('gdsApp')
             $("#op2").html($scope.questions_view[k][k1].alternatives[1].option);
             $("#op3").html($scope.questions_view[k][k1].alternatives[2].option);
             $scope.clean("pergunta");
+            $scope.counterdown();
             setTimeout(function() { $scope.$apply(); });
         };
 
@@ -593,20 +642,24 @@ angular.module('gdsApp')
         $scope.getRanking();
 
         $scope.nextPin = function() {
-            $scope.current_fase++;
-            $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-            $scope.savestatus($scope.current_fase, $scope.responses, "");
-            $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
-            $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
-            $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
-            $("html, body").animate({
-                scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
-            }, 400);
-            var index = $scope.current_fase - 2;
-            $scope.addVencido($scope.fasespics[index]);
+            try {
+                $scope.current_fase++;
+                $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                $scope.savestatus($scope.current_fase, $scope.responses, "");
+                $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
+                $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
+                $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
+                $("html, body").animate({
+                    scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
+                }, 400);
+                var index = $scope.current_fase - 2;
+                $scope.addVencido($scope.fasespics[index]);
+            } catch (e) {}
         };
 
         $scope.addVencido = function(obj) {
+            $scope.trofeusaux.push(obj);
+            $scope.montatrofeus();
             var elem = document.createElement("img");
             elem.setAttribute("src", "../images/game/pin-venceu.png");
             elem.setAttribute("id", "img_pin" + (count++));
@@ -623,6 +676,33 @@ angular.module('gdsApp')
                 ln = $translate.use();
             }
             return ln;
+        };
+
+        $scope.montatrofeus = function() {
+            try {
+                var aux = [];
+                var count = 0;
+                var objs = [];
+                for (var i = 0; i < $scope.trofeusaux.length; i++) {
+                    console.log($scope.trofeus[i]);
+                    if (count < 2) {
+                        objs.push($scope.trofeusaux[i]);
+                        count++;
+                    } else {
+                        aux.push(objs);
+                        objs = [];
+                        count = 0;
+                        objs.push($scope.trofeusaux[i]);
+                        count++;
+                    }
+                }
+                aux.push(objs);
+                $scope.trofeus = [];
+                $scope.trofeus = aux;
+                console.log($scope.trofeus);
+            } catch (e) {
+                console.log(e);
+            }
         };
 
         $scope.montaRanking = function(rankings) {
@@ -652,4 +732,24 @@ angular.module('gdsApp')
             $scope.$apply();
         }, 500);
 
+
+        $scope.counterdown = function() {
+            var _limit = 15;
+            $("#counter > span").html(_limit);
+            var _class = "p100";
+            $("#counter").addClass(_class)
+            ctd = setInterval(function() {
+                _limit--;
+                $("#counter > span").html(_limit);
+                $("#counter").removeClass(_class);
+                //calc class
+                var y = parseInt((100 * _limit) / 15);
+                _class = "p" + y;
+                $("#counter").addClass(_class);
+                if (_limit === 0) {
+                    clearInterval(ctd);
+                    $scope.clean('fase');
+                }
+            }, 1000);
+        };
     }]);

@@ -47,7 +47,7 @@ angular.module('gdsApp')
                 retorno += (retorno > 1) ? ' meses' : ' mês';
                 return retorno;
             }
-            age += (age > 1) ? anos : anos;
+            age += (age > 1) ? " " + anos : " " + anos;
             return age;
         };
     }]);
