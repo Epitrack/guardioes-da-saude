@@ -35,8 +35,26 @@ angular.module('gdsApp')
             data.user_id = $rootScope.user.id;
             data.app_token = app_token;
 
-            // console.warn('Enviando...', data);
+            /*$http.get(apiUrl + "/user/lookup", {headers: {'app_token': app_token,'user_token': LocalStorage.getItem('userStorage').user_token}
+                 }).then(function(result) {var o = result.data.data;console.log("/user/lookup", o);});*/
 
+            // console.warn('Enviando...', data);
+            /* /user/calendar/day */
+            $http.get(apiUrl + '/user/calendar/day', {
+                headers: {
+                    'app_token': app_token,
+                    'user_token': LocalStorage.getItem('userStorage').user_token
+                }
+            }).then(function(result) {
+                console.log("result calendar/day", result.data.data.length);
+                if (result.data.data.length === 0) {
+                    $http.post(apiUrl + '/user/update', { "xp": 10 }, {
+                        headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
+                    }).then(function(result) {}, function(error) {});
+                }
+            }, function(error) {
+                console.warn('Error getUserCalendar: ', error);
+            });
             $http.post(apiUrl + '/survey/create', data, {
                     headers: {
                         'app_token': app_token,
@@ -44,24 +62,18 @@ angular.module('gdsApp')
                     }
                 })
                 .then(function(data) {
-                    // console.log('Success submitSurvey ', data);
                     callback(data);
-
                     UserApi.updateUser($rootScope.user.id, function(data) {
-
                         if (data.data.data[0].fb || data.data.data[0].tw || data.data.data[0].gl) {
-
                             var params = {
                                 password: data.data.data[0].email,
                                 picture: data.data.data[0].picture
                             };
                             UserApi.updateProfile(params);
                         }
-
                     });
                 }, function(error) {
                     callback(error);
-                    // console.warn('Error submitSurvey: ', error);
                 });
         };
 
@@ -158,7 +170,7 @@ angular.module('gdsApp')
                     callback(error);
                 });
         };
-//
+        //
         obj.getCluster = function(params, callback) {
             $http.get(apiUrl + '/charts/cluster?lat=' + params.lat + '&lon=' + params.lon + '&min=' + params.min + '&max=' + params.max, { headers: { 'app_token': app_token } })
                 .then(function(data) {
