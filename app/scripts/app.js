@@ -242,7 +242,7 @@ angular
             controllerAs: 'cadastro'
         })
         .when('/login/email', {
-            templateUrl: '/views/login-email.html',
+            templateUrl: 'views/login-email.html',
             controller: 'LoginEmailCtrl',
             controllerAs: 'loginEmail'
         })
