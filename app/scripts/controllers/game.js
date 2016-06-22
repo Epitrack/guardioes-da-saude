@@ -781,6 +781,11 @@ angular.module('gdsApp')
                 _class = "p" + y;
                 $("#counter").addClass(_class);
                 if (_limit === 0) {
+                    $scope.points--;
+                    $scope.modalpoints();
+                    $http.post($scope.url + '/user/update', { "xp": $scope.points }, {
+                        headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
+                    }).then(function(result) {}, function(error) {});
                     clearInterval(ctd);
                     $scope.clean('fase');
                 }
