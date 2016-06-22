@@ -1,7 +1,8 @@
 <section class="col-sm-3 col-md-2 no-padding sidebar" ng-controller="MainCtrl">
     <nav class="nav-primary" style="overflow-y: auto;">
         <ul>
-            <li ng-controller="IndexCtrl" ng-if="user.isAdmin == true">
+            <li ng-controller="IndexCtrl" ng-if="user.isAdmin">
+            <!-- <li ng-controller="IndexCtrl"> -->
                 <a ng-click="dashboardActive = !dashboardActive" class="dashboard dropdown" title="Painel de Controle">Painel de Controle</a>
                 <ul class="nav nav-list sub-nav" id="dashboardActive" ng-hide="!dashboardActive">
                     <li><a ng-href="/dashboard" ng-click="goToUrl('/dashboard');closeNav()">{{'00250'|translate}}</a></li>

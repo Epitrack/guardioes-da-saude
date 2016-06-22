@@ -331,16 +331,16 @@ angular.module('gdsApp')
         $scope.k = 0;
         $scope.k1 = 0;
         $scope.slides = [];
-        $scope.responses = [1, 1, 1, 1, 1, 1, 1, 1, 0];
-        // $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // $scope.responses = [0, 0, 1, 1, 1, 1, 1, 1, 0];
+        $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
         $scope.questions = [];
         $scope.trofeus = [];
         $scope.trofeusaux = [];
-        $scope.url = "http://rest.guardioesdasaude.org";
+        // $scope.url = "http://rest.guardioesdasaude.org";
         $scope.points = 0;
         $scope.hasSurvey = false;
-        // $scope.url = ApiConfig.API_URL || "http://rest.guardioesdasaude.org";
+        $scope.url = ApiConfig.API_URL || "http://rest.guardioesdasaude.org";
         $scope.deparapuzzle = {
             "00": 0,
             "01": 1,
