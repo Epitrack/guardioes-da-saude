@@ -31,9 +31,9 @@
 
                 <!-- visible when user not logged -->
                 <div ng-if="user.id == undefined">
-                    <ul class="nav navbar-nav mobile-navbar">
-                        <li><a class="nav-link" ng-href="/cadastro" ng-click="goToUrl('/cadastro');closeNav()" id="bt-cadastrar">{{'00089' | translate}}</a></li>
-                        <li><a class="nav-link" ng-href="/login" ng-click="goToUrl('/login');closeNav()" id="bt-entrar">{{'00194' | translate}}</a></li>
+                    <ul class="nav navbar-nav mobile-navbar no-logged">
+                        <li class="col-xs-9"><a class="nav-link" ng-href="/cadastro" ng-click="goToUrl('/cadastro');closeNav()" id="bt-cadastrar">{{'00089' | translate}}</a></li>
+                        <li class="col-xs-12"><a class="nav-link" ng-href="/login" ng-click="goToUrl('/login');closeNav()" id="bt-entrar">{{'00194' | translate}}</a></li>
                     </ul>
                 </div>
                 <!-- visible when user is logged -->
