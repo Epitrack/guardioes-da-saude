@@ -12,7 +12,9 @@
                 <h1 class="logo-primary"><a href="/" title="Voltar para a Home">{{'00262' | translate}}</a></h1>
             </div>
             <div class="navbar-collapse st-menu st-effect-2 no-padding" ng-style="{'height': hMenu}" id="js-navbar-collapse">
-                <div>
+                
+                <!-- Language -->
+                <div class="select-language-mobile col-xs-4">
                     <ul class="nav navbar-nav mobile-navbar">
                         <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;width: 100%;" ng-model="lang.current" ng-change="changeLanguage()">
                             <option value="pt">PT</option>
@@ -25,6 +27,8 @@
                         </select>
                     </ul>
                 </div>
+
+
                 <!-- visible when user not logged -->
                 <div ng-if="user.id == undefined">
                     <ul class="nav navbar-nav mobile-navbar">
@@ -35,20 +39,17 @@
                 <!-- visible when user is logged -->
                 <div ng-if="user.id != null">
                     <ul class="nav navbar-nav mobile-navbar">
-                      <li>
-                            <a class="nav-link" ng-href="game/tutorial" style="width: 100%;"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;width: 20px;"> {{'00167' | translate}}</a>
-                        </li>
-                        <li ng-show="!user.picture || user.picture == '0'">
+                        <li class="col-xs-2" ng-show="!user.picture || user.picture == '0'">
                             <figure class="mini-avatar-user">
                                 <img src="images/avatar/avatar-0.svg" alt="avatar">
                             </figure>
                         </li>
-                        <li ng-show="user.picture">
+                        <li class="col-xs-2" ng-show="user.picture">
                             <figure class="mini-avatar-user">
                                 <img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar">
                             </figure>
                         </li>
-                        <li ng-show="user" class="dropdown dropnav">
+                        <li ng-show="user" class="col-xs-8 dropdown-menu-mobile">
                             <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 {{user.nick}} <span class="caret"></span>
                             </button>
@@ -58,7 +59,12 @@
                                 <li><a ng-href="/" ng-click="goToUrl('/');closeNav();clearStorage()">{{'00521' | translate}}</a></li>
                             </ul>
                         </li>
-                        <li><a ng-href="/survey" ng-click="goToUrl('/survey');closeNav();" class="btn-survey">{{'00455' | translate}}</a></li>
+                        <li class="col-xs-12">
+                            <a class="nav-link" ng-href="game/tutorial" style="width: 100%;"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;width: 20px;"> {{'00167' | translate}}</a>
+                        </li>
+                        <li class="col-xs-12">
+                            <a ng-href="/survey" ng-click="goToUrl('/survey');closeNav();" class="btn-survey">{{'00455' | translate}}</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar just show when user is logged and mobile -->
