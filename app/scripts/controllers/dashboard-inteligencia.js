@@ -7,22 +7,54 @@
  * # DashboardInteligenciaCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
+angular.module('gdsApp').controller('DashboardInteligenciaCtrl', ['$scope', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
     function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
-        
+
         // Init
         $scope.loadingGrafycs = true;
 
         /**/
-        var apiUrl    = ApiConfig.API_URL;
+        var apiUrl = ApiConfig.API_URL;
         var app_token = ApiConfig.APP_TOKEN;
-        var classesColorScale = d3.scale.category10();        
+        var classesColorScale = d3.scale.category10();
         /**/
-        
-        $scope.alerts    = {};
+        $scope.usersByCity = {};
+
+        $scope.searchUsers = function() {
+            $http.get(apiUrl + '/ei/users/', { headers: { 'app_token': app_token } })
+                .then(function(data) {
+                    $scope.usersByCity = {};
+                    $scope.usersByCity['Brasil'] = {};
+                    for (var i = 0; i < data.data.length; i++) {
+                        $scope.usersByCity[data.data[i]._id] = {};
+                        for (var j = 0; j < data.data[i].roles.length; j++) {
+                            $scope.usersByCity[data.data[i]._id][data.data[i].roles[j].role] = data.data[i].roles[j].total
+                                //
+                            if ($scope.usersByCity['Brasil'][data.data[i].roles[j].role] === undefined) {
+                                $scope.usersByCity['Brasil'][data.data[i].roles[j].role] = 0;
+                            }
+                            $scope.usersByCity['Brasil'][data.data[i].roles[j].role] += data.data[i].roles[j].total;
+                        }
+                    }
+                    console.log($scope.usersByCity);
+                }, function(error) {
+                    console.warn('Error getAllData: ', error);
+                });
+        };
+        $scope.searchUsers();
+        //Object { Manaus: , Brasília: , São Paulo: , Belo Horizonte: , Rio de Janeiro: , Salvador:  }
+        $scope.getUsersByCity = function(city, role) {
+            try {
+                return $scope.usersByCity[city][role] || 0;
+            } catch (e) {
+                return 0;
+            }
+        }
+
+        $scope.alerts = {};
         $scope.usersType = {};
         $scope._symptoms = [];
-        $scope.types     = {
+        $scope.types = {
             sindrome: true,
             sintomas: false,
             customize: false
@@ -42,14 +74,9 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
             $http.get(apiUrl + '/ei/alerts/')
                 .then(function(data) {
                     data = data.data;
-                    for (var i = 0; i < data.length; i++) {
-                        console.log(data[i]);
-                        if ($scope.alerts[data[i].regiao] === undefined) {
-                            $scope.alerts[data[i].regiao] = [];
-                        }
-                        $scope.alerts[data[i].regiao].push(data[i]);
-                    }
-                    $scope.inputDadosFicticios();
+                    console.log("alerts", data);
+                    $scope.alerts = data;
+                    // $scope.inputDadosFicticios();
                     $scope.setColorAlerts();
                 }, function(error) {
                     console.warn('Error getAllData: ', error);
@@ -103,29 +130,36 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
         };
 
         $scope.getSymptoms = function() {
-            $http.get(apiUrl + '/ei/symptoms/').success(function(data, status){
+            $http.get(apiUrl + '/ei/symptoms/').success(function(data, status) {
                 $scope.symptomsCases = data;
+                for(var i=0; i<$scope.symptomsCases.length; i++){
+                    if($scope.symptomsCases[i].symptom[0]===""){
+                        $scope.symptomsCases[i].symptom[0] = "Sem sintomas"
+                    }
+                    $scope.symptomsCases[i].symptom=$scope.symptomsCases[i].symptom[0]
+                }
+
                 if (data) {
                     $scope.getSyndrome($scope.symptomsCases)
                 };
             });
         };
 
-        $scope.getSyndrome = function(symptomsCases){
-            $http.get(apiUrl + '/ei/syndrome/').success(function(data, status){
+        $scope.getSyndrome = function(symptomsCases) {
+            $http.get(apiUrl + '/ei/syndrome/').success(function(data, status) {
                 $scope.syndromesCases = data
                 $scope.createGrafyc(symptomsCases, $scope.syndromesCases);
             });
         }
-
-        $scope.createGrafyc = function(symptomsCases, syndromesCases){
+        var target_width = -1;
+        $scope.createGrafyc = function(symptomsCases, syndromesCases) {
             // console.log(symptomsCases);
             // console.log(syndromesCases);
 
             var ageSteps = [5, 10, 15, 20, 25, 30, 40, 50, 60];
-            var maxDate, 
-                minDate, 
-                symptomsCases, 
+            var maxDate,
+                minDate,
+                symptomsCases,
                 syndromesCases,
                 symptomsDataset,
                 allSymptoms,
@@ -151,7 +185,7 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
             maxDate = new Date(maxDate.date_reported);
             minDate = new Date(minDate.date_reported);
 
-            
+
             symptomsCases.forEach(function(s) {
                 s.ageGroup = Math.floor(s.age / 10) * 10;
             });
@@ -312,9 +346,11 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
                 var observed_symptoms = group.all().map(function(obj) {
                     return obj.key;
                 });
-
+                if(target_width===-1){
+                    target_width = $(target).width();
+                }
                 symptomsTimeChart
-                    .width($(target).width())
+                    .width(target_width)
                     .height(300)
                     .margins({
                         top: 10,
@@ -329,7 +365,7 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
                     .x(d3.time.scale())
                     .xUnits(d3.time.days)
                     //.xAxisLabel('date (' + precision[0] + ')') // (optional) render an axis label below the x axis
-                    .yAxisLabel('no. cases')
+                    .yAxisLabel('Nº. de Casos')
                     .xAxis();
 
                 var theLines = [];
@@ -391,14 +427,14 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
                 buildTimeChart(symptomsDataset, symptomsGroup, 'symptom', '#symptomsTimeSeries', '#symptomsTimeNavigation', symptomsDateDimension);
 
             };
-            
+
             loadgeojson();
             builds();
             $scope.loadingGrafycs = false;
             dc.renderAll();
         };
 
-        
+
         /*1- atleta 2- voluntario, 3- fa*/
         $scope.findUsersType = function() {
             $http.get(apiUrl + '/ei/users/')
@@ -443,4 +479,5 @@ angular.module('gdsApp').controller('DashboardInteligenciaCtrl', [ '$scope', '$l
         };
 
         $scope.getSymptoms();
-    }]);
+    }
+]);

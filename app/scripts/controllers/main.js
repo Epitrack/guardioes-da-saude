@@ -32,8 +32,10 @@ angular.module('gdsApp').controller('MainCtrl', ['$scope', 'Surveyapi', '$locati
       $scope.cities = {};
 
       SearchCitiesApi.getCities(limit, function (data) {
+        try{
         $scope.cities = data.data;
         $rootScope.$broadcast('getCities_ok');
+        }catch(e){}
       });
     };
 

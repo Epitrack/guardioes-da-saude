@@ -224,7 +224,9 @@ angular.module('gdsApp')
         // ====
         $scope.vm.CalendarInterface = {
             getCalendarPopoverTitle: function(day) {
-                return day.date.format('dddd, DD [de] MMMM [de] YYYY');
+                // console.log("day",day);
+                // return day.date.format('dddd, DD [de] MMMM [de] YYYY');
+                return day.date.format('DD[/]MM[/]YYYY');
             },
             getCalendarPopoverContent: function(q, day) {
                 var mal = 0;

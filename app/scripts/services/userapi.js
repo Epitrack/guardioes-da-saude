@@ -224,11 +224,7 @@ angular.module('gdsApp')
                                     };
                                     obj.loginUser(loginPass, function(resultMail) {
                                         if (resultMail.data.error === true) {
-                                            // toaster.pop('error', resultMail.data.message);
-                                            //                                  Notification.show('error', 'Facebook', resultMail.data.message);
                                         } else {
-                                            // toaster.pop('success', resultMail.data.message);
-                                            //                                  Notification.show('success', 'Facebook', resultMail.data.message);
                                             LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                             if (LocalStorage.isFirstAccess()) {
                                                 $location.path('survey');
@@ -240,7 +236,6 @@ angular.module('gdsApp')
                                     });
 
                                 } else {
-                                    // console.warn('Error -> ', dataLg.data.message);
                                     angular.element('#modal-complete-login').modal('show');
                                 }
                             });

@@ -139,6 +139,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
             $location.path(path);
         };
         // ====
+        // console.log($rootScope.user)
 
     }
 ]);

@@ -1,6 +1,5 @@
 <!-- Menu -->
 <div ng-include src="'views/partials/nav-primary.html'" class="hidden-xs"></div>
-
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
     <h2 class="section-title">Painel de controle <span>/ Inteligência epidemiológica</span></h2>
@@ -16,9 +15,9 @@
                         </div>
                     </div>
                     <div class="rodape">
-                        <span><img src="/images/dashboard/olympics/atletas.svg"/> <span>300</span></span>
-                        <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                        <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                        <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Rio de Janeiro',1)}}</span></span>
+                        <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Rio de Janeiro',2)}}</span>
+                        <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Rio de Janeiro',3)}}</span>
                     </div>
                 </div>
             </div>
@@ -33,9 +32,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasil',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasil',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasil',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -49,9 +48,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Belo Horizonte',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Belo Horizonte',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Belo Horizonte',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -65,9 +64,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasília',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasília',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasília',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -83,9 +82,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('São Paulo',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('São Paulo',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('São Paulo',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -99,9 +98,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Manaus',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Manaus',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Manaus',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -115,9 +114,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/> 300</span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> 100</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> 400</span>
+                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Salvador',1)}}</span></span>
+                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Salvador',2)}}</span>
+                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Salvador',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -133,7 +132,7 @@
                     <div>
                         <button ng-disabled="types['sindrome']" ng-click="selectgraph('sindrome')">Sindrome</button>
                         <button ng-disabled="types['sintomas']" ng-click="selectgraph('sintomas')">Sintomas</button>
-                        <button ng-disabled="types['customize']" ng-click="selectgraph('customize')" style="margin-left: -4px;">Customize</button>
+                        <!-- <button ng-disabled="types['customize']" ng-click="selectgraph('customize')" style="margin-left: -4px;">Customize</button> -->
                     </div>
                 </div>
             </header>
@@ -143,14 +142,14 @@
                         <div id="syndromesTimeSeries" style="width:100%">
                             <h4 class="text-center">Número de Casos por Síndrome</h4>
                         </div>
-                        <img ng-show="loadingGrafycs" class="grafico grafico1" src="images/grafyc-3.png" alt=""/>
-                        <img ng-show="loadingGrafycs" class="grafico grafico2" src="images/grafyc-2.png" alt=""/>
+                        <img ng-show="loadingGrafycs" class="grafico grafico1" src="images/grafyc-3.png" alt="" />
+                        <img ng-show="loadingGrafycs" class="grafico grafico2" src="images/grafyc-2.png" alt="" />
                         <div id="syndromesTimeNavigation" style="width:100%"></div>
                     </div>
                     <div class="col-md-3" id="syndromesChart">
                     </div>
                 </div>
-                <div class="row charts-row" style="margin:0;display:none" ng-show="types['sintomas']">
+                <div class="row charts-row" style="margin:0;" ng-show="types['sintomas']">
                     <div class="col-md-9">
                         <div id="symptomsTimeSeries" style="width:100%">
                             <h4 class="text-center">Número de Casos por Sintomas</h4>
@@ -160,16 +159,6 @@
                     <div class="col-md-3" id="symptomsChart">
                     </div>
                 </div>
-                <!--  <div class="row charts-row">
-                    <div class="col-md-9">
-                        <div id="symptomsTimeSeries">
-                            <h4 class="text-center">Número de Casos por Síndrome</h4>
-                        </div>
-                        <div id="symptomsTimeNavigation"></div>
-                    </div>
-                    <div class="col-md-3" id="symptomsChart">
-                    </div>
-                </div> -->
             </div>
         </article>
     </aside>
@@ -180,16 +169,16 @@
                 <header class="panel-heading card-heading">
                     <h3 class="panel-title">Por Idade</h3>
                     <div class="pull-right wrapper-switch-participation">
-                        <div>
+                       <!--  <div>
                             <button ng-disabled='true'>Idade</button>
                             <button>Sexo</button>
-                        </div>
+                        </div> -->
                     </div>
                 </header>
                 <div class="panel-body relative" style="padding:0;padding-left: 20px;">
                     <div id="syndromesAgeChart" style="height: 387px;width: 100%;">
                         <h4 class="text-center"></h4>
-                         <img ng-show="loadingGrafycs" class="grafico grafico3" src="images/grafyc-1.png" alt=""/>
+                        <img ng-show="loadingGrafycs" class="grafico grafico3" src="images/grafyc-1.png" alt="" />
                         <!-- <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(including: <span class='filter'></span>)</span></h5> -->
                     </div>
                 </div>
@@ -203,10 +192,10 @@
                 <header class="panel-heading">
                     <h3 class="panel-title">Por Distrito de Saúde</h3>
                 </header>
-                <div class="panel-body" style="padding:0;padding-left: 20px;">
-                    <div id="syndromesMap" class="map" style="height: 387px;">
+                <div class="panel-body" style="padding:0;">
+                    <div id="syndromesMap" class="map" style="height: 387px;margin-left: -40px;">
                         <h4 class="text-center"></h4>
-                        <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(in area(s): <span class='filter'></span>)</span></h5>
+                        <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(Área(s): <span class='filter'></span>)</span></h5>
                     </div>
                 </div>
             </article>
@@ -232,7 +221,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="s in _symptoms">
+                            <tr ng-repeat="s in symptomsCases">
                                 <td>{{s.city}}</td>
                                 <td>{{s.age}}</td>
                                 <td>{{s.gender}}</td>

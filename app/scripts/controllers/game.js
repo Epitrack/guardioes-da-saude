@@ -134,12 +134,6 @@ angular.module('gdsApp')
             left: "78.1%",
             "id": 27
         }, {
-            "title": "Greco Romana",
-            "name": "grecoromana",
-            "path": "/images/game/fases/grecoromana/",
-            top: (1.4572 * w) + "px",
-            left: "78.1%"
-        }, {
             "title": "Handball",
             "name": "handball",
             "path": "/images/game/fases/handball/",
@@ -258,9 +252,9 @@ angular.module('gdsApp')
             left: "12.2%",
             "id": 10
         }, {
-            "title": "Tênis de mesa",
-            "name": "tenisdemesa",
-            "path": "/images/game/fases/tenisdemesa/",
+            "title": "Greco Romana",
+            "name": "grecoromana",
+            "path": "/images/game/fases/grecoromana/",
             top: (2.6319999999999997 * w) + "px",
             left: "20.9%",
             "id": 9
@@ -337,12 +331,16 @@ angular.module('gdsApp')
         $scope.k = 0;
         $scope.k1 = 0;
         $scope.slides = [];
+        // $scope.responses = [0, 0, 1, 1, 1, 1, 1, 1, 0];
         $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         $scope.imgs = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
         $scope.questions = [];
         $scope.trofeus = [];
         $scope.trofeusaux = [];
-        $scope.url = "http://rest.guardioesdasaude.org";
+        // $scope.url = "http://rest.guardioesdasaude.org";
+        $scope.points = 0;
+        $scope.hasSurvey = false;
+        $scope.url = ApiConfig.API_URL || "http://rest.guardioesdasaude.org";
         $scope.deparapuzzle = {
             "00": 0,
             "01": 1,
@@ -361,8 +359,19 @@ angular.module('gdsApp')
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }]
         ];
-        var count = 0;
+        var count_pin_venceu = 0;
         var ctd; //function counter down
+        var title_sem_energia = "Você está <br/> sem energia!"; //00649
+        var title_5pontos = "Você possui <br/> 5 pontos de energia!"; //00650 replace 10 por 5
+        var content_5pontos = "Participe diariamente do Guardiões da Saúde para restaurá-las!"; //00457
+        var content_amanha = "Participe amanhã do Guardiões da Saúde para jogar novamente!"; //00896
+
+        $translate(['00649', '00650', '00457', '00896']).then(function(translations) {
+            title_sem_energia = translations['00649'];
+            title_5pontos = translations['00650'].replace("10", "5");
+            content_5pontos = translations['00457'];
+            content_amanha = translations['00896'];
+        });
 
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
         $scope.savestatus = function(level, puzzleMatriz, questionId) {
@@ -391,15 +400,25 @@ angular.module('gdsApp')
                 if (o['answers'] !== undefined) {
                     $scope.responses = o['answers'];
                 }
-                $scope.current_fase = $scope.current_fase_obj.id;
-                $("#img_pin").css('top', $scope.current_fase_obj.top);
-                $("#img_pin").css('left', $scope.current_fase_obj.left);
-                $("html, body").animate({
-                    scrollTop: parseInt($scope.current_fase_obj.top) - 180
-                }, 400);
+                $scope.points = o['xp'] || 0;
+                $scope.modalpoints($scope.points);
+                try {
+                    $scope.current_fase = $scope.current_fase_obj.id;
+                    $("#img_pin").css('top', $scope.fasespics[($scope.current_fase - 1)].top);
+                    $("#img_pin").css('left', $scope.fasespics[($scope.current_fase - 1)].left);
+                    $("html, body").animate({
+                        scrollTop: parseInt($scope.fasespics[($scope.current_fase - 1)].top) - 180
+                    }, 400);
+                } catch (e) {
+                    $scope.current_fase = ($scope.fasespics.length - 1);
+                    $("html, body").animate({
+                        scrollTop: parseInt($scope.fasespics[$scope.fasespics.length - 1].top) - 180
+                    }, 400);
+                    $("#img_pin").hide();
+                }
                 /*insercao */
                 if (firstLoad) {
-                    for (var i = 0; i < ($scope.current_fase - 1); i++) {
+                    for (var i = 0; i < $scope.current_fase - 1; i++) {
                         $scope.addVencido($scope.fasespics[i]);
                     }
                     firstLoad = false;
@@ -606,7 +625,15 @@ angular.module('gdsApp')
                 }, 500);
 
             } else {
+                var _class = $("#op" + (op + 1)).attr("class");
                 $("#op" + (op + 1)).attr("class", "game-resposta-errada");
+                if (_class !== "game-resposta-errada") {
+                    $scope.points--;
+                    $scope.modalpoints();
+                    $http.post($scope.url + '/user/update', { "xp": $scope.points }, {
+                        headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
+                    }).then(function(result) {}, function(error) {});
+                }
             }
         };
 
@@ -646,23 +673,34 @@ angular.module('gdsApp')
                 $scope.current_fase++;
                 $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
                 $scope.savestatus($scope.current_fase, $scope.responses, "");
-                $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
-                $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
-                $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
-                $("html, body").animate({
-                    scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
-                }, 400);
-                var index = $scope.current_fase - 2;
-                $scope.addVencido($scope.fasespics[index]);
-            } catch (e) {}
+                if ($scope.fasespics.length > $scope.current_fase) {
+                    $scope.current_fase_obj = $scope.fasespics[$scope.current_fase - 1];
+                    $("#img_pin").css('top', $scope.fasespics[$scope.current_fase - 1].top);
+                    $("#img_pin").css('left', $scope.fasespics[$scope.current_fase - 1].left);
+                    $("html, body").animate({
+                        scrollTop: parseInt($scope.fasespics[$scope.current_fase - 1].top) - 180
+                    }, 400);
+                    var index = $scope.current_fase - 2;
+                    $scope.addVencido($scope.fasespics[index]);
+                } else {
+                    var index = $scope.current_fase - 1;
+                    $("#img_pin").hide();
+                    $scope.addVencido($scope.fasespics[index]);
+                    $scope.addVencido($scope.fasespics[index - 1]);
+                }
+            } catch (e) {
+                console.log(e);
+            }
         };
 
         $scope.addVencido = function(obj) {
-            $scope.trofeusaux.push(obj);
-            $scope.montatrofeus();
+            try {
+                $scope.trofeusaux.push(obj);
+                $scope.montatrofeus();
+            } catch (e) {}
             var elem = document.createElement("img");
             elem.setAttribute("src", "../images/game/pin-venceu.png");
-            elem.setAttribute("id", "img_pin" + (count++));
+            elem.setAttribute("id", "img_pin" + (count_pin_venceu++));
             elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
             document.getElementById("div_game").appendChild(elem);
         };
@@ -684,7 +722,6 @@ angular.module('gdsApp')
                 var count = 0;
                 var objs = [];
                 for (var i = 0; i < $scope.trofeusaux.length; i++) {
-                    console.log($scope.trofeus[i]);
                     if (count < 2) {
                         objs.push($scope.trofeusaux[i]);
                         count++;
@@ -700,9 +737,7 @@ angular.module('gdsApp')
                 $scope.trofeus = [];
                 $scope.trofeus = aux;
                 console.log($scope.trofeus);
-            } catch (e) {
-                console.log(e);
-            }
+            } catch (e) {}
         };
 
         $scope.montaRanking = function(rankings) {
@@ -732,7 +767,6 @@ angular.module('gdsApp')
             $scope.$apply();
         }, 500);
 
-
         $scope.counterdown = function() {
             var _limit = 15;
             $("#counter > span").html(_limit);
@@ -747,9 +781,73 @@ angular.module('gdsApp')
                 _class = "p" + y;
                 $("#counter").addClass(_class);
                 if (_limit === 0) {
+                    $scope.points--;
+                    $scope.modalpoints();
+                    $http.post($scope.url + '/user/update', { "xp": $scope.points }, {
+                        headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
+                    }).then(function(result) {}, function(error) {});
                     clearInterval(ctd);
                     $scope.clean('fase');
                 }
             }, 1000);
         };
+
+        $scope.goToUrl = function(path) {
+            $("#game_modal_panel_sem_pontos").modal("hide");
+            window.location = "/#" + path;
+        };
+
+        $scope.verificaSurvey = function() {
+            $http.get($scope.url + '/user/calendar/day', {
+                headers: {
+                    'app_token': app_token,
+                    'user_token': LocalStorage.getItem('userStorage').user_token
+                }
+            }).then(function(result) {
+                console.log("result calendar/day", result.data.data.length);
+                if (result.data.data.length !== 0) {
+                    $scope.hasSurvey = true;
+                }
+            });
+        };
+        $scope.verificaSurvey();
+
+        $scope.modalpoints = function() {
+
+            var type;
+            if ($scope.points !== undefined) {
+                if ($scope.points === 0) {
+                    type = 0;
+                } else if ($scope.points === 5) {
+                    type = 1;
+                }
+            } else {
+                type = 0;
+            }
+
+            var fundo_sem_pontos = "../images/game/fundo_sem_pontos.png";
+            var fundo_5pontos = "../images/game/fundo_ponto.png";
+
+            //sem energia
+            if (type === 0) {
+                $("#game_modal_panel_sem_pontos_bg").attr("src", fundo_sem_pontos);
+                if ($scope.hasSurvey) {
+                    $("#game_modal_panel_sem_pontos_content").html(content_amanha);
+                } else {
+                    $("#game_modal_panel_sem_pontos_content").html(content_5pontos);
+                }
+                $("#game_modal_panel_sem_pontos_title").html(title_sem_energia);
+                $("#game-modal").modal("hide");
+                $("#game_modal_panel_sem_pontos").modal("show");
+            } else if (type === 1) {
+                $("#game_modal_panel_sem_pontos_title").html(title_5pontos);
+                $("#game_modal_panel_sem_pontos_content").html(content_5pontos);
+                $("#game-modal").modal("hide");
+                $("#game_modal_panel_sem_pontos").modal("show");
+            }
+            /*else {
+                $("#game_modal_panel_sem_pontos_title").html(title_sem_energia);
+                $("#game_modal_panel_sem_pontos_content").html(content_amanha);
+            }*/
+        }
     }]);

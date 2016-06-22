@@ -1,4 +1,4 @@
-<aside class="col-sm-5 col-md-3 map-mini-dashboard" style="padding-left: 30px; overflow-y: auto;position: absolute;">
+<aside class="col-sm-12 col-md-3 map-mini-dashboard" style="padding-left: 30px; overflow-y: auto;position: absolute;">
     <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
         <fieldset>
             <input class="input-primary" placeholder="{{'00462'|translate}}" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder=''">
@@ -61,7 +61,7 @@
         </div>
     </div>
 </aside>
-<div class="health-map-container" ng-if="markers">
+<div class=" col-sm-12 col-md-9" ng-if="markers">
     <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
 </div>
 <!-- Síndromes Modal -->
