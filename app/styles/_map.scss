@@ -5,6 +5,19 @@
 //
 // /health-map
 //
+.float-button{
+  width: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  outline: none;
+  transition: 0.5s all;
+  &.active{
+    transform: rotate(45deg);
+  }
+}
+
+
 
 .map-mini-dashboard {
   position: relative;
@@ -154,6 +167,21 @@
 // Media queries
 //
 
+// iPhone
+@media screen and (max-width: 375px) {
+  .map-mini-dashboard {
+    width: 310px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1s all;
+    @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
+    &.hide{
+      left: -310px
+    }
+  }
+}
+
 // iPads
 @media screen and (min-width: 768px) {
   .map-mini-dashboard {
@@ -161,6 +189,7 @@
     height: 100%;
     @include bsd(1px, 0, 1px, rgba(0, 0, 0, .2));
   }
+
 }
 
 // Desktops
