@@ -7,10 +7,11 @@
  * # LoginEmailCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('LoginEmailCtrl', ['$scope', 'UserApi', '$location', '$rootScope', 'LocalStorage', 'Notification', function($scope, UserApi, $location, $rootScope, LocalStorage, Notification) {
+angular.module('gdsApp').controller('LoginEmailCtrl', ['$scope', 'UserApi', '$translate', '$location', '$rootScope', 'LocalStorage', 'Notification', 
+    function($scope, UserApi, $translate, $location, $rootScope, LocalStorage, Notification) {
 
         $scope.pageClass = 'login-email-page';
+
 
         // login with email
         $scope.loginEmail = {};
@@ -20,7 +21,10 @@ angular.module('gdsApp')
 
             UserApi.loginUser($scope.loginEmail, function(data) {
                 if (data.data.error === true) {
-                    $scope.loginError = 'Email ou usuário inválidos.';
+                    $translate('00391').then(function(translation) {
+                        $scope.loginError = translation;
+                    });
+
                 } else {
                     $rootScope.user = data.data.user;
                     Notification.show('success', 'Login', data.data.message);

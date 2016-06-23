@@ -7,17 +7,16 @@
  * # SlideshowCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('SlideshowCtrl', ['$scope', function ($scope) {
+angular.module('gdsApp').controller('SlideshowCtrl', ['$scope','$translate', function ($scope,$translate) {
 
     $scope.myInterval = 5000;
     $scope.noWrapSlides = false;
-
+    $scope.lang = $translate.use();
     var slides = $scope.slides = [];
 
     for (var i = 1; i < 4; i++) {
       slides.push({
-        image: '../../images/slide/gds-slides0' + i + '.png',
+        image: '../../images/slide/'+$scope.lang+'/gds-slides0' + i + '.png',
         text: 'Hey Judie'
       });
     }

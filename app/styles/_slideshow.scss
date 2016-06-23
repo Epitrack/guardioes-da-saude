@@ -49,6 +49,32 @@
   .glyphicon { visibility: hidden; }
 }
 
+.carousel-control-custom {
+  &.right {
+    background-image: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      margin-top: 170px;
+      font-size: 90px;
+    }
+  }
+
+  &.left {
+    background-image: none;
+
+    &::before {
+      position: absolute;
+      content: "";
+      margin-top: 170px;
+      font-size: 90px;
+    }
+  }
+
+  .glyphicon { visibility: hidden; }
+}
+
 // iPads
 @media screen and (min-width: 768px) {}
 
@@ -61,6 +87,7 @@
     .carousel-indicators { visibility: visible; }
 
     .carousel-control { top: 35%; }
+    .carousel-control-custom { top: 35%; }
 
     .left, .right {
       &::before {

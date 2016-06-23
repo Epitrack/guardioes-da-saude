@@ -7,8 +7,8 @@
  * # HealthTipsCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', function ($scope, healthTips, LocalStorage) {
+angular.module('gdsApp').controller('HealthTipsCtrl', ['$scope', 'healthTips', 'LocalStorage', 
+  function ($scope, healthTips, LocalStorage) {
 
     $scope.pageClass = 'health-tips-page';
 

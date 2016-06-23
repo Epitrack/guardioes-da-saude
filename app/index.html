@@ -2,8 +2,8 @@
 <html ng-app="gdsApp" ng-init="onInit()">
 
 <head>
+     <base href="/">
     <meta charset="utf-8">
-    <base href="/">
     <title>Guardiões da Saúde</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="bower_components/morris.js/morris.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/dcjs/dc.css" />
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -57,6 +59,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
+    <!-- <div class="wrapper-body" id="wrapper-body"> -->
     <div id="wrapper-body" class="wrapper-body main-content" style="position: initial!important;overflow: hidden!important;height: auto;">
         <!-- mobile header -->
         <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
@@ -67,6 +70,8 @@
         <div class="page {{ pageClass }}" ng-view="" autoscroll="true" style="background-color: #D9E0E7;">
         </div>
     </div>
+    <!-- </div>
+    </div> -->
     <!-- Modal App -->
     <div ng-include src="'views/partials/modal-app.html'"></div>
     <div ng-include src="'views/partials/modal-location.html'"></div>
@@ -101,9 +106,9 @@
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <div analytics></div>
     <script async src="https://oauth.io/auth/download/latest/oauth.min.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true"></script>
-    <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
-    <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/markerclusterer.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyApcy4djHO0RNU3GegfKug2JvZLuxAWP0Q&signed_in=true"></script>
+    <!--  <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/data.json"></script>
+    <script async src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.1.2/src/markerclusterer.js"></script> -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -140,10 +145,16 @@
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
     <script src="bower_components/webshim/js-webshim/dev/polyfiller.js"></script>
     <script src="bower_components/webshim/js-webshim/minified/polyfiller.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/crossfilter/crossfilter.js"></script>
+    <script src="bower_components/dcjs/dc.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/d3-tip/index.js"></script>
     <script src="bower_components/angular-directive.g-signin/google-plus-signin.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/util/angular-translate.min.js"></script>
     <script src="scripts/util/Sortable.min.js"></script>
     <script src="scripts/util/ng-sortable.js"></script>
     <script src="scripts/util/rzslider.min.js"></script>
@@ -153,10 +164,32 @@
     <script src="scripts/util/exporting.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/app.config.js"></script>
+    <!-- Services -->
+    <script src="scripts/services/health-tips.js"></script>
+    <script src="scripts/services/news.js"></script>
+    <script src="scripts/services/userapi.js"></script>
+    <script src="scripts/services/localstorage.js"></script>
+    <script src="scripts/services/householdapi.js"></script>
+    <script src="scripts/services/surveyapi.js"></script>
+    <script src="scripts/services/contactapi.js"></script>
+    <script src="scripts/services/searchcitiesapi.js"></script>
+    <script src="scripts/services/notification.js"></script>
+    <script src="scripts/services/upload.js"></script>
+    <script src="scripts/services/helper.js"></script>
+    <script src="scripts/services/dashboard-api.js"></script>
+    <!-- Filters -->
+    <script src="scripts/filters/agefilter.js"></script>
+    <script src="scripts/filters/getmonth.js"></script>
+    <!-- Directives -->
+    <script src="scripts/directives/calendar.js"></script>
+    <script src="scripts/directives/uploadfile.js"></script>
+    <script src="scripts/directives/analytics.js"></script>
+    <!-- Controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/components.js"></script>
     <script src="scripts/controllers/cadastro.js"></script>
     <script src="scripts/controllers/login-email.js"></script>
+    <script src="scripts/controllers/dashboard-inteligencia.js"></script>
     <script src="scripts/controllers/dashboard.js"></script>
     <script src="scripts/controllers/profile.js"></script>
     <script src="scripts/controllers/health-daily.js"></script>
@@ -164,10 +197,8 @@
     <script src="scripts/controllers/news.js"></script>
     <script src="scripts/controllers/help.js"></script>
     <script src="scripts/controllers/add-profile.js"></script>
-    <script src="scripts/services/health-tips.js"></script>
     <script src="scripts/controllers/survey.js"></script>
     <script src="scripts/controllers/noticias.js"></script>
-    <script src="scripts/services/news.js"></script>
     <script src="scripts/controllers/change-photo.js"></script>
     <script src="scripts/controllers/fale-conosco.js"></script>
     <script src="scripts/controllers/sobre.js"></script>
@@ -175,38 +206,26 @@
     <script src="scripts/controllers/esqueceu-senha.js"></script>
     <script src="scripts/controllers/how-are-you-feeling.js"></script>
     <script src="scripts/controllers/choose-symptoms.js"></script>
-    <script src="scripts/directives/calendar.js"></script>
     <script src="scripts/controllers/health-map.js"></script>
     <script src="scripts/controllers/data-analysis.js"></script>
     <script src="scripts/controllers/dashboard-map.js"></script>
     <script src="scripts/controllers/dashboard-result.js"></script>
     <script src="scripts/controllers/index.js"></script>
-    <script src="scripts/services/userapi.js"></script>
-    <script src="scripts/services/localstorage.js"></script>
-    <script src="scripts/services/householdapi.js"></script>
     <script src="scripts/controllers/profile-internal.js"></script>
     <script src="scripts/controllers/health-daily-household.js"></script>
-    <script src="scripts/services/surveyapi.js"></script>
-    <script src="scripts/filters/agefilter.js"></script>
-    <script src="scripts/services/contactapi.js"></script>
-    <script src="scripts/services/searchcitiesapi.js"></script>
     <script src="scripts/controllers/esqueci-minha-senha.js"></script>
     <script src="scripts/controllers/template-email-esqueci-senha.js"></script>
     <script src="scripts/controllers/data-download.js"></script>
     <script src="scripts/controllers/slideshow.js"></script>
     <script src="scripts/controllers/cadastro-email.js"></script>
-    <script src="scripts/filters/getmonth.js"></script>
-    <script src="scripts/components/components.js"></script>
-    <script src="scripts/services/notification.js"></script>
-    <script src="scripts/services/upload.js"></script>
-    <script src="scripts/directives/uploadfile.js"></script>
-    <script src="scripts/directives/analytics.js"></script>
-    <script src="scripts/services/helper.js"></script>
-    <script src="scripts/services/dashboard-api.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/game.js"></script>
+    <script src="scripts/components/components.js"></script>
+
     <!-- endbuild -->
     <script src="bower_components/moment/locale/pt-br.js"></script>
     <script src="bower_components/requirejs/require.js"></script>
+
     <script>
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

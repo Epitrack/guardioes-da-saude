@@ -1,125 +1,98 @@
-<aside class="col-sm-5 col-md-3 map-mini-dashboard" style="padding-left: 30px; overflow-y: auto;">
-  <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
-    <fieldset>
-      <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
-        ng-model="surveyByCity.city"
-        autocomplete="off"
-        uib-typeahead="address for address in getLocation($viewValue)"
-        typeahead-loading="loadingLocations"
-        typeahead-no-results="noResults"
-        typeahead-on-select="getCityAutoComplete($item)"
-        onfocus="this.placeholder=''" onblur="this.placeholder='Pesquise pela sua cidade'">
-    </fieldset>
-  </form>
-
-  <div class="info-mini-dashboard" style="height: 70%;">
-    <div class="week-participation">
-      <span class="icon"></span>
-
-      <div>
-        <h4 class="value">{{summary.total_surveys}}</h4>
-        <h5>Participações nos últimos dias</h5>
-      </div>
-    </div>
-
-    <div class="geral">
-      <legend class="legend-subtitle ff-bold">Geral</legend>
-
-      <div class="metrics col-sm-6">
-        <img class="icon-medium icon-shadow" src="../images/icon-health-daily-good.svg" alt="Good">
-        <span class="total-percentage">{{summary.pct_no_symptoms}}% <span class="light">Bem</span></span>
-        <span class="total-users">{{summary.total_no_symptoms}} Participações</span>
-      </div>
-
-      <div class="metrics col-sm-6">
-        <img class="icon-medium icon-shadow" src="../images/icon-health-daily-bad.svg" alt="Bad">
-        <span class="total-percentage">{{summary.pct_symptoms}}% <span class="light">Mal<span></span>
-        <span class="total-users">{{summary.total_symptoms}} Participações</span>
-      </div>
-    </div>
-
-    <div class="sindromes">
-      <legend class="legend-subtitle ff-bold">Síndromes <span data-toggle="modal" data-target="#sindrome-modal" class="icon question"></span></legend>
-
-      <div class="progress-wrapper">
-        <span class="progress-label">Diarréica</span>
-        <span class="progress-value">{{summary.diarreica}}%</span>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped active" role="progressbar"
-               aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100"
-               style="width: {{summary.diarreica}}%">
-            <span class="sr-only">{{summary.diarreica}}% Complete</span>
-          </div>
+<div class="container no-padding no-margin" style="width: 1260px">
+    <div class="row">
+        <!-- ng-class="{'hidden-xs' : toggle, 'hidden-sm' : toggle}" -->
+        <aside class="col-xs-3 col-sm-3 col-md-3 map-mini-dashboard" ng-class="{'hide' : !toggle}" style="padding-left: 30px; height: 608px">
+            <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
+                <fieldset>
+                    <input class="input-primary" placeholder="{{'00462'|translate}}" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder=''">
+                </fieldset>
+            </form>
+            <div class="info-mini-dashboard">
+                <div class="week-participation">
+                    <span class="icon"></span>
+                    <div>
+                        <h4 class="value">{{summary.total_surveys}}</h4>
+                        <h5>{{"00696"|translate}}</h5>
+                    </div>
+                </div>
+                <div class="geral">
+                    <legend class="legend-subtitle ff-bold">{{'00250'|translate}}</legend>
+                    <div class="metrics col-sm-6">
+                        <img class="icon-medium icon-shadow" src="../images/icon-health-daily-good.svg" alt="Good">
+                        <span class="total-percentage">{{summary.pct_no_symptoms}}% <span class="light">{{'00064'|translate}}</span></span>
+                        <span class="total-users"> {{summary.total_no_symptoms}} {{"00454"|translate}}</span>
+                    </div>
+                    <div class="metrics col-sm-6">
+                        <img class="icon-medium icon-shadow" src="../images/icon-health-daily-bad.svg" alt="Bad">
+                        <span class="total-percentage">{{summary.pct_symptoms}}% <span class="light">{{'00351'|translate}}<span></span>
+                        <span class="total-users"> {{summary.total_symptoms}} {{"00454"|translate}}</span>
+                    </div>
+                </div>
+                <div class="sindromes">
+                    <legend class="legend-subtitle ff-bold">{{'00572'|translate}} <span data-toggle="modal" data-target="#sindrome-modal" class="icon question"></span></legend>
+                    <div class="progress-wrapper">
+                        <span class="progress-label">{{'00160'|translate}}</span>
+                        <span class="progress-value">{{summary.diarreica}}%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{summary.diarreica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.diarreica}}%">
+                                <span class="sr-only">{{summary.diarreica}}% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <span class="progress-label">{{'00224'|translate}}</span>
+                        <span class="progress-value">{{summary.exantematica}}%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.exantematica}}%">
+                                <span class="sr-only">{{summary.exantematica}}% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-wrapper">
+                        <span class="progress-label">{{'00507'|translate}}</span>
+                        <span class="progress-value">{{summary.respiratoria}}%</span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100" style="width: {{summary.respiratoria}}%">
+                                <span class="sr-only">{{summary.respiratoria}}% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    {{"00688"|translate}}
+                    <a href="/fale-conosco" title="">{{'00197'|translate}}</a>
+                </div>
+            </div>
+        </aside>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 no-padding no-margin" ng-if="markers" style="height: 608px">
+            <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
         </div>
-      </div>
-
-      <div class="progress-wrapper">
-        <span class="progress-label">Exantemática</span>
-        <span class="progress-value">{{summary.exantematica}}%</span>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped active" role="progressbar"
-               aria-valuenow="{{summary.exantematica}}" aria-valuemin="0" aria-valuemax="100"
-               style="width: {{summary.exantematica}}%">
-            <span class="sr-only">{{summary.exantematica}}% Complete</span>
-          </div>
+        <img class="float-button hidden-md hidden-lg" ng-class="{'active' : toggle}" src="images/float-button.png" ng-click="toggle = !toggle" />
+        <!-- Síndromes Modal -->
+        <div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">
+            <article class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <header class="modal-header panel-heading modal-hm">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h3 class="modal-title panel-title">{{'00572'|translate}}</h3>
+                    </header>
+                    <div class="modal-body">
+                        <div class="panel-body">
+                            <p class="text-primary">
+                                {{'00892'|translate}}
+                            </p>
+                            <ul>
+                                <li>{{'00893'|translate}}
+                                </li>
+                                <li>{{'00894'|translate}}
+                                </li>
+                                <li>{{'00895'|translate}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
-      </div>
-
-      <div class="progress-wrapper">
-        <span class="progress-label">Respiratória</span>
-        <span class="progress-value">{{summary.respiratoria}}%</span>
-
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped active" role="progressbar"
-               aria-valuenow="{{summary.respiratoria}}" aria-valuemin="0" aria-valuemax="100"
-               style="width: {{summary.respiratoria}}%">
-            <span class="sr-only">{{summary.respiratoria}}% Complete</span>
-          </div>
-        </div>
-      </div>
     </div>
-
-    <div class="contact">
-      Quer maiores detalhes dos dados?
-      <a href="/fale-conosco" title=""> Entre em contato conosco</a>
-    </div>
-  </div>
-</aside>
-
-<div class="health-map-container" ng-if="markers">
-  <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
 </div>
-
-<!-- Síndromes Modal -->
-<div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">
-  <article class="modal-dialog" role="document">
-    <div class="modal-content">
-      <header class="modal-header panel-heading modal-hm">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-          aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title panel-title">Síndromes</h3>
-      </header>
-
-      <div class="modal-body">
-        <div class="panel-body">
-          <p class="text-primary">
-            As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas:
-          </p>
-
-          <ul>
-            <li>Diarreica (febre e náusea ou vômito e diarreia, além de algum destes sintomas: dores no corpo ou dor de cabeça)
-            </li>
-            <li>Respiratória (febre e tosse, além de algum destes sintomas: dor de garganta ou falta de ar)</span>
-            </li>
-            <li>Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </article>
-</div>
-
-

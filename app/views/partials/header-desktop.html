@@ -1,58 +1,65 @@
 <header class="header-primary" ng-controller="IndexCtrl">
-  <div class="navbar navbar-default not-logged" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <h1 class="logo-primary">
-          <a href="/" title="Voltar para a Home">Guardiões da Saúde</a>
-        </h1>
-      </div>
-
-      <div class="navbar-collapse" id="js-navbar-collapse">
-        <!-- visible when user not logged -->
-        <div ng-if="user.id == undefined">
-          <ul class="nav navbar-nav">
-            <li><a class="nav-link" ng-href="/cadastro" id="bt-cadastrar">Cadastre-se</a></li>
-            <li><a class="nav-link" ng-href="/login" id="bt-entrar">Entrar</a></li>
-          </ul>
+    <div class="navbar navbar-default not-logged" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1 class="logo-primary"><a href="/" title="Voltar para a Home">{{'00262' | translate}}</a></h1>
+            </div>
+            <div class="navbar-collapse" id="js-navbar-collapse">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;" ng-model="lang.current" ng-change="changeLanguage()">
+                            <option value="pt">PT</option>
+                            <option value="en">EN</option>
+                            <option value="es">ES</option>
+                            <option value="zh">ZH</option>
+                            <option value="ar">AR</option>
+                            <option value="ru">RU</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </ul>
+                </div>
+                <!-- visible when user not logged -->
+                <div ng-if="user.id == undefined">
+                    <ul class="nav navbar-nav">
+                        <li><a class="nav-link" ng-href="/cadastro" id="bt-cadastrar" style="background-color: rgb(252, 179, 21) !important;">{{'00089' | translate}}</a></li>
+                        <li><a class="nav-link" ng-href="/login" id="bt-entrar">{{'00194' | translate}}</a></li>
+                    </ul>
+                </div>
+                <!-- visible when user is logged -->
+                <div ng-if="user.id != null">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="nav-link" ng-href="game/tutorial"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a>
+                        </li>
+                        <li ng-show="!user.picture || user.picture == '0'">
+                            <figure class="mini-avatar-user hidden-xs" style="margin: 15px 0px 0 0!important"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
+                        </li>
+                        <li ng-show="user.picture">
+                            <figure class="mini-avatar-user  hidden-xs" style="margin: 15px 0px 0 0!important;"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
+                        </li>
+                        <li ng-show="user" class="dropdown dropnav">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{user.nick}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="drop-user-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a ng-href="health-daily"> {{'00158' | translate}} </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a ng-href="/" ng-click="clearStorage()"> {{'00521' | translate}}</a></li>
+                            </ul>
+                        </li>
+                        <!--            <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>-->
+                    </ul>
+                </div>
+                <div ng-if="user.id != null" align="center" ng-click="goToUrl('/survey');closeNav();" id="btn-survey-container" class="btn-survey-container">
+                    <a class="lb">{{'00455' | translate}}</a>
+                    <!--          <div class="dow-arrow-survey"></div>-->
+                </div>
+                <!-- sidebar just show when user is logged and mobile -->
+                <div ng-if="user.id != null" class="hidden-sm hidden-md hidden-lg">
+                    <div ng-include src="'views/partials/nav-primary.html'"></div>
+                </div>
+            </div>
         </div>
-
-        <!-- visible when user is logged -->
-        <div ng-if="user.id != null">
-          <ul class="nav navbar-nav">
-            <li ng-show="!user.picture || user.picture == '0'">
-              <figure class="mini-avatar-user hidden-xs"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
-            </li>
-
-            <li ng-show="user.picture">
-              <figure class="mini-avatar-user  hidden-xs"><img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar"></figure>
-            </li>
-
-            <li ng-show="user" class="dropdown dropnav">
-              <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                {{user.nick}}
-                <span class="caret"></span>
-              </button>
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a ng-href="health-daily">Diário da Saúde</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a ng-href="/" ng-click="clearStorage()">Sair</a></li>
-              </ul>
-            </li>
-
-<!--            <li><a ng-href="survey" class="btn-survey">Participe Agora!</a></li>-->
-          </ul>
-        </div>
-        <div ng-if="user.id != null" ng-click="goToUrl('/survey');closeNav();" id="btn-survey-container" class="btn-survey-container">
-          <a class="lb">Participe Agora!</a>
-        <!--          <div class="dow-arrow-survey"></div>-->
-        </div>
-        <!-- sidebar just show when user is logged and mobile -->
-        <div ng-if="user.id != null" class="hidden-sm hidden-md hidden-lg">
-          <div ng-include src="'views/partials/nav-primary.html'"></div>
-        </div>
-      </div>
     </div>
-  </div>
-
 </header>

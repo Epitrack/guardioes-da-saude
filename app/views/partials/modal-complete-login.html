@@ -1,104 +1,90 @@
-<div class="modal fade modal-add-profile" id="modal-complete-login" tabindex="-1" role="dialog"
-     aria-labelledby="modalCompleteLogin">
-  <article class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <form ng-submit="updateUserSocialData()" class="card-form" name="addFormSocialData">
-        <header class="modal-header panel-heading">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-          <h3 class="modal-title panel-title">Complete suas informações para efetuar o cadastro</h3>
-        </header>
-
-        <div class="modal-body">
-          <div class="panel-body">
-            <figure class="col-xs-12 col-md-2 col-lg-3 card-avatar-image">
-              <img src="images/avatar/avatar-0.svg" alt="Imagem de um avatar em branco">
-            </figure>
-
-            <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
-              <div class="no-padding col-xs-12">
-                <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-nickname">Apelido</label>
-                  <input ng-required="true" class="input-primary" id="profile-nickname" name="add-profile-nickname"
-                         ng-model="userData.nick" maxlength="10">
-                </fieldset>
-
-                <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-gender">Sexo</label>
-
-<!--
-                  <input class="radio-primary" type="radio" name="add-profile-gender" value="M"
-                         data-label="Masculino" ng-model="userData.gender">
-                  <input class="radio-primary" type="radio" name="add-profile-gender" value="F"
-                         data-label="Feminino" ng-model="userData.gender">
--->
-                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="M" id="selected-m">
-                    <label for="selected-m" class="span-sex-op  modal-op">Masculino</label>
-                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="F" id="selected-f">
-                    <label for="selected-f" class="span-sex-op">Feminino</label>
-
-                </fieldset>
-              </div>
-
-              <div class="no-padding col-xs-12">
-                <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-birthdate">Data de nascimento</label>
-                  <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate"
-                         ng-model="userData.dob" mask="99-99-9999" >
-                  <!-- <span class="icon-birthdate"></span> -->
-                </fieldset>
-
-                <fieldset class="col-xs-12 col-sm-6">
-                  <label for="profile-raca-cor">Raça/Cor</label>
-
-                  <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor"
-                          ng-model="userData.race">
-                    <option ng-selected="true" disabled>Escolha uma Raça/Cor</option>
-                    <option value="branco">Branco</option>
-                    <option value="preto">Preto</option>
-                    <option value="pardo">Pardo</option>
-                    <option value="amarelo">Amarelo</option>
-                    <option value="indigena">Indígena</option>
-                  </select>
-                </fieldset>
-              </div>
-
-              <fieldset class="col-xs-12">
-                <label for="profile-email">Email</label>
-                <input class="input-primary" id="profile-email" name="add-profile-email"
-                       ng-model="userData.email">
-              </fieldset>
-
-              <fieldset class="col-xs-12">
-                <div ng-show="checkF.error" class="alert alert-warning" role="alert">
-                  <span>{{checkF.msg}}</span>
+<div class="modal fade modal-add-profile" id="modal-complete-login" tabindex="-1" role="dialog" aria-labelledby="modalCompleteLogin">
+    <article class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form ng-submit="updateUserSocialData()" class="card-form" name="addFormSocialData">
+                <header class="modal-header panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title panel-title">{{'00663'| translate}}</h3>
+                </header>
+                <div class="modal-body">
+                    <div class="panel-body">
+                        <figure class="col-xs-12 col-md-2 col-lg-3 card-avatar-image">
+                            <img src="images/avatar/avatar-0.svg" alt="Imagem de um avatar em branco">
+                        </figure>
+                        <div class="col-xs-12 col-md-10 col-lg-9 card-avatar-content">
+                            <div class="no-padding col-xs-12">
+                                <fieldset class="col-xs-12 col-sm-6">
+                                    <label for="profile-nickname"> {{'00033' | translate}}</label>
+                                    <input ng-required="true" class="input-primary" id="profile-nickname" name="add-profile-nickname" ng-model="userData.nick" maxlength="10">
+                                </fieldset>
+                                <fieldset class="col-xs-12 col-sm-6">
+                                    <label for="profile-gender">{{'00567' | translate}}</label>
+                                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="M" id="selected-m">
+                                    <label for="selected-m" class="span-sex-op  modal-op">{{'00366' | translate}}</label>
+                                    <input class="radio-primary" type="radio" ng-model="userData.gender" name="profile-gender" value="F" id="selected-f">
+                                    <label for="selected-f" class="span-sex-op">{{'00232' | translate}}</label>
+                                </fieldset>
+                            </div>
+                            <div class="no-padding col-xs-12">
+                                <fieldset class="col-xs-12 col-sm-6">
+                                    <label for="profile-birthdate">{{'00144' | translate}}</label>
+                                    <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" ng-model="userData.dob" mask="99-99-9999">
+                                    <!-- <span class="icon-birthdate"></span> -->
+                                </fieldset>
+                                <fieldset class="col-xs-12 col-sm-6">
+                                    <label for="profile-raca-cor">{{'00133' | translate}}</label>
+                                    <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="userData.race">
+                                        <option ng-selected="true" disabled>Escolha uma Raça/Cor</option>
+                                        <option value="branco">{{'00081' | translate}}</option>
+                                        <option value="preto">{{'00478' | translate}}</option>
+                                        <option value="pardo">{{'00452' | translate}}</option>
+                                        <option value="amarelo">{{'00025' | translate}}</option>
+                                        <option value="indigena">{{'00304' | translate}}</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="no-padding col-xs-12">
+                                <fieldset class="col-xs-12 col-sm-4">
+                                    <label>{{'00442' | translate}}</label>
+                                    <select class="select-primary" name="country" ng-model="userData.country">
+                                        <option ng-selected="true" value="Selecione" disabled>{{'00442' | translate}}</option>
+                                        <option ng-repeat="c in countries" value="{{c.nome_pais}}">{{c.nome_pais}}</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="col-xs-12 col-sm-4" ng-show="isbrasil()">
+                                    <label>Estado de origem</label>
+                                    <select class="select-primary" name="state" ng-model="userData.state">
+                                        <option ng-selected="true" value="Selecione" disabled>Estado de origem</option>
+                                        <option value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
+                                    </select>
+                                </fieldset>
+                                <fieldset class="col-xs-12 col-sm-4">
+                                    <label>{{'00460' | translate}}</label>
+                                    <select class="select-primary" name="perfil" ng-model="userData.profile">
+                                        <option ng-selected="true" disabled>{{'00460'|translate}}</option>
+                                        <option value="Atleta/Delegação">{{'00049'|translate}} </option>
+                                        <option value="Trabalhador/Voluntário"> {{'00622'|translate}} </option>
+                                        <option value="Fã/Espectador">{{'00227'|translate}}</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <fieldset class="col-xs-12">
+                                <label for="profile-email">{{'00177' | translate}}</label>
+                                <input class="input-primary" id="profile-email" name="add-profile-email" ng-model="userData.email">
+                            </fieldset>
+                            <fieldset class="col-xs-12">
+                                <div ng-show="checkF.error" class="alert alert-warning" role="alert">
+                                    <span>{{checkF.msg}}</span>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
                 </div>
-<!--
-                <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
-                  <span>As senhas digitadas precisam ser iguais.</span>
+                <div class="modal-footer">
+                    <button type="submit" class="pull-right btn btn-primary">{{'00524' | translate}}</button>
+                    <button class="pull-right btn btn-primary cancel" data-dismiss="modal">{{'00096' | translate}}</button>
                 </div>
-
-                <div ng-show="formProfile.profilePass.$error.minlength" class="alert alert-info" role="alert">
-                  <span>Sua senha precisa ter no mínimo 6 dígitos</span>
-                </div>
-
-                <div ng-show="invalid === true" class="alert alert-warning" role="alert">
-                  <span>Data de nascimento inválida.</span>
-                </div>
-                <div ng-show="invalidRace === true" class="alert alert-warning" role="alert">
-                  <span>Campo Raça/Cor inválido</span>
-                </div>
--->
-              </fieldset>
-            </div>
-          </div>
+            </form>
         </div>
-
-        <div class="modal-footer">
-          <button type="submit" class="pull-right btn btn-primary">Salvar alterações</button>
-          <button class="pull-right btn btn-primary cancel" data-dismiss="modal">Cancelar</button>
-        </div>
-      </form>
-    </div>
-  </article>
+    </article>
 </div>

@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http', function ($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
+angular.module('gdsApp').controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http', 
+  function ($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
 
     $scope.pageClass = 'main-page';
 
@@ -32,8 +32,10 @@ angular.module('gdsApp')
       $scope.cities = {};
 
       SearchCitiesApi.getCities(limit, function (data) {
+        try{
         $scope.cities = data.data;
         $rootScope.$broadcast('getCities_ok');
+        }catch(e){}
       });
     };
 

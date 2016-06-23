@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
-        <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
+        <h2 class="title-primary">{{'00477'|translate}}</h2>
 
-        <h3 class="login-subtitle">Crie uma nova senha para sua conta:</h3>
+        <h3 class="login-subtitle">{{"00675"|translate}}</h3>
 
         <form ng-submit="checkHash()" class="form-recuperar-senha" name="formCheckHash">
           <fieldset class="input-group mainform signup">
@@ -17,17 +17,17 @@
 
           <fieldset>
             <div ng-show="screen.repeatPassword != screen.user.password" class="alert alert-info" role="alert">
-              <span>As senhas digitadas precisam ser iguais.</span>
+              <span>{{'00042'|translate}}</span>
             </div>
 
             <div ng-show="formCheckHash.newUserPass.$error.minlength" class="alert alert-info" role="alert">
-              <span>Sua senha precisa ter no mínimo 6 dígitos</span>
+              <span>{{"00676"|translate}}</span>
             </div>
           </fieldset>
 
           <fieldset class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
-              <button type="submit" class="btn btn-signup">Trocar senha</button>
+              <button type="submit" class="btn btn-signup">{{"00677"|translate}}</button>
             </div>
           </fieldset>
         </form>
@@ -35,6 +35,6 @@
     </div>
   </div>
 </div>
-
+<div ng-include src="'views/partials/olympics-faixa.html'"></div>
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

@@ -144,6 +144,7 @@ angular.module('gdsApp')
                     }
                 })
                 .then(function(result) {
+                    console.log(result.data.data);
                     callback(result);
                 }, function(error) {
                     console.warn('Error getUserCalendar: ', error);
@@ -209,9 +210,9 @@ angular.module('gdsApp')
                         .then(function(response) {
                             userFbData.fb_token = data.authResponse.accessToken;
                             userFbData.nick = response.name;
-                            try{
-                            userFbData.nick = response.name.slice(0,10);
-                            }catch(e){}
+                            try {
+                                userFbData.nick = response.name.slice(0, 10);
+                            } catch (e) {}
                             userFbData.email = response.email;
                             userFbData.gender = response.gender[0].toUpperCase();
                             userFbData.fb = response.ids_for_business.data[0].id; //response.id;
@@ -224,11 +225,7 @@ angular.module('gdsApp')
                                     };
                                     obj.loginUser(loginPass, function(resultMail) {
                                         if (resultMail.data.error === true) {
-                                            // toaster.pop('error', resultMail.data.message);
-                                            //                                  Notification.show('error', 'Facebook', resultMail.data.message);
                                         } else {
-                                            // toaster.pop('success', resultMail.data.message);
-                                            //                                  Notification.show('success', 'Facebook', resultMail.data.message);
                                             LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                             if (LocalStorage.isFirstAccess()) {
                                                 $location.path('survey');
@@ -240,7 +237,6 @@ angular.module('gdsApp')
                                     });
 
                                 } else {
-                                    // console.warn('Error -> ', dataLg.data.message);
                                     angular.element('#modal-complete-login').modal('show');
                                 }
                             });
@@ -260,7 +256,6 @@ angular.module('gdsApp')
         }
 
         obj.twitterLogin = function($scope) {
-            // OAuth.initialize('PipsrkWTsVTTgA_JmxlldSqEQTA');
             OAuth.initialize('jGUgHZ1coQaSW9UZQxhGmZaN5dA');
             var userTwData = {};
             OAuth.popup('twitter', function(err) {
@@ -268,13 +263,12 @@ angular.module('gdsApp')
                 })
                 .done(function(result) {
                     result.me().done(function(data) {
-                        console.log("me",data)
+                        console.log("me", data)
                         userTwData.tw = data.id;
                         userTwData.nick = data.name;
-                        try{
-                        userTwData.nick = data.name.slice(0,10);;
-                        }catch(e){}
-
+                        try {
+                            userTwData.nick = data.name.slice(0, 10);
+                        } catch (e) {}
                         $scope.userData = userTwData;
                         twLogin(userTwData.tw, function(dataTw) {
                             // console.log("dataTw", dataTw);
@@ -321,9 +315,9 @@ angular.module('gdsApp')
             var userGlData = {};
             userGlData.gl = data.id;
             userGlData.nick = data.displayName;
-            try{
-            userGlData.nick = data.displayName.slice(0,10);;
-            }catch(e){}
+            try {
+                userGlData.nick = data.displayName.slice(0, 10);
+            } catch (e) {}
             userGlData.gender = data.gender;
             userGlData.email = data.email;
             $scope.userData = userGlData;
@@ -386,6 +380,5 @@ angular.module('gdsApp')
                     console.warn('Error getUserSurveyByYear: ', error);
                 });
         };
-
         return obj;
     });

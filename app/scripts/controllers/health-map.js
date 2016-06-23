@@ -8,17 +8,34 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('HealthMapCtrl', ['$scope', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
+    .controller('HealthMapCtrl', ['$scope', '$translate', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, $translate, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
+        
 
+        $scope.toggle = true // togggle for  float button 
+        
         $scope.pageClass = 'health-map';
         $scope.markers = [];
+
+        $scope.bemstring = "Bem";
+        $scope.malstring = "Mal";
+        $scope.vcestaaquistring = 'Você está aqui';
+        $translate(['00648']).then(function(translations) {
+            $scope.bemstring = translations['00648'];
+        });
+
+        $translate(['00064']).then(function(translations) {
+            $scope.bemstring = translations['00064'];
+        });
+        $translate(['00351']).then(function(translations) {
+            $scope.malstring = translations['00351'];
+        });
         //
         // Graphic
         //
         $scope.donutOptions = {
             data: [
-                { label: "Bem", value: 77, participants: 10 },
-                { label: "Mal", value: 23, participants: 5 }
+                { label: $scope.bemstring, value: 77, participants: 10 },
+                { label: $scope.malstring, value: 23, participants: 5 }
             ],
             colors: ['#E0D433', '#C81204'],
             resize: true
@@ -35,7 +52,7 @@ angular.module('gdsApp')
             $scope.userLocation = {
                 lat: lat,
                 lng: lon,
-                title: 'Você está aqui',
+                title: $scope.vcestaaquistring,
                 zoom: 12,
                 icon: '/images/icon-user-location.png'
             };
@@ -291,7 +308,7 @@ angular.module('gdsApp')
                     summary.exantematica = data.data.summary.diseases.exantematica;
                     summary.respiratoria = data.data.summary.diseases.respiratoria;
 
-                     try {
+                    try {
                         if (summary.total_surveys > 0) {
                             summary.diarreica = ((summary.diarreica / summary.total_surveys) * 100).toFixed(2);
                             summary.exantematica = ((summary.exantematica / summary.total_surveys) * 100).toFixed(2);
@@ -452,5 +469,4 @@ angular.module('gdsApp')
             };
             if ($rootScope.city === undefined) { $scope.getMarkersByLocation(); }
         }
-
     }]);

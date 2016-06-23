@@ -7,8 +7,8 @@
  * # DataAnalysisCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DataAnalysisCtrl', function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
+angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'DashboardApi', '$scope', '$location', '$rootScope', '$compile',
+    function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
         $scope.slide_active = 0;
 
         $scope.DEPARALABELS = {
@@ -259,22 +259,21 @@ angular.module('gdsApp')
         };
 
         $scope.loadfile = function(callback) {
-                if (window.sessionStorage.getItem('surveys') === null) {
-                    var psv = d3.dsv(";", "text/plain");
-                    psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
-                        window.sessionStorage.setItem('surveys', JSON.stringify(data));
-                        callback(data);
-                    });
-                } else {
-                    callback(JSON.parse(window.sessionStorage.getItem('surveys')));
-                }
+            if (window.sessionStorage.getItem('surveys') === null) {
+                var psv = d3.dsv(";", "text/plain");
+                psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
+                    window.sessionStorage.setItem('surveys', JSON.stringify(data));
+                    callback(data);
+                });
+            } else {
+                callback(JSON.parse(window.sessionStorage.getItem('surveys')));
             }
-            /**/
+        };
+        /**/
         $scope.prev = function() {
             console.log($scope.slides);
         };
         /**/
-
         $scope.first = 0;
         $scope.slides = [];
         $scope.is_histogram = false;
@@ -424,4 +423,4 @@ angular.module('gdsApp')
                 }
             });
         };
-    });
+    }]);
