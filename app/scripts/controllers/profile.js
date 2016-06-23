@@ -7,8 +7,8 @@
  * # ProfileCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('ProfileCtrl', ['$scope', 'UserApi', '$timeout', '$location', '$rootScope', 'Notification', function($scope, UserApi, $timeout, $location, $rootScope, Notification) {
+angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeout', '$location', '$rootScope', 'Notification', 
+    function($scope, UserApi, $timeout, $location, $rootScope, Notification) {
 
         $scope.pageClass = 'profile-page';
 

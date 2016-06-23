@@ -6,9 +6,9 @@
  * @description
  * # calendar
  */
-angular.module('gdsApp')
-  .directive('calendar', function (moment) {
-function _removeTime(date) {
+angular.module('gdsApp').directive('calendar', function (moment) {
+    
+    function _removeTime(date) {
       return date.day(0).hour(0).minute(0).second(0).millisecond(0);
     }
 
@@ -47,7 +47,7 @@ function _removeTime(date) {
       templateUrl: "views/partials/calendar.html",
       restrict: 'E',
       scope: {
-        selected: "=selected",
+        // selected: "=selected",
         CalendarInterface: "=interface"
       },
       link: function ($scope) {

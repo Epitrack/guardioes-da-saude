@@ -1,0 +1,142 @@
+.in {
+    /*border-top: 3px solid rgb(231, 231, 231);*/
+}
+
+.vermelho {
+    background-color: #d0021b;
+}
+
+.laranja {
+    background-color: #f47821;
+}
+
+.amarelo {
+    background-color: #e8a512;
+}
+
+.verde {
+    background-color: #68ba44;
+}
+
+.box-alert {
+    height: 200px;
+    border-radius: 3px;
+    margin: 0px;
+    padding: 10px;
+    overflow: unset;
+}
+
+.rio {
+    height: 422px;
+    max-height: 422px;
+    border-radius: 3px;
+}
+
+.linha-inferior {
+    margin-top: 22px;
+}
+
+.box-alert-title {
+    width: 120px;
+    height: 24px;
+    font-family: inherit;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.box-alert-content {
+    font-family: inherit;
+    color: #FFF;
+    display: block;
+    width: 90%;
+    font-size: 2.6em;
+}
+
+.box-alert-date {
+    width: 211px;
+    height: 12px;
+    opacity: 0.5;
+    font-family: inherit;
+    font-size: 1.9em;
+    color: #FFF;
+    display: block;
+}
+
+.box-scroll {
+    height: 90%;
+    display: block;
+    overflow: hidden;
+}
+
+.box-scroll:hover {
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.box-scroll-min {
+    height: 80%;
+    display: block;
+    overflow: hidden;
+}
+
+.box-scroll-min:hover {
+    height: 80%;
+    display: block;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.dc-chart g.row text {
+    fill: #1B1919!important;
+    font-size: 14px;
+}
+
+.rodape {
+    height: 10px;
+    width: 100%;
+    border: 0px solid white;
+    text-align: right;
+    padding-right: 17px;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin-top: -8px;
+}
+
+.grafico{
+    position: absolute;
+}
+.grafico1{
+    top: 37px;
+    left: 41px;
+}
+.grafico2{
+    top: 63px;
+    right: -241px;
+}
+.grafico3{}
+
+.animateGrafycs {
+    font-size: 26px;
+    top: 150px;
+    left: 50%;
+    margin-left: -13px;
+    z-index: 9997;
+    animation-name: rotateThis;
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -moz-animation: rotateThis 1.0s infinite linear;    
+    -webkit-animation: rotateThis 1.0s infinite linear;    
+}
+
+@keyframes rotateThis {
+    from { transform: scale( 1 ) rotate( 0deg );   }
+    to   { transform: scale( 1 ) rotate( 359deg ); }
+}
+
+@-webkit-keyframes rotateThis {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}

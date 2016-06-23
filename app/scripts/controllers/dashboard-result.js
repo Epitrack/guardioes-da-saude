@@ -7,8 +7,9 @@
  * # DashboardResultCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DashboardResultCtrl', function($rootScope, $scope, $location) {
+angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$scope', '$location',
+    function($rootScope, $scope, $location) {
+        
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
         try {
@@ -323,4 +324,4 @@ angular.module('gdsApp')
         }
         $scope.downloadCSV();
 
-    });
+    }]);

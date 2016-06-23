@@ -8,7 +8,8 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-  .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', '$location', '$timeout', '$filter', '$routeParams', 'HouseholdApi', 'Notification', function ($scope, UserApi, LocalStorage, $rootScope, $location, $timeout, $filter, $routeParams, HouseholdApi, Notification) {
+  .controller('ChangePhotoCtrl', ['$scope', 'UserApi', 'LocalStorage', '$rootScope', '$location', '$timeout', '$filter', '$routeParams', 'HouseholdApi', 'Notification', 
+    function ($scope, UserApi, LocalStorage, $rootScope, $location, $timeout, $filter, $routeParams, HouseholdApi, Notification) {
 
     $scope.avatar = {};
     $scope.vm = {};

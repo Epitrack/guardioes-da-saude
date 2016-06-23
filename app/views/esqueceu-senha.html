@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
-        <h2 class="title-primary">Preparado para se tornar um Guardião da Saúde?</h2>
+        <h2 class="title-primary">{{'00477'|translate}}</h2>
 
-        <h3 class="login-subtitle">Recupere sua senha:</h3>
+        <h3 class="login-subtitle">{{'00495'|translate}}:</h3>
 
         <form ng-submit="resetPass()" class="form-recuperar-senha" name="formRecuperarSenha" novalidate>
           <fieldset class="input-group mainform signup">
@@ -15,7 +15,7 @@
           <fieldset class="btn-group btn-group-justified" role="group">
             <div class="btn-group" role="group">
               <button type="submit" class="btn btn-signup"
-                      ng-disabled="formRecuperarSenha.email.$dirty && formRecuperarSenha.email.$invalid">Recuperar senha
+                      ng-disabled="formRecuperarSenha.email.$dirty && formRecuperarSenha.email.$invalid">{{'00495'|translate}}
               </button>
             </div>
           </fieldset>
@@ -26,12 +26,13 @@
         <!-- validation -->
         <div ng-show="formRecuperarSenha.email.$dirty && formRecuperarSenha.email.$invalid" class="alert alert-warning"
              role="alert">
-          <span ng-show="formRecuperarSenha.email.$error.required">O campo <b>email</b> é obrigatório.</span>
-          <span ng-show="formRecuperarSenha.email.$error.email">Endereço de email inválido.</span>
+          <span ng-show="formRecuperarSenha.email.$error.required">{{'00178'|translate}}</span>
+          <span ng-show="formRecuperarSenha.email.$error.email">{{'00181'|translate}}</span>
         </div>
 
         <div ng-show="message" class="alert alert-info" role="alert">
-          <span>Foi enviada uma mensagem para o email {{forgotPass.email}}, siga as instruções enviadas para recuperar sua senha.</span>
+          <!-- <span>Foi enviada uma mensagem para o email {{forgotPass.email}}, siga as instruções enviadas para recuperar sua senha.</span> -->
+          <span>{{"00674"|translate}}</span>
         </div>
 
         <div ng-show="messageError" class="alert alert-danger" role="alert">
@@ -41,6 +42,6 @@
     </div>
   </div>
 </div>
-
+<div ng-include src="'views/partials/olympics-faixa.html'"></div>
 <!-- How it works -->
 <div ng-include src="'views/partials/how-it-works.html'"></div>

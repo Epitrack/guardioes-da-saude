@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="277px" height="101px" viewBox="0 0 277 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>03E54681-6678-41BF-BFFA-7FFF54C5ECA6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="10" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.246376812 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="GdS-md" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="07---game_mapa" transform="translate(-508.000000, -599.000000)">
+            <g id="Group-4" transform="translate(467.000000, 588.000000)">
+                <g id="Group" filter="url(#filter-1)" transform="translate(40.694228, 10.071856)">
+                    <rect id="Rectangle-2038" fill="#4593F5" x="11" y="11" width="236.099844" height="60.4275449"></rect>
+                    <rect id="Rectangle-2038" fill="#1B69D2" x="11" y="41.4311377" width="236.099844" height="30.4311377"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

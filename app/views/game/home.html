@@ -1,0 +1,227 @@
+<!-- <div class="game-home" style="height: 100%;z-index: 999999;margin-top: -10px;">
+    
+</div> -->
+<div id="div_game" style="width: 100%;position: absolute;">
+    <img id="img_bg" src="../images/game/bg-game-2.png" style="width: 100%;height: auto;">
+    <a ng-click="openmodal('fase',1,$event)">
+        <img id="img_pin" src="../images/game/pin.png" style="width: 10%;position: absolute;left: 45.6%;">
+    </a>
+    <div class="game-home-points" style="z-index: 99999999;">
+        <a href="" data-toggle="modal" data-target="#trofeu-modal">
+            <!-- <a href="" ng-click="nextPin()"> -->
+            <div class="game-home-medalha"></div>
+        </a>
+        <a href="" data-toggle="modal" data-target="#ranking-modal">
+            <div class="game-home-trofeu"></div>
+        </a>
+        <div class="game-home-points-label">
+            <a href="" ng-click="modalpoints()">
+                <span>{{points}} {{"00191"|translate}}</span>
+            </a>
+        </div>
+    </div>
+    <div class="modal fade" id="trofeu-modal" tabindex="-1" role="dialog" aria-labelledby="trofeumodal" style="top: 10%;">
+        <article class="modal-dialog" role="document" style="margin: 100px auto;">
+            <div class="modal-content">
+                <form class="card-form" name="i-feel-bad-form">
+                    <header class="modal-header panel-heading confirm-survey" style="background-color: white !important;border-bottom:0px">
+                        <a data-dismiss="modal" aria-label="Close">
+                            <img src="../images/game/fechar.svg" style="right: -26px; top: -37px;position: absolute;">
+                        </a>
+                        <img src="../images/game/meus-trofeus.svg" style="z-index: 9; position: absolute; top: -43px; left: -35px; width: 305px; height: 82px;">
+                        <img src="../images/game/meus-trofeus-1.svg" style="width: 30px; height: auto; position: absolute; left: -29px; top: 32px;">
+                    </header>
+                    <div class="modal-body" style="padding-bottom: 0;">
+                        <div style="font-size: 2.3em; max-height: 270px; height: 100%; overflow-y: auto; padding-left: 20px;padding-right: 20px;">
+                            <div class="row" style="border-bottom: 1px solid rgb(214, 214, 214); padding-bottom: 10px; margin-bottom: 10px;" ng-repeat="r in trofeus">
+                                <div class="col-md-6" ng-repeat="c in r track by $index">
+                                    <div style="width: 67px; border-radius: 100%; height: 67px; overflow: hidden;float: left;">
+                                        <img src="../images/game/fases/{{c.name}}/card.png" style="width: 150%; position: relative; left: -15px; top: -15px;">
+                                    </div>
+                                    <span style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <div class="modal fade" id="ranking-modal" tabindex="-1" role="dialog" aria-labelledby="rankingmodal" style="top: 10%;">
+        <article class="modal-dialog" role="document" style="margin: 100px auto;">
+            <div class="modal-content" style="border-radius: 20px;">
+                <form class="card-form" name="i-feel-bad-form">
+                    <header class="modal-header panel-heading confirm-survey" style="background-color: #00c4ff !important;border-bottom: 6px solid #00a9dd;padding: 40px 30px 0px;">
+                        <a data-dismiss="modal" aria-label="Close">
+                            <img src="../images/game/fechar.svg" style="right: -26px; top: -37px;position: absolute;">
+                        </a>
+                        <img src="../images/game/ranking-geral.svg" style="z-index: 9; position: absolute; top: -43px; left: -35px; width: 306px;   height: 80px;">
+                        <img src="../images/game/meus-trofeus-1.svg" style="width: 30px; height: auto; position: absolute; left: -29px; top: 28px;">
+                        <p style="font-family: inherit;   font-size: 20px;   color: #ffffff;">
+                            {{"00468"|translate}}
+                        </p>
+                        <p style="font-family: inherit;   font-size: 16px;   color: #ffffff;"> {{"00005"|translate}}</p>
+                    </header>
+                    <div class="modal-body" style="padding-bottom: 0;">
+                        <div style="font-size: 2.3em; max-height: 270px; height: 100%; overflow-y: auto; padding-left: 35px; padding-right: 35px;">
+                            <div class="row" ng-repeat="r in ranking" style="border-bottom: 1px solid rgb(214, 214, 214); padding-bottom: 10px; margin-bottom: 10px;">
+                                <div class="col-md-6" ng-repeat="c in r">
+                                    <img src="{{c.flagURL}}">
+                                    <span>{{c.country}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-1gmodal" style="top: 10%; overflow: hidden;z-index: 99999999;">
+        <article class="modal-dialog" role="document" style="margin: 40px auto;left: 10px;">
+            <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
+                <form class="card-form ng-pristine ng-valid" name="i-feel-bad-form">
+                    <header id="panel_header_game" class="modal-header panel-heading confirm-survey" style="background-color: rgba(255, 255, 255, 0) ! important; border-bottom: 0; padding: 40px 30px 0px;">
+                        <a href="" style="right: 63px; top: 8px;position: absolute;z-index: 99999;" data-dismiss="modal" aria-label="Close">
+                            <img src="../images/game/fechar.svg">
+                        </a>
+                        <img src="../images/game/faixa.svg" style="z-index: 9; position: absolute; top: 0px; left: 50%; width: 324px; height: 77px; margin-left: -182px;">
+                        <span id="nivel_label" style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: relative; display: block; text-align: center; z-index: 99; left: -5%; top: -4px;">{{"00695"|translate}} {{current_fase}}</span>
+                        <span id="parabens_label" class="panel_internal_game" style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: none; text-align: center; z-index: 99; left: -5%; top: 5%;">{{"00891"|translate}}</span>
+                    </header>
+                    <div class="modal-body" align="center" style="margin-left: -9%;">
+                        <div id="panel_mosaico" class="panel-body panel_internal_game" style="margin-top: 0px;max-width: 318px;">
+                            <span ng-show="loading" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;     margin-left: -39px;     color: #f47820;top: 80px;"></span>
+                            <div class="row" ng-repeat="(key, qs) in questions_view" style="margin-bottom: 10px;">
+                                <div class="col-xs-4" ng-repeat="(key1, q) in qs">
+                                    <a href="" ng-click="escolher(key,key1)">
+                                        <img src="{{q.img1}}" ng-hide="q.active">
+                                        <img src="{{q.img2}}" ng-show="q.active">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="panel_pergunta" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-6">
+                                    <div id="counter" class="c100 p6 small orange" style="position: absolute; left: 50%; margin-left: -24px; top: -24px;">
+                                        <span style="width: 2.4em; line-height: 2.4em;font-weight: 900;font-style: italic;font-size: 0.38em;color:#f47820">12</span>
+                                        <div class="slice">
+                                            <div class="bar" style="border-color: #f47820 !important;"></div>
+                                            <div class="fill"></div>
+                                        </div>
+                                    </div>
+                                    <div class="game-card-neutro" id="pergunta" align="center">
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-top: 4%;">
+                                    <a href="" style="text-decoration: none;" ng-click="responder(0)">
+                                        <div id="op1" class="game-resposta-neutro"></div>
+                                    </a>
+                                    <a href="" style="text-decoration: none;" ng-click="responder(1)">
+                                        <div id="op2" class="game-resposta-neutro"></div>
+                                    </a>
+                                    <a href="" style="text-decoration: none;" ng-click="responder(2)">
+                                        <div id="op3" class="game-resposta-neutro"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="panel_resposta_certa" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                            <div class="row" style="margin-bottom: 10px;margin-left: -55px;">
+                                <img src="../images/game/rectangle-970.png" style="padding: 0px; margin: -60px 0px 0px;">
+                                <div style="position: relative;top: -110px;" ng-show="stars == 0">
+                                    <img src="../images/game/star-1-fill.png">
+                                    <img src="../images/game/star-2-fill.png">
+                                    <img src="../images/game/star-3-fill.png">
+                                </div>
+                                <div style="position: relative;top: -110px;" ng-show="stars == 1">
+                                    <img src="../images/game/star-1-fill.png">
+                                    <img src="../images/game/star-2-fill.png">
+                                    <img src="../images/game/star-3.png">
+                                </div>
+                                <div style="position: relative;top: -110px;" ng-show="stars == 2">
+                                    <img src="../images/game/star-1-fill.png">
+                                    <img src="../images/game/star-2.png">
+                                    <img src="../images/game/star-3.png">
+                                </div>
+                                <div style="position: relative; top: -110px;">
+                                    <img src="../images/game/fundo.png" style="position: absolute; z-index: -1; margin-left: -35px; margin-top: 26px;">
+                                    <a href="" ng-click="repetirPergunta();">
+                                        <img src="../images/game/retornar.png">
+                                    </a>
+                                    <a href="" ng-click="proximaPergunta()">
+                                        <img src="../images/game/continuar.png">
+                                    </a>
+                                    <a href="" ng-click="clean('fase')">
+                                        <img src="../images/game/puzzle.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="panel_resultado" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-12 ">
+                                    <div class="card_energia_positive">
+                                        <div style="letter-spacing: 0px;color: rgb(255, 255, 255);font-size: 5em;padding: 10%;font-weight: bold;">{{pontos_total}}</div>
+                                        <div style="font-size: 20px; letter-spacing: 0px; color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px; margin-top: -20px;">{{"00457"|translate}</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <a href="#/survey" style="text-decoration: none">
+                                        <img style="margin-left: -8%;" src="../images/game/cards/btn_participe.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border-top:0px">
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <div class="modal fade" id="game_modal_panel_card" tabindex="-1" role="dialog" aria-labelledby="game_modal_panel_card-1gmodal" style="top: 10%; overflow: hidden;">
+        <article class="modal-dialog" role="document" style="margin: 40px auto;">
+            <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
+                <form class="card-form ng-pristine ng-valid" name="i-feel-bad-form">
+                    <header id="panel_header_game" class="modal-header panel-heading confirm-survey" style="background-color: rgba(255, 255, 255, 0) ! important; border-bottom: 0; padding: 40px 30px 0px;">
+                        <a href="" style="right: 63px; top: 8px;position: absolute;z-index: 99999;" data-dismiss="modal" aria-label="Close">
+                            <img src="../images/game/fechar.svg">
+                        </a>
+                        <img src="../images/game/faixa.svg" style="z-index: 9; position: absolute; top: 0px; left: 50%; width: 324px; height: 77px; margin-left: -182px;">
+                        <span style="width: 100%; height: 29.8px; font-family: inherit; font-size: 22.4px; color: rgb(24, 108, 183); text-shadow: 0px 2px 0px rgba(255, 255, 255, 0.4); position: fixed; display: block; text-align: center; z-index: 99; left: -5%; top: 30px;">{{"00891"|translate}}</span>
+                    </header>
+                    <div class="modal-body" align="center">
+                        <img src="" id="panel_card_img">
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+    <div class="modal fade" id="game_modal_panel_sem_pontos" tabindex="-1" role="dialog" aria-labelledby="game_modal_panel_card-1gmodal" style="top: 10%;overflow: hidden;">
+        <article class="modal-dialog" role="document" style="margin: 100px auto;">
+            <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
+                <form class="card-form ng-pristine ng-valid" name="i-feel-bad-form">
+                    <div class="modal-body" align="center">
+                        <img src="../images/game/badge.png" style="position: absolute; top: -10px; left: 50%; margin-left: -40px;">
+                        <img src="../images/game/fundo_sem_pontos.png" id="game_modal_panel_sem_pontos_bg">
+                        <p id="game_modal_panel_sem_pontos_title" style="position: absolute; font-size: 4em; color: white; font-weight: bold; left: 50%; margin-left: -140px; top: 60px; width: 260px;">
+                            Você está
+                            <br/> sem energia!
+                        </p>
+                        <p id="game_modal_panel_sem_pontos_content" style="position: absolute; color: white; left: 50%; margin-left: -130px; font-size: 3em;top: 150px; width: 270px;">
+                            Participe diariamente do Guardiões da Saúde para restaurá-las!
+                        </p>
+                        <img src="../images/game/participe_agora.png" style="width: 325px;">
+                        <a ng-click="goToUrl('/survey')" style="cursor:pointer">
+                            <p style="color: white; position: absolute; bottom: 24px; font-size: 3.4em; left: 50%; margin-left: -60px;">Participe agora</p>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </article>
+    </div>
+</div>
+<div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 0;position: fixed;">
+    <img src="../images/olympics-colors-2.svg" style="width: 101%;">
+</div>

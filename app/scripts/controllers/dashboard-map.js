@@ -7,8 +7,8 @@
  * # DashboardMapCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification', function($scope, LocalStorage, Surveyapi, $http, $rootScope, Notification) {
+angular.module('gdsApp').controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification', 
+        function($scope, LocalStorage, Surveyapi, $http, $rootScope, Notification) {
 
         $scope.mkrs = [];
         $scope.params = {};

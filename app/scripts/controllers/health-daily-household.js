@@ -7,8 +7,8 @@
  * # HealthDailyHouseholdCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-  .controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', 'moment', function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification, moment) {
+angular.module('gdsApp').controller('HealthDailyHouseholdCtrl', ['$scope', '$rootScope', '$filter', 'HouseholdApi', '$routeParams', 'LocalStorage', 'Notification', 'moment', 
+  function ($scope, $rootScope, $filter, HouseholdApi, $routeParams, LocalStorage, Notification, moment) {
 
     var meuFiltro = $filter;
     var userStorage = $rootScope.user;
@@ -142,17 +142,18 @@ angular.module('gdsApp')
       $scope.hhAllDays = '';
       $scope.lineOptions = null;
       $scope.lineDataLoaded = false;
-
       var params = {
         month: month,
         year: new Date().getFullYear(),
-        hh_id: $scope.household.id,
-        user_token: $scope.household.user.user_token
+        // hh_id: $scope.household.id,
+        hhId: $scope.household.id,
+        user_token: $scope.household.user_token
       };
 
       $rootScope.frequencyMonth = month;
 
-      HouseholdApi.getHouseholdSurveyByMonth(params, function (data) {
+      HouseholdApi.getHouseholdCalendar(params, function (data) {
+        console.log("params,data",params,data);
         $scope.lineDataLoaded = true;
         if (data.data.error === true) {
           // console.warn(data.data.message);
@@ -207,7 +208,8 @@ angular.module('gdsApp')
       var params = {
         year: new Date().getFullYear(),
         hh_id: $scope.household.id,
-        user_token: LocalStorage.getItem('userStorage').user_token
+        // user_token: LocalStorage.getItem('userStorage').user_token
+        user_token: $scope.household.user_token
       };
 
       HouseholdApi.getHouseholdSurveyByYear(params, function (data) {

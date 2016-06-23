@@ -3,16 +3,16 @@
 
 <!-- Content -->
 <section class="col-sm-9 col-md-10 content-internal">
-  <h2 class="section-title">Perfil <span>/ {{vm.profile.nick}}</span></h2>
+  <h2 class="section-title">{{'00460'|translate}} <span>/ {{vm.profile.nick}}</span></h2>
 
   <article class="col-xs-12 panel panel-default no-padding card">
     <header class="panel-heading change-photo">
-      <h3 class="panel-title">Editar foto</h3>
+      <h3 class="panel-title">{{'00184'|translate}}</h3>
     </header>
 
     <div class="panel-body">
       <div class="col-xs-12 col-sm-12 col-md-5 card-avatar-content">
-        <h3 class="change-photo-subtitle">Escolha seu avatar</h3>
+        <h3 class="change-photo-subtitle">{{'00206'|translate}}</h3>
         <form class="card-form" name="change-photo-default">
           <div class="form-change-photo-default" ng-if="vm.tog">
             <div ng-repeat="i in getNumber(myOtherNumber) track by $index">
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <button class="save-change-photo" ng-click="uploadPic()">Salvar foto</button>
+        <button class="save-change-photo" ng-click="uploadPic()"> {{'00525'|translate}}</button>
       </div>
     </div>
   </article>
