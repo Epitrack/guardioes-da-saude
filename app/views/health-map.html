@@ -1,4 +1,4 @@
-<aside class="col-sm-5 col-md-3 map-mini-dashboard">
+<aside class="col-sm-5 col-md-3 map-mini-dashboard" style="padding-left: 30px; overflow-y: auto;">
   <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
     <fieldset>
       <input class="input-primary" placeholder="Pesquise pela sua cidade" name="search-location" type="text"
@@ -12,7 +12,7 @@
     </fieldset>
   </form>
 
-  <div class="info-mini-dashboard">
+  <div class="info-mini-dashboard" style="height: 70%;">
     <div class="week-participation">
       <span class="icon"></span>
 
@@ -89,7 +89,7 @@
 </aside>
 
 <div class="health-map-container" ng-if="markers">
-  <gds-maps location="userLocation" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
+  <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
 </div>
 
 <!-- Síndromes Modal -->
@@ -109,11 +109,11 @@
           </p>
 
           <ul>
-            <li>Diarreica <span>(febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)</span>
+            <li>Diarreica (febre e náusea ou vômito e diarreia, além de algum destes sintomas: dores no corpo ou dor de cabeça)
             </li>
-            <li>Respiratória <span>(febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)</span>
+            <li>Respiratória (febre e tosse, além de algum destes sintomas: dor de garganta ou falta de ar)</span>
             </li>
-            <li>Exantemática <span>(manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)</span>
+            <li>Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)
             </li>
           </ul>
         </div>
@@ -121,3 +121,5 @@
     </div>
   </article>
 </div>
+
+

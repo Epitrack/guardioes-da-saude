@@ -69,7 +69,7 @@ body {
 
 .content-internal {
   min-height: 700px;
-  height: 100%;
+  height: auto;
   float: none;
   @extend .col-xs-12;
 }
