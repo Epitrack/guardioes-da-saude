@@ -1,7 +1,7 @@
 <div class="container no-padding no-margin" style="width: 1260px">
     <div class="row">
         <!-- ng-class="{'hidden-xs' : toggle, 'hidden-sm' : toggle}" -->
-        <aside class="col-xs-3 col-sm-3 col-md-3 map-mini-dashboard" ng-class="{'hide' : !toggle}"  style="padding-left: 30px;">
+        <aside class="col-xs-3 col-sm-3 col-md-3 map-mini-dashboard" ng-class="{'hide' : !toggle}"  style="padding-left: 30px; height: 608px">
             <form ng-submit="getMarkersByCity()" class="form-mini-dashboard" name="form-mini-dashboard">
                 <fieldset>
                     <input class="input-primary" placeholder="{{'00462'|translate}}" name="search-location" type="text" ng-model="surveyByCity.city" autocomplete="off" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" typeahead-on-select="getCityAutoComplete($item)" onfocus="this.placeholder=''" onblur="this.placeholder=''">
@@ -64,10 +64,10 @@
                 </div>
             </div>
         </aside>
-        <div class="col-sm-12 col-md-12 no-padding no-margin" ng-if="markers" style="height: 608px">
+        <div class="col-sm-12 col-md-9 no-padding no-margin" ng-if="markers" style="height: 608px">
             <gds-maps location="userLocation" doubleclick="true" zoom="false" marks="markers" size="{height:'100%', width:'100%'}"></gds-maps>
         </div>
-        <img class="float-button" ng-class="{'active' : toggle}" src="images/float-button.png" ng-click="toggle = !toggle"/>
+        <img class="float-button hidden-md hidden-lg" ng-class="{'active' : toggle}" src="images/float-button.png" ng-click="toggle = !toggle"/>
         
         <!-- Síndromes Modal -->
         <div class="modal fade modal-sindromes" id="sindrome-modal" tabindex="-1" role="dialog">
