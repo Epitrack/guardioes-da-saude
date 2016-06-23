@@ -500,6 +500,7 @@ angular.module('gdsApp')
             $http.get($scope.url + "/game/questions/?lang=" + $scope.getLanguage()).then(function(result) {
                 $scope.questions = result.data;
                 for (var i = 0; i < $scope.questions.length; i++) {
+                    console.log($scope.questions[i]);
                     $scope.questions[i].img1 = "../images/game/btn_questao.svg";
                     $scope.questions[i].img2 = ".." + $scope.fasespics[$scope.current_fase].path + "puzzle/" + $scope.imgs[i] + ".png";
                     if ($scope.responses[i]) {
@@ -614,6 +615,7 @@ angular.module('gdsApp')
                 $scope.responses[indice] = 1;
                 $scope.current_question_id = $scope.questions_view[$scope.k][$scope.k1].id;
                 $scope.savestatus($scope.current_fase, $scope.responses, $scope.current_question_id);
+                $scope.decrementa();
                 $timeout(function() {
                     $scope.clean('respostacerta');
                 }, 500);
@@ -628,13 +630,17 @@ angular.module('gdsApp')
                 var _class = $("#op" + (op + 1)).attr("class");
                 $("#op" + (op + 1)).attr("class", "game-resposta-errada");
                 if (_class !== "game-resposta-errada") {
-                    $scope.points--;
-                    $scope.modalpoints();
-                    $http.post($scope.url + '/user/update', { "xp": $scope.points }, {
-                        headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
-                    }).then(function(result) {}, function(error) {});
+                    $scope.decrementa();
                 }
             }
+        };
+
+        $scope.decrementa = function() {
+            $scope.points--;
+            $scope.modalpoints();
+            $http.post($scope.url + '/user/update', { "xp": $scope.points }, {
+                headers: { 'app_token': app_token, 'user_token': LocalStorage.getItem('userStorage').user_token }
+            }).then(function(result) {}, function(error) {});
         };
 
         $scope.escolher = function(k, k1) {

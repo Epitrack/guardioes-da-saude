@@ -46,6 +46,7 @@ angular.module('gdsApp')
                     'user_token': LocalStorage.getItem('userStorage').user_token
                 }
             }).then(function(result) {
+                console.log("result calendar/day", result);
                 console.log("result calendar/day", result.data.data.length);
                 if (result.data.data.length === 0) {
                     $http.post(apiUrl + '/user/update', { "xp": 10 }, {
