@@ -144,6 +144,7 @@ angular.module('gdsApp')
                     }
                 })
                 .then(function(result) {
+                    console.log(result.data.data);
                     callback(result);
                 }, function(error) {
                     console.warn('Error getUserCalendar: ', error);
