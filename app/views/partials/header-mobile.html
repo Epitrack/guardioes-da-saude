@@ -14,9 +14,9 @@
             <div class="navbar-collapse st-menu st-effect-2 no-padding" ng-style="{'height': hMenu}" id="js-navbar-collapse">
                 
                 <!-- Language -->
-                <div class="select-language-mobile col-xs-4">
-                    <ul class="nav navbar-nav mobile-navbar">
-                        <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; position: relative;padding-top: 15px; padding-bottom: 15px;padding-right: 20px;width: 100%;" ng-model="lang.current" ng-change="changeLanguage()">
+                <div class="select-language-mobile col-xs-12" style="position: initial;">
+                    <ul class="nav navbar-nav mobile-navbar" style="width: 100%;">
+                        <select class="nav-link-select  icon-arrow" style="-webkit-appearance: none; -moz-appearance: none; -ms-appearance: none; -o-appearance: none; appearance: none; padding-top: 15px; padding-bottom: 15px;padding-right: 20px;width: 100%;" ng-model="lang.current" ng-change="changeLanguage()">
                             <option value="pt">PT</option>
                             <option value="en">EN</option>
                             <option value="es">ES</option>
@@ -49,8 +49,8 @@
                                 <img ng-src="images/avatar/avatar-{{user.picture}}.svg" alt="avatar">
                             </figure>
                         </li>
-                        <li ng-show="user" class="col-xs-8 dropdown-menu-mobile">
-                            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <li ng-show="user" class="col-xs-10 dropdown-menu-mobile">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 100%; background-color: rgba(255, 255, 255, 0); border: 0;">
                                 {{user.nick}} <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
