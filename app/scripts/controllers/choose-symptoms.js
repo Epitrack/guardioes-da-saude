@@ -12,8 +12,37 @@ angular.module('gdsApp')
 
         // get all symptoms
         Surveyapi.getSymptoms(function(data) {
-            $scope.symptomsList = data.data.data;
+            $scope.symptomsL = data.data.data;
+            console.log($scope.symptomsList);
+            $scope.symptomsList = [];
+            for (var i = 0; i < $scope.symptomsL.length; i++) {
+                $scope.getNames($scope.symptomsL[i], $scope.symptomsList);
+            }
         });
+
+        var DEPARA = {
+            "Febre": "00231",
+            "Manchas vermelhas no corpo": "00357",
+            "Dor no corpo": "00175",
+            "Dor nas juntas": "00174",
+            "Dor de cabeça": "00172",
+            "Coceira": "00113",
+            "Olhos vermelhos": "00426",
+            "Dor de garganta": "00173",
+            "Tosse": "00620",
+            "Falta de ar": "00229",
+            "Náusea ou Vômito": "00395",
+            "Diarreia": "00159",
+            "Sangramento": "00529"
+        };
+
+        $scope.getNames = function(obj, arr) {
+            var index = DEPARA[obj.name];
+            $translate([index]).then(function(translations) {
+                obj.name_translate = translations[index];
+                arr.push(obj);
+            });
+        };
 
         // report survey
         $scope.symptoms = {};

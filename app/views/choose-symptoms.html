@@ -9,7 +9,7 @@
                     </fieldset>
                     <fieldset class="col-xs-12 col-sm-4" ng-repeat="symptom in symptomsList">
                         <input type="checkbox" name="choose-symptoms" ng-model="symptoms[symptom.code]" value="Y" id="symptom-{{symptom.id}}" class="checkbox-primary">
-                        <label for="symptom-{{symptom.id}}">{{symptom.name}}</label>
+                        <label for="symptom-{{symptom.id}}">{{symptom.name_translate}}</label>
                     </fieldset>
                     <fieldset class="col-xs-12 legend">
                         <legend>{{'00437'|translate}}</legend>
