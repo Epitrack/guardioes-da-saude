@@ -385,7 +385,7 @@ angular
             resolve: { loggedin: checkLoggedOut }
         })
         .when('/dashboard/inteligencia', {
-            templateUrl: '/views/dashboard-inteligencia.html',
+            templateUrl: 'views/dashboard-inteligencia.html',
             controller: 'DashboardInteligenciaCtrl',
             controllerAs: 'dashboardInteligencia',
             resolve: { loggedin: checkLoggedOut }

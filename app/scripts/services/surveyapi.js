@@ -34,10 +34,8 @@ angular.module('gdsApp')
             data.platform = platform;
             data.user_id = $rootScope.user.id;
             data.app_token = app_token;
-
             /*$http.get(apiUrl + "/user/lookup", {headers: {'app_token': app_token,'user_token': LocalStorage.getItem('userStorage').user_token}
                  }).then(function(result) {var o = result.data.data;console.log("/user/lookup", o);});*/
-
             // console.warn('Enviando...', data);
             /* /user/calendar/day */
             $http.get(apiUrl + '/user/calendar/day', {
@@ -46,7 +44,6 @@ angular.module('gdsApp')
                     'user_token': LocalStorage.getItem('userStorage').user_token
                 }
             }).then(function(result) {
-                console.log("result calendar/day", result);
                 console.log("result calendar/day", result.data.data.length);
                 if (result.data.data.length === 0) {
                     $http.post(apiUrl + '/user/update', { "xp": 10 }, {
