@@ -3,7 +3,7 @@
 </div> -->
 <div id="div_game" style="width: 100%;position: absolute;">
     <img id="img_bg" src="../images/game/bg-game-2.png" style="width: 100%;height: auto;">
-    <a ng-click="openmodal('fase',1,$event)" data-toggle="modal" href="" data-target="#game-modal">
+    <a ng-click="openmodal('fase',1,$event)">
         <img id="img_pin" src="../images/game/pin.png" style="width: 10%;position: absolute;left: 45.6%;">
     </a>
     <div class="game-home-points" style="z-index: 99999999;">
@@ -129,9 +129,19 @@
                         <div id="panel_resposta_certa" class="panel-body panel_internal_game" style="margin-top: 0px;display:block;width: 730px;display:none">
                             <div class="row" style="margin-bottom: 10px;margin-left: -55px;">
                                 <img src="../images/game/rectangle-970.png" style="padding: 0px; margin: -60px 0px 0px;">
-                                <div style="position: relative;top: -110px;">
+                                <div style="position: relative;top: -110px;" ng-show="stars == 0">
                                     <img src="../images/game/star-1-fill.png">
                                     <img src="../images/game/star-2-fill.png">
+                                    <img src="../images/game/star-3-fill.png">
+                                </div>
+                                <div style="position: relative;top: -110px;" ng-show="stars == 1">
+                                    <img src="../images/game/star-1-fill.png">
+                                    <img src="../images/game/star-2-fill.png">
+                                    <img src="../images/game/star-3.png">
+                                </div>
+                                <div style="position: relative;top: -110px;" ng-show="stars == 2">
+                                    <img src="../images/game/star-1-fill.png">
+                                    <img src="../images/game/star-2.png">
                                     <img src="../images/game/star-3.png">
                                 </div>
                                 <div style="position: relative; top: -110px;">

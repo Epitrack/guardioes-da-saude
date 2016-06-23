@@ -14,6 +14,7 @@ angular.module('gdsApp')
         var w = $("#img_bg").width();
         var firstLoad = true;
         $scope.loading = true;
+        $scope.stars = 0;
         $scope.fasespics = [{
             "title": "Vitória",
             "name": "vitoria",
@@ -525,12 +526,18 @@ angular.module('gdsApp')
         };
 
         $scope.openmodal = function(key, val, $event) {
-            $scope.buildquestions(function() {
-                $scope.clean(key);
-                if (key === 'fase') {
-                    $scope.prepareQuestions();
-                }
-            });
+            // $scope.modalpoints
+            if ($scope.points > 0) {
+                $("#game-modal").modal("show");
+                $scope.buildquestions(function() {
+                    $scope.clean(key);
+                    if (key === 'fase') {
+                        $scope.prepareQuestions();
+                    }
+                });
+            } else {
+                $scope.modalpoints();
+            }
         };
 
         $scope.prepareQuestions = function() {
@@ -584,11 +591,13 @@ angular.module('gdsApp')
         };
 
         $scope.repetirPergunta = function() {
+            $scope.stars = 0;
             $scope.clean('fase');
             $scope.escolher($scope.k, $scope.k1);
         };
 
         $scope.proximaPergunta = function() {
+            $scope.stars = 0;
             $scope.clean('fase');
             if ($scope.k1 < 2) {
                 $scope.k1++;
@@ -618,6 +627,7 @@ angular.module('gdsApp')
                 $scope.decrementa();
                 $timeout(function() {
                     $scope.clean('respostacerta');
+                    console.log("STARS", $scope.stars);
                 }, 500);
                 $timeout(function() {
                     if ($scope.finalizou()) {
@@ -627,6 +637,7 @@ angular.module('gdsApp')
                 }, 500);
 
             } else {
+                $scope.stars++;
                 var _class = $("#op" + (op + 1)).attr("class");
                 $("#op" + (op + 1)).attr("class", "game-resposta-errada");
                 if (_class !== "game-resposta-errada") {
@@ -669,7 +680,7 @@ angular.module('gdsApp')
         $scope.getRanking = function() {
             $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
                 $scope.ranking = $scope.montaRanking(result);
-                console.log("$scope.ranking",$scope.ranking);
+                console.log("$scope.ranking", $scope.ranking);
             }, function(err) {
                 console.log(err);
             });
@@ -677,6 +688,7 @@ angular.module('gdsApp')
         $scope.getRanking();
 
         $scope.nextPin = function() {
+            $scope.stars = 0;
             try {
                 $scope.current_fase++;
                 $scope.responses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
