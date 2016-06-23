@@ -9,6 +9,10 @@
  */
 angular.module('gdsApp')
     .controller('HealthMapCtrl', ['$scope', '$translate', 'Surveyapi', '$rootScope', 'LocalStorage', '$http', '$timeout', 'Notification', function($scope, $translate, Surveyapi, $rootScope, LocalStorage, $http, $timeout, Notification) {
+        
+
+        $scope.toggle = true // togggle for  float button 
+        
         $scope.pageClass = 'health-map';
         $scope.markers = [];
 
