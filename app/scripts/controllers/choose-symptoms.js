@@ -47,6 +47,18 @@ angular.module('gdsApp')
         // report survey
         $scope.symptoms = {};
 
+        $scope.submitform = function() {
+            var isvalid = false;
+            angular.forEach($scope.symptoms, function(v, symptom) {
+                if (v) {
+                    isvalid = true;
+                }
+            });
+            if (isvalid) {
+                $("#confirm-send-survey").modal("show");
+            }
+        }
+
         $scope.submitSurvey = function() {
             var form = {};
             var country;
@@ -54,9 +66,10 @@ angular.module('gdsApp')
             if ($scope.symptoms.travelLocation) {
                 country = $scope.symptoms.travelLocation;
             }
-
+            var isvalid = false;
             angular.forEach($scope.symptoms, function(v, symptom) {
                 if (v) {
+                    isvalid = true;
                     form[symptom] = "Y";
                 }
             });
@@ -75,19 +88,25 @@ angular.module('gdsApp')
             if (country !== undefined) {
                 form.travelLocation = country;
             }
-
-            Surveyapi.submitSurvey(form, function(data) {
-                // console.warn(data);
-
-                if (data.data.error === true) {
-                    // console.warn(data.data.message);
-                    Notification.show('error', 'Survey', data.data.message);
-                } else {
-                    // console.log(data.data.message);
-                    Notification.show('success', 'Survey', data.data.message);
-                    if (data.data.respiratoria === true || data.data.diarreica === true) { angular.element('#modal-sindromes').modal({ show: 'true' }); } else if (data.data.exantematica === true) { angular.element('#modal-exantematica').modal({ show: 'true' }); } else { angular.element('#modal-thanks').modal({ show: 'true' }); }
-                }
-            });
+            if (isvalid) {
+                Surveyapi.submitSurvey(form, function(data) {
+                    // console.warn(data);
+                    if (data.data.error === true) {
+                        // console.warn(data.data.message);
+                        Notification.show('error', 'Survey', data.data.message);
+                    } else {
+                        // console.log(data.data.message);
+                        Notification.show('success', 'Survey', data.data.message);
+                        if (data.data.respiratoria === true || data.data.diarreica === true) {
+                            angular.element('#modal-sindromes').modal({ show: 'true' });
+                        } else if (data.data.exantematica === true) {
+                            angular.element('#modal-exantematica').modal({ show: 'true' });
+                        } else {
+                            angular.element('#modal-thanks').modal({ show: 'true' });
+                        }
+                    }
+                });
+            }
         };
 
         $scope.goToUpas = function() {

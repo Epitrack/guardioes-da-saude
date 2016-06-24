@@ -366,12 +366,16 @@ angular.module('gdsApp')
         var title_5pontos = "Você possui <br/> 5 pontos de energia!"; //00650 replace 10 por 5
         var content_5pontos = "Participe diariamente do Guardiões da Saúde para restaurá-las!"; //00457
         var content_amanha = "Participe amanhã do Guardiões da Saúde para jogar novamente!"; //00896
+        $scope.participe_agora = "Participe agora!"; //00455
+        var resposta_certa = "Resposta CORRETA!"; //00897
 
-        $translate(['00649', '00650', '00457', '00896']).then(function(translations) {
+        $translate(['00649', '00650', '00457', '00896','00455','00897',]).then(function(translations) {
             title_sem_energia = translations['00649'];
             title_5pontos = translations['00650'].replace("10", "5");
             content_5pontos = translations['00457'];
             content_amanha = translations['00896'];
+            $scope.participe_agora = translations['00455'];
+            resposta_certa = translations['00897'];
         });
 
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
@@ -615,7 +619,7 @@ angular.module('gdsApp')
                 //
                 $("#op" + (op + 1)).attr("class", "game-resposta-certa");
                 $("#pergunta").attr("class", "game-card-certa");
-                $("#pergunta").html('<div style="width: 190px; color: white; font-weight: bold; font-size: 1.8em; line-height: 45px;"> Resposta CORRETA!</div>');
+                $("#pergunta").html('<div style="width: 190px; color: white; font-weight: bold; font-size: 1.8em; line-height: 45px;">'+resposta_certa+'</div>');
                 $scope.questions_view[$scope.k][$scope.k1].active = true;
                 var indice = $scope.deparapuzzle['' + $scope.k + '' + $scope.k1];
                 if (indice === -1) {
@@ -718,11 +722,16 @@ angular.module('gdsApp')
                 $scope.trofeusaux.push(obj);
                 $scope.montatrofeus();
             } catch (e) {}
-            var elem = document.createElement("img");
-            elem.setAttribute("src", "../images/game/pin-venceu.png");
-            elem.setAttribute("id", "img_pin" + (count_pin_venceu++));
-            elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
-            document.getElementById("div_game").appendChild(elem);
+            try{
+                var elem = document.createElement("img");
+                elem.setAttribute("src", "../images/game/pin-venceu.png");
+                elem.setAttribute("id", "img_pin" + (count_pin_venceu++));
+                elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
+                document.getElementById("div_game").appendChild(elem);
+            }catch(e){
+                console.log(e);
+            }
+           
         };
 
         $scope.getLanguage = function() {
