@@ -814,6 +814,12 @@ angular.module('gdsApp')
                     clearInterval(ctd);
                     $scope.clean('fase');
                 }
+
+                if(_limit<0){
+                    _limit=0;
+                    clearInterval(ctd);
+                }
+
             }, 1000);
         };
 
