@@ -23,6 +23,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
             console.log($scope.lang.current);
             window.sessionStorage.setItem('lang', $scope.lang.current);
             $translate.use($scope.lang.current);
+            window.location.reload(); 
         };
 
         // ====
