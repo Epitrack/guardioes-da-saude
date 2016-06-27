@@ -632,13 +632,13 @@ angular.module('gdsApp')
                 $timeout(function() {
                     $scope.clean('respostacerta');
                     console.log("STARS", $scope.stars);
-                }, 500);
+                }, 1000);
                 $timeout(function() {
                     if ($scope.finalizou()) {
                         $scope.clean('card');
                         $scope.nextPin();
                     }
-                }, 500);
+                }, 1000);
 
             } else {
                 $scope.stars++;

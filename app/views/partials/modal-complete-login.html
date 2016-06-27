@@ -48,7 +48,7 @@
                                     <label>{{'00442' | translate}}</label>
                                     <select class="select-primary" name="country" ng-model="userData.country">
                                         <option ng-selected="true" value="Selecione" disabled>{{'00442' | translate}}</option>
-                                        <option ng-repeat="c in countries" value="{{c.nome_pais}}">{{c.nome_pais}}</option>
+                                        <option ng-controller="CadastroCtrl" ng-repeat="c in countries" value="{{c.nome_pais}}">{{c.nome_pais}}</option>
                                     </select>
                                 </fieldset>
                                 <fieldset class="col-xs-12 col-sm-4" ng-show="isbrasil()">
