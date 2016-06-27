@@ -870,12 +870,13 @@ angular.module('gdsApp')
                 $("#game_modal_panel_sem_pontos_title").html(title_sem_energia);
                 $("#game-modal").modal("hide");
                 $("#game_modal_panel_sem_pontos").modal("show");
-            } else if (type === 1) {
+            } 
+            /*else if (type === 1) {
                 $("#game_modal_panel_sem_pontos_title").html(title_5pontos);
                 $("#game_modal_panel_sem_pontos_content").html(content_5pontos);
                 $("#game-modal").modal("hide");
                 $("#game_modal_panel_sem_pontos").modal("show");
-            }
+            }*/
             /*else {
                 $("#game_modal_panel_sem_pontos_title").html(title_sem_energia);
                 $("#game_modal_panel_sem_pontos_content").html(content_amanha);
