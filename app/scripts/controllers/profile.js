@@ -93,6 +93,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
             UserApi.updateProfile(params, function(data) {
                 if (data.data.error === false) {
                     Notification.show('success', 'Atualizar usuário', data.data.message);
+                    window.location="#/health-daily"
                 } else {
                     Notification.show('error', 'Atualizar usuário', data.data.message);
                 }
