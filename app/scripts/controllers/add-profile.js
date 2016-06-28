@@ -21,7 +21,10 @@ angular.module('gdsApp')
                 gender: $scope.houseHold.gender,
                 dob: $scope.houseHold.dob,
                 race: $scope.houseHold.race,
-                relationship: $scope.houseHold.relationship,
+                country: $scope.houseHold.country,
+                profile: $scope.houseHold.profile,
+                state: $scope.houseHold.state,
+                relationship: $scope.houseHold.relationship
             };
 
             $scope.checkF = $scope.UTIL.checkForm(params);
@@ -73,7 +76,10 @@ angular.module('gdsApp')
                 gender: $scope.houseHold.gender,
                 dob: $scope.houseHold.dob,
                 race: $scope.houseHold.race,
-                relationship: $scope.houseHold.relationship,
+                country: $scope.houseHold.country,
+                profile: $scope.houseHold.profile,
+                state: $scope.houseHold.state,
+                relationship: $scope.houseHold.relationship
             };
 
             $scope.checkF = $scope.UTIL.checkForm(params);
@@ -105,6 +111,7 @@ angular.module('gdsApp')
                     // console.log(data.data.message);
                     hideModal();
                     Notification.show('success', 'Adicionar membro', data.data.message);
+                    // window.location = "#/health-daily"
                 }
             });
         };

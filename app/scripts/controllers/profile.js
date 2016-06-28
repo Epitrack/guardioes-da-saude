@@ -7,12 +7,12 @@
  * # ProfileCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeout', '$location', '$rootScope', 'Notification', 
+angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeout', '$location', '$rootScope', 'Notification',
     function($scope, UserApi, $timeout, $location, $rootScope, Notification) {
 
         $scope.pageClass = 'profile-page';
 
-
+        console.log($rootScope.UTIL.countries);
         $scope.deleteUser = function() {
             var u = $rootScope.user;
             UserApi.deleteUser(function(data) {
@@ -39,6 +39,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
             var u = $rootScope.user;
             // return console.warn('$rootScope.user -> ', $rootScope.user);
             UserApi.updateUser(u.id, function(data) {
+                console.log("UserApi.updateUser", data);
                 if (data.data.error === false) {
                     u = data.data.data[0];
                     $scope.screen = {};
@@ -48,8 +49,14 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                         gender: u.gender,
                         email: u.email,
                         race: u.race,
-                        picture: u.picture
+                        picture: u.picture,
+                        profile: u.profile,
+                        state: u.state,
+                        country: u.country
                     };
+                    try {
+                        $scope._isbrasil = $scope.screen.user.country == 'Brazil';
+                    } catch (e) {}
                     // console.warn($scope.screen.user); // formato dob ok
                 } else {
                     Notification.show('error', 'Atenção', data.data.message);
@@ -65,7 +72,12 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                 gender: $scope.screen.user.gender,
                 email: $scope.screen.user.email,
                 race: $scope.screen.user.race,
+                country: $scope.screen.user.country,
+                profile: $scope.screen.user.profile,
             };
+            try {
+                params['state'] = $scope.screen.user.state;
+            } catch (e) {}
 
             $scope.checkF = $scope.UTIL.checkForm(params, true);
 
@@ -93,7 +105,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
             UserApi.updateProfile(params, function(data) {
                 if (data.data.error === false) {
                     Notification.show('success', 'Atualizar usuário', data.data.message);
-                    window.location="#/health-daily"
+                    window.location = "#/health-daily"
                 } else {
                     Notification.show('error', 'Atualizar usuário', data.data.message);
                 }
@@ -105,4 +117,5 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
         };
 
         $scope.getUser();
-    }]);
+    }
+]);

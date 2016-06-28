@@ -7,13 +7,13 @@
  * # CadastroCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('CadastroCtrl', [ '$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification',
+angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification',
     function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
         // $scope.pageClass = 'login-page';
 
         $scope.userData = {};
         $scope.userData.gender = "M";
-// ====
+        // ====
         $scope.countries = [];
         $scope.states = [];
 
@@ -66,6 +66,9 @@ angular.module('gdsApp').controller('CadastroCtrl', [ '$scope', 'UserApi', '$loc
                 dob: $scope.userData.dob,
                 race: $scope.userData.race,
                 email: $scope.userData.email,
+                country: $scope.userData.country,
+                state: $scope.userData.state,
+                profile: $scope.userData.profile
             };
 
 
@@ -1465,4 +1468,5 @@ angular.module('gdsApp').controller('CadastroCtrl', [ '$scope', 'UserApi', '$loc
             "sigla": "TO",
             "nome": "Tocantins"
         }];
-    }]);
+    }
+]);

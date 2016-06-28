@@ -69,6 +69,9 @@ angular.module('gdsApp')
                 race: $scope.createData.race,
                 gender: $scope.createData.gender,
                 password: $scope.createData.password,
+                country: $scope.createData.country,
+                state: $scope.createData.state,
+                profile: $scope.createData.profile,
                 repeat_password: $scope.createData.repeat_password,
             };
 
