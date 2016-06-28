@@ -29,7 +29,7 @@
                 <div ng-if="user.id != null">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a class="nav-link" ng-href="game/tutorial"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a>
+                            <a class="nav-link" ng-href="game/tutorial" style="background-color: #1e88e5; border: 0;"> <img src="images/divirtase.png" style="float: left; margin-right: 8px;"> {{'00167' | translate}}</a>
                         </li>
                         <li ng-show="!user.picture || user.picture == '0'">
                             <figure class="mini-avatar-user hidden-xs" style="margin: 15px 0px 0 0!important"><img src="images/avatar/avatar-0.svg" alt="avatar"></figure>
@@ -52,7 +52,7 @@
                     </ul>
                 </div>
                 <div ng-if="user.id != null" align="center" ng-click="goToUrl('/survey');closeNav();" id="btn-survey-container" class="btn-survey-container">
-                    <a class="lb" style="line-height: 10px;top: 50px;">{{'00455' | translate}}</a>
+                    <a class="lb" style="line-height: 10px;top: 50px;padding: 10px;">{{'00455' | translate}}</a>
                     <!--          <div class="dow-arrow-survey"></div>-->
                 </div>
                 <!-- sidebar just show when user is logged and mobile -->
