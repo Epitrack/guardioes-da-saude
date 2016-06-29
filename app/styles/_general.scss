@@ -1436,15 +1436,7 @@ body {
     background-position: center center;
     position: relative;
     font-family: $ff-light;
-    &::before {
-        content: attr(data-label);
-        color: $link-primary;
-        position: absolute;
-        bottom: -55px;
-        left: 50%;
-        margin-left: -25px;
-        font-size: ($fs-medium)+1.5;
-    }
+    
     &.good {
         @include path('icon-survey-good.svg');
     }

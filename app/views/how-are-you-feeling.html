@@ -1,18 +1,24 @@
 <div class="wrapper-internal wrapper-full-page survey-content">
-  <div class="container-fluid">
-    <div class="row">
-      <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
-        <h2 class="title-primary">{{'00117'|translate}}</h2>
-        <form name="hayf-form" class="hayf-form">
-          <button class="btn-hayf good" data-label="{{'00064'|translate}}" data-toggle="modal" data-target="#modal-i-feel-good" ng-click="iFeelGood()"></button>
-          <button class="btn-hayf bad" data-label="{{'00351'|translate}}" ng-click="iFeelBad()"></button>
-        </form>
-
-        <p class="survey-footer">{{'00024'|translate}}</p>
-      </section>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
+                <h2 class="title-primary">{{'00117'|translate}}</h2>
+                <form name="hayf-form" class="hayf-form">
+                    <div class="row">
+                        <section class="col-xs-12 col-sm-3 col-sm-offset-3">
+                            <button class="btn-hayf good" data-toggle="modal" data-target="#modal-i-feel-good" ng-click="iFeelGood()"></button>
+                            <div style="color: #FFFFFF; font-size: 3.5rem;text-align: center;">{{'00064'|translate}}</div>
+                        </section>
+                        <section class="col-xs-12 col-sm-3">
+                            <button class="btn-hayf bad" ng-click="iFeelBad()"></button>
+                            <div style="color: #FFFFFF; font-size: 3.5rem;text-align: center;">{{'00351'|translate}}</div>
+                        </section>
+                    </div>
+                </form>
+                <p class="survey-footer">{{'00024'|translate}}</p>
+            </section>
+        </div>
     </div>
-  </div>
 </div>
-
 <!-- I feel good :) -->
 <div ng-include src="'views/partials/modal-i-feel-good.html'"></div>
