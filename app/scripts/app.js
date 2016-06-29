@@ -1870,19 +1870,26 @@ angular
         "es-VE": "es",
         "es-CO": "es"
     };
-    if (window.sessionStorage.getItem('lang') !== null) {
-        try{
-        $translateProvider.preferredLanguage(window.sessionStorage.getItem('lang'));
-        }catch(e){
-            $translateProvider.preferredLanguage('pt');
+    try {
+
+        if (window.sessionStorage.getItem('lang') !== null) {
+            try {
+                $translateProvider.preferredLanguage(window.sessionStorage.getItem('lang'));
+            } catch (e) {
+                console.log("e1", e);
+                $translateProvider.preferredLanguage('pt');
+            }
+        } else {
+            try {
+                var _lang = navigator.language || navigator.userLanguage;
+                $translateProvider.preferredLanguage(deparalang[_lang]);
+            } catch (e) {
+                console.log("e2", e);
+                $translateProvider.preferredLanguage('pt');
+            }
         }
-    } else {
-        try {
-            var _lang = navigator.language || navigator.userLanguage;
-            $translateProvider.preferredLanguage(deparalang[_lang]);
-        } catch (e) {
-            $translateProvider.preferredLanguage('pt');
-        }
+    } catch (e) {
+        console.log("e3", e);
     }
     $translateProvider.useSanitizeValueStrategy('escape');
 }]);
