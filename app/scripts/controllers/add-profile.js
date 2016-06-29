@@ -23,7 +23,6 @@ angular.module('gdsApp')
                 race: $scope.houseHold.race,
                 country: $scope.houseHold.country,
                 profile: $scope.houseHold.profile,
-                state: $scope.houseHold.state,
                 relationship: $scope.houseHold.relationship
             };
 
@@ -44,6 +43,8 @@ angular.module('gdsApp')
 
             params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
             params.dob = $scope.UTIL.convertDate(params.dob);
+
+            params.state=$scope.houseHold.state;
 
             HouseholdApi.createHousehold(params, function(data) {
                 if (data.data.error === true) {
