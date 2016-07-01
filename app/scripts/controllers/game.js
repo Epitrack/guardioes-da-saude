@@ -683,6 +683,7 @@ angular.module('gdsApp')
 
         $scope.getRanking = function() {
             $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
+                console.log("$scope.ranking", result.data);
                 $scope.ranking = $scope.montaRanking(result);
                 console.log("$scope.ranking", $scope.ranking);
             }, function(err) {
@@ -786,6 +787,7 @@ angular.module('gdsApp')
                 }
             }
             _ranking.push(objs);
+            console.log("_ranking",_ranking);
             return _ranking;
         };
 
