@@ -5,7 +5,7 @@
                 <aside id="slideshow" class="col-xs-12 hidden-xs slideshow">
                     <uib-carousel interval="0" no-wrap="false" active="slide_active" after-render="updateslide()">
                         <uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
-                            <img ng-src="{{slide.image}}" style="width:100%;min-height:461px;max-height:461px;">
+                            <img ng-src="{{slide.image}}" style="min-height:461px;max-height:461px;display: block; margin: auto;">
                             <p style="width: 60%; height: 52px; font-size: 3.5em; color: rgb(255, 255, 255); margin-left: 20%;margin-bottom: 25px;">
                                 {{slide.text}}
                             </p>

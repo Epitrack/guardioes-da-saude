@@ -444,7 +444,7 @@ angular.module('gdsApp')
         $translate(['00066', '00448', '00406', '00088', '00509', '00114']).then(function(translations) {
             $scope.slides = [{
                 index: 0,
-                image: '../../images/game/tutorial-step-1.svg',
+                image: '../../images/game/tutorial-step-1_'+$scope.language+'.png',
                 text: translations['00066']
             }, {
                 index: 1,
@@ -460,7 +460,7 @@ angular.module('gdsApp')
                 text: translations['00088']
             }, {
                 index: 4,
-                image: '../../images/game/tutorial-step-5.svg',
+                image: '../../images/game/tutorial-step-5_'+$scope.language+'.png',
                 text: translations['00509']
             }, {
                 index: 5,
