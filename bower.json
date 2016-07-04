@@ -35,7 +35,8 @@
     "leaflet": "~0.7.3",
     "d3-tip": "~0.6.7",
     "angular-directive.g-signin": "^0.1.2",
-    "jquery": "2.2.3"
+    "jquery": "2.2.3",
+    "bootstrap-select": "^1.10.0"
   },
   "resolutions": {
     "angular": "^1.4.8",
