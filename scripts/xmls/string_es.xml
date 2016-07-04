@@ -6,12 +6,10 @@
 
     <string name="locale">es</string>
 
-    # Google
     <string name="google_client_id">997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com</string>
     <string name="server_api_key">AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50</string>
     <string name="sender_id">997325640691</string>
 
-    # Common
 
     <string name="exit_message">¿Está seguro de que desea salir de la aplicación?</string>
     <string name="permission_location_rationale">No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.</string>
@@ -23,7 +21,6 @@
     <string name="avatar">Avatar</string>
     <string name="bad">Mal</string>
     <string name="calendar">Calendario</string>
-    <!-- NA -->
     <string name="report_day">Total de envios no dia</string>
     <string name="category">Categoría</string>
     <string name="confirm">Confirmar</string>
@@ -97,13 +94,9 @@
     <string name="network_disable">No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.</string>
     <string name="google_fail">No fue posible realizar el login. E-mail y/o contraseña inválidos.</string>
     <string name="facebook_fail">No fue posible realizar el login. E-mail y/o contraseña inválidos.</string>
-    <!-- NA -->
     <string name="facebook_cancel">Acesso ao Guardiões da Saúde via Facebook cancelado.</string>
-    <!-- NA -->
     <string name="facebook_error">Não foi possível acessar o Guardiões da Saúde através do Facebook. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
-    <!-- NA -->
     <string name="google_access_error">O Guardiões da Saúde não obteve permissão para acessar seus dados do Google. Verifique suas configurações.</string>
-    <!-- NA -->
     <string name="twitter_fail">Não foi possível acessar o Guardiões da Saúde através do Twitter. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
     <string name="new_user_social_media">Completar su información para completar el registro</string>
     <string name="register_fail">No fue posible realizar el registro. ¡Intente nuevamente en algunos minutos!</string>
@@ -122,7 +115,6 @@
     <string name="send">Enviar</string>
     <string name="email_null">Asunto y/o mensaje no informados.</string>
     <string name="open_link">¿Desea abrir el link de la noticia?</string>
-    <!-- NA -->
     <string name="share_participation"> Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: www.guardioesdasaude.org</string>
     <string name="alert_pharmacy">Algunas farmacias pueden no exhibirse en el mapa.</string>
     <string name="share_ok">¡Gracias por compartir!</string>
@@ -133,7 +125,6 @@
 	\n\n•	Erupción cutánea (manchas rojas en el cuerpo, y cualquiera de estos síntomas: fiebre o dolores en el cuerpo o dolor en las articulaciones o dolor de cabeza o picazón en los ojos o rojas o sangrado)</string>
     <string name="new_password">Un mensaje a la dirección de e-mail fue enviado, siga las instrucciones enviadas para recuperar su contraseña.</string>
     <string name="email_send">Mensaje enviado con éxito.\¡Gracias!</string>
-    <!-- NA -->
     <string name="email_not_send">Devido a problema técnicos não conseguimos enviar sua mensagem.\nTente novamente em alguns minutos.</string>
     <string name="whatsapp_not_installed">Whatsapp no está instalado en este dispositivo.</string>
 
@@ -194,15 +185,11 @@
     <string name="not_now">AHORA NO</string>
     <string name="setting_upper">CONFIGURACIONES</string>
     <string name="location_disabled">No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.</string>
-<!-- NA -->
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
-    <!-- NA -->
     <string name="generic_error_login">Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
-    <!-- NA -->
     <string name="erro_new_user">Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
     <string name="generic_update_data_ok">Dados alterados com sucesso.</string>
 
-    # Tip
 
     <string name="vaccine">Vacunas</string>
     <string name="phone">Teléfonos Útiles</string>
@@ -223,7 +210,6 @@
     <string name="defense_text">Defensa Civil</string>
     <string name="zika_136">136</string>
 
-    # Hint
 
     <string name="hint_birth_date">Fecha de Nacimiento</string>
     <string name="hint_birth_date_dt">Nacimiento</string>
@@ -235,23 +221,18 @@
     <string name="hint_redefine_password">Redefinir contraseña</string>
     <string name="hint_country_name">Seleccione el país</string>
 
-    # Validation
 
     <string name="validation_confirm_password">Las contraseñas no son iguales.</string>
-    <!-- NA -->
     <string name="validation_empty">Campo obrigatório</string>
-    <!-- NA -->
     <string name="validation_length">Mínimo três caracteres</string>
     <string name="validation_mail">¡E-mail inválido!</string>
     <string name="validation_password">La contraseña debe tener al menos 6 dígitos</string>
 
-    # Message
 
     <string name="message_use_mail">O use su e-mail:</string>
     <string name="forgot_password">Digite su e-mail y verifique su buzón de entrada.</string>
     <string name="loading">Cargando ...</string>
 
-    # Welcome
 
     <string name="message_follow">Siga los casos de enfermedades en su barrio o en un determinado local.</string>
     <string name="message_health">¿Cómo está su salud?</string>
@@ -259,18 +240,15 @@
     <string name="message_prevent">Vea cómo prevenirse de enfermedades, qué UPAs y farmacias están más cerca de usted y los teléfonos útiles para casos de emergencia.</string>
     <string name="message_symptom">Marque en la lista los síntomas que usted presenta.</string>
 
-    # Login
 
     <string name="message_forgot_password"><u>¿Olvidó su contraseña?</u></string>
     <string name="message_login_enter">Entre rápidamente con:</string>
 
-    # Create Account
 
     <string name="message_agree">Estoy de acuerdo con los Términos de Uso.</string>
     <string name="message_create_account">Regístrese rápidamente con:</string>
     <string name="message_term"><u>Política de Privacidad y Condiciones de Uso</u></string>
 
-    # Privacy
 
     <string name="message_privacy">Nos preocupa su privacidad</string>
 
@@ -278,63 +256,49 @@
     <string name="message_privacy_tip_2">• Los dados proporcionados serán utilizados para promover una comunidad más saludable</string>
     <string name="message_privacy_tip_3">• Para obtener más información, consulte los Términos de Uso</string>
 
-    # Home
 
     <string name="message_hello">Hola, %s!</string>
 
-    # Profile Activity
 
     <string name="message_select_profile">Seleccione cuál de los perfiles de abajo desea editar.</string>
     <string name="add_member">Añadir miembro del domicilio</string>
-    <!-- NA -->
     <string name="not_remove_member">Você não pode remover seu perfil.</string>
     <string name="delete_user">Operación realizada con éxito.</string>
     <string name="new_member_ok">Operación realizada con éxito.</string>
     <string name="error_add_new_member">Completar su información para completar el registro</string>
     <string name="dob_invalid">La utilización de la aplicación está permitida solamente para personas con 13 (trece) años de edad o más.</string>
 
-    # Profile Fragment
 
     <string name="edit_profile">Editar perfil</string>
-    <!-- NA -->
     <string name="message_profile">Atualize as informações do seu perfil e dos membros domicíliar</string>
-    <!-- NA -->
     <string name="message_interest">Selecione as categorias e hashtags que você deseja seguir</string>
 
-    # User
     <string name="message_new_member">PRellene todos los campos de abajo para adicionar un nuevo integrante.</string>
     <string name="message_fields">Sólo los campos habilitados podrán ser alterados.</string>
 
-    # Interest
 
     <string name="tag_ministry">#MinisterioDaSaude</string>
     <string name="tag_flu">#Gripe</string>
     <string name="tag_app">#GuardioesDaSaude</string>
 
-    # Select Participant
 
     <string name="message_age">%d anos</string>
     <string name="message_home_member">Integrantes del domicilio</string>
     <string name="message_select_join">Seleccione alguno de los perfiles de abajo para comenzar a participar.</string>
     <string name="message_who_participate">¿Quién participará?</string>
 
-    # State
 
     <string name="message_health_state">¿Cómo está su salud en este momento?</string>
     <string name="message_present_symptom">Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal"\ sea seleccionada.</string>
 
-    # Symptom
     <string name="message_check_symptom">Marque abajo lo que usted está sintiendo en este momento:</string>
 
-    # About
 
     <string name="message_about_title_01">SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD”\n</string>
 
-    # Diary
 
     <string name="message_select_member">Seleccione un integrante</string>
 
-    # Share
     <string name="message_zika">Atención: Los síntomas informados pueden estar relacionados al Zika virus. Busque la Unidad de Urgencias más cercana.</string>
     <string name="message_hospital">No deje de buscar el servicio de salud más cercano.</string>
     <string name="message_invite_friend">Invite a sus amigos a ser Guardianes de la Salud.</string>
@@ -342,12 +306,10 @@
     <string name="message_thanks_2">Continuar informando diariamente cómo está su salud.</string>
     <string name="message_thanks_zika">¡Gracias por la información!</string>
 
-    # Dialog Survey
 
     <string name="message_register_info">¿Desea registrar su información?</string>
     <string name="message_register_no_symptom">Escoja algún síntoma antes de confirmar.</string>
 
-    #Prevention
     <string name="prevention_title_01">PREVENCIÓN </string>
     <string name="prevention_content_01"><b>MALARIA:</b>
 	\n\n•       En Brasil, la transmisión se concentra en la Región Amazónica, compuesta por los estados de Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima y Tocantins;
@@ -502,7 +464,6 @@ ZIKA
 	\n\n•       Las lonas usadas para cubrir objetos o desechos deben estar bien extendidas para evitar charcos de agua.
 \n\nSi tiene dudas referentes al Dengue, Zika y Chikungunya, por favor llame a Disque Salud, mediante el número <b><a href="tel:136">136</a></b> y digite la opción 3. </string>
 
-    # Game
     <string name="welcome_game_welcome">¡Bienvenido a nuestra pista de carreras! Arrastre para saber más sobre cómo jugar.</string>
     <string name="welcome_game_point">Para jugar se necesita tener puntos de energía. ¡Participe diariamente en Guardianes de la Salud para ganarlos!</string>
     <string name="welcome_game_phase">Nuestra pista de carreras está formada por fases. ¡Concluya cada fase para llegar más lejos en la carrera!</string>

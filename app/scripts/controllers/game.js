@@ -317,6 +317,7 @@ angular.module('gdsApp')
             "id": 1
         }];
 
+        $scope.language = $translate.use();
         $scope.fasespics = $scope.fasespics.reverse();
         /*controle do slide - TUTORIAL*/
         $scope.myInterval = 5000;
