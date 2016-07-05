@@ -8,7 +8,9 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
+    .controller('GameCtrl', ['$scope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', 
+        function($scope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
+        
         var app_token = ApiConfig.APP_TOKEN;
 
         var w = $("#img_bg").width();
@@ -353,6 +355,8 @@ angular.module('gdsApp')
             "21": 7,
             "22": 8
         };
+
+        // Aki
         $scope.ranking = [
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
@@ -360,6 +364,7 @@ angular.module('gdsApp')
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
             [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }]
         ];
+
         var count_pin_venceu = 0;
         var ctd; //function counter down
         var title_sem_energia = "Você está <br/> sem energia!"; //00649
@@ -436,6 +441,7 @@ angular.module('gdsApp')
         $translate(['00650']).then(function(translations) {
             $scope.pontos_total = translations['00650'].replace("10", "5");
         });
+
         $translate(['00066', '00448', '00406', '00088', '00509', '00114']).then(function(translations) {
             $scope.slides = [{
                 index: 0,
@@ -677,15 +683,16 @@ angular.module('gdsApp')
             }
         };
 
+        //aki
         $scope.getRanking = function() {
-            $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
-                $scope.ranking = $scope.montaRanking(result);
-                console.log("$scope.ranking", $scope.ranking);
-            }, function(err) {
-                console.log(err);
+            $http.get("http://rest.guardioesdasaude.org/game/ranking/").success(function(data, status) {
+                $scope.countrys = data;
+            }).error(function(data, status){
+                console.log(data);
+                console.log(status);
             });
         };
-        $scope.getRanking();
+        
 
         $scope.nextPin = function() {
             $scope.stars = 0;
@@ -760,25 +767,26 @@ angular.module('gdsApp')
             } catch (e) {}
         };
 
-        $scope.montaRanking = function(rankings) {
-            var _ranking = [];
-            var count = 0;
-            var objs = [];
-            for (var i = 0; i < rankings.length; i++) {
-                if (count < 2) {
-                    objs.push(rankings[i]);
-                    count++;
-                } else {
-                    _ranking.push(objs);
-                    objs = [];
-                    count = 0;
-                    objs.push(rankings[i]);
-                    count++;
-                }
-            }
-            _ranking.push(objs);
-            return _ranking;
-        };
+        // $scope.montaRanking = function(rankings) {
+        //     console.log(rankings);
+        //     var _ranking = [];
+        //     var count = 0;
+        //     var objs = [];
+        //     for (var i = 0; i < rankings.length; i++) {
+        //         if (count < 2) {
+        //             objs.push(rankings[i]);
+        //             count++;
+        //         } else {
+        //             _ranking.push(objs);
+        //             objs = [];
+        //             count = 0;
+        //             objs.push(rankings[i]);
+        //             count++;
+        //         }
+        //     }
+        //     _ranking.push(objs);
+        //     return _ranking;
+        // };
 
         $timeout(function() {
             $("html, body").animate({

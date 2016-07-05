@@ -2340,6 +2340,29 @@ p.login-email {
     bottom: 10px;;
     left: 50%;
     margin-left: -138.5px;
+    z-index: 999;
+    .game-home-medalha,
+    .game-home-trofeu{
+        cursor: pointer
+    }
+    .game-home-medalha {
+        background: url("../images/game/medalha.svg");
+        background-size: cover;
+        width: 123px;
+        height: 123px;
+        position: absolute;
+        left: -28px;
+        top: -10px;
+    }
+    .game-home-trofeu {
+        background: url("../images/game/trofeu.svg");
+        background-size: cover;
+        width: 123px;
+        height: 123px;
+        position: absolute;
+        right: -37px;
+        top: -10px;
+    }
 }
 
 .game-home-points-label {
@@ -2354,26 +2377,6 @@ p.login-email {
     margin-top: -28px;
 }
 
-.game-home-medalha {
-    background: url("../images/game/medalha.svg");
-    background-size: cover;
-    background-size: cover;
-    width: 123px;
-    height: 123px;
-    position: absolute;
-    left: -28px;
-    top: -10px;
-}
-
-.game-home-trofeu {
-    background: url("../images/game/trofeu.svg");
-    background-size: cover;
-    width: 123px;
-    height: 123px;
-    position: absolute;
-    right: -37px;
-    top: -10px;
-}
 
 .game-card-neutro {
     background-image: url(../images/game/pergunta/card.svg);

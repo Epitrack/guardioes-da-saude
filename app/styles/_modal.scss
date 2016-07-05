@@ -155,7 +155,29 @@
   @extend .modal-download-app;
 }
 
-// ====
+
+#ranking-modal{
+    .raking-coutry{
+        width: 50%;
+        padding: 20px;
+        display: inline-block;
+        border-bottom: 1px solid #ccc;
+        p{
+            margin: 30px 0 0 10px;
+            float: left;
+            font-family: inherit;
+            font-size: 16px;
+            color: #ccc;
+            span{
+                color: #fcb315;
+            }
+        }
+        img{
+            display: block;
+            float: left;
+        }
+    }
+}
 
 
 
