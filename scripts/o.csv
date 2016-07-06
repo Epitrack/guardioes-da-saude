@@ -1,0 +1,189 @@
+pointing_message ; A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade.
+message_follow ; Acompanhe os casos de doenças em seu bairro ou em um determinado local.
+not_now ; Agora não
+help ; Ajuda
+alert_pharmacy ; Algumas farmácias podem não ser exibidas no mapa.
+message_present_symptom ; "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção ""Mal"" seja selecionada."
+hint_nickname ; Apelido
+message_fields ; Apenas os campos habilitados poderão ser alterados.
+password_not_equal ; As senhas não estão iguais.
+validation_confirm_password ; As senhas não estão iguais.
+subject ; Assunto
+email_null ; Assunto e/ou mensagem não informados.
+message_zika ; Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.
+good ; Bem
+welcome_game_welcome ; Bem-vindo a nossa pista de corrida! Arraste para saber mais sobre como jogar.
+welcome ; Bem-vindo!
+fireman ; Bombeiro Civil
+fireman_text ; Bombeiro Civil
+welcome_game_play ; Cada fase contém um quebra-cabeça. Complete-o para passar de fase.
+register ; Cadastre-se
+message_create_account ; Cadastre-se rapidamente com:
+user_exist ; Cadastro realizado anteriormente com essa rede social.
+calendar ; Calendário
+cancel ; Cancelar
+report_title ; Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.
+welcome_game_card ; Colecione figurinhas dos esportes olímpicos após concluir cada fase!
+message_health_state ; Como está sua saúde nesse momento?
+message_health ; Como está sua saúde?
+message_agree ; Concordo com os Termos de Uso.
+setting ; Configurações
+setting_upper ; Configurações
+confirm ; Confirmar
+message_thanks_2 ; Continue informando diariamente como está sua saúde.
+message_invite_friend ; Convide seus amigos para serem Guardiões da Saúde.
+race ; Cor/Raça
+care ; Cuidados Básicos
+care_title_01 ; Cuidados Básicos
+hint_birth_date ; Data de Nascimento
+defense ; Defesa Civil
+defense_text ; Defesa Civil
+zika ; Dengue, Zika e Chikungunya
+zika_tip ; Dengue, Zika e Chikungunya
+zika_title_01 ; Dengue, Zika e Chikungunya
+message ; Descreva o problema
+open_link ; Deseja abrir o link da notícia?
+message_register_info ; Deseja enviar suas informações?
+message_register_info ; Deseja registrar suas informações?
+delete_profile ; Deseja remover o perfil definitivamente?
+diary_health ; Diário da Saúde
+diary_health_1 ; Diário da Saúde
+diarrheal ; Diarreia
+diarrheal ; Diarreica
+tip_health ; Dicas de Saúde
+tip_health_1 ; Dicas de Saúde
+forgot_password ; Digite seu e-mail e verifique a sua caixa de entrada.
+game_enjoy ; Divirta-se
+internet_fail ; É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!
+network_fail ; É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!
+mail ; E-mail
+mails ; E-mail
+hint_mail ; E-mail
+validation_mail ; E-mail inválido!
+edit_profile ; Editar Perfil
+enter ; Entrar
+login ; Entrar
+contact ; Entre em contato
+message_login_enter ; Entre rapidamente com
+send ; Enviar
+message_register_no_symptom ; Escolha algum sintoma antes de confirmar.
+share_participation ; Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org
+rash ; Exantemática
+pharmacy ; Farmácias
+general ; Geral
+app_name ; Guardiões da Saúde
+home ; Início
+member ; Integrantes do domicílio
+message_home_member ; Integrantes do domicílio
+bad ; Mal
+map_health ; Mapa da Saúde
+map_health_1 ; Mapa da Saúde
+message_check_symptom ; Marque abaixo oque você está sentindo nesse momento:
+message_symptom ; Marque na lista os sintomas que você apresenta.
+email_send ; Mensagem enviada com sucesso. Obrigado!
+my_trophies ; Meus Troféus
+no ; Não
+message_hospital ; Não deixe de procurar o serviço de saúde mais próximo.
+permission_location_rationale ; Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.
+network_disable ; Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.
+location_disabled ; Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.
+register_fail ; Não foi possível enviar o e-mail. Tente novamente em alguns minutos.
+google_fail ; Não foi possível fazer o login. E-mail e/ou senha inválidos.
+facebook_fail ; Não foi possível fazer o login. E-mail e/ou senha inválidos.
+register_fail ; Não foi possível realizar o cadastro. Tente novamente em alguns minutos!
+message_privacy ; Nós nos preocupamos com a sua privacidade
+welcome_game_phase ; Nossa pista de corrida é formada por fases. Conclua cada fase para chegar mais longe na corrida!
+notice ; Notícias
+app_name ; O Guardiões da Saúde
+whatsapp_not_installed ; O Whatsapp não está instalado neste dispositivo.
+message_thanks ; Obrigado pela informação!
+message_thanks_zika ; Obrigado pela informação!
+share_ok ; Obrigado por compartilhar!
+ok ; Ok
+option ; Opções
+cadastro_sucesso ; Operação realizada com sucesso.
+generic_update_data_ok ; Operação realizada com sucesso.
+delete_user ; Operação realizada com sucesso.
+new_member_ok ; Operação realizada com sucesso.
+message_privacy_tip_2 ; Os dados fornecidos serão utilizados para promover uma comunidade mais saudável
+message_zika ; Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima.
+message_use_mail ; Ou use o seu e-mail
+other ; Outros
+welcome_game_point ; Para jogar, é preciso ter pontos de energia. Participe diariamente do Guardiões da Saúde para ganhá-los!
+message_privacy_tip_3 ; Para maiores informações, consulte os Termos de Uso
+relationship ; Parentesco
+join ; Participe Agora!
+join_now ; Participe Agora!
+profile ; Perfil
+police ; Polícia Militar
+police_text ; Polícia Militar
+pointing ; Pontuação
+safe_sex ; Pratique sexo de forma segura
+safe_sex_title ; Pratique sexo de forma segura
+message_new_member ; Preencha todos os campos abaixo para adicionar um novo integrante.
+message_prepared ; Preparado para se tornar um Guardião da Saúde?
+prevention ; Prevenção
+prevention_title_01 ; Prevenção
+next ; Próximo
+message_who_participate ; Quem vai participar?
+general_ranking ; Ranking Geral
+hint_redefine_password ; Redefinir senha
+report ; Relatar Erros
+hint_repeat_password ; Repetir Senha
+respiratory ; Respiratória
+welcome_game_answer ; Responda corretamente as perguntas sobre saúde para revelar peças.
+resume ; Resumo
+exit ; Sair
+save ; Salvar
+traveler_health ; Saúde do viajante
+message_select_member ; Selecionar Integrante
+message_select_join ; Selecione algum dos perfis abaixo para começar a participar.
+hint_country_name ; Selecione o país
+message_select_profile ; Selecione qual dos perfis abaixo quer editar.
+message_select_member ; Selecione um integrante
+hint_password_short ; Senha
+password_fail ; Senha precisa ter pelo menos 6 caracteres
+hint_password ; Senha precisa ter pelo menos 6 caracteres
+gender ; Sexo
+yes ; Sim
+syndromes ; Síndromes
+message_user_max ; Só é possível adicionar 10 integrantes!
+about ; Sobre
+message_privacy_tip_1 ; Sua participação é voluntária e anônima
+phone ; Telefones Úteis
+useful_phones ; Telefones Úteis
+exit_message ; Tem cereza que deseja sair do aplicativo?
+term ; Termos e Políticas
+tutorial ; Tutorial
+hospital ; UPAs
+vaccine ; Vacina
+vacinne_title_01 ; Vacina
+vaccine ; Vacinas
+vacinne_title_01 ; Vacinas
+message_prevent ; Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.
+attention ; Atenção
+new_user_social_media ; Complete suas informações para efetuar o cadastro
+error_add_new_member ; Complete suas informações para efetuar o cadastro
+add_member ; Adicionar Integrante do Domicílio
+new_password ; Foi enviada uma mensagem para o email, siga as instruções enviadas para recuperar sua senha.
+validation_password ; Sua senha precisa ter no mínimo 6 dígitos
+frequency ; Frequência
+terms_title_01 ; Política de Privacidade e Termos de Uso
+message_about_title_01 ; SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE”
+terms_title_01 ; POLÍTICA DE PRIVACIDADE E TERMOS DE USO
+dob_invalid ; A utilização do aplicativo está permitida somente para indivíduos de 13 (treze) anos de idade ou mais.
+tip_health ; DICAS DE SAÚDE
+tip_health_1 ; DICAS DE SAÚDE
+zika ; DENGUE, ZIKA E CHIKUNGUNYA
+zika_tip ; DENGUE, ZIKA E CHIKUNGUNYA
+zika_title_01 ; DENGUE, ZIKA E CHIKUNGUNYA
+vaccine ; VACINAS
+vacinne_title_01 ; VACINAS
+care ; CUIDADOS BÁSICOS
+care_title_01 ; CUIDADOS BÁSICOS
+traveler_health ; SAÚDE DO VIAJANTE:
+prevention ; PREVENÇÃO
+prevention_title_01 ; PREVENÇÃO
+safe_sex ; PRATIQUE SEXO DE FORMA SEGURA
+safe_sex_title ; PRATIQUE SEXO DE FORMA SEGURA
+congratulations ; Parabéns
