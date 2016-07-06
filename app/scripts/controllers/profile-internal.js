@@ -44,8 +44,6 @@ angular.module('gdsApp').controller('ProfileInternalCtrl', ['$scope', '$routePar
         };
         // ====
 
-
-
         // ====
 
         $scope.editProfile = function() {
