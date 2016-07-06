@@ -682,16 +682,15 @@ angular.module('gdsApp')
             }
         };
 
+        //aki
         $scope.getRanking = function() {
-            $http.get("http://rest.guardioesdasaude.org/game/ranking/").then(function(result) {
-                console.log("$scope.ranking", result.data);
-                $scope.ranking = $scope.montaRanking(result);
-                console.log("$scope.ranking", $scope.ranking);
-            }, function(err) {
-                console.log(err);
+            $http.get("http://rest.guardioesdasaude.org/game/ranking/").success(function(data, status) {
+                $scope.countrys = data;
+            }).error(function(data, status){
+                console.log(data);
+                console.log(status);
             });
         };
-        $scope.getRanking();
 
         $scope.nextPin = function() {
             $scope.stars = 0;
