@@ -1514,6 +1514,11 @@ p.login-email {
 //
 // Cadastro
 //
+.cadastro-page{
+    .wrapper-internal{
+        height: 900px!important
+    }
+}
 .register-agree {
     margin: 20px 0 10px 0;
     font-size: ($fs-normal)+.2;

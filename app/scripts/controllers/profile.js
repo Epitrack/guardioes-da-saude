@@ -11,8 +11,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
     function($scope, UserApi, $timeout, $location, $rootScope, Notification) {
 
         $scope.pageClass = 'profile-page';
-
-        console.log($rootScope.UTIL.countries);
+      
         $scope.deleteUser = function() {
             var u = $rootScope.user;
             UserApi.deleteUser(function(data) {
@@ -24,22 +23,21 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                     $location.path('/');
                 }, 1000);
             });
-            /*if (data.data.error === false) {
-                Notification.show('success', 'Deletar usuário', data.data.message);
-                $timeout(function() {
-                    $location.path('profile');
-                }, 2000);
-            } else {
-                Notification.show('error', 'Deletar usuário', data.data.message);
-            }*/
-
         };
+
+         $scope.whatCountry = function(country){
+            if (country == 'France') {
+                $scope.fr = true;
+            }else{
+                $scope.fr = false;
+            }
+        };
+
         // set user with $rootScope data
         $scope.getUser = function() {
             var u = $rootScope.user;
-            // return console.warn('$rootScope.user -> ', $rootScope.user);
+            
             UserApi.updateUser(u.id, function(data) {
-                console.log("UserApi.updateUser", data);
                 if (data.data.error === false) {
                     u = data.data.data[0];
                     $scope.screen = {};
@@ -54,10 +52,17 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                         state: u.state,
                         country: u.country
                     };
+
+                    if ($scope.screen.user.country == 'France'){
+                        $scope.fr = true;
+                    }else{
+                        $scope.fr = false;
+                    }
+
                     try {
                         $scope._isbrasil = $scope.screen.user.country == 'Brazil';
                     } catch (e) {}
-                    // console.warn($scope.screen.user); // formato dob ok
+                    
                 } else {
                     Notification.show('error', 'Atenção', data.data.message);
                 }

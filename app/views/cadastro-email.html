@@ -1,7 +1,7 @@
 <div class="wrapper-internal not-logged" style="padding-bottom: 50px;">
     <div class="container">
         <div class="row">
-            <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box" style="z-index: 9999;">
+            <section class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 register-box">
                 <h2 class="title-primary title-cad-email">{{'00477'|translate}}</h2>
                 <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
                     <h3>{{'00470'|translate}}</h3>
@@ -9,7 +9,36 @@
                         <input class="form-control mainform-input" name="nick" maxlength="10" placeholder="Apelido" ng-model="createData.nick">
                         <input class="form-control mainform-input" name="email" placeholder="E-mail" ng-model="createData.email">
                         <input class="form-control mainform-input" type="tel" placeholder="Data de Nascimento" ng-model="createData.dob" mask="99-99-9999">
-                        <select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race">
+
+                        <!-- Coutry -->
+                        <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country"
+                            ng-change="whatCountry(createData.country)">
+                            <option ng-selected="true" disabled value="{{'00442'|translate}}" selected="selected">{{'00442'|translate}}</option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
+                        </select>
+
+                        <select class="form-control mainform-input icon-arrow" name="state" ng-model="createData.state" ng-show="isbrasil()">
+                            <option ng-selected="true" value="Selecione">Estado de origem</option>
+                            <option value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
+                        </select>
+                        
+                        <!-- Profile -->
+                        <select class="form-control mainform-input icon-arrow" name="perfil" ng-model="createData.profile">
+                            <option ng-selected="true" disabled>{{'00460'|translate}}</option>
+                            <option value="Atleta/Delegação">{{'00049'|translate}} </option>
+                            <option value="Trabalhador/Voluntário"> {{'00622'|translate}} </option>
+                            <option value="Fã/Espectador">{{'00227'|translate}}</option>
+                        </select>
+
+                        <!-- Gender -->
+                        <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
+                            <option ng-selected="true" disabled>{{'00567'|translate}}</option>
+                            <option value="M">{{'00366'|translate}}</option>
+                            <option value="F">{{'00232'|translate}}</option>
+                        </select>
+                        
+                        <!-- Race -->
+                        <select class="form-control mainform-input icon-arrow" name="race" ng-model="createData.race" ng-show="!fr">
                             <option ng-selected="true" disabled>{{'00550'|translate}}</option>
                             <option value="branco">{{'00081'|translate}}</option>
                             <option value="amarelo">{{'00025'|translate}}</option>
@@ -17,27 +46,13 @@
                             <option value="pardo">{{'00452'|translate}}</option>
                             <option value="indigena">{{'00304'|translate}}</option>
                         </select>
-                        <select class="form-control mainform-input icon-arrow" name="perfil" ng-model="createData.profile">
-                            <option ng-selected="true" disabled>{{'00460'|translate}}</option>
-                            <option value="Atleta/Delegação">{{'00049'|translate}} </option>
-                            <option value="Trabalhador/Voluntário"> {{'00622'|translate}} </option>
-                            <option value="Fã/Espectador">{{'00227'|translate}}</option>
-                        </select>
-                        <select class="form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender">
-                            <option ng-selected="true" disabled>{{'00567'|translate}}</option>
-                            <option value="M">{{'00366'|translate}}</option>
-                            <option value="F">{{'00232'|translate}}</option>
-                        </select>
                         <input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password">
                         <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="Repetir Senha" ng-model="createData.repeat_password">
-                        <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country">
-                            <option ng-selected="true" value="Selecione">{{'00442'|translate}}</option>
-                            <option ng-repeat="c in countries" value="{{c.nome_pais}}">{{c.nome_pais}}</option>
-                        </select>
-                        <select class="form-control mainform-input icon-arrow" name="state" ng-model="createData.state" ng-show="isbrasil()">
-                            <option ng-selected="true" value="Selecione">Estado de origem</option>
-                            <option value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
-                        </select>
+
+                        
+
+                       
+
                     </fieldset>
                     <!-- form validation -->
                     <div ng-show="checkF.error" class="alert alert-warning" role="alert">

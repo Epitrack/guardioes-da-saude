@@ -7,8 +7,8 @@
  * # CadastroCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp')
-    .controller('CadastroEmailCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', function($scope, $http, UserApi, $location, LocalStorage, Notification) {
+angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', 
+    function($scope, $http, UserApi, $location, LocalStorage, Notification) {
 
         // set page class to animations
         $scope.pageClass = 'cadastro-page';
@@ -57,9 +57,18 @@ angular.module('gdsApp')
         };
 
         // create new user
-        $scope.createData = {};
-        $scope.createData.country = "Selecione";
-        $scope.createData.state = "Selecione";
+        $scope.createData         = {};
+        $scope.createData.state   = "Selecione";
+        $scope.createData.country = 'Country of origin';
+
+        $scope.whatCountry = function(country){
+            if (country == 'France') {
+                $scope.fr = true;
+            }else{
+                $scope.fr = false;
+            }
+        };
+        
 
         $scope.createUser = function() {
             var params = {
@@ -75,6 +84,14 @@ angular.module('gdsApp')
                 repeat_password: $scope.createData.repeat_password,
             };
 
+            console.log(params);
+
+            if ($scope.createData.country == 'França') {
+                params.race = 'france';
+            }else{
+                params.race = $scope.createData.race;
+            }
+
             $scope.checkF = $scope.UTIL.checkForm(params, true);
             if ($scope.checkF.error === true) {
                 return;
@@ -82,6 +99,8 @@ angular.module('gdsApp')
 
             params.dob = $scope.UTIL.convertDate(params.dob);
             params.picture = $scope.UTIL.checkAvatar($scope.createData);
+
+            
 
             UserApi.createUser(params, function(data) {
                 var userId = data.data.user.id;

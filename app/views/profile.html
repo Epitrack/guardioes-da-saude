@@ -41,8 +41,8 @@
                             <input class="input-primary" id="profile-email" name="profile-email" type="email" ng-model="screen.user.email">
                         </fieldset>
                         <fieldset class="col-xs-12 col-sm-6">
-                            <label for="profileRace">{{'00133' | translate}}</label>
-                            <select class="select-primary" name="profileRace" id="profileRace" ng-model="screen.user.race">
+                            <label for="profileRace" ng-show="!fr">{{'00133' | translate}}</label>
+                            <select class="select-primary" name="profileRace" id="profileRace" ng-model="screen.user.race" ng-show="!fr">
                                 <option ng-selected="true" disabled>{{'00550'|translate}}</option>
                                 <option value="branco">{{'00081'|translate}}</option>
                                 <option value="amarelo">{{'00025'|translate}}</option>
@@ -55,10 +55,11 @@
                     <div class="no-padding col-xs-12">
                         <fieldset class="col-xs-12 col-sm-4">
                             <label>{{'00442' | translate}}</label>
-                            <select class="select-primary" name="country" ng-model="screen.user.country" ng-change="_isbrasil = screen.user.country=='Brazil'">
+                            <select class="select-primary" name="country" ng-model="screen.user.country" ng-change="_isbrasil = screen.user.country=='Brazil'; whatCountry(screen.user.country)">
                                 <option selected="true" value="Selecione">{{'00442' | translate}}</option>
                                 <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                             </select>
+                            
                         </fieldset>
                         <fieldset class="col-xs-12 col-sm-4" ng-show="_isbrasil">
                             <label>Estado de origem</label>

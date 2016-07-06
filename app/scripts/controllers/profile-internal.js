@@ -44,7 +44,10 @@ angular.module('gdsApp').controller('ProfileInternalCtrl', ['$scope', '$routePar
         };
         // ====
 
+
+
         // ====
+
         $scope.editProfile = function() {
             // create a object to manipulate date and send to api
             var params = {
