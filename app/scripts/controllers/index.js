@@ -143,8 +143,30 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
         $scope.goToUrl = function(path) {
             $location.path(path);
         };
-        // ====
-        // console.log($rootScope.user)
+
+        $scope.getUser = function() {
+            try {
+                var u = $rootScope.user;
+                UserApi.updateUser(u.id, function(data) {
+                    if (data.data.error === false) {
+                        u = data.data.data[0];
+                        $scope.screen = {};
+                        $scope.screen.user = {
+                            nick: u.nick,
+                            dob: $scope.UTIL.unConvertDate(u.dob),
+                            gender: u.gender,
+                            email: u.email,
+                            race: u.race,
+                            picture: u.picture,
+                            profile: u.profile,
+                            state: u.state,
+                            country: u.country
+                        };
+                    }
+                });
+            } catch (e) {}
+        };
+        $scope.getUser();
 
     }
 ]);
