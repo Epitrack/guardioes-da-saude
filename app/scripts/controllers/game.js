@@ -686,8 +686,8 @@ angular.module('gdsApp')
         $scope.getRanking = function() {
             $http.get("http://rest.guardioesdasaude.org/game/ranking/").success(function(data, status) {
                 $scope.countrys = data;
-            }).error(function(data, status){
                 console.log(data);
+            }).error(function(data, status){
                 console.log(status);
             });
         };
@@ -766,7 +766,7 @@ angular.module('gdsApp')
                 aux.push(objs);
                 $scope.trofeus = [];
                 $scope.trofeus = aux;
-                console.log($scope.trofeus);
+                // console.log($scope.trofeus);
             } catch (e) {}
         };
 
