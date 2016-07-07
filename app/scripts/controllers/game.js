@@ -15,8 +15,10 @@ angular.module('gdsApp')
 
         if (url.indexOf('tutorial') != -1) {
             $rootScope.routeClass = 'tutorial';    
+            $rootScope.hiddenClass = 'hidden';    
         }else{
             $rootScope.routeClass = '';
+            $rootScope.hiddenClass = '';
         }
 
         var app_token = ApiConfig.APP_TOKEN;
