@@ -2166,12 +2166,31 @@ p.login-email {
     color: white;
 }
 
+#div_game,
+#img_pin,
+.game-home-points,
+.game-home-medalha,
+.game-home-trofeu,
+.game-home-points-label,
+.game-home-points-label a,
+.game-home-points-label a span,
+.icon-info,
+.olympics-faixa,
+#panel_mosaico,
+#panel_mosaico img,
+.card-form img,
+.game-resposta-neutro,
+.game-resposta-errada,
+#label_participe_agora{
+    cursor: url('../images/game/cursor-game.png'), auto;
+}
+
 .icon-info{
     position: fixed;
     top: 80px;
     left: 10px;
-    cursor: pointer;
 }
+
 
 .page::-webkit-scrollbar {
     display: none;
@@ -2223,10 +2242,6 @@ p.login-email {
     left: 50%;
     margin-left: -138.5px;
     z-index: 999;
-    .game-home-medalha,
-    .game-home-trofeu{
-        cursor: pointer
-    }
     .game-home-medalha {
         background: url("../images/game/medalha.svg");
         background-size: cover;
