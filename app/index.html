@@ -54,20 +54,20 @@
     <!-- endbuild -->
 </head>
 
-<body ng-class="{ 'js-active' : body_is_ok }">
+<body ng-class="{ 'js-active' : body_is_ok}">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
     <!-- <div class="wrapper-body" id="wrapper-body"> -->
-    <div id="wrapper-body" class="wrapper-body main-content" style="position: initial!important;overflow: hidden!important;height: auto;">
+    <div id="wrapper-body" class="wrapper-body main-content {{routeClass}}" style="position: initial!important;overflow: hidden!important;height: auto;">
         <!-- mobile header -->
         <div ng-include class="hidden-sm hidden-md hidden-lg" src="'views/partials/header-mobile.html'"></div>
         <!-- desktop header -->
         <div ng-include class="hidden-xs" src="'views/partials/header-desktop.html'"></div>
         <!--  <div class="container-fluid main-content st-pusher">
         <div class="row st-content"> -->
-        <div class="page {{ pageClass }}" ng-view="" autoscroll="true" style="background-color: #D9E0E7;">
+        <div class="page {{ pageClass }}" ng-view="" autoscroll="true">
         </div>
     </div>
     <!-- </div>

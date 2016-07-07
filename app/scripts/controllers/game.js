@@ -8,7 +8,18 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', function($scope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
+    .controller('GameCtrl', ['$scope', '$rootScope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', 
+        function($scope, $rootScope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
+        
+        var url = window.location.href;
+
+        if (url.indexOf('tutorial') != -1) {
+            $rootScope.routeClass = 'tutorial';    
+        }else{
+            $rootScope.routeClass = '';
+        }
+        
+
         var app_token = ApiConfig.APP_TOKEN;
 
         var w = $("#img_bg").width();
@@ -354,13 +365,7 @@ angular.module('gdsApp')
             "21": 7,
             "22": 8
         };
-        $scope.ranking = [
-            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
-            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
-            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
-            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }],
-            [{ "country": "Brasil", "flag": "01" }, { "country": "Brasil", "flag": "01" }]
-        ];
+        
         var count_pin_venceu = 0;
         var ctd; //function counter down
         var title_sem_energia = "Você está <br/> sem energia!"; //00649
@@ -730,7 +735,7 @@ angular.module('gdsApp')
                 elem.style.cssText = 'width:10%; position:absolute;top:' + obj.top + ';left:' + obj.left + ';';
                 document.getElementById("div_game").appendChild(elem);
             }catch(e){
-                console.log(e);
+                // console.log(e);
             }
            
         };
@@ -837,7 +842,6 @@ angular.module('gdsApp')
                     'user_token': LocalStorage.getItem('userStorage').user_token
                 }
             }).then(function(result) {
-                console.log("result calendar/day", result.data.data.length);
                 if (result.data.data.length !== 0) {
                     $scope.hasSurvey = true;
                 }

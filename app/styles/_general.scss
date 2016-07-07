@@ -84,6 +84,11 @@ body {
     height: 100%;
 }
 
+.center{
+    float: none!important;
+    margin: 0 auto!important;
+}
+
 // ===
 //
 // Header
@@ -488,7 +493,6 @@ body {
 
 .slideshow {
     min-height: 320px;
-    margin-bottom: 50px;
     position: relative;
 }
 
@@ -2143,9 +2147,15 @@ p.login-email {
 .btn-game-tuto {
     width: 240px;
     height: 40px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -120px;
     border-radius: 12px;
     background-color: #fcb315;
-    color: white
+    color: white;
+    cursor: pointer;
+    z-index: 999;
 }
 
 .btn-game-tuto:active {
@@ -2178,8 +2188,7 @@ p.login-email {
     position: relative;
     max-height: 309px;
 }
-
-.game-tutorial {
+.tutorial {
     background: url("../images/game/bg-game.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

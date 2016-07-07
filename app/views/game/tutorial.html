@@ -1,11 +1,11 @@
-<div class="game-tutorial" style="z-index: 99999999;">
+<div class="game-tutorial">
     <div class="container">
         <div class="row">
-            <section class="col-xs-12 how-it-works" style="text-align:center;z-index: 0;" align="center">
-                <aside id="slideshow" class="col-xs-12 hidden-xs slideshow">
+            <section class="col-xs-12 how-it-works center relative">
+                <aside id="slideshow" class="col-xs-12 hidden-xs slideshow center">
                     <uib-carousel interval="0" no-wrap="false" active="slide_active" after-render="updateslide()">
                         <uib-slide ng-repeat="slide in slides track by slide.index" index="slide.index">
-                            <img ng-src="{{slide.image}}" style="min-height:461px;max-height:461px;display: block; margin: auto;">
+                            <img ng-src="{{slide.image}}" class="img-resposive" style="width: 40%;margin: 0 auto">
                             <p style="width: 60%; height: 52px; font-size: 3.5em; color: rgb(255, 255, 255); margin-left: 20%;margin-bottom: 25px;">
                                 {{slide.text}}
                             </p>
@@ -16,5 +16,5 @@
             </section>
         </div>
     </div>
-    <img src="images/olympics-colors-2.svg" style="width: 100%;margin-top: -5.5%;">
+    <img src="images/olympics-colors-2.svg" style="width: 100%; position: absolute; bottom: 0; left: 0">
 </div>
