@@ -10,6 +10,13 @@
 angular.module('gdsApp').controller('MainCtrl', ['$scope', 'Surveyapi', '$location', '$rootScope', 'SearchCitiesApi', '$http',
     function($scope, Surveyapi, $location, $rootScope, SearchCitiesApi, $http) {
 
+        // Put url on the game button
+        if (localStorage.getItem('tutorial')) {
+            $rootScope.urlGame = 'game/home';
+        }else{
+            $rootScope.urlGame = 'game/tutorial';
+        }
+        
         $scope.pageClass = 'main-page';
 
         // when user click in logout button

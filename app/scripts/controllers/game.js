@@ -8,8 +8,8 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('GameCtrl', ['$scope', '$rootScope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', 
-        function($scope, $rootScope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage) {
+    .controller('GameCtrl', ['$scope', '$rootScope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', '$window',
+        function($scope, $rootScope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage, $window) {
         
         var url = window.location.href;
 
@@ -18,7 +18,6 @@ angular.module('gdsApp')
         }else{
             $rootScope.routeClass = '';
         }
-        
 
         var app_token = ApiConfig.APP_TOKEN;
 
@@ -384,6 +383,12 @@ angular.module('gdsApp')
             resposta_certa = translations['00897'];
         });
 
+        // Click Info tutorial
+        $scope.backTutorial = function(){
+            localStorage.removeItem('tutorial');
+            $window.location = 'game/tutorial';
+        }
+
         //salva a fase a questao e a matriz de dados que o usuario ja respondeu
         $scope.savestatus = function(level, puzzleMatriz, questionId) {
             console.log(level, puzzleMatriz, questionId);
@@ -478,6 +483,7 @@ angular.module('gdsApp')
             if ($scope.current < 6) {
                 $(".carousel").carousel('next');
             } else {
+                localStorage.setItem('tutorial',false);
                 $location.path('/game/home');
             }
         }
