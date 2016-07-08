@@ -956,6 +956,16 @@ body {
                 @include path('nav/icon-zika-hover.svg');
             }
         }
+         &.viajante {
+            &::before {
+                @include path('nav/icon-viajante-hover.svg');
+            }
+        }
+        &.sexo {
+            &::before {
+                @include path('nav/icon-sexo-hover.svg');
+            }
+        }
     }
     &::before {
         content: '';
@@ -1002,6 +1012,16 @@ body {
     &.zika {
         &::before {
             @include path('nav/icon-zika.svg');
+        }
+    }
+    &.viajante {
+        &::before {
+            @include path('nav/icon-viajante.svg');
+        }
+    }
+    &.sexo {
+        &::before {
+            @include path('nav/icon-sexo.svg');
         }
     }
 }
@@ -2175,13 +2195,16 @@ p.login-email {
 .game-home-points-label a,
 .game-home-points-label a span,
 .icon-info,
-.olympics-faixa,
+.tutorial .olympics-faixa,
 #panel_mosaico,
 #panel_mosaico img,
-.card-form img,
+.tutorial .card-form img,
 .game-resposta-neutro,
 .game-resposta-errada,
-#label_participe_agora{
+#label_participe_agora,
+.game-tutorial,
+.game-tutorial img,
+.btn-game-tuto{
     cursor: url('../images/game/cursor-game.png'), auto;
 }
 

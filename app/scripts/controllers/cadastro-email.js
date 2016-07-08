@@ -17,7 +17,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.states = [];
         /**/
         $scope.isbrasil = function() {
-            if ($scope.createData.country === 'Brasil') {
+            if ($scope.createData.country === 'Brazil') {
                 return true;
             }
             return false;
@@ -63,9 +63,9 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
 
         $scope.whatCountry = function(country){
             if (country == 'France') {
-                $scope.fr = true;
-            }else{
                 $scope.fr = false;
+            }else{
+                $scope.fr = true;
             }
         };
         
@@ -84,9 +84,9 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 repeat_password: $scope.createData.repeat_password,
             };
 
-            console.log(params);
+            
 
-            if ($scope.createData.country == 'França') {
+            if ($scope.createData.country == 'France') {
                 params.race = 'france';
             }else{
                 params.race = $scope.createData.race;
