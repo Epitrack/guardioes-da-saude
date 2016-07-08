@@ -59,8 +59,23 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         // create new user
         $scope.createData         = {};
         $scope.createData.state   = "Selecione";
-        $scope.createData.country = 'Country of origin';
 
+        if (sessionStorage.getItem('lang') == 'en'){
+            $scope.createData.country = 'Country of origin';
+        }else if (sessionStorage.getItem('lang') == 'pt'){
+            $scope.createData.country = 'País de origem';
+        }else if (sessionStorage.getItem('lang') == 'es'){
+            $scope.createData.country = 'País de origen';
+        }else if (sessionStorage.getItem('lang') == 'zh'){
+            $scope.createData.country = '原籍國';
+        }else if (sessionStorage.getItem('lang') == 'ar'){
+            $scope.createData.country = 'بلد المنشأ';
+        }else if (sessionStorage.getItem('lang') == 'ru'){
+            $scope.createData.country = 'Страна происхождения';
+        }else if (sessionStorage.getItem('lang') == 'fr'){
+            $scope.createData.country = "Pays d'origine";
+        };
+        
         $scope.whatCountry = function(country){
             if (country == 'France') {
                 $scope.fr = false;
