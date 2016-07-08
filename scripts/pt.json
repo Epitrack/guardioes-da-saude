@@ -499,7 +499,7 @@
       },
       {
         "_name": "location_disabled",
-        "__text": "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho."
+        "__text": "Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização."
       },
       {
         "_name": "generic_error",
@@ -583,7 +583,7 @@
       },
       {
         "_name": "hint_birth_date",
-        "__text": "Data de nascimento"
+        "__text": "Data de nascimento (DD/MM/YYYY)"
       },
       {
         "_name": "hint_birth_date_dt",
@@ -956,9 +956,221 @@
       {
         "_name": "about_text",
         "__text": "SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE”\n\n\\n\\nO aplicativo “Guardiões da Saúde”, desenvolvido para celulares, tablets e computadores, faz parte da iniciativa do Ministério da Saúde, em parceria com a Organização Não-Governamental Skoll Global Threats Fund, dos Estados Unidos da América, visando avaliar o potencial uso de aplicativos para dispositivos móveis como parte da estratégia de fortalecimento da capacidade de detecção de surtos e emergências em saúde pública, no âmbito do Sistema Único de Saúde (SUS), principalmente durante eventos de massa, como nos Jogos Olímpicos e Paralímpicos de 2016.\n\n\n\\n\\nEsta estratégia é a evolução do projeto realizado com a mesma instituição, denominado “Saúde na Copa” e lançado exclusivamente para o período dos jogos da Copa do Mundo FIFA Brasil 2014®, cujos resultados mostraram-se promissores e foram mantidos os interesses de ambas as instituições para a realização de uma nova estratégia para os Jogos Olímpicos e Paralímpicos em 2016.\n\n\\n\\nA primeira versão do aplicativo Guardiões da Saúde já está disponível para os sistemas operacionais iOS da Apple e Android da Google e também por meio do site http://guardioesdasaude.org/.\nInicialmente desenvolvido no idioma português, nas próximas versões, o aplicativo “Guardiões da Saúde” estará disponível também nos idiomas oficiais das Nações Unidas, sendo um instrumento complementar para orientações aos viajantes internacionais ao Brasil, principalmente com destino às sedes dos Jogos Olímpicos e Paralímpicos de 2016.\n\n\\n\\nA participação na iniciativa está restrita aos usuários com 13 anos ou mais de idade. Além disso, é fundamental que antes de se cadastrar, os usuários leiam e aceitem os “Termos de Uso” e preenchimento de cadastro simplificado, contendo apelido, endereço de e-mail, data de nascimento, raça/cor, sexo e senha de acesso. A participação é voluntária, sigilosa e os dados fornecidos estão protegidos no âmbito Lei nº 12.527, de 18 de novembro de 2011.\n\n\\n\\nOs resultados do projeto serão utilizados pela vigilância em saúde dos Estados, Municípios e Governo Federal, visando detectar e prevenir surtos e emergências em saúde pública, por meio da adoção de medidas de prevenção e controle oportunas. A divulgação dos resultados do projeto será realizada de modo agregado e anonimizado , visando descrever o perfil da condição de saúde dos voluntários, a partir das informações repassadas por meio do aplicativo.\n\n\\n\\nSOBRE A PARTICIPAÇÃO VOLUNTÁRIA\n\n\\n\\nSua participação é voluntária e uma gentil contribuição para o aprimoramento da vigilância em saúde no Brasil. O preenchimento do formulário sobre a condição de saúde não representa consulta médica, não garante acesso diferenciado aos serviços de saúde e o usuário não receberá o contato de nenhum profissional ou serviço de saúde para obter informações, seja por e-mail ou qualquer outro meio de contato.\n\n\\n\\nDurante a participação, mensagens de texto poderão ser enviadas aos usuários, apenas pelo aplicativo, por meio da tecnologia Push (Push Notification), contendo orientações sobre cuidados de saúde ou orientações dos órgãos de vigilância.\n\n\\n\\nÉ importante destacar que caso você informe que não está se sentindo bem, é recomendável que consulte um médico de referência ou serviço de saúde mais próximo de você. Para isso, está disponível no aplicativo um atalho com pesquisa pré-configurada de serviços de saúde e farmácias mais próximos de você, com base no serviço de geolocalização do seu dispositivo móvel no Google Maps. Essa funcionalidade não faz parte do aplicativo. Por esse motivo, será direcionado ao aplicativo de mapas de seu aparelho e recomenda-se cuidado ao transitar por áreas desconhecidas e evitar zonas de risco. Para isso, procure informações junto aos órgãos governamentais locais.\n\n\\n\\nO aplicativo foi configurado com um conjunto de telefones úteis incluindo o do SAMU (Serviço de Atendimento Móvel de Urgência), cuja ligação é gratuita e funciona 24 horas por dia atendendo solicitações de atendimento de urgência para ocorrências de natureza traumática, clínica, pediátrica, cirúrgica, gineco-obstétrica e de saúde mental, em residências, locais de trabalho e vias públicas.\n\n\\n\\nBENEFÍCIOS DA PARTICIPAÇÃO\\n\n\t\\n•\tParticipar ativamente das ações de vigilância em saúde que visam à prevenção de doenças na comunidade;\n\t\\n•\tAcessar os contatos de serviços públicos úteis sem precisar alterar sua agenda de telefones;\n\t\\n•\tAcessar facilmente informações úteis sobre cuidados de saúde e medidas de prevenção contra doenças;\n\t\\n•\tUsufruir de facilidades, como a pesquisa pré-configurada por Unidades de Pronto Atendimento e farmácias próximas (20 km) no Google Maps;\n\t\\n•\tAcompanhar os resultados do projeto, por meio do website www.guardioesdasaude.org;\n\n\\n\\nSAIBA MAIS SOBRE O USO DO APLICATIVO\n\n\n\\n\\nO aplicativo “Guardiões da Saúde” está disponível gratuitamente para download e utilização em sistemas operacionais iOS, Android e navegadores de internet. Em várias cidades há pontos de internet para uso gratuito ou o usuário poderá utilizar o seu próprio pacote de dados contratado.\n\n\n\\n\\nInforma-se que as chamadas telefônicas para os serviços públicos de referência registrados no aplicativo necessitam de plano de telefonia contratado. Portanto, consulte sua operadora antes de utilizar essa funcionalidade. Esse serviço não funcionará sem a presença da função de telefone no aparelho. Essa informação deve ser observada, principalmente por usuários de outros países.\n\n\\n\\nSOBRE A PARCERIA\n\n\\n\\nA iniciativa pioneira é da Secretaria de Vigilância em Saúde do Ministério da Saúde em parceria com as cidades sedes dos Jogos Olímpicos e Paralímpicos. Na parceria, a Organização Não Governamental (ONG) Skoll Global Threats Fund ficou responsável pelos custos de contratação e desenvolvimento do software, sob supervisão da Associação Brasileira de Profissionais de Epidemiologia de Campo (ProEpi), ambas são Organizações Não Governamentais, sem fins lucrativos, que atuam no aprimoramento da vigilância em saúde no Brasil e no mundo.\n\n\n\\n\\nA ProEpi é responsável por garantir que os requisitos estabelecidos pelo Ministério da Saúde e pela Skoll Global Threats Fund sejam cumpridos, conforme previsto no projeto: privacidade dos dados dos usuários, transparência e publicidade dos resultados públicos do projeto e disponibilidade do código fonte e documentação em ambiente de livre acesso para download, adequação e uso do aplicativo por serviços de saúde do Brasil e de países interessados, desde que garantida a finalidade sem fins lucrativos.\n\n\\n\\nAGRADECIMENTO\n\\nAs instituições organizadoras agradecem a todos os voluntários, profissionais de saúde e gestores do Sistema Único de Saúde por acreditarem no projeto piloto e apoiarem essa iniciativa pioneira na saúde pública internacional.\nAgradecimento especial às Secretarias de Saúde dos Municípios Sedes dos Jogos Olímpicos e Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador e São Paulo)."
+      },
+      {
+        "_name": "symptom_febre",
+        "__text": "Febre"
+      },
+      {
+        "_name": "symptom_tosse",
+        "__text": "Tosse"
+      },
+      {
+        "_name": "symptom_nauseas",
+        "__text": "Náusea ou vômito"
+      },
+      {
+        "_name": "symptom_manchas",
+        "__text": "Manchas vermelhas no corpo"
+      },
+      {
+        "_name": "symptom_dorjuntas",
+        "__text": "Dor nas juntas"
+      },
+      {
+        "_name": "symptom_diarreia",
+        "__text": "Diarreia"
+      },
+      {
+        "_name": "symptom_dorcorpo",
+        "__text": "Dor do corpo"
+      },
+      {
+        "_name": "symptom_sangramento",
+        "__text": "Sangramento"
+      },
+      {
+        "_name": "symptom_dorcabeca",
+        "__text": "Dor de cabeça"
+      },
+      {
+        "_name": "symptom_olhosvermelhos",
+        "__text": "Olhos vermelhos"
+      },
+      {
+        "_name": "symptom_coceira",
+        "__text": "Coceira"
+      },
+      {
+        "_name": "symptom_contato",
+        "__text": "Tive contato com alguém com um desses sintomas"
+      },
+      {
+        "_name": "symptom_procureiservicosaude",
+        "__text": "Procurei um serviço de saúde"
+      },
+      {
+        "_name": "symptom_estivefora",
+        "__text": "Estive fora do Brasil nos últimos 14 dias"
+      },
+      {
+        "_name": "email_fail",
+        "__text": "Não foi possível enviar o e-mail. Tente novamente em alguns minutos"
+      },
+      {
+        "_name": "freq_label",
+        "__text": "Frequência de envio de relatório em"
+      },
+      {
+        "_name": "janeiro",
+        "__text": "Janeiro"
+      },
+      {
+        "_name": "fevereiro",
+        "__text": "Fevereiro"
+      },
+      {
+        "_name": "marco",
+        "__text": "Março"
+      },
+      {
+        "_name": "abril",
+        "__text": "Abril"
+      },
+      {
+        "_name": "maio",
+        "__text": "Maio"
+      },
+      {
+        "_name": "junho",
+        "__text": "Junho"
+      },
+      {
+        "_name": "julho",
+        "__text": "Julho"
+      },
+      {
+        "_name": "agosto",
+        "__text": "Agosto"
+      },
+      {
+        "_name": "setembro",
+        "__text": "Setembro"
+      },
+      {
+        "_name": "outubro",
+        "__text": "Outubro"
+      },
+      {
+        "_name": "novembro",
+        "__text": "Novembro"
+      },
+      {
+        "_name": "dezembro",
+        "__text": "Dezembro"
+      },
+      {
+        "_name": "jan",
+        "__text": "jan"
+      },
+      {
+        "_name": "fev",
+        "__text": "fev"
+      },
+      {
+        "_name": "mar",
+        "__text": "mar"
+      },
+      {
+        "_name": "abr",
+        "__text": "abr"
+      },
+      {
+        "_name": "mai",
+        "__text": "mai"
+      },
+      {
+        "_name": "jun",
+        "__text": "jun"
+      },
+      {
+        "_name": "jul",
+        "__text": "jul"
+      },
+      {
+        "_name": "ago",
+        "__text": "ago"
+      },
+      {
+        "_name": "set",
+        "__text": "set"
+      },
+      {
+        "_name": "out",
+        "__text": "out"
+      },
+      {
+        "_name": "nov",
+        "__text": "nov"
+      },
+      {
+        "_name": "dez",
+        "__text": "dez"
+      },
+      {
+        "_name": "participacoes",
+        "__text": "Participações"
+      },
+      {
+        "_name": "relatorios",
+        "__text": "Relatórios"
+      },
+      {
+        "_name": "bem",
+        "__text": "Bem"
+      },
+      {
+        "_name": "mal",
+        "__text": "Mal"
+      },
+      {
+        "_name": "freq_relatorio",
+        "__text": "da frequência no envio de relatórios"
+      },
+      {
+        "_name": "versao",
+        "__text": "Versão"
+      },
+      {
+        "_name": "anos",
+        "__text": "Anos"
+      },
+      {
+        "_name": "adicionar_novo_integrante",
+        "__text": "Adicionar\\\\nnovo integrante"
+      },
+      {
+        "_name": "obrigado",
+        "__text": "Obrigado pela infomação"
+      },
+      {
+        "_name": "participacoes_ultimos_dias",
+        "__text": "Participações nos últimos dias"
       }
     ],
     "string-array": [
+      {
+        "item": [
+          "English",
+          "Español",
+          "Fraçais",
+          "Português (Brasil)",
+          "Pycknñ",
+          "简体中文",
+          "العربية"
+        ],
+        "_name": "language_array"
+      },
       {
         "item": [
           "Camera",
