@@ -30,11 +30,10 @@ angular.module('gdsApp')
             // return console.warn('createUser -> ', data);
             $http.post(apiUrl + '/user/create', data, { headers: { 'app_token': app_token } })
                 .then(function(data) {
-                    // console.log('Success createUser ', data);
                     callback(data);
                     LocalStorage.userCreateData(data.data.user);
-                }, function(error) {
-                    console.warn('Error createUser: ', error);
+                }, function(data) {
+                    callback(data);
                 });
         };
 
