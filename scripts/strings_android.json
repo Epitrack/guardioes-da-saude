@@ -1,0 +1,2281 @@
+[
+    {
+      "ANDROID_KEY": "about ",
+      "Português": " Sobre",
+      "Inglês": "About",
+      "Espanhol": "Sobre",
+      "Chinês": "關於",
+      "Árabe": "حول",
+      "Russo": "О",
+      "Francês": "Sur"
+    },
+    {
+      "ANDROID_KEY": "about_text"
+    },
+    {
+      "ANDROID_KEY": "abr ",
+      "Português": " Abr",
+      "Inglês": "Apr",
+      "Espanhol": "Abr",
+      "Chinês": "4 月",
+      "Árabe": "أبريل",
+      "Russo": "Апр",
+      "Francês": "Avr"
+    },
+    {
+      "ANDROID_KEY": "abril ",
+      "Português": " Abril",
+      "Inglês": "April",
+      "Espanhol": "Abril",
+      "Chinês": "4 月",
+      "Árabe": "أبريل",
+      "Russo": "Апрель",
+      "Francês": "Avril"
+    },
+    {
+      "ANDROID_KEY": "add_member ",
+      "Português": " Adicionar Integrante do Domicílio",
+      "Inglês": "Add member of household",
+      "Espanhol": "Añadir miembro del domicilio",
+      "Chinês": "添加住所會員",
+      "Árabe": "إضافة عضو من الموطن",
+      "Russo": "Добавить член домицилия",
+      "Francês": "Ajouter un proche"
+    },
+    {
+      "ANDROID_KEY": "adicionar_novo_integrante ",
+      "Português": " Adicionar\\nnovo integrante",
+      "Inglês": "Add \\\\n new member",
+      "Espanhol": "Añadir \\\\n nuevo miembro",
+      "Chinês": "添加新成員",
+      "Árabe": "إضافة عضو جديد",
+      "Russo": "Добавить новый элемент",
+      "Francês": "Ajouter \\\\n un nouveau membre"
+    },
+    {
+      "ANDROID_KEY": "ago ",
+      "Português": " Ago",
+      "Inglês": "Aug",
+      "Espanhol": "Ago",
+      "Chinês": "8 月",
+      "Árabe": "أغسطس",
+      "Russo": "Авг",
+      "Francês": "Août"
+    },
+    {
+      "ANDROID_KEY": "agosto ",
+      "Português": " Agosto",
+      "Inglês": "August",
+      "Espanhol": "Agosto",
+      "Chinês": "8 月",
+      "Árabe": "أغسطس",
+      "Russo": "Август",
+      "Francês": "Août"
+    },
+    {
+      "ANDROID_KEY": "alert",
+      "Português": "Alertas"
+    },
+    {
+      "ANDROID_KEY": "alert_pharmacy ",
+      "Português": " Algumas farmácias podem não ser exibidas no mapa.",
+      "Inglês": "Some drugstores may not be shown on the map.",
+      "Espanhol": "Algunas farmacias pueden no exhibirse en el mapa.",
+      "Chinês": "有些藥店可能不顯示在地圖。",
+      "Árabe": "قد لا تظهر بعض الصيدليات على الخريطة.",
+      "Russo": "Некоторые аптеки могут не отображаться на карте.",
+      "Francês": "Certaines pharmacies peuvent ne pas s'afficher sur la carte."
+    },
+    {
+      "ANDROID_KEY": "anos ",
+      "Português": " anos",
+      "Inglês": "years",
+      "Espanhol": "años",
+      "Chinês": "年",
+      "Árabe": "سنوات",
+      "Russo": "лет",
+      "Francês": "ans"
+    },
+    {
+      "ANDROID_KEY": "app_name ",
+      "Português": " Guardiões da Saúde",
+      "Inglês": "Guardians of Health",
+      "Espanhol": "Guardianes de la Salud",
+      "Chinês": "健康衛士",
+      "Árabe": "تطبيق مدير الصحة",
+      "Russo": "Стражи Здоровья",
+      "Francês": "Les Gardiens de la Santé"
+    },
+    {
+      "ANDROID_KEY": "app_name_short",
+      "Português": "Guardiões"
+    },
+    {
+      "ANDROID_KEY": "attention ",
+      "Português": " Atenção",
+      "Inglês": "Attention",
+      "Espanhol": "precaución",
+      "Chinês": "警告",
+      "Árabe": "الحذر",
+      "Russo": "осторожность",
+      "Francês": "Attention"
+    },
+    {
+      "ANDROID_KEY": "avatar",
+      "Português": "Avatar"
+    },
+    {
+      "ANDROID_KEY": "bem ",
+      "Português": " Bem",
+      "Inglês": "Good ",
+      "Espanhol": "Bien",
+      "Chinês": "健康",
+      "Árabe": "الصحة",
+      "Russo": "Хорошо",
+      "Francês": "Bien"
+    },
+    {
+      "ANDROID_KEY": "calendar ",
+      "Português": " Calendário",
+      "Inglês": "Calendar",
+      "Espanhol": "Calendario",
+      "Chinês": "日曆",
+      "Árabe": "التقويم",
+      "Russo": "Календарь",
+      "Francês": "Calendrier"
+    },
+    {
+      "ANDROID_KEY": "call",
+      "Português": "Ligar"
+    },
+    {
+      "ANDROID_KEY": "cancel ",
+      "Português": " Cancelar",
+      "Inglês": "Cancel",
+      "Espanhol": "Cancelar",
+      "Chinês": "取消",
+      "Árabe": "إلغاء",
+      "Russo": "Отменить",
+      "Francês": "Annuler"
+    },
+    {
+      "ANDROID_KEY": "care_content_01"
+    },
+    {
+      "ANDROID_KEY": "care_title_01 ",
+      "Português": " Cuidados Básicos",
+      "Inglês": "Basic Care",
+      "Espanhol": "Cuidados Básicos",
+      "Chinês": "基本護理",
+      "Árabe": "الرعاية الأساسية",
+      "Russo": "Общий Уход",
+      "Francês": "Soins de base"
+    },
+    {
+      "ANDROID_KEY": "care_title_01 ",
+      "Português": " CUIDADOS BÁSICOS",
+      "Inglês": "BASIC CARE",
+      "Espanhol": "CUIDADOS BÁSICOS",
+      "Chinês": "基本護理",
+      "Árabe": "الرعاية الأساسية",
+      "Russo": "Общий Уход",
+      "Francês": "Soins de base"
+    },
+    {
+      "ANDROID_KEY": "category",
+      "Português": "Categoria"
+    },
+    {
+      "ANDROID_KEY": "confirm ",
+      "Português": " Confirmar",
+      "Inglês": "Confirm",
+      "Espanhol": "Confirmar",
+      "Chinês": "確認",
+      "Árabe": "تأكيد",
+      "Russo": "Подтвердите",
+      "Francês": "Confirmer"
+    },
+    {
+      "ANDROID_KEY": "congratulations ",
+      "Português": " Parabéns",
+      "Inglês": "Congratulations",
+      "Espanhol": "Felicitaciones",
+      "Chinês": "祝賀",
+      "Árabe": "تهنئة",
+      "Russo": "Поздравляю",
+      "Francês": "Félicitations"
+    },
+    {
+      "ANDROID_KEY": "contact ",
+      "Português": " Entre em contato",
+      "Inglês": "Contact",
+      "Espanhol": "Entre en contacto",
+      "Chinês": "連絡",
+      "Árabe": "جهة الاتصال",
+      "Russo": "Свяжитесь ",
+      "Francês": "Entrez en contact"
+    },
+    {
+      "ANDROID_KEY": "crop_photo",
+      "Português": "Recortar foto"
+    },
+    {
+      "ANDROID_KEY": "defense_text ",
+      "Português": " Defesa Civil",
+      "Inglês": "Civil Defense",
+      "Espanhol": "Defensa Civil",
+      "Chinês": "民防",
+      "Árabe": "الدفاع المدني",
+      "Russo": "Гражданская Защита",
+      "Francês": "Défense civile"
+    },
+    {
+      "ANDROID_KEY": "delete_profile ",
+      "Português": " Deseja remover o perfil definitivamente?",
+      "Inglês": "Permanently delete the profile?",
+      "Espanhol": "¿Desea remover el perfil definitivamente?",
+      "Chinês": "永久刪除該設定檔？",
+      "Árabe": "هل تريد حذف ملف التعريف بشكل دائم؟",
+      "Russo": "Вы хотите навсегда удалить профиль?",
+      "Francês": "Souhaitez-vous supprimer définitivement le profil ?"
+    },
+    {
+      "ANDROID_KEY": "dez ",
+      "Português": " Dez",
+      "Inglês": "Dec",
+      "Espanhol": "Diez",
+      "Chinês": "12 月",
+      "Árabe": "ديسمبر",
+      "Russo": "Дек",
+      "Francês": "Dix"
+    },
+    {
+      "ANDROID_KEY": "dezembro ",
+      "Português": " Dezembro",
+      "Inglês": "December",
+      "Espanhol": "Diciembre",
+      "Chinês": "12 月",
+      "Árabe": "ديسمبر",
+      "Russo": "Декабрь",
+      "Francês": "Décembre"
+    },
+    {
+      "ANDROID_KEY": "diarrheal ",
+      "Português": " Diarreica",
+      "Inglês": "Diarrheal",
+      "Espanhol": "Diarreica",
+      "Chinês": "腹瀉型",
+      "Árabe": "مصاب بالإسهار",
+      "Russo": "Вызывающий диарею",
+      "Francês": "Diarrhéique"
+    },
+    {
+      "ANDROID_KEY": "diary_health ",
+      "Português": " Diário da Saúde",
+      "Inglês": "Health Journal",
+      "Espanhol": "Diario de Salud",
+      "Chinês": "健康日記",
+      "Árabe": "المجلة الصحية",
+      "Russo": "Дневник Здоровья",
+      "Francês": "Quotidien de la Santé"
+    },
+    {
+      "ANDROID_KEY": "diary_health_1",
+      "Português": "Diário da\\nSaúde"
+    },
+    {
+      "ANDROID_KEY": "disease",
+      "Português": "Doenças"
+    },
+    {
+      "ANDROID_KEY": "dob_invalid ",
+      "Português": " A utilização do aplicativo está permitida somente para indivíduos de 13 (treze) anos de idade ou mais.",
+      "Inglês": "This application may only be used by individuals over the age of 13 (thirteen).",
+      "Espanhol": "La utilización de la aplicación está permitida solamente para personas con 13 (trece) años de edad o más.",
+      "Chinês": "此應用程式只可由   13 歲（十三歲）以上的個人使用。",
+      "Árabe": "يجوز للأفراد الذين تزيد أعمارهم عن 13 عامًا (ثلاثة عشر) فقط استخدام هذا التطبيق.",
+      "Russo": "Использование приложения разрешается только лицам старше 13 (тринадцать) лет.",
+      "Francês": "L'utilisation de l'application est autorisée seulement aux personnes de 13 (treize) ans ou plus."
+    },
+    {
+      "ANDROID_KEY": "edit_profile ",
+      "Português": " Editar Perfil",
+      "Inglês": "Edit Profile",
+      "Espanhol": "Editar Perfil",
+      "Chinês": "編輯設定檔",
+      "Árabe": "تحرير ملف التعريف",
+      "Russo": "Изменить Профиль",
+      "Francês": "Modifier le profil"
+    },
+    {
+      "ANDROID_KEY": "email_fail ",
+      "Português": " Não foi possível enviar o e-mail. Tente novamente em alguns minutos.",
+      "Inglês": "Unable to read the email. Try again in a few minutes.",
+      "Espanhol": "No fue posible enviar el e-mail. Intente nuevamente en algunos minutos.",
+      "Chinês": "無法讀取電子郵件。幾分鐘後再試。",
+      "Árabe": "تعذر قراءة البريد الإلكتروني. حاول مرة أخرى بعد بضع دقائق.",
+      "Russo": "Не удалось отправить электронное письмо. Пожалуйста, повторите попытку через несколько минут.",
+      "Francês": "Impossible d'envoyer l’e-mail. Réessayer dans quelques minutes."
+    },
+    {
+      "ANDROID_KEY": "email_not_send",
+      "Português": "Devido a problema técnicos não conseguimos enviar sua mensagem.\\nTente novamente em alguns minutos."
+    },
+    {
+      "ANDROID_KEY": "email_null ",
+      "Português": " Assunto e/ou mensagem não informados.",
+      "Inglês": "Subject and/or message not provided.",
+      "Espanhol": "Asunto y/o mensaje no informados.",
+      "Chinês": "未提供主題和/或消息。",
+      "Árabe": "لم يتم تقديم الموضوع و/أو الرسالة.",
+      "Russo": "Тема и/или сообщение не были указаны.",
+      "Francês": "Sujet et/ou message non informés"
+    },
+    {
+      "ANDROID_KEY": "email_send ",
+      "Português": " Mensagem enviada com sucesso. Obrigado!",
+      "Inglês": "Message successfully sent. Thank you!",
+      "Espanhol": "Mensaje enviado con éxito. ¡Gracias!",
+      "Chinês": "成功發送信息。謝謝！",
+      "Árabe": "تم إرسال الرسالة بنجاح. شكرا!",
+      "Russo": "Сообщение успешно отправлено. Спасибо!",
+      "Francês": "Message envoyé avec succès. Merci!"
+    },
+    {
+      "ANDROID_KEY": "emergence_text",
+      "Português": "Serviço de Atendimento Móvel de Urgência"
+    },
+    {
+      "ANDROID_KEY": "emergency",
+      "Português": "SAMU"
+    },
+    {
+      "ANDROID_KEY": "energy",
+      "Português": "%s Energias"
+    },
+    {
+      "ANDROID_KEY": "erro_new_user",
+      "Português": "Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."
+    },
+    {
+      "ANDROID_KEY": "error_add_new_member ",
+      "Português": " Complete suas informações para efetuar o cadastro",
+      "Inglês": "Complete your information to complete the registration",
+      "Espanhol": "Complete su información para completar el registro",
+      "Chinês": "填寫您的信息，以完成註冊",
+      "Árabe": "استكمال المعلومات الخاصة بك لإكمال التسجيل",
+      "Russo": "Заполните информацию для завершения регистрации",
+      "Francês": "Complétez votre information pour terminer l'enregistrement"
+    },
+    {
+      "ANDROID_KEY": "exit ",
+      "Português": " Sair",
+      "Inglês": "Exit",
+      "Espanhol": "Salir",
+      "Chinês": "退出",
+      "Árabe": "خروج",
+      "Russo": "Выход",
+      "Francês": "Sortir"
+    },
+    {
+      "ANDROID_KEY": "exit_message ",
+      "Português": " Tem cereza que deseja sair do aplicativo?",
+      "Inglês": "Are you sure you wish to exit the app?",
+      "Espanhol": "¿Está seguro de que desea salir de la aplicación?",
+      "Chinês": "您確實要退出該應用程式嗎？",
+      "Árabe": "هل ترغب بالتأكيد في الخروج من التطبيق؟",
+      "Russo": "Вы уверены, что хотите выйти из приложения?",
+      "Francês": "Voulez-vous vraiment quitter l'application ?"
+    },
+    {
+      "ANDROID_KEY": "facebook",
+      "Português": "Facebook",
+      "Inglês": "Facebook",
+      "Espanhol": "Facebook",
+      "Chinês": "Facebook",
+      "Árabe": "Facebook",
+      "Russo": "Facebook",
+      "Francês": "Facebook"
+    },
+    {
+      "ANDROID_KEY": "facebook_cancel",
+      "Português": "Acesso ao Guardiões da Saúde via Facebook cancelado."
+    },
+    {
+      "ANDROID_KEY": "facebook_error",
+      "Português": "Não foi possível acessar o Guardiões da Saúde através do Facebook. Tente novamente em alguns minutos ou acesse através do seu e-mail."
+    },
+    {
+      "ANDROID_KEY": "facebook_fail ",
+      "Português": " Não foi possível fazer o login. E-mail e/ou senha inválidos.",
+      "Inglês": "Unable to log in. Invalid email and/or password.",
+      "Espanhol": "No fue posible realizar el login. E-mail y/o contraseña inválidos.",
+      "Chinês": "無法登錄。無效電子郵件和/或密碼。",
+      "Árabe": "تعذر تسجيل الدخول. بريد إلكتروني و/أو كلمة مرور غير صالحة.",
+      "Russo": "Невозможно войти в систему. Неверная электронная почта и / или  пароль.",
+      "Francês": "Impossible de se connecter. E-mail et/ou mot de passe non valide."
+    },
+    {
+      "ANDROID_KEY": "fev ",
+      "Português": " Fev",
+      "Inglês": "Feb",
+      "Espanhol": "Feb",
+      "Chinês": "2 月",
+      "Árabe": "فبراير",
+      "Russo": "Фев",
+      "Francês": "Fév"
+    },
+    {
+      "ANDROID_KEY": "fevereiro ",
+      "Português": " Fevereiro",
+      "Inglês": "February",
+      "Espanhol": "Febrero",
+      "Chinês": "2 月",
+      "Árabe": "فبراير",
+      "Russo": "Февраль",
+      "Francês": "Février"
+    },
+    {
+      "ANDROID_KEY": "fireman_text ",
+      "Português": " Bombeiro Civil",
+      "Inglês": "Firefighter",
+      "Espanhol": "Bombero Civil",
+      "Chinês": "消防員",
+      "Árabe": "رجل الإطفاء",
+      "Russo": "Гражданский пожарным",
+      "Francês": "Pompier civil"
+    },
+    {
+      "ANDROID_KEY": "forgot_password ",
+      "Português": " Digite seu e-mail e verifique a sua caixa de entrada.",
+      "Inglês": "Enter your email address and check your inbox.",
+      "Espanhol": "Digite su e-mail y verifique su buzón de entrada.",
+      "Chinês": "輸入您的電子郵件地址，並檢查您的收件匣。",
+      "Árabe": "أدخل عنوان بريدك الإلكتروني وتحقق من صندوق بريدك.",
+      "Russo": "Введите адрес электронной почты и проверьте свой почтовый ящик.",
+      "Francês": "Entrez votre adresse e-mail et vérifiez votre boîte de réception."
+    },
+    {
+      "ANDROID_KEY": "freq_label ",
+      "Português": " Frequência de envio de relatório em",
+      "Inglês": "report sending frequency in",
+      "Espanhol": "informe de frecuencia de envío",
+      "Chinês": "發送報告的頻率",
+      "Árabe": "تردد إرسال تقرير",
+      "Russo": "Отчет отправки частоты",
+      "Francês": "rapport fréquence d'envoi"
+    },
+    {
+      "ANDROID_KEY": "freq_relatorio ",
+      "Português": " da frequência no envio de relatórios",
+      "Inglês": "the frequency in sending reports",
+      "Espanhol": "la frecuencia de envío de informes",
+      "Chinês": "在發送報告的頻率",
+      "Árabe": "تردد في تقارير ترسل",
+      "Russo": "частота в отправке отчетов",
+      "Francês": "la fréquence dans les rapports d'envoi"
+    },
+    {
+      "ANDROID_KEY": "frequency ",
+      "Português": " Frequência",
+      "Inglês": "Frequency",
+      "Espanhol": "Frecuencia",
+      "Chinês": "頻率",
+      "Árabe": "تردد",
+      "Russo": "частота",
+      "Francês": "Fréquence"
+    },
+    {
+      "ANDROID_KEY": "game_enjoy ",
+      "Português": " Divirta-se",
+      "Inglês": "Have fun",
+      "Espanhol": "Diviértase",
+      "Chinês": "玩得愉快",
+      "Árabe": "استمتع",
+      "Russo": "Получайте удовольствие",
+      "Francês": "Amusez-vous"
+    },
+    {
+      "ANDROID_KEY": "gender ",
+      "Português": " Sexo",
+      "Inglês": "Gender",
+      "Espanhol": "Sexo",
+      "Chinês": "性別",
+      "Árabe": "النوع",
+      "Russo": "Пол",
+      "Francês": "Sexe"
+    },
+    {
+      "ANDROID_KEY": "general ",
+      "Português": " Geral",
+      "Inglês": "General",
+      "Espanhol": "General",
+      "Chinês": "一般",
+      "Árabe": "عام",
+      "Russo": "Общий",
+      "Francês": "Général"
+    },
+    {
+      "ANDROID_KEY": "general_ranking ",
+      "Português": " Ranking Geral",
+      "Inglês": "General Ranking",
+      "Espanhol": "Ranking General",
+      "Chinês": "一般排名",
+      "Árabe": "الترتيب العام",
+      "Russo": "Общий Рейтинг",
+      "Francês": "Classement général"
+    },
+    {
+      "ANDROID_KEY": "generic_error",
+      "Português": "Não foi possível executar a operação. Tente novamente em alguns instantes."
+    },
+    {
+      "ANDROID_KEY": "generic_error_login",
+      "Português": "Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."
+    },
+    {
+      "ANDROID_KEY": "gmail",
+      "Português": "Gmail",
+      "Inglês": "Gmail",
+      "Espanhol": "Gmail",
+      "Chinês": "Gmail",
+      "Árabe": "Gmail",
+      "Russo": "Gmail",
+      "Francês": "Gmail"
+    },
+    {
+      "ANDROID_KEY": "google",
+      "Português": "Google",
+      "Inglês": "Google",
+      "Espanhol": "Google",
+      "Chinês": "Google",
+      "Árabe": "Google",
+      "Russo": "Google",
+      "Francês": "Google"
+    },
+    {
+      "ANDROID_KEY": "google_access_error",
+      "Português": "O Guardiões da Saúde não obteve permissão para acessar seus dados do Google. Verifique suas configurações."
+    },
+    {
+      "ANDROID_KEY": "google_client_id",
+      "Português": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Inglês": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Espanhol": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Chinês": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Árabe": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Russo": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+      "Francês": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com"
+    },
+    {
+      "ANDROID_KEY": "hashtag",
+      "Português": "Hashtag"
+    },
+    {
+      "ANDROID_KEY": "health",
+      "Português": "Saúde"
+    },
+    {
+      "ANDROID_KEY": "help ",
+      "Português": " Ajuda",
+      "Inglês": "Help",
+      "Espanhol": "Ayuda",
+      "Chinês": "幫助",
+      "Árabe": "تعليمات",
+      "Russo": "Помощь",
+      "Francês": "Aide"
+    },
+    {
+      "ANDROID_KEY": "hint_birth_date",
+      "Português": "Data de nascimento (DD/MM/YYYY)"
+    },
+    {
+      "ANDROID_KEY": "hint_birth_date_dt",
+      "Português": "Nascimento"
+    },
+    {
+      "ANDROID_KEY": "hint_country_name ",
+      "Português": " Selecione o país",
+      "Inglês": "Select the country",
+      "Espanhol": "Seleccione el país",
+      "Chinês": "選擇國家/地區",
+      "Árabe": "حدد الدولة",
+      "Russo": "Выберите страну",
+      "Francês": "Sélectionnez le pays"
+    },
+    {
+      "ANDROID_KEY": "hint_mail ",
+      "Português": " E-mail",
+      "Inglês": "Email",
+      "Espanhol": "E-mail",
+      "Chinês": "電子郵件",
+      "Árabe": "البريد الإلكتروني",
+      "Russo": "Электронная почта",
+      "Francês": "E-mail"
+    },
+    {
+      "ANDROID_KEY": "hint_nickname ",
+      "Português": " Apelido",
+      "Inglês": "Nickname",
+      "Espanhol": "Apodo",
+      "Chinês": "昵稱",
+      "Árabe": "الاسم المستعار",
+      "Russo": "Фамилия",
+      "Francês": "Surnom"
+    },
+    {
+      "ANDROID_KEY": "hint_password ",
+      "Português": " Senha precisa ter pelo menos 6 caracteres",
+      "Inglês": "The password must have at least 6 characters",
+      "Espanhol": "Contraseña necesita tener por lo menos 6 caracteres",
+      "Chinês": "密碼必須至少 6 個字元",
+      "Árabe": "يجب أن تحتوي كلمة المرور على 6 أحرف على الأقل.",
+      "Russo": "Пароль должен содержать не менее 6 символов",
+      "Francês": "Le mot de passe doit avoir au moins 6 caractères"
+    },
+    {
+      "ANDROID_KEY": "hint_password_short ",
+      "Português": " Senha",
+      "Inglês": "Password",
+      "Espanhol": "Contraseña",
+      "Chinês": "密碼",
+      "Árabe": "كلمة المرور",
+      "Russo": "Пароль",
+      "Francês": "Mot de passe"
+    },
+    {
+      "ANDROID_KEY": "hint_redefine_password ",
+      "Português": " Redefinir senha",
+      "Inglês": "Reset password",
+      "Espanhol": "Redefinir contraseña",
+      "Chinês": "重置密碼",
+      "Árabe": "إعادة تعيين كلمة المرور",
+      "Russo": "Восстановление Пароля",
+      "Francês": "Changer le mot de passe"
+    },
+    {
+      "ANDROID_KEY": "hint_repeat_password ",
+      "Português": " Repetir Senha",
+      "Inglês": "Repeat Password",
+      "Espanhol": "Repetir Contraseña",
+      "Chinês": "請重複輸入密碼",
+      "Árabe": "إعادة تكرار كلمة المرور",
+      "Russo": "Повторить Пароль",
+      "Francês": "Retaper le mot de passe"
+    },
+    {
+      "ANDROID_KEY": "home ",
+      "Português": " Início",
+      "Inglês": "Home",
+      "Espanhol": "Inicio",
+      "Chinês": "首頁",
+      "Árabe": "الصفحة الرئيسية",
+      "Russo": "Главная",
+      "Francês": "Accueil"
+    },
+    {
+      "ANDROID_KEY": "hospital ",
+      "Português": " UPAs",
+      "Inglês": "Emergency healthcare center",
+      "Espanhol": "UPAs",
+      "Chinês": "急救醫療中心",
+      "Árabe": "UPAs",
+      "Russo": "Пункты Скорой Помощи",
+      "Francês": "Les urgences"
+    },
+    {
+      "ANDROID_KEY": "hyphen",
+      "Português": "-",
+      "Inglês": "-",
+      "Espanhol": "-",
+      "Chinês": "-",
+      "Árabe": "-",
+      "Russo": "-",
+      "Francês": "-"
+    },
+    {
+      "ANDROID_KEY": "interest",
+      "Português": "Interesses"
+    },
+    {
+      "ANDROID_KEY": "jan ",
+      "Português": " Jan",
+      "Inglês": "Jan",
+      "Espanhol": "Ene",
+      "Chinês": "1 月",
+      "Árabe": "يناير",
+      "Russo": "Янв",
+      "Francês": "Jan"
+    },
+    {
+      "ANDROID_KEY": "janeiro ",
+      "Português": " Janeiro",
+      "Inglês": "January",
+      "Espanhol": "Enero",
+      "Chinês": "1 月",
+      "Árabe": "يناير",
+      "Russo": "Январь",
+      "Francês": "Janvier"
+    },
+    {
+      "ANDROID_KEY": "join",
+      "Português": "Participe\\n   agora!"
+    },
+    {
+      "ANDROID_KEY": "join_now ",
+      "Português": " Participe Agora!",
+      "Inglês": "Participate Now!",
+      "Espanhol": "¡Participe Ahora!",
+      "Chinês": "現在參與 ！",
+      "Árabe": "شارك الآن!",
+      "Russo": "Присоединяйтесь к нам сейчас!",
+      "Francês": "Participez dès maintenant !"
+    },
+    {
+      "ANDROID_KEY": "jul ",
+      "Português": " Jul",
+      "Inglês": "Jul",
+      "Espanhol": "Jul",
+      "Chinês": "7 月",
+      "Árabe": "يوليو",
+      "Russo": "Июл",
+      "Francês": "Juil"
+    },
+    {
+      "ANDROID_KEY": "julho ",
+      "Português": " Julho",
+      "Inglês": "July",
+      "Espanhol": "Julio",
+      "Chinês": "7 月",
+      "Árabe": "يوليو",
+      "Russo": "Июль",
+      "Francês": "Juillet"
+    },
+    {
+      "ANDROID_KEY": "jun ",
+      "Português": " Jun",
+      "Inglês": "Jun",
+      "Espanhol": "Jun",
+      "Chinês": "6 月",
+      "Árabe": "يونيو",
+      "Russo": "Июн",
+      "Francês": "Jun"
+    },
+    {
+      "ANDROID_KEY": "junho ",
+      "Português": " Junho",
+      "Inglês": "June",
+      "Espanhol": "Junio",
+      "Chinês": "6 月",
+      "Árabe": "يونيو",
+      "Russo": "Июнь",
+      "Francês": "Juin"
+    },
+    {
+      "ANDROID_KEY": "level",
+      "Português": "Nível %s"
+    },
+    {
+      "ANDROID_KEY": "loading",
+      "Português": "Carregando..."
+    },
+    {
+      "ANDROID_KEY": "locale",
+      "Português": "pt_BR"
+    },
+    {
+      "ANDROID_KEY": "location_disabled ",
+      "Português": " Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização",
+      "Inglês": "To actively contribute to health surveillance in Brazil you need to share your location",
+      "Espanhol": "Para contribuir activamente a la vigilancia de la salud en Brasil tiene que compartir su ubicación",
+      "Chinês": "要積極促進在巴西的衛生監督，你需要分享你的位置",
+      "Árabe": "إلى المساهمة بنشاط في المراقبة الصحية في البرازيل تحتاج إلى مشاركة موقعك",
+      "Russo": "Для того, чтобы активно участвовать в наблюдения за состоянием здоровья в Бразилии, Вы должны сообщить о своем местоположении",
+      "Francês": "Pour participer activement à la surveillance de la santé au Brésil vous devez partager votre localisation"
+    },
+    {
+      "ANDROID_KEY": "login ",
+      "Português": " Entrar",
+      "Inglês": "Login",
+      "Espanhol": "Entrar",
+      "Chinês": "登錄",
+      "Árabe": "تسجيل الدخول",
+      "Russo": "Войти",
+      "Francês": "Se connecter"
+    },
+    {
+      "ANDROID_KEY": "mai ",
+      "Português": " Mai",
+      "Inglês": "May",
+      "Espanhol": "May",
+      "Chinês": "5 月",
+      "Árabe": "مايو",
+      "Russo": "Май",
+      "Francês": "Mai"
+    },
+    {
+      "ANDROID_KEY": "mails",
+      "Português": "E-mails"
+    },
+    {
+      "ANDROID_KEY": "maio ",
+      "Português": " Maio",
+      "Inglês": "May",
+      "Espanhol": "Mayo",
+      "Chinês": "5 月",
+      "Árabe": "مايو",
+      "Russo": "Май",
+      "Francês": "Mai"
+    },
+    {
+      "ANDROID_KEY": "mal ",
+      "Português": " Mal",
+      "Inglês": "Ill",
+      "Espanhol": "Mal",
+      "Chinês": "生病",
+      "Árabe": "مرض",
+      "Russo": "Плохо",
+      "Francês": "Mal"
+    },
+    {
+      "ANDROID_KEY": "map_health ",
+      "Português": " Mapa da Saúde",
+      "Inglês": "Health Map",
+      "Espanhol": "Mapa de la Salud",
+      "Chinês": "健康地圖",
+      "Árabe": "الخريطة الصحية",
+      "Russo": "Карта здоровья",
+      "Francês": "Carte de la Santé"
+    },
+    {
+      "ANDROID_KEY": "map_health_1",
+      "Português": "Mapa da\\nSaúde"
+    },
+    {
+      "ANDROID_KEY": "mar ",
+      "Português": " Mar",
+      "Inglês": "Mar",
+      "Espanhol": "Mar",
+      "Chinês": "3 月",
+      "Árabe": "مارس",
+      "Russo": "Море",
+      "Francês": "Mars"
+    },
+    {
+      "ANDROID_KEY": "marco ",
+      "Português": " Março",
+      "Inglês": "March",
+      "Espanhol": "Marzo",
+      "Chinês": "3 月",
+      "Árabe": "مارس",
+      "Russo": "Март",
+      "Francês": "Mars"
+    },
+    {
+      "ANDROID_KEY": "message ",
+      "Português": " Descreva o problema",
+      "Inglês": "Describe the problem",
+      "Espanhol": "Describa el problema",
+      "Chinês": "描述問題",
+      "Árabe": "صف المشكلة",
+      "Russo": "Опишите проблему",
+      "Francês": "Décrivez le problème"
+    },
+    {
+      "ANDROID_KEY": "message_about_title_01 ",
+      "Português": " SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE”",
+      "Inglês": "“GUARDIANS OF HEALTH” APPLICATION",
+      "Espanhol": "SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD”",
+      "Chinês": "\"健康衛士\"應用程式",
+      "Árabe": "تطبيق \"مدير الصحة\"",
+      "Russo": "О ПРИЛОЖЕНИИ «СТРАЖИ ЗДОРОВЬЯ»",
+      "Francês": "À PROPOS DE L'APPLICATION « LES GARDIENS DE LA SANTÉ »"
+    },
+    {
+      "ANDROID_KEY": "message_age",
+      "Português": "%d anos"
+    },
+    {
+      "ANDROID_KEY": "message_agree ",
+      "Português": " Concordo com os Termos de Uso.",
+      "Inglês": "I agree to the Terms of Use.",
+      "Espanhol": "Estoy de acuerdo con los Términos de Uso.",
+      "Chinês": "我同意使用條款。",
+      "Árabe": "أوافق على شروط الاستخدام.",
+      "Russo": "Я согласен с Условиями Использования.",
+      "Francês": "J'accepte les Conditions d'Utilisation."
+    },
+    {
+      "ANDROID_KEY": "message_check_symptom ",
+      "Português": " Marque abaixo oque você está sentindo nesse momento:",
+      "Inglês": "Check the items below that describe how you’re feeling now:",
+      "Espanhol": "Marque abajo lo que usted está sintiendo en este momento:",
+      "Chinês": "請選擇下面可描述您此刻的感覺︰",
+      "Árabe": "تحقق من العناصر التالية التي تصف شعورك في هذه اللحظة:",
+      "Russo": "Отметьте ниже, что вы сейчас чувствуете:",
+      "Francês": "Écrivez ci-dessous ce que vous ressentez en ce moment :"
+    },
+    {
+      "ANDROID_KEY": "message_create_account ",
+      "Português": " Cadastre-se rapidamente com:",
+      "Inglês": "Sign up quickly with:",
+      "Espanhol": "Regístrese rápidamente con:",
+      "Chinês": "快速登錄 ︰",
+      "Árabe": "تسجيل الاشتراك سريعًا باستخدام:",
+      "Russo": "Быстрая регистрация с:",
+      "Francês": "Inscrivez-vous rapidement avec :"
+    },
+    {
+      "ANDROID_KEY": "message_fields ",
+      "Português": " Apenas os campos habilitados poderão ser alterados.",
+      "Inglês": "Only enabled fields can be edited.",
+      "Espanhol": "Sólo los campos habilitados podrán ser alterados.",
+      "Chinês": "僅啟用的欄位可以編輯。",
+      "Árabe": "يمكن تعديل الحقول الممكنة فقط.",
+      "Russo": "Только активированные ячейки могут быть изменены.",
+      "Francês": "Seuls les champs activés peuvent être changés."
+    },
+    {
+      "ANDROID_KEY": "message_follow ",
+      "Português": " Acompanhe os casos de doenças em seu bairro ou em um determinado local.",
+      "Inglês": "Keep track of diseases in your neighborhood or at a specific location.",
+      "Espanhol": "Siga los casos de enfermedades en su barrio o en un determinado local.",
+      "Chinês": "监测您的鄰居或在特定位置的疾病狀態。",
+      "Árabe": "تابع حالة الأمراض الموجودة في الحي الخاص بك في موقع معين.",
+      "Russo": "Следите за случаями заболеваний в вашем районе или в определенном месте.",
+      "Francês": "Suivez les cas de maladie dans votre quartier ou à un endroit donné."
+    },
+    {
+      "ANDROID_KEY": "message_forgot_password",
+      "Português": "<u>Esqueceu sua senha?</u>"
+    },
+    {
+      "ANDROID_KEY": "message_health ",
+      "Português": " Como está sua saúde?",
+      "Inglês": "How is your health?",
+      "Espanhol": "¿Cómo está su salud?",
+      "Chinês": "您的健康是如何？",
+      "Árabe": "كيف حال صحتك؟",
+      "Russo": "Как ваше здоровье?",
+      "Francês": "Comment va votre santé ?"
+    },
+    {
+      "ANDROID_KEY": "message_health_state ",
+      "Português": " Como está sua saúde nesse momento?",
+      "Inglês": "How is your health now?",
+      "Espanhol": "¿Cómo está su salud en este momento?",
+      "Chinês": "現在你的健康是如何？",
+      "Árabe": "كيف حال صحتك في هذه اللحظة؟",
+      "Russo": "Как вы себя чувствуете прямо сейчас?",
+      "Francês": "Comment va votre santé en ce moment ?"
+    },
+    {
+      "ANDROID_KEY": "message_hello",
+      "Português": "Olá, %s!"
+    },
+    {
+      "ANDROID_KEY": "message_home_member ",
+      "Português": " Integrantes do domicílio",
+      "Inglês": "Household members",
+      "Espanhol": "Integrantes del domicilio",
+      "Chinês": "家庭成員",
+      "Árabe": "أفراد الأسرة",
+      "Russo": "Члены семьи",
+      "Francês": "Membres du domicile"
+    },
+    {
+      "ANDROID_KEY": "message_hospital ",
+      "Português": " Não deixe de procurar o serviço de saúde mais próximo.",
+      "Inglês": "Be sure to seek out the nearest healthcare service.",
+      "Espanhol": "No deje de buscar el servicio de salud más cercano.",
+      "Chinês": "確保找出最近的醫療服務。",
+      "Árabe": "تأكد من البحث عن أقرب خدمة رعاية صحية.",
+      "Russo": "Обязательно обратитесь в ближайшей пункт медпомощи.",
+      "Francês": "Assurez-vous de trouver le service de santé le plus proche."
+    },
+    {
+      "ANDROID_KEY": "message_image_load",
+      "Português": "Não é possível carregar esta imagem"
+    },
+    {
+      "ANDROID_KEY": "message_interest",
+      "Português": "Selecione as categorias e hashtags que você deseja seguir"
+    },
+    {
+      "ANDROID_KEY": "message_invite_friend ",
+      "Português": " Convide seus amigos para serem Guardiões da Saúde.",
+      "Inglês": "Invite your friends to join Guardians of Health.",
+      "Espanhol": "Invite a sus amigos a ser Guardianes de la Salud.",
+      "Chinês": "邀請您的朋友成為健康衛士。",
+      "Árabe": "ادع أصدقائك للاشتراك في تطبيق مدير الصحة.",
+      "Russo": "Пригласите своих друзей стать Стражами Здоровья.",
+      "Francês": "Invitez vos amis à devenir des Gardiens de la Santé."
+    },
+    {
+      "ANDROID_KEY": "message_login_enter ",
+      "Português": " Entre rapidamente com",
+      "Inglês": "Quick login with",
+      "Espanhol": "Entre rápidamente con",
+      "Chinês": "快速登錄",
+      "Árabe": "تسجيل الدخول سريعًا باستخدام",
+      "Russo": "Войдите быстро с",
+      "Francês": "Connexion rapide avec :"
+    },
+    {
+      "ANDROID_KEY": "message_new_member ",
+      "Português": " Preencha todos os campos abaixo para adicionar um novo integrante.",
+      "Inglês": "Fill out all of the fields below to add a new member.",
+      "Espanhol": "Rellene todos los campos de abajo para adicionar un nuevo integrante.",
+      "Chinês": "填寫下面的所有欄位以添加新成員。",
+      "Árabe": "املأ جميع الحقول التالية لإضافة عضو جديد.",
+      "Russo": "Заполните все ячейки, чтобы добавить нового участника.",
+      "Francês": "Remplissez tous les champs ci-dessous pour ajouter un nouveau membre."
+    },
+    {
+      "ANDROID_KEY": "message_prepared ",
+      "Português": " Preparado para se tornar um Guardião da Saúde?",
+      "Inglês": "Are you ready to become a Guardian of Health?",
+      "Espanhol": "¿Preparado para tornarse un Guardián de la Salud?",
+      "Chinês": "您是否準備好了成為一個健康衛士？",
+      "Árabe": "هل أنت مستعد لتصبح مديرًا للصحة؟",
+      "Russo": "Готов стать Стражем Здоровья?",
+      "Francês": "Prêt à devenir un Gardien de la Santé ?"
+    },
+    {
+      "ANDROID_KEY": "message_present_symptom ",
+      "Português": " \"Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"\"Mal\"\" seja selecionada.\"",
+      "Inglês": "Some signs and symptoms are shown in the next screen if the “Ill” option is selected.",
+      "Espanhol": "Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal\" sea seleccionada.",
+      "Chinês": "如果啟用了\"生病\"選項，有些跡象和症狀在下一螢幕中顯示。",
+      "Árabe": "يتم عرض بعض العلامات والأعراض في الشاشة التالية عند تمكين الخيار \"المرض\".",
+      "Russo": "Некоторые признаки и симптомы будут отображаться на следующем экране, если выбрана опция «Плохо».",
+      "Francês": "Certains signes et symptômes seront présentés sur l'écran suivant si l'option « Mal » est sélectionnée."
+    },
+    {
+      "ANDROID_KEY": "message_prevent ",
+      "Português": " Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.",
+      "Inglês": "Learn how to prevent diseases, find the nearest UPAs and drugstores, and view useful phone numbers to call in case of emergency.",
+      "Espanhol": "Vea cómo prevenirse de enfermedades, qué UPAs y farmacias están más cerca de usted y los teléfonos útiles para casos de emergencia.",
+      "Chinês": "瞭解如何預防疾病，查找最近的UPA和藥店，並查看有用的電話號碼以在緊急情況下撥打。",
+      "Árabe": "تعرف على كيفية الوقاية من الأمراض، وتعرف على أماكن UPA والصيدليات القريبة منك، وتعرف على أرقام هواتف مفيدة للاتصال بها في حالة الطوارئ.",
+      "Russo": "Посмотрите, как предотвратить заболевания, какие Пункты Скорой Помощи находятся ближе к вам, а также полезные телефоны для экстренных случаев.",
+      "Francês": "Découvrez comment prévenir les maladies, Les services d'urgences et les pharmacies les plus proches et les numéros utiles en cas d'urgence."
+    },
+    {
+      "ANDROID_KEY": "message_privacy ",
+      "Português": " Nós nos preocupamos com a sua privacidade",
+      "Inglês": "We care about your privacy.",
+      "Espanhol": "Nos preocupamos con su privacidad",
+      "Chinês": "我們重視您的隱私",
+      "Árabe": "نهتم بخصوصيتك",
+      "Russo": "Мы заботимся о вашей конфиденциальности",
+      "Francês": "Nous respectons votre vie privée"
+    },
+    {
+      "ANDROID_KEY": "message_privacy_tip_1 ",
+      "Português": " Sua participação é voluntária e anônima",
+      "Inglês": "Your participation is voluntary and anonymous",
+      "Espanhol": "Su participación es voluntaria y anónima",
+      "Chinês": "您的參與是自願和匿名的",
+      "Árabe": "مشاركتك طوعية ومجهولة الهوية",
+      "Russo": "Ваше участие является добровольным и анонимным",
+      "Francês": "Votre participation est volontaire et anonyme"
+    },
+    {
+      "ANDROID_KEY": "message_privacy_tip_2 ",
+      "Português": " Os dados fornecidos serão utilizados para promover uma comunidade mais saudável",
+      "Inglês": "The data provided will be used to build a healthier community.",
+      "Espanhol": "Los dados proporcionados serán utilizados para promover una comunidad más saludable",
+      "Chinês": "提供的資料將用于建立一個更健康的社區",
+      "Árabe": "ستُستخدم المعلومات المُقدمة لخلق مجتمع أكثر صحة.",
+      "Russo": "Предоставленные данные, будут содействовать оздоровлению сообщества",
+      "Francês": "Les données fournies serviront à favoriser la santé de la collectivité"
+    },
+    {
+      "ANDROID_KEY": "message_privacy_tip_3 ",
+      "Português": " Para maiores informações, consulte os Termos de Uso",
+      "Inglês": "Read the Terms of Use for more information",
+      "Espanhol": "Para obtener más información, consulte los Términos de Uso",
+      "Chinês": "閱讀使用條款了解詳細資訊",
+      "Árabe": "اقرأ شروط الاستخدام للحصول على مزيد من المعلومات",
+      "Russo": "Для получения дополнительной информации смотрите Условия Использования",
+      "Francês": "Pour plus d'informations, consultez les Conditions d'Utilisation"
+    },
+    {
+      "ANDROID_KEY": "message_profile",
+      "Português": "Atualize as informações do seu perfil e dos membros domicíliar"
+    },
+    {
+      "ANDROID_KEY": "message_register_info ",
+      "Português": " Deseja registrar suas informações?",
+      "Inglês": "Register your information?",
+      "Espanhol": "¿Desea registrar su información?",
+      "Chinês": "註冊您的資訊？",
+      "Árabe": "هل تريد تسجيل معلوماتك؟",
+      "Russo": "Вы хотите зарегистрировать свою информацию?",
+      "Francês": "Souhaitez-vous enregistrer vos informations ?"
+    },
+    {
+      "ANDROID_KEY": "message_register_no_symptom ",
+      "Português": " Escolha algum sintoma antes de confirmar.",
+      "Inglês": "Choose a symptom and confirm.",
+      "Espanhol": "Escoja algún síntoma antes de confirmar.",
+      "Chinês": "選擇症狀并確認。",
+      "Árabe": "اختر أحد الأعراض وقم بالتأكيد.",
+      "Russo": "Выберите какие-либо симптомы, прежде чем подтвердить.",
+      "Francês": "Choisissez un symptôme avant de confirmer."
+    },
+    {
+      "ANDROID_KEY": "message_select_join ",
+      "Português": " Selecione algum dos perfis abaixo para começar a participar.",
+      "Inglês": "Select one of the following profiles to participate.",
+      "Espanhol": "Seleccione alguno de los perfiles de abajo para comenzar a participar.",
+      "Chinês": "選擇下列設定檔之一才能參加。",
+      "Árabe": "حدد أحد ملفات التعريف التالية للمشاركة.",
+      "Russo": "Выберите некоторые из приведенных ниже профилей, чтобы начать участвовать.",
+      "Francês": "Sélectionnez l'un des profils ci-dessous pour commencer à participer."
+    },
+    {
+      "ANDROID_KEY": "message_select_member ",
+      "Português": " Selecione um integrante",
+      "Inglês": "Select a member",
+      "Espanhol": "Seleccione un integrante",
+      "Chinês": "選擇成員",
+      "Árabe": "حدد عضوًا",
+      "Russo": "Выберите участника ",
+      "Francês": "Sélectionnez un membre"
+    },
+    {
+      "ANDROID_KEY": "message_select_profile ",
+      "Português": " Selecione qual dos perfis abaixo quer editar.",
+      "Inglês": "Select which of the following profiles you want to edit.",
+      "Espanhol": "Seleccione cuál de los perfiles de abajo desea editar.",
+      "Chinês": "選擇下面要編輯的設定檔。",
+      "Árabe": "حدد أي من ملفات التعريف التالية تريد تعديلها.",
+      "Russo": "Выберите, какой из профилей ниже хотите редактировать.",
+      "Francês": "Sélectionnez le profil ci-dessous que vous souhaitez modifier."
+    },
+    {
+      "ANDROID_KEY": "message_symptom ",
+      "Português": " Marque na lista os sintomas que você apresenta.",
+      "Inglês": "Select your symptoms from the list.",
+      "Espanhol": "Marque en la lista los síntomas que usted presenta.",
+      "Chinês": "從清單中選擇您的症狀。",
+      "Árabe": "حدد الأعراض من القائمة.",
+      "Russo": "Проверьте список своих симптомов.",
+      "Francês": "Sélectionnez dans la liste les symptômes que vous présentez."
+    },
+    {
+      "ANDROID_KEY": "message_term",
+      "Português": "<u>Política de Privacidade e Termos de Uso</u>"
+    },
+    {
+      "ANDROID_KEY": "message_thanks_2 ",
+      "Português": " Continue informando diariamente como está sua saúde.",
+      "Inglês": "Continue reporting your daily health status.",
+      "Espanhol": "Siga informando diariamente cómo está su salud.",
+      "Chinês": "繼續報告您每日的健康情況。",
+      "Árabe": "تابع إبلاغ حالتك الصحية اليومية.",
+      "Russo": "Продолжайте сообщать ежедневно, о вашем самочувствии.",
+      "Francês": "Continuer à informer quotidiennement votre état de santé."
+    },
+    {
+      "ANDROID_KEY": "message_use_mail ",
+      "Português": " Ou use o seu e-mail",
+      "Inglês": "Or use your email",
+      "Espanhol": "O use su e-mail",
+      "Chinês": "或使用您的電子郵件",
+      "Árabe": "أو استخدم بريدك الإلكتروني",
+      "Russo": "Или использовать ваш электронный адрес",
+      "Francês": "Ou utilisez votre e-mail"
+    },
+    {
+      "ANDROID_KEY": "message_user_max ",
+      "Português": " Só é possível adicionar 10 integrantes!",
+      "Inglês": "Only 10 members can be added!",
+      "Espanhol": "¡Sólo se permite adicionar a 10 integrantes!",
+      "Chinês": "僅可以添加 10 名成員 ！",
+      "Árabe": "يمكن إضافة 10 أعضاء فقط!",
+      "Russo": "Вы можете добавить только 10 членов!",
+      "Francês": "Vous ne pouvez ajouter que 10 membres !"
+    },
+    {
+      "ANDROID_KEY": "message_who_participate ",
+      "Português": " Quem vai participar?",
+      "Inglês": "Who will participate?",
+      "Espanhol": "¿Quién participará?",
+      "Chinês": "誰會參加？",
+      "Árabe": "من الذي سيشارك؟",
+      "Russo": "Кто будет участвовать?",
+      "Francês": "Qui va participer ?"
+    },
+    {
+      "ANDROID_KEY": "message_zika ",
+      "Português": " Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.",
+      "Inglês": "Attention: The symptoms reported may be related to infection by Zika virus. Seek out healthcare at the nearest Emergency Care Unit.",
+      "Espanhol": "Atención: Los síntomas informados pueden estar relacionados al virus Zika. Busque la Unidad de Urgencias más cercana.",
+      "Chinês": "注意 ︰報告的症狀可能與寨卡病毒感染有關。尋求最近緊急護理單位的援助。",
+      "Árabe": "انتبه: الأعراض التي تم الإبلاغ عنها قد تكون مرتبطة بالإصابة بفيروس زيكا. اطلب المساعدة في أقرب وحدة رعاية طوارئ.",
+      "Russo": "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.",
+      "Francês": "Attention : Les symptômes rapportés peuvent être apparentés au virus Zika. Dirigez-vous vers le service des urgences le plus proche."
+    },
+    {
+      "ANDROID_KEY": "message_zika ",
+      "Português": " Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima.",
+      "Inglês": "The symptoms reported may be related to infection by Zika virus. Seek out healthcare at the nearest emergency care unit.",
+      "Espanhol": "Los síntomas informados pueden estar relacionados al Zika virus. Busque la unidad de urgencias más cercana.",
+      "Chinês": "報告的症狀可能與寨卡病毒感染相關。在附近的緊急護理單位尋求援助。",
+      "Árabe": "الأعراض التي تم الإبلاغ عنها قد تكون مرتبطة بالإصابة بفيروس زيكا. اطلب المساعدة في أقرب وحدة رعاية طوارئ.",
+      "Russo": "Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.",
+      "Francês": "Les symptômes rapportés peuvent être apparentés au virus Zika. Dirigez-vous vers le service des urgences le plus proche."
+    },
+    {
+      "ANDROID_KEY": "my_trophies ",
+      "Português": " Meus Troféus",
+      "Inglês": "My Trophies",
+      "Espanhol": "Mis Trofeos",
+      "Chinês": "我的戰利品",
+      "Árabe": "انتصاراتي",
+      "Russo": "Мои Призы ",
+      "Francês": "Mes trophées"
+    },
+    {
+      "ANDROID_KEY": "network_disable ",
+      "Português": " Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.",
+      "Inglês": "We were unable to track your location. Check if tracking services are enabled in your device.",
+      "Espanhol": "No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.",
+      "Chinês": "我們不能跟蹤您所在的位置。請確認跟蹤服務在該設備是否啟用。",
+      "Árabe": "لم نتمكن من تتبع موقعك. تحقق ما إذا كانت خدمات التتبع ممكنة في الجهاز.",
+      "Russo": "Не можем определить ваше местоположение. Убедитесь в том, что на устройстве все службы включены.",
+      "Francês": "Nous n’arrivons pas à vous localiser. Vérifiez que les services sont validés sur l’appareil."
+    },
+    {
+      "ANDROID_KEY": "network_fail ",
+      "Português": " É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!",
+      "Inglês": "You must be logged in to use this feature. Check your network connection.",
+      "Espanhol": "Es necesario estar conectado para acceder a esta función. Por favor, ¡verifique su red!",
+      "Chinês": "您必須登錄才能使用此功能。請檢查您的網路連接。",
+      "Árabe": "يجب أن تكون سجلت الدخول لاستخدام هذه الميزة. تحقق من اتصال شبكتك.",
+      "Russo": "Вы должны быть подключены для того, чтобы иметь доступ к этой функции. Пожалуйста, проверьте сеть!",
+      "Francês": "Vous devez être connecté pour accéder à cette fonction. S'il vous plaît, vérifiez votre réseau !"
+    },
+    {
+      "ANDROID_KEY": "new_member_ok ",
+      "Português": " Operação realizada com sucesso.",
+      "Inglês": "Operation successfully completed.",
+      "Espanhol": "Operación realizada con éxito.",
+      "Chinês": "已成功完成操作。",
+      "Árabe": "اكتملت العملية بنجاح.",
+      "Russo": "Операция выполнена успешно.",
+      "Francês": "Opération réalisée avec succès."
+    },
+    {
+      "ANDROID_KEY": "new_password ",
+      "Português": " Foi enviada uma mensagem para o email, siga as instruções enviadas para recuperar sua senha.",
+      "Inglês": "A message was sent to your e-mail, follow the instructions to retrieve your password.",
+      "Espanhol": "Un mensaje a la dirección de e-mail fue enviado, siga las instrucciones enviadas para recuperar su contraseña.",
+      "Chinês": "信息以被發送到電子郵件，按照說明找回您的密碼。",
+      "Árabe": "تم إرسال رسالة على البريد الإلكتروني، اتبع التعليمات المرسلة لاسترداد كلمة المرور الخاصة بك.",
+      "Russo": "сообщение по электронной почте было отправлено, следуйте инструкциям, отправленным для получения пароля.",
+      "Francês": "Un message a été envoyé à votre adresse mail. Suivez les instructions dans le message pour récupérer votre mot de passe."
+    },
+    {
+      "ANDROID_KEY": "next ",
+      "Português": " Próximo",
+      "Inglês": "Next",
+      "Espanhol": "Cercano",
+      "Chinês": "下一個",
+      "Árabe": "مجاورة",
+      "Russo": "Ближайшее",
+      "Francês": "Suivant"
+    },
+    {
+      "ANDROID_KEY": "no ",
+      "Português": " Não",
+      "Inglês": "No",
+      "Espanhol": "No",
+      "Chinês": "否",
+      "Árabe": "لا",
+      "Russo": "Нет",
+      "Francês": "Non"
+    },
+    {
+      "ANDROID_KEY": "not_now ",
+      "Português": " Agora não",
+      "Inglês": "Not now",
+      "Espanhol": "Ahora no",
+      "Chinês": "不是現在",
+      "Árabe": "ليس الآن",
+      "Russo": "Не сейчас",
+      "Francês": "Pas maintenant"
+    },
+    {
+      "ANDROID_KEY": "not_remove_member",
+      "Português": "Você não pode remover seu perfil."
+    },
+    {
+      "ANDROID_KEY": "notice ",
+      "Português": " Notícias",
+      "Inglês": "News",
+      "Espanhol": "Noticias",
+      "Chinês": "新聞",
+      "Árabe": "أخبار",
+      "Russo": "Новости",
+      "Francês": "Nouvelles"
+    },
+    {
+      "ANDROID_KEY": "notification",
+      "Português": "Notificações"
+    },
+    {
+      "ANDROID_KEY": "nov ",
+      "Português": " Nov",
+      "Inglês": "Nov",
+      "Espanhol": "Nov",
+      "Chinês": "11 月",
+      "Árabe": "نوفمبر",
+      "Russo": "Нояб",
+      "Francês": "Nov"
+    },
+    {
+      "ANDROID_KEY": "novembro ",
+      "Português": " Novembro",
+      "Inglês": "November",
+      "Espanhol": "Noviembre",
+      "Chinês": "11 月",
+      "Árabe": "نوفمبر",
+      "Russo": "Ноябрь",
+      "Francês": "Novembre"
+    },
+    {
+      "ANDROID_KEY": "obrigado ",
+      "Português": " Obrigado pela informação!",
+      "Inglês": "Thanks for sharing that information!",
+      "Espanhol": "¡Gracias por la información!",
+      "Chinês": "謝謝分享資訊 ！",
+      "Árabe": "نشكرك على مشاركة المعلومات!",
+      "Russo": "Спасибо за информацию!",
+      "Francês": "Merci pour l'information !"
+    },
+    {
+      "ANDROID_KEY": "obrigado ",
+      "Português": " Obrigado pela infomação",
+      "Inglês": "Thanks for the info",
+      "Espanhol": "Gracias por la información",
+      "Chinês": "感謝您的信息",
+      "Árabe": "شكرا للمعلومات",
+      "Russo": "Спасибо за информацию",
+      "Francês": "Merci pour l'info"
+    },
+    {
+      "ANDROID_KEY": "ok ",
+      "Português": " Ok",
+      "Inglês": "Ok",
+      "Espanhol": "Ok",
+      "Chinês": "確定",
+      "Árabe": "موافق",
+      "Russo": "Хорошо",
+      "Francês": "Ok"
+    },
+    {
+      "ANDROID_KEY": "open_google_maps",
+      "Português": "Deseja visualizar endereço no Google Maps?"
+    },
+    {
+      "ANDROID_KEY": "open_link ",
+      "Português": " Deseja abrir o link da notícia?",
+      "Inglês": "Open the news article link?",
+      "Espanhol": "¿Desea abrir el link de la noticia?",
+      "Chinês": "打開新聞文章連結？",
+      "Árabe": "هل تريد فتح رابط مقالة الأخبار؟",
+      "Russo": "Чтобы открыть ссылку новостей?",
+      "Francês": "Souhaitez-vous ouvrir le lien de l’info ?"
+    },
+    {
+      "ANDROID_KEY": "option ",
+      "Português": " Opções",
+      "Inglês": "Options",
+      "Espanhol": "Opciones",
+      "Chinês": "選項",
+      "Árabe": "خيارات",
+      "Russo": "Параметры",
+      "Francês": "Options"
+    },
+    {
+      "ANDROID_KEY": "other ",
+      "Português": " Outros",
+      "Inglês": "Others",
+      "Espanhol": "Otros",
+      "Chinês": "其他",
+      "Árabe": "أخرى",
+      "Russo": "Другие ",
+      "Francês": "Autres"
+    },
+    {
+      "ANDROID_KEY": "out ",
+      "Português": " Out",
+      "Inglês": "Oct",
+      "Espanhol": "Oct",
+      "Chinês": "10 月",
+      "Árabe": "أكتوبر",
+      "Russo": "Окт",
+      "Francês": "Oct"
+    },
+    {
+      "ANDROID_KEY": "outubro ",
+      "Português": " Outubro",
+      "Inglês": "October",
+      "Espanhol": "Octubre",
+      "Chinês": "10 月",
+      "Árabe": "أكتوبر",
+      "Russo": "Октябрь",
+      "Francês": "Octobre"
+    },
+    {
+      "ANDROID_KEY": "participacoes ",
+      "Português": " Participações",
+      "Inglês": "Participations",
+      "Espanhol": "Participaciones",
+      "Chinês": "參與",
+      "Árabe": "مشاركات",
+      "Russo": "Участие ",
+      "Francês": "Participations"
+    },
+    {
+      "ANDROID_KEY": "participacoes_ultimos_dias ",
+      "Português": " Participações nos últimos dias",
+      "Inglês": "Participation in the last days",
+      "Espanhol": "La participación en los últimos días",
+      "Chinês": "在最後的日期參加",
+      "Árabe": "المشاركة في الأيام الأخيرة",
+      "Russo": "Участие в последние дни",
+      "Francês": "Participation au cours des derniers jours"
+    },
+    {
+      "ANDROID_KEY": "permission_available_location",
+      "Português": "Permissão da sua localização liberada."
+    },
+    {
+      "ANDROID_KEY": "permissions_not_granted",
+      "Português": "Permissão da sua localização negada!"
+    },
+    {
+      "ANDROID_KEY": "pharmacy ",
+      "Português": " Farmácias",
+      "Inglês": "Drugstores",
+      "Espanhol": "Farmacias",
+      "Chinês": "藥店",
+      "Árabe": "صيدليات",
+      "Russo": "Аптеки",
+      "Francês": "Pharmacies"
+    },
+    {
+      "ANDROID_KEY": "pointing ",
+      "Português": " Pontuação",
+      "Inglês": "Score",
+      "Espanhol": "Puntuación",
+      "Chinês": "得分",
+      "Árabe": "النتيجة",
+      "Russo": "Оценка",
+      "Francês": "Score"
+    },
+    {
+      "ANDROID_KEY": "pointing_message ",
+      "Português": " A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade.",
+      "Inglês": "The score indicates each phase unlocked by all users, based on their respective country of origin.",
+      "Espanhol": "La puntuación es equivalente a cada fase desbloqueada por todos los usuarios tomando en cuenta su país de origen.",
+      "Chinês": "分數表示由所有使用者（根據其各別來源國）所解鎖的每個階段。",
+      "Árabe": "تشير النتيجة إلى أن كل مرحلة مفتوحة لكل المستخدمين، وفقًا لجنسيتهم.",
+      "Russo": "Счет эквивалентен каждой разблокированной фазе всеми пользователями с учетом их национальной принадлежности.",
+      "Francês": "Les points correspondent à chaque étape débloquée par tous les utilisateurs en fonction de leur nationalité."
+    },
+    {
+      "ANDROID_KEY": "police_text ",
+      "Português": " Polícia Militar",
+      "Inglês": "Military Police",
+      "Espanhol": "Policía Militar",
+      "Chinês": "軍警",
+      "Árabe": "الشرطة العسكرية",
+      "Russo": "Полиция",
+      "Francês": "Police militaire"
+    },
+    {
+      "ANDROID_KEY": "prevention_content_01"
+    },
+    {
+      "ANDROID_KEY": "prevention_title_01 ",
+      "Português": " Prevenção",
+      "Inglês": "Prevention",
+      "Espanhol": "Prevención",
+      "Chinês": "預防",
+      "Árabe": "الوقاية",
+      "Russo": "Профилактика ",
+      "Francês": "Prévention"
+    },
+    {
+      "ANDROID_KEY": "prevention_title_01 ",
+      "Português": " PREVENÇÃO",
+      "Inglês": "PREVENTION",
+      "Espanhol": "PREVENCIÓN  ",
+      "Chinês": "預防 ",
+      "Árabe": "الوقاية ",
+      "Russo": "Профилактика ",
+      "Francês": "Prévention "
+    },
+    {
+      "ANDROID_KEY": "privacy",
+      "Português": "Privacidade"
+    },
+    {
+      "ANDROID_KEY": "profile ",
+      "Português": " Perfil",
+      "Inglês": "Profile",
+      "Espanhol": "Perfil",
+      "Chinês": "設定檔",
+      "Árabe": "ملف التعريف",
+      "Russo": "Профиль",
+      "Francês": "Profil"
+    },
+    {
+      "ANDROID_KEY": "race ",
+      "Português": " Cor/Raça",
+      "Inglês": "Color/Race",
+      "Espanhol": "Color/Raza",
+      "Chinês": "膚色/種族",
+      "Árabe": "اللون/العرق",
+      "Russo": "Цвет Кожи / Раса",
+      "Francês": "Couleur/Race"
+    },
+    {
+      "ANDROID_KEY": "rash ",
+      "Português": " Exantemática",
+      "Inglês": "Exanthematic",
+      "Espanhol": "Exantemática",
+      "Chinês": "疹病",
+      "Árabe": "طفحي",
+      "Russo": "Сыпь",
+      "Francês": "Exanthématique."
+    },
+    {
+      "ANDROID_KEY": "register ",
+      "Português": " Cadastre-se",
+      "Inglês": "Sign up",
+      "Espanhol": "Regístrese",
+      "Chinês": "登錄",
+      "Árabe": "تسجيل الاشتراك",
+      "Russo": "Регистрация",
+      "Francês": "Inscrivez-vous"
+    },
+    {
+      "ANDROID_KEY": "register_fail ",
+      "Português": " Não foi possível realizar o cadastro. Tente novamente em alguns minutos!",
+      "Inglês": "The sign-up process could not be completed. Try again in a few minutes.",
+      "Espanhol": "No fue posible realizar el registro. ¡Intente nuevamente en algunos minutos!",
+      "Chinês": "無法完成註冊過程。幾分鐘後再試。",
+      "Árabe": "تعذر إكمال عملية التسجيل. حاول مرة أخرى بعد بضع دقائق.",
+      "Russo": "Не удалось выполнить регистрацию. Пожалуйста, повторите попытку через несколько минут!",
+      "Francês": "Impossible de compléter l’enregistrement. Réessayer dans quelques minutes !"
+    },
+    {
+      "ANDROID_KEY": "relationship ",
+      "Português": " Parentesco",
+      "Inglês": "Kinship",
+      "Espanhol": "Parentesco",
+      "Chinês": "親屬關係",
+      "Árabe": "صلة القرابة",
+      "Russo": "Родство",
+      "Francês": "Lien de parenté"
+    },
+    {
+      "ANDROID_KEY": "relatorios ",
+      "Português": " Relatórios",
+      "Inglês": "Reports",
+      "Espanhol": "Informes",
+      "Chinês": "報告",
+      "Árabe": "التقارير",
+      "Russo": "Отчеты",
+      "Francês": "Rapports"
+    },
+    {
+      "ANDROID_KEY": "report ",
+      "Português": " Relatar Erros",
+      "Inglês": "Report Errors",
+      "Espanhol": "Relatar Errores",
+      "Chinês": "報告錯誤",
+      "Árabe": "تقرير الأخطاء",
+      "Russo": "Отчёт об Ошибках",
+      "Francês": "Signaler des erreurs"
+    },
+    {
+      "ANDROID_KEY": "report_day",
+      "Português": "Total de envios no dia"
+    },
+    {
+      "ANDROID_KEY": "report_title ",
+      "Português": " Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.",
+      "Inglês": "If you have any trouble using the Guardians of Health app, please fill out the form below and send it to our team of experts.",
+      "Espanhol": "En caso de que usted haya encontrado alguna dificultad en utilizar Guardianes de la Salud, rellene el formulario de abajo y envíe su mensaje a nuestro equipo de especialistas.",
+      "Chinês": "如果在使用健康衛士應用程式時有任何问题，請填寫下面的表單並將其發送給我們的專家團隊。",
+      "Árabe": "إذا كنت تواجه أي مشكلة في استخدام تطبيق \"مدير الصحة\"، يرجى تعبئة النموذج التالي وإرساله إلى فريق الخبراء لدينا.",
+      "Russo": "Если вы обнаружили какие-либо трудности с использованием приложения «Стражи Здоровья», заполните форму ниже и отправьте сообщение нашей команде специалистов.",
+      "Francês": "Si vous avez rencontré des difficultés d’utilisation de l'application Gardiens de la Santé, veuillez remplir le formulaire ci-dessous et envoyez votre message à notre équipe d'experts."
+    },
+    {
+      "ANDROID_KEY": "residence_country",
+      "Português": "País de Residência"
+    },
+    {
+      "ANDROID_KEY": "residence_state",
+      "Português": "Estado de Residência"
+    },
+    {
+      "ANDROID_KEY": "respiratory ",
+      "Português": " Respiratória",
+      "Inglês": "Respiratory",
+      "Espanhol": "Respiratoria",
+      "Chinês": "呼吸",
+      "Árabe": "الجهاز التنفسي",
+      "Russo": "Респираторный",
+      "Francês": "Respiratoire"
+    },
+    {
+      "ANDROID_KEY": "resume ",
+      "Português": " Resumo",
+      "Inglês": "Summary",
+      "Espanhol": "Resumen",
+      "Chinês": "摘要",
+      "Árabe": "ملخص",
+      "Russo": "Выводы",
+      "Francês": "Résumé"
+    },
+    {
+      "ANDROID_KEY": "safe_sex_content"
+    },
+    {
+      "ANDROID_KEY": "safe_sex_title ",
+      "Português": " Pratique sexo de forma segura",
+      "Inglês": "Practice safe sex",
+      "Espanhol": "Practique sexo de forma segura",
+      "Chinês": "進行安全性行為",
+      "Árabe": "الممارسة الجنسية الآمنة",
+      "Russo": "Практикуйте безопасный секс ",
+      "Francês": "Avoir des rapports sexuels sans risques"
+    },
+    {
+      "ANDROID_KEY": "safe_sex_title ",
+      "Português": " PRATIQUE SEXO DE FORMA SEGURA",
+      "Inglês": "PRACTICE SAFE SEX",
+      "Espanhol": "PRACTIQUE SEXO DE FORMA SEGURA",
+      "Chinês": "進行安全性行為",
+      "Árabe": "ممارسة آمنة للجنس",
+      "Russo": "Практикуйте безопасный секс",
+      "Francês": "Se préserver des infections sexuellement transmissibles"
+    },
+    {
+      "ANDROID_KEY": "save ",
+      "Português": " Salvar",
+      "Inglês": "Save",
+      "Espanhol": "Guardar",
+      "Chinês": "保存",
+      "Árabe": "حفظ",
+      "Russo": "Сохранить",
+      "Francês": "Enregistrer"
+    },
+    {
+      "ANDROID_KEY": "search",
+      "Português": "Procurar"
+    },
+    {
+      "ANDROID_KEY": "send ",
+      "Português": " Enviar",
+      "Inglês": "Send",
+      "Espanhol": "Enviar",
+      "Chinês": "發送",
+      "Árabe": "أرسل",
+      "Russo": "Отправить ",
+      "Francês": "Envoyer"
+    },
+    {
+      "ANDROID_KEY": "sender_id",
+      "Português": "9.97326E+11",
+      "Inglês": "9.97326E+11",
+      "Espanhol": "9.97326E+11",
+      "Chinês": "9.97326E+11",
+      "Árabe": "9.97326E+11",
+      "Russo": "9.97326E+11",
+      "Francês": "9.97326E+11"
+    },
+    {
+      "ANDROID_KEY": "server_api_key",
+      "Português": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Inglês": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Espanhol": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Chinês": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Árabe": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Russo": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50",
+      "Francês": "AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50"
+    },
+    {
+      "ANDROID_KEY": "set ",
+      "Português": " Set",
+      "Inglês": "Sep",
+      "Espanhol": "Sep",
+      "Chinês": "9 月",
+      "Árabe": "سبتمبر",
+      "Russo": "Сент",
+      "Francês": "Sept"
+    },
+    {
+      "ANDROID_KEY": "setembro ",
+      "Português": " Setembro",
+      "Inglês": "September",
+      "Espanhol": "Septiembre",
+      "Chinês": "9 月",
+      "Árabe": "سبتمبر",
+      "Russo": "Сентябрь",
+      "Francês": "Septembre"
+    },
+    {
+      "ANDROID_KEY": "setting_upper ",
+      "Português": " Configurações",
+      "Inglês": "Settings",
+      "Espanhol": "Configuraciones",
+      "Chinês": "設置",
+      "Árabe": "إعدادات",
+      "Russo": "Настройки",
+      "Francês": "Paramètres"
+    },
+    {
+      "ANDROID_KEY": "share",
+      "Português": "Compartilhar"
+    },
+    {
+      "ANDROID_KEY": "share_ok ",
+      "Português": " Obrigado por compartilhar!",
+      "Inglês": "Thanks for sharing!",
+      "Espanhol": "¡Gracias por compartir!",
+      "Chinês": "謝謝分享 ！",
+      "Árabe": "نشكرك على المشاركة!",
+      "Russo": "Спасибо за то, что поделились!",
+      "Francês": "Merci pour le partage !"
+    },
+    {
+      "ANDROID_KEY": "share_participation ",
+      "Português": " Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org",
+      "Inglês": "I do my part. Make sure you do yours in our fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org",
+      "Espanhol": "Yo hago mi parte, haga su parte también en el combate al mosquito Aedes aegypti #ZikaZero. Acceda: http://www.guardioesdasaude.org",
+      "Chinês": "我參與了。請確保您在我們與埃及伊蚊 #ZikaZero 的戰斗中發揮作用。轉到 HTTP://www.guardioesdasaude.org",
+      "Árabe": "أقوم بعملي. تأكد من أنك تؤدي ما عليك القيام به في كفاحنا ضد بعوض الزاعجة المصرية #ZikaZero. انتقل إلى http://www.guardioesdasaude.org",
+      "Russo": "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org",
+      "Francês": "Je participe; participez aussi à la lutte contre le moustique Aedes aegypti #ZikaZero. Aller à: http://www.guardioesdasaude.org"
+    },
+    {
+      "ANDROID_KEY": "sound",
+      "Português": "Sons"
+    },
+    {
+      "ANDROID_KEY": "subject ",
+      "Português": " Assunto",
+      "Inglês": "Subject",
+      "Espanhol": "Asunto",
+      "Chinês": "主題",
+      "Árabe": "الموضوع",
+      "Russo": "Тема",
+      "Francês": "Sujet"
+    },
+    {
+      "ANDROID_KEY": "sus",
+      "Português": "SUS"
+    },
+    {
+      "ANDROID_KEY": "symptom_coceira ",
+      "Português": " Coceira",
+      "Inglês": "Itching",
+      "Espanhol": "Comezón",
+      "Chinês": "瘙癢",
+      "Árabe": "حكة",
+      "Russo": "Зуд",
+      "Francês": "Démangeaisons"
+    },
+    {
+      "ANDROID_KEY": "symptom_contato ",
+      "Português": " Tive contato com alguém com um desses sintomas",
+      "Inglês": "I came into contact with someone with these symptoms",
+      "Espanhol": "Tuve contacto con alguien que tiene uno de estos síntomas",
+      "Chinês": "我接觸過有這些症狀的人",
+      "Árabe": "اتصلت مع أحد الأفراد الذين يعانون من هذه الأعراض",
+      "Russo": "У меня был контакт с кем-то у кого есть эти симптомы",
+      "Francês": "J'ai été en contact avec une personne présentant l’un de ces symptômes"
+    },
+    {
+      "ANDROID_KEY": "symptom_diarreia ",
+      "Português": " Diarreia",
+      "Inglês": "Diarrhea",
+      "Espanhol": "Diarrea",
+      "Chinês": "腹瀉",
+      "Árabe": "إسهال",
+      "Russo": "Диарея",
+      "Francês": "La diarrhée"
+    },
+    {
+      "ANDROID_KEY": "symptom_dorcabeca ",
+      "Português": " Dor de cabeça",
+      "Inglês": "Headache",
+      "Espanhol": "Dolor de cabeza",
+      "Chinês": "頭痛",
+      "Árabe": "صداع",
+      "Russo": "Головная боль",
+      "Francês": "Les maux de tête"
+    },
+    {
+      "ANDROID_KEY": "symptom_dorcorpo",
+      "Português": " Dor no corpo",
+      "Inglês": "Body aches",
+      "Espanhol": "Dolor en el cuerpo",
+      "Chinês": "全身酸痛",
+      "Árabe": "آلام في الجسم",
+      "Russo": "Боль в теле",
+      "Francês": "Douleur dans le corps"
+    },
+    {
+      "ANDROID_KEY": "symptom_dorjuntas ",
+      "Português": " Dor nas juntas",
+      "Inglês": "Joint pain",
+      "Espanhol": "Dolor en las articulaciones",
+      "Chinês": "關節痛",
+      "Árabe": "ألم في المفاصل",
+      "Russo": "Боль в суставах",
+      "Francês": "Les douleurs articulaires"
+    },
+    {
+      "ANDROID_KEY": "symptom_estivefora ",
+      "Português": " Estive fora do Brasil nos últimos 14 dias",
+      "Inglês": "I have been out of Brazil in the last 14 days.",
+      "Espanhol": "Estuve fuera de Brasil en los últimos 14 días",
+      "Chinês": "過去的 14 天我已不在巴西",
+      "Árabe": "لقد كنت خارج البرازيل في آخر 14 يومًا",
+      "Russo": "Я не был в Бразилии в течение последних 14 дней",
+      "Francês": "J'étais hors du Brésil au cours des 14 derniers jours"
+    },
+    {
+      "ANDROID_KEY": "symptom_febre ",
+      "Português": " Febre",
+      "Inglês": "Fever",
+      "Espanhol": "Fiebre",
+      "Chinês": "發燒",
+      "Árabe": "حمى",
+      "Russo": "Жар",
+      "Francês": "Fièvre"
+    },
+    {
+      "ANDROID_KEY": "symptom_manchas ",
+      "Português": " Manchas vermelhas no corpo",
+      "Inglês": "Red spots on the body",
+      "Espanhol": "Manchas rojas en el cuerpo",
+      "Chinês": "身體上的紅點",
+      "Árabe": "بقع حمراء على الجسم",
+      "Russo": "Красные пятна на теле",
+      "Francês": "Taches rouges sur le corps"
+    },
+    {
+      "ANDROID_KEY": "symptom_nauseas ",
+      "Português": " Náusea ou vômito",
+      "Inglês": "Nausea or vomiting",
+      "Espanhol": "Nauseas o vómito",
+      "Chinês": "噁心或嘔吐",
+      "Árabe": "الغثيان أو القيء",
+      "Russo": "Тошнота или рвота",
+      "Francês": "Nausée ou vomissements"
+    },
+    {
+      "ANDROID_KEY": "symptom_olhosvermelhos ",
+      "Português": " Olhos vermelhos",
+      "Inglês": "Bloodshot eyes",
+      "Espanhol": "Ojos rojos",
+      "Chinês": "充血的雙眼",
+      "Árabe": "عيون حمراء",
+      "Russo": "Красные глаза",
+      "Francês": "Yeux rouges"
+    },
+    {
+      "ANDROID_KEY": "symptom_procureiservicosaude ",
+      "Português": " Procurei um serviço de saúde",
+      "Inglês": "I visited a healthcare service",
+      "Espanhol": "Busqué un servicio de salud",
+      "Chinês": "我拜訪一家醫療中心",
+      "Árabe": "لقد بحثت عن خدمة رعاية صحية",
+      "Russo": "Найти Медицинское Обслуживание",
+      "Francês": "J'ai consulté un service de santé"
+    },
+    {
+      "ANDROID_KEY": "symptom_sangramento ",
+      "Português": " Sangramento",
+      "Inglês": "Bleeding",
+      "Espanhol": "Sangrado",
+      "Chinês": "出血",
+      "Árabe": "نزيف",
+      "Russo": "Кровотечение",
+      "Francês": "Le saignement"
+    },
+    {
+      "ANDROID_KEY": "symptom_sangramento ",
+      "Português": " Sangramento",
+      "Inglês": "Bleeding",
+      "Espanhol": "Sangrado",
+      "Chinês": "出血",
+      "Árabe": "نزيف",
+      "Russo": "Кровотечение",
+      "Francês": "Le saignement"
+    },
+    {
+      "ANDROID_KEY": "symptom_tosse ",
+      "Português": " Tosse",
+      "Inglês": "Coughing",
+      "Espanhol": "Tos",
+      "Chinês": "咳嗽",
+      "Árabe": "السعال",
+      "Russo": "Кашель",
+      "Francês": "La toux"
+    },
+    {
+      "ANDROID_KEY": "syndromes ",
+      "Português": " Síndromes",
+      "Inglês": "Syndromes",
+      "Espanhol": "Síndromes",
+      "Chinês": "綜合征",
+      "Árabe": "الأعراض",
+      "Russo": "Синдромы",
+      "Francês": "Syndromes"
+    },
+    {
+      "ANDROID_KEY": "syndromes_desc",
+      "Português": "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas:\\n\\n• Diarreica (febre e náusea ou vômito e diarreia, além de algum destes sintomas: dores no corpo ou dor de cabeça)\\n\\n• Respiratória (febre além de algum destes sintomas: tosse, dor de garganta ou falta de ar)\\n\\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)"
+    },
+    {
+      "ANDROID_KEY": "tag_app",
+      "Português": "#GuardioesDaSaude"
+    },
+    {
+      "ANDROID_KEY": "tag_flu",
+      "Português": "#Gripe"
+    },
+    {
+      "ANDROID_KEY": "tag_ministry",
+      "Português": "#MinisterioDaSaude"
+    },
+    {
+      "ANDROID_KEY": "take_photo",
+      "Português": "Tirar foto"
+    },
+    {
+      "ANDROID_KEY": "term ",
+      "Português": " Termos e Políticas",
+      "Inglês": "Terms and Policies",
+      "Espanhol": "Términos y Políticas",
+      "Chinês": "條款和政策",
+      "Árabe": "الشروط والسياسات",
+      "Russo": "Правила и Условия",
+      "Francês": "Termes et politique"
+    },
+    {
+      "ANDROID_KEY": "terms_content_01"
+    },
+    {
+      "ANDROID_KEY": "terms_title_01 ",
+      "Português": " Política de Privacidade e Termos de Uso",
+      "Inglês": "Privacy Policy and Terms of Use",
+      "Espanhol": "Política de Privacidad y Condiciones de Uso",
+      "Chinês": "隱私政策和使用條款",
+      "Árabe": "سياسة الخصوصية وشروط الاستخدام",
+      "Russo": "Политика конфиденциальности и условия использования",
+      "Francês": "Politique de confidentialité et Conditions d'Utilisation"
+    },
+    {
+      "ANDROID_KEY": "terms_title_01 ",
+      "Português": " POLÍTICA DE PRIVACIDADE E TERMOS DE USO",
+      "Inglês": "PRIVACY POLICY AND TERMS OF USE",
+      "Espanhol": "POLÍTICA DE PRIVACIDAD Y TÉRMINOS DE USO",
+      "Chinês": "隱私政策和使用條款",
+      "Árabe": "السياسة الخاصة وشروط الاستخدام",
+      "Russo": "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ И УСЛОВИЯ ИСПОЛЬЗОВАНИЯ",
+      "Francês": "POLITIQUE DE CONFIDENTIALITÉ ET CONDITIONS D'UTILISATION"
+    },
+    {
+      "ANDROID_KEY": "tip_health ",
+      "Português": " Dicas de Saúde",
+      "Inglês": "Health Tips",
+      "Espanhol": "Consejos de Salud",
+      "Chinês": "健康小貼士",
+      "Árabe": "نصائح صحية",
+      "Russo": "Советы для Здоровья",
+      "Francês": "Conseils Santé"
+    },
+    {
+      "ANDROID_KEY": "tip_health ",
+      "Português": " DICAS DE SAÚDE",
+      "Inglês": "HEALTH TIPS",
+      "Espanhol": "CONSEJOS DE SALUD",
+      "Chinês": "健康小貼士",
+      "Árabe": "نصائح صحية",
+      "Russo": "СОВЕТЫ ДЛЯ ЗДОРОВЬЯ",
+      "Francês": "CONSEILS SANTÉ"
+    },
+    {
+      "ANDROID_KEY": "tip_health_1",
+      "Português": "Dicas de\\nSaúde"
+    },
+    {
+      "ANDROID_KEY": "traveler_health ",
+      "Português": " Saúde do viajante",
+      "Inglês": "Traveler's health",
+      "Espanhol": "Salud del viajero",
+      "Chinês": "旅行者健康",
+      "Árabe": "صحة المسافر",
+      "Russo": "Здоровье путешественника",
+      "Francês": "Santé des voyageurs"
+    },
+    {
+      "ANDROID_KEY": "traveler_health ",
+      "Português": " SAÚDE DO VIAJANTE:",
+      "Inglês": "TRAVELER HEALTH:",
+      "Espanhol": "SALUD DEL VIAJERO:",
+      "Chinês": "旅行者健康 ︰ ",
+      "Árabe": "صحة المسافر: ",
+      "Russo": "Здоровье Путешественника: ",
+      "Francês": "Santé des voyageurs : "
+    },
+    {
+      "ANDROID_KEY": "tutorial ",
+      "Português": " Tutorial",
+      "Inglês": "Tutorial",
+      "Espanhol": "Tutorial",
+      "Chinês": "教程",
+      "Árabe": "برنامج تعليمي",
+      "Russo": "Обучающий материал ",
+      "Francês": "Tutoriel"
+    },
+    {
+      "ANDROID_KEY": "twitter",
+      "Português": "Twitter"
+    },
+    {
+      "ANDROID_KEY": "twitter_fail",
+      "Português": "Não foi possível acessar o Guardiões da Saúde através do Twitter. Tente novamente em alguns minutos ou acesse através do seu e-mail."
+    },
+    {
+      "ANDROID_KEY": "useful_phones ",
+      "Português": " Telefones Úteis",
+      "Inglês": "Useful Phone Numbers",
+      "Espanhol": "Teléfonos Útiles",
+      "Chinês": "有用的電話號碼",
+      "Árabe": "أرقام هواتف مفيدة",
+      "Russo": "Полезные Телефоны",
+      "Francês": "Numéros utiles"
+    },
+    {
+      "ANDROID_KEY": "user_exist ",
+      "Português": " Cadastro realizado anteriormente com essa rede social.",
+      "Inglês": "Previous registration found for this social network.",
+      "Espanhol": "Registro realizado anteriormente con esa red social.",
+      "Chinês": "找到了上次在這個社交網路上的註冊信息。",
+      "Árabe": "تم العثور على تسجيل سابق لهذه الشبكة الاجتماعية.",
+      "Russo": "Ранее заполненный кадастр с этой социальной сети.",
+      "Francês": "Vous vous êtes déjà inscrit à ce réseau social"
+    },
+    {
+      "ANDROID_KEY": "vacinne_content_01"
+    },
+    {
+      "ANDROID_KEY": "vacinne_title_01 ",
+      "Português": " Vacinas",
+      "Inglês": "Vaccines",
+      "Espanhol": "Vacunas",
+      "Chinês": "疫苗",
+      "Árabe": "لقاحات",
+      "Russo": "Прививки",
+      "Francês": "Vaccins"
+    },
+    {
+      "ANDROID_KEY": "vacinne_title_01 ",
+      "Português": " VACINAS",
+      "Inglês": "VACCINES",
+      "Espanhol": "VACUNAS",
+      "Chinês": "疫苗",
+      "Árabe": "اللقاحات",
+      "Russo": "Прививки",
+      "Francês": "Vaccins"
+    },
+    {
+      "ANDROID_KEY": "validation_confirm_password ",
+      "Português": " As senhas não estão iguais.",
+      "Inglês": "The passwords are not the same.",
+      "Espanhol": "Las contraseñas no son iguales.",
+      "Chinês": "密碼不相同。",
+      "Árabe": "كلمات المرور غير متطابقة.",
+      "Russo": "Пароли не совпадают.",
+      "Francês": "Les mots de passe sont différents."
+    },
+    {
+      "ANDROID_KEY": "validation_empty",
+      "Português": "Campo obrigatório"
+    },
+    {
+      "ANDROID_KEY": "validation_length",
+      "Português": "Mínimo três caracteres"
+    },
+    {
+      "ANDROID_KEY": "validation_mail ",
+      "Português": " E-mail inválido!",
+      "Inglês": "Invalid email.",
+      "Espanhol": "¡E-mail inválido!",
+      "Chinês": "無效電子郵件。",
+      "Árabe": "بريد إلكتروني غير صالح.",
+      "Russo": "Не верно указана электронная почта!",
+      "Francês": "E-mail non valide !"
+    },
+    {
+      "ANDROID_KEY": "validation_password ",
+      "Português": " Sua senha precisa ter no mínimo 6 dígitos",
+      "Inglês": "Your password must be at least 6 digits",
+      "Espanhol": "La contraseña debe tener al menos 6 dígitos",
+      "Chinês": "您的密碼必須至少6位數",
+      "Árabe": "يجب أن تكون كلمة المرور الخاصة بك لا يقل عن 6 ارقام",
+      "Russo": "Ваш пароль должен быть не менее 6 цифр",
+      "Francês": "Votre mot de passe doit être d'au moins 6 chiffres"
+    },
+    {
+      "ANDROID_KEY": "versao",
+      "Português": "Versão"
+    },
+    {
+      "ANDROID_KEY": "welcome ",
+      "Português": " Bem-vindo!",
+      "Inglês": "Welcome!",
+      "Espanhol": "¡Bienvenido!",
+      "Chinês": "歡迎 ！",
+      "Árabe": "مرحبًا!",
+      "Russo": "Добро пожаловать!",
+      "Francês": "Bienvenue !"
+    },
+    {
+      "ANDROID_KEY": "welcome_game_answer ",
+      "Português": " Responda corretamente as perguntas sobre saúde para revelar peças.",
+      "Inglês": "Answer the health related questions correctly to reveal tiles.",
+      "Espanhol": "Responda correctamente a las preguntas sobre salud para revelar piezas.",
+      "Chinês": "正確回答醫療保健問題以揭示瓷磚。",
+      "Árabe": "أجب عن أسئلة الرعاية الصحية بشكل صحيح للكشف عن القطع.",
+      "Russo": "Отвечайте правильно на вопросы, касающиеся здоровья, чтобы выявить детали.",
+      "Francês": "Répondez correctement aux questions de santé pour activer des parties."
+    },
+    {
+      "ANDROID_KEY": "welcome_game_card ",
+      "Português": " Colecione figurinhas dos esportes olímpicos após concluir cada fase!",
+      "Inglês": "Collect Olympic sports stickers after completing each phase!",
+      "Espanhol": "¡Coleccione estampitas de los deportes olímpicos después de concluir cada fase!",
+      "Chinês": "在完成每個階段後收集奧林匹克運動貼紙 ！",
+      "Árabe": "جمع ملصقات الرياضيات الأولمبية بعد الانتهاء من كل مرحلة!",
+      "Russo": "Собирайте фигурки олимпийских видов спорта после завершения каждого этапа!",
+      "Francês": "Collectionnez des figurines des sports olympiques après avoir terminé chaque étape."
+    },
+    {
+      "ANDROID_KEY": "welcome_game_phase ",
+      "Português": " Nossa pista de corrida é formada por fases. Conclua cada fase para chegar mais longe na corrida!",
+      "Inglês": "Our race track has several different phases. Complete each phase to get further in the race!",
+      "Espanhol": "Nuestra pista de carreras está formada por fases. ¡Concluya cada fase para llegar más lejos en la carrera!",
+      "Chinês": "我們的賽道有幾個不同階段。完成每個階段進入下一個比賽 ！",
+      "Árabe": "يتضمن تتبع المسار لدينا عدة مراحل مختلفة. أكمل كل مرحلة للوصول إلى مراحل أخرى في السباق!",
+      "Russo": "Наша беговая дорожка состоит из этапов. Завершите каждый этап, чтобы дальше продвинуться в соревновании!",
+      "Francês": "Notre piste de course contient plusieurs étapes. Terminer chaque étape pour aller le plus loin possible dans la course."
+    },
+    {
+      "ANDROID_KEY": "welcome_game_play ",
+      "Português": " Cada fase contém um quebra-cabeça. Complete-o para passar de fase.",
+      "Inglês": "Each phase contains a puzzle. Complete it to advance to the next phase.",
+      "Espanhol": "Cada fase contiene un rompecabezas. Complételo para pasar de fase.",
+      "Chinês": "每個階段都包含一個謎題。完成它以推進到下一個階段。",
+      "Árabe": "تحتوي كل مرحلة على لغز. أكمل اللغز للانتقال إلى المرحلة التالية.",
+      "Russo": "Каждая фаза содержит задачку.  Завершите, чтобы перейти к другому этапу.",
+      "Francês": "Chaque étape contient un puzzle. Complétez-le pour passer à l’étape suivante"
+    },
+    {
+      "ANDROID_KEY": "welcome_game_point ",
+      "Português": " Para jogar, é preciso ter pontos de energia. Participe diariamente do Guardiões da Saúde para ganhá-los!",
+      "Inglês": "You must have energy points to play. Participate in Guardians of Health every day to earn points!",
+      "Espanhol": "Para jugar se necesita tener puntos de energía. ¡Participe diariamente en Guardianes de la Salud para ganarlos!",
+      "Chinês": "您必須有能量點數才能玩。每天參加健康衛士能夠賺取積分 ！",
+      "Árabe": "يجب أن تتوفر لديك نقاط طاقة للعب. شارك في تطبيق \"مدير الصحة\" يوميًا للحصول على النقاط!",
+      "Russo": "Чтобы играть, вы должны иметь заряд энергии. Будьте ежедневно Стражами Здоровья, чтобы их заработать!",
+      "Francês": "Pour jouer, vous devez avoir des points d’énergie. Participez quotidiennement aux Gardiens de la Santé pour en gagner !"
+    },
+    {
+      "ANDROID_KEY": "welcome_game_welcome ",
+      "Português": " Bem-vindo a nossa pista de corrida! Arraste para saber mais sobre como jogar.",
+      "Inglês": "Welcome to our race track! Swipe to learn more about how to play.",
+      "Espanhol": "¡Bienvenido a nuestra pista de carreras! Arrastre para saber más sobre cómo jugar.",
+      "Chinês": "歡迎來到我們賽道 ！刷卡以瞭解更多關於如何玩游戲。",
+      "Árabe": "مرحبًا بكم في حلبة السباق الخاصة بنا! اسحب للتعرف على المزيد حول كيفية التشغيل.",
+      "Russo": "Добро пожаловать на нашу беговую дорожку! Перетащите, чтобы узнать больше о том, как играть.",
+      "Francês": "Bienvenue sur notre piste de course ! Faites glisser pour en savoir plus sur la façon de jouer."
+    },
+    {
+      "ANDROID_KEY": "welfare",
+      "Português": "Bem estar"
+    },
+    {
+      "ANDROID_KEY": "whatsapp_not_installed ",
+      "Português": " O Whatsapp não está instalado neste dispositivo.",
+      "Inglês": "Whatsapp not installed on this device.",
+      "Espanhol": "Whatsapp no está instalado en este dispositivo.",
+      "Chinês": "Whatsapp 未安裝在此設備上。",
+      "Árabe": "تطبيق Whatsapp غير مثبت على هذا الجهاز.",
+      "Russo": "На этом устройстве Whatsapp не установлен.",
+      "Francês": "WhatsApp n'est pas installé sur cet appareil."
+    },
+    {
+      "ANDROID_KEY": "yes ",
+      "Português": " Sim",
+      "Inglês": "Yes",
+      "Espanhol": "Sí",
+      "Chinês": "是",
+      "Árabe": "نعم",
+      "Russo": "Да",
+      "Francês": "Oui"
+    },
+    {
+      "ANDROID_KEY": "you",
+      "Português": "Você"
+    },
+    {
+      "ANDROID_KEY": "zika_136",
+      "Português": "136",
+      "Inglês": "136",
+      "Espanhol": "136",
+      "Chinês": "136",
+      "Árabe": "136",
+      "Russo": "136",
+      "Francês": "136"
+    },
+    {
+      "ANDROID_KEY": "zika_content_01"
+    },
+    {
+      "ANDROID_KEY": "zika_title_01 ",
+      "Português": " Dengue, Zika e Chikungunya",
+      "Inglês": "Dengue fever, Zika and Chikungunya",
+      "Espanhol": "Dengue, Zika y Chikungunya",
+      "Chinês": "登革熱、寨卡 和基孔肯亞病",
+      "Árabe": "حمى الضنك، وزيكا، وشيكونجونيا",
+      "Russo": "Денге, Чикунгунья и Зика",
+      "Francês": "Dengue, Zika et Chikungunya"
+    },
+    {
+      "ANDROID_KEY": "zika_title_01 ",
+      "Português": " DENGUE, ZIKA E CHIKUNGUNYA",
+      "Inglês": "DENGUE FEVER, ZIKA AND CHIKUNGUNYA",
+      "Espanhol": "DENGUE, ZIKA Y CHIKUNGUNYA",
+      "Chinês": "登革熱、寨卡和基孔肯亞病。",
+      "Árabe": "حمى الضنك وحمى زيكا وحمى شيكونغونيا.",
+      "Russo": "Денге, Зика и Чикунгунья.",
+      "Francês": "Dengue, Zika et Chikungunya"
+    }
+  ]
