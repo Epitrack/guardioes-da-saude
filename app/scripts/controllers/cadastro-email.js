@@ -59,8 +59,23 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         // create new user
         $scope.createData         = {};
         $scope.createData.state   = "Selecione";
-        $scope.createData.country = 'Country of origin';
 
+        if (sessionStorage.getItem('lang') == 'en'){
+            $scope.createData.country = 'Country of origin';
+        }else if (sessionStorage.getItem('lang') == 'pt'){
+            $scope.createData.country = 'País de origem';
+        }else if (sessionStorage.getItem('lang') == 'es'){
+            $scope.createData.country = 'País de origen';
+        }else if (sessionStorage.getItem('lang') == 'zh'){
+            $scope.createData.country = '原籍國';
+        }else if (sessionStorage.getItem('lang') == 'ar'){
+            $scope.createData.country = 'بلد المنشأ';
+        }else if (sessionStorage.getItem('lang') == 'ru'){
+            $scope.createData.country = 'Страна происхождения';
+        }else if (sessionStorage.getItem('lang') == 'fr'){
+            $scope.createData.country = "Pays d'origine";
+        };
+        
         $scope.whatCountry = function(country){
             if (country == 'France') {
                 $scope.fr = false;
@@ -100,16 +115,16 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             params.dob = $scope.UTIL.convertDate(params.dob);
             params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
-            
-
             UserApi.createUser(params, function(data) {
-                var userId = data.data.user.id;
-
-                if (data.data.error === true) {
-                    Notification.show('error', 'Cadastro por e-mail', data.data.message);
-                } else {
+                var userId;
+                if (data.status == 409) {
+                    Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
+                } else if (data.status == 200){
+                    userId = data.data.user.id;
                     Notification.show('success', 'Cadastro por e-mail', data.data.message);
                     $location.path('/survey/' + userId + '/step-1');
+                }else{
+                    console.log(data.data.status);
                 }
             });
         };
