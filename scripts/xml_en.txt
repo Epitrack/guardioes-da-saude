@@ -1,27 +1,27 @@
-<string name="abril">April</string>
-<string name="abr">Apr</string>
 <string name="about">About</string>
 <string name="about_text">“GUARDIANS OF HEALTH” APPLICATION\n\nDeveloped for mobiles, tablets, and personal computers, the “Guardians of Health” app is part of an initiative by the Brazilian Ministry of Health, in partnership with the U.S.-based NGO Skoll Global Threats Fund. It is designed to assess the potential of mobile apps  to strengthen the detection of public health emergencies and outbreaks within the Sistema Único de Saúde [Brazilian Unified Healthcare System] (SUS), particularly during major events, such as the 2016 Olympic and Paralympic Games. \n\nThis strategy builds on another project launched by the same organization, entitled "Saúde na Copa”, launched exclusively during the 2014 FIFA Brazil World Cup®, which yielded promising results. These results encouraged both institutions  to develop a new strategy for the 2016 Olympic and Paralympic Games. \n\nThis updated version of the Guardians of Health app is available for Apple iOS and Google Android operating systems, as well as on the http://guardioesdasaude.org/website.n\nInitially developed in Portuguese, this version of the “Guardians of Health” app is also available in all of the official languages of the United Nations. It is proivded as a tool to assist Brazilians and foreign visitors to Brazil, particularly those traveling to the host cities of the 2016 Olympic and Paralympic Games.  \n\nOnly users over the age of 13 can participate in this initiative. In addition, users must read and accept the “Terms of Use” before signing up and fill out the simplified registration form, providing a nickname, email address, date of birth, race/color, gender, and password. Participation is voluntary and confidential, and all personal information disclosed is duly protected by Law No. 12.527, dated November 18, 2011.\n\nProject results will be used for health surveillance purposes across all Brazilian States and Municipalities, in order to detect and prevent public health emergencies and outbreaks by adopting proper prevention and control measures. The project’s results will be presented as aggregated and anonymzed data, describing the health profiles of users based on the information provided by them. \n\nVOLUNTARY PARTICIPATION\n\nYour participation is entirely voluntary and a valuable contribution towards promoting health surveillance in Brazil. Reporting your health condition shall not be interpreted as a medical consultation and does not ensure special access to health care services. In addition, participants will never be contacted via email or any other means by any healthcare service or professional to obtain such information. \n\nText messages can be sent to participants through Push Notification technology, containing health information or instructions from health surveillance agencies. \n\nIt is important to point out that you should immediately seek out the nearest healthcare service or physician if you are not feeling well. The app provides a shortcut to a preset search of healthcare services and drugstores near you, based on your mobile phone’s Google Maps geolocation service. This feature is not part of the app. Therefore, you will be redirected to your mobile phone’s map application. We recommend caution when transiting through unknown areas and avoiding areas of risk. Contact local public agencies for more information. \n\nThe app provides useful phone numbers, including SAMU (Emergency Mobile Ambulance Service), which is a 24/7 toll-free number providing emergency healthcare services for trauma, clinical, pediatric, surgical, gynecological, and mental health cases in households, workplaces and public roads.\n\nBENEFITS OF PARTICIPATION\n\n·       Actively participating in health surveillance efforts to prevent disease outbreaks in communities;\n\n·       Quick access to public service contact information without altering your phonebook;\n\n·       Easy access to useful information on health and disease prevention measures;\n\n·       Amenities such as a preset search of Emergency Care Units and drugstores nearby (20-km radius) in Google Maps;\n\n·       Following the project results at the website: www.guardioesdasaude.org;\n\nLEARN MORE ABOUT THE APP\n\nThe “Guardians of Health” app is free and available for iOS and Android operating systems, as well as Internet browsers. Users can choose from one of the several free Wi-Fi hotspots available in various cities or use their own mobile data packages to use the app. \n\nPhone calls to public services listed in the app may be subject to additional phone charges. Contact your mobile carrier for more information before using this feature. This service cannot be used if the mobile’s phone feature is disabled. This information applies particularly to foreign users. \n\nABOUT THE PARTNERSHIP\n\nThis pioneer initiative was conceived by the Health Surveillance Agency of the Brazilian Health Ministry, in partnership with the host cities of the Olympic and Paralympic Games. The Skoll Global Threats Fund  is responsible for all contracting and software development expenses, duly supervised by the Brazilian Association of Field Epidemiology Professionals (ProEpi), both of which are non-profit Non-Governmental Organizations focused on improving health surveillance activities in Brazil and around the world.\n\nProEpi is responsible for ensuring that all requirements established by the Ministry of Health and Skoll Global Threats Fund are met, as per project specifications: confidentiality of user information, transparency and disclosure of public results, and availability of the source code and respective documentation in free-access download environments, adequacy and use of applications by healthcare services in Brazil and other countries, while preserving the non-profit nature of such an endeavor. \n\nACKNOWLEDGMENTS\n\nThe organizing institutions would like to thank all participants, health professionals, and managers of the Brazilian Unified Healthcare System for putting their trust in the pilot project and supporting such an unprecedented initiative in the global health space. \n\nSpecial thanks to the Departments of Health of the Host Cities of the Olympic and Paralympic Games (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador, and São Paulo.) </string>
-<string name="ago">Aug</string>
+<string name="abr">Apr</string>
+<string name="abril">April</string>
 <string name="adicionar_novo_integrante">Add \\n new member</string>
-<string name="agosto">August</string>
 <string name="add_member">Add member of household</string>
 <string name="alert">Alerts</string>
+<string name="agosto">August</string>
 <string name="alert_pharmacy">Some drugstores may not be shown on the map.</string>
-<string name="app_name">Guardians of Health</string>
 <string name="anos">years</string>
+<string name="app_name">Guardians of Health</string>
 <string name="app_name_short">Guardians</string>
 <string name="attention">Attention</string>
-<string name="bem">Good </string>
+<string name="ago">Aug</string>
 <string name="avatar">Avatar</string>
+<string name="bem">Good </string>
 <string name="calendar">Calendar</string>
 <string name="call">call</string>
 <string name="cancel">Cancel</string>
-<string name="care_title_01">BASIC CARE</string>
 <string name="care_content_01">TRAVELER HEALTH:\n\n•       Inform your itinerary to your doctor preferably 4 to 8 weeks before your trip. Ask for guidance on how to prevent diseases and injuries; \n\n•       You may have difficulty finding medications you usually take during your trip. Ask your doctor which and how much of each medication you should bring with you on your trip, including on your carry-on luggage; \n\n•       Carry your identification documents with you at all times, preferably in English and Portuguese, containing information on personal contacts, blood type, allergies, diabetes or other diseases that may require special care; \n\n•       Pregnant women must always consult their doctors before traveling, since they are subject to various risks and the trip may affect their safety and comfort. \n\n•       Contact the transportation company to learn more about specific rules for pregnant women before traveling. \n\n•       Brazil is a tropical country. Travelers are recommended to drink plenty of fluids to avoid dehydration; \n\n•       Wear comfortable clothes and shoes. They will protect you against sprains, insect bites and incidents involving venomous animals; \n\n•       Cover yourself with appropriate clothing, hats or caps and sunglasses to protect against the sun. Avoid direct exposure to sunlight between 10 a.m. and 4 p.m.; \n\n•       Use sunscreen with the appropriate protection factor based on your skin tone, according to the manufacturer’s instructions. This will make sure your skin is always protected, even in colder locations; \n\n •       Use insect repellents when necessary; \n\n•       Wash your hands with water and soap several times a day, especially before eating, after using public transportation, visiting markets or highly-populated areas; \n\n•       Driving after consuming any amount of alcoholic beverages is prohibited in Brazil.</string>
+<string name="care_title_01">BASIC CARE</string>
 <string name="category">Category</string>
-<string name="congratulations">Congratulations</string>
 <string name="confirm">Confirm</string>
+<string name="congratulations">Congratulations</string>
 <string name="contact">Contact</string>
 <string name="crop_photo">Crop picture</string>
 <string name="defense_text">Civil Defense</string>
@@ -35,7 +35,7 @@
 <string name="dob_invalid">This application may only be used by individuals over the age of 13 (thirteen).</string>
 <string name="edit_profile">Edit Profile</string>
 <string name="email_fail">Unable to read the email. Try again in a few minutes.</string>
-<string name="email_not_send">undefined</string>
+<string name="email_not_send">Unable to read the email. Try again in a few minutes.</string>
 <string name="email_null">Subject and/or message not provided.</string>
 <string name="email_send">Message successfully sent. Thank you!</string>
 <string name="emergence_text">Emergency Healthcare Service</string>
@@ -47,8 +47,8 @@
 <string name="exit_message">Are you sure you wish to exit the app?</string>
 <string name="facebook">Facebook</string>
 <string name="facebook_cancel">Failure to log in with Facebook.</string>
-<string name="facebook_error">Failure to log in with Facebook.</string>
 <string name="facebook_fail">Failure to log in with Facebook.</string>
+<string name="facebook_error">Failure to log in with Facebook.</string>
 <string name="fev">Feb</string>
 <string name="fevereiro">February</string>
 <string name="fireman_text">Firefighter</string>
@@ -105,7 +105,7 @@
 <string name="marco">March</string>
 <string name="message">Describe the problem</string>
 <string name="message_about_title_01">“GUARDIANS OF HEALTH” APPLICATION</string>
-<string name="message_age">undefined</string>
+<string name="message_age">% years</string>
 <string name="message_agree">I agree to the Terms of Use.</string>
 <string name="message_check_symptom">Check the items below that describe how you’re feeling now:</string>
 <string name="message_create_account">Sign up quickly with:</string>
@@ -129,7 +129,7 @@
 <string name="message_privacy_tip_1">Your participation is voluntary and anonymous</string>
 <string name="message_privacy_tip_2">The data provided will be used to build a healthier community.</string>
 <string name="message_privacy_tip_3">Read the Terms of Use for more information</string>
-<string name="message_profile">undefined</string>
+<string name="message_profile">Please update your profile and the household members</string>
 <string name="message_register_info">Register your information?</string>
 <string name="message_register_no_symptom">Choose a symptom and confirm.</string>
 <string name="message_select_join">Select one of the following profiles to participate.</string>
@@ -155,13 +155,13 @@
 <string name="notification">Notifications</string>
 <string name="nov">Nov</string>
 <string name="novembro">November</string>
-<string name="obrigado">Thanks for sharing that information!</string>
 <string name="ok">Ok</string>
-<string name="open_google_maps">Do you want to view this route in Google Maps?</string>
 <string name="open_link">Open the news article link?</string>
-<string name="option">Options</string>
+<string name="open_google_maps">Do you want to view this route in Google Maps?</string>
 <string name="other">Others</string>
+<string name="option">Options</string>
 <string name="out">Oct</string>
+<string name="obrigado">Thanks for sharing that information!</string>
 <string name="outubro">October</string>
 <string name="participacoes">Participations</string>
 <string name="participacoes_ultimos_dias">Participation in the last days</string>
@@ -173,8 +173,8 @@
 <string name="police_text">Military Police</string>
 <string name="prevention_content_01">MALARIA:\n\n•       In Brazil, Malaria transmission is concentrated in the Amazon region, which covers the states of Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima and Tocantins;\n\n•       Travelers visiting areas of malaria transmission must be aware that the malaria vectors are mostly active between sunset and sunrise;\n\n•       Use light clothes with long sleeves during extended exposure;\n\n•       Apply insect repellent to all exposed skin parts, as per the manufacturer’s instructions. It is not recommended to use repellents in children under the age of two without medical orientation;\n\n•       Travelers in areas of malaria transmission must be watchful for symptoms of the disease, such as fever, body aches and headaches;\n\n•       If you experience any of these symptoms, seek out the nearest specialized healthcare unit. Medical care must be ideally received within 48 hours after the appearance of the first symptoms;\n\n•       Brazil has a public healthcare system qualified to diagnose and treat patients in a timely and appropriate manner;\n\n•       Consult one of the Reference Centers for more information on malaria before traveling.\n\nPrevention of airborne diseases: \n\n•       Wash your hands with water and soap before meals or before touching your eyes, mouth and nose, and after coughing, sneezing or using restrooms;\n\n•       Sick individuals must rest, eat a balanced diet, drink more fluids and avoid crowded indoor areas;\n\n•       Make sure rooms are well ventilated;\n\n•       Always be aware of more severe respiratory symptoms and immediately seek out medical assistance.\n\nConsume healthy foods and beverages:\n\n•       Avoid foods with questionable hygienic, preparation and packaging conditions;\n\n•       Prioritize foods with low sugar, fat and salt contents;\n\n•       Drink plenty of fluids, preferably water or juice. Avoid raw or undercooked food, especially seafood;\n\n•       Packaged food labels must clearly indicate the producer, expiration date and the packages must be sealed;\n\n•       When practicing rural tourism, always prioritize foods that do not require refrigeration or spoil in the heat;\n\n•       If you experience vomiting or diarrhea after ingesting foods or beverages, special attention is required to avoid dehydration. In these cases, it is recommended to ingest oral rehydration salts provided free of charge by the Unified Healthcare System, or other similar solutions. Sports drinks do not properly offset fluid losses and must never be used to treat diarrheic diseases.</string>
 <string name="prevention_title_01">PREVENTION</string>
-<string name="profile">Profile</string>
 <string name="privacy">Privacy</string>
+<string name="profile">Profile</string>
 <string name="race">Color/Race</string>
 <string name="rash">Exanthematic</string>
 <string name="register">Sign up</string>
@@ -188,8 +188,8 @@
 <string name="residence_state">State</string>
 <string name="respiratory">Respiratory</string>
 <string name="resume">Summary</string>
-<string name="safe_sex_title">PRACTICE SAFE SEX</string>
 <string name="safe_sex_content">\n\nCONDOM\n\n•       Condoms are the most practical method to protect against HIV/AIDS, viral hepatitis and sexually transmitted infections (STIs), such as syphilis and gonorrhea. \n\n•       Use and discard condoms properly.\n\n•       If the condom “breaks” or if you had unprotected sexual intercourse, post-exposure prophylaxis (PEP) measures are required after exposure to HIV risk. \n\n•       PEP\n\n•       PEP is a treatment with anti-HIV medication to avoid infection by the HIV virus, which causes AIDS. PEP is recommended for individuals exposed to HIV risk, such as those engaged in casual sex, sexual abuse and work accidents involving biological materials.\n\n•       If recommended by the doctor, the PEP treatment lasts 28 days and must be initiated within 72 hours after unprotected sexual contact.\n\nWhere can I find the PEP treatment? http://pep.aids.gov.br\n\nIMPORTANT NOTES\n\n•       Everyone is entitled to information and medical care without being subject to any form of prejudice or discrimination. \n\n•       In Brazil, male and female condoms and lubricant gels are distributed free-of-charge in all healthcare units, hostels, and Tourist Centers, among others. Find out which distribution centers are near you.\n\n•       If you need any HIV medication (lost or forgot), seek out the nearest healthcare unit and bring your ID document. Foreign tourists must contact their health insurance. \n\nREMEMBER\n\n•       Avoid viral hepatitis infections. If you are looking to get tattoos or piercings, always choose establishments duly licensed and certified by the local Health Regulatory agency. Demand to see the certificate if it is now visibly shown at the establishment.\n\n•       Demand all materials to be duly sterilized or disposable.\n\n•       Do not share personal objects, such as nail cutters, razors, tooth brushes, needles and syringes with others.\n\n•       If you notice any sign or symptom, such as any discharges or lesions, or any other health problem, seek out medical assistance.\n\nDID YOU KNOW?\n\n•       Many people live their lives without knowing that they are infected with HIV and viral hepatitis. \n\n•       The only way to know is by taking the test. Anti-HIV and hepatitis tests are provided free-of-charge in the public healthcare system. Foreign tourists must contact their health insurance. \n\n•       There is a vaccine for Hepatitis B, which must be taken in 3 doses at different times. Find out where this vaccine is available.</string>
+<string name="safe_sex_title">PRACTICE SAFE SEX</string>
 <string name="save">Save</string>
 <string name="search">Search</string>
 <string name="send">Send</string>
@@ -219,7 +219,13 @@
 <string name="symptom_sangramento">Bleeding</string>
 <string name="symptom_tosse">Coughing</string>
 <string name="syndromes">Syndromes</string>
-<string name="syndromes_desc">undefined</string>
+<string name="syndromes_desc">The syndromes are common sets of clinical manifestations to a number of diseases, including: 
+
+•   Diarrhea (fever and nausea or vomiting and diarrhea, as well as any of these symptoms: body aches or headache) 
+
+•   Respiratory (fever , and some of these symptoms: cough, sore throat or shortness of breath) 
+
+•   Rash (red spots on the body, and any of these symptoms: fever or body aches or joint pain or headache or itchy or red eyes or bleeding)</string>
 <string name="tag_app">#GuardioesDaSaude</string>
 <string name="tag_flu">#Gripe</string>
 <string name="tag_ministry">#MinisterioDaSaude</string>

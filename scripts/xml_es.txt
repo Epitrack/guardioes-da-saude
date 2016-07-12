@@ -1,29 +1,29 @@
-<string name="about">Sobre</string>
 <string name="about_text">SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD”\n\nLa aplicación “Guardianes de la Salud”, desarrollada para celulares, tablets y computadoras, forma parte de la iniciativa del Ministerio de Salud, en sociedad con la Organización No Gubernamental Skoll Global Threats Fund, de los Estados Unidos de América, contemplando evaluar el uso potencial de aplicaciones para dispositivos móviles como parte de la estrategia de fortalecimiento de la capacidad de detección de brotes y emergencias de salud pública, bajo el ámbito del Sistema Único de Salud (SUS), principalmente durante eventos masivos, como en los Juegos Olímpicos y Paralímpicos de 2016. \n\nEsta estrategia es la evolución del proyecto realizado con la misma institución, denominado “Salud en la Copa” y lanzado exclusivamente para el período de los juegos de la Copa del Mundo FIFA Brasil 2014®, cuyos resultados demostraron ser prometedores y se mantuvieron los intereses de ambas instituciones para la realización de una nueva estrategia para los Juegos Olímpicos y Paralímpicos en 2016. \n\nLa primera versión de la aplicación Guardianes de la Salud ya está disponible para los sistemas operativos iOS de Apple y Android de Google, y también mediante el sitio http://guardioesdasaude.org/. \n\nInicialmente desarrollada en portugués, esta versión de la aplicación “Guardianes de la Salud” está disponible también en los idiomas oficiales de las Naciones Unidas, siendo un instrumento complementario para orientación de los viajeros internacionales que visitan Brasil, principalmente para los cuyo destino son las sedes de los Juegos Olímpicos y Paralímpicos de 2016.  \n\nLa participación en la iniciativa está restringida a los usuarios con 13 años o más de edad. Además, es fundamental que antes de registrarse, los usuarios lean y acepten los “Términos de Uso” y el rellenado del registro simplificado, que contiene apodo, dirección de e-mail, fecha de nacimiento, raza/color, sexo y contraseña de acceso. La participación es voluntaria, sigilosa y los datos proporcionados están protegidos bajo la Ley nº 12.527, de 18 de noviembre de 2011.\n\nLos resultados del proyecto serán utilizados por la vigilancia de la salud de los Estados, Municipios y Gobierno Federal, vislumbrando detectar y prevenir brotes y emergencias de salud pública, mediante la adopción de medidas de prevención y control oportunas. La divulgación de los resultados del proyecto se realizará de modo agregado y anónimo, contemplando describir el perfil de la condición de salud de los voluntarios, a partir de la información entregada mediante la aplicación. \n\nSOBRE LA PARTICIPACIÓN VOLUNTARIA\n\nSu participación es voluntaria y representa una gentil contribución para el perfeccionamiento de la vigilancia de la salud en Brasil. El rellenado del formulario sobre la condición de salud no representa una consulta médica, no garantiza acceso diferenciado a los servicios de salud y el usuario no recibirá el contacto de ningún profesional o servicio de salud para obtener información, ya sea por e-mail o por cualquier otro medio de contacto. \n\nDurante la participación, podrán ser enviados mensajes de texto a los usuarios, sólo por la aplicación, mediante la tecnología Push (Push Notification), conteniendo orientaciones sobre cuidados de salud u orientaciones de los órganos de vigilancia. \n\nEs importante destacar que en caso de que usted informe que no se siente bien, se recomienda que consulte a un médico de referencia o al servicio de salud más cercano a usted. Para tal fin, está disponible en la aplicación un atajo con búsqueda preconfigurada de servicios de salud y farmacias más cercanas a usted, con base en el servicio de geolocalización de su dispositivo móvil en Google Maps. Esta funcionalidad no forma parte de la aplicación. Por este motivo, será direccionado a la aplicación de mapas de su aparato y se recomienda tener cuidado al transitar por áreas desconocidas y evitar zonas de riesgo. Para tal fin, busque información en los órganos gubernamentales locales. \n\nLa aplicación fue configurada con un conjunto de teléfonos útiles incluyendo el de SAMU (Servicio de Atención Móvil de Urgencia), cuya llamada es gratuita y funciona 24 horas por día atendiendo solicitudes de atención de urgencia para ocurrencias de naturaleza traumática, clínica, pediátrica, quirúrgica, gineco-obstétrica y de salud mental, en residencias, lugares de trabajo y vías públicas.\n\nBENEFICIOS DE LA PARTICIPACIÓN\n\n•       Participar activamente en las acciones de vigilancia en salud que vislumbran la prevención de enfermedades en la comunidad;\n\n•       Acceder a los contactos de servicios públicos útiles sin necesitar alterar su agenda de teléfonos;\n\n•       Acceder fácilmente a información útil sobre cuidados de salud y medidas de prevención contra enfermedades;\n\n•       Disfrutar de facilidades, como la búsqueda preconfigurada por Unidades de Urgencias y farmacias cercanas (20 km) en Google Maps;\n\n•       Seguir los resultados del proyecto, mediante el website www.guardioesdasaude.org;\n\nSEPA MÁS SOBRE EL USO DE LA APLICACIÓN\n\nLa aplicación “Guardianes de la Salud” está disponible gratuitamente para download y utilización en sistemas operativos iOS, Android y navegadores de Internet. En diversas ciudades existen puntos de Internet para uso gratuito o el usuario podrá utilizar su propio paquete de datos contratado. \n\nSe informa que las llamadas telefónicas para los servicios públicos de referencia registrados en la aplicación necesitan de un plan de telefonía contratado. Por lo tanto, consulte a su operadora antes de utilizar esta funcionalidad. Este servicio no funcionará sin la presencia de la función de teléfono en el aparato. Esta información debe ser observada, principalmente por usuarios de otros países. \n\nSOBRE LA SOCIEDAD\n\nEsta iniciativa pionera es de la Secretaría de Vigilancia de la Salud del Ministerio de la Salud, en sociedad con las ciudades sedes de los Juegos Olímpicos y Paralímpicos. En la sociedad, la Organización No Gubernamental (ONG) Skoll Global Threats Fund es responsable por los costos de contratación y desarrollo del software, bajo la supervisión de la Asociación Brasileña de Profesionales de Epidemiología de Campo (ProEpi), ambas son Organizaciones No Gubernamentales, sin fines de lucro, que actúan en el perfeccionamiento de la vigilancia de la salud en Brasil y en el mundo.\n\nProEpi es responsable por garantizar que los requisitos establecidos por el Ministerio de Salud y por Skoll Global Threats Fund se cumplan, conforme a lo previsto en el proyecto: privacidad de los datos de los usuarios, transparencia y publicidad de los resultados públicos del proyecto y disponibilidad del código fuente y documentación en ambiente de libre acceso para download, adecuación y uso de la aplicación por servicios de salud de Brasil y de países interesados, siempre que esté garantizada la finalidad sin fines de lucro. \n\nAGRADECIMIENTO\n\nLas instituciones organizadoras agradecen a todos los voluntarios, profesionales de salud y gestores del Sistema Único de Salud por creer en el proyecto piloto y apoyar esta iniciativa pionera en la salud pública internacional. \n\nAgradecimiento especial a las Secretarías de Salud de los Municipios Sedes de los Juegos Olímpicos y Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Río de Janeiro, Salvador y São Paulo). </string>
+<string name="about">Sobre</string>
+<string name="abril">Abril</string>
 <string name="abr">Abr</string>
 <string name="add_member">Añadir miembro del domicilio</string>
 <string name="adicionar_novo_integrante">Añadir \\n nuevo miembro</string>
 <string name="ago">Ago</string>
-<string name="abril">Abril</string>
 <string name="agosto">Agosto</string>
-<string name="alert_pharmacy">Algunas farmacias pueden no exhibirse en el mapa.</string>
 <string name="alert">Alertas</string>
+<string name="alert_pharmacy">Algunas farmacias pueden no exhibirse en el mapa.</string>
 <string name="anos">años</string>
 <string name="app_name">Guardianes de la Salud</string>
 <string name="app_name_short">Guardianes</string>
-<string name="avatar">Avatar</string>
 <string name="attention">precaución</string>
-<string name="calendar">Calendario</string>
+<string name="avatar">Avatar</string>
 <string name="bem">Bien</string>
-<string name="call">Ligar</string>
+<string name="calendar">Calendario</string>
+<string name="call">llamar</string>
 <string name="cancel">Cancelar</string>
 <string name="care_content_01">SALUD DEL VIAJERO: \n\n•       Busque a su médico, preferencialmente, entre 4 y 8 semanas antes del viaje para informar su itinerario. Solicite orientación sobre cuidados para protección contra enfermedades y lesiones; \n\n•       Usted puede tener dificultad o no encontrar los medicamentos que utiliza habitualmente, durante el viaje. Solicite orientación a su médico sobre qué medicamentos y en qué cantidad debe llevar, incluyendo en el equipaje de mano; \n\n•       Cargue con usted sus documentos de identificación, de preferencia en inglés y portugués, con información de contactos personales, tipo sanguíneo, se tiene alergias, diabetes u otras enfermedades que puedan requerir atención particular; \n\n•       Toda gestante debe consultar a su médico antes del viaje, ya que estará sujeta a varios riesgos y el viaje puede afectar su seguridad y comodidad; \n\n•       Antes de viajar consulte a la empresa de transporte sobre las reglas específicas para gestantes; \n\n•       Brasil es un país de clima tropical. Se recomienda al viajero tomar constantemente líquidos para evitar deshidratación; \n\n•       Use ropa y calzado cómodos. Le brindarán seguridad y comodidad contra torceduras, picaduras de insectos y accidentes con animales ponzoñosos; \n\n•       Para protegerse del sol, cúbrase con ropa apropiada, utilice sobrero o gorra y gafas oscuras. Evite la exposición directa al sol entre 10 horas de la mañana y 4 horas de la tarde; \n\n•       Use protector solar con factor de protección adecuado al color de su piel, de acuerdo con las orientaciones del fabricante. Incluso en lugares más fríos, su piel estará protegida de los rayos solares; \n\n•       Use repelentes cuando haya necesidad; \n\n•       Lávese las manos con agua y jabón varias veces al día, principalmente antes de ingerir alimentos, después de utilizar transporte público, visitar mercados o lugares con un gran flujo de personas; \n\n•       En Brasil, está prohibido por ley conducir después del consumo de bebidas alcohólicas, incluso en pequeñas cantidades.</string>
-<string name="category">Categoría</string>
 <string name="care_title_01">CUIDADOS BÁSICOS</string>
+<string name="category">Categoría</string>
 <string name="confirm">Confirmar</string>
 <string name="congratulations">Felicitaciones</string>
-<string name="crop_photo">Recortar foto</string>
 <string name="contact">Entre en contacto</string>
+<string name="crop_photo">Recortar foto</string>
 <string name="defense_text">Defensa Civil</string>
 <string name="delete_profile">¿Desea remover el perfil definitivamente?</string>
 <string name="dez">Diez</string>
@@ -35,7 +35,7 @@
 <string name="dob_invalid">La utilización de la aplicación está permitida solamente para personas con 13 (trece) años de edad o más.</string>
 <string name="edit_profile">Editar Perfil</string>
 <string name="email_fail">No fue posible enviar el e-mail. Intente nuevamente en algunos minutos.</string>
-<string name="email_not_send">undefined</string>
+<string name="email_not_send">No fue posible enviar el e-mail. Intente nuevamente en algunos minutos.</string>
 <string name="email_null">Asunto y/o mensaje no informados.</string>
 <string name="email_send">Mensaje enviado con éxito. ¡Gracias!</string>
 <string name="emergence_text">Servicio de Atención Médica de Emergencia</string>
@@ -44,10 +44,10 @@
 <string name="erro_new_user">No fue posible realizar el registro. ¡Intente nuevamente en algunos minutos!</string>
 <string name="error_add_new_member">Complete su información para completar el registro</string>
 <string name="exit">Salir</string>
-<string name="facebook">Facebook</string>
 <string name="exit_message">¿Está seguro de que desea salir de la aplicación?</string>
-<string name="facebook_error">Error al hacer el login con Facebook.</string>
+<string name="facebook">Facebook</string>
 <string name="facebook_cancel">Error al hacer el login con Facebook.</string>
+<string name="facebook_error">Error al hacer el login con Facebook.</string>
 <string name="facebook_fail">Error al hacer el login con Facebook.</string>
 <string name="fev">Feb</string>
 <string name="fevereiro">Febrero</string>
@@ -55,8 +55,8 @@
 <string name="forgot_password">Digite su e-mail y verifique su buzón de entrada.</string>
 <string name="freq_label">informe de frecuencia de envío</string>
 <string name="freq_relatorio">la frecuencia de envío de informes</string>
-<string name="game_enjoy">Diviértase</string>
 <string name="frequency">Frecuencia</string>
+<string name="game_enjoy">Diviértase</string>
 <string name="gender">Sexo</string>
 <string name="general">General</string>
 <string name="general_ranking">Ranking General</string>
@@ -80,10 +80,10 @@
 <string name="hint_repeat_password">Repetir Contraseña</string>
 <string name="home">Inicio</string>
 <string name="hospital">UPAs</string>
-<string name="interest">Intereses</string>
 <string name="hyphen">-</string>
-<string name="janeiro">Enero</string>
+<string name="interest">Intereses</string>
 <string name="jan">Ene</string>
+<string name="janeiro">Enero</string>
 <string name="join">¡Participe\n Ahora!</string>
 <string name="join_now">¡Participe Ahora!</string>
 <string name="jul">Jul</string>
@@ -105,7 +105,7 @@
 <string name="marco">Marzo</string>
 <string name="message">Describa el problema</string>
 <string name="message_about_title_01">SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD”</string>
-<string name="message_age">undefined</string>
+<string name="message_age">% años</string>
 <string name="message_agree">Estoy de acuerdo con los Términos de Uso.</string>
 <string name="message_check_symptom">Marque abajo lo que usted está sintiendo en este momento:</string>
 <string name="message_create_account">Regístrese rápidamente con:</string>
@@ -126,13 +126,13 @@
 <string name="message_present_symptom">Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción "Mal" sea seleccionada.</string>
 <string name="message_prevent">Vea cómo prevenirse de enfermedades, qué UPAs y farmacias están más cerca de usted y los teléfonos útiles para casos de emergencia.</string>
 <string name="message_privacy">Nos preocupamos con su privacidad</string>
-<string name="message_privacy_tip_2">Los dados proporcionados serán utilizados para promover una comunidad más saludable</string>
 <string name="message_privacy_tip_1">Su participación es voluntaria y anónima</string>
+<string name="message_privacy_tip_2">Los dados proporcionados serán utilizados para promover una comunidad más saludable</string>
 <string name="message_privacy_tip_3">Para obtener más información, consulte los Términos de Uso</string>
-<string name="message_profile">undefined</string>
+<string name="message_profile">Por favor, actualice su perfil y los miembros del hogar</string>
 <string name="message_register_info">¿Desea registrar su información?</string>
-<string name="message_select_join">Seleccione alguno de los perfiles de abajo para comenzar a participar.</string>
 <string name="message_register_no_symptom">Escoja algún síntoma antes de confirmar.</string>
+<string name="message_select_join">Seleccione alguno de los perfiles de abajo para comenzar a participar.</string>
 <string name="message_select_member">Seleccione un integrante</string>
 <string name="message_select_profile">Seleccione cuál de los perfiles de abajo desea editar.</string>
 <string name="message_symptom">Marque en la lista los síntomas que usted presenta.</string>
@@ -219,7 +219,13 @@
 <string name="symptom_sangramento">Sangrado</string>
 <string name="symptom_tosse">Tos</string>
 <string name="syndromes">Síndromes</string>
-<string name="syndromes_desc">undefined</string>
+<string name="syndromes_desc">Los síndromes son grupos de manifestaciones clínicas comunces a una serie de enfermedades, que incluyen: 
+
+•   Diarreica (fiebre y náuseas o vómitos y diarrea, así como cualquiera de los siguientes síntomas: dolor en el cuerpo o dolor de cabeza) 
+
+•   Respiratorias (fiebre y tos, y algunos de estos síntomas: dolor de garganta o dificultad para respirar) 
+
+•   Erupción cutánea (manchas rojas en el cuerpo, y cualquiera de estos síntomas: fiebre o dolores en el cuerpo o dolor en las articulaciones o dolor de cabeza o picazón en los ojos o rojas o sangrado)</string>
 <string name="tag_app">#GuardioesDaSaude</string>
 <string name="tag_flu">#Gripe</string>
 <string name="tag_ministry">#MinisterioDaSaude</string>

@@ -1,20 +1,21 @@
 <string name="about">關於</string>
-<string name="abr">4 月</string>
 <string name="abril">4 月</string>
+<string name="abr">4 月</string>
 <string name="about_text">"健康衛士"應用程式\n\n「健康衛士」是專為行動電話、平板電腦和個人電腦所開發的應用程式，屬於巴西衛生署先導計畫的一部分，並且與美國非政府組織 Skoll 全球威脅基金會（Skoll Global Threats Fund）合作。這款應用程式主要是設計來評估行動應用程式的可能性，在 Sistema Único de Saúde [巴西統統整式醫療系統（Brazilian Unified Healthcare System）] (SUS) 內強化公共衛生緊急事件和疫情爆發的偵測，尤其是在重大事件期間的偵測，例如 2016 年奧林匹克運動會和身心障礙人事奧林匹克運動會等賽事。\n\n該戰略是同一組織發起的另一個專案的副產品，即“世界杯健康”，其專門在 2014 FIFA 巴西世界杯® 啟動，取得了可喜的成果，使兩個機構為 2016 年奧運會和殘奧會制定新的戰略達成共識。\n\n健康衛士應用程式的第一個版本已在 Apple iOS 和 Google Android 作業系統，以及 HTTPS://guardioesdasaude.org/ 網站上提供。\n\n"健康衛士"應用程式最初用葡萄牙文開發，後續版本也將提供聯合國所有官方語言的版本，作為協助在巴西的外國遊客的支援工具，特別是到 2016 奧運會和殘奧會主辦城市旅遊的人們。 \n\n僅 13 歲以上的使用者可以參與本倡議。此外，使用者在注冊和填寫簡化註冊表格，并提供昵稱、電子郵件地址、出生日期、種族/膚色、性別和密碼之前，必須閱讀並接受"使用條款"。參與是自願和保密的，披露的所有個人資訊會受到2011 年 11 月 18 日頒布的12.527號法律的充分保護。\n\n專案結果將用於巴西所有州和自治市的健康監測，旨在通過採取適當的預防和控制措施，檢驗並防止突發公共衛生事件和疫情。該專案的結果將作為綜合和匿名資料進行披露，基於應用程式的使用者提供的資訊，概述志願者的醫療保健狀況。\n\n自願參加\n\n您的參與是完全自願的，是對促進巴西健康監護的重要貢獻。填寫您的健康表格不可理解為醫療諮詢，並不確保獲得保健服務的特殊權限。此外，任何醫療保健服務機構或專業人士不會通過電子郵件或任何其他手段聯系使用者以獲得這些資訊。\n\n通過推式通知技術可以發送文本消息給參與者，包含醫療保健資訊或衛生監督機構的指示。\n\n值得指出的是，您如果感到不舒服，應該立即尋找最近的醫療服務機構或醫生。該應用程式提供一個快捷方式，用以基於您手機的 Google Maps地理位置服務，預設搜索您附近的醫療服務機構和藥店。此功能不是應用程式的組成部分。因此，您將被重定向到手機的地圖應用程式。我們建議慎重通過未知區域，并避免危險區域。聯繫當地公共機構以了解詳細資訊。\n\n該應用程式提供各種有用的電話號碼，包括 SAMU （緊急移動醫療服務），其是一個 24/7 免費電話號碼，提供的緊急醫療服務針對家庭、工作場所和公共道路上的創傷、臨床、兒科、外科、婦科和心理健康情況。\n\n參與的好處\n\n•       積極參與健康監控工作，以防止社區疫情;\n\n•       快速訪問公共服務的連絡資訊，而無需每次都使用您的電話簿;\n\n•       易于獲得有關保健和疾病預防措施的重要資訊;\n\n•       基礎設施，例如預設搜索 Google Maps 中附近的緊急護理單位和藥店 （半徑 20 公里範圍）； \n\n•       以下網站專案結果︰www.guardioesdasaude.org;\n\n瞭解更多關於應用程式的資訊\n\n"健康衛士"應用程式是免費的，可供 iOS 和 Android 作業系統以及互聯網瀏覽器使用。使用者可以從各城市的幾個免費 Wi-Fi 熱點之一選擇，或使用自己的移動資料套裝使用該應用程式。\n\n電話撥打應用程式中提供的公共服務可能需要額外的電話費用。與您的移動運營商聯繫以了解使用此功能的詳細資訊。如果行動電話功能被禁用，則不能使用此服務。此資訊特別適用于外國使用者。\n\n關於夥伴關係\n\n這個先鋒倡議由巴西衛生部門的醫療監督局，協同奧運會和殘奧會主辦城市構思。通過這種夥伴關係，非政府組織 Skoll 全球威脅基金會負責所有合約和軟體的開發費用，由巴西的現場流行病學專業人士協會 (ProEpi)監管。這兩個機構都是非營利性的非政府組織，旨在改進巴西和世界各地的健康監測活動。\n\nProEpi 負責確保滿足衛生署及 Skoll 全球威脅基金會根據專案規範制定的所有要求︰ 使用者資訊的保密，公共專案結果的透明度和披露，原始程式碼和免費下載環境中的各個文檔的可用性，巴西和其他國家衛生保健服務機構對應用的適當性和使用，同時保留這種努力的非盈利性質。\n\n確認\n\n組織機構感謝所有志願者、醫護人員和巴西統一醫療系統的經理，感謝其信任試點專案，并支援在全球公共衛生保健業開展的這個前所未有的倡議。\n\n特別感謝奧運會和殘奧會主辦城市（貝洛奧裡藏特、聯邦區、馬瑙斯、里約熱內盧、薩爾瓦多和聖保羅）的衛生部門。</string>
-<string name="adicionar_novo_integrante">添加新成員</string>
-<string name="ago">8 月</string>
 <string name="add_member">添加住所會員</string>
-<string name="alert">警報</string>
+<string name="adicionar_novo_integrante">添加新成員</string>
 <string name="agosto">8 月</string>
+<string name="alert">警報</string>
 <string name="anos">年</string>
 <string name="alert_pharmacy">有些藥店可能不顯示在地圖。</string>
+<string name="app_name_short">守護者</string>
+<string name="ago">8 月</string>
+<string name="attention">警告</string>
 <string name="app_name">健康衛士</string>
 <string name="avatar">阿凡達</string>
-<string name="app_name_short">守護者</string>
-<string name="attention">警告</string>
 <string name="bem">健康</string>
 <string name="calendar">日曆</string>
+<string name="call">調用</string>
 <string name="cancel">取消</string>
 <string name="care_content_01">旅行者健康 ︰ \n\n•       最好是在您旅行前 4 到 8 周將您的行程安排告知給您的醫生。尋求如何預防疾病和傷害的指導；\n\n•       在您的旅行過程中，可能較難找到平時服用的藥物。咨詢您的醫生，旅行中攜帶的藥物種類和數量，包括隨身攜帶的行李； \n\n•       隨身攜帶您的身份證明，最好是英語和葡萄牙文的，載有關于個人連絡人、血型、過敏、糖尿病或其他可能需要特殊護理的疾病的資訊；\n\n•       孕婦必須總是在出差前咨詢其醫生，因為存在各種風險，旅行可能會影響其安全和舒適。\n\n•       旅行之前聯繫運輸公司，瞭解更多針對懷孕婦女的具體規則。\n\n•       巴西是一個熱帶國家。建議旅行都要多喝水以防脫水；\n\n•       穿舒適的衣服和鞋子。它們會保護您免受扭傷、昆蟲叮咬和有毒動物的傷害； \n\n•       用合適的衣物、帽子和太陽鏡保護自己免受太陽照射。 在上午 10 點和下午 4 點避免直接暴露于陽光之下; \n\n•       基於您的膚色，按照製造商的說明，使用包含適當防護因子的防曬霜。這將確保您的皮膚始終受到保護，即使在寒冷的地點亦是如此  \n\n •       必要時使用驅蟲劑；\n\n•       一天用水和肥皂洗手多次，特別是飯前和使用公共交通工具，前往市場或高度密集的地方後； \n\n•       在巴西，嚴禁在飲用任何數量的酒精飲料後駕車。</string>
 <string name="care_title_01">基本護理</string>
@@ -23,19 +24,18 @@
 <string name="congratulations">祝賀</string>
 <string name="contact">連絡</string>
 <string name="crop_photo">裁切照片</string>
-<string name="call">Ligar</string>
-<string name="delete_profile">永久刪除該設定檔？</string>
 <string name="defense_text">民防</string>
+<string name="delete_profile">永久刪除該設定檔？</string>
+<string name="dez">12 月</string>
 <string name="dezembro">12 月</string>
 <string name="diarrheal">腹瀉型</string>
 <string name="diary_health">健康日記</string>
 <string name="diary_health_1">健康日記</string>
-<string name="dez">12 月</string>
 <string name="disease">疾病</string>
 <string name="dob_invalid">此應用程式只可由   13 歲（十三歲）以上的個人使用。</string>
 <string name="edit_profile">編輯設定檔</string>
 <string name="email_fail">無法讀取電子郵件。幾分鐘後再試。</string>
-<string name="email_not_send">undefined</string>
+<string name="email_not_send">無法讀取電子郵件。幾分鐘後再試。</string>
 <string name="email_null">未提供主題和/或消息。</string>
 <string name="email_send">成功發送信息。謝謝！</string>
 <string name="emergence_text">緊急醫療服務</string>
@@ -105,12 +105,12 @@
 <string name="marco">3 月</string>
 <string name="message">描述問題</string>
 <string name="message_about_title_01">"健康衛士"應用程式</string>
-<string name="message_age">undefined</string>
+<string name="message_age">% 年</string>
 <string name="message_agree">我同意使用條款。</string>
 <string name="message_check_symptom">請選擇下面可描述您此刻的感覺︰</string>
 <string name="message_create_account">快速登錄 ︰</string>
-<string name="message_follow">监测您的鄰居或在特定位置的疾病狀態。</string>
 <string name="message_fields">僅啟用的欄位可以編輯。</string>
+<string name="message_follow">监测您的鄰居或在特定位置的疾病狀態。</string>
 <string name="message_forgot_password"><u>忘記密碼？</u></string>
 <string name="message_health">您的健康是如何？</string>
 <string name="message_health_state">現在你的健康是如何？</string>
@@ -124,14 +124,15 @@
 <string name="message_new_member">填寫下面的所有欄位以添加新成員。</string>
 <string name="message_prepared">您是否準備好了成為一個健康衛士？</string>
 <string name="message_present_symptom">如果啟用了"生病"選項，有些跡象和症狀在下一螢幕中顯示。</string>
-<string name="message_privacy">我們重視您的隱私</string>
 <string name="message_prevent">瞭解如何預防疾病，查找最近的UPA和藥店，並查看有用的電話號碼以在緊急情況下撥打。</string>
+<string name="message_privacy">我們重視您的隱私</string>
+<string name="message_privacy_tip_1">您的參與是自願和匿名的</string>
 <string name="message_privacy_tip_2">提供的資料將用于建立一個更健康的社區</string>
 <string name="message_privacy_tip_3">閱讀使用條款了解詳細資訊</string>
-<string name="message_profile">undefined</string>
+<string name="message_profile">請更新您的個人資料和家庭成員</string>
 <string name="message_register_info">註冊您的資訊？</string>
-<string name="message_select_join">選擇下列設定檔之一才能參加。</string>
 <string name="message_register_no_symptom">選擇症狀并確認。</string>
+<string name="message_select_join">選擇下列設定檔之一才能參加。</string>
 <string name="message_select_member">選擇成員</string>
 <string name="message_select_profile">選擇下面要編輯的設定檔。</string>
 <string name="message_symptom">從清單中選擇您的症狀。</string>
@@ -141,7 +142,6 @@
 <string name="message_user_max">僅可以添加 10 名成員 ！</string>
 <string name="message_who_participate">誰會參加？</string>
 <string name="message_zika">報告的症狀可能與寨卡病毒感染相關。在附近的緊急護理單位尋求援助。</string>
-<string name="message_privacy_tip_1">您的參與是自願和匿名的</string>
 <string name="my_trophies">我的戰利品</string>
 <string name="network_disable">我們不能跟蹤您所在的位置。請確認跟蹤服務在該設備是否啟用。</string>
 <string name="network_fail">您必須登錄才能使用此功能。請檢查您的網路連接。</string>
@@ -161,8 +161,8 @@
 <string name="open_link">打開新聞文章連結？</string>
 <string name="option">選項</string>
 <string name="other">其他</string>
-<string name="out">10 月</string>
 <string name="outubro">10 月</string>
+<string name="out">10 月</string>
 <string name="participacoes">參與</string>
 <string name="participacoes_ultimos_dias">在最後的日期參加</string>
 <string name="permission_available_location">您的位置的權限釋放。</string>
@@ -173,9 +173,9 @@
 <string name="police_text">軍警</string>
 <string name="prevention_content_01">瘧疾 ︰\n\n•       在巴西，瘧疾集中在亞馬遜地區傳播，涵蓋英畝、阿馬帕、亞馬孫、馬拉尼昂，馬托格羅索州、帕拉、朗多尼亞、羅賴馬和托坎廷斯等州；\n\n•       出行到瘧疾傳播區域的人必須意識到，瘧疾媒介大多是在日落和日出之間比較活躍；\n\n•       在延長曝露期間，使用輕便的衣服與長長的袖子；\n\n•       在所有暴露的皮膚部分按照製造商的指示，使用驅蟲劑。不建議在沒有醫師指導的情況下對兩歲下兒童使用驅蟲劑\n\n•       在瘧疾傳播區域的旅行者必須警惕發熱、全身疼痛和頭痛等癥狀；\n\n•       如果您出現任何這些症狀，尋找最近的、專門的醫療單位。理想情況下，必須在出現第一症狀的 48 小時內，接受醫療服務； \n\n•       巴西擁有一個公共醫療系統，有資質以及時和適當的方式診斷和治療病人；\n\n•       在旅行前咨詢參考資料中心之一了解更多有關瘧疾的資訊。\n\n空氣傳播疾病的預防︰ \n\n•       飯前或接觸您的眼睛、嘴和鼻子之前, 以及咳嗽、打噴嚏或使用洗手間之後，用水和肥皂洗手；\n\n•       生病人必須休息、吃均衡的飲食，多喝水，避免室內或擁擠的區域;\n\n•       確保環境通風良好;\n\n•       始終警惕更嚴重的呼吸道症狀，并立即尋求醫療援助。\n\n食用健康食品和飲料︰\n\n•       避免衛生，製備及包裝有問題的食品；\n\n•       優先考慮糖分、脂肪和鹽含量低的食物；\n\n•       飲用大量液體，最好是水或果汁。避免生的或未煮熟的食物，尤其是海鮮；\n\n•       包裝的食品標籤必須標明生產者、到期日期且包裝必須密封;\n\n•       鄉村旅遊時，總是優先考慮不需要冷藏或遇熱變質的食物；\n\n•       如果您攝入食物或飲料後出現嘔吐或腹瀉，則需要特別注意避免脫水。在這些情況下，建議攝取統一醫療保健系統免費提供的口服補液鹽，或其他類似解決方案。運動飲料不能適當地補償流體損失，不得用於治療腹瀉疾病。</string>
 <string name="prevention_title_01">預防 </string>
+<string name="privacy">隱私</string>
 <string name="profile">設定檔</string>
 <string name="race">膚色/種族</string>
-<string name="privacy">隱私</string>
 <string name="rash">疹病</string>
 <string name="register">登錄</string>
 <string name="register_fail">無法完成註冊過程。幾分鐘後再試。</string>
@@ -214,12 +214,18 @@
 <string name="symptom_febre">發燒</string>
 <string name="symptom_manchas">身體上的紅點</string>
 <string name="symptom_nauseas">噁心或嘔吐</string>
-<string name="symptom_olhosvermelhos">充血的雙眼</string>
 <string name="symptom_procureiservicosaude">我拜訪一家醫療中心</string>
+<string name="symptom_olhosvermelhos">充血的雙眼</string>
 <string name="symptom_sangramento">出血</string>
 <string name="symptom_tosse">咳嗽</string>
 <string name="syndromes">綜合征</string>
-<string name="syndromes_desc">undefined</string>
+<string name="syndromes_desc">校正子是臨床表現的公共集的若干疾病，包括：
+
+•   腹瀉（發熱，噁心，嘔吐和腹瀉，以及這些症狀：身體疼痛或頭痛）
+
+•   呼吸道（發熱，咳嗽，和其中的一些症狀：咽部或氣短瘡）
+
+•   皮疹（在身上的紅色斑點，而這些症狀：發熱或全身酸痛或關節痛或頭痛，或癢或眼睛發紅或出血）</string>
 <string name="tag_app">#GuardioesDaSaude</string>
 <string name="tag_flu">#Gripe</string>
 <string name="tag_ministry">#MinisterioDaSaude</string>
