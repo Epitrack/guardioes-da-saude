@@ -15,6 +15,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         // ====
         $scope.countries = [];
         $scope.states = [];
+        $scope.email_uso = false;
         /**/
         $scope.isbrasil = function() {
             if ($scope.createData.country === 'Brazil') {
@@ -119,6 +120,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             UserApi.createUser(params, function(data) {
                 var userId;
                 if (data.status == 409) {
+                    $scope.email_uso = true;
                     Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
                 } else if (data.status == 200) {
                     userId = data.data.user.id;
