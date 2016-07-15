@@ -78,6 +78,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             $scope.createData.country = "Pays d'origine";
         };
 
+        $scope.fr = false;
         $scope.whatCountry = function(country) {
             if (country == 'France') {
                 $scope.fr = false;
