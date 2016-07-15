@@ -7,7 +7,7 @@
  * # CadastroCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification', 
+angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'UserApi', '$location', 'LocalStorage', 'Notification',
     function($scope, $http, UserApi, $location, LocalStorage, Notification) {
 
         // set page class to animations
@@ -15,6 +15,8 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         // ====
         $scope.countries = [];
         $scope.states = [];
+        $scope.email_uso = false;
+        $scope.fr = true;
         /**/
         $scope.isbrasil = function() {
             if ($scope.createData.country === 'Brazil') {
@@ -57,40 +59,39 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         };
 
         // create new user
-        $scope.createData         = {};
-        $scope.createData.state   = "Selecione";
+        $scope.createData = {};
+        $scope.createData.state = "Selecione";
 
-        if (sessionStorage.getItem('lang') == 'en'){
+        if (sessionStorage.getItem('lang') == 'en') {
             $scope.createData.country = 'Country of origin';
-        }else if (sessionStorage.getItem('lang') == 'pt'){
+        } else if (sessionStorage.getItem('lang') == 'pt') {
             $scope.createData.country = 'País de origem';
-        }else if (sessionStorage.getItem('lang') == 'es'){
+        } else if (sessionStorage.getItem('lang') == 'es') {
             $scope.createData.country = 'País de origen';
-        }else if (sessionStorage.getItem('lang') == 'zh'){
+        } else if (sessionStorage.getItem('lang') == 'zh') {
             $scope.createData.country = '原籍國';
-        }else if (sessionStorage.getItem('lang') == 'ar'){
+        } else if (sessionStorage.getItem('lang') == 'ar') {
             $scope.createData.country = 'بلد المنشأ';
-        }else if (sessionStorage.getItem('lang') == 'ru'){
+        } else if (sessionStorage.getItem('lang') == 'ru') {
             $scope.createData.country = 'Страна происхождения';
-        }else if (sessionStorage.getItem('lang') == 'fr'){
+        } else if (sessionStorage.getItem('lang') == 'fr') {
             $scope.createData.country = "Pays d'origine";
         };
-        
-        $scope.whatCountry = function(country){
+
+        $scope.whatCountry = function(country) {
             if (country == 'France') {
                 $scope.fr = false;
-            }else{
+            } else {
                 $scope.fr = true;
             }
         };
-        
+
 
         $scope.createUser = function() {
             var params = {
                 nick: $scope.createData.nick,
                 email: $scope.createData.email,
                 dob: $scope.createData.dob,
-                race: $scope.createData.race,
                 gender: $scope.createData.gender,
                 password: $scope.createData.password,
                 country: $scope.createData.country,
@@ -99,11 +100,13 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 repeat_password: $scope.createData.repeat_password,
             };
 
-            
+            if (!$scope.fr) {
+                params['race'] = $scope.createData.race;
+            }
 
             if ($scope.createData.country == 'France') {
                 params.race = 'france';
-            }else{
+            } else {
                 params.race = $scope.createData.race;
             }
 
@@ -118,12 +121,13 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             UserApi.createUser(params, function(data) {
                 var userId;
                 if (data.status == 409) {
+                    $scope.email_uso = true;
                     Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
-                } else if (data.status == 200){
+                } else if (data.status == 200) {
                     userId = data.data.user.id;
                     Notification.show('success', 'Cadastro por e-mail', data.data.message);
                     $location.path('/survey/' + userId + '/step-1');
-                }else{
+                } else {
                     console.log(data.data.status);
                 }
             });
@@ -1510,4 +1514,5 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             "sigla": "TO",
             "nome": "Tocantins"
         }];
-    }]);
+    }
+]);

@@ -1,7 +1,7 @@
 var fs = require('fs');
 var trad = require('./strings_android.json');
 console.log(trad.length);
-var line = '<string name="%key%">%value%</string>'
+var line = '<string name="%key%">\n\n'+ '%value%'+'\n\n</string>'
 
 var portugues = [];
 var ingles = [];

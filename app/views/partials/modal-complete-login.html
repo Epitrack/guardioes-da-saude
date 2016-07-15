@@ -25,6 +25,7 @@
                                     <label for="selected-f" class="span-sex-op">{{'00232' | translate}}</label>
                                 </fieldset>
                             </div>
+
                             <div class="no-padding col-xs-12">
                                 <fieldset class="col-xs-12 col-sm-6">
                                     <label for="profile-birthdate">{{'00144' | translate}}</label>
@@ -52,7 +53,7 @@
                                         <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                                     </select>
                                 </fieldset>
-                                <fieldset class="col-xs-12 col-sm-4" ng-show="_isbrasil">
+                                <fieldset class="col-xs-12 col-sm-4" ng-show="userData.country=='Brazil'">
                                     <label>Estado de origem</label>
                                     <select class="select-primary" name="state" ng-model="userData.state">
                                         <option ng-selected="true" value="Selecione" disabled>Estado de origem</option>
@@ -69,6 +70,7 @@
                                     </select>
                                 </fieldset>
                             </div>
+                            
                             <fieldset class="col-xs-12">
                                 <label for="profile-email">{{'00177' | translate}}</label>
                                 <input class="input-primary" id="profile-email" name="add-profile-email" ng-model="userData.email">

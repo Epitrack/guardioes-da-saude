@@ -8,7 +8,7 @@
  * Service in the gdsApp.
  */
 angular.module('gdsApp')
-    .service('UserApi', function($http, $location, LocalStorage, ApiConfig, $rootScope, $facebook, Notification) {
+    .service('UserApi', function($http, $location, $translate, LocalStorage, ApiConfig, $rootScope, $facebook, Notification) {
         // AngularJS will instantiate a singleton by calling "new" on this function
 
         var obj = {};
@@ -17,6 +17,16 @@ angular.module('gdsApp')
         var app_token = ApiConfig.APP_TOKEN;
         var platform = ApiConfig.PLATFORM;
         var client = ApiConfig.CLIENT;
+
+        function getLanguage() {
+            var ln = "";
+            if ($translate.use() === 'pt') {
+                ln = 'pt_BR';
+            } else {
+                ln = $translate.use();
+            }
+            return ln;
+        };
 
         // register
         obj.createUser = function(data, callback) {
@@ -152,9 +162,11 @@ angular.module('gdsApp')
 
         // forgot password
         obj.forgotPassword = function(email, callback) {
+            try {
+                email.lang = getLanguage();
+            } catch (e) {}
             $http.post(apiUrl + '/user/forgot-password', email, { headers: { 'app_token': app_token } })
                 .then(function(result) {
-                    // console.log('Success forgotPassword: ', result);
                     callback(result);
                 }, function(error) {
                     console.warn('Error forgotPassword: ', error);
@@ -223,8 +235,7 @@ angular.module('gdsApp')
                                         password: dataLg.data.data[0].email
                                     };
                                     obj.loginUser(loginPass, function(resultMail) {
-                                        if (resultMail.data.error === true) {
-                                        } else {
+                                        if (resultMail.data.error === true) {} else {
                                             LocalStorage.userCreateData(resultMail.data.user, resultMail.data.token);
                                             if (LocalStorage.isFirstAccess()) {
                                                 $location.path('survey');

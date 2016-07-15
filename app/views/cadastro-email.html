@@ -6,9 +6,9 @@
                 <form ng-submit="createUser()" class="form-register-home" name="formRegisterHome" novalidate>
                     <h3>{{'00470'|translate}}</h3>
                     <fieldset class="input-group mainform signup">
-                        <input class="form-control mainform-input" name="nick" maxlength="10" placeholder="Apelido" ng-model="createData.nick">
-                        <input class="form-control mainform-input" name="email" placeholder="E-mail" ng-model="createData.email">
-                        <input class="form-control mainform-input" type="tel" placeholder="Data de Nascimento" ng-model="createData.dob" mask="99-99-9999">
+                        <input class="form-control mainform-input" name="nick" maxlength="10" placeholder="{{'00033'|translate}}" ng-model="createData.nick">
+                        <input class="form-control mainform-input" name="email" placeholder="{{'00177'|translate}}" ng-model="createData.email">
+                        <input class="form-control mainform-input" type="tel" placeholder="{{'00144'|translate}}" ng-model="createData.dob" mask="99-99-9999">
 
                         <!-- Coutry -->
                         <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country"
@@ -46,8 +46,8 @@
                             <option value="pardo">{{'00452'|translate}}</option>
                             <option value="indigena">{{'00304'|translate}}</option>
                         </select>
-                        <input class="form-control mainform-input" name="password" type="password" placeholder="Senha" ng-model="createData.password">
-                        <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="Repetir Senha" ng-model="createData.repeat_password">
+                        <input class="form-control mainform-input" name="password" type="password" placeholder="{{'00554'|translate}}" ng-model="createData.password">
+                        <input class="form-control mainform-input" name="repeat-password" type="password" placeholder="{{'00502'|translate}}" ng-model="createData.repeat_password">
 
                         
 
@@ -57,6 +57,9 @@
                     <!-- form validation -->
                     <div ng-show="checkF.error" class="alert alert-warning" role="alert">
                         <span>{{checkF.msg}}</span>
+                    </div>
+                    <div ng-show="email_uso" class="alert alert-warning" role="alert">
+                        <span>{{'00416'|translate}}</span>
                     </div>
                     <fieldset class="btn-group btn-group-justified" role="group">
                         <div class="btn-group" role="group">
