@@ -25,11 +25,30 @@
                                     <label for="selected-f" class="span-sex-op">{{'00232' | translate}}</label>
                                 </fieldset>
                             </div>
-                           
+
+                            <div class="no-padding col-xs-12">
+                                <fieldset class="col-xs-12 col-sm-6">
+                                    <label for="profile-birthdate">{{'00144' | translate}}</label>
+                                    <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" ng-model="userData.dob" mask="99-99-9999">
+                                    <!-- <span class="icon-birthdate"></span> -->
+                                </fieldset>
+
+                                <fieldset class="col-xs-12 col-sm-6" ng-show="!fr">
+                                    <label for="profile-raca-cor">{{'00133' | translate}}</label>
+                                    <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="userData.race">
+                                        <option ng-selected="true" disabled>Escolha uma Raça/Cor</option>
+                                        <option value="branco">{{'00081' | translate}}</option>
+                                        <option value="preto">{{'00478' | translate}}</option>
+                                        <option value="pardo">{{'00452' | translate}}</option>
+                                        <option value="amarelo">{{'00025' | translate}}</option>
+                                        <option value="indigena">{{'00304' | translate}}</option>
+                                    </select>
+                                </fieldset>
+                            </div>
                             <div class="no-padding col-xs-12">
                                 <fieldset class="col-xs-12 col-sm-4">
                                     <label>{{'00442' | translate}}</label>
-                                    <select class="select-primary" name="country" ng-model="userData.country" ng-change="whatCountry(userData.country)">
+                                    <select class="select-primary" name="country" ng-model="userData.country" ng-change="_isbrasil = userData.country=='Brazil';isFrance(userData.country)">
                                         <option selected="true" value="Selecione">{{'00442' | translate}}</option>
                                         <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                                     </select>
@@ -51,24 +70,8 @@
                                     </select>
                                 </fieldset>
                             </div>
-                             <div class="no-padding col-xs-12">
-                                <fieldset class="col-xs-12 col-sm-6">
-                                    <label for="profile-birthdate">{{'00144' | translate}}</label>
-                                    <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" ng-model="userData.dob" mask="99-99-9999">
-                                    <!-- <span class="icon-birthdate"></span> -->
-                                </fieldset>
-                                <fieldset class="col-xs-12 col-sm-6" ng-show="fr">
-                                    <label for="profile-raca-cor">{{'00133' | translate}}</label>
-                                    <select ng-required="fr" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="userData.race">
-                                        <option ng-selected="true" disabled>{{'00550'|translate}}</option>
-                                        <option value="branco">{{'00081' | translate}}</option>
-                                        <option value="preto">{{'00478' | translate}}</option>
-                                        <option value="pardo">{{'00452' | translate}}</option>
-                                        <option value="amarelo">{{'00025' | translate}}</option>
-                                        <option value="indigena">{{'00304' | translate}}</option>
-                                    </select>
-                                </fieldset>
-                            </div>
+                            
+                            
                             <fieldset class="col-xs-12">
                                 <label for="profile-email">{{'00177' | translate}}</label>
                                 <input class="input-primary" id="profile-email" name="add-profile-email" ng-model="userData.email">
