@@ -30,8 +30,8 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
         }
 
         $scope.facebookLogin = function() {
-            angular.element('#modal-complete-login').modal('show');
-            // UserApi.facebookLogin($scope);
+            // angular.element('#modal-complete-login').modal('show');
+            UserApi.facebookLogin($scope);
         };
 
         $scope.googleLogin = function() {
