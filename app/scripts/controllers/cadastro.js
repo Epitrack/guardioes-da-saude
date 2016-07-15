@@ -20,6 +20,7 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
         $scope.createData = {};
         $scope.createData.country = "Selecione";
         $scope.createData.state = "Selecione";
+        $scope.fr = true;
         /**/
         $scope.isbrasil = function() {
             if ($scope.userData.country === 'Brasil') {
@@ -29,7 +30,8 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
         }
 
         $scope.facebookLogin = function() {
-            UserApi.facebookLogin($scope);
+            angular.element('#modal-complete-login').modal('show');
+            // UserApi.facebookLogin($scope);
         };
 
         $scope.googleLogin = function() {
@@ -59,19 +61,38 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
             UserApi.twitterLogin($scope);
         };
 
+        $scope.whatCountry = function(country) {
+            if (country == 'France') {
+                $scope.fr = false;
+            } else {
+                $scope.fr = true;
+            }
+        };
+
         $scope.updateUserSocialData = function() {
             var params = {
                 nick: $scope.userData.nick,
                 gender: $scope.userData.gender,
                 dob: $scope.userData.dob,
-                race: $scope.userData.race,
                 email: $scope.userData.email,
                 country: $scope.userData.country,
-                state: $scope.userData.state,
                 profile: $scope.userData.profile
             };
 
+            if (!$scope.fr) {
+                params['race'] = $scope.userData.race;
+            }
 
+            if ($scope.isbrasil()) {
+                params['state'] = $scope.userData.state;
+            }
+
+            if ($scope.userData.country == 'France') {
+                params.race = 'france';
+            } else {
+                params.race = $scope.userData.race;
+            }
+            console.log("params", params);
             $scope.checkF = $scope.UTIL.checkForm(params, true);
             if ($scope.checkF.error === true) {
                 return;
