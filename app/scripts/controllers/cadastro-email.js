@@ -86,8 +86,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 $scope.fr = true;
             }
         };
-
-
+        
         $scope.createUser = function() {
             var params = {
                 nick: $scope.createData.nick,
