@@ -16,6 +16,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.countries = [];
         $scope.states = [];
         $scope.email_uso = false;
+        $scope.fr = true;
         /**/
         $scope.isbrasil = function() {
             if ($scope.createData.country === 'Brazil') {
@@ -98,7 +99,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 profile: $scope.createData.profile,
                 repeat_password: $scope.createData.repeat_password,
             };
-            
+
             if (!$scope.fr) {
                 params['race'] = $scope.createData.race;
             }
