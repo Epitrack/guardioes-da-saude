@@ -31,7 +31,8 @@
                                     <input class="input-primary" id="profile-birthdate" name="add-profile-birthdate" ng-model="userData.dob" mask="99-99-9999">
                                     <!-- <span class="icon-birthdate"></span> -->
                                 </fieldset>
-                                <fieldset class="col-xs-12 col-sm-6">
+
+                                <fieldset class="col-xs-12 col-sm-6" ng-show="!fr">
                                     <label for="profile-raca-cor">{{'00133' | translate}}</label>
                                     <select ng-required="true" class="select-primary" name="add-profile-raca-cor" id="profile-raca-cor" ng-model="userData.race">
                                         <option ng-selected="true" disabled>Escolha uma Raça/Cor</option>
@@ -46,7 +47,7 @@
                             <div class="no-padding col-xs-12">
                                 <fieldset class="col-xs-12 col-sm-4">
                                     <label>{{'00442' | translate}}</label>
-                                    <select class="select-primary" name="country" ng-model="userData.country" ng-change="_isbrasil = userData.country=='Brazil'">
+                                    <select class="select-primary" name="country" ng-model="userData.country" ng-change="_isbrasil = userData.country=='Brazil';isFrance(userData.country)">
                                         <option selected="true" value="Selecione">{{'00442' | translate}}</option>
                                         <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                                     </select>

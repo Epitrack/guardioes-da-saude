@@ -11,6 +11,8 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
     function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
         // $scope.pageClass = 'login-page';
 
+
+
         $scope.userData = {};
         $scope.userData.gender = "M";
         // ====
@@ -54,6 +56,15 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
                 alert("Não foi possíel realizar o login");
             });
         };
+        
+        $scope.fr = true;
+        $scope.isFrance = function(country){
+            if (country == 'France') {
+                $scope.fr = true;
+            }else{
+                $scope.fr = false;
+            }
+        }
 
         $scope.twitterLogin = function() {
             UserApi.twitterLogin($scope);
