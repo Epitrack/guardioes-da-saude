@@ -30,6 +30,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
             window.location = '#'+path;
         };
 
+
         // ====
         function checkIsMobile() {
             if (!/Android|webOS|iPhone|iPad|Windows Phone|ZuneWP7|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
