@@ -13,6 +13,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
         // to hide menu
         $scope.logged = LocalStorage.getItem('userLogged');
         $scope.lang = {};
+
         if ($translate.use() === undefined) {
             $translate.use('pt');
         }
@@ -25,7 +26,8 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
         $scope.changeLanguage = function() {
             window.sessionStorage.setItem('lang', $scope.lang.current);
             $translate.use($scope.lang.current);
-            window.location.reload();
+            var path = window.location.pathname;
+            window.location = '#'+path;
         };
 
         // ====
