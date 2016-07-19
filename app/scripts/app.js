@@ -52,6 +52,7 @@ angular
     ])
     .config(function($facebookProvider, $mdGestureProvider) {
         $facebookProvider.setAppId('961547147258065');
+        $facebookProvider.setVersion("v2.2");
         $mdGestureProvider.skipClickHijack();
     })
     .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
