@@ -1,17 +1,72 @@
+<string name="validation_profile">Profile is a required field.</string>
+<string name="validation_race">Race is a required field</string>
+<string name="validation_country">Country is a required field</string>
+<string name="validation_state">State is a required field.</string>
+<string name="validation_gender">Sex is a required field</string>
+<string name="vacinne_content_02">•       Take the yellow fever vaccine 10 days before visiting forest areas or practicing ecological or rural tourism to prevent against the disease.
+
+•       Contact your doctor to help you decide whether the vaccine is required, based on your travel itinerary.</string>
+<string name="select">Select</string>
+<string name="prevention_content_04">•       In Brazil, male and female condoms and lubricant gels are distributed free-of-charge in all healthcare units, hostels, and Tourist Centers, among others. Find out which distribution centers are near you.</string>
+<string name="prevention_title_04">Practice safe sex</string>
+<string name="prevention_content_03">•       Avoid foods with questionable hygienic, preparation and packaging conditions;
+
+•       Prioritize foods with low sugar, fat and salt contents;
+
+•       Drink plenty of fluids, preferably water or juice. Avoid raw or undercooked food, especially seafood;
+
+•       Packaged food labels must clearly indicate the producer, expiration date and the packages must be sealed;
+
+•       When practicing rural tourism, always prioritize foods that do not require refrigeration or spoil in the heat;
+
+•       If you experience vomiting or diarrhea after ingesting foods or beverages, special attention is required to avoid dehydration. In these cases, it is recommended to ingest oral rehydration salts provided free of charge by the Unified Healthcare System, or other similar solutions. Sports drinks do not properly offset fluid losses and must never be used to treat diarrheic diseases.</string>
+<string name="prevention_title_03">Consume healthy foods and beverages
+
+</string>
+<string name="prevention_content_02">• Wash hands with soap and water before meals, touching the eyes, mouth and nose and after coughing, sneezing or using the bathroom; \n \n • Individuals patients should be at rest, eat a balanced diet, increase fluid intake and avoid crowds and indoors; \n \n • Keep ventilated environments;. \n \n • always be alert to respiratory symptoms severity and immediately seek medical attention \n \n</string>
+<string name="prevention_title_02">Prevention of airborne diseases
+
+</string>
+<string name="message_thanks_zika">Thanks for sharing that information!</string>
+<string name="message_thanks">Thanks for sharing that information!</string>
+<string name="fireman">Firefighter</string>
+<string name="police">Military Police</string>
+<string name="defense">Civil Defense</string>
+<string name="zika_tip">Dengue fever, Zika and Chikungunya</string>
+<string name="prevention">Prevention</string>
+<string name="care">BASIC CARE</string>
+<string name="phone">Useful Phone Numbers</string>
+<string name="vaccine">Vaccines</string>
+<string name="member_updated">Operation successfully completed.</string>
+<string name="member_added">Operation successfully completed.</string>
+<string name="safe_sex">Practice safe sex</string>
+<string name="password_not_equal">The passwords are not the same.</string>
+<string name="password_fail">Your password must be at least 6 digits</string>
+<string name="internet_fail">You must be logged in to use this feature. Check your network connection.</string>
+<string name="tip_health">Health  Tips</string>
+<string name="setting">Settings</string>
+<string name="member">Household members</string>
+<string name="mail">Email</string>
+<string name="zika">Dengue fever, Zika and Chikungunya</string>
+<string name="generic_update_data_ok">Operation successfully completed.</string>
+<string name="good">Good </string>
+<string name="enter">Login</string>
+<string name="bad">Ill</string>
+<string name="already_registered">You already have an account, please login.</string>
 <string name="about">About</string>
 <string name="about_text">“GUARDIANS OF HEALTH” APPLICATION\n\nDeveloped for mobiles, tablets, and personal computers, the “Guardians of Health” app is part of an initiative by the Brazilian Ministry of Health, in partnership with the U.S.-based NGO Skoll Global Threats Fund. It is designed to assess the potential of mobile apps  to strengthen the detection of public health emergencies and outbreaks within the Sistema Único de Saúde [Brazilian Unified Healthcare System] (SUS), particularly during major events, such as the 2016 Olympic and Paralympic Games. \n\nThis strategy builds on another project launched by the same organization, entitled "Saúde na Copa”, launched exclusively during the 2014 FIFA Brazil World Cup®, which yielded promising results. These results encouraged both institutions  to develop a new strategy for the 2016 Olympic and Paralympic Games. \n\nThis updated version of the Guardians of Health app is available for Apple iOS and Google Android operating systems, as well as on the http://guardioesdasaude.org/website.n\nInitially developed in Portuguese, this version of the “Guardians of Health” app is also available in all of the official languages of the United Nations. It is proivded as a tool to assist Brazilians and foreign visitors to Brazil, particularly those traveling to the host cities of the 2016 Olympic and Paralympic Games.  \n\nOnly users over the age of 13 can participate in this initiative. In addition, users must read and accept the “Terms of Use” before signing up and fill out the simplified registration form, providing a nickname, email address, date of birth, race/color, gender, and password. Participation is voluntary and confidential, and all personal information disclosed is duly protected by Law No. 12.527, dated November 18, 2011.\n\nProject results will be used for health surveillance purposes across all Brazilian States and Municipalities, in order to detect and prevent public health emergencies and outbreaks by adopting proper prevention and control measures. The project’s results will be presented as aggregated and anonymzed data, describing the health profiles of users based on the information provided by them. \n\nVOLUNTARY PARTICIPATION\n\nYour participation is entirely voluntary and a valuable contribution towards promoting health surveillance in Brazil. Reporting your health condition shall not be interpreted as a medical consultation and does not ensure special access to health care services. In addition, participants will never be contacted via email or any other means by any healthcare service or professional to obtain such information. \n\nText messages can be sent to participants through Push Notification technology, containing health information or instructions from health surveillance agencies. \n\nIt is important to point out that you should immediately seek out the nearest healthcare service or physician if you are not feeling well. The app provides a shortcut to a preset search of healthcare services and drugstores near you, based on your mobile phone’s Google Maps geolocation service. This feature is not part of the app. Therefore, you will be redirected to your mobile phone’s map application. We recommend caution when transiting through unknown areas and avoiding areas of risk. Contact local public agencies for more information. \n\nThe app provides useful phone numbers, including SAMU (Emergency Mobile Ambulance Service), which is a 24/7 toll-free number providing emergency healthcare services for trauma, clinical, pediatric, surgical, gynecological, and mental health cases in households, workplaces and public roads.\n\nBENEFITS OF PARTICIPATION\n\n·       Actively participating in health surveillance efforts to prevent disease outbreaks in communities;\n\n·       Quick access to public service contact information without altering your phonebook;\n\n·       Easy access to useful information on health and disease prevention measures;\n\n·       Amenities such as a preset search of Emergency Care Units and drugstores nearby (20-km radius) in Google Maps;\n\n·       Following the project results at the website: www.guardioesdasaude.org;\n\nLEARN MORE ABOUT THE APP\n\nThe “Guardians of Health” app is free and available for iOS and Android operating systems, as well as Internet browsers. Users can choose from one of the several free Wi-Fi hotspots available in various cities or use their own mobile data packages to use the app. \n\nPhone calls to public services listed in the app may be subject to additional phone charges. Contact your mobile carrier for more information before using this feature. This service cannot be used if the mobile’s phone feature is disabled. This information applies particularly to foreign users. \n\nABOUT THE PARTNERSHIP\n\nThis pioneer initiative was conceived by the Health Surveillance Agency of the Brazilian Health Ministry, in partnership with the host cities of the Olympic and Paralympic Games. The Skoll Global Threats Fund  is responsible for all contracting and software development expenses, duly supervised by the Brazilian Association of Field Epidemiology Professionals (ProEpi), both of which are non-profit Non-Governmental Organizations focused on improving health surveillance activities in Brazil and around the world.\n\nProEpi is responsible for ensuring that all requirements established by the Ministry of Health and Skoll Global Threats Fund are met, as per project specifications: confidentiality of user information, transparency and disclosure of public results, and availability of the source code and respective documentation in free-access download environments, adequacy and use of applications by healthcare services in Brazil and other countries, while preserving the non-profit nature of such an endeavor. \n\nACKNOWLEDGMENTS\n\nThe organizing institutions would like to thank all participants, health professionals, and managers of the Brazilian Unified Healthcare System for putting their trust in the pilot project and supporting such an unprecedented initiative in the global health space. \n\nSpecial thanks to the Departments of Health of the Host Cities of the Olympic and Paralympic Games (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador, and São Paulo.) </string>
 <string name="abr">Apr</string>
-<string name="abril">April</string>
-<string name="adicionar_novo_integrante">Add \\n new member</string>
 <string name="add_member">Add member of household</string>
-<string name="alert">Alerts</string>
+<string name="adicionar_novo_integrante">Add \\n new member</string>
+<string name="abril">April</string>
+<string name="ago">Aug</string>
 <string name="agosto">August</string>
+<string name="alert">Alerts</string>
 <string name="alert_pharmacy">Some drugstores may not be shown on the map.</string>
 <string name="anos">years</string>
 <string name="app_name">Guardians of Health</string>
 <string name="app_name_short">Guardians</string>
 <string name="attention">Attention</string>
-<string name="ago">Aug</string>
 <string name="avatar">Avatar</string>
 <string name="bem">Good </string>
 <string name="calendar">Calendar</string>
@@ -47,8 +102,8 @@
 <string name="exit_message">Are you sure you wish to exit the app?</string>
 <string name="facebook">Facebook</string>
 <string name="facebook_cancel">Failure to log in with Facebook.</string>
-<string name="facebook_fail">Failure to log in with Facebook.</string>
 <string name="facebook_error">Failure to log in with Facebook.</string>
+<string name="facebook_fail">Failure to log in with Facebook.</string>
 <string name="fev">Feb</string>
 <string name="fevereiro">February</string>
 <string name="fireman_text">Firefighter</string>
@@ -73,8 +128,8 @@
 <string name="hint_birth_date_dt">Birth</string>
 <string name="hint_country_name">Select the country</string>
 <string name="hint_mail">Email</string>
-<string name="hint_nickname">Nickname</string>
 <string name="hint_password">The password must have at least 6 characters</string>
+<string name="hint_nickname">Nickname</string>
 <string name="hint_password_short">Password</string>
 <string name="hint_redefine_password">Reset password</string>
 <string name="hint_repeat_password">Repeat Password</string>
@@ -113,8 +168,8 @@
 <string name="message_follow">Keep track of diseases in your neighborhood or at a specific location.</string>
 <string name="message_forgot_password"><u>Forgot your password?</u></string>
 <string name="message_health">How is your health?</string>
-<string name="message_health_state">How is your health now?</string>
 <string name="message_hello">Hello, %!</string>
+<string name="message_health_state">How is your health now?</string>
 <string name="message_home_member">Household members</string>
 <string name="message_hospital">Be sure to seek out the nearest healthcare service.</string>
 <string name="message_image_load">Fail to load the image</string>
@@ -127,17 +182,17 @@
 <string name="message_prevent">Learn how to prevent diseases, find the nearest UPAs and drugstores, and view useful phone numbers to call in case of emergency.</string>
 <string name="message_privacy">We care about your privacy.</string>
 <string name="message_privacy_tip_1">Your participation is voluntary and anonymous</string>
-<string name="message_privacy_tip_2">The data provided will be used to build a healthier community.</string>
 <string name="message_privacy_tip_3">Read the Terms of Use for more information</string>
+<string name="message_privacy_tip_2">The data provided will be used to build a healthier community.</string>
 <string name="message_profile">Please update your profile and the household members</string>
 <string name="message_register_info">Register your information?</string>
 <string name="message_register_no_symptom">Choose a symptom and confirm.</string>
 <string name="message_select_join">Select one of the following profiles to participate.</string>
 <string name="message_select_member">Select a member</string>
 <string name="message_select_profile">Select which of the following profiles you want to edit.</string>
+<string name="message_thanks_2">Continue reporting your daily health status.</string>
 <string name="message_symptom">Select your symptoms from the list.</string>
 <string name="message_term"><u>Privacy Policy and Terms of Use</u></string>
-<string name="message_thanks_2">Continue reporting your daily health status.</string>
 <string name="message_use_mail">Or use your email</string>
 <string name="message_user_max">Only 10 members can be added!</string>
 <string name="message_who_participate">Who will participate?</string>
@@ -155,13 +210,13 @@
 <string name="notification">Notifications</string>
 <string name="nov">Nov</string>
 <string name="novembro">November</string>
-<string name="ok">Ok</string>
-<string name="open_link">Open the news article link?</string>
-<string name="open_google_maps">Do you want to view this route in Google Maps?</string>
-<string name="other">Others</string>
-<string name="option">Options</string>
-<string name="out">Oct</string>
 <string name="obrigado">Thanks for sharing that information!</string>
+<string name="ok">Ok</string>
+<string name="open_google_maps">Do you want to view this route in Google Maps?</string>
+<string name="open_link">Open the news article link?</string>
+<string name="option">Options</string>
+<string name="other">Others</string>
+<string name="out">Oct</string>
 <string name="outubro">October</string>
 <string name="participacoes">Participations</string>
 <string name="participacoes_ultimos_dias">Participation in the last days</string>
@@ -177,8 +232,8 @@
 <string name="profile">Profile</string>
 <string name="race">Color/Race</string>
 <string name="rash">Exanthematic</string>
-<string name="register">Sign up</string>
 <string name="register_fail">The sign-up process could not be completed. Try again in a few minutes.</string>
+<string name="register">Sign up</string>
 <string name="relationship">Kinship</string>
 <string name="relatorios">Reports</string>
 <string name="report">Report Errors</string>
@@ -198,9 +253,9 @@
 <string name="set">Sep</string>
 <string name="setembro">September</string>
 <string name="setting_upper">Settings</string>
-<string name="share">Share</string>
 <string name="share_ok">Thanks for sharing!</string>
 <string name="share_participation">I do my part. Make sure you do yours in our fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org</string>
+<string name="share">Share</string>
 <string name="sound">Sound</string>
 <string name="subject">Subject</string>
 <string name="sus">SUS</string>
@@ -227,9 +282,9 @@
 
 •   Rash (red spots on the body, and any of these symptoms: fever or body aches or joint pain or headache or itchy or red eyes or bleeding)</string>
 <string name="tag_app">#GuardioesDaSaude</string>
-<string name="tag_flu">#Gripe</string>
 <string name="tag_ministry">#MinisterioDaSaude</string>
 <string name="take_photo">Take Picture</string>
+<string name="tag_flu">#Gripe</string>
 <string name="term">Terms and Policies</string>
 <string name="terms_content_01">\nPlease read these legal terms of use before using the “Guardians of Health” app, offering any information, and/or accessing or downloading any information from this application.\nBy accessing or using the “Guardians of Health” app, you automatically agree to the terms and conditions set out in the “Terms of Use” section.\nThese terms establish a binding agreement between you and the “Guardians of Health” application, covering all accesses and uses of this application, including the use of any information, data, tool, product and service, among other contents provided by this application.\nBy using this application, you automatically acknowledge and agree to the following terms and conditions:\n1. LEGAL COMPLIANCE:\nRegistered users must only access the “Guardians of Health” app for legal and health-related purposes;\nUsers hereby agree to use the application only for the respective purposes and in due compliance with this term and related laws, as well as any other standards applicable in Brazil;\nThis application may not be accessed in territories in which its contents are considered to be illegal. Those who choose to access this site from other locations shall do so at their sole discretion, undertaking full liability for complying with applicable local laws. Application materials must not be used or exported in violation of Brazilian laws. Any pending issue regarding such materials shall be settled based upon Brazilian law.\nUnauthorized modifications of this site’s contents are expressly prohibited.\n2. USE RESTRICTIONS:\nThis application may only be used by individuals over the age of 13 (thirteen).\n3. CONTENT LIABILITY:\nThe institutions and developers of the “Guardians of Health” app may not be held liable for either legal or illegal contents of any information eventually shared among its respective users, via social networks, or provided to the “Guardians of Health” application.\nComments eventually shared by users in social networks do not represent the opinion of the institutions responsible for the project. Users are responsible for the contents of their respective messages and comments.\nThe user hereby undertakes sole liability for their own conduct and the accuracy of information provided when using this service, liable for all consequences arising from the intentional disclosure of inaccurate data.\nThe user hereby agrees not to publish, send, distribute or otherwise disclose contents of information of defamatory, obscene or illegal nature when using the “Guardians of Health” application, including information exclusively belonging to other individuals or corporations, as well as trademarks or copyrighted information, without express authorization by the respective owners of such rights;\nNo one else may use the “Guardians of Health” application on your behalf. You are responsible for all application contents generated by unauthorized users under your profile, even with your permission. This rule does not apply in case of application security breaches or other related issues.\n4. CONTENT ACCESSIBILITY:\nThe “Guardians of Health” app team does not guarantee that this application will be partially or fully functional outside of Brazilian territory. You may choose to access the Webapp and the application from foreign locations at your own risk. You are responsible for complying with local laws, specifically agreeing to abide by all applicable laws regarding the transmission of technical data exported from the respective location.\n5. INTELLECTUAL PROPERTY:\nThe Ministry of Health, Departments of Health involved and partner institutions hold due copyrights over all contents produced and presented in this application. This premise does not apply to information classified as Public Domain or Public Utility. The copyrights of all other trademarks, brands, names and logos shown in the application are held by its respective owners.\nThe “Guardians of Health” app is an open-source software and its use by third parties is subject to international license terms: http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPL-3.0). All rights regarding the use of contents and reports generated by the Webapp and the application are hereby assigned by the developers, particularly those arising from the license terms: http://creativecommons.org/licenses/by-nc/4.0/ Creative Commons - Atribuição-Não Comercial 4.0 Internacional http://creativecommons.org.br/as-licencas/attachment/by-nc/.\nOnly specific information disclosed by healthcare services must be deemed official information for public disclosure. Despite the team’s efforts to ensure the quality, timeliness and authenticity of information, no information provided in the “Guardians of Health” application may be deemed official information for public disclosure. The data collected through the “Guardians of Health” application originates from users who voluntarily shared such information, and may be subject to changes due to such users’ ability to access mobile devices or personal computers with minimum technological specifications.\nTherefore, the information generated under this strategy may be insufficient to statistically portray actual epidemiological patterns in certain locations and periods of time. Recreational or public utility information provided in the application may eventually be inaccurate or outdated. Users are recommended to confirm such information in case of emergency or any other situation of risk regarding their health or integrity.\n6. RULES, REGULATIONS, RIGHTS AND DUTIES:\nThe “Guardians of Health” application team policy is to comply with all applicable laws and regulations. In the event any provision set out in this Term of Use conflicts with any applicable laws or regulations, the latter shall prevail over the former.\nThis Term of Use and the “Guardians of Health” application’s use shall be governed and interpreted as per Brazilian laws, notwithstanding eventual conflict-of-law regulations. In the event of conflicts between foreign and Brazilian regulations, rules and laws, Brazilian regulations, rules and laws shall prevail.\nThe “Guardians of Health” application may eventually monitor, review and restrict access to any area from which users transmit information, in addition to removing or restricting the access to such information or notifications. Please contact us at contato@guardioesdasaude.org in case of any doubts or questions regarding the “Guardians of Health” application.</string>
 <string name="terms_content_02">\n7. USE OF CONTRIBUTIONS:\nUpon submitting a written contribution or posting information in the “Guardians of Health” application, you automatically grant a permanent and royalty-free license for such application, and any successor organization, to publish such contributions in the “Guardians of Health” app, as well as disclosing such information in an aggregated manner (never identifying users) to other communication media, as well as discussing or referencing such information in any publications related to the “Guardians of Health” application.\nMoreover, you agree that the “Guardians of Health” application is entitled to edit, delete or add any contribution to the texts of other contributions, at the sole discretion of the application development team.\n8. ASSURANCE OF PRIVACY AND CONFIDENTIALITY:\nThe privacy and confidentiality of all information provided by users in the “Guardians of Health” application is hereby guaranteed, and any access to such information must abide by the regulations set out in the Brazilian Access to Information Act.\nWe reserve the right to use such information for internal purposes, in which case your contributions will be attributed to your email address and anonymized for all data analysis purposes.\nMoreover, in order to fulfill the primary purpose of the application, which is to identify groups of individuals with symptoms, the information regarding your health conditions shall be geolocated through your device’s GPS feature.”\nThe “Guardians of Health” application, its collaborators and users, including public agencies and NGOs, rely on the app’s users to ensure the accuracy and truthfulness of contributions. The team may not be held liable for errors or mistakes in any submission. False information deliberately submitted by users may constitute criminal offenses and shall be notified to competent authorities accordingly.\n9. “GUARDIANS OF HEALTH”APP UPDATES:\nThis application and its Terms of Use are subject to changes. Except when otherwise expressly indicated, your use of the Webapp and the application automatically entails due acceptance and agreement with the respective Terms of Use every time you access the “Guardians of Health” application. Stay tuned to new updates and, in case of doubts, the Terms of Use are always available for access and agreement or rejection.\n10. LIABILITY FOR ACTIONS BASED ON CONTENTS:\nThe “Guardians of Health” application may not be held liable for any personal/property losses and/or damages arising from the use of any idea, content, instruction, method, product or procedure provided herein.\nUnder no circumstances may the professionals involved in the development or management of this application be held liable for any of your decisions or actions based on such contents.\nIn the event of threats or any other situation of risk regarding your health or integrity, always seek out valid and updated instructions provide by local public healthcare services.\n11. LIABILITY FOR TECHNOLOGICAL ISSUES:\nAny content or section of the “Guardians of Health” application may be eventually unavailable or not functioning properly at any time. Despite our reasonable efforts to prevent technological issues, problems of several different natures may occur at any moment, including virus, harmful programming routines, or device-end problems.\nThe Webapp and application are provided “as-is” and “as-available”. Notwithstanding the general announcement, we cannot guarantee the unabridged availability, integrity, timeliness, reliability, sequencing or delivery speed of this application or any of its contents.\nThe “Guardians of Health” application may not be held liable for any damages or losses arising from performance or lack thereof regarding any part of this application. The “Guardians of Health” application may not be held liable for any defects, delays or errors arising from the use of this application.\nThe use of all “Guardians of Health” features requires users to access the Internet via Wi-Fi or cable connections. The lack of such requirement may restrict the use of the application and its entire potential. Therefore, the “Guardians of Health” application team may not be held liable for such eventual restrictions.\nThis disclaimer applies to all damages or losses, including those arising from any performance failure, error, omission, interruption, removal, defect, delayed operation or transmission, computer virus, communication failure, theft, destruction or unauthorized access, modification or use of any goods, either due to contractual violations, illegal activities, negligence or any other course of action.\n12. LIABILITY FOR THIRD-PARTY INFORMATION:\nThe provision of links and references to other websites, publications or sources of information via the Webapp and the application does not entail any endorsement of such websites and sources by the “Guardians of Health” application, its agents or representatives. The “Guardians of Health” application team cannot attest to the quality, content and accuracy of information, services or produced eventually offered in such sources, specifically disclaiming any liability for implicit or express guarantees regarding marketability or adequacy under any private use, application or purpose.\n13. FINAL CONSIDERATIONS\nAccess to this service entails express and unabridged acceptance of the aforementioned Terms of Use. By agreeing to these terms, you hereby grant a permanent and royalty-free license for the “Guardians of Health” application, the Brazilian Ministry of Health and any eventually successors to publish such contributions in an aggregated manner, within the respective application, as well as disclosing such information to related public health surveillance services. Moreover, you agree that the “Guardians of Health” application is entitled to edit, or delete any of your contributions, at the sole discretion of the application development team.</string>
