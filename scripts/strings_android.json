@@ -1,4 +1,33 @@
 [{
+	"ANDROID_KEY": "accept",
+    "PORTUGUES": "ACEITO",
+    "Inglês": "I ACCEPT",
+    "Espanhol": "ACEPTAR",
+    "Chinês": "接受",
+    "Árabe": "اعقد",
+    "Russo": "ПРИНЯТЬ",
+    "Francês": "ACCEPTER"
+	
+},{
+	"ANDROID_KEY": "not_accept",
+    "PORTUGUES": "NÃO ACEITO",
+    "Inglês": "I DO NOT ACCEPT",
+    "Espanhol": "NO ACEPTO",
+    "Chinês": "不接受",
+    "Árabe": "لا يقبل",
+    "Russo": "НЕ СОГЛАСНЫ",
+    "Francês": "PAS ACCEPTER"
+	
+},{
+    "ANDROID_KEY": "language",
+    "PORTUGUES": "Idioma",
+    "Inglês": "Language",
+    "Espanhol": "Idioma",
+    "Chinês": "語言",
+    "Árabe": "اللغة",
+    "Russo": "Язык",
+    "Francês": "Langue"
+},{
     "ANDROID_KEY": "validation_profile",
     "PORTUGUES": "Perfil é um campo obrigatório.",
     "Inglês": "Profile is a required field.",
@@ -440,11 +469,11 @@
     "Russo": "Некоторые аптеки могут не отображаться на карте.",
     "Francês": "Certaines pharmacies peuvent ne pas s\\'afficher sur la carte."
 }, {
-    "ANDROID_KEY": "anos ",
+    "ANDROID_KEY": "anos",
     "PORTUGUES": " anos",
     "Inglês": "years",
     "Espanhol": "años",
-    "Chinês": "年",
+    "Chinês": "岁",
     "Árabe": "سنوات",
     "Russo": "лет",
     "Francês": "ans"
