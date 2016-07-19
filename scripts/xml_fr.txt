@@ -1,21 +1,84 @@
-<string name="abril">Avril</string>
+<string name="validation_country">Pays est un champ obligatoire</string>
+<string name="validation_race">Race est un champ obligatoire</string>
+<string name="validation_state">État est un champ obligatoire.</string>
+<string name="validation_profile">Profil est un champ obligatoire.</string>
+<string name="select">Sélectionner</string>
+<string name="validation_gender">Le sexe est un champ obligatoire</string>
+<string name="vacinne_content_02">•       Prémunissez-vous de la fièvre jaune en prenant le vaccin 10 jours avant de visiter une zone de forêt ou de pratiquer le tourisme écologique ou rural.
+
+•       Dirigez-vous vers votre médecin car il pourra vous aider à décider si un vaccin est nécessaire, compte tenu de votre plan de voyage.</string>
+<string name="prevention_content_04">•       Au Brésil, les préservatifs féminins et masculins et le gel lubrifiant sont distribués gratuitement dans les unités de santé, les foyers, les Centres touristiques et autres.  Renseignez-vous sur les points de distribution les plus proches.</string>
+<string name="prevention_content_03">•       Éviter de consommer des aliments dont les conditions d'hygiène, de préparation et de conditionnement, sont précaires ;
+
+•       Préférez les aliments contenant de faibles taux de sucre, de graisse et de sel ;
+
+•       Buvez beaucoup, de préférence de l'eau ou de jus de fruit. Évitez les aliments crus ou peu cuits, en particulier les fruits de mer ;
+
+•       Les aliments emballés doivent comporter l’identifiant du producteur sur l'étiquette, la date de validité et l’emballage doit être entier ;
+
+•       Pour le tourisme rural, donner la préférence aux aliments qui peuvent se conserver sans réfrigération et qui supportent la chaleur ;
+
+•       Si vous souffrez de diarrhée et de vomissements dus à l'ingestion de nourriture et de boisson, redoublez de vigilance pour éviter la déshydratation. Il est recommandé d’ingérer du sel de réhydratation orale, disponible gratuitement par le Système unique de santé, ou d'autres solutions de ce type. Les boissons énergétiques ne compensent pas correctement les pertes et ne doivent pas être utilisées pour traiter une maladie diarrhéique.</string>
+<string name="prevention_title_03">Consommez des aliments et boissons de façon saine
+
+</string>
+<string name="prevention_title_04">Se préserver des infections sexuellement transmissibles</string>
+<string name="prevention_content_02">• Se laver les mains avec de l'eau et du savon avant les repas, toucher les yeux, la bouche et le nez et après avoir toussé, éternué ou utilisé la salle de bains;
+
+• Les individus malades devraient être au repos, une alimentation équilibrée, l'augmentation de l'apport hydrique et éviter les foules et à l'intérieur;
+
+• Garder les environnements ventilés;
+
+• Toujours être attentif aux symptômes respiratoires gravité et consulter immédiatement un médecin.
+
+</string>
+<string name="prevention_title_02">Prémunissez-vous des maladies à transmission respiratoire
+
+</string>
+<string name="message_thanks_zika">Merci pour l\'information !</string>
+<string name="defense">Défense civile</string>
+<string name="message_thanks">Merci pour l\'information !</string>
+<string name="zika_tip">Dengue, Zika et Chikungunya</string>
+<string name="fireman">Pompier civil</string>
+<string name="police">Police militaire</string>
+<string name="care">Soins de base</string>
+<string name="prevention">Prévention </string>
+<string name="vaccine">Vaccins</string>
+<string name="phone">Numéros utiles</string>
+<string name="member_updated">Opération réalisée avec succès.</string>
+<string name="generic_update_data_ok">Opération réalisée avec succès.</string>
+<string name="safe_sex">Se préserver des infections sexuellement transmissibles</string>
+<string name="password_not_equal">Les mots de passe sont différents.</string>
+<string name="member_added">Opération réalisée avec succès.</string>
+<string name="password_fail">Votre mot de passe doit être d\'au moins 6 chiffres</string>
+<string name="internet_fail">Vous devez être connecté pour accéder à cette fonction. S\'il vous plaît, vérifiez votre réseau !</string>
+<string name="tip_health">Conseils Santé</string>
+<string name="setting">Paramètres</string>
+<string name="member">Membres du domicile</string>
+<string name="mail">E-mail</string>
+<string name="zika">Dengue, Zika et Chikungunya</string>
+<string name="good">Bien</string>
+<string name="enter">Se connecter</string>
+<string name="bad">Mal</string>
+<string name="already_registered">Vous avez déjà un compte, s'il vous plaît vous connecter.</string>
 <string name="about">Sur</string>
 <string name="about_text">À PROPOS DE L\'APPLICATION « LES GARDIENS DE LA SANTÉ »\n\nL\'application « Les Gardiens de la Santé », développée pour les téléphones portables, les tablettes et les ordinateurs, fait partie de l\'initiative du Ministère de la santé, en partenariat avec l\'organisation non gouvernementale Skoll Global Threats Fund, des États-Unis d\'Amérique et a pour but d\'évaluer l\'utilisation potentielle des applications pour appareils mobiles dans le cadre de la stratégie de renforcement des capacités de détection des épidémies et des urgences en santé publique au sein du Système Unique de Santé (SUS), en particulier lors d’événements de masse tels que les Jeux olympiques et Paralympiques de 2016. \n\nCette stratégie est l’évolution du projet réalisé avec la même institution, nommé « Santé à la Coupe du monde » et lancé exclusivement pendant la durée de la Coupe du monde de la FIFA Brésil 2014TM, dont les résultats se sont révélés prometteurs. Pour continuer sur leur lancée, les deux institutions ont vu l’intérêt de réaliser une nouvelle stratégie pour les Jeux Olympiques et Paralympiques de 2016. \n\nLa première version des Gardiens de la Santé est déjà disponible pour les systèmes d\'exploitation iOS d’Apple et Android de Google et également par le biais du site http://guardioesdasaude.org/. \n\nÉtant un instrument complémentaire pour fournir des instructions aux voyageurs internationaux se rendant au Brésil, principalement sur les sites des Jeux olympiques et Paralympiques de 2016 et initialement développée en langue portugaise, l\'application « Les Gardiens de la Santé » sera disponible dans les langues officielles de l\'ONU lors des prochaines versions.  \n\nLa participation à l\'initiative est limitée aux utilisateurs âgés de 13 ans ou plus. De plus, il est essentiel qu\'avant de s\'inscrire, les utilisateurs lisent et acceptent les « Conditions d\'utilisation » et remplissent le formulaire d\'inscription simplifié, contenant le surnom, l’adresse électronique, la date de naissance, la race/couleur, le sexe et le mot de passe. La participation est volontaire, confidentielle et les données fournies sont protégées en vertu de la loi n° 12.527, du 18 novembre 2011.\n\nLes résultats du projet seront utilisés par la surveillance de la santé des états, des municipalités et du gouvernement fédéral, afin de détecter et prévenir des épidémies et des urgences en santé publique, par l\'adoption de mesures de contrôle et de prévention appropriées. La diffusion des résultats du projet s\'effectuera de façon agrégée et anonyme, dans le but de décrire le profil de l\'état de santé des volontaires, grâce aux informations transmises par le biais de l\'application. \n\nPARTICIPATION VOLONTAIRE\n\nVotre participation est volontaire et est une aimable contribution à l\'amélioration de la surveillance de la santé au Brésil. Le fait de remplir le formulaire sur l\'état de santé ne constitue pas une consultation médicale, ni ne garantit un accès différencié aux services de santé et l\'utilisateur ne recevra aucun contact de professionnels ni de services de santé pour obtenir des informations, que ce soit par e-mail ou par tout autre type de contact. \n\nLors de leur participation, des messages textes peuvent être envoyés aux utilisateurs, et ce, uniquement par le biais de l\'application avec la technologie Push (Push Notification), contenant des conseils sur des soins de santé ou des conseils des organes de surveillance. \n\nIl est important de souligner que si vous indiquez que vous ne vous sentez pas bien, il est recommandé de consulter un médecin de référence ou le service de santé le plus proche de vous. Pour ce faire, un raccourci avec des recherches pré-configurées de services de santé et de pharmacies proches de vous est disponible dans l\'application. Celui-ci est basé sur le service de géolocalisation Google Maps de votre appareil mobile. Cette fonctionnalité ne fait pas partie de l’application. C’est pour cette raison que vous serez dirigé vers l\'application des cartes de votre appareil et nous vous recommandons d’être prudent si vous devez vous rendre dans des lieux que vous ne connaissez pas et d’éviter les zones à risque. Pour ce faire, renseignez-vous auprès d’organismes gouvernementaux locaux. \n\nL\'application a été configurée avec une liste de numéros utiles, comme celui du SAMU (Service d’aide médicale d\'urgence), dont l’appel est gratuit et fonctionne 24 heures sur 24, pour répondre aux demandes de services d\'urgence pour les cas de nature traumatique, clinique, pédiatrique, chirurgicale, gynéco-obstétrique et de santé mentale, à domicile, sur le lieu de travail et les lieux publics.\n\nAvantages de la participation\n\n•       Participer activement aux actions de surveillance de la santé qui visent la prévention des maladies dans la collectivité ;\n\n•       Accéder aux contacts de services publics utiles sans avoir à modifier votre répertoire téléphonique ;\n\n•       Accéder facilement à des informations utiles sur des soins de santé et des mesures de prévention des maladies ;\n\n•       Profitez des outils tels que la recherche pré-configurée des services d’urgence et des pharmacies de proximité (20 km) de Google Maps ;\n\n•       Suivre les résultats du projet sur le site www.guardioesdasaude.org;\n\nEn savoir plus sur l\'utilisation de l’application\n\nL\'application « Les Gardiens de la Santé » est disponible gratuitement pour le téléchargement et son utilisation dans les systèmes d\'exploitation iOS, Android et navigateurs internet. Dans plusieurs villes, il existe des bornes wifi permettant l\'acccès gratuit à  Internet. L\'utilisateur pourra également  utiliser le service fourni par son fournisseur d\'accès. \n\nVeuillez noter que les appels téléphoniques vers les services publics de référencés dans l’application nécessitent un contrat avec un opérateur téléphonique. Veuillez donc consulter votre opérateur avant d\'utiliser cette fonctionnalité. Ce service ne fonctionnera pas sans la présence de la fonction téléphone de l\'appareil. Cette information doit être observée, particulièrement par les utilisateurs d\'autres pays. \n\nÀ propos du partenariat\n\nL\'initiative revient au Secrétariat de la Surveillance de la Santé du Ministère de la Santé du Brézil en partenariat avec les villes qui accueilleront les Jeux olympiques et Paralympiques. Dans ce partenariat, l\'Organisation non gouvernementale (ONG) Skoll Global Threats Fund est responsable du budget recrutement et développement du logiciel, sous la supervision de l\'Association Brésilienne des Professionnels en Epidémiologie (ProEpi). Ces deux organisations non gouvernementales sont à but non lucratif et œuvrent pour l\'amélioreration de la surveillance de la santé au Brésil et dans le monde.\n\nL\'organisation ProEpi a pour responsabilité de s’assurer que le cahier des charges établi par le Ministère de la Santé et le Skoll Global Threats Fund soit respecté, tel qu’il est prévu dans le projet : confidentialité des données des utilisateurs, transparence et diffusion des résultats publics du projet ; code source et documentation en accès libre pour le téléchargement, adéquation et utilisation de l’application par des services de santé brésiliens et de pays intéressés, à condition que ces derniers en garantissent une utilisation non lucrative. \n\nRemerciements\n\nLes institutions organisatrices remercient tous les bénévoles, les professionnels de santé et les responsables du Système unique de santé pour leur soutien au projet et à l\'innovation en matière de surveillance.\n\nRemerciement spécial aux Secrétariats de santé des communes qui accueilleront les Jeux Olympiques et Paralympiques (Belo Horizonte, District fédéral ,Manaus, Rio de Janeiro, Salvador et São Paulo). </string>
 <string name="abr">Avr</string>
-<string name="agosto">Août</string>
+<string name="abril">Avril</string>
 <string name="add_member">Ajouter un proche</string>
 <string name="adicionar_novo_integrante">Ajouter \\n un nouveau membre</string>
-<string name="alert">Alertes</string>
-<string name="alert_pharmacy">Certaines pharmacies peuvent ne pas s\'afficher sur la carte.</string>
-<string name="anos">ans</string>
 <string name="ago">Août</string>
+<string name="agosto">Août</string>
+<string name="alert_pharmacy">Certaines pharmacies peuvent ne pas s\'afficher sur la carte.</string>
+<string name="alert">Alertes</string>
+<string name="anos">ans</string>
+<string name="app_name">Les Gardiens de la Santé</string>
 <string name="app_name_short">Gardiens</string>
 <string name="attention">Attention</string>
-<string name="app_name">Les Gardiens de la Santé</string>
-<string name="bem">Bien</string>
-<string name="calendar">Calendrier</string>
-<string name="call">appeler</string>
 <string name="avatar">Avatar</string>
+<string name="calendar">Calendrier</string>
+<string name="bem">Bien</string>
+<string name="call">appeler</string>
 <string name="cancel">Annuler</string>
 <string name="care_content_01">Santé des voyageurs :  \n\n•       Consultez votre médecin, de préférence entre 4 et 8 semaines avant le départ pour l’informer de votre itinéraire. Renseignez-vous sur les précautions à prendre contre les maladies et les blessures ; \n\n•       Durant le voyage, vous pouvez avoir des difficultés pour trouver les médicaments que vous utilisez habituellement. Demandez conseil à votre médecin pour savoir quels médicaments et quelle quantité transporter dans vos bagages, y compris dans les bagages à main ; \n\n•       Portez sur vous vos pièces d\'identité, de préférence en anglais et en portugais, avec les informations de vos contacts personnels, groupe sanguin et d’éventuels allergies, diabète et autres maladies qui peuvent nécessiter une attention particulière ; \n\n•       Toutes les femmes enceintes doivent consulter leur médecin avant le départ, car elles seront exposées à des risques et le voyage peut affecter leur sécurité et leur confort ; \n\n•       Avant le départ, renseignez-vous auprès de l’entreprise de transport sur les règles concernant les femmes enceintes ; \n\n•       Le Brésil est un pays au climat tropical. Il est recommandé au voyageur de boire régulièrement pour éviter la déshydratation ; \n\n•       Utiliser des vêtements et des chaussures confortables. Ils vous apporterons sécurité et protection contre les entorses, les piqûres d\'insectes et les morsures d’animaux venimeux ;  \n\n•       Pour vous protéger du soleil, couvrez-vous avec des vêtements appropriés, mettez un chapeau ou une casquette et des lunettes de soleil. Évitez l\'exposition directe au soleil entre 10h00 du matin et 16h00 ; \n\n•       Utilisez de la crème solaire avec un indice de protection approprié à la couleur de votre peau, suivant les instructions du fabricant. Même dans des endroits plus frais, votre peau sera protégée des rayons solaires ; \n\n•       Utiliser des répulsifs anti-moustuiques lorsque cela est nécessaire ; \n\n•       Lavez-vous les mains avec de l’eau et du savon plusieurs fois par jour, surtout avant d’ingérer des aliments, après avoir utilisé les transports publics, visité des marchés ou des lieux avec un nombre important de personnes ; \n\n•       Au Brésil, il est interdit par la Loi de conduire après avoir consommé de l\'alcool, même en petite quantité.</string>
 <string name="care_title_01">Soins de base</string>
@@ -51,24 +114,24 @@
 <string name="facebook_fail">Erreurs de connexion avec Facebook.</string>
 <string name="fev">Fév</string>
 <string name="fevereiro">Février</string>
-<string name="fireman_text">Pompier civil</string>
 <string name="forgot_password">Entrez votre adresse e-mail et vérifiez votre boîte de réception.</string>
 <string name="freq_label">rapport fréquence d\'envoi</string>
 <string name="freq_relatorio">la fréquence dans les rapports d\'envoi</string>
 <string name="frequency">Fréquence</string>
+<string name="fireman_text">Pompier civil</string>
 <string name="game_enjoy">Amusez-vous</string>
-<string name="gender">Sexe</string>
 <string name="general">Général</string>
+<string name="gender">Sexe</string>
 <string name="general_ranking">Classement général</string>
-<string name="generic_error">Opération annulée.</string>
 <string name="generic_error_login">Impossible de se connecter. E-mail et/ou mot de passe non valide.</string>
+<string name="generic_error">Opération annulée.</string>
 <string name="gmail">Gmail</string>
 <string name="google">Google</string>
 <string name="google_access_error">Gardiens de la Santé n\'a pas obtenu l\'autorisation d\'accéder à vos données de Google. Vérifiez vos paramètres.</string>
 <string name="google_client_id">997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com</string>
 <string name="hashtag">Hashtag</string>
-<string name="health">Santé</string>
 <string name="help">Aide</string>
+<string name="health">Santé</string>
 <string name="hint_birth_date">Date de naissance (DD/MM/YYYY)</string>
 <string name="hint_birth_date_dt">Naissance</string>
 <string name="hint_country_name">Sélectionnez le pays</string>
@@ -81,8 +144,8 @@
 <string name="home">Accueil</string>
 <string name="hospital">Les urgences</string>
 <string name="hyphen">-</string>
-<string name="interest">Intérêts</string>
 <string name="jan">Jan</string>
+<string name="interest">Intérêts</string>
 <string name="janeiro">Janvier</string>
 <string name="join">Participez\n dès maintenant !</string>
 <string name="join_now">Participez dès maintenant !</string>
@@ -92,8 +155,8 @@
 <string name="junho">Juin</string>
 <string name="level">Niveau %s</string>
 <string name="loading">Chargement…</string>
-<string name="locale">fr</string>
 <string name="location_disabled">Pour participer activement à la surveillance de la santé au Brésil vous devez partager votre localisation</string>
+<string name="locale">fr</string>
 <string name="login">Se connecter</string>
 <string name="mai">Mai</string>
 <string name="mails">E-mails</string>
@@ -106,7 +169,6 @@
 <string name="message">Décrivez le problème</string>
 <string name="message_about_title_01">À PROPOS DE L\'APPLICATION « LES GARDIENS DE LA SANTÉ »</string>
 <string name="message_age">% ans</string>
-<string name="message_agree">J\'accepte les Conditions d\'Utilisation.</string>
 <string name="message_check_symptom">Écrivez ci-dessous ce que vous ressentez en ce moment :</string>
 <string name="message_create_account">Inscrivez-vous rapidement avec :</string>
 <string name="message_fields">Seuls les champs activés peuvent être changés.</string>
@@ -118,10 +180,10 @@
 <string name="message_home_member">Membres du domicile</string>
 <string name="message_hospital">Assurez-vous de trouver le service de santé le plus proche.</string>
 <string name="message_image_load">Défaut de charger l\'image</string>
+<string name="message_agree">J\'accepte les Conditions d\'Utilisation.</string>
 <string name="message_interest">Sélectionnez les catégories et les hashtags que vous souhaitez suivre</string>
 <string name="message_invite_friend">Invitez vos amis à devenir des Gardiens de la Santé.</string>
 <string name="message_login_enter">Connexion rapide avec :</string>
-<string name="message_new_member">Remplissez tous les champs ci-dessous pour ajouter un nouveau membre.</string>
 <string name="message_prepared">Prêt à devenir un Gardien de la Santé ?</string>
 <string name="message_present_symptom">Certains signes et symptômes seront présentés sur l\'écran suivant si l\'option « Mal » est sélectionnée.</string>
 <string name="message_prevent">Découvrez comment prévenir les maladies, Les services d\'urgences et les pharmacies les plus proches et les numéros utiles en cas d\'urgence.</string>
@@ -133,6 +195,7 @@
 <string name="message_register_info">Souhaitez-vous enregistrer vos informations ?</string>
 <string name="message_register_no_symptom">Choisissez un symptôme avant de confirmer.</string>
 <string name="message_select_join">Sélectionnez l\'un des profils ci-dessous pour commencer à participer.</string>
+<string name="message_new_member">Remplissez tous les champs ci-dessous pour ajouter un nouveau membre.</string>
 <string name="message_select_member">Sélectionnez un membre</string>
 <string name="message_select_profile">Sélectionnez le profil ci-dessous que vous souhaitez modifier.</string>
 <string name="message_symptom">Sélectionnez dans la liste les symptômes que vous présentez.</string>
@@ -147,8 +210,8 @@
 <string name="network_fail">Vous devez être connecté pour accéder à cette fonction. S\'il vous plaît, vérifiez votre réseau !</string>
 <string name="new_member_ok">Opération réalisée avec succès.</string>
 <string name="new_password">Un message a été envoyé à votre adresse mail. Suivez les instructions dans le message pour récupérer votre mot de passe.</string>
-<string name="no">Non</string>
 <string name="next">Suivant</string>
+<string name="no">Non</string>
 <string name="not_now">Pas maintenant</string>
 <string name="not_remove_member">Vous ne pouvez pas supprimer votre profil</string>
 <string name="notice">Nouvelles</string>
@@ -167,27 +230,27 @@
 <string name="participacoes_ultimos_dias">Participation au cours des derniers jours</string>
 <string name="permission_available_location">Permission de votre emplacement libéré.</string>
 <string name="permissions_not_granted">Permission de votre emplacement refusé!</string>
-<string name="pharmacy">Pharmacies</string>
 <string name="pointing">Score</string>
 <string name="pointing_message">Les points correspondent à chaque étape débloquée par tous les utilisateurs en fonction de leur nationalité.</string>
 <string name="police_text">Police militaire</string>
 <string name="prevention_content_01">Paludisme :\n\n•       Au Brésil, la transmission est concentrée dans la Région amazonienne, composée des états de l’Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima et Tocantins ;\n\n•       Dans les zones de transmission du paludisme, il est crucial que le voyageur soit conscient des heures de l’activité principale des moustiques vecteurs du paludisme, entre le coucher et le lever du soleil ;\n\n•       Utilisez des vêtements clairs à manches longues pendant les activités à exposition élevée ;\n\n•       Appliquer du répulsif sur les zones exposées de la peau, suivant les instructions du fabricant. Chez les enfants âgés de moins de deux ans, il n\'est pas recommandé l\'utilisation de répulsif sans avis médical ;\n\n•       Dans les zones de transmission du paludisme, il est indispensable que le voyageur soit attentif à l’apparition de symptômes de la maladie, comme la fièvre, les douleurs dans le corps et les maux de tête ;\n\n•       En cas de manifestation de quelques symptômes de la maladie, dirigez-vous vers une unité de santé spécialisée proche de chez vous. Idéalement, cette consultation doit être effectuée le plus tôt possible, dans un maximum de 48 heures après les premiers symptômes ;\n\n•       Le Brésil dispose d\'un réseau de santé publique structuré pour diagnostiquer et traiter les patients, de façon opportune et appropriée ;\n\n•       Si vous souhaitez obtenir plus d\'informations sur le paludisme avant votre départ, demandez conseil dans un des Centres de référence.\n\nPrémunissez-vous des maladies à transmission respiratoire : \n\n•       Lavez-vous les mains avec de l\'eau et du savon avant les repas ou les contacts avec les yeux, la bouche ou le nez et après avoir toussé, éternué ou être allé aux toilettes ;\n\n•       Les individus malades devraient se reposer, consommer une alimentation équilibrée, augmenter l\'apport de liquides et éviter les agglomérations et les endroits fermés ;\n\n•       Maintenez votre environnement aéré ;\n\n•       Soyez toujours attentif aux symptômes respiratoires les plus graves et dirigez-vous immédiatement vers une assistance médicale.\n\nConsommez des aliments et boissons de façon saine :\n\n•       Éviter de consommer des aliments dont les conditions d\'hygiène, de préparation et de conditionnement, sont précaires ;\n\n•       Préférez les aliments contenant de faibles taux de sucre, de graisse et de sel ;\n\n•       Buvez beaucoup, de préférence de l\'eau ou de jus de fruit. Évitez les aliments crus ou peu cuits, en particulier les fruits de mer ;\n\n•       Les aliments emballés doivent comporter l’identifiant du producteur sur l\'étiquette, la date de validité et l’emballage doit être entier ;\n\n•       Pour le tourisme rural, donner la préférence aux aliments qui peuvent se conserver sans réfrigération et qui supportent la chaleur ;\n\n•       Si vous souffrez de diarrhée et de vomissements dus à l\'ingestion de nourriture et de boisson, redoublez de vigilance pour éviter la déshydratation. Il est recommandé d’ingérer du sel de réhydratation orale, disponible gratuitement par le Système unique de santé, ou d\'autres solutions de ce type. Les boissons énergétiques ne compensent pas correctement les pertes et ne doivent pas être utilisées pour traiter une maladie diarrhéique.</string>
+<string name="pharmacy">Pharmacies</string>
 <string name="prevention_title_01">Prévention </string>
-<string name="profile">Profil</string>
 <string name="privacy">Intimité</string>
+<string name="profile">Profil</string>
 <string name="race">Couleur/Race</string>
 <string name="rash">Exanthématique.</string>
 <string name="register">Inscrivez-vous</string>
 <string name="register_fail">Impossible de compléter l’enregistrement. Réessayer dans quelques minutes !</string>
 <string name="relationship">Lien de parenté</string>
-<string name="relatorios">Rapports</string>
 <string name="report">Signaler des erreurs</string>
 <string name="report_day">Nombre de rapports de la journée</string>
+<string name="relatorios">Rapports</string>
 <string name="report_title">Si vous avez rencontré des difficultés d’utilisation de l\'application Gardiens de la Santé, veuillez remplir le formulaire ci-dessous et envoyez votre message à notre équipe d\'experts.</string>
 <string name="residence_country">Pays d\'origine</string>
-<string name="residence_state">État</string>
 <string name="respiratory">Respiratoire</string>
 <string name="resume">Résumé</string>
+<string name="residence_state">État</string>
 <string name="safe_sex_content">\n\nPréservatifs\n\n•       Le préservatif est le moyen pratique pour se protéger contre le VIH/sida, les hépatites virales et les infections sexuellement transmissibles (IST), comme la syphilis et la gonorrhée. \n\n•       Utilisez et disposer correctement du préservatif.\n\n•       Si le préservatif «a craqué» ou si vous avez eu des rapports sexuels sans préservatif, il peut être nécessaire d’utiliser une prophylaxie post-exposition contre le risque du VIH, connu sous l’acronyme PPE. \n\n•       PPE\n\n•       La PPE est un traitement avec un médicament antirétroviral qui empêche l\'infection par le VIH, responsable du sida. Elle est indiquée pour les personnes exposées aux risques du VIH, tels que les relations sexuelles occasionnelles, les violences sexuelles et les accidents de travail avec des matières biologiques.\n\n•       Si cela est indiqué par le médecin, le traitement PEP dure 28 jours et doit commencer dans les 72 heures après le contact sexuel non protégé.\n\nOù trouver des PPE ? (Lien direct vers l’application et/ou le site)  http://pep.aids.gov.br\n\nImportant\n\n•       Toute personne a droit à l’information et à l’accueil sans préjugés, stigmatisation, ni discrimination. \n\n•       Au Brésil, les préservatifs féminins et masculins et le gel lubrifiant sont distribués gratuitement dans les unités de santé, les foyers, les Centres touristiques et autres.  Renseignez-vous sur les points de distribution les plus proches.\n\n•       Si vous avez besoin de médicaments contre le VIH (perdus ou oubliés), dirigez-vous vers l’unité de santé la plus proche, en emmenant des documents d’identification. Touristes étrangers, renseignez-vous auprès de votre assurance santé (assurance maladie). \n\nN’oubliez pas\n\n•       Éviter l\'infection par les hépatites virales. Si vous vous faites faire un tatouage ou un piercing, choisissez des lieux qui possèdent une licence/autorisation délivrée par la Vigilance sanitaire locale. Exiger cette certification, si elle n\'est pas affichée sur le site.\n\n•       Exigez que le matériel utilisé soit stérilisé ou jetable.\n\n•       Ne partagez pas avec d’autres personnes vos effets personnels, tels que la pince à cuticules, les lames de rasoir, la brosse à dents, les aiguilles et les seringues.\n\n•       Si vous remarquez tout signe ou symptôme, comme des écoulements ou des plaies, ou tout autre problème de santé, informez-vous auprès d’un professionnel de la santé.\n\nLe saviez-vous ?\n\n•       De nombreuses personnes vivent avec le VIH et des hépatites virales et ne le savent pas. \n\n•       La seule façon de le savoir est de faire un test. Les tests anti-VIH et des hépatites sont gratuits et offerts dans le réseau de santé publique. Touristes étrangers, renseignez-vous auprès de votre assurance santé (assurance maladie). \n\n•       Il existe un vaccin contre l’hépatite B. Il doit être pris en 3 doses à différentes. Informez-vous pour savoir où il est disponible.</string>
 <string name="safe_sex_title">Se préserver des infections sexuellement transmissibles</string>
 <string name="save">Enregistrer</string>
@@ -208,8 +271,8 @@
 <string name="symptom_contato">J\'ai été en contact avec une personne présentant l’un de ces symptômes</string>
 <string name="symptom_diarreia">La diarrhée</string>
 <string name="symptom_dorcabeca">Les maux de tête</string>
-<string name="symptom_dorjuntas">Les douleurs articulaires</string>
 <string name="symptom_dorcorpo">Douleur dans le corps</string>
+<string name="symptom_dorjuntas">Les douleurs articulaires</string>
 <string name="symptom_estivefora">J\'étais hors du Brésil au cours des 14 derniers jours</string>
 <string name="symptom_febre">Fièvre</string>
 <string name="symptom_manchas">Taches rouges sur le corps</string>
@@ -251,16 +314,16 @@
 <string name="versao">Version</string>
 <string name="welcome">Bienvenue !</string>
 <string name="welcome_game_answer">Répondez correctement aux questions de santé pour activer des parties.</string>
-<string name="welcome_game_card">Collectionnez des figurines des sports olympiques après avoir terminé chaque étape.</string>
 <string name="welcome_game_phase">Notre piste de course contient plusieurs étapes. Terminer chaque étape pour aller le plus loin possible dans la course.</string>
 <string name="welcome_game_play">Chaque étape contient un puzzle. Complétez-le pour passer à l’étape suivante</string>
+<string name="welcome_game_card">Collectionnez des figurines des sports olympiques après avoir terminé chaque étape.</string>
 <string name="welcome_game_point">Pour jouer, vous devez avoir des points d’énergie. Participez quotidiennement aux Gardiens de la Santé pour en gagner !</string>
-<string name="welcome_game_welcome">Bienvenue sur notre piste de course ! Faites glisser pour en savoir plus sur la façon de jouer.</string>
 <string name="welfare">Aide sociale</string>
+<string name="welcome_game_welcome">Bienvenue sur notre piste de course ! Faites glisser pour en savoir plus sur la façon de jouer.</string>
 <string name="whatsapp_not_installed">WhatsApp n\'est pas installé sur cet appareil.</string>
 <string name="yes">Oui</string>
 <string name="you">Toi</string>
 <string name="zika_136">136</string>
+<string name="zika_title_01">Dengue, Zika et Chikungunya</string>
 <string name="zika_content_01">\n\n•       Les virus de la dengue, chikungunya et Zika sont transmis par le moustique Aedes aegypti et présentent des signes et des symptômes semblables. \n\n•       Il est important que vous vous dirigiez vers le service de santé le plus proche si vous avez de la fièvre, des taches rouges sur la corps, des douleurs dans le corps ou aux articulations ou des démangeaisons. \n\n•       Renseignez-vous sur d’éventuels cas de dengue, chikungunya ou Zika dans votre quartier ou ville. \n\n•       Si vous soupçonnez d’avoir la dengue, le Zika ou le Chikungunya, buvez abondement.\n\n•       La principale mesure de prévention consiste à éviter la reproduction des moustiques Aedes aegypti, transmetteurs des trois maladies. \n\n•       Les répulsifs anti-moustiques pour la peau peuvent être utilisés par les femmes enceintes, à condition qu\'ils aient l’accréditation ANVISA et que les instructions d\'utilisation décrites sur l\'étiquette soient respectées. Les produits à base de DEET, Acaridine (Picaridine), EBAAP (IR3535) sont considérés comme sûrs pour les femmes enceintes. \n\n•       Les produits à base de DEET ne doivent pas être utilisés chez les enfants âgés de moins de 2 ans. Chez les enfants âgés de 2 à 12 ans, la concentration doit être de 10 % maximum et l’application doit être limitée à 3 fois par jour. Pour les plus de 12 ans, une concentration supérieure à 10 % est permise.\n\n•       Les systèmes anti-moustiques, comme ceux qui se fixent aux murs (appareils électriques) ou les spirales ne doivent pas être utilisés dans des endroits avec une ventilation insuffisante ou en présence de personnes souffrant d\'asthme ou d\'allergies respiratoires. Ceux-ci peuvent être utilisés dans n\'importe quelle pièce de la maison, à condition qu\'elles soient placés à au moins deux mètres de distance des personnes. \n\nLa dengue\n\n•       La dengue est la maladie la plus répandue des trois et est déjà bien connue de la population brésilienne. \n\n•       N\'utilisez pas de médicaments à base d\'acide acétylsalicylique (par exemple : AAS, aspirine entre autres) ni des anti-inflammatoires, à cause d’un risque accru de complications hémorragiques (saignement) dans le cas de maladies telles que la dengue. \n\n•       N\'utilisez pas de médicaments à base d\'acide acétylsalicylique (par exemple : AAS, aspirine entre autres) ni des anti-inflammatoires, à cause d’un risque accru de complications hémorragiques (saignement) dans le cas de maladies telles que la dengue. \n\n•       Si vous présentez des signes ou symptômes de dengue, dirigez-vous immédiatement vers un service de santé. \n\nLe chikungunya\n\n•       Les premiers cas d\'infections par le chikungunya ont eu lieu en 2014.\n\n•       Si vous présentez des signes ou symptômes de chikungunya, dirigez-vous immédiatement vers un service de santé. \n\nZika\n\n•       Les premiers cas d\'infections par le virus Zika ont eu lieu en février 2015.\n\n•       En cas d\'infection par le virus Zika, la plupart des personnes (plus de 80 %) ne présente pas de signes ni de symptômes. \n\n•       Les complications causées par l\'infection du virus Zika sont mal connues. Des manifestations neurologiques (paralysie faciale, faiblesse dans les jambes et syndrome de Guillain-Barré) peuvent, dans de rares cas, apparaitre après la phase aigüe. L’infection pendant la grossesse peut entraîner des malformations congénitales graves, en particulier la microcéphalie. \n\n•       Il n\'y a pas de traitement spécifique pour l\'infection par le virus Zika. \n\n•       Si vous présentez des signes ou symptômes de Zika, dirigez-vous immédiatement vers un service de santé. \n\nLutter contre le moustique régulièrement :\n\n•       Stockez les futs et les jerricans d’eau bien bouchés\n\n•       Chaque semaine, lavez l’intérieur des réservoirs de stockage d’eau avec de l’eau et du savon.\n\n•       Maintenez le réservoir d’eau bien fermé. Mettre également une toile sur le trop-plein du réservoir d’eau.\n\n•       Enlever les feuilles, les brindilles et tout ce qui peut empêcher l\'eau de couler dans les gouttières.\n\n•       Ne laissez pas l\'eau s’accumuler sur la dalle.\n\n•       Remplissez de sable, et jusqu’au bord, les soucoupes des pots pour plantes.\n\n•       L’autre option pour les soucoupes des pots pour plantes consiste à les laver une fois par semaine.\n\n•       Changez l\'eau des pots de plantes aquatiques et lavez-les une fois par semaine avec une brosse, de l\'eau et du savon.\n\n•       Mettez les ordures dans des sacs en plastique et garder la poubelle bien fermée.\n\n•       Fermez bien les sacs à ordures et gardez-les hors de portée des animaux.\n\n•       Stockez les bouteilles goulot vers le bas, empêchant ainsi l\'accumulation d\'eau.\n\n•       Les pneus doivent être stockés dans des endroits couverts.\n\n•       Effectuez toujours l’entretien des piscines ou des fontaines en utilisant des produits chimiques appropriés.\n\n•       Si vous ne possédez pas d’évacuation qui s’ouvre et se ferme, mettez une toile fine pour empêcher les moustiques d’accéder à l’eau.\n\n•       Mettre du sable dans les débris qui peuvent accumuler de l\'eau.\n\n•       Ne laissez pas l’eau s’accumuler sur les feuilles sèches et les bouchons de bouteilles.\n\n•       Rabattez et vérifiez chaque semaine l’abattant de la cuvette des toilettes hors d’usages ou peu utilisées.\n\n•       Nettoyez toujours le plateau du climatiseur pour éviter l\'accumulation d\'eau.\n\n•       Les bâches utilisées pour couvrir des objets ou des gravas doivent être bien étirées pour éviter que l\'eau s’y accumule.\n\nPour toute question concernant la dengue, le chikungunya et le Zika,veuillez appeler le Numéro santé en composant le 136 option 3. </string>
 <string-array name="image_array"><item>Appareil photographique</item><item>Galerie</item></string-array><string-array name="gender_array"><item>Masculin</item><item>Féminin</item></string-array><string-array name="race_array"><item>Blanc</item><item>Noir</item><item>Brun</item><item>Jaune</item><item>Indigène</item></string-array><string-array name="relationship_array"><item>Père</item><item>Mère</item><item>Fils</item><item>Frère</item><item>Grand-père</item><item>Petit-fils</item><item>Oncle</item><item>Neveu</item><item>Arrière-grand-père</item><item>Arrière petite-fils</item><item>Cousin</item><item>Beau-père</item><item>Gendre</item><item>Belle-fille</item><item>Beau-père</item><item>Belle-mère</item><item>Beau-fils</item><item>Conjoint</item><item>Autres</item></string-array><string-array name="array_profile"><item>Athlète/Délégation</item><item>Travailleur/bénévole</item><item>Fan/Spectateur</item></string-array>
-<string name="zika_title_01">Dengue, Zika et Chikungunya</string>

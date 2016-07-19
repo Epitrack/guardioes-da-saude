@@ -1,19 +1,74 @@
+<string name="validation_state">Estado é um campo obrigatório</string>
+<string name="validation_country">País é um campo obrigatório</string>
+<string name="select">Selecione</string>
+<string name="vacinne_content_02">•       Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.
+
+•       Procure seu médico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem.</string>
+<string name="validation_gender">Sexo é um campo obrigatório</string>
+<string name="prevention_content_04">•       No Brasil, as camisinhas feminina e masculina e o gel lubrificante são distribuídos gratuitamente em unidades de saúde, albergues, Centros de Atendimento ao Turista e outros.  Informe-se sobre os pontos de distribuição mais próximos.</string>
+<string name="validation_profile">Perfil é um campo obrigatório.</string>
+<string name="prevention_title_04">Pratique sexo de forma segura</string>
+<string name="prevention_content_03">•       Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;
+
+•       Prefira alimentos que contenham baixo teor de açúcares, gorduras e sal;
+
+•       Beba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;
+
+•       Alimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;
+
+•       Durante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;
+
+•       Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.</string>
+<string name="validation_race">Raça é um campo obrigatório</string>
+<string name="prevention_title_03">Consuma alimentos e bebidas de forma saudável
+
+</string>
+<string name="prevention_content_02">•       Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n\n•       Indivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\n\n•       Mantenha os ambientes ventilados;\n\n•       Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\n\n</string>
+<string name="prevention_title_02">Previna-se contra doenças de transmissão respiratória
+
+</string>
+<string name="message_thanks_zika"> Obrigado pela informação!</string>
+<string name="fireman"> Bombeiro Civil</string>
+<string name="message_thanks"> Obrigado pela informação!</string>
+<string name="police"> Polícia Militar</string>
+<string name="zika_tip"> Dengue, Zika e Chikungunya</string>
+<string name="prevention"> Prevenção</string>
+<string name="phone"> Telefones Úteis</string>
+<string name="vaccine"> Vacinas</string>
+<string name="care"> CUIDADOS BÁSICOS</string>
+<string name="defense"> Defesa Civil</string>
+<string name="member_updated"> Operação realizada com sucesso.</string>
+<string name="generic_update_data_ok"> Operação realizada com sucesso.</string>
+<string name="safe_sex">Pratique sexo de forma segura</string>
+<string name="member_added"> Operação realizada com sucesso.</string>
+<string name="password_fail"> Sua senha precisa ter no mínimo 6 dígitos</string>
+<string name="password_not_equal"> As senhas não estão iguais.</string>
+<string name="internet_fail"> É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!</string>
+<string name="setting"> Configurações</string>
+<string name="tip_health">Dicas de Saúde</string>
+<string name="member"> Integrantes do domicílio</string>
+<string name="mail"> E-mail</string>
+<string name="zika"> Dengue, Zika e Chikungunya</string>
+<string name="good"> Bem</string>
+<string name="enter"> Entrar</string>
+<string name="bad"> Mal</string>
+<string name="already_registered">Você já possui uma conta, por favor faça login.</string>
+<string name="about"> Sobre</string>
 <string name="abr">Abr</string>
 <string name="about_text">SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE”\n\nO aplicativo “Guardiões da Saúde”, desenvolvido para celulares, tablets e computadores, faz parte da iniciativa do Ministério da Saúde, em parceria com a Organização Não-Governamental Skoll Global Threats Fund, dos Estados Unidos da América, visando avaliar o potencial uso de aplicativos para dispositivos móveis como parte da estratégia de fortalecimento da capacidade de detecção de surtos e emergências em saúde pública, no âmbito do Sistema Único de Saúde (SUS), principalmente durante eventos de massa, como nos Jogos Olímpicos e Paralímpicos de 2016.\n\nEsta estratégia é a evolução do projeto realizado com a mesma instituição, denominado “Saúde na Copa” e lançado exclusivamente para o período dos jogos da Copa do Mundo FIFA Brasil 2014®, cujos resultados mostraram-se promissores e foram mantidos os interesses de ambas as instituições para a realização de uma nova estratégia para os Jogos Olímpicos e Paralímpicos em 2016.\n\nA primeira versão do aplicativo Guardiões da Saúde já está disponível para os sistemas operacionais iOS da Apple e Android da Google e também por meio do site http://guardioesdasaude.org/.\n\nInicialmente desenvolvido no idioma português, nas próximas versões, o aplicativo “Guardiões da Saúde” estará disponível também nos idiomas oficiais das Nações Unidas, sendo um instrumento complementar para orientações aos viajantes internacionais ao Brasil, principalmente com destino às sedes dos Jogos Olímpicos e Paralímpicos de 2016. \n\nA participação na iniciativa está restrita aos usuários com 13 anos ou mais de idade. Além disso, é fundamental que antes de se cadastrar, os usuários leiam e aceitem os “Termos de Uso” e preenchimento de cadastro simplificado, contendo apelido, endereço de e-mail, data de nascimento, raça/cor, sexo e senha de acesso. A participação é voluntária, sigilosa e os dados fornecidos estão protegidos no âmbito Lei nº 12.527, de 18 de novembro de 2011.\n\nOs resultados do projeto serão utilizados pela vigilância em saúde dos Estados, Municípios e Governo Federal, visando detectar e prevenir surtos e emergências em saúde pública, por meio da adoção de medidas de prevenção e controle oportunas. A divulgação dos resultados do projeto será realizada de modo agregado e anonimizado , visando descrever o perfil da condição de saúde dos voluntários, a partir das informações repassadas por meio do aplicativo.\n\nSobre a participação voluntária\n\nSua participação é voluntária e uma gentil contribuição para o aprimoramento da vigilância em saúde no Brasil. O preenchimento do formulário sobre a condição de saúde não representa consulta médica, não garante acesso diferenciado aos serviços de saúde e o usuário não receberá o contato de nenhum profissional ou serviço de saúde para obter informações, seja por e-mail ou qualquer outro meio de contato.\n\nDurante a participação, mensagens de texto poderão ser enviadas aos usuários, apenas pelo aplicativo, por meio da tecnologia Push (Push Notification), contendo orientações sobre cuidados de saúde ou orientações dos órgãos de vigilância.\n\nÉ importante destacar que caso você informe que não está se sentindo bem, é recomendável que consulte um médico de referência ou serviço de saúde mais próximo de você. Para isso, está disponível no aplicativo um atalho com pesquisa pré-configurada de serviços de saúde e farmácias mais próximos de você, com base no serviço de geolocalização do seu dispositivo móvel no Google Maps. Essa funcionalidade não faz parte do aplicativo. Por esse motivo, será direcionado ao aplicativo de mapas de seu aparelho e recomenda-se cuidado ao transitar por áreas desconhecidas e evitar zonas de risco. Para isso, procure informações junto aos órgãos governamentais locais.\n\nO aplicativo foi configurado com um conjunto de telefones úteis incluindo o do SAMU (Serviço de Atendimento Móvel de Urgência), cuja ligação é gratuita e funciona 24 horas por dia atendendo solicitações de atendimento de urgência para ocorrências de natureza traumática, clínica, pediátrica, cirúrgica, gineco-obstétrica e de saúde mental, em residências, locais de trabalho e vias públicas.\n\nBenefícios da participação\n\n·       Participar ativamente das ações de vigilância em saúde que visam à prevenção de doenças na comunidade;\n\n·       Acessar os contatos de serviços públicos úteis sem precisar alterar sua agenda de telefones;\n\n·       Acessar facilmente informações úteis sobre cuidados de saúde e medidas de prevenção contra doenças;\n\n·       Usufruir de facilidades, como a pesquisa pré-configurada por Unidades de Pronto Atendimento e farmácias próximas (20 km) no Google Maps;\n\n·       Acompanhar os resultados do projeto, por meio do website www.guardioesdasaude.org;\n\nSaiba mais sobre o uso do aplicativo\n\nO aplicativo “Guardiões da Saúde” está disponível gratuitamente para download e utilização em sistemas operacionais iOS, Android e navegadores de internet. Em várias cidades há pontos de internet para uso gratuito ou o usuário poderá utilizar o seu próprio pacote de dados contratado.\n\nInforma-se que as chamadas telefônicas para os serviços públicos de referência registrados no aplicativo necessitam de plano de telefonia contratado. Portanto, consulte sua operadora antes de utilizar essa funcionalidade. Esse serviço não funcionará sem a presença da função de telefone no aparelho. Essa informação deve ser observada, principalmente por usuários de outros países.\n\nSobre a parceria\n\nA iniciativa pioneira é da Secretaria de Vigilância em Saúde do Ministério da Saúde em parceria com as cidades sedes dos Jogos Olímpicos e Paralímpicos. Na parceria, a Organização Não Governamental (ONG) Skoll Global Threats Fund ficou responsável pelos custos de contratação e desenvolvimento do software, sob supervisão da Associação Brasileira de Profissionais de Epidemiologia de Campo (ProEpi), ambas são Organizações Não Governamentais, sem fins lucrativos, que atuam no aprimoramento da vigilância em saúde no Brasil e no mundo.\n\nA ProEpi é responsável por garantir que os requisitos estabelecidos pelo Ministério da Saúde e pela Skoll Global Threats Fund sejam cumpridos, conforme previsto no projeto: privacidade dos dados dos usuários, transparência e publicidade dos resultados públicos do projeto e disponibilidade do código fonte e documentação em ambiente de livre acesso para download, adequação e uso do aplicativo por serviços de saúde do Brasil e de países interessados, desde que garantida a finalidade sem fins lucrativos.\n\nAgradecimento\n\nAs instituições organizadoras agradecem a todos os voluntários, profissionais de saúde e gestores do Sistema Único de Saúde por acreditarem no projeto piloto e apoiarem essa iniciativa pioneira na saúde pública internacional.\n\nAgradecimento especial às Secretarias de Saúde dos Municípios Sedes dos Jogos Olímpicos e Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador e São Paulo).</string>
 <string name="abril"> Abril</string>
 <string name="add_member"> Adicionar Integrante do Domicílio</string>
-<string name="adicionar_novo_integrante"> Adicionar\nnovo integrante</string>
 <string name="ago"> Ago</string>
+<string name="adicionar_novo_integrante"> Adicionar\nnovo integrante</string>
 <string name="agosto"> Agosto</string>
 <string name="alert_pharmacy"> Algumas farmácias podem não ser exibidas no mapa.</string>
-<string name="alert">Alertas</string>
 <string name="anos"> anos</string>
+<string name="alert">Alertas</string>
 <string name="app_name"> Guardiões da Saúde</string>
-<string name="about"> Sobre</string>
+<string name="app_name_short">Guardiões</string>
 <string name="attention"> Atenção</string>
 <string name="avatar">Avatar</string>
 <string name="bem"> Bem</string>
-<string name="app_name_short">Guardiões</string>
 <string name="calendar"> Calendário</string>
 <string name="call">Ligar</string>
 <string name="cancel"> Cancelar</string>
@@ -41,25 +96,26 @@
 <string name="emergence_text">Serviço de Atendimento Móvel de Urgência</string>
 <string name="emergency">SAMU</string>
 <string name="energy">%s Energias</string>
+<string name="erro_new_user">Não foi possível realizar o cadastro. Tente novamente em alguns minutos!</string>
 <string name="error_add_new_member"> Complete suas informações para efetuar o cadastro</string>
 <string name="exit"> Sair</string>
 <string name="exit_message"> Tem cereza que deseja sair do aplicativo?</string>
-<string name="facebook_cancel">Erro ao logar com o Facebook.</string>
 <string name="facebook">Facebook</string>
+<string name="facebook_cancel">Erro ao logar com o Facebook.</string>
 <string name="facebook_error">Erro ao logar com o Facebook.</string>
 <string name="facebook_fail">Erro ao logar com o Facebook.</string>
-<string name="fevereiro"> Fevereiro</string>
 <string name="fev"> Fev</string>
+<string name="fevereiro"> Fevereiro</string>
 <string name="fireman_text"> Bombeiro Civil</string>
-<string name="forgot_password"> Digite seu e-mail e verifique a sua caixa de entrada.</string>
-<string name="freq_label"> Frequência de envio de relatório em</string>
-<string name="freq_relatorio"> da frequência no envio de relatórios</string>
 <string name="frequency"> Frequência</string>
+<string name="freq_relatorio"> da frequência no envio de relatórios</string>
+<string name="freq_label"> Frequência de envio de relatório em</string>
 <string name="game_enjoy"> Divirta-se</string>
 <string name="gender"> Sexo</string>
 <string name="general"> Geral</string>
-<string name="general_ranking"> Ranking Geral</string>
+<string name="forgot_password"> Digite seu e-mail e verifique a sua caixa de entrada.</string>
 <string name="generic_error">Operação cancelada.</string>
+<string name="general_ranking"> Ranking Geral</string>
 <string name="generic_error_login">Não foi possível fazer o login. E-mail e/ou senha inválidos.</string>
 <string name="gmail">Gmail</string>
 <string name="google">Google</string>
@@ -76,11 +132,10 @@
 <string name="hint_password"> Senha precisa ter pelo menos 6 caracteres</string>
 <string name="hint_password_short"> Senha</string>
 <string name="hint_redefine_password"> Redefinir senha</string>
-<string name="hospital"> UPAs</string>
 <string name="hint_repeat_password"> Repetir Senha</string>
 <string name="home"> Início</string>
+<string name="hospital"> UPAs</string>
 <string name="hyphen">-</string>
-<string name="erro_new_user">Não foi possível realizar o cadastro. Tente novamente em alguns minutos!</string>
 <string name="interest">Interesses</string>
 <string name="jan"> Jan</string>
 <string name="janeiro"> Janeiro</string>
@@ -95,22 +150,22 @@
 <string name="locale">pt_BR</string>
 <string name="location_disabled"> Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização</string>
 <string name="login"> Entrar</string>
-<string name="mails">E-mails</string>
 <string name="mai"> Mai</string>
 <string name="maio"> Maio</string>
 <string name="mal"> Mal</string>
-<string name="map_health_1">Mapa da\nSaúde</string>
 <string name="map_health"> Mapa da Saúde</string>
+<string name="map_health_1">Mapa da\nSaúde</string>
+<string name="mails">E-mails</string>
 <string name="mar"> Mar</string>
 <string name="marco"> Março</string>
-<string name="message"> Descreva o problema</string>
 <string name="message_about_title_01"> SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE”</string>
-<string name="message_age">%d anos</string>
+<string name="message"> Descreva o problema</string>
 <string name="message_agree"> Concordo com os Termos de Uso.</string>
+<string name="message_age">%d anos</string>
 <string name="message_check_symptom"> Marque abaixo oque você está sentindo nesse momento:</string>
 <string name="message_create_account"> Cadastre-se rapidamente com:</string>
-<string name="message_fields"> Apenas os campos habilitados poderão ser alterados.</string>
 <string name="message_follow"> Acompanhe os casos de doenças em seu bairro ou em um determinado local.</string>
+<string name="message_fields"> Apenas os campos habilitados poderão ser alterados.</string>
 <string name="message_forgot_password"><u>Esqueceu sua senha?</u></string>
 <string name="message_health"> Como está sua saúde?</string>
 <string name="message_health_state"> Como está sua saúde nesse momento?</string>
@@ -133,14 +188,14 @@
 <string name="message_register_info"> Deseja registrar suas informações?</string>
 <string name="message_register_no_symptom"> Escolha algum sintoma antes de confirmar.</string>
 <string name="message_select_join"> Selecione algum dos perfis abaixo para começar a participar.</string>
-<string name="message_select_member"> Selecione um integrante</string>
 <string name="message_select_profile"> Selecione qual dos perfis abaixo quer editar.</string>
-<string name="message_term"><u>Política de Privacidade e Termos de Uso</u></string>
+<string name="message_select_member"> Selecione um integrante</string>
 <string name="message_symptom"> Marque na lista os sintomas que você apresenta.</string>
 <string name="message_thanks_2"> Continue informando diariamente como está sua saúde.</string>
+<string name="message_term"><u>Política de Privacidade e Termos de Uso</u></string>
 <string name="message_use_mail"> Ou use o seu e-mail</string>
-<string name="message_who_participate"> Quem vai participar?</string>
 <string name="message_user_max"> Só é possível adicionar 10 integrantes!</string>
+<string name="message_who_participate"> Quem vai participar?</string>
 <string name="message_zika"> Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima.</string>
 <string name="my_trophies"> Meus Troféus</string>
 <string name="network_disable"> Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.</string>
@@ -160,13 +215,13 @@
 <string name="open_google_maps">Deseja visualizar endereço no Google Maps?</string>
 <string name="open_link"> Deseja abrir o link da notícia?</string>
 <string name="option"> Opções</string>
-<string name="other"> Outros</string>
 <string name="out"> Out</string>
 <string name="outubro"> Outubro</string>
 <string name="participacoes"> Participações</string>
-<string name="participacoes_ultimos_dias"> Participações nos últimos dias</string>
+<string name="other"> Outros</string>
 <string name="permission_available_location">Permissão da sua localização liberada.</string>
 <string name="permissions_not_granted">Permissão da sua localização negada!</string>
+<string name="participacoes_ultimos_dias"> Participações nos últimos dias</string>
 <string name="pharmacy"> Farmácias</string>
 <string name="pointing"> Pontuação</string>
 <string name="pointing_message"> A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade.</string>
@@ -193,8 +248,8 @@
 <string name="save"> Salvar</string>
 <string name="search">Procurar</string>
 <string name="send"> Enviar</string>
-<string name="sender_id">9.97326E+11</string>
 <string name="server_api_key">AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50</string>
+<string name="sender_id">9.97326E+11</string>
 <string name="set"> Set</string>
 <string name="setembro"> Setembro</string>
 <string name="setting_upper"> Configurações</string>
@@ -219,6 +274,8 @@
 <string name="symptom_sangramento"> Sangramento</string>
 <string name="symptom_tosse"> Tosse</string>
 <string name="syndromes"> Síndromes</string>
+<string name="tag_app">#GuardioesDaSaude</string>
+<string name="tag_flu">#Gripe</string>
 <string name="syndromes_desc">As síndromes são conjuntos de manifestaç+A1:H6ões clínicas comuns a um número de doenças, entre elas: 
 
 •   Diarreica (febre e náusea ou vômito e diarreia, além de algum destes sintomas: dores no corpo ou dor de cabeça) 
@@ -226,8 +283,6 @@
 •   Respiratória (febre além de algum destes sintomas: tosse, dor de garganta ou falta de ar) 
 
 •   Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)</string>
-<string name="tag_app">#GuardioesDaSaude</string>
-<string name="tag_flu">#Gripe</string>
 <string name="tag_ministry">#MinisterioDaSaude</string>
 <string name="take_photo">Tirar foto</string>
 <string name="term"> Termos e Políticas</string>
@@ -238,17 +293,17 @@
 <string name="traveler_health"> SAÚDE DO VIAJANTE:</string>
 <string name="tutorial"> Tutorial</string>
 <string name="twitter">Twitter</string>
-<string name="twitter_fail">Não foi possível acessar o Guardiões da Saúde através do Twitter. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
-<string name="user_exist"> Cadastro realizado anteriormente com essa rede social.</string>
 <string name="useful_phones"> Telefones Úteis</string>
+<string name="user_exist"> Cadastro realizado anteriormente com essa rede social.</string>
 <string name="vacinne_content_01">\n\n•       A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada, de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida.\n\n•       O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país.\n\n•       Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças.\n\n•       Devido à circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença sejam vacinados previamente.\n\n•       A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.\n\n•       Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio, que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde.\n\nPREVENÇÃO CONTRA FEBRE AMARELA:\n\n•       Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.\n\n•       Procure seu médico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem.</string>
 <string name="vacinne_title_01"> VACINAS</string>
 <string name="validation_confirm_password"> As senhas não estão iguais.</string>
+<string name="twitter_fail">Não foi possível acessar o Guardiões da Saúde através do Twitter. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
 <string name="validation_empty">Campo obrigatório</string>
-<string name="validation_length">Mínimo três caracteres</string>
 <string name="validation_mail"> E-mail inválido!</string>
 <string name="validation_password"> Sua senha precisa ter no mínimo 6 dígitos</string>
 <string name="versao">Versão</string>
+<string name="validation_length">Mínimo três caracteres</string>
 <string name="welcome"> Bem-vindo!</string>
 <string name="welcome_game_answer"> Responda corretamente as perguntas sobre saúde para revelar peças.</string>
 <string name="welcome_game_card"> Colecione figurinhas dos esportes olímpicos após concluir cada fase!</string>
