@@ -9,10 +9,10 @@
         <form ng-submit="checkHash()" class="form-recuperar-senha" name="formCheckHash">
           <fieldset class="input-group mainform signup">
             <input type="password" class="form-control mainform-input" ng-model="screen.user.password"
-                   placeholder="Nova senha" name="newUserPass" ng-minlength="6">
+                   placeholder="{{'00410'|translate}}" name="newUserPass" ng-minlength="6">
 
             <input type="password" class="form-control mainform-input" ng-model="screen.repeatPassword"
-                   placeholder="Confirme a nova senha" name="newUserPassAgain">
+                   placeholder="{{'00126'|translate}} {{'00410'|translate}}" name="newUserPassAgain">
           </fieldset>
 
           <fieldset>
