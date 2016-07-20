@@ -1,5 +1,5 @@
 [{
-	"ANDROID_KEY": "accept",
+    "ANDROID_KEY": "accept",
     "PORTUGUES": "ACEITO",
     "Inglês": "I ACCEPT",
     "Espanhol": "ACEPTAR",
@@ -7,9 +7,9 @@
     "Árabe": "اعقد",
     "Russo": "ПРИНЯТЬ",
     "Francês": "ACCEPTER"
-	
-},{
-	"ANDROID_KEY": "not_accept",
+
+}, {
+    "ANDROID_KEY": "not_accept",
     "PORTUGUES": "NÃO ACEITO",
     "Inglês": "I DO NOT ACCEPT",
     "Espanhol": "NO ACEPTO",
@@ -17,8 +17,8 @@
     "Árabe": "لا يقبل",
     "Russo": "НЕ СОГЛАСНЫ",
     "Francês": "PAS ACCEPTER"
-	
-},{
+
+}, {
     "ANDROID_KEY": "language",
     "PORTUGUES": "Idioma",
     "Inglês": "Language",
@@ -27,7 +27,7 @@
     "Árabe": "اللغة",
     "Russo": "Язык",
     "Francês": "Langue"
-},{
+}, {
     "ANDROID_KEY": "validation_profile",
     "PORTUGUES": "Perfil é um campo obrigatório.",
     "Inglês": "Profile is a required field.",
@@ -36,7 +36,7 @@
     "Árabe": "الملف هو حقل مطلوب.",
     "Russo": "Профиль является обязательным полем.",
     "Francês": "Profil est un champ obligatoire."
-},{
+}, {
     "ANDROID_KEY": "validation_state",
     "PORTUGUES": "Estado é um campo obrigatório",
     "Inglês": "State is a required field.",
@@ -45,7 +45,7 @@
     "Árabe": "الدولة حقل مطلوب.",
     "Russo": "Государство является обязательным полем.",
     "Francês": "État est un champ obligatoire."
-},{
+}, {
     "ANDROID_KEY": "validation_country",
     "PORTUGUES": "País é um campo obrigatório",
     "Inglês": "Country is a required field",
@@ -54,7 +54,7 @@
     "Árabe": "البلد هو حقل مطلوب",
     "Russo": "Страна является обязательным полем",
     "Francês": "Pays est un champ obligatoire"
-},{
+}, {
     "ANDROID_KEY": "validation_race",
     "PORTUGUES": "Raça é um campo obrigatório",
     "Inglês": "Race is a required field",
@@ -63,7 +63,7 @@
     "Árabe": "السباق إلى حقل مطلوب",
     "Russo": "Гонка является обязательным полем",
     "Francês": "Race est un champ obligatoire"
-},{
+}, {
     "ANDROID_KEY": "validation_gender",
     "PORTUGUES": "Sexo é um campo obrigatório",
     "Inglês": "Sex is a required field",
@@ -72,7 +72,7 @@
     "Árabe": "الجنس هو حقل مطلوب",
     "Russo": "Секс является обязательным полем",
     "Francês": "Le sexe est un champ obligatoire"
-},{
+}, {
     "ANDROID_KEY": "select",
     "PORTUGUES": "Selecione",
     "Inglês": "Select",
@@ -81,7 +81,7 @@
     "Árabe": "اختر",
     "Russo": "выбрать",
     "Francês": "Sélectionner"
-},{
+}, {
     "ANDROID_KEY": "vacinne_content_02",
     "PORTUGUES": "•       Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.\n\n•       Procure seu médico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem.",
     "Inglês": "•       Take the yellow fever vaccine 10 days before visiting forest areas or practicing ecological or rural tourism to prevent against the disease.\n\n•       Contact your doctor to help you decide whether the vaccine is required, based on your travel itinerary.",
@@ -90,7 +90,7 @@
     "Árabe": "•       خذ لقاح الحمى الصفراء قبل 10 أيام من زيارة مناطق الغابات أو ممارسة السياحة البيئية أو الريفية للوقاية من هذا المرض.\n\n•       اتصل بالطبيب المعالج لك لمساعدتك على تحديد هل اللقاح ضروري، استنادًا إلى دليل الرحلات.",
     "Russo": "•       Проведите профилактику против желтой лихорадки, прививаясь за 10 дней до посещения лесных участков или провождения экологического и сельского туризма.\n\n•       Обратитесь к врачу, так как он может помочь вам решить, нужно ли прививаться, на основе вашего плана путешествия.",
     "Francês": "•       Prémunissez-vous de la fièvre jaune en prenant le vaccin 10 jours avant de visiter une zone de forêt ou de pratiquer le tourisme écologique ou rural.\n\n•       Dirigez-vous vers votre médecin car il pourra vous aider à décider si un vaccin est nécessaire, compte tenu de votre plan de voyage."
-},{
+}, {
     "ANDROID_KEY": "prevention_content_04",
     "PORTUGUES": "•       No Brasil, as camisinhas feminina e masculina e o gel lubrificante são distribuídos gratuitamente em unidades de saúde, albergues, Centros de Atendimento ao Turista e outros.  Informe-se sobre os pontos de distribuição mais próximos.",
     "Inglês": "•       In Brazil, male and female condoms and lubricant gels are distributed free-of-charge in all healthcare units, hostels, and Tourist Centers, among others. Find out which distribution centers are near you.",
@@ -99,7 +99,7 @@
     "Árabe": "   في البرازيل، توزع الواقيات الجنسية المخصصة للذكور والإناث ومواد هلامية المزلقة مجانًا في جميع وحدات الرعاية الصحية والفنادق والمراكز السياحية وأماكن أخرى. اكتشف مراكز التوزيع القريبة منك.",
     "Russo": "•       В Бразилии, женские и мужские презервативы и смазки распространяются бесплатно в медицинских учреждениях, хостелах, центрах туристического сервиса и другие местах.  Узнайте о ближайших точках распространения.",
     "Francês": "•       Au Brésil, les préservatifs féminins et masculins et le gel lubrifiant sont distribués gratuitement dans les unités de santé, les foyers, les Centres touristiques et autres.  Renseignez-vous sur les points de distribution les plus proches."
-},{
+}, {
     "ANDROID_KEY": "prevention_title_04",
     "PORTUGUES": "Pratique sexo de forma segura",
     "Inglês": "Practice safe sex",
@@ -108,7 +108,7 @@
     "Árabe": "ممارسة آمنة للجنس",
     "Russo": "Практикуйте безопасный секс",
     "Francês": "Se préserver des infections sexuellement transmissibles"
-},{
+}, {
     "ANDROID_KEY": "prevention_content_03",
     "PORTUGUES": "•       Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;\n\n•       Prefira alimentos que contenham baixo teor de açúcares, gorduras e sal;\n\n•       Beba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;\n\n•       Alimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;\n\n•       Durante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;\n\n•       Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.",
     "Inglês": "•       Avoid foods with questionable hygienic, preparation and packaging conditions;\n\n•       Prioritize foods with low sugar, fat and salt contents;\n\n•       Drink plenty of fluids, preferably water or juice. Avoid raw or undercooked food, especially seafood;\n\n•       Packaged food labels must clearly indicate the producer, expiration date and the packages must be sealed;\n\n•       When practicing rural tourism, always prioritize foods that do not require refrigeration or spoil in the heat;\n\n•       If you experience vomiting or diarrhea after ingesting foods or beverages, special attention is required to avoid dehydration. In these cases, it is recommended to ingest oral rehydration salts provided free of charge by the Unified Healthcare System, or other similar solutions. Sports drinks do not properly offset fluid losses and must never be used to treat diarrheic diseases.",
@@ -117,7 +117,7 @@
     "Árabe": "•       تجنب تناول الأطعمة المصحوبة بظروف تحضير وتغليف صحية مشكوك فيها؛\n\n•       أعطِ أولوية للأطعمة التي تحتوي على نسبة منخفضة من محتويات السكر والدهن والملح؛\n\n•       تناول قدر وفير من السوائل، ويفضل تناول المياه أو العصائر. تجنب تناول الطعام النيئ أو غير المطبوخ جيدًا، ولا سيما المأكولات البحرية؛\n\n•       يجب أن تشير ملصقات التسمية على الأطعمة المغلّفة إلى جهة الإنتاج وتاريخ انتهاء الصلاحية كما يجب أن تكون العبوات مختومة؛\n\n•       عند ممارسة السياحة الريفية، أعطِ الأولوية دائمًا إلى الأطعمة التي لا تحتاج إلى تبريد أو التي لا تفسد في الأجواء الحارة؛\n\n•       إذا كنت تعاني من التقيؤ أو الإسهال بعد بلع الطعام أو المشروبات، فمن الضروري إيلاء اهتمام خاص لذلك لتجنب الإصابة بالجفاف. في هذه الحالات، ينصح ببلع أملاح الإماهة الفموية التي يوفرها بالمجان نظام الرعاية الصحية الموحد، أو غيرها من الحلول الأخرى. لا تعوض المشروبات الرياضية فقد السوائل تعويضًا صحيحًا ويجب تجنب استخدامها لعلاج الأمراض المصحوبة بالإسهال.",
     "Russo": "•       Избегайте потребления пищевых продуктов, приготовленных и упакованных в сомнительных гигиенических условиях;\n\n•       Отдавайте предпочтение продуктам, с низким содержанием сахара, жира и соли;\n\n•       Пейте много жидкости, предпочтительно воды или сок. Избегайте сырые или недоваренные продукты, особенно морепродукты;\n\n•       Упакованные пищевые продукты должны быть маркированы, чтобы идентифицировать производителя, срок годности и упаковка должны быть неповрежденными;\n\n•       Во время сельского туризма, отдают предпочтение продуктам, которые могут храниться не охлажденными и не портятся в жару;\n\n•       Если у вас есть диарея и рвота вследствие приема пищи и питья, вы должны быть более внимательны с обезвоживанием. Рекомендуется прием оральной регидратационной соли, которую можно бесплатно приобрести в Единой Системе Здравоохранения или других похожих растворов. Спортивные напитки не компенсируют должным образом потери и не должны использоваться для лечения желудочно-кишечных заболеваний.",
     "Francês": "•       Éviter de consommer des aliments dont les conditions d'hygiène, de préparation et de conditionnement, sont précaires ;\n\n•       Préférez les aliments contenant de faibles taux de sucre, de graisse et de sel ;\n\n•       Buvez beaucoup, de préférence de l'eau ou de jus de fruit. Évitez les aliments crus ou peu cuits, en particulier les fruits de mer ;\n\n•       Les aliments emballés doivent comporter l’identifiant du producteur sur l'étiquette, la date de validité et l’emballage doit être entier ;\n\n•       Pour le tourisme rural, donner la préférence aux aliments qui peuvent se conserver sans réfrigération et qui supportent la chaleur ;\n\n•       Si vous souffrez de diarrhée et de vomissements dus à l'ingestion de nourriture et de boisson, redoublez de vigilance pour éviter la déshydratation. Il est recommandé d’ingérer du sel de réhydratation orale, disponible gratuitement par le Système unique de santé, ou d'autres solutions de ce type. Les boissons énergétiques ne compensent pas correctement les pertes et ne doivent pas être utilisées pour traiter une maladie diarrhéique."
-},{
+}, {
     "ANDROID_KEY": "prevention_title_03",
     "PORTUGUES": "Consuma alimentos e bebidas de forma saudável\n\n",
     "Inglês": "Consume healthy foods and beverages\n\n",
@@ -126,7 +126,7 @@
     "Árabe": "تناول الأطعمة والمشروبات الصحية:\n\n",
     "Russo": "Потребляйте здоровую пищу и напитки\n\n",
     "Francês": "Consommez des aliments et boissons de façon saine\n\n"
-},{
+}, {
     "ANDROID_KEY": "prevention_content_02",
     "PORTUGUES": "•       Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\\n\\n•       Indivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\\n\\n•       Mantenha os ambientes ventilados;\\n\\n•       Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\\n\\n",
     "Inglês": "• Wash hands with soap and water before meals, touching the eyes, mouth and nose and after coughing, sneezing or using the bathroom; \\n \\n • Individuals patients should be at rest, eat a balanced diet, increase fluid intake and avoid crowds and indoors; \\n \\n • Keep ventilated environments;. \\n \\n • always be alert to respiratory symptoms severity and immediately seek medical attention \\n \\n",
@@ -135,7 +135,7 @@
     "Árabe": "• غسل اليدين بالصابون والماء قبل وجبات الطعام، ولمس العينين والفم والأنف وبعد السعال أو العطس أو استخدام الحمام.\n\n• يجب أن يكون الأفراد المرضى في الراحة، وتناول نظام غذائي متوازن، وزيادة تناول السوائل وتجنب الحشود وفي الداخل؛\n\n• حافظ على بيئات التهوية.\n\n• أن يكون دائما في حالة تأهب لأعراض تنفسية شدة وتسعى فورا إلى عناية طبية.\n\n",
     "Russo": "• Мойте руки водой с мылом перед едой, касаясь глаза, рот и нос и после кашля, чихания или использования в ванной комнате;\n\n• Физические лица больные должны находиться в состоянии покоя, есть сбалансированный рацион питания, увеличивая потребление жидкости и избегать толпы и в помещении;\n\n• Храните вентилируемых среды;\n\n• Всегда будьте внимательны к тяжести респираторных симптомов и немедленно обратиться к врачу.\n\n",
     "Francês": "• Se laver les mains avec de l'eau et du savon avant les repas, toucher les yeux, la bouche et le nez et après avoir toussé, éternué ou utilisé la salle de bains;\n\n• Les individus malades devraient être au repos, une alimentation équilibrée, l'augmentation de l'apport hydrique et éviter les foules et à l'intérieur;\n\n• Garder les environnements ventilés;\n\n• Toujours être attentif aux symptômes respiratoires gravité et consulter immédiatement un médecin.\n\n"
-},{
+}, {
     "ANDROID_KEY": "prevention_title_02",
     "PORTUGUES": "Previna-se contra doenças de transmissão respiratória\n\n",
     "Inglês": "Prevention of airborne diseases\n\n",
@@ -144,7 +144,7 @@
     "Árabe": "الوقاية من الأمراض المنقولة بالهواء\n\n",
     "Russo": "Проводите профилактику респираторных заболеваний\n\n",
     "Francês": "Prémunissez-vous des maladies à transmission respiratoire\n\n"
-},{
+}, {
     "ANDROID_KEY": "message_thanks_zika",
     "PORTUGUES": " Obrigado pela informação!",
     "Inglês": "Thanks for sharing that information!",
@@ -153,7 +153,7 @@
     "Árabe": "نشكرك على مشاركة المعلومات!",
     "Russo": "Спасибо за информацию!",
     "Francês": "Merci pour l\\'information !"
-},{
+}, {
     "ANDROID_KEY": "message_thanks",
     "PORTUGUES": " Obrigado pela informação!",
     "Inglês": "Thanks for sharing that information!",
@@ -171,7 +171,7 @@
     "Árabe": "الدفاع المدني",
     "Russo": "Гражданская Защита",
     "Francês": "Défense civile"
-},{
+}, {
     "ANDROID_KEY": "fireman",
     "PORTUGUES": " Bombeiro Civil",
     "Inglês": "Firefighter",
@@ -180,7 +180,7 @@
     "Árabe": "رجل الإطفاء",
     "Russo": "Гражданский пожарным",
     "Francês": "Pompier civil"
-},{
+}, {
     "ANDROID_KEY": "police",
     "PORTUGUES": " Polícia Militar",
     "Inglês": "Military Police",
@@ -189,7 +189,7 @@
     "Árabe": "الشرطة العسكرية",
     "Russo": "Полиция",
     "Francês": "Police militaire"
-},{
+}, {
     "ANDROID_KEY": "zika_tip",
     "PORTUGUES": " Dengue, Zika e Chikungunya",
     "Inglês": "Dengue fever, Zika and Chikungunya",
@@ -198,7 +198,7 @@
     "Árabe": "حمى الضنك وحمى زيكا وحمى شيكونغونيا.",
     "Russo": "Денге, Зика и Чикунгунья.",
     "Francês": "Dengue, Zika et Chikungunya"
-},{
+}, {
     "ANDROID_KEY": "prevention",
     "PORTUGUES": " Prevenção",
     "Inglês": "Prevention",
@@ -207,7 +207,7 @@
     "Árabe": "الوقاية ",
     "Russo": "Профилактика ",
     "Francês": "Prévention "
-},{
+}, {
     "ANDROID_KEY": "care",
     "PORTUGUES": " CUIDADOS BÁSICOS",
     "Inglês": "BASIC CARE",
@@ -225,7 +225,7 @@
     "Árabe": "أرقام هواتف مفيدة",
     "Russo": "Полезные Телефоны",
     "Francês": "Numéros utiles"
-},{
+}, {
     "ANDROID_KEY": "vaccine",
     "PORTUGUES": " Vacinas",
     "Inglês": "Vaccines",
@@ -234,7 +234,7 @@
     "Árabe": "اللقاحات",
     "Russo": "Прививки",
     "Francês": "Vaccins"
-},{
+}, {
     "ANDROID_KEY": "member_updated",
     "PORTUGUES": " Operação realizada com sucesso.",
     "Inglês": "Operation successfully completed.",
@@ -243,7 +243,7 @@
     "Árabe": "اكتملت العملية بنجاح.",
     "Russo": "Операция выполнена успешно.",
     "Francês": "Opération réalisée avec succès."
-},{
+}, {
     "ANDROID_KEY": "member_added",
     "PORTUGUES": " Operação realizada com sucesso.",
     "Inglês": "Operation successfully completed.",
@@ -252,7 +252,7 @@
     "Árabe": "اكتملت العملية بنجاح.",
     "Russo": "Операция выполнена успешно.",
     "Francês": "Opération réalisée avec succès."
-},{
+}, {
     "ANDROID_KEY": "generic_update_data_ok",
     "PORTUGUES": " Operação realizada com sucesso.",
     "Inglês": "Operation successfully completed.",
@@ -261,7 +261,7 @@
     "Árabe": "اكتملت العملية بنجاح.",
     "Russo": "Операция выполнена успешно.",
     "Francês": "Opération réalisée avec succès."
-},{
+}, {
     "ANDROID_KEY": "safe_sex",
     "PORTUGUES": "Pratique sexo de forma segura",
     "Inglês": "Practice safe sex",
@@ -270,7 +270,7 @@
     "Árabe": "ممارسة آمنة للجنس",
     "Russo": "Практикуйте безопасный секс",
     "Francês": "Se préserver des infections sexuellement transmissibles"
-},{
+}, {
     "ANDROID_KEY": "password_not_equal",
     "PORTUGUES": " As senhas não estão iguais.",
     "Inglês": "The passwords are not the same.",
@@ -279,7 +279,7 @@
     "Árabe": "كلمات المرور غير متطابقة.",
     "Russo": "Пароли не совпадают.",
     "Francês": "Les mots de passe sont différents."
-},{
+}, {
     "ANDROID_KEY": "password_fail",
     "PORTUGUES": " Sua senha precisa ter no mínimo 6 dígitos",
     "Inglês": "Your password must be at least 6 digits",
@@ -288,7 +288,7 @@
     "Árabe": "يجب أن تكون كلمة المرور الخاصة بك لا يقل عن 6 ارقام",
     "Russo": "Ваш пароль должен быть не менее 6 цифр",
     "Francês": "Votre mot de passe doit être d\\'au moins 6 chiffres"
-},{
+}, {
     "ANDROID_KEY": "internet_fail",
     "PORTUGUES": " É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!",
     "Inglês": "You must be logged in to use this feature. Check your network connection.",
@@ -297,7 +297,7 @@
     "Árabe": "يجب أن تكون سجلت الدخول لاستخدام هذه الميزة. تحقق من اتصال شبكتك.",
     "Russo": "Вы должны быть подключены для того, чтобы иметь доступ к этой функции. Пожалуйста, проверьте сеть!",
     "Francês": "Vous devez être connecté pour accéder à cette fonction. S\\'il vous plaît, vérifiez votre réseau !"
-},{
+}, {
     "ANDROID_KEY": "tip_health",
     "PORTUGUES": "Dicas de Saúde",
     "Inglês": "Health  Tips",
@@ -306,7 +306,7 @@
     "Árabe": "نصائح صحية",
     "Russo": "Советы для Здоровья",
     "Francês": "Conseils Santé"
-},{
+}, {
     "ANDROID_KEY": "setting",
     "PORTUGUES": " Configurações",
     "Inglês": "Settings",
@@ -324,7 +324,7 @@
     "Árabe": "أفراد الأسرة",
     "Russo": "Члены семьи",
     "Francês": "Membres du domicile"
-},{
+}, {
     "ANDROID_KEY": "mail",
     "PORTUGUES": " E-mail",
     "Inglês": "Email",
@@ -333,7 +333,7 @@
     "Árabe": "البريد الإلكتروني",
     "Russo": "Электронная почта",
     "Francês": "E-mail"
-},{
+}, {
     "ANDROID_KEY": "zika",
     "PORTUGUES": " Dengue, Zika e Chikungunya",
     "Inglês": "Dengue fever, Zika and Chikungunya",
@@ -342,7 +342,7 @@
     "Árabe": "حمى الضنك وحمى زيكا وحمى شيكونغونيا.",
     "Russo": "Денге, Зика и Чикунгунья.",
     "Francês": "Dengue, Zika et Chikungunya"
-},{
+}, {
     "ANDROID_KEY": "good",
     "PORTUGUES": " Bem",
     "Inglês": "Good ",
@@ -351,7 +351,7 @@
     "Árabe": "الصحة",
     "Russo": "Хорошо",
     "Francês": "Bien"
-},{
+}, {
     "ANDROID_KEY": "enter",
     "PORTUGUES": " Entrar",
     "Inglês": "Login",
@@ -1159,7 +1159,7 @@
     "Espanhol": "¡Participe\\n Ahora!",
     "Chinês": "現在參與 ！",
     "Árabe": "شارك الآن!",
-    "Russo": "Присоединяйтесь к нам сейчас!",
+    "Russo": "Присоединяйтесь \\n к нам сейчас!",
     "Francês": "Participez\\n dès maintenant !"
 }, {
     "ANDROID_KEY": "join_now ",
@@ -2350,6 +2350,24 @@
     "Russo": "Кровотечение",
     "Francês": "Le saignement"
 }, {
+    "ANDROID_KEY": "symptom_dorgarganta",
+    "PORTUGUES": " Dor de garganta",
+    "Inglês": "Sore throat",
+    "Espanhol": "Dolor de garganta",
+    "Chinês": "喉嚨痛",
+    "Árabe": "التهاب في الحلق",
+    "Russo": "Боль в горле",
+    "Francês": "Mal de gorge"
+}, {
+    "ANDROID_KEY": "symptom_faltaar",
+      "PORTUGUES": " Falta de ar",
+      "Inglês": "Shortness of breath",
+      "Espanhol": "Falta de aire",
+      "Chinês": "呼吸急促",
+      "Árabe": "ضيق التنفس",
+      "Russo": "Одышка",
+      "Francês": "Essoufflement"
+    },{
     "ANDROID_KEY": "symptom_tosse ",
     "PORTUGUES": " Tosse",
     "Inglês": "Coughing",
