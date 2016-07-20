@@ -374,15 +374,15 @@ angular.module('gdsApp')
         var content_5pontos = "Participe diariamente do Guardiões da Saúde para restaurá-las!"; //00457
         var content_amanha = "Participe amanhã do Guardiões da Saúde para jogar novamente!"; //00896
         $scope.participe_agora = "Participe agora!"; //00455
-        var resposta_certa = "Resposta CORRETA!"; //00897
+        var resposta_certa = "Resposta CORRETA!"; //00901
 
-        $translate(['00649', '00650', '00457', '00896','00455','00897',]).then(function(translations) {
+        $translate(['00649', '00650', '00457', '00896','00455','00901',]).then(function(translations) {
             title_sem_energia = translations['00649'];
             title_5pontos = translations['00650'].replace("10", "5");
             content_5pontos = translations['00457'];
             content_amanha = translations['00896'];
             $scope.participe_agora = translations['00455'];
-            resposta_certa = translations['00897'];
+            resposta_certa = translations['00901'];
         });
 
         // Click Info tutorial
