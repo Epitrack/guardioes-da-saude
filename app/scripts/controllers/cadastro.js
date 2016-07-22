@@ -20,9 +20,6 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
         $scope.createData = {};
         $scope.createData.country = "Selecione";
         $scope.createData.state = "Selecione";
-        $scope.fr = true;
-        
-
         
         // Facebook
         $scope.facebookLogin = function() {
@@ -76,7 +73,9 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
         } 
 
         $scope.updateUserSocialData = function() {
-           
+
+            
+
             var params = {
                 nick: $scope.userData.nick,
                 gender: $scope.userData.gender,
@@ -86,21 +85,18 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
                 profile: $scope.userData.profile
             };
 
+
+            console.log($scope.fr);
+
             if (!$scope.fr) {
                 params['race'] = $scope.userData.race;
+            }else{
+                params['race'] = 'france';
             }
 
             if ($scope.isbrasil()) {
                 params['state'] = $scope.userData.state;
             }
-
-            if ($scope.userData.country == 'France') {
-                params.race = 'france';
-            } else {
-                params.race = $scope.userData.race;
-            }
-
-            console.log("params", params);
 
             $scope.checkF = $scope.UTIL.checkForm(params, true);
 
@@ -123,6 +119,9 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             angular.element('#modal-complete-login').modal('hide');
 
+            console.log(params);
+            alert('ok');
+
             UserApi.createUser(params, function(data) {
                 console.log('UserApi.createUser: ', data);
                 if (data.data.error === false) {
@@ -131,7 +130,7 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
                     $location.path('survey');
                 } else {
                     Notification.show('error', 'Cadastro', data.data.message);
-                    // console.warn(data.data.message);
+                    console.warn(data.data.message);
                 }
             });
         };

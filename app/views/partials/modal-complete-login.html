@@ -1,7 +1,8 @@
 <div class="modal fade modal-add-profile" id="modal-complete-login" tabindex="-1" role="dialog" aria-labelledby="modalCompleteLogin">
     <article class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <form ng-submit="updateUserSocialData()" class="card-form" name="addFormSocialData">
+
+            <form class="card-form" name="addFormSocialData">
                 <header class="modal-header panel-heading">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h3 class="modal-title panel-title">{{'00663'| translate}}</h3>
@@ -85,10 +86,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="pull-right btn btn-primary">{{'00524' | translate}}</button>
+                    <button type="submit" class="pull-right btn btn-primary" ng-click="updateUserSocialData()">{{'00524' | translate}}</button>
                     <button class="pull-right btn btn-primary cancel" data-dismiss="modal">{{'00096' | translate}}</button>
                 </div>
             </form>
+            
         </div>
     </article>
 </div>
