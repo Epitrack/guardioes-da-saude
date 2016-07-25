@@ -167,7 +167,10 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
-            $scope.graphicTwoPerc = ((($scope.dash.lastWeekRegisters - $scope.dash.newRegisters) / $scope.dash.newRegisters) * 100).toFixed(1);
+            $scope.graphicTwoPerc = ((($scope.dash.lasWeekdeleted - $scope.dash.deletedRegisters) / $scope.dash.deletedRegisters) * 100).toFixed(1);
+            if($scope.graphicTwoPerc==='NaN'){
+                $scope.graphicTwoPerc=0.0;
+            }
             angular.element('.chart2').data('easyPieChart').update($scope.graphicTwoPerc);
             angular.element('.chart2').attr('data-legend', $scope.graphicTwoPerc + '%');
         }
