@@ -119,6 +119,8 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             angular.element('#modal-complete-login').modal('hide');
 
+            
+
             UserApi.createUser(params, function(data) {
                 console.log('UserApi.createUser: ', data);
                 if (data.data.error === false) {
