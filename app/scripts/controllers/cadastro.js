@@ -86,7 +86,7 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
             };
 
 
-            console.log($scope.fr);
+            // console.log($scope.fr);
 
             if (!$scope.fr) {
                 params['race'] = $scope.userData.race;
