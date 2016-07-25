@@ -74,8 +74,6 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
         $scope.updateUserSocialData = function() {
 
-            
-
             var params = {
                 nick: $scope.userData.nick,
                 gender: $scope.userData.gender,
@@ -84,9 +82,6 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
                 country: $scope.userData.country,
                 profile: $scope.userData.profile
             };
-
-
-            console.log($scope.fr);
 
             if (!$scope.fr) {
                 params['race'] = $scope.userData.race;
@@ -119,19 +114,19 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             angular.element('#modal-complete-login').modal('hide');
 
-            
+            console.log(params);          
 
-            UserApi.createUser(params, function(data) {
-                console.log('UserApi.createUser: ', data);
-                if (data.data.error === false) {
-                    Notification.show('success', 'Cadastro', data.data.message);
-                    LocalStorage.userCreateData(data.data.user);
-                    $location.path('survey');
-                } else {
-                    Notification.show('error', 'Cadastro', data.data.message);
-                    console.warn(data.data.message);
-                }
-            });
+            // UserApi.createUser(params, function(data) {
+            //     console.log('UserApi.createUser: ', data);
+            //     if (data.data.error === false) {
+            //         Notification.show('success', 'Cadastro', data.data.message);
+            //         LocalStorage.userCreateData(data.data.user);
+            //         $location.path('survey');
+            //     } else {
+            //         Notification.show('error', 'Cadastro', data.data.message);
+            //         console.warn(data.data.message);
+            //     }
+            // });
         };
 
 
