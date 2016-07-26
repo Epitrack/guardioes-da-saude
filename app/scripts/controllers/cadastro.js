@@ -116,17 +116,17 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             console.log(params);          
 
-            // UserApi.createUser(params, function(data) {
-            //     console.log('UserApi.createUser: ', data);
-            //     if (data.data.error === false) {
-            //         Notification.show('success', 'Cadastro', data.data.message);
-            //         LocalStorage.userCreateData(data.data.user);
-            //         $location.path('survey');
-            //     } else {
-            //         Notification.show('error', 'Cadastro', data.data.message);
-            //         console.warn(data.data.message);
-            //     }
-            // });
+            UserApi.createUser(params, function(data) {
+                console.log('UserApi.createUser: ', data);
+                if (data.data.error === false) {
+                    Notification.show('success', 'Cadastro', data.data.message);
+                    LocalStorage.userCreateData(data.data.user);
+                    $location.path('survey');
+                } else {
+                    Notification.show('error', 'Cadastro', data.data.message);
+                    console.warn(data.data.message);
+                }
+            });
         };
 
 
