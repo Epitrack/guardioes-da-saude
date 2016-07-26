@@ -7,7 +7,7 @@
  * # DashboardCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 'Notification', 
+angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 'Notification',
     function($scope, DashboardApi, Notification) {
         $scope.pageClass = 'dashboard-page';
 
@@ -115,6 +115,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 }
             }
             $("#line-example").empty();
+            console.log("$scope.dado_grafico",$scope.dado_grafico);
             $scope.graficoparticipacoes = Morris.Line({
                 element: 'line-example',
                 data: $scope.dado_grafico,
@@ -123,7 +124,9 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 ykeys: $scope.ykeys,
                 labels: $scope.labels,
                 xLabelFormat: function(x) {
-                    return moment(x).format("DD/MM/YYYY");
+                    console.log("moment(x).format().week()", moment(x).week());
+                    // return moment(x).format("DD/MM/YYYY");
+                    return moment(x).week();
                 },
                 dateFormat: function(x) {
                     return moment(x).format("DD/MM/YYYY");
@@ -168,8 +171,8 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
             $scope.graphicTwoPerc = ((($scope.dash.lasWeekdeleted - $scope.dash.deletedRegisters) / $scope.dash.deletedRegisters) * 100).toFixed(1);
-            if($scope.graphicTwoPerc==='NaN'){
-                $scope.graphicTwoPerc=0.0;
+            if ($scope.graphicTwoPerc === 'NaN') {
+                $scope.graphicTwoPerc = 0.0;
             }
             angular.element('.chart2').data('easyPieChart').update($scope.graphicTwoPerc);
             angular.element('.chart2').attr('data-legend', $scope.graphicTwoPerc + '%');
@@ -513,4 +516,5 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             "TO"
         ];
 
-    }]);
+    }
+]);
