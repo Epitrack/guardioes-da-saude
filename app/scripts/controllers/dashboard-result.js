@@ -9,7 +9,7 @@
  */
 angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$scope', '$location',
     function($rootScope, $scope, $location) {
-        
+        //$scope.type
         $scope.type = window.localStorage.getItem('type');
         $scope.result = JSON.parse(window.localStorage.getItem('result'));
         try {
@@ -306,19 +306,21 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
             var data, filename, link;
             var dadosfiltrados = JSON.parse(window.localStorage.getItem('dadosfiltrados'));
             var csv = $scope.convertArrayOfObjectsToCSV({
-                data: dadosfiltrados
+                data: dadosfiltrados,
+                columnDelimiter:';'
             });
             // if (csv == null) return;
-            filename = 'guardioes_da_saude_analises.csv';
+            filename = 'gds_analises_'+window.localStorage.getItem('groups')+'_'+window.localStorage.getItem('filters')+'.csv';
             // if (!csv.match(/^data:text\/csv/i)) {
             csv = 'data:text/csv;charset=utf-8,' + csv;
             // }
             data = encodeURI(csv);
-            // link = document.createElement('a');
-            // link.setAttribute('href', data);
-            // link.setAttribute('download', filename);
-            // link.click();
+            /*link = document.createElement('a');
+            link.setAttribute('href', data);
+            link.setAttribute('download', filename);
+            link.click();*/
             $("#btn_download").attr("href", data);
+            $("#btn_download").attr("download", filename);
             // console.log($("#btn_download").attr("href"));
             // console.log(link);
         }
