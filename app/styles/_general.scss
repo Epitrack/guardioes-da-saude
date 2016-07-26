@@ -155,6 +155,21 @@ body {
     }
 }
 
+.btn-divirtase{
+    width: auto;
+    padding-left: 40px!important;
+    border: none;
+    background: #1e88e5 url('../images/divirtase.png') 15px 15px no-repeat;
+    &:focus{
+        background: #fff url('../images/divirtase-focus.png') 15px 15px no-repeat;
+        color: $btn-primary;
+    }
+    &:hover {
+        background: #fff url('../images/divirtase-focus.png') 15px 15px no-repeat!important;
+        color: $btn-primary!important;
+    }
+}
+
 .nav-link-select {
     width: 70px;
     padding-left: 24px;

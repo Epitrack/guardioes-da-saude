@@ -96,8 +96,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 password: $scope.createData.password,
                 country: $scope.createData.country,
                 state: $scope.createData.state,
-                profile: $scope.createData.profile,
-                repeat_password: $scope.createData.repeat_password,
+                profile: $scope.createData.profile
             };
 
             if (!$scope.fr) {
@@ -118,19 +117,21 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             params.dob = $scope.UTIL.convertDate(params.dob);
             params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
-            UserApi.createUser(params, function(data) {
-                var userId;
-                if (data.status == 409) {
-                    $scope.email_uso = true;
-                    Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
-                } else if (data.status == 200) {
-                    userId = data.data.user.id;
-                    Notification.show('success', 'Cadastro por e-mail', data.data.message);
-                    $location.path('/survey/' + userId + '/step-1');
-                } else {
-                    console.log(data.data.status);
-                }
-            });
+            console.log(params);
+
+            // UserApi.createUser(params, function(data) {
+            //     var userId;
+            //     if (data.status == 409) {
+            //         $scope.email_uso = true;
+            //         Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
+            //     } else if (data.status == 200) {
+            //         userId = data.data.user.id;
+            //         Notification.show('success', 'Cadastro por e-mail', data.data.message);
+            //         $location.path('/survey/' + userId + '/step-1');
+            //     } else {
+            //         console.log(data.data.status);
+            //     }
+            // });
         };
         // ====
 

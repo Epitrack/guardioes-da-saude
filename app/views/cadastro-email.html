@@ -12,8 +12,8 @@
 
                         <!-- Coutry -->
                         <select class="form-control mainform-input icon-arrow" name="country" ng-model="createData.country"
-                            ng-change="whatCountry(createData.country)">
-                            <option ng-selected="true" disabled value="{{'00442'|translate}}" selected="selected">{{'00442'|translate}}</option>
+                            ng-change="whatCountry(createData.country)" remove-first-option>
+                            <option ng-selected="true" value="{{'00442'|translate}}" selected="selected">{{'00442'|translate}}</option>
                             <option ng-repeat="c in countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                         </select>
 
