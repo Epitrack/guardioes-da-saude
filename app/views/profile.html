@@ -55,7 +55,7 @@
                     <div class="no-padding col-xs-12">
                         <fieldset class="col-xs-12 col-sm-4">
                             <label>{{'00442' | translate}}</label>
-                            <select class="select-primary" name="country" ng-model="screen.user.country" ng-change="_isbrasil = screen.user.country=='Brazil'; whatCountry(screen.user.country)">
+                            <select class="select-primary" name="country" ng-model="screen.user.country" ng-change="_isbrasil = screen.user.country=='Brazil'; whatCountry(screen.user.country)" remove-first-option>
                                 <option selected="true" value="Selecione">{{'00442' | translate}}</option>
                                 <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                             </select>
@@ -63,15 +63,15 @@
                         </fieldset>
                         <fieldset class="col-xs-12 col-sm-4" ng-show="_isbrasil">
                             <label>Estado de origem</label>
-                            <select class="select-primary" name="state" ng-model="screen.user.state">
-                                <option ng-selected="true" value="Selecione" disabled>Estado de origem</option>
+                            <select class="select-primary" name="state" ng-model="screen.user.state" remove-first-option>
+                                <option ng-selected="true" value="Selecione">Estado de origem</option>
                                 <option value="{{c.nome}}" ng-repeat="c in UTIL.states">{{c.nome}}</option>
                             </select>
                         </fieldset>
                         <fieldset class="col-xs-12 col-sm-4">
                             <label>{{'00460' | translate}}</label>
-                            <select class="select-primary" name="perfil" ng-model="screen.user.profile">
-                                <option ng-selected="true" disabled>{{'00460'|translate}}</option>
+                            <select class="select-primary" name="perfil" ng-model="screen.user.profile" remove-first-option>
+                                <option ng-selected="true">{{'00460'|translate}}</option>
                                 <option value="Atleta/Delegação">{{'00049'|translate}} </option>
                                 <option value="Trabalhador/Voluntário"> {{'00622'|translate}} </option>
                                 <option value="Fã/Espectador">{{'00227'|translate}}</option>
