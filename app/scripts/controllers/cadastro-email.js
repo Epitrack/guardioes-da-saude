@@ -16,14 +16,6 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.countries = [];
         $scope.states = [];
         $scope.email_uso = false;
-        $scope.fr = true;
-        /**/
-        $scope.isbrasil = function() {
-            if ($scope.createData.country === 'Brazil') {
-                return true;
-            }
-            return false;
-        }
 
         $scope.facebookLogin = function() {
             UserApi.facebookLogin($scope);
@@ -82,10 +74,22 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.whatCountry = function(country) {
             if (country == 'France') {
                 $scope.fr = false;
+                $('.drop-rece').removeClass('ng-hide');
             } else {
                 $scope.fr = true;
+                $scope.isBrasil = false
+                $('.drop-rece').addClass('ng-hide');
+
+                if (country == 'Brazil') {
+                    $scope.isBrasil = true
+                    $('.drop-origem, .drop-rece').removeClass('ng-hide');
+                }else{
+                    $scope.isBrasil = false
+                    $('.drop-origem, .drop-rece').addClass('ng-hide');
+                }
             }
         };
+
         
         $scope.createUser = function() {
             var params = {
@@ -117,21 +121,19 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             params.dob = $scope.UTIL.convertDate(params.dob);
             params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
-            console.log(params);
-
-            // UserApi.createUser(params, function(data) {
-            //     var userId;
-            //     if (data.status == 409) {
-            //         $scope.email_uso = true;
-            //         Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
-            //     } else if (data.status == 200) {
-            //         userId = data.data.user.id;
-            //         Notification.show('success', 'Cadastro por e-mail', data.data.message);
-            //         $location.path('/survey/' + userId + '/step-1');
-            //     } else {
-            //         console.log(data.data.status);
-            //     }
-            // });
+            UserApi.createUser(params, function(data) {
+                var userId;
+                if (data.status == 409) {
+                    $scope.email_uso = true;
+                    Notification.show('error', 'Cadastro por e-mail', 'E-mail existente!');
+                } else if (data.status == 200) {
+                    userId = data.data.user.id;
+                    Notification.show('success', 'Cadastro por e-mail', data.data.message);
+                    $location.path('/survey/' + userId + '/step-1');
+                } else {
+                    console.log(data.data.status);
+                }
+            });
         };
         // ====
 

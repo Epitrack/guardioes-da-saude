@@ -112,9 +112,7 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             params.dob = $scope.UTIL.convertDate(params.dob);
 
-            angular.element('#modal-complete-login').modal('hide');
-
-            console.log(params);          
+            angular.element('#modal-complete-login').modal('hide');       
 
             UserApi.createUser(params, function(data) {
                 console.log('UserApi.createUser: ', data);

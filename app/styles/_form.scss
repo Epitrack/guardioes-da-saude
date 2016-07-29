@@ -61,7 +61,7 @@ select option{color: #000}
   @include bdr(5px);
 
   input {
-    &:last-child { border: 0; }
+    &:last-child { border: 0; z-index: 0;}
   }
 }
 
