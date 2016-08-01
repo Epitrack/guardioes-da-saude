@@ -5,17 +5,22 @@
 // home slide
 .slideshow {
   img {
-    width: auto;
+    width: 90%;
+    margin-left: 63px;
   }
 }
 
+.steps{
+  margin-top: 90px;
+  float: left;
+}
 .carousel-indicators {
-  top: 100%;
+  top: 108%;
 
   li {
     border: 1px solid $bg-header;
     margin-right: 5px;
-
+    outline: none;
     &.active {
       background-color: $bg-header;
       margin-right: 5px;
