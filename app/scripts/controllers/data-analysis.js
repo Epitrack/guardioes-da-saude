@@ -11,6 +11,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
     function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
         $scope.slide_active = 0;
         $scope.dadossurveys = null;
+        $scope.loading_analysis=false;
         $scope.DEPARALABELS = {
             "symptoms": "Sintomas",
             "syndromes": "Síndromes",
@@ -286,15 +287,11 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                     });
                 });
             } else {
-                if ($scope.dadossurveys !== null) {
-                    callback(JSON.parse($scope.dadossurveys.data));
-                } else {
-                    window.guardioesdasaudedb.get('surveys').then(function(doc) {
-                        callback(JSON.parse(doc.data));
-                    }).catch(function(err) {
-                        console.log(err);
-                    });
-                }
+                window.guardioesdasaudedb.get('surveys').then(function(doc) {
+                    callback(JSON.parse(doc.data));
+                }).catch(function(err) {
+                    console.log(err);
+                });
             }
         };
         /**/
@@ -383,6 +380,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
             console.log(r);
         };
         $scope.getGraphic = function(type) {
+            $scope.loading_analysis=true;
             var is_sintoma = false;
             var idsintoma = 0;
             var count = 0;
@@ -481,8 +479,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                                 });
                             }
                         });
-                    } catch (e) {
-                    }
+                    } catch (e) {}
+                    $scope.loading_analysis=false;
                     $location.path('/dashboard/analysis/result');
                     /**/
                 }
