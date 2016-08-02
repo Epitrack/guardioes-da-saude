@@ -18,14 +18,14 @@
             <fieldset class="col-xs-12">
               <label for="contact-email">{{'00177'|translate}}</label>
               <input class="input-primary" id="contact-email" name="contactEmail" type="email" ng-model="contact.email"
-                     required>
+                     required="true">
             </fieldset>
 
             <fieldset class="col-xs-12">
               <label for="contact-subject">{{'00045'|translate}}</label>
 
               <select class="select-primary" name="contactSubject" id="contactSubject" ng-model="contact.subject"
-                      required>
+                      required="true">
                 <option ng-selected="true" disabled>{{'00207'|translate}}</option>
                 <option value="informacoes">{{"00678"|translate}}</option>
                 <option value="sugestoes">{{"00679"|translate}}</option>
@@ -39,7 +39,7 @@
             <fieldset class="col-xs-12">
               <label for="contact-msg">{{'00370'|translate}}</label>
               <textarea class="input-primary" id="contact-msg" name="contactMsg" ng-model="contact.message"
-                        required></textarea>
+                        required="true"></textarea>
             </fieldset>
 
             <fieldset class="col-xs-12">
