@@ -7,10 +7,10 @@
  * # DataAnalysisCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'DashboardApi', '$scope', '$location', '$rootScope', '$compile',
+angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'DashboardApi', '$scope', '$location', '$rootScope', '$compile',
     function(Surveyapi, DashboardApi, $scope, $location, $rootScope, $compile) {
         $scope.slide_active = 0;
-
+        $scope.dadossurveys = null;
         $scope.DEPARALABELS = {
             "symptoms": "Sintomas",
             "syndromes": "Síndromes",
@@ -210,7 +210,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
         $scope.dropaction = function(ev, type, key) {
             var data = ev.dataTransfer.getData("id");
             var comp = document.getElementById(data);
-            console.log(comp);
+            //console.log(comp);
             $scope.params[type][key].push({ id: $(comp).attr("id"), label: $(comp).find("button").html(), c: comp });
             comp.parentNode.removeChild(comp);
             ev.preventDefault();
@@ -219,7 +219,6 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
         $scope.drag = function(ev) {
             $scope[ev.target.id] = false;
             ev.target.style.opacity = .8;
-            // $("#"+ev.target.id).find("button").removeClass('active');
             ev.dataTransfer.setData("id", ev.target.id);
         }
 
@@ -262,11 +261,40 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
             if (window.sessionStorage.getItem('surveys') === null) {
                 var psv = d3.dsv(";", "text/plain");
                 psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
-                    window.sessionStorage.setItem('surveys', JSON.stringify(data));
-                    callback(data);
+                    window.sessionStorage.setItem('surveys', 1);
+                    window.guardioesdasaudedb.get('surveys').then(function(doc) {
+                        return window.guardioesdasaudedb.put({
+                            _id: 'surveys',
+                            _rev: doc._rev,
+                            data: JSON.stringify(data)
+                        });
+                    }).then(function(response) {
+                        $scope.dadossurveys = data;
+                        callback(data);
+                    }).catch(function(err) {
+                        if (err.status == 404) {
+                            window.guardioesdasaudedb.put({
+                                _id: 'surveys',
+                                data: JSON.stringify(data)
+                            }).then(function(response) {
+                                $scope.dadossurveys = data;
+                                callback(data);
+                            }).catch(function(err) {
+                                console.log(err);
+                            });
+                        }
+                    });
                 });
             } else {
-                callback(JSON.parse(window.sessionStorage.getItem('surveys')));
+                if ($scope.dadossurveys !== null) {
+                    callback(JSON.parse($scope.dadossurveys.data));
+                } else {
+                    window.guardioesdasaudedb.get('surveys').then(function(doc) {
+                        callback(JSON.parse(doc.data));
+                    }).catch(function(err) {
+                        console.log(err);
+                    });
+                }
             }
         };
         /**/
@@ -287,7 +315,6 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
                     $scope.slides.push(nextSlide['$id']);
                 }
             }
-            // console.log($scope.slides, _.indexOf($scope.slides, nextSlide['$id']), nextSlide['$id']);
             if (_.indexOf($scope.slides, nextSlide['$id']) === 1) {
                 $scope.is_histogram = true;
                 var comp = document.getElementById("weeks");
@@ -400,13 +427,32 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
                     }
                 }
                 data = df;
-                window.localStorage.setItem('dadosfiltrados', JSON.stringify(data));
+                try {
+                    window.guardioesdasaudedb.get('surveys_dadosfiltrados').then(function(doc) {
+                        return window.guardioesdasaudedb.put({
+                            _id: 'surveys',
+                            _rev: doc._rev,
+                            data: JSON.stringify(data)
+                        });
+                    }).then(function(response) {}).catch(function(err) {
+                        if (err.status == 404) {
+                            window.guardioesdasaudedb.put({
+                                _id: 'surveys_dadosfiltrados',
+                                data: JSON.stringify(data)
+                            }).then(function(response) {}).catch(function(err) {
+                                console.log(err);
+                            });
+                        }
+                    });
+                } catch (e) {
+
+                }
                 /*Filtros*/
                 var result = null;
                 if (groups.length !== 0) {
                     /*Groups*/
-                    console.log("is_sintoma", is_sintoma);
-                    console.log("idsintoma", idsintoma);
+                    /*console.log("is_sintoma", is_sintoma);
+                    console.log("idsintoma", idsintoma);*/
                     if (is_sintoma) {
                         result = _.groupBygroup(data, groups, idsintoma, ",");
                     } else {
@@ -417,10 +463,30 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', [ 'Surveyapi', 'Dashboar
                     window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));
                     window.localStorage.setItem('filters', JSON.stringify(_.keys(filtros)));
-                    window.localStorage.setItem('result', JSON.stringify(result));
+                    //window.localStorage.setItem('result', JSON.stringify(result));
+                    try {
+                        window.guardioesdasaudedb.get('result').then(function(doc) {
+                            return window.guardioesdasaudedb.put({
+                                _id: 'result',
+                                _rev: doc._rev,
+                                data: JSON.stringify(result)
+                            });
+                        }).then(function(response) {}).catch(function(err) {
+                            if (err.status == 404) {
+                                window.guardioesdasaudedb.put({
+                                    _id: 'result',
+                                    data: JSON.stringify(result)
+                                }).then(function(response) {}).catch(function(err) {
+                                    console.log(err);
+                                });
+                            }
+                        });
+                    } catch (e) {
+                    }
                     $location.path('/dashboard/analysis/result');
                     /**/
                 }
             });
         };
-    }]);
+    }
+]);

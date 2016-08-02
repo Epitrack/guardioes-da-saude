@@ -54,6 +54,7 @@ angular
         $facebookProvider.setAppId('961547147258065');
         $facebookProvider.setVersion("v2.2");
         $mdGestureProvider.skipClickHijack();
+        window.guardioesdasaudedb = new PouchDB('guardioesdasaude');
     })
     .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 

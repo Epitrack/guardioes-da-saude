@@ -7,11 +7,18 @@
  * # DashboardResultCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$scope', '$location',
+angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scope', '$location',
     function($rootScope, $scope, $location) {
-        //$scope.type
         $scope.type = window.localStorage.getItem('type');
-        $scope.result = JSON.parse(window.localStorage.getItem('result'));
+        // $scope.result = JSON.parse(window.localStorage.getItem('result'));
+        try {
+            window.guardioesdasaudedb.get('result').then(function(doc) {
+                $scope.result = JSON.parse(doc.data);
+                $scope.buildgraph();
+            }).catch(function(err) {
+                console.log(err);
+            });
+        } catch (e) { console.log(e); }
         try {
             $scope.labels = JSON.parse(window.localStorage.getItem('labels')).reverse();
         } catch (e) {}
@@ -35,16 +42,6 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
                     return obj.y;
                 });
                 data = data.reverse();
-                /* Highcharts.getOptions().plotOptions.pie.colors = (function() {
-                     var colors = [],
-                         base = Highcharts.getOptions().colors[0],
-                         i;
-
-                     for (i = 0; i < 10; i += 1) {
-                         colors.push(Highcharts.Color(base).brighten((i - 4) / 9).get());
-                     }
-                     return colors;
-                 }());*/
                 $('#container').highcharts({
                     chart: {
                         plotBackgroundColor: null,
@@ -166,15 +163,7 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
                 }
                 console.log($scope.result);
                 console.log(dados);
-                /*
-                
-                console.log(keys);
-                console.log(categories);*/
-                /* data = _.sortBy(data, function(obj) {
-                    return obj.y;
-                });
-                data = data.reverse();*/
-                /**/
+
                 $('#container').highcharts({
                     chart: {
                         type: 'column'
@@ -241,11 +230,6 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
                 for (var o in data) {
                     dados.push(data[o]);
                 }
-                /**/
-                // console.log($scope.result);
-                // console.log($scope.keys);
-                // console.log($scope.categories);
-
             }
             try { $("#container").find("text").last().empty(); } catch (e) {}
         };
@@ -259,8 +243,7 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
                 return 0;
             }
         };
-        /**/
-        $scope.buildgraph();
+
         /**/
         $scope.gettype = function(t) {
             return t === $scope.type;
@@ -269,7 +252,6 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
         $scope.goback = function() {
             $location.path('/dashboard/analysis');
         };
-
 
         $scope.convertArrayOfObjectsToCSV = function(args) {
             var result, ctr, keys, columnDelimiter, lineDelimiter, data;
@@ -304,26 +286,24 @@ angular.module('gdsApp').controller('DashboardResultCtrl', [ '$rootScope', '$sco
 
         $scope.downloadCSV = function() {
             var data, filename, link;
-            var dadosfiltrados = JSON.parse(window.localStorage.getItem('dadosfiltrados'));
-            var csv = $scope.convertArrayOfObjectsToCSV({
-                data: dadosfiltrados,
-                columnDelimiter:';'
+
+            window.guardioesdasaudedb.get('surveys_dadosfiltrados').then(function(doc) {
+                var dadosfiltrados = JSON.parse(doc.data);
+                var csv = $scope.convertArrayOfObjectsToCSV({
+                    data: dadosfiltrados,
+                    columnDelimiter: ';'
+                });
+                filename = 'gds_analises_' + window.localStorage.getItem('groups') + '_' + window.localStorage.getItem('filters') + '.csv';
+                csv = 'data:text/csv;charset=utf-8,' + csv;
+                data = encodeURI(csv);
+                $("#btn_download").attr("href", data);
+                $("#btn_download").attr("download", filename);
+            }).catch(function(err) {
+                console.log(err);
             });
-            // if (csv == null) return;
-            filename = 'gds_analises_'+window.localStorage.getItem('groups')+'_'+window.localStorage.getItem('filters')+'.csv';
-            // if (!csv.match(/^data:text\/csv/i)) {
-            csv = 'data:text/csv;charset=utf-8,' + csv;
-            // }
-            data = encodeURI(csv);
-            /*link = document.createElement('a');
-            link.setAttribute('href', data);
-            link.setAttribute('download', filename);
-            link.click();*/
-            $("#btn_download").attr("href", data);
-            $("#btn_download").attr("download", filename);
-            // console.log($("#btn_download").attr("href"));
-            // console.log(link);
         }
+
         $scope.downloadCSV();
 
-    }]);
+    }
+]);

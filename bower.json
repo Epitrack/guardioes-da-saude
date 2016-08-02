@@ -37,7 +37,8 @@
     "angular-directive.g-signin": "^0.1.2",
     "jquery": "2.2.3",
     "requirejs": "~2.1.10",
-    "bootstrap-select": "^1.10.0"
+    "bootstrap-select": "^1.10.0",
+    "pouchdb": "^5.4.5"
   },
   "resolutions": {
     "angular": "^1.4.8",

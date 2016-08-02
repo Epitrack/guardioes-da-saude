@@ -64,6 +64,7 @@ module.exports = function(config) {
       'bower_components/d3-tip/index.js',
       'bower_components/angular-directive.g-signin/google-plus-signin.js',
       'bower_components/bootstrap-select/dist/js/bootstrap-select.js',
+      'bower_components/pouchdb/dist/pouchdb.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
