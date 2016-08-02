@@ -481,6 +481,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                         });
                     } catch (e) {}
                     $scope.loading_analysis=false;
+                    /*teste*/
                     $location.path('/dashboard/analysis/result');
                     /**/
                 }
