@@ -74,18 +74,18 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.whatCountry = function(country) {
             if (country == 'France') {
                 $scope.fr = false;
-                $('.drop-rece').removeClass('ng-hide');
+                $('.drop-rece').addClass('ng-hide');
             } else {
                 $scope.fr = true;
                 $scope.isBrasil = false
-                $('.drop-rece').addClass('ng-hide');
+                $('.drop-rece').removeClass('ng-hide');
 
                 if (country == 'Brazil') {
                     $scope.isBrasil = true
                     $('.drop-origem, .drop-rece').removeClass('ng-hide');
                 }else{
                     $scope.isBrasil = false
-                    $('.drop-origem, .drop-rece').addClass('ng-hide');
+                    $('.drop-origem').addClass('ng-hide');
                 }
             }
         };

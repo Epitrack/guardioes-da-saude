@@ -17,13 +17,13 @@
                             <option ng-repeat="c in countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                         </select>
 
-                        <select class="selectpicker drop-register drop-height form-control mainform-input icon-arrow drop-origem" name="state" ng-model="createData.state" ng-show="isBrasil" selectpicker>
+                        <select class="selectpicker drop-register drop-height form-control mainform-input icon-arrow drop-origem" name="state" ng-model="createData.state" ng-show="isBrasil" remove-first-option selectpicker>
                             <option ng-selected="true" value="Selecione" disabled>Estado de origem</option>
                             <option value="{{c.nome}}" ng-repeat="c in states">{{c.nome}}</option>
                         </select>
                         
                         <!-- Profile -->
-                        <select class="selectpicker drop-register form-control mainform-input icon-arrow" name="perfil" ng-model="createData.profile" selectpicker>
+                        <select class="selectpicker drop-register form-control mainform-input icon-arrow" name="perfil" ng-model="createData.profile" remove-first-option selectpicker>
                             <option ng-selected="true" disabled>{{'00460'|translate}}</option>
                             <option value="1">{{'00049'|translate}} </option>
                             <option value="2"> {{'00622'|translate}} </option>
@@ -31,14 +31,14 @@
                         </select>
 
                         <!-- Gender -->
-                        <select class="selectpicker drop-register form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender" selectpicker>
+                        <select class="selectpicker drop-register form-control mainform-input icon-arrow" name="gender" ng-model="createData.gender" remove-first-option selectpicker>
                             <option ng-selected="true" disabled>{{'00567'|translate}}</option>
                             <option value="M">{{'00366'|translate}}</option>
                             <option value="F">{{'00232'|translate}}</option>
                         </select>
                         
                         <!-- Race -->
-                        <select class="selectpicker drop-register drop-rece form-control mainform-input icon-arrow" name="race" ng-model="createData.race" ng-show="fr" selectpicker>
+                        <select class="selectpicker drop-register drop-rece form-control mainform-input icon-arrow" name="race" ng-model="createData.race" ng-show="fr" remove-first-option selectpicker>
                             <option ng-selected="true" disabled>{{'00550'|translate}}</option>
                             <option value="branco">{{'00081'|translate}}</option>
                             <option value="amarelo">{{'00025'|translate}}</option>

@@ -14,4 +14,4 @@ angular.module('gdsApp').directive('selectpicker', function(){
 			}, 2500);
 		}
 	}
-}) 
+}); 
