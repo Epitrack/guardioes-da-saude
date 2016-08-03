@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <div class="row">
             <section class="col-xs-12 col-sm-10 col-sm-offset-1 ">
-                <h2 class="title-primary">{{'00117'|translate}}</h2>
+                <h2 class="title-primary" ng-show="haveHousehold">{{'00117'|translate}}</h2>
+                <h2 class="title-primary" ng-show="!haveHousehold">Como está a saúde de {{nameHousehold}} nesse momento?</h2>
                 <form name="hayf-form" class="hayf-form">
                     <div class="row">
                         <section class="col-xs-12 col-sm-3 col-sm-offset-3">

@@ -7,12 +7,25 @@
  * # HowAreYouFeelingCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('HowAreYouFeelingCtrl', ['$scope', '$rootScope', '$routeParams', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', 'moment',
-    function($scope, $rootScope, $routeParams, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification, moment) {
+angular.module('gdsApp').controller('HowAreYouFeelingCtrl', ['$scope', '$rootScope', '$routeParams', '$location', '$timeout', 'Surveyapi', 'LocalStorage', '$window', '$facebook', 'Notification', 'moment', '$translate',
+    function($scope, $rootScope, $routeParams, $location, $timeout, Surveyapi, LocalStorage, $window, $facebook, Notification, moment, $translate) {
 
         $scope.pageClass = 'hayf-page'; // hayf === 'How Are You Feeling'
         $scope.ishousehold = true;
         $scope.householdname = "";
+        $scope.haveHousehold = false;
+
+        if(localStorage.getItem('isHousehold')){
+            if($translate.use() == 'pt'){
+                $scope.nameHousehold = localStorage.getItem('isHousehold');
+                localStorage.removeItem('isHousehold')
+            }else{
+                $scope.haveHousehold = true;    
+            }
+        }else{
+            $scope.haveHousehold = true;
+        }
+
         $scope.init = function() {
             for (var u in $rootScope.user.household) {
                 if ($rootScope.user.household[u].id === $routeParams.id) {
