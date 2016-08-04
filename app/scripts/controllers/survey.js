@@ -21,4 +21,8 @@ angular.module('gdsApp').controller('SurveyCtrl', ['$scope', '$rootScope', funct
 
     $scope.getUser();
 
+    $scope.isHousehold = function(e){
+    	localStorage.setItem('isHousehold', e.target.name);
+    }
+
   }]);

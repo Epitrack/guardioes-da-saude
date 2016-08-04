@@ -7,7 +7,6 @@ angular.module('gdsApp').directive('removeFirstOption', function ($parse) {
             setTimeout(function(){
                 element.find('option').eq(0).remove();
                 $('.dropdown-menu ul').find('li').eq(0).remove();
-                console.log('ok');
             }, 2000);
         }
     };

@@ -124,9 +124,9 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 ykeys: $scope.ykeys,
                 labels: $scope.labels,
                 xLabelFormat: function(x) {
-                    console.log("moment(x).format().week()", moment(x).week());
+                    console.log("moment(x).format().week()", moment(x).week()-1);
                     // return moment(x).format("DD/MM/YYYY");
-                    return moment(x).week();
+                    return moment(x).week()-1;
                 },
                 dateFormat: function(x) {
                     return moment(x).format("DD/MM/YYYY");
