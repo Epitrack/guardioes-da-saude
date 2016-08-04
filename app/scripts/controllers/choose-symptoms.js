@@ -147,6 +147,7 @@ angular.module('gdsApp')
             });
         };
 
+
         $scope.countries = [{
             "gentilico": "afegãne",
             "nome_pais": "Afeganistão",
