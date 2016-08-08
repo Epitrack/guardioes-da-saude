@@ -19,7 +19,6 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
 
         $scope.facebookLogin = function() {
             UserApi.facebookLogin($scope);
-
         };
 
         $scope.googleLogin = function() {
