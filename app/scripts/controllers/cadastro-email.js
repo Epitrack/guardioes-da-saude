@@ -72,6 +72,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
 
         $scope.fr = false;
         $scope.whatCountry = function(country) {
+            // console.log(country);
             if (country == 'France') {
                 $scope.fr = false;
                 $('.drop-rece').addClass('ng-hide');
@@ -100,7 +101,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 password: $scope.createData.password,
                 country: $scope.createData.country,
                 state: $scope.createData.state,
-                profile: $scope.createData.profile
+                role: $scope.createData.profile
             };
 
             if (!$scope.fr) {
@@ -121,7 +122,10 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
             params.dob = $scope.UTIL.convertDate(params.dob);
             params.picture = $scope.UTIL.checkAvatar($scope.createData);
 
+            // console.log(params);
+
             UserApi.createUser(params, function(data) {
+                // console.log(data);
                 var userId;
                 if (data.status == 409) {
                     $scope.email_uso = true;
@@ -154,6 +158,8 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         };
         
         $scope.language = $translate.use();
+
+        // console.log($scope.language);
 
         $scope.countries = [
             {
