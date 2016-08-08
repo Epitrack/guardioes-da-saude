@@ -69,29 +69,42 @@
             </div>
         </article>
     </div>
-    <!-- <div class="wrapper-card-map">
-        <div class="col-sm-12" style="padding: 0;">
-            <article class="card relative" style="min-height: auto!important;">
-                <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
-                <header class="panel-heading card-heading">
-                    <h3 class="panel-title">Kernel</h3>
-                    <div class="pull-right wrapper-switch-participation">
-                        <div>
-                            <button ng-disabled='true'>Brasil</button>
-                            <button>Brasília</button>
-                            <button>Rio de janeiro</button>
-                        </div>
-                    </div>
-                </header>
-                <div class="panel-body relative" style="padding:0;padding-left: 20px;">
-                    <div id="syndromesAgeChart" style="height: 387px;width: 100%;">
-                        <h4 class="text-center"></h4>
-                        <span class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;    color: #f47820;margin-left: -45px;"></span>
-                    </div>
-                </div>
-            </article>
+    <article class="col-xs-12 panel panel-default no-padding card">
+        <header class="panel-heading card-heading" style="margin-bottom: 0px">
+            <h3 class="panel-title">Mapa de Intensidade de Kernel</h3>
+            <div class="pull-right wrapper-switch-participation">
+              <label style="font-size: 2.3em; color: white; font-weight: bold;">Região:</label>
+              <select aria-invalid="false" class="btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid"
+              ng-model="citykernel" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;
+margin-right: 38px;">
+                            <option class="dash-option" selected="" value="">Selecione</option>
+                            <option class="dash-option" value="Rio de Janeiro">Rio de Janeiro</option>
+                            <option class="dash-option" value="">Brasil</option>
+                            <option class="dash-option" value="">Belo Horizonte</option>
+                            <option class="dash-option" value="">Brasília</option>
+                            <option class="dash-option" value="">São paulo</option>
+                                                    <option class="dash-option" value="">Manaus</option>
+                                                                            <option class="dash-option" value="">Salvador</option>
+              </select>
+              <label  style="font-size: 2.3em; color: white; font-weight: bold;">Síndrome:</label>
+              <select aria-invalid="false" class="btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid"
+              ng-model="sindromekernel" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;
+margin-right: 18px;">
+                            <option class="dash-option" value="">Selecione</option>
+                            <option class="dash-option" value="Diarreica">Diarreica</option>
+                            <option class="dash-option" value="Respiratoria">Respiratoria</option>
+                            <option class="dash-option" value="Exantematica">Exantematica</option>
+              </select>
+              <button ng-click="" style="font-size: 2.2em;border-radius: 0px;">Atualizar</button>
+            </div>
+        </header>
+        <div class="panel-body">
+            <div id="mapakernel"></div>
+            <div style="position: absolute; top: 50%; left: 50%; margin-left: -204.5px; font-size: 3em;">
+              Selecione a região e a síndrome que deseja visualizar
+            </div>
         </div>
-    </div> -->
+    </article>
 </section>
 <script type="text/javascript">
 $(function() {
