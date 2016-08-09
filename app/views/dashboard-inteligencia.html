@@ -132,7 +132,6 @@
                     <div>
                         <button ng-disabled="types['sindrome']" ng-click="selectgraph('sindrome')">Sindrome</button>
                         <button ng-disabled="types['sintomas']" ng-click="selectgraph('sintomas')">Sintomas</button>
-                        <!-- <button ng-disabled="types['customize']" ng-click="selectgraph('customize')" style="margin-left: -4px;">Customize</button> -->
                     </div>
                 </div>
             </header>
@@ -142,8 +141,6 @@
                         <div id="syndromesTimeSeries" style="width:100%">
                             <h4 class="text-center">Número de Casos por Síndrome</h4>
                         </div>
-                        <img ng-show="loadingGrafycs" class="grafico grafico1" src="images/grafyc-3.png" alt="" />
-                        <img ng-show="loadingGrafycs" class="grafico grafico2" src="images/grafyc-2.png" alt="" />
                         <div id="syndromesTimeNavigation" style="width:100%"></div>
                     </div>
                     <div class="col-md-3" id="syndromesChart">
@@ -167,20 +164,12 @@
             <article class="card relative" style="min-height: auto!important;">
                 <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
                 <header class="panel-heading card-heading">
-                    <h3 class="panel-title">Por Idade</h3>
+                    <h3 class="panel-title">Pirâmide Etária</h3>
                     <div class="pull-right wrapper-switch-participation">
-                       <!--  <div>
-                            <button ng-disabled='true'>Idade</button>
-                            <button>Sexo</button>
-                        </div> -->
                     </div>
                 </header>
-                <div class="panel-body relative" style="padding:0;padding-left: 20px;">
-                    <div id="syndromesAgeChart" style="height: 387px;width: 100%;">
-                        <h4 class="text-center"></h4>
-                        <img ng-show="loadingGrafycs" class="grafico grafico3" src="images/grafyc-1.png" alt="" />
-                        <!-- <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(including: <span class='filter'></span>)</span></h5> -->
-                    </div>
+                <div class="panel-body relative" style="padding:0;padding-left: 20px;min-height: 346px;">
+                  <div id="piramideetaria" style="padding-left: 50px;"></div>
                 </div>
             </article>
         </div>
@@ -189,14 +178,22 @@
         <div class="col-sm-6">
             <article class="card relative" style="min-height: auto!important;">
                 <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
-                <header class="panel-heading">
-                    <h3 class="panel-title">Por Distrito de Saúde</h3>
-                </header>
-                <div class="panel-body" style="padding:0;">
-                    <div id="syndromesMap" class="map" style="height: 387px;margin-left: -40px;">
-                        <h4 class="text-center"></h4>
-                        <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(Área(s): <span class='filter'></span>)</span></h5>
+                <header class="panel-heading card-heading">
+                    <h3 class="panel-title">Mapa de Intensidade de Kernel</h3>
+                    <div class="pull-right wrapper-switch-participation">
+                      <label  style="font-size: 2.3em; color: white; font-weight: bold;">Síndrome:</label>
+                      <select aria-invalid="false" class="btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid"
+                      ng-model="sindromekernel" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;margin-right: 18px;">
+                                    <option class="dash-option" value="">Selecione</option>
+                                    <option class="dash-option" value="Diarreica">Diarreica</option>
+                                    <option class="dash-option" value="Respiratoria">Respiratoria</option>
+                                    <option class="dash-option" value="Exantematica">Exantematica</option>
+                      </select>
+                      <button ng-click="" style="font-size: 2.2em;border-radius: 0px;">Atualizar</button>
                     </div>
+                </header>
+                <div class="panel-body relative" style="padding:0;padding-left: 20px;min-height: 346px;">
+                  <div id="piramideetaria"></div>
                 </div>
             </article>
         </div>
@@ -208,7 +205,7 @@
                     <h3 class="panel-title">Tabela de Dados</h3>
                 </header>
                 <div class="panel-body" style="padding:0;padding-left: 20px;">
-                    <table class="table table-striped" style="font-size:2.5em">
+                    <table id="table_ie" class="table table-striped" style="font-size:2.5em">
                         <thead>
                             <tr>
                                 <th>City</th>
@@ -220,20 +217,37 @@
                                 <th>Symptoms</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr ng-repeat="s in symptomsCases">
-                                <td>{{s.city}}</td>
-                                <td>{{s.age}}</td>
-                                <td>{{s.gender}}</td>
-                                <td>{{s.lat_reported}}</td>
-                                <td>{{s.lng_reported}}</td>
-                                <td>{{s.date_reported | date:"dd/MM/yyyy"}}</td>
-                                <td>{{s.symptom}}</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </article>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker({
+        "startDate": "01/" + (moment().month() + 1) + "/" + moment().year(),
+        "endDate": "30/" + (moment().month() + 1) + "/" + moment().year(),
+        "opens": "left",
+        applyLabel: 'Consultar',
+        "applyClass": "btn-primary",
+        cancelLabel: 'Fechar',
+        "locale": {
+            "format": "DD/MM/YYYY",
+            "separator": " - ",
+            "applyLabel": "Consultar",
+            "cancelLabel": "Cancelar"
+        }
+    });
+    $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+        console.log(picker.startDate.format('YYYY-MM-DD'));
+        console.log(picker.endDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().setDateMin(picker.startDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().setDateMax(picker.endDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().buscar();
+    });
+});
+</script>
+<script type="text/javascript">
+
+</script>

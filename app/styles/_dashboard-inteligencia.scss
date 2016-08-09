@@ -1,3 +1,13 @@
+.bar {
+    fill-opacity: 0.8;
+}
+.right{
+  fill: firebrick;
+
+}
+.left{
+  fill:rgb(30, 136, 229);
+}
 .in {
     /*border-top: 3px solid rgb(231, 231, 231);*/
 }
@@ -127,8 +137,8 @@
     animation-duration: 1.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    -moz-animation: rotateThis 1.0s infinite linear;    
-    -webkit-animation: rotateThis 1.0s infinite linear;    
+    -moz-animation: rotateThis 1.0s infinite linear;
+    -webkit-animation: rotateThis 1.0s infinite linear;
 }
 
 @keyframes rotateThis {

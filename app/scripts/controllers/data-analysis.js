@@ -329,7 +329,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                 return false;
             }
         };
-        /**/
+        /*
+        */
         $scope.meses = [];
         $scope.anos = [];
         $scope.sem_min_max = {};
@@ -456,7 +457,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                     } else {
                         result = _.groupByMulti(data, groups);
                     }
-                    /**/
+                    /*
+                    */
                     window.localStorage.setItem('type', type);
                     window.localStorage.setItem('labels', JSON.stringify(labels));
                     window.localStorage.setItem('groups', JSON.stringify(groups));
