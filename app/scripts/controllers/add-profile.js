@@ -8,7 +8,9 @@
  * Controller of the gdsApp
  */
 angular.module('gdsApp')
-    .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'Notification', '$timeout', '$location', function($scope, HouseholdApi, Notification, $timeout, $location) {
+    .controller('AddProfileCtrl', ['$scope', 'HouseholdApi', 'Notification', '$timeout', '$location', 
+        function($scope, HouseholdApi, Notification, $timeout, $location) {
+        
         $scope.pageClass = 'add-profile-page';
 
         // Add a new household member
@@ -72,16 +74,19 @@ angular.module('gdsApp')
 
         // ====
         $scope.addHouseholdFromSurvey = function() {
+            console.log('addHouseholdFromSurvey');
             var params = {
                 nick: $scope.houseHold.nick,
                 gender: $scope.houseHold.gender,
                 dob: $scope.houseHold.dob,
                 race: $scope.houseHold.race,
-                country: $scope.houseHold.country,
-                profile: $scope.houseHold.profile,
-                state: $scope.houseHold.state,
+                // country: $scope.houseHold.country,
+                // profile: $scope.houseHold.profile,
+                // state: $scope.houseHold.state,
                 relationship: $scope.houseHold.relationship
             };
+
+            console.log(params);
 
             $scope.checkF = $scope.UTIL.checkForm(params);
             if ($scope.checkF.error === true) {

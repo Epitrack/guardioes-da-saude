@@ -90,21 +90,21 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
             }
             if (isvalid) {
                 Surveyapi.submitSurvey(form, function(data) {
-                    // console.warn(data);
-                    if (data.data.error === true) {
-                        // console.warn(data.data.message);
-                        Notification.show('error', 'Survey', data.data.message);
-                    } else {
-                        // console.log(data.data.message);
-                        Notification.show('success', 'Survey', data.data.message);
-                        if (data.data.respiratoria === true || data.data.diarreica === true) {
-                            angular.element('#modal-sindromes').modal({ show: 'true' });
-                        } else if (data.data.exantematica === true) {
-                            angular.element('#modal-exantematica').modal({ show: 'true' });
-                        } else {
-                            angular.element('#modal-thanks').modal({ show: 'true' });
-                        }
-                    }
+                    console.warn(data);
+                    // if (data.data.error === true) {
+                    //     // console.warn(data.data.message);
+                    //     Notification.show('error', 'Survey', data.data.message);
+                    // } else {
+                    //     // console.log(data.data.message);
+                    //     Notification.show('success', 'Survey', data.data.message);
+                    //     if (data.data.respiratoria === true || data.data.diarreica === true) {
+                    //         angular.element('#modal-sindromes').modal({ show: 'true' });
+                    //     } else if (data.data.exantematica === true) {
+                    //         angular.element('#modal-exantematica').modal({ show: 'true' });
+                    //     } else {
+                    //         angular.element('#modal-thanks').modal({ show: 'true' });
+                    //     }
+                    // }
                 });
             }
         };
