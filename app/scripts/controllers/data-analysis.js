@@ -20,13 +20,17 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
             "race": "Raça",
             "weeks": "Semana Epidemiológica",
             "monthyear": "Mês/Ano",
-            "local": "Local"
+            "local": "Local",
+            "perfil":"Perfil",
+            "origem":"País de Origem"
         };
         $scope.DEPARA = {
             "age": "FE",
+            "perfil":"TIPOPUBLICO",
             "gender": "SEXO",
             "email": "EMAIL",
             "race": "COR",
+            "origem":"ORIGEM",
             "local": "REGIAO",
             "febre": "FEBRE",
             "manchas-vermelhas": "MANVERM",
@@ -154,9 +158,11 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
             group: 'todo',
             animation: 150
         };
-        /**/
+        /*
+        */
         $scope.params = {};
-        /**/
+        /*
+        */
         $scope.variaveis = {};
         $scope.variaveis.symptoms = {};
         $scope.variaveis.syndromes = {};
@@ -166,7 +172,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
         $scope.variaveis.weeks = {};
         $scope.variaveis.monthyear = {};
         $scope.variaveis.local = {};
-        /**/
+        /*
+        */
         $scope.selecionarAnalytics = function(key, code) {
             if ($scope.analytics[key] == undefined) {
                 $scope.analytics[key] = {};
@@ -178,7 +185,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
             }
             /*console.log($scope.analytics);*/
         };
-        /**/
+        /*
+        */
         $scope.initparams = function() {
             $scope.params['pizza'] = {};
             $scope.params['histograma'] = {};
@@ -197,7 +205,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
             $scope.params['tabela'].filtros = [];
 
         };
-        /**/
+        /*
+        */
         $scope.initparams();
 
         $scope.remove_params = function(index, type, key) {
@@ -334,6 +343,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
         $scope.meses = [];
         $scope.anos = [];
         $scope.sem_min_max = {};
+        $scope.origens=[];
         $scope.getMesesAnos = function() {
             $scope.loadfile(function(data) {
                 $scope.meses = _.keys(_.groupBy(data, function(obj) {
@@ -344,6 +354,16 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                 }));
             });
         };
+
+        $scope.getOrigens = function() {
+            $scope.loadfile(function(data) {
+                $scope.origens = _.keys(_.groupBy(data, function(obj) {
+                    return obj['ORIGEM'];
+                }));
+                console.log("$scope.origens",$scope.origens);
+            });
+        };
+        $scope.getOrigens();
 
         $scope.getSemMinMax = function() {
             $scope.loadfile(function(data) {

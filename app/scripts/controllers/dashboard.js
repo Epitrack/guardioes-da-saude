@@ -28,7 +28,6 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
         $scope.labels = ['Sintomático', 'Assintomático', 'Total'];
         $scope.colorsmap = ['#ffffff', '#e3f1f9', '#b5daee', '#7bbde1', '#62b0dc', '#49a4d6', '#3098d0', '#2a86b8', '#24749f', '#1e6186'];
         $scope.colorsgraph = ['#76031c', '#b3b500', '#f5a623'];
-        /**/
         $scope._usersByState = {};
 
         $scope.load_user_map = function() {
@@ -72,12 +71,10 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             return $scope._usersByState[(uf + '').toUpperCase()] !== undefined ? $scope._usersByState[(uf + '').toUpperCase()] : 0;
         };
         $scope.updateParticipacoes = function(key) {
-            /**/
             $scope.ykeys = [];
             $scope.labels = [];
             $scope.colorsgraph = [];
             $scope.data[key] = !$scope.data[key];
-            /**/
             if ($scope.data.symptomatic) {
                 $scope.ykeys.push('symptomatic');
                 $scope.labels.push('Sintomático');
