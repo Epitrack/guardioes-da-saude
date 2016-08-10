@@ -26,11 +26,44 @@
                         <input type="checkbox" name="choose-symptoms" ng-model="symptoms.hadTravelledAbroad" value="estive-fora" id="estive-fora" class="checkbox-primary">
                         <label for="estive-fora">{{'00220'|translate}}</label>
                     </fieldset>
+
+                    <!-- Select Languages -->
                     <fieldset class="col-xs-12 col-sm-4 pull-right" ng-show="symptoms.hadTravelledAbroad">
-                        <select name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="select-primary" remove-first-option>
-                            <option ng-selected="true">Qual país?</option>
-                            <option ng-repeat="c in countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
+                        <!-- PT -->
+                        <select ng-if="language == 'pt'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais}}</option>
                         </select>
+                        
+                        <!-- EN -->
+                        <select ng-if="language == 'en'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker drop-register drop-height select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_init}}</option>
+                        </select>
+
+                        <!-- ES -->
+                        <select ng-if="language == 'es'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_es}}</option>
+                        </select>
+
+                        <!-- CH -->
+                        <select ng-if="language == 'zh'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_ch}}</option>
+                        </select>
+
+                        <!-- AR -->
+                        <select ng-if="language == 'ar'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_ar}}</option>
+                        </select>
+
+                        <!-- RU -->
+                        <select ng-if="language == 'ru'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_ru}}</option>
+                        </select>
+
+                        <!-- FR -->
+                        <select ng-if="language == 'fr'" name="what-country" type="text" ng-model="symptoms.travelLocation" id="what-country" class="selectpicker select-primary" selectpicker remove-first-option>
+                            <option ng-repeat="c in countries" value="{{c.nome_pais_init}}">{{c.nome_pais_fr}}</option>
+                        </select>
+
                     </fieldset>
                     <fieldset class="col-xs-12 col-sm-12">
                         <button ng-click="submitform()" class="col-xs-12 btn-submit">{{'00126'|translate}}
