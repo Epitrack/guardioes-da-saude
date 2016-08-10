@@ -75,11 +75,11 @@ var objs = [{
 }, {
     file: "xml_en.txt",
     data: ingles
-}, {
+}];
+/*, {
     file: "xml_fr.txt",
     data: frances
-}];
-
+}*/
 
 objs.forEach(function(value, index) {
     for (var i = 0; i < value.data.length; i++) {

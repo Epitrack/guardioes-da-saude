@@ -1,17 +1,78 @@
+<string name="validation_profile">简介为必填字段。</string>
+<string name="validation_race">赛为必填字段</string>
+<string name="validation_state">国家是一个必填字段。</string>
+<string name="validation_country">国家为必填字段</string>
+<string name="validation_gender">性爱是一个必填字段</string>
+<string name="select">选择</string>
+<string name="prevention_title_04">進行安全性行為</string>
+<string name="prevention_title_03">食用健康食品和飲料
+
+</string>
+<string name="prevention_content_04">•       在巴西，男用和女用避孕套和潤滑凝膠在所有醫療單位，旅館和旅遊中心等場所均是免費發放。找出您附近的發放中心。</string>
+<string name="vacinne_content_02">•       在前往森林區或實踐生態或農村旅遊的 10 天前接受黃熱病疫苗以預防這種疾病。
+
+•       聯繫您的醫生來幫助您決定您的旅程是否需要接受該疫苗。</string>
+<string name="prevention_content_02">•洗净双手饭前用肥皂和水，触摸眼，口和鼻，咳嗽，打喷嚏或使用厕所后;
+
+•个体患者应在休息，饮食均衡，增加液体摄入量，避免人群，在室内;
+
+•保持通风良好的环境;
+
+•始终警惕呼吸道症状的严重性，并立即就医。</string>
+<string name="prevention_content_03">•       避免衛生，製備及包裝有問題的食品；
+
+•       優先考慮糖分、脂肪和鹽含量低的食物；
+
+•       飲用大量液體，最好是水或果汁。避免生的或未煮熟的食物，尤其是海鮮；
+
+•       包裝的食品標籤必須標明生產者、到期日期且包裝必須密封;
+
+•       鄉村旅遊時，總是優先考慮不需要冷藏或遇熱變質的食物；
+
+•       如果您攝入食物或飲料後出現嘔吐或腹瀉，則需要特別注意避免脫水。在這些情況下，建議攝取統一醫療保健系統免費提供的口服補液鹽，或其他類似解決方案。運動飲料不能適當地補償流體損失，不得用於治療腹瀉疾病。</string>
+<string name="message_thanks_zika">謝謝分享資訊 ！</string>
+<string name="prevention_title_02">空氣傳播疾病的預防
+
+</string>
+<string name="message_thanks">謝謝分享資訊 ！</string>
+<string name="defense">民防</string>
+<string name="fireman">消防員</string>
+<string name="police">軍警</string>
+<string name="zika_tip">登革熱、寨卡和基孔肯亞病。</string>
+<string name="prevention">預防 </string>
+<string name="phone">有用的電話號碼</string>
+<string name="care">基本護理</string>
+<string name="vaccine">疫苗</string>
+<string name="member_updated">已成功完成操作。</string>
+<string name="member_added">已成功完成操作。</string>
+<string name="generic_update_data_ok">已成功完成操作。</string>
+<string name="safe_sex">進行安全性行為</string>
+<string name="password_not_equal">密碼不相同。</string>
+<string name="password_fail">您的密碼必須至少6位數</string>
+<string name="internet_fail">您必須登錄才能使用此功能。請檢查您的網路連接。</string>
+<string name="tip_health">健康小貼士</string>
+<string name="setting">設置</string>
+<string name="member">家庭成員</string>
+<string name="zika">登革熱、寨卡和基孔肯亞病。</string>
+<string name="mail">電子郵件</string>
+<string name="good">健康</string>
+<string name="bad">生病</string>
+<string name="enter">登錄</string>
+<string name="already_registered">你已经有一个帐户，请登录。</string>
 <string name="about">關於</string>
-<string name="abril">4 月</string>
-<string name="abr">4 月</string>
 <string name="about_text">"健康衛士"應用程式\n\n「健康衛士」是專為行動電話、平板電腦和個人電腦所開發的應用程式，屬於巴西衛生署先導計畫的一部分，並且與美國非政府組織 Skoll 全球威脅基金會（Skoll Global Threats Fund）合作。這款應用程式主要是設計來評估行動應用程式的可能性，在 Sistema Único de Saúde [巴西統統整式醫療系統（Brazilian Unified Healthcare System）] (SUS) 內強化公共衛生緊急事件和疫情爆發的偵測，尤其是在重大事件期間的偵測，例如 2016 年奧林匹克運動會和身心障礙人事奧林匹克運動會等賽事。\n\n該戰略是同一組織發起的另一個專案的副產品，即“世界杯健康”，其專門在 2014 FIFA 巴西世界杯® 啟動，取得了可喜的成果，使兩個機構為 2016 年奧運會和殘奧會制定新的戰略達成共識。\n\n健康衛士應用程式的第一個版本已在 Apple iOS 和 Google Android 作業系統，以及 HTTPS://guardioesdasaude.org/ 網站上提供。\n\n"健康衛士"應用程式最初用葡萄牙文開發，後續版本也將提供聯合國所有官方語言的版本，作為協助在巴西的外國遊客的支援工具，特別是到 2016 奧運會和殘奧會主辦城市旅遊的人們。 \n\n僅 13 歲以上的使用者可以參與本倡議。此外，使用者在注冊和填寫簡化註冊表格，并提供昵稱、電子郵件地址、出生日期、種族/膚色、性別和密碼之前，必須閱讀並接受"使用條款"。參與是自願和保密的，披露的所有個人資訊會受到2011 年 11 月 18 日頒布的12.527號法律的充分保護。\n\n專案結果將用於巴西所有州和自治市的健康監測，旨在通過採取適當的預防和控制措施，檢驗並防止突發公共衛生事件和疫情。該專案的結果將作為綜合和匿名資料進行披露，基於應用程式的使用者提供的資訊，概述志願者的醫療保健狀況。\n\n自願參加\n\n您的參與是完全自願的，是對促進巴西健康監護的重要貢獻。填寫您的健康表格不可理解為醫療諮詢，並不確保獲得保健服務的特殊權限。此外，任何醫療保健服務機構或專業人士不會通過電子郵件或任何其他手段聯系使用者以獲得這些資訊。\n\n通過推式通知技術可以發送文本消息給參與者，包含醫療保健資訊或衛生監督機構的指示。\n\n值得指出的是，您如果感到不舒服，應該立即尋找最近的醫療服務機構或醫生。該應用程式提供一個快捷方式，用以基於您手機的 Google Maps地理位置服務，預設搜索您附近的醫療服務機構和藥店。此功能不是應用程式的組成部分。因此，您將被重定向到手機的地圖應用程式。我們建議慎重通過未知區域，并避免危險區域。聯繫當地公共機構以了解詳細資訊。\n\n該應用程式提供各種有用的電話號碼，包括 SAMU （緊急移動醫療服務），其是一個 24/7 免費電話號碼，提供的緊急醫療服務針對家庭、工作場所和公共道路上的創傷、臨床、兒科、外科、婦科和心理健康情況。\n\n參與的好處\n\n•       積極參與健康監控工作，以防止社區疫情;\n\n•       快速訪問公共服務的連絡資訊，而無需每次都使用您的電話簿;\n\n•       易于獲得有關保健和疾病預防措施的重要資訊;\n\n•       基礎設施，例如預設搜索 Google Maps 中附近的緊急護理單位和藥店 （半徑 20 公里範圍）； \n\n•       以下網站專案結果︰www.guardioesdasaude.org;\n\n瞭解更多關於應用程式的資訊\n\n"健康衛士"應用程式是免費的，可供 iOS 和 Android 作業系統以及互聯網瀏覽器使用。使用者可以從各城市的幾個免費 Wi-Fi 熱點之一選擇，或使用自己的移動資料套裝使用該應用程式。\n\n電話撥打應用程式中提供的公共服務可能需要額外的電話費用。與您的移動運營商聯繫以了解使用此功能的詳細資訊。如果行動電話功能被禁用，則不能使用此服務。此資訊特別適用于外國使用者。\n\n關於夥伴關係\n\n這個先鋒倡議由巴西衛生部門的醫療監督局，協同奧運會和殘奧會主辦城市構思。通過這種夥伴關係，非政府組織 Skoll 全球威脅基金會負責所有合約和軟體的開發費用，由巴西的現場流行病學專業人士協會 (ProEpi)監管。這兩個機構都是非營利性的非政府組織，旨在改進巴西和世界各地的健康監測活動。\n\nProEpi 負責確保滿足衛生署及 Skoll 全球威脅基金會根據專案規範制定的所有要求︰ 使用者資訊的保密，公共專案結果的透明度和披露，原始程式碼和免費下載環境中的各個文檔的可用性，巴西和其他國家衛生保健服務機構對應用的適當性和使用，同時保留這種努力的非盈利性質。\n\n確認\n\n組織機構感謝所有志願者、醫護人員和巴西統一醫療系統的經理，感謝其信任試點專案，并支援在全球公共衛生保健業開展的這個前所未有的倡議。\n\n特別感謝奧運會和殘奧會主辦城市（貝洛奧裡藏特、聯邦區、馬瑙斯、里約熱內盧、薩爾瓦多和聖保羅）的衛生部門。</string>
+<string name="abr">4 月</string>
+<string name="abril">4 月</string>
 <string name="add_member">添加住所會員</string>
 <string name="adicionar_novo_integrante">添加新成員</string>
+<string name="ago">8 月</string>
 <string name="agosto">8 月</string>
 <string name="alert">警報</string>
-<string name="anos">年</string>
 <string name="alert_pharmacy">有些藥店可能不顯示在地圖。</string>
-<string name="app_name_short">守護者</string>
-<string name="ago">8 月</string>
-<string name="attention">警告</string>
+<string name="anos">年</string>
 <string name="app_name">健康衛士</string>
+<string name="app_name_short">守護者</string>
+<string name="attention">警告</string>
 <string name="avatar">阿凡達</string>
 <string name="bem">健康</string>
 <string name="calendar">日曆</string>
@@ -31,8 +92,8 @@
 <string name="diarrheal">腹瀉型</string>
 <string name="diary_health">健康日記</string>
 <string name="diary_health_1">健康日記</string>
-<string name="disease">疾病</string>
 <string name="dob_invalid">此應用程式只可由   13 歲（十三歲）以上的個人使用。</string>
+<string name="disease">疾病</string>
 <string name="edit_profile">編輯設定檔</string>
 <string name="email_fail">無法讀取電子郵件。幾分鐘後再試。</string>
 <string name="email_not_send">無法讀取電子郵件。幾分鐘後再試。</string>
@@ -59,8 +120,8 @@
 <string name="game_enjoy">玩得愉快</string>
 <string name="gender">性別</string>
 <string name="general">一般</string>
-<string name="general_ranking">一般排名</string>
 <string name="generic_error">操作取消。</string>
+<string name="general_ranking">一般排名</string>
 <string name="generic_error_login">無法登錄。無效電子郵件和/或密碼。</string>
 <string name="gmail">Gmail</string>
 <string name="google">Google</string>
@@ -82,8 +143,8 @@
 <string name="hospital">急救醫療中心</string>
 <string name="hyphen">-</string>
 <string name="interest">興趣</string>
-<string name="jan">1 月</string>
 <string name="janeiro">1 月</string>
+<string name="jan">1 月</string>
 <string name="join">現在參與 ！</string>
 <string name="join_now">現在參與 ！</string>
 <string name="jul">7 月</string>
@@ -112,9 +173,9 @@
 <string name="message_fields">僅啟用的欄位可以編輯。</string>
 <string name="message_follow">监测您的鄰居或在特定位置的疾病狀態。</string>
 <string name="message_forgot_password"><u>忘記密碼？</u></string>
-<string name="message_health">您的健康是如何？</string>
 <string name="message_health_state">現在你的健康是如何？</string>
 <string name="message_hello">您好, %!</string>
+<string name="message_health">您的健康是如何？</string>
 <string name="message_home_member">家庭成員</string>
 <string name="message_hospital">確保找出最近的醫療服務。</string>
 <string name="message_image_load">無法加載圖像</string>
@@ -148,9 +209,9 @@
 <string name="new_member_ok">已成功完成操作。</string>
 <string name="new_password">信息以被發送到電子郵件，按照說明找回您的密碼。</string>
 <string name="next">下一個</string>
-<string name="no">否</string>
 <string name="not_now">不是現在</string>
 <string name="not_remove_member">不能刪除您的個人資料</string>
+<string name="no">否</string>
 <string name="notice">新聞</string>
 <string name="notification">通知</string>
 <string name="nov">11 月</string>
@@ -161,8 +222,8 @@
 <string name="open_link">打開新聞文章連結？</string>
 <string name="option">選項</string>
 <string name="other">其他</string>
-<string name="outubro">10 月</string>
 <string name="out">10 月</string>
+<string name="outubro">10 月</string>
 <string name="participacoes">參與</string>
 <string name="participacoes_ultimos_dias">在最後的日期參加</string>
 <string name="permission_available_location">您的位置的權限釋放。</string>
@@ -178,11 +239,10 @@
 <string name="race">膚色/種族</string>
 <string name="rash">疹病</string>
 <string name="register">登錄</string>
-<string name="register_fail">無法完成註冊過程。幾分鐘後再試。</string>
 <string name="relationship">親屬關係</string>
-<string name="relatorios">報告</string>
 <string name="report">報告錯誤</string>
 <string name="report_day">當天的報告數量</string>
+<string name="relatorios">報告</string>
 <string name="report_title">如果在使用健康衛士應用程式時有任何问题，請填寫下面的表單並將其發送給我們的專家團隊。</string>
 <string name="residence_country">原籍國</string>
 <string name="residence_state">省</string>
@@ -191,15 +251,15 @@
 <string name="safe_sex_content">\n\n避孕套\n\n•       避孕套是最實用的方法，用以防止愛滋病毒/愛滋病、病毒性肝炎和性傳播感染 （性病），梅毒和淋病等。\n\n •       正確使用和處置避孕套。\n\n •       如果避孕套"破損"或者沒有保護性措施，則在出現暴露于愛滋病毒風險後必須采取暴露後預防 (PEP) 措施。\n\n •       PEP\n\n •       PEP 是抗愛滋病毒的藥物，可以避免感染愛滋病病毒，而后者會導致愛滋病。建議將 PEP 用于暴露于愛滋病毒風險的個人，如那些熱衷于性濫交和性虐待的人，以及涉及生物材料工傷傷害的人。\n\n •       如果醫生建議，PEP 治療持續 28 天，且必須在無保護的性接觸後 72 小時內開始。\n\n我在哪裡可以找到 PEP 治療？ （應用程式和/或網站的直接連結）  HTTP://pep.aids.gov.br \n\n重要說明\n\n •       所有人都有資格獲得資訊和醫療服務而不會受到任何形式的偏見或歧視。\n\n •       在巴西，男用和女用避孕套和潤滑凝膠在所有醫療單位，旅館和旅遊中心等場所均是免費發放。找出您附近的發放中心。\n\n •       如果您需要任何愛滋病藥物 （丟失或忘記），找到最近的醫療單位，並出示您的身份證。外國遊客必須聯繫其健康保險機構。\n\n記要\n\n •       避免病毒性肝炎感染。如果您想要紋身或穿孔，總是選擇正式執業且由當地衛生監督部門認證的機構。如果當前在機構中可見，則要求查看此證書。\n\n •       要求對所有的材料適當消毒或使用一次性材料。\n\n •       不與他人共用個人物品，如指甲刀、剃鬚刀、牙刷、針頭和注射器。\n\n •       如果您注意到任何跡象或症狀，如任何流膿或病變或任何其他的健康問題，則尋求醫療援助。\n\n您知道嗎？\n\n •       很多人在生活中不知道自己感染了愛滋病毒和病毒性肝炎。\n\n •       知道的唯一方法是檢驗。公共醫療系統中免費提供抗 HIV 和肝炎檢驗。外國遊客必須聯繫其健康保險機構。\n\n乙型肝炎有疫苗，必須在不同的時間接受三種劑量。找出這種疫苗在哪里可得到。</string>
 <string name="safe_sex_title">進行安全性行為</string>
 <string name="save">保存</string>
-<string name="search">搜索</string>
 <string name="send">發送</string>
+<string name="search">搜索</string>
 <string name="sender_id">9.97326E+11</string>
-<string name="server_api_key">AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50</string>
 <string name="set">9 月</string>
+<string name="register_fail">無法完成註冊過程。幾分鐘後再試。</string>
 <string name="setembro">9 月</string>
+<string name="server_api_key">AIzaSyBEAcmjcVIRr8Hz1G2n5CqGimHixeNNe50</string>
 <string name="setting_upper">設置</string>
 <string name="share">分享</string>
-<string name="share_ok">謝謝分享 ！</string>
 <string name="share_participation">我參與了。請確保您在我們與埃及伊蚊 #ZikaZero 的戰斗中發揮作用。轉到 HTTP://www.guardioesdasaude.org</string>
 <string name="sound">聲音</string>
 <string name="subject">主題</string>
@@ -208,14 +268,15 @@
 <string name="symptom_contato">我接觸過有這些症狀的人</string>
 <string name="symptom_diarreia">腹瀉</string>
 <string name="symptom_dorcabeca">頭痛</string>
+<string name="share_ok">謝謝分享 ！</string>
 <string name="symptom_dorcorpo">全身酸痛</string>
 <string name="symptom_dorjuntas">關節痛</string>
 <string name="symptom_estivefora">過去的 14 天我已不在巴西</string>
 <string name="symptom_febre">發燒</string>
 <string name="symptom_manchas">身體上的紅點</string>
 <string name="symptom_nauseas">噁心或嘔吐</string>
-<string name="symptom_procureiservicosaude">我拜訪一家醫療中心</string>
 <string name="symptom_olhosvermelhos">充血的雙眼</string>
+<string name="symptom_procureiservicosaude">我拜訪一家醫療中心</string>
 <string name="symptom_sangramento">出血</string>
 <string name="symptom_tosse">咳嗽</string>
 <string name="syndromes">綜合征</string>
@@ -247,12 +308,12 @@
 <string name="validation_empty">必填項目</string>
 <string name="validation_length">至少3個字母</string>
 <string name="validation_mail">無效電子郵件。</string>
-<string name="validation_password">您的密碼必須至少6位數</string>
 <string name="versao">版</string>
+<string name="validation_password">您的密碼必須至少6位數</string>
 <string name="welcome">歡迎 ！</string>
-<string name="welcome_game_answer">正確回答醫療保健問題以揭示瓷磚。</string>
 <string name="welcome_game_card">在完成每個階段後收集奧林匹克運動貼紙 ！</string>
 <string name="welcome_game_phase">我們的賽道有幾個不同階段。完成每個階段進入下一個比賽 ！</string>
+<string name="welcome_game_answer">正確回答醫療保健問題以揭示瓷磚。</string>
 <string name="welcome_game_play">每個階段都包含一個謎題。完成它以推進到下一個階段。</string>
 <string name="welcome_game_point">您必須有能量點數才能玩。每天參加健康衛士能夠賺取積分 ！</string>
 <string name="welcome_game_welcome">歡迎來到我們賽道 ！刷卡以瞭解更多關於如何玩游戲。</string>

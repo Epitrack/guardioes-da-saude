@@ -13,17 +13,21 @@ angular.module('gdsApp').controller('FaleConoscoCtrl', ['$scope', 'ContactApi', 
         $scope.contact = {};
 
         $scope.sendContact = function() {
-            $scope.contact.message += "\n\n\n\n" + $scope.returnBrowserOS();
-            // console.log(JSON.stringify($scope.contact));
-            ContactApi.faleConosco($scope.contact, function(data) {
-                if (data.data.error === true) {
-                    Notification.show('error', 'Contato', data.data.message);
-                } else {
-                    Notification.show('success', 'Contato', data.data.message);
-                    $scope.contact = {};
-                    window.location = "#/";
-                }
-            });
+            if ($scope.contact.message !== undefined) {
+                $scope.contact.message += "\n\n\n\n" + $scope.returnBrowserOS();
+                // console.log(JSON.stringify($scope.contact));
+                ContactApi.faleConosco($scope.contact, function(data) {
+                    if (data.data.error === true) {
+                        Notification.show('error', 'Contato', data.data.message);
+                    } else {
+                        Notification.show('success', 'Contato', data.data.message);
+                        $scope.contact = {};
+                        window.location = "#/";
+                    }
+                });
+            } else {
+
+            }
         };
 
         $scope.esterEgg = function() {

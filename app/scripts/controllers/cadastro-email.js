@@ -16,14 +16,6 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.countries = [];
         $scope.states = [];
         $scope.email_uso = false;
-        $scope.fr = true;
-        /**/
-        $scope.isbrasil = function() {
-            if ($scope.createData.country === 'Brazil') {
-                return true;
-            }
-            return false;
-        }
 
         $scope.facebookLogin = function() {
             UserApi.facebookLogin($scope);
@@ -82,10 +74,22 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
         $scope.whatCountry = function(country) {
             if (country == 'France') {
                 $scope.fr = false;
+                $('.drop-rece').addClass('ng-hide');
             } else {
                 $scope.fr = true;
+                $scope.isBrasil = false
+                $('.drop-rece').removeClass('ng-hide');
+
+                if (country == 'Brazil') {
+                    $scope.isBrasil = true
+                    $('.drop-origem, .drop-rece').removeClass('ng-hide');
+                }else{
+                    $scope.isBrasil = false
+                    $('.drop-origem').addClass('ng-hide');
+                }
             }
         };
+
         
         $scope.createUser = function() {
             var params = {
@@ -96,8 +100,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 password: $scope.createData.password,
                 country: $scope.createData.country,
                 state: $scope.createData.state,
-                profile: $scope.createData.profile,
-                repeat_password: $scope.createData.repeat_password,
+                profile: $scope.createData.profile
             };
 
             if (!$scope.fr) {

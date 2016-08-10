@@ -56,6 +56,7 @@
                         <fieldset class="col-xs-12 col-sm-4">
                             <label>{{'00442' | translate}}</label>
                             <select class="select-primary" name="country" ng-model="screen.household.country" ng-change="_isbrasil = screen.household.country=='Brazil'">
+                            
                                 <option selected="true" value="Selecione">{{'00442' | translate}}</option>
                                 <option ng-repeat="c in UTIL.countries" value="{{c.nome_pais_int}}">{{c.nome_pais}}</option>
                             </select>

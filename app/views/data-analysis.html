@@ -259,9 +259,10 @@
                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'pizza','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
+                        <span ng-show="loading_analysis" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;    color: #f47820;top: -10px; margin-left: -45px;"></span>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear('pizza')">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic('pizza')">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-disabled="loading_analysis" ng-click="clear('pizza')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-disabled="loading_analysis" ng-click="getGraphic('pizza')">Análisar variáveis</button>
                         </div>
                     </div>
                 </slide>
@@ -293,9 +294,10 @@
                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'histograma','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
+                        <span ng-show="loading_analysis" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;    color: #f47820;top: -10px; margin-left: -45px;"></span>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear('histograma')">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic('histograma')">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-disabled="loading_analysis" ng-click="clear('histograma')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-disabled="loading_analysis" ng-click="getGraphic('histograma')">Análisar variáveis</button>
                         </div>
                     </div>
                 </slide>
@@ -327,9 +329,10 @@
                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'barras','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
+                        <span ng-show="loading_analysis" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;    color: #f47820;top: -10px; margin-left: -45px;"></span>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear('barras')">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic('barras')">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-disabled="loading_analysis" ng-click="clear('barras')">Limpar variáveis</button>
+                            <button class="btn btn-primary btn-font" ng-disabled="loading_analysis" ng-click="getGraphic('barras')">Análisar variáveis</button>
                         </div>
                     </div>
                 </slide>
@@ -361,9 +364,11 @@
                         <ul ng-sortable="opts" class="col-sm-6 drag-area" ondrop="angular.element(this).scope().dropaction(event,'tabela','filtros')">
                         </ul>
                         <div style="clear: both;height: 30px;"></div>
+                        <span ng-show="loading_analysis" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs" style="    font-size: 15em;    color: #f47820;top: -10px; margin-left: -45px;"></span>
                         <div style="float: right;">
-                            <button class="btn  btn-default btn-font" ng-click="clear('tabela')">Limpar variáveis</button>
-                            <button class="btn btn-primary btn-font" ng-click="getGraphic('tabela')">Análisar variáveis</button>
+                            <button class="btn  btn-default btn-font" ng-disabled="loading_analysis" ng-click="clear('tabela')">Limpar variáveis</button>
+
+                            <button class="btn btn-primary btn-font" ng-disabled="loading_analysis" ng-click="getGraphic('tabela')">Análisar variáveis</button>
                         </div>
                     </div>
                 </slide>

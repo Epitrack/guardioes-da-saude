@@ -9,33 +9,25 @@
  */
 angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$location', 'LocalStorage', '$facebook', 'Notification',
     function($scope, UserApi, $location, LocalStorage, $facebook, Notification) {
-        // $scope.pageClass = 'login-page';
 
-
-
+        /*
+        *   Init
+        */ 
         $scope.userData = {};
         $scope.userData.gender = "M";
-        // ====
         $scope.countries = [];
         $scope.states = [];
-
         $scope.createData = {};
         $scope.createData.country = "Selecione";
         $scope.createData.state = "Selecione";
-        $scope.fr = true;
-        /**/
-        $scope.isbrasil = function() {
-            if ($scope.userData.country === 'Brasil') {
-                return true;
-            }
-            return false;
-        }
-
+        
+        // Facebook
         $scope.facebookLogin = function() {
             // angular.element('#modal-complete-login').modal('show');
             UserApi.facebookLogin($scope);
         };
 
+        // Google
         $scope.googleLogin = function() {
             $scope.$on('event:google-plus-signin-success', function(event, authResult) {
                 gapi.client.load('plus', 'v1', function() {
@@ -58,7 +50,19 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
                 alert("Não foi possíel realizar o login");
             });
         };
+
+        // Twitter
+        $scope.twitterLogin = function() {
+            UserApi.twitterLogin($scope);
+        };
         
+        $scope.isbrasil = function() {
+            if ($scope.userData.country === 'Brasil') {
+                return true;
+            }
+            return false;
+        }
+
         $scope.fr = true;
         $scope.isFrance = function(country){
             if (country == 'France') {
@@ -66,21 +70,10 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
             }else{
                 $scope.fr = false;
             }
-        }
-
-        $scope.twitterLogin = function() {
-            UserApi.twitterLogin($scope);
-        };
-
-        $scope.whatCountry = function(country) {
-            if (country == 'France') {
-                $scope.fr = false;
-            } else {
-                $scope.fr = true;
-            }
-        };
+        } 
 
         $scope.updateUserSocialData = function() {
+
             var params = {
                 nick: $scope.userData.nick,
                 gender: $scope.userData.gender,
@@ -92,19 +85,16 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             if (!$scope.fr) {
                 params['race'] = $scope.userData.race;
+            }else{
+                params['race'] = 'france';
             }
 
             if ($scope.isbrasil()) {
                 params['state'] = $scope.userData.state;
             }
 
-            if ($scope.userData.country == 'France') {
-                params.race = 'france';
-            } else {
-                params.race = $scope.userData.race;
-            }
-            console.log("params", params);
             $scope.checkF = $scope.UTIL.checkForm(params, true);
+
             if ($scope.checkF.error === true) {
                 return;
             }
@@ -122,19 +112,22 @@ angular.module('gdsApp').controller('CadastroCtrl', ['$scope', 'UserApi', '$loca
 
             params.dob = $scope.UTIL.convertDate(params.dob);
 
-            angular.element('#modal-complete-login').modal('hide');
+            angular.element('#modal-complete-login').modal('hide');       
 
             UserApi.createUser(params, function(data) {
+                console.log('UserApi.createUser: ', data);
                 if (data.data.error === false) {
                     Notification.show('success', 'Cadastro', data.data.message);
                     LocalStorage.userCreateData(data.data.user);
                     $location.path('survey');
                 } else {
                     Notification.show('error', 'Cadastro', data.data.message);
-                    // console.warn(data.data.message);
+                    console.warn(data.data.message);
                 }
             });
         };
+
+
         // ====
         $scope.countries = [{
             "gentilico": "afegãne",

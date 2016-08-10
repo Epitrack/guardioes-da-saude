@@ -50,8 +50,8 @@
         <div class="col-sm-6">
             <article class="card">
                 <ul class="tabs-nav" style="width: 80px;">
-                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}" style="font-size: 1.8em;">Cadastros</a></li>
-                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}" style="font-size: 1.8em;">Descadastros</a></li>
+                    <li><a class="{{seta(graphicTwoPerc)}}" ng-click="tab = 'cadastros'" ng-class="{'active' : tab == 'cadastros' || !tab}" style="font-size: 1.8em;">Cadastros</a></li>
+                    <li><a class="{{seta(graphicOnePerc)}}" ng-click="tab = 'descadastros'" ng-class="{'active' : tab == 'descadastros'}" style="font-size: 1.8em;">Descadastros</a></li>
                 </ul>
                 <div class="tabs-container">
                     <div class="tab-content" ng-show="tab == 'cadastros' || !tab">
@@ -67,12 +67,12 @@
                     </div>
                     <div class="tab-content" ng-show="tab == 'descadastros'">
                         <div style="margin-left: -10%;">
-                            <span class="">{{dash.newRegisters}}</span>
+                            <span class="">{{dash.lasWeekdeleted}}</span>
                             <p>Última semana</p>
                         </div>
                         <div class="tab-graphic chart2" percent="" data-legend=""></div>
                         <div>
-                            <span class="">{{dash.lastWeekRegisters}}</span>
+                            <span class="">{{dash.deletedRegisters}}</span>
                             <p>Esta semana</p>
                         </div>
                     </div>
@@ -135,6 +135,9 @@
                     </div>
                 </div>
                 <div id="line-example" style="width:100%;height: 220px"></div>
+                <div align="center" style="margin-top: 15px;font-size: 2em;">
+                    Semana epidemiológica
+                </div>
             </header>
         </article>
     </div>

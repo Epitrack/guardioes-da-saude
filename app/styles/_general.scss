@@ -63,6 +63,10 @@ body {
     margin: 0;
 }
 
+.none{
+    display: none;
+}
+
 .main,
 .main-content {
     display: block;
@@ -152,6 +156,21 @@ body {
     &:focus {
         background-color: #ffffff !important;
         color: $btn-primary !important;
+    }
+}
+
+.btn-divirtase{
+    width: auto;
+    padding-left: 40px!important;
+    border: none;
+    background: #1e88e5 url('../images/divirtase.png') 15px 15px no-repeat;
+    &:focus{
+        background: #fff url('../images/divirtase-focus.png') 15px 15px no-repeat;
+        color: $btn-primary;
+    }
+    &:hover {
+        background: #fff url('../images/divirtase-focus.png') 15px 15px no-repeat!important;
+        color: $btn-primary!important;
     }
 }
 
@@ -395,9 +414,8 @@ body {
     padding: 0;
     &.not-logged {
         height: auto;
-        min-height: 630px;
+        min-height: 690px;
         background-repeat: repeat;
-        // background-size: 100%;
         @include path('bg-not-logged.svg');
     }
 }

@@ -32,6 +32,9 @@
 // game
 @import '_game';
 
+// dropdown
+@import '_dropdown-custom';
+
 .modal-backdrop {
     z-index: 0!important;
 }
@@ -40,6 +43,7 @@
    
 }
 .modal-open{
-	overflow: auto;
+	overflow: hidden!important;
+	padding-right: 0px!important;
 }
 
