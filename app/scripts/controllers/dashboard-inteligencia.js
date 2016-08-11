@@ -7,8 +7,8 @@
 * # DashboardInteligenciaCtrl
 * Controller of the gdsApp
 */
-angular.module('gdsApp').controller('DashboardInteligenciaCtrl', ['$scope', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
-function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
+angular.module('gdsApp').controller('DashboardInteligenciaCtrl', ['$scope','$filter', '$location', '$rootScope', '$http', '$compile', 'ApiConfig',
+function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
 
   // Init
   $scope.loadingGrafycs = true;
@@ -116,8 +116,46 @@ $scope.getSyndrome($scope.symptomsCases)
 
 $scope.getSyndrome = function() {
   $http.get(apiUrl + '/ei/syndrome/').success(function(data, status) {
-    console.log("RETORNOU SINDROMES",data.length,data);
-    console.log("_.indexBy(stooges, 'age');",_.groupBy(data, function(num){ return num.ageGroup; }));
+    $scope.idades = _.groupBy(data, function(num){
+      if(num.gender=="male"){
+        if(num.age>13 && num.age<19){
+          return "13-19";
+        }else if(num.age>20 && num.age<29){
+          return "20-29";
+        }else if(num.age>30 && num.age<39){
+          return "30-39";
+        }else if(num.age>40 && num.age<49){
+          return "40-49";
+        }else if(num.age>50 && num.age<59){
+          return "50-59";
+        }else if(num.age>60 && num.age<69){
+          return "60-69";
+        }else if(num.age>70 && num.age<79){
+          return "70-79";
+        }else{
+          return ">80";
+        }
+      }else{
+        if(num.age>13 && num.age<19){
+          return "13-19_F";
+        }else if(num.age>20 && num.age<29){
+          return "20-29_F";
+        }else if(num.age>30 && num.age<39){
+          return "30-39_F";
+        }else if(num.age>40 && num.age<49){
+          return "40-49_F";
+        }else if(num.age>50 && num.age<59){
+          return "50-59_F";
+        }else if(num.age>60 && num.age<69){
+          return "60-69_F";
+        }else if(num.age>70 && num.age<79){
+          return "70-79_F";
+        }else{
+          return ">80";
+        }
+      }
+    });
+    //console.log("idades",$scope.idades);
     $scope.syndromesCases = data
     for(var i=0; i<$scope.syndromesCases.length; i++){
       if($scope.syndromesCases[i].symptoms[0]===""){
@@ -213,7 +251,9 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
       return d.value;
     })
     .elasticX(true);
-
+    chart.on("filtered", function(chart) {
+    console.log(target,group,dimension.filter());
+  });
     return chart;
   };
 
@@ -268,7 +308,7 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
     .group(function(d){
       return "";
     })
-    .size(20)
+    .size(100000000)
     .columns([
       function(d) { return d.city; },
       function(d) { return d.age; },
@@ -276,8 +316,12 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
       function(d) { return d.lat_reported; },
       function(d) { return d.lng_reported; },
       function(d) { return d.symptom; },
-      function(d) { return d.date_reported }
+      function(d) { return $filter('date')(d.date_onset,'dd/MM/yyyy'); }
     ]);
+    $scope.table_ie.sortBy(function(d) {
+      return d.date_onset;
+    });
+    $scope.table_ie.order(d3.descending);
     //$scope.table_ie.showGroups(false);
     return $scope.table_ie;
   };
