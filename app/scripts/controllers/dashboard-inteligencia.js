@@ -38,72 +38,72 @@ function($scope, $location, $rootScope, $http, $compile, ApiConfig) {
     .then(function(data) {
       $scope.usersByCity = {};
       $scope.usersByCity['Brasil'] = {};
-      /*for (var i = 0; i < data.data.length; i++) {
-      $scope.usersByCity[data.data[i]._id] = {};
-      for (var j = 0; j < data.data[i].roles.length; j++) {
-      $scope.usersByCity[data.data[i]._id][data.data[i].roles[j].role] = data.data[i].roles[j].total
-      //
-      if ($scope.usersByCity['Brasil'][data.data[i].roles[j].role] === undefined) {
-      $scope.usersByCity['Brasil'][data.data[i].roles[j].role] = 0;
-    }
-    $scope.usersByCity['Brasil'][data.data[i].roles[j].role] += data.data[i].roles[j].total;
-  }
-}*/
-console.log($scope.usersByCity);
-}, function(error) {
-  console.warn('Error getAllData: ', error);
-});
-};
-$scope.searchUsers();
-//Object { Manaus: , Brasília: , São Paulo: , Belo Horizonte: , Rio de Janeiro: , Salvador:  }
-$scope.getUsersByCity = function(city, role) {
-  try {
-    return $scope.usersByCity[city][role] || 0;
-  } catch (e) {
-    return 0;
-  }
-}
-
-$scope.alerts = {};
-$scope.usersType = {};
-$scope._symptoms = [];
-$scope.types = {
-  sindrome: true,
-  sintomas: false,
-  customize: false
-};
-
-$scope.selectgraph = function(type) {
-  for (var i in $scope.types) {
-    if (i === type) {
-      $scope.types[i] = true;
-    } else {
-      $scope.types[i] = false;
+      for (var i = 0; i < data.data.length; i++) {
+        $scope.usersByCity[data.data[i]._id] = {};
+        for (var j = 0; j < data.data[i].roles.length; j++) {
+          $scope.usersByCity[data.data[i]._id][data.data[i].roles[j].role] = data.data[i].roles[j].total
+          //
+          if ($scope.usersByCity['Brasil'][data.data[i].roles[j].role] === undefined) {
+            $scope.usersByCity['Brasil'][data.data[i].roles[j].role] = 0;
+          }
+          $scope.usersByCity['Brasil'][data.data[i].roles[j].role] += data.data[i].roles[j].total;
+        }
+      }
+      console.log($scope.usersByCity);
+    }, function(error) {
+      console.warn('Error getAllData: ', error);
+    });
+  };
+  $scope.searchUsers();
+  //Object { Manaus: , Brasília: , São Paulo: , Belo Horizonte: , Rio de Janeiro: , Salvador:  }
+  $scope.getUsersByCity = function(city, role) {
+    try {
+      return $scope.usersByCity[city][role] || 0;
+    } catch (e) {
+      return 0;
     }
   }
-}
 
-$scope.findAlerts = function() {
-  $http.get(apiUrl + '/ei/alerts/')
-  .then(function(data) {
-    data = data.data;
-    console.log("alerts", data);
-    $scope.alerts = data;
-    $scope.setColorAlerts();
-  }, function(error) {
-    console.warn('Error getAllData: ', error);
-  });
-};
+  $scope.alerts = {};
+  $scope.usersType = {};
+  $scope._symptoms = [];
+  $scope.types = {
+    sindrome: true,
+    sintomas: false,
+    customize: false
+  };
+
+  $scope.selectgraph = function(type) {
+    for (var i in $scope.types) {
+      if (i === type) {
+        $scope.types[i] = true;
+      } else {
+        $scope.types[i] = false;
+      }
+    }
+  }
+
+  $scope.findAlerts = function() {
+    $http.get(apiUrl + '/ei/alerts/')
+    .then(function(data) {
+      data = data.data;
+      console.log("alerts", data);
+      $scope.alerts = data;
+      $scope.setColorAlerts();
+    }, function(error) {
+      console.warn('Error getAllData: ', error);
+    });
+  };
 
 
 
-/*$scope.getSymptoms = function() {
-$http.get(apiUrl + '/ei/symptoms/').success(function(data, status) {
-console.log("RETORNOU SINTOMAS",data.length,data);
-$scope.symptomsCases = data;
-for(var i=0; i<$scope.symptomsCases.length; i++){
-if($scope.symptomsCases[i].symptom[0]===""){
-$scope.symptomsCases[i].symptom[0] = "Sem sintomas"
+  /*$scope.getSymptoms = function() {
+  $http.get(apiUrl + '/ei/symptoms/').success(function(data, status) {
+  console.log("RETORNOU SINTOMAS",data.length,data);
+  $scope.symptomsCases = data;
+  for(var i=0; i<$scope.symptomsCases.length; i++){
+  if($scope.symptomsCases[i].symptom[0]===""){
+  $scope.symptomsCases[i].symptom[0] = "Sem sintomas"
 }
 $scope.symptomsCases[i].symptom=$scope.symptomsCases[i].symptom[0]
 }
@@ -116,7 +116,8 @@ $scope.getSyndrome($scope.symptomsCases)
 
 $scope.getSyndrome = function() {
   $http.get(apiUrl + '/ei/syndrome/').success(function(data, status) {
-    console.log("RETORNOU SINDROMES",data.length,data)
+    console.log("RETORNOU SINDROMES",data.length,data);
+    console.log("_.indexBy(stooges, 'age');",_.groupBy(data, function(num){ return num.ageGroup; }));
     $scope.syndromesCases = data
     for(var i=0; i<$scope.syndromesCases.length; i++){
       if($scope.syndromesCases[i].symptoms[0]===""){
@@ -262,21 +263,23 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
   // Age group charts
 
   var buildTable = function(dateDimension, target,sympGroup){
-    return dc.dataTable(target)
+    $scope.table_ie = dc.dataTable(target)
     .dimension(dateDimension)
     .group(function(d){
-      return d.date_reported;
+      return "";
     })
     .size(20)
     .columns([
-      function(d) { return "-"; },
+      function(d) { return d.city; },
       function(d) { return d.age; },
       function(d) { return d.gender; },
       function(d) { return d.lat_reported; },
       function(d) { return d.lng_reported; },
       function(d) { return d.symptom; },
-      function(d) { return d.date_reported; }
+      function(d) { return d.date_reported }
     ]);
+    //$scope.table_ie.showGroups(false);
+    return $scope.table_ie;
   };
 
   // buildTable(syndromesDataset, 'syndrome', syndromesDateDimension, '#syndromesCaseList');
@@ -548,9 +551,10 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
     dc.dataCount('#symptomsCount').dimension(symptomsDataset).group(allSymptoms);
     buildAgeChart('#piramideetaria', syndromesDataset);
     //buildAgeChart('#symptomsAgeChart', symptomsDataset);
+    buildTable(syndromesDateDimension,"#table_ie",syndromesGroup);
     buildTimeChart(syndromesDataset, syndromesGroup, 'syndrome', '#syndromesTimeSeries', '#syndromesTimeNavigation', syndromesDateDimension);
     buildTimeChart(symptomsDataset, symptomsGroup, 'symptom', '#symptomsTimeSeries', '#symptomsTimeNavigation', symptomsDateDimension);
-    buildTable(symptomsDateDimension,"#table_ie",symptomsGroup);
+
 
   };
 
