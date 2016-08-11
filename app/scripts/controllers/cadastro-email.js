@@ -100,7 +100,7 @@ angular.module('gdsApp').controller('CadastroEmailCtrl', ['$scope', '$http', 'Us
                 password: $scope.createData.password,
                 country: $scope.createData.country,
                 state: $scope.createData.state,
-                role: $scope.createData.profile
+                role: String($scope.createData.profile)
             };
 
             if (!$scope.fr) {

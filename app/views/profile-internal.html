@@ -65,16 +65,16 @@
                             <label>Estado de origem</label>
                             <select class="select-primary" name="state" ng-model="screen.household.state">
                                 <option ng-selected="true" value="Selecione" disabled>Estado de origem</option>
-                                <option value="{{c.nome}}" ng-repeat="c in UTIL.states">{{c.nome}}</option>
+                                <option value="{{c.sigla}}" ng-repeat="c in UTIL.states">{{c.nome}}</option>
                             </select>
                         </fieldset>
                         <fieldset class="col-xs-12 col-sm-4">
                             <label>{{'00460' | translate}}</label>
                             <select class="select-primary" name="perfil" ng-model="screen.household.profile">
                                 <option ng-selected="true" disabled>{{'00460'|translate}}</option>
-                                <option value="Atleta/Delegação">{{'00049'|translate}} </option>
-                                <option value="Trabalhador/Voluntário"> {{'00622'|translate}} </option>
-                                <option value="Fã/Espectador">{{'00227'|translate}}</option>
+                                <option value="1">{{'00049'|translate}} </option>
+                                <option value="2"> {{'00622'|translate}} </option>
+                                <option value="3">{{'00227'|translate}}</option>
                             </select>
                         </fieldset>
                     </div>
