@@ -46,14 +46,15 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
     var pointA = regionWidth,
     pointB = w - regionWidth;
     var exampleData = [
-      {group: '>80', male: $scope.idades['>80']!==undefined?$scope.idades['>80'].length:0, female: $scope.idades['>80_F']!==undefined?$scope.idades['>80_F'].length:0},
-      {group: '70-79', male: $scope.idades['70-79']!==undefined?$scope.idades['70-79'].length:0, female: $scope.idades['70-79_F']!==undefined?$scope.idades['70-79_F'].length:0},
-      {group: '60-69', male: $scope.idades['60-69']!==undefined?$scope.idades['60-69'].length:0, female: $scope.idades['60-69_F']!==undefined?$scope.idades['60-69_F'].length:0},
-      {group: '50-59', male: $scope.idades['50-59']!==undefined?$scope.idades['50-59'].length:0, female: $scope.idades['50-59_F']!==undefined?$scope.idades['50-59_F'].length:0},
-      {group: '40-49', male: $scope.idades['40-49']!==undefined?$scope.idades['40-49'].length:0, female: $scope.idades['40-49_F']!==undefined?$scope.idades['40-49_F'].length:0},
-      {group: '30-39', male: $scope.idades['30-39']!==undefined?$scope.idades['30-39'].length:0, female: $scope.idades['30-39_F']!==undefined?$scope.idades['30-39_F'].length:0},
+      {group: '13-19', male: $scope.idades['13-19']!==undefined?$scope.idades['13-19'].length:0, female: $scope.idades['13-19_F']!==undefined?$scope.idades['13-19_F'].length:0},
       {group: '20-29', male: $scope.idades['20-29']!==undefined?$scope.idades['20-29'].length:0, female: $scope.idades['20-29_F']!==undefined?$scope.idades['20-29_F'].length:0},
-      {group: '13-19', male: $scope.idades['13-19']!==undefined?$scope.idades['13-19'].length:0, female: $scope.idades['13-19_F']!==undefined?$scope.idades['13-19_F'].length:0}
+      {group: '30-39', male: $scope.idades['30-39']!==undefined?$scope.idades['30-39'].length:0, female: $scope.idades['30-39_F']!==undefined?$scope.idades['30-39_F'].length:0},
+      {group: '40-49', male: $scope.idades['40-49']!==undefined?$scope.idades['40-49'].length:0, female: $scope.idades['40-49_F']!==undefined?$scope.idades['40-49_F'].length:0},
+      {group: '50-59', male: $scope.idades['50-59']!==undefined?$scope.idades['50-59'].length:0, female: $scope.idades['50-59_F']!==undefined?$scope.idades['50-59_F'].length:0},
+      {group: '60-69', male: $scope.idades['60-69']!==undefined?$scope.idades['60-69'].length:0, female: $scope.idades['60-69_F']!==undefined?$scope.idades['60-69_F'].length:0},
+      {group: '70-79', male: $scope.idades['70-79']!==undefined?$scope.idades['70-79'].length:0, female: $scope.idades['70-79_F']!==undefined?$scope.idades['70-79_F'].length:0},
+      {group: '>80', male: $scope.idades['>80']!==undefined?$scope.idades['>80'].length:0, female: $scope.idades['>80_F']!==undefined?$scope.idades['>80_F'].length:0}
+
     ];
     // GET THE TOTAL POPULATION SIZE AND CREATE A FUNCTION FOR RETURNING THE PERCENTAGE
     var totalPopulation = d3.sum(exampleData, function(d) { return d.male + d.female; }),
