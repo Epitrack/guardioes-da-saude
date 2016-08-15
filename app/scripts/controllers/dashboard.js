@@ -112,7 +112,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 }
             }
             $("#line-example").empty();
-            console.log("$scope.dado_grafico",$scope.dado_grafico);
+            //console.log("$scope.dado_grafico",$scope.dado_grafico);
             $scope.graficoparticipacoes = Morris.Line({
                 element: 'line-example',
                 data: $scope.dado_grafico,

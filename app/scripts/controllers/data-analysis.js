@@ -273,11 +273,8 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                 psv("https://s3.amazonaws.com/gdsreports/surveys_dashboard.txt", function(data) {
                     window.sessionStorage.setItem('surveys', 1);
                     window.guardioesdasaudedb.get('surveys').then(function(doc) {
-                        return window.guardioesdasaudedb.put({
-                            _id: 'surveys',
-                            _rev: doc._rev,
-                            data: JSON.stringify(data)
-                        });
+                        doc.data=JSON.stringify(data);
+                        return window.guardioesdasaudedb.put(doc);
                     }).then(function(response) {
                         $scope.dadossurveys = data;
                         callback(data);
@@ -449,18 +446,17 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                 }
                 data = df;
                 try {
-                    window.guardioesdasaudedb.get('surveys_dadosfiltrados').then(function(doc) {
-                        return window.guardioesdasaudedb.put({
-                            _id: 'surveys',
-                            _rev: doc._rev,
-                            data: JSON.stringify(data)
-                        });
-                    }).then(function(response) {}).catch(function(err) {
+                    window.guardioesdasaudedb.get('surveys_dadosfiltrados_final').then(function(doc) {
+                        doc.data = JSON.stringify(data);
+                        return window.guardioesdasaudedb.put(doc);
+                    }).catch(function(err) {
                         if (err.status == 404) {
                             window.guardioesdasaudedb.put({
-                                _id: 'surveys_dadosfiltrados',
+                                _id: 'surveys_dadosfiltrados_final',
                                 data: JSON.stringify(data)
-                            }).then(function(response) {}).catch(function(err) {
+                            }).then(function(response) {
+
+                            }).catch(function(err) {
                                 console.log(err);
                             });
                         }
@@ -487,26 +483,29 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                     window.localStorage.setItem('filters', JSON.stringify(_.keys(filtros)));
                     //window.localStorage.setItem('result', JSON.stringify(result));
                     try {
+                      //console.log(result);
                         window.guardioesdasaudedb.get('result').then(function(doc) {
-                            return window.guardioesdasaudedb.put({
-                                _id: 'result',
-                                _rev: doc._rev,
-                                data: JSON.stringify(result)
-                            });
-                        }).then(function(response) {}).catch(function(err) {
+                          doc.data=JSON.stringify(result);
+                          return window.guardioesdasaudedb.put(doc).then(function(response) {
+                            $scope.loading_analysis=false;
+                            $location.path('/dashboard/analysis/result');
+                          }).catch(function(err) {
+                            alert("Ocorreu um erro ao salvar os dados da análise");
+                          });
+                        }).catch(function(err) {
                             if (err.status == 404) {
                                 window.guardioesdasaudedb.put({
                                     _id: 'result',
                                     data: JSON.stringify(result)
-                                }).then(function(response) {}).catch(function(err) {
-                                    console.log(err);
+                                }).then(function(response) {
+                                  $scope.loading_analysis=false;
+                                  $location.path('/dashboard/analysis/result');
+                                }).catch(function(err) {
+                                    alert("Ocorreu um erro ao salvar os dados da análise");
                                 });
                             }
                         });
                     } catch (e) {}
-                    $scope.loading_analysis=false;
-                    $location.path('/dashboard/analysis/result');
-                    /**/
                 }
             });
         };
