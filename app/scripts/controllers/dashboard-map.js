@@ -7,11 +7,12 @@
  * # DashboardMapCtrl
  * Controller of the gdsApp
  */
-angular.module('gdsApp').controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification', 
+angular.module('gdsApp').controller('DashboardMapCtrl', ['$scope', 'LocalStorage', 'Surveyapi', '$http', '$rootScope', 'Notification',
         function($scope, LocalStorage, Surveyapi, $http, $rootScope, Notification) {
 
         $scope.mkrs = [];
         $scope.params = {};
+        $scope.kernelmsg=true;
         var mcluster = null;
         $scope.datemin = "01/" + (moment().month() + 1) + "/" + moment().year();
         $scope.datemax = "30/" + (moment().month() + 1) + "/" + moment().year();
