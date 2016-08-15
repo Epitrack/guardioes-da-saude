@@ -231,6 +231,46 @@
                     </div>
                 </div>
             </li>
+            <li id="perfil" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Local -->
+                <button ng-click="perfil = !perfil" class="btn-var" ng-class="{ 'active' : perfil }" data-toggle="collapse"
+                data-target="#perfil-content">Perfil</button>
+                <div id="perfil-content" class="collapse panel-collapse">
+                    <div class="collapse-content imageBased">
+                      <fieldset>
+                          <input type="checkbox" name="perfil" ng-click="selecionarAnalytics('perfil','Trabalhador/Voluntário')"
+                          value="true" id="perfil-trabalhador-voluntario" class="checkbox-primary">
+                          <label for="perfil-trabalhador-voluntario">Trabalhador/Voluntário</label>
+                      </fieldset>
+                      <fieldset>
+                          <input type="checkbox" name="perfil" ng-click="selecionarAnalytics('perfil','Fã/Espectador')" value="true"
+                          id="perfil-fa-espectador" class="checkbox-primary">
+                          <label for="perfil-fa-espectador">Fã/Espectador</label>
+                      </fieldset>
+                      <fieldset>
+                          <input type="checkbox" name="perfil" ng-click="selecionarAnalytics('perfil','Ateta/Delegação')" value="true"
+                          id="perfil-atleta-delegacao" class="checkbox-primary">
+                          <label for="perfil-atleta-delegacao">Ateta/Delegação</label>
+                      </fieldset>
+                    </div>
+                </div>
+            </li>
+            <li id="origem" draggable="true" ondragstart="angular.element(this).scope().drag(event)">
+                <span class="drag-handle drag-btn">☰</span>
+                <!-- Local -->
+                <button ng-click="origem = !origem" class="btn-var" ng-class="{ 'active' : origem }" data-toggle="collapse"
+                data-target="#local-content">País de Origem</button>
+                <div id="local-content" class="collapse panel-collapse">
+                    <div class="collapse-content imageBased">
+                        <fieldset ng-repeat="l in origens">
+                            <input type="checkbox" name="local" ng-click="selecionarAnalytics('origem',l)" value="true"
+                            id="origem-{{$index}}" class="checkbox-primary">
+                            <label for="origem-{{$index}}">{{l}}</label>
+                        </fieldset>
+                    </div>
+                </div>
+            </li>
         </ul>
     </aside>
     <div class="col-xs-12 col-md-7">

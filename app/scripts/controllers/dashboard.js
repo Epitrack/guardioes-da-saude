@@ -28,7 +28,6 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
         $scope.labels = ['Sintomático', 'Assintomático', 'Total'];
         $scope.colorsmap = ['#ffffff', '#e3f1f9', '#b5daee', '#7bbde1', '#62b0dc', '#49a4d6', '#3098d0', '#2a86b8', '#24749f', '#1e6186'];
         $scope.colorsgraph = ['#76031c', '#b3b500', '#f5a623'];
-        /**/
         $scope._usersByState = {};
 
         $scope.load_user_map = function() {
@@ -72,12 +71,10 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             return $scope._usersByState[(uf + '').toUpperCase()] !== undefined ? $scope._usersByState[(uf + '').toUpperCase()] : 0;
         };
         $scope.updateParticipacoes = function(key) {
-            /**/
             $scope.ykeys = [];
             $scope.labels = [];
             $scope.colorsgraph = [];
             $scope.data[key] = !$scope.data[key];
-            /**/
             if ($scope.data.symptomatic) {
                 $scope.ykeys.push('symptomatic');
                 $scope.labels.push('Sintomático');
@@ -115,7 +112,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 }
             }
             $("#line-example").empty();
-            console.log("$scope.dado_grafico",$scope.dado_grafico);
+            //console.log("$scope.dado_grafico",$scope.dado_grafico);
             $scope.graficoparticipacoes = Morris.Line({
                 element: 'line-example',
                 data: $scope.dado_grafico,
@@ -124,7 +121,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 ykeys: $scope.ykeys,
                 labels: $scope.labels,
                 xLabelFormat: function(x) {
-                    console.log("moment(x).format().week()", moment(x).week()-1);
+                    //console.log("moment(x).format().week()", moment(x).week()-1);
                     // return moment(x).format("DD/MM/YYYY");
                     return moment(x).week()-1;
                 },
@@ -165,8 +162,8 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
         };
 
         function setPercOps() {
-            console.log($scope.dash.newRegisters);
-            $scope.graphicOnePerc = ((($scope.dash.newRegisters - $scope.dash.lastWeekRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
+
+            $scope.graphicOnePerc = ((($scope.dash.lastWeekRegisters - $scope.dash.newRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');
             //inverter a ordem do lastweek e new quando tiver os números dos descadastrados
@@ -182,7 +179,16 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             return (val < 0) ? 'down' : 'up';
         }
 
-        var chartOps = {
+        var chartOpsCadastrados = {
+            scaleColor: "#9ebf00",
+            lineWidth: 8,
+            lineCap: 'butt',
+            barColor: '#57b860',
+            size: 90,
+            animate: 2000
+        };
+
+        var chartOpsDescadastrados = {
             scaleColor: "#9ebf00",
             lineWidth: 8,
             lineCap: 'butt',
@@ -191,8 +197,8 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
             animate: 2000
         };
 
-        angular.element('.chart1').easyPieChart(chartOps);
-        angular.element('.chart2').easyPieChart(chartOps);
+        angular.element('.chart1').easyPieChart(chartOpsCadastrados);
+        angular.element('.chart2').easyPieChart(chartOpsDescadastrados);
         $scope.graphicOnePerc = 10;
 
         $scope.graphicOptions = {
