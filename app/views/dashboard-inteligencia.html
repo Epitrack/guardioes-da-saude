@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-3" style="padding-right: 0;">
                 <div class="box-alert rio verde" id="rio">
-                    <span class="box-alert-title">Rio de Janeiro</span>
+                    <a href="#mkernel" ng-click="setRegiao('RIO');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Rio de Janeiro</span></a>
                     <div class="box-scroll">
                         <div ng-repeat="a in alerts['Rio de Janeiro']">
                             <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -24,7 +24,7 @@
             <div class="col-xs-12 col-md-9">
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert amarelo" id="brasil">
-                        <span class="box-alert-title">Brasil</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('BR');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Brasil</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasil']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert verde" id="belohorizonte">
-                        <span class="box-alert-title">Belo Horizonte</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('BH');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Belo Horizonte</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Belo Horizonte']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4" style="padding-right: 0">
                     <div class="box-alert laranja" id="brasilia">
-                        <span class="box-alert-title">Brasília</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('DF');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Brasília</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasília']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -74,7 +74,7 @@
             <div class="col-xs-12 col-md-9 linha-inferior">
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert vermelho" id="saopaulo">
-                        <span class="box-alert-title">São Paulo</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('SAMPA');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">São Paulo</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['São Paulo']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert amarelo" id="manaus">
-                        <span class="box-alert-title">Manaus</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('MANAUS');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Manaus</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Manaus']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-xs-12 col-md-4" style="padding-right: 0">
                     <div class="box-alert verde" id="salvador">
-                        <span class="box-alert-title">Salvador</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('SALAVADOR');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Salvador</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Salvador']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -175,25 +175,28 @@
         </div>
     </div>
     <div class="wrapper-card-map">
-        <div class="col-sm-6">
+        <div class="col-sm-6" id="mapakernel">
             <article class="card relative" style="min-height: auto!important;">
-                <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
+                <span ng-show="loadingGrafycs_kernel" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
                 <header class="panel-heading card-heading">
                     <h3 class="panel-title">Mapa de Intensidade de Kernel</h3>
                     <div class="pull-right wrapper-switch-participation">
                       <label  style="font-size: 2.3em; color: white; font-weight: bold;">Síndrome:</label>
                       <select aria-invalid="false" class="btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid"
-                      ng-model="sindromekernel" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;margin-right: 18px;">
+                      ng-model="sindrome" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;margin-right: 18px;">
                                     <option class="dash-option" value="">Selecione</option>
-                                    <option class="dash-option" value="Diarreica">Diarreica</option>
-                                    <option class="dash-option" value="Respiratoria">Respiratoria</option>
-                                    <option class="dash-option" value="Exantematica">Exantematica</option>
+                                    <option class="dash-option" value="DIARREICA">Diarreica</option>
+                                    <option class="dash-option" value="RESPIRATORIA">Respiratoria</option>
+                                    <option class="dash-option" value="EXANTEMATICA">Exantematica</option>
                       </select>
-                      <button ng-click="" style="font-size: 2.2em;border-radius: 0px;">Atualizar</button>
+                      <button ng-click="createKernel()" style="font-size: 2.2em;border-radius: 0px;">Atualizar</button>
                     </div>
                 </header>
                 <div class="panel-body relative" style="padding:0;padding-left: 20px;min-height: 346px;">
-                  <div id="piramideetaria"></div>
+                  <iframe ng-hide="kernelmsg" id="mkernel" src="http://kernel.dev.guardioesdasaude.org/SAMPA_RESPIRATORIA.html" style="display:none;position:absolute;bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;"></iframe>
+                  <div ng-show="kernelmsg" style="position: absolute; top: 50%; left: 50%; margin-left: -204.5px; font-size: 3em;">
+                    Selecione a região e a síndrome que deseja visualizar
+                  </div>
                 </div>
             </article>
         </div>

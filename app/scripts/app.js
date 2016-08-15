@@ -60,6 +60,7 @@ angular
 
         if ($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 || $location.$$host.indexOf('olympics') > -1) {
             ApiConfig.API_URL = 'http://rest.guardioesdasaude.org';
+            ApiConfig.API_KERNEL='http://kernel.dev.guardioesdasaude.org';
             ApiConfig.ANALYTICS_ID = 'UA-71659608-1';
         }
 

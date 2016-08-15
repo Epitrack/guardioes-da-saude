@@ -15,11 +15,184 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
   $scope.datemin = "01/" + (moment().month() + 1) + "/" + moment().year();
   $scope.datemax = "30/" + (moment().month() + 1) + "/" + moment().year();
   $scope.periodo = $scope.datemin + " - " + $scope.datemax;
+  $scope.filtros_age={};
+
+  $scope.updateFiltrosAge=function(type){
+    if(  $scope.filtros_age[type]===undefined){
+        $scope.filtros_age[type]=true;
+    }else{
+        $scope.filtros_age[type]= !$scope.filtros_age[type];
+    }
+    $scope.createIdade();
+    $scope.updateAge('#piramideetaria');
+  }
+
+  $scope.updateAge=function(target){
+    $(target).html('');
+    // SET UP DIMENSIONS
+    var w = 325,
+    h = 300;
+    // margin.middle is distance from center line to each y-axis
+    var margin = {
+      top: 20,
+      right: 20,
+      bottom: 24,
+      left: 20,
+      middle: 28
+    };
+    // the width of each side of the chart
+    var regionWidth = w/2 - margin.middle;
+    // these are the x-coordinates of the y-axes
+    var pointA = regionWidth,
+    pointB = w - regionWidth;
+    var exampleData = [
+      {group: '>80', male: $scope.idades['>80']!==undefined?$scope.idades['>80'].length:0, female: $scope.idades['>80_F']!==undefined?$scope.idades['>80_F'].length:0},
+      {group: '70-79', male: $scope.idades['70-79']!==undefined?$scope.idades['70-79'].length:0, female: $scope.idades['70-79_F']!==undefined?$scope.idades['70-79_F'].length:0},
+      {group: '60-69', male: $scope.idades['60-69']!==undefined?$scope.idades['60-69'].length:0, female: $scope.idades['60-69_F']!==undefined?$scope.idades['60-69_F'].length:0},
+      {group: '50-59', male: $scope.idades['50-59']!==undefined?$scope.idades['50-59'].length:0, female: $scope.idades['50-59_F']!==undefined?$scope.idades['50-59_F'].length:0},
+      {group: '40-49', male: $scope.idades['40-49']!==undefined?$scope.idades['40-49'].length:0, female: $scope.idades['40-49_F']!==undefined?$scope.idades['40-49_F'].length:0},
+      {group: '30-39', male: $scope.idades['30-39']!==undefined?$scope.idades['30-39'].length:0, female: $scope.idades['30-39_F']!==undefined?$scope.idades['30-39_F'].length:0}
+    ];
+    // GET THE TOTAL POPULATION SIZE AND CREATE A FUNCTION FOR RETURNING THE PERCENTAGE
+    var totalPopulation = d3.sum(exampleData, function(d) { return d.male + d.female; }),
+    percentage = function(d) { return d / totalPopulation; };
+    // CREATE SVG
+    var svg = d3.select(target).append('svg')
+    .attr('width', w)
+    .attr('height', margin.top + h + margin.bottom)
+    // ADD A GROUP FOR THE SPACE WITHIN THE MARGINS
+    .append('g')
+    .attr('transform', translation(margin.left, margin.top));
+    // find the maximum data value on either side
+    //  since this will be shared by both of the x-axes
+    var maxValue = Math.max(
+      d3.max(exampleData, function(d) { return percentage(d.male); }),
+      d3.max(exampleData, function(d) { return percentage(d.female); })
+    );
+    // SET UP SCALES
+    // the xScale goes from 0 to the width of a region
+    //  it will be reversed for the left x-axis
+    var xScale = d3.scale.linear()
+    .domain([0, maxValue])
+    .range([0, regionWidth])
+    .nice();
+
+    var xScaleLeft = d3.scale.linear()
+    .domain([0, maxValue])
+    .range([regionWidth, 0]);
+
+    var xScaleRight = d3.scale.linear()
+    .domain([0, maxValue])
+    .range([0, regionWidth]);
+
+    var yScale = d3.scale.ordinal()
+    .domain(exampleData.map(function(d) { return d.group; }))
+    .rangeRoundBands([h,0], 0.1);
+    // SET UP AXES
+    var yAxisLeft = d3.svg.axis()
+    .scale(yScale)
+    .orient('right')
+    .tickSize(4,0)
+    .tickPadding(margin.middle-4);
+
+    var yAxisRight = d3.svg.axis()
+    .scale(yScale)
+    .orient('right')
+    .tickSize(4,0)
+    .tickFormat(' ');
+
+    var xAxisRight = d3.svg.axis()
+    .scale(xScale)
+    .orient('bottom')
+    .tickFormat(d3.format('%'));
+
+    var xAxisLeft = d3.svg.axis()
+    // REVERSE THE X-AXIS SCALE ON THE LEFT SIDE BY REVERSING THE RANGE
+    .scale(xScale.copy().range([pointA, 0]))
+    .orient('bottom')
+    .tickFormat(d3.format('%'));
+
+    // MAKE GROUPS FOR EACH SIDE OF CHART
+    // scale(-1,1) is used to reverse the left side so the bars grow left instead of right
+    var leftBarGroup = svg.append('g')
+    .attr('transform', translation(pointA, 0) + 'scale(-1,1)');
+    var rightBarGroup = svg.append('g')
+    .attr('transform', translation(pointB, 0));
+
+    // DRAW AXES
+    svg.append('g')
+    .attr('class', 'axis y left')
+    .attr('transform', translation(pointA, 0))
+    .call(yAxisLeft)
+    .selectAll('text')
+    .style('font-size', '2em')
+    .style('text-anchor', 'middle');
+
+    svg.append('g')
+    .attr('class', 'axis y right')
+    .attr('transform', translation(pointB, 0))
+    .call(yAxisRight);
+
+    svg.append('g')
+    .attr('class', 'axis x left')
+    .attr('transform', translation(0, h))
+    .call(xAxisLeft);
+
+    svg.append('g')
+    .attr('class', 'axis x right')
+    .attr('transform', translation(pointB, h))
+    .call(xAxisRight);
+
+    // DRAW BARS
+    leftBarGroup.selectAll('.bar.left')
+    .data(exampleData)
+    .enter().append('rect')
+    .attr('class', 'bar left')
+    .attr('x', 0)
+    .attr('y', function(d) { return yScale(d.group); })
+    .attr('width', function(d) { return xScale(percentage(d.male)); })
+    .attr('height', yScale.rangeBand());
+
+    rightBarGroup.selectAll('.bar.right')
+    .data(exampleData)
+    .enter().append('rect')
+    .attr('class', 'bar right')
+    .attr('x', 0)
+    .attr('y', function(d) { return yScale(d.group); })
+    .attr('width', function(d) { return xScale(percentage(d.female)); })
+    .attr('height', yScale.rangeBand());
+    // so sick of string concatenation for translations
+    function translation(x,y) {
+      return 'translate(' + x + ',' + y + ')';
+    }
+  }
   /**/
   var apiUrl = ApiConfig.API_URL;
   var app_token = ApiConfig.APP_TOKEN;
   var classesColorScale = d3.scale.category10();
   /**/
+  $scope.kernelmsg=true;
+  $scope.setRegiao=function(regiao){
+    $scope.regiao = regiao;
+  }
+  $scope.setSindrome=function(sindrome){
+    $scope.sindrome = sindrome;
+  }
+  $scope.createKernel=function(){
+    $scope.loadingGrafycs_kernel = true;
+    $scope.kernelmsg=false;
+    if($scope.sindrome!=="" && $scope.regiao!==undefined){
+      var url = ApiConfig.API_KERNEL+"/"+$scope.regiao+"_"+$scope.sindrome+".html";
+      
+      $("#mkernel").attr('src',url);
+      $("#mkernel").show();
+      $("html, body").animate({
+          scrollTop:  800
+      }, 400);
+      $scope.loadingGrafycs_kernel = false;
+    }
+  };
+
   $scope.setDateMin = function(d) {
     $scope.datemin = d;
   };
@@ -95,67 +268,60 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
     });
   };
 
-
-
-  /*$scope.getSymptoms = function() {
-  $http.get(apiUrl + '/ei/symptoms/').success(function(data, status) {
-  console.log("RETORNOU SINTOMAS",data.length,data);
-  $scope.symptomsCases = data;
-  for(var i=0; i<$scope.symptomsCases.length; i++){
-  if($scope.symptomsCases[i].symptom[0]===""){
-  $scope.symptomsCases[i].symptom[0] = "Sem sintomas"
+$scope.createIdade = function(){
+  console.log("$scope.syndromesCases",$scope.syndromesCases.length);
+  var d = $scope.syndromesCases;
+  d = _.filter(d, function(num){
+      if($scope.filtros_age[num.syndrome]===undefined){
+        return true;
+      }else{
+        return $scope.filtros_age[num.syndrome]
+      }
+  });
+console.log("$scope.d",d.length);
+  $scope.idades = _.groupBy(d, function(num){
+    if(num.gender=="male"){
+      if(num.age>13 && num.age<19){
+        return "13-19";
+      }else if(num.age>20 && num.age<29){
+        return "20-29";
+      }else if(num.age>30 && num.age<39){
+        return "30-39";
+      }else if(num.age>40 && num.age<49){
+        return "40-49";
+      }else if(num.age>50 && num.age<59){
+        return "50-59";
+      }else if(num.age>60 && num.age<69){
+        return "60-69";
+      }else if(num.age>70 && num.age<79){
+        return "70-79";
+      }else{
+        return ">80";
+      }
+    }else{
+      if(num.age>13 && num.age<19){
+        return "13-19_F";
+      }else if(num.age>20 && num.age<29){
+        return "20-29_F";
+      }else if(num.age>30 && num.age<39){
+        return "30-39_F";
+      }else if(num.age>40 && num.age<49){
+        return "40-49_F";
+      }else if(num.age>50 && num.age<59){
+        return "50-59_F";
+      }else if(num.age>60 && num.age<69){
+        return "60-69_F";
+      }else if(num.age>70 && num.age<79){
+        return "70-79_F";
+      }else{
+        return ">80";
+      }
+    }
+  });
 }
-$scope.symptomsCases[i].symptom=$scope.symptomsCases[i].symptom[0]
-}
-
-if (data) {
-$scope.getSyndrome($scope.symptomsCases)
-};
-});
-};*/
 
 $scope.getSyndrome = function() {
   $http.get(apiUrl + '/ei/syndrome/').success(function(data, status) {
-    $scope.idades = _.groupBy(data, function(num){
-      if(num.gender=="male"){
-        if(num.age>13 && num.age<19){
-          return "13-19";
-        }else if(num.age>20 && num.age<29){
-          return "20-29";
-        }else if(num.age>30 && num.age<39){
-          return "30-39";
-        }else if(num.age>40 && num.age<49){
-          return "40-49";
-        }else if(num.age>50 && num.age<59){
-          return "50-59";
-        }else if(num.age>60 && num.age<69){
-          return "60-69";
-        }else if(num.age>70 && num.age<79){
-          return "70-79";
-        }else{
-          return ">80";
-        }
-      }else{
-        if(num.age>13 && num.age<19){
-          return "13-19_F";
-        }else if(num.age>20 && num.age<29){
-          return "20-29_F";
-        }else if(num.age>30 && num.age<39){
-          return "30-39_F";
-        }else if(num.age>40 && num.age<49){
-          return "40-49_F";
-        }else if(num.age>50 && num.age<59){
-          return "50-59_F";
-        }else if(num.age>60 && num.age<69){
-          return "60-69_F";
-        }else if(num.age>70 && num.age<79){
-          return "70-79_F";
-        }else{
-          return ">80";
-        }
-      }
-    });
-    //console.log("idades",$scope.idades);
     $scope.syndromesCases = data
     for(var i=0; i<$scope.syndromesCases.length; i++){
       if($scope.syndromesCases[i].symptoms[0]===""){
@@ -163,7 +329,7 @@ $scope.getSyndrome = function() {
       }
       $scope.syndromesCases[i].symptom=$scope.syndromesCases[i].symptoms[0]
     }
-    //$scope.createGrafyc(symptomsCases, $scope.syndromesCases);
+    $scope.createIdade();
     $scope.createGrafyc($scope.syndromesCases, $scope.syndromesCases);
   });
 }
@@ -200,7 +366,6 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
 
   maxDate = new Date(maxDate.date_reported);
   minDate = new Date(minDate.date_reported);
-
 
   symptomsCases.forEach(function(s) {
     s.ageGroup = Math.floor(s.age / 10) * 10;
@@ -251,9 +416,9 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
       return d.value;
     })
     .elasticX(true);
-    chart.on("filtered", function(chart) {
-    console.log(target,group,dimension.filter());
-  });
+    chart.on('filtered.monitor', function(chart, filter) {
+      $scope.updateFiltrosAge(filter);
+    });
     return chart;
   };
 
@@ -329,161 +494,7 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
   // buildTable(syndromesDataset, 'syndrome', syndromesDateDimension, '#syndromesCaseList');
 
   var buildAgeChart = function(target, dataset) {
-    // SET UP DIMENSIONS
-    var w = 325,
-    h = 300;
-    // margin.middle is distance from center line to each y-axis
-    var margin = {
-      top: 20,
-      right: 20,
-      bottom: 24,
-      left: 20,
-      middle: 28
-    };
 
-    // the width of each side of the chart
-    var regionWidth = w/2 - margin.middle;
-
-    // these are the x-coordinates of the y-axes
-    var pointA = regionWidth,
-    pointB = w - regionWidth;
-
-    // some contrived data
-    var exampleData = [
-      {group: '0-9', male: 10, female: 12},
-      {group: '10-19', male: 14, female: 15},
-      {group: '20-29', male: 15, female: 18},
-      {group: '30-39', male: 18, female: 18},
-      {group: '40-49', male: 21, female: 22},
-      {group: '50-59', male: 19, female: 24},
-      {group: '60-69', male: 15, female: 14},
-      {group: '70-79', male: 8, female: 10},
-      {group: '80-89', male: 4, female: 5},
-      {group: '90-99', male: 2, female: 3},
-      {group: '100-109', male: 1, female: 1},
-    ];
-
-    // GET THE TOTAL POPULATION SIZE AND CREATE A FUNCTION FOR RETURNING THE PERCENTAGE
-    var totalPopulation = d3.sum(exampleData, function(d) { return d.male + d.female; }),
-    percentage = function(d) { return d / totalPopulation; };
-
-
-    // CREATE SVG
-    var svg = d3.select(target).append('svg')
-    .attr('width', w)
-    .attr('height', margin.top + h + margin.bottom)
-    // ADD A GROUP FOR THE SPACE WITHIN THE MARGINS
-    .append('g')
-    .attr('transform', translation(margin.left, margin.top));
-
-    // find the maximum data value on either side
-    //  since this will be shared by both of the x-axes
-    var maxValue = Math.max(
-      d3.max(exampleData, function(d) { return percentage(d.male); }),
-      d3.max(exampleData, function(d) { return percentage(d.female); })
-    );
-
-    // SET UP SCALES
-
-    // the xScale goes from 0 to the width of a region
-    //  it will be reversed for the left x-axis
-    var xScale = d3.scale.linear()
-    .domain([0, maxValue])
-    .range([0, regionWidth])
-    .nice();
-
-    var xScaleLeft = d3.scale.linear()
-    .domain([0, maxValue])
-    .range([regionWidth, 0]);
-
-    var xScaleRight = d3.scale.linear()
-    .domain([0, maxValue])
-    .range([0, regionWidth]);
-
-    var yScale = d3.scale.ordinal()
-    .domain(exampleData.map(function(d) { return d.group; }))
-    .rangeRoundBands([h,0], 0.1);
-
-
-    // SET UP AXES
-    var yAxisLeft = d3.svg.axis()
-    .scale(yScale)
-    .orient('right')
-    .tickSize(4,0)
-    .tickPadding(margin.middle-4);
-
-    var yAxisRight = d3.svg.axis()
-    .scale(yScale)
-    .orient('left')
-    .tickSize(4,0)
-    .tickFormat('');
-
-    var xAxisRight = d3.svg.axis()
-    .scale(xScale)
-    .orient('bottom')
-    .tickFormat(d3.format('%'));
-
-    var xAxisLeft = d3.svg.axis()
-    // REVERSE THE X-AXIS SCALE ON THE LEFT SIDE BY REVERSING THE RANGE
-    .scale(xScale.copy().range([pointA, 0]))
-    .orient('bottom')
-    .tickFormat(d3.format('%'));
-
-    // MAKE GROUPS FOR EACH SIDE OF CHART
-    // scale(-1,1) is used to reverse the left side so the bars grow left instead of right
-    var leftBarGroup = svg.append('g')
-    .attr('transform', translation(pointA, 0) + 'scale(-1,1)');
-    var rightBarGroup = svg.append('g')
-    .attr('transform', translation(pointB, 0));
-
-    // DRAW AXES
-    svg.append('g')
-    .attr('class', 'axis y left')
-    .attr('transform', translation(pointA, 0))
-    .call(yAxisLeft)
-    .selectAll('text')
-    .style('font-size', '2em')
-    .style('text-anchor', 'middle');
-
-    svg.append('g')
-    .attr('class', 'axis y right')
-    .attr('transform', translation(pointB, 0))
-    .call(yAxisRight);
-
-    svg.append('g')
-    .attr('class', 'axis x left')
-    .attr('transform', translation(0, h))
-    .call(xAxisLeft);
-
-    svg.append('g')
-    .attr('class', 'axis x right')
-    .attr('transform', translation(pointB, h))
-    .call(xAxisRight);
-
-    // DRAW BARS
-    leftBarGroup.selectAll('.bar.left')
-    .data(exampleData)
-    .enter().append('rect')
-    .attr('class', 'bar left')
-    .attr('x', 0)
-    .attr('y', function(d) { return yScale(d.group); })
-    .attr('width', function(d) { return xScale(percentage(d.male)); })
-    .attr('height', yScale.rangeBand());
-
-    rightBarGroup.selectAll('.bar.right')
-    .data(exampleData)
-    .enter().append('rect')
-    .attr('class', 'bar right')
-    .attr('x', 0)
-    .attr('y', function(d) { return yScale(d.group); })
-    .attr('width', function(d) { return xScale(percentage(d.female)); })
-    .attr('height', yScale.rangeBand());
-
-
-    // so sick of string concatenation for translations
-    function translation(x,y) {
-      return 'translate(' + x + ',' + y + ')';
-    }
   };
 
   // Time series chart
@@ -593,12 +604,12 @@ $scope.createGrafyc = function(symptomsCases, syndromesCases) {
     buildRowChart('#symptomsChart', symptomsDimension, symptomsGroup);
     dc.dataCount('#syndromesCount').dimension(syndromesDataset).group(allSyndromes);
     dc.dataCount('#symptomsCount').dimension(symptomsDataset).group(allSymptoms);
-    buildAgeChart('#piramideetaria', syndromesDataset);
+
     //buildAgeChart('#symptomsAgeChart', symptomsDataset);
     buildTable(syndromesDateDimension,"#table_ie",syndromesGroup);
     buildTimeChart(syndromesDataset, syndromesGroup, 'syndrome', '#syndromesTimeSeries', '#syndromesTimeNavigation', syndromesDateDimension);
     buildTimeChart(symptomsDataset, symptomsGroup, 'symptom', '#symptomsTimeSeries', '#symptomsTimeNavigation', symptomsDateDimension);
-
+    $scope.updateAge('#piramideetaria');
 
   };
 
@@ -652,5 +663,7 @@ $scope.setColorAlerts = function() {
 };
 
 $scope.getSyndrome();
+
 }
+
 ]);
