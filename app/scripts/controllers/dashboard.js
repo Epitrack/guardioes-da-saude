@@ -121,7 +121,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
                 ykeys: $scope.ykeys,
                 labels: $scope.labels,
                 xLabelFormat: function(x) {
-                    console.log("moment(x).format().week()", moment(x).week()-1);
+                    //console.log("moment(x).format().week()", moment(x).week()-1);
                     // return moment(x).format("DD/MM/YYYY");
                     return moment(x).week()-1;
                 },
@@ -162,7 +162,7 @@ angular.module('gdsApp').controller('DashboardCtrl', ['$scope', 'DashboardApi', 
         };
 
         function setPercOps() {
-            
+
             $scope.graphicOnePerc = ((($scope.dash.lastWeekRegisters - $scope.dash.newRegisters) / $scope.dash.lastWeekRegisters) * 100).toFixed(1);
             angular.element('.chart1').data('easyPieChart').update($scope.graphicOnePerc);
             angular.element('.chart1').attr('data-legend', $scope.graphicOnePerc + '%');

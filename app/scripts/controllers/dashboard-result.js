@@ -25,7 +25,8 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
         $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
         $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
         $scope.istable = false;
-        /**/
+        /*
+        */
         $scope.buildgraph = function() {
             if ($scope.type === 'pizza') {
                 var data = [];
@@ -98,7 +99,9 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                 for (var o in data) {
                     dados.push(data[o]);
                 }
-                /**/
+                console.log(categories);
+                /*
+                */
                 $('#container').highcharts({
                     chart: {
                         type: 'column'
@@ -124,7 +127,7 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                     },
                     tooltip: {
                         headerFormat: '',
-                        pointFormat: '<b>{point.y:.1f}</b>',
+                        pointFormat: '<b>| {point.y: .1f} | </b>',
                         footerFormat: '',
                         shared: true,
                         useHTML: true
@@ -209,13 +212,15 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                 $scope.keys = [];
                 $scope.categories = [];
                 var dados = [];
-                /**/
+                /*
+                */
                 for (var o in $scope.result) {
                     $scope.categories.push(o);
                     $scope.keys = _.union($scope.keys, _.keys($scope.result[o]));
                     console.log($scope.keys);
                 }
-                /**/
+                /*
+                */
                 for (var o in $scope.result) {
                     for (var j in $scope.keys) {
                         if (data[$scope.keys[j]] === undefined) {
@@ -226,7 +231,8 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                         $scope.result[o][$scope.keys[j]] !== undefined ? data[$scope.keys[j]]['data'].push($scope.result[o][$scope.keys[j]].length) : data[$scope.keys[j]]['data'].push(0);
                     }
                 }
-                /**/
+                /*
+                */
                 for (var o in data) {
                     dados.push(data[o]);
                 }
@@ -244,11 +250,13 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
             }
         };
 
-        /**/
+        /*
+        */
         $scope.gettype = function(t) {
             return t === $scope.type;
         };
-        /**/
+        /*
+        */
         $scope.goback = function() {
             $location.path('/dashboard/analysis');
         };

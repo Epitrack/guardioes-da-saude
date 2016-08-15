@@ -51,7 +51,9 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
       {group: '60-69', male: $scope.idades['60-69']!==undefined?$scope.idades['60-69'].length:0, female: $scope.idades['60-69_F']!==undefined?$scope.idades['60-69_F'].length:0},
       {group: '50-59', male: $scope.idades['50-59']!==undefined?$scope.idades['50-59'].length:0, female: $scope.idades['50-59_F']!==undefined?$scope.idades['50-59_F'].length:0},
       {group: '40-49', male: $scope.idades['40-49']!==undefined?$scope.idades['40-49'].length:0, female: $scope.idades['40-49_F']!==undefined?$scope.idades['40-49_F'].length:0},
-      {group: '30-39', male: $scope.idades['30-39']!==undefined?$scope.idades['30-39'].length:0, female: $scope.idades['30-39_F']!==undefined?$scope.idades['30-39_F'].length:0}
+      {group: '30-39', male: $scope.idades['30-39']!==undefined?$scope.idades['30-39'].length:0, female: $scope.idades['30-39_F']!==undefined?$scope.idades['30-39_F'].length:0},
+      {group: '20-29', male: $scope.idades['20-29']!==undefined?$scope.idades['20-29'].length:0, female: $scope.idades['20-29_F']!==undefined?$scope.idades['20-29_F'].length:0},
+      {group: '13-19', male: $scope.idades['13-19']!==undefined?$scope.idades['13-19'].length:0, female: $scope.idades['13-19_F']!==undefined?$scope.idades['13-19_F'].length:0}
     ];
     // GET THE TOTAL POPULATION SIZE AND CREATE A FUNCTION FOR RETURNING THE PERCENTAGE
     var totalPopulation = d3.sum(exampleData, function(d) { return d.male + d.female; }),
@@ -281,37 +283,38 @@ $scope.createIdade = function(){
   //console.log("$scope.d",d.length);
   $scope.idades = _.groupBy(d, function(num){
     if(num.gender=="male"){
-      if(num.age>13 && num.age<19){
+
+      if(num.age>=13 && num.age<=19){
         return "13-19";
-      }else if(num.age>20 && num.age<29){
+      }else if(num.age>=20 && num.age<=29){
         return "20-29";
-      }else if(num.age>30 && num.age<39){
+      }else if(num.age>=30 && num.age<=39){
         return "30-39";
-      }else if(num.age>40 && num.age<49){
+      }else if(num.age>=40 && num.age<=49){
         return "40-49";
-      }else if(num.age>50 && num.age<59){
+      }else if(num.age>=50 && num.age<=59){
         return "50-59";
-      }else if(num.age>60 && num.age<69){
+      }else if(num.age>=60 && num.age<=69){
         return "60-69";
-      }else if(num.age>70 && num.age<79){
+      }else if(num.age>=70 && num.age<=79){
         return "70-79";
       }else{
         return ">80";
       }
     }else{
-      if(num.age>13 && num.age<19){
+      if(num.age>=13 && num.age<=19){
         return "13-19_F";
-      }else if(num.age>20 && num.age<29){
+      }else if(num.age>=20 && num.age<=29){
         return "20-29_F";
-      }else if(num.age>30 && num.age<39){
+      }else if(num.age>=30 && num.age<=39){
         return "30-39_F";
-      }else if(num.age>40 && num.age<49){
+      }else if(num.age>=40 && num.age<=49){
         return "40-49_F";
-      }else if(num.age>50 && num.age<59){
+      }else if(num.age>=50 && num.age<=59){
         return "50-59_F";
-      }else if(num.age>60 && num.age<69){
+      }else if(num.age>=60 && num.age<=69){
         return "60-69_F";
-      }else if(num.age>70 && num.age<79){
+      }else if(num.age>=70 && num.age<=79){
         return "70-79_F";
       }else{
         return ">80";
