@@ -360,7 +360,7 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                 $scope.origens = _.keys(_.groupBy(data, function(obj) {
                     return obj['ORIGEM'];
                 }));
-                console.log("$scope.origens",$scope.origens);
+                //console.log("$scope.origens",$scope.origens);
             });
         };
         $scope.getOrigens();
@@ -423,11 +423,13 @@ angular.module('gdsApp').controller('DataAnalysisCtrl', ['Surveyapi', 'Dashboard
                     }
                 }
                 /*VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
+                try{
                 if ($scope.semanaepidemiologica.minValue !== $scope.semanaepidemiologica.options.floor || $scope.semanaepidemiologica.maxValue !== $scope.semanaepidemiologica.options.ceil) {
                     data = _.filter(data, function(obj) {
                         return parseInt(obj['SEN']) >= $scope.semanaepidemiologica.minValue && parseInt(obj['SEN']) <= $scope.semanaepidemiologica.maxValue;
                     });
                 }
+                }catch(e){}
                 /*\VERIFICA FILTRO DE SEMANA EPIDEMIOLOGICA*/
                 var df = data;
                 for (var key in $scope.analytics) {

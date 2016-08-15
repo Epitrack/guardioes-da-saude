@@ -183,7 +183,7 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
     $scope.kernelmsg=false;
     if($scope.sindrome!=="" && $scope.regiao!==undefined){
       var url = ApiConfig.API_KERNEL+"/"+$scope.regiao+"_"+$scope.sindrome+".html";
-      
+
       $("#mkernel").attr('src',url);
       $("#mkernel").show();
       $("html, body").animate({
@@ -269,7 +269,7 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
   };
 
 $scope.createIdade = function(){
-  console.log("$scope.syndromesCases",$scope.syndromesCases.length);
+  //console.log("$scope.syndromesCases",$scope.syndromesCases.length);
   var d = $scope.syndromesCases;
   d = _.filter(d, function(num){
       if($scope.filtros_age[num.syndrome]===undefined){
@@ -278,7 +278,7 @@ $scope.createIdade = function(){
         return $scope.filtros_age[num.syndrome]
       }
   });
-console.log("$scope.d",d.length);
+  //console.log("$scope.d",d.length);
   $scope.idades = _.groupBy(d, function(num){
     if(num.gender=="male"){
       if(num.age>13 && num.age<19){
