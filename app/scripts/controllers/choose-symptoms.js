@@ -88,6 +88,9 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
             if (country !== undefined) {
                 form.travelLocation = country;
             }
+
+            // console.log(form);
+
             if (isvalid) {
                 Surveyapi.submitSurvey(form, function(data) {
                     if (data.data.error === true) {

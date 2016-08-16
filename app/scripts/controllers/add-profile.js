@@ -17,6 +17,15 @@ angular.module('gdsApp')
         $scope.houseHold = {};
         $scope.checkF = {};
 
+        $scope.fr = true;
+        $scope.isFrance = function(country){
+            if (country == 'France') {
+                $scope.fr = true;
+            }else{
+                $scope.fr = false;
+            }
+        } 
+
         $scope.addHousehold = function() {
             var params = {
                 nick: $scope.houseHold.nick,
@@ -24,7 +33,7 @@ angular.module('gdsApp')
                 dob: $scope.houseHold.dob,
                 race: $scope.houseHold.race,
                 country: $scope.houseHold.country,
-                profile: $scope.houseHold.profile,
+                role: $scope.houseHold.profile,
                 relationship: $scope.houseHold.relationship
             };
 
@@ -47,6 +56,8 @@ angular.module('gdsApp')
             params.dob = $scope.UTIL.convertDate(params.dob);
 
             params.state=$scope.houseHold.state;
+
+            console.log(params);
 
             HouseholdApi.createHousehold(params, function(data) {
                 if (data.data.error === true) {
@@ -75,14 +86,15 @@ angular.module('gdsApp')
         // ====
         $scope.addHouseholdFromSurvey = function() {
             console.log('addHouseholdFromSurvey');
+            
             var params = {
                 nick: $scope.houseHold.nick,
                 gender: $scope.houseHold.gender,
                 dob: $scope.houseHold.dob,
                 race: $scope.houseHold.race,
-                // country: $scope.houseHold.country,
-                // profile: $scope.houseHold.profile,
-                // state: $scope.houseHold.state,
+                country: $scope.houseHold.country,
+                profile: $scope.houseHold.profile,
+                state: $scope.houseHold.state,
                 relationship: $scope.houseHold.relationship
             };
 

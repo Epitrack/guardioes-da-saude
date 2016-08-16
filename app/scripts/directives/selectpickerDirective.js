@@ -9,6 +9,7 @@ angular.module('gdsApp').directive('selectpicker', function(){
 		restrict : 'A',
 		link : function(scope, elem, attr){
 			setTimeout(function(){
+				$('.selectpicker').selectpicker('destroy');
 				elem.selectpicker();
 				$('.drop-register').removeClass('form-control');
 			}, 2500);

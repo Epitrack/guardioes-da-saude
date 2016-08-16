@@ -25,7 +25,8 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
         $scope.groups = JSON.parse(window.localStorage.getItem('groups'));
         $scope.filters = JSON.parse(window.localStorage.getItem('filters'));
         $scope.istable = false;
-        /**/
+        /*
+        */
         $scope.buildgraph = function() {
             if ($scope.type === 'pizza') {
                 var data = [];
@@ -98,7 +99,9 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                 for (var o in data) {
                     dados.push(data[o]);
                 }
-                /**/
+                console.log(categories);
+                /*
+                */
                 $('#container').highcharts({
                     chart: {
                         type: 'column'
@@ -124,7 +127,7 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                     },
                     tooltip: {
                         headerFormat: '',
-                        pointFormat: '<b>{point.y:.1f}</b>',
+                        pointFormat: '<b>| {point.y: .1f} | </b>',
                         footerFormat: '',
                         shared: true,
                         useHTML: true
@@ -209,13 +212,15 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                 $scope.keys = [];
                 $scope.categories = [];
                 var dados = [];
-                /**/
+                /*
+                */
                 for (var o in $scope.result) {
                     $scope.categories.push(o);
                     $scope.keys = _.union($scope.keys, _.keys($scope.result[o]));
                     console.log($scope.keys);
                 }
-                /**/
+                /*
+                */
                 for (var o in $scope.result) {
                     for (var j in $scope.keys) {
                         if (data[$scope.keys[j]] === undefined) {
@@ -226,7 +231,8 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
                         $scope.result[o][$scope.keys[j]] !== undefined ? data[$scope.keys[j]]['data'].push($scope.result[o][$scope.keys[j]].length) : data[$scope.keys[j]]['data'].push(0);
                     }
                 }
-                /**/
+                /*
+                */
                 for (var o in data) {
                     dados.push(data[o]);
                 }
@@ -244,59 +250,55 @@ angular.module('gdsApp').controller('DashboardResultCtrl', ['$rootScope', '$scop
             }
         };
 
-        /**/
+        /*
+        */
         $scope.gettype = function(t) {
             return t === $scope.type;
         };
-        /**/
+        /*
+        */
         $scope.goback = function() {
             $location.path('/dashboard/analysis');
         };
 
         $scope.convertArrayOfObjectsToCSV = function(args) {
             var result, ctr, keys, columnDelimiter, lineDelimiter, data;
-
             data = args.data || null;
             if (data == null || !data.length) {
                 return null;
             }
-
             columnDelimiter = args.columnDelimiter || ',';
-            lineDelimiter = args.lineDelimiter || '\n';
-
+            lineDelimiter = args.lineDelimiter || '\r\n';
             keys = Object.keys(data[0]);
-
             result = '';
             result += keys.join(columnDelimiter);
             result += lineDelimiter;
-
             data.forEach(function(item) {
                 ctr = 0;
                 keys.forEach(function(key) {
-                    if (ctr > 0) result += columnDelimiter;
-
+                    if (ctr > 0){
+                      result += columnDelimiter;
+                    }
                     result += item[key];
                     ctr++;
                 });
                 result += lineDelimiter;
             });
-
             return result;
         }
 
         $scope.downloadCSV = function() {
             var data, filename, link;
 
-            window.guardioesdasaudedb.get('surveys_dadosfiltrados').then(function(doc) {
+            window.guardioesdasaudedb.get('surveys_dadosfiltrados_final').then(function(doc) {
                 var dadosfiltrados = JSON.parse(doc.data);
                 var csv = $scope.convertArrayOfObjectsToCSV({
                     data: dadosfiltrados,
                     columnDelimiter: ';'
                 });
                 filename = 'gds_analises_' + window.localStorage.getItem('groups') + '_' + window.localStorage.getItem('filters') + '.csv';
-                csv = 'data:text/csv;charset=utf-8,' + csv;
-                data = encodeURI(csv);
-                $("#btn_download").attr("href", data);
+                var blob = new Blob([csv], {'type':'application\/octet-stream'});
+                $("#btn_download").attr("href", window.URL.createObjectURL(blob));
                 $("#btn_download").attr("download", filename);
             }).catch(function(err) {
                 console.log(err);

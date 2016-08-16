@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-3" style="padding-right: 0;">
                 <div class="box-alert rio verde" id="rio">
-                    <span class="box-alert-title">Rio de Janeiro</span>
+                    <a href="javascript:void(0)" ng-click="setRegiao('RIO');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Rio de Janeiro</span></a>
                     <div class="box-scroll">
                         <div ng-repeat="a in alerts['Rio de Janeiro']">
                             <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -15,16 +15,16 @@
                         </div>
                     </div>
                     <div class="rodape">
-                        <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Rio de Janeiro',1)}}</span></span>
-                        <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Rio de Janeiro',2)}}</span>
-                        <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Rio de Janeiro',3)}}</span>
+                        <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Rio de Janeiro',1)}}</span></span>
+                        <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Rio de Janeiro',2)}}</span>
+                        <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Rio de Janeiro',3)}}</span>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-9">
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert amarelo" id="brasil">
-                        <span class="box-alert-title">Brasil</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('BR');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Brasil</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasil']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -32,15 +32,15 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasil',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasil',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasil',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasil',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasil',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasil',3)}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert verde" id="belohorizonte">
-                        <span class="box-alert-title">Belo Horizonte</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('BH');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Belo Horizonte</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Belo Horizonte']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -48,15 +48,15 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Belo Horizonte',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Belo Horizonte',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Belo Horizonte',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Belo Horizonte',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Belo Horizonte',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Belo Horizonte',3)}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4" style="padding-right: 0">
                     <div class="box-alert laranja" id="brasilia">
-                        <span class="box-alert-title">Brasília</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('DF');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Brasília</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Brasília']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -64,9 +64,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasília',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasília',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasília',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Brasília',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Brasília',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Brasília',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
             <div class="col-xs-12 col-md-9 linha-inferior">
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert vermelho" id="saopaulo">
-                        <span class="box-alert-title">São Paulo</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('SAMPA');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">São Paulo</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['São Paulo']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -82,15 +82,15 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('São Paulo',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('São Paulo',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('São Paulo',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('São Paulo',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('São Paulo',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('São Paulo',3)}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="box-alert amarelo" id="manaus">
-                        <span class="box-alert-title">Manaus</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('MANAUS');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Manaus</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Manaus']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -98,15 +98,15 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Manaus',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Manaus',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Manaus',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Manaus',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Manaus',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Manaus',3)}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4" style="padding-right: 0">
                     <div class="box-alert verde" id="salvador">
-                        <span class="box-alert-title">Salvador</span>
+                        <a href="javascript:void(0)" ng-click="setRegiao('SALAVADOR');setSindrome('DIARREICA');createKernel()"><span class="box-alert-title">Salvador</span></a>
                         <div class="box-scroll-min">
                             <div ng-repeat="a in alerts['Salvador']">
                                 <span class="box-alert-date">{{a.data|date:'dd/MM/yyyy'}}</span>
@@ -114,9 +114,9 @@
                             </div>
                         </div>
                         <div class="rodape">
-                            <span><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Salvador',1)}}</span></span>
-                            <span><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Salvador',2)}}</span>
-                            <span><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Salvador',3)}}</span>
+                            <span data-toggle="tooltip" title="Atleta/Delegação"><img src="/images/dashboard/olympics/atletas.svg"/><span>{{getUsersByCity('Salvador',1)}}</span></span>
+                            <span data-toggle="tooltip" title="Fã/Expectador"><img src="/images/dashboard/olympics/visitantes.svg"/> {{getUsersByCity('Salvador',2)}}</span>
+                            <span data-toggle="tooltip" title="Trabalhador/Voluntário"><img src="/images/dashboard/olympics/voluntarios.svg"/> {{getUsersByCity('Salvador',3)}}</span>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,6 @@
                     <div>
                         <button ng-disabled="types['sindrome']" ng-click="selectgraph('sindrome')">Sindrome</button>
                         <button ng-disabled="types['sintomas']" ng-click="selectgraph('sintomas')">Sintomas</button>
-                        <!-- <button ng-disabled="types['customize']" ng-click="selectgraph('customize')" style="margin-left: -4px;">Customize</button> -->
                     </div>
                 </div>
             </header>
@@ -142,8 +141,6 @@
                         <div id="syndromesTimeSeries" style="width:100%">
                             <h4 class="text-center">Número de Casos por Síndrome</h4>
                         </div>
-                        <img ng-show="loadingGrafycs" class="grafico grafico1" src="images/grafyc-3.png" alt="" />
-                        <img ng-show="loadingGrafycs" class="grafico grafico2" src="images/grafyc-2.png" alt="" />
                         <div id="syndromesTimeNavigation" style="width:100%"></div>
                     </div>
                     <div class="col-md-3" id="syndromesChart">
@@ -167,36 +164,39 @@
             <article class="card relative" style="min-height: auto!important;">
                 <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
                 <header class="panel-heading card-heading">
-                    <h3 class="panel-title">Por Idade</h3>
+                    <h3 class="panel-title">Pirâmide Etária</h3>
                     <div class="pull-right wrapper-switch-participation">
-                       <!--  <div>
-                            <button ng-disabled='true'>Idade</button>
-                            <button>Sexo</button>
-                        </div> -->
                     </div>
                 </header>
-                <div class="panel-body relative" style="padding:0;padding-left: 20px;">
-                    <div id="syndromesAgeChart" style="height: 387px;width: 100%;">
-                        <h4 class="text-center"></h4>
-                        <img ng-show="loadingGrafycs" class="grafico grafico3" src="images/grafyc-1.png" alt="" />
-                        <!-- <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(including: <span class='filter'></span>)</span></h5> -->
-                    </div>
+                <div class="panel-body relative" style="padding:0;padding-left: 20px;min-height: 346px;">
+                  <div id="piramideetaria" style="padding-left: 50px;"></div>
                 </div>
             </article>
         </div>
     </div>
     <div class="wrapper-card-map">
-        <div class="col-sm-6">
+        <div class="col-sm-6" id="mapakernel">
             <article class="card relative" style="min-height: auto!important;">
-                <span ng-show="loadingGrafycs" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
-                <header class="panel-heading">
-                    <h3 class="panel-title">Por Distrito de Saúde</h3>
-                </header>
-                <div class="panel-body" style="padding:0;">
-                    <div id="syndromesMap" class="map" style="height: 387px;margin-left: -40px;">
-                        <h4 class="text-center"></h4>
-                        <h5 class="text-center">&nbsp;<span class='reset' style='display: none;'>(Área(s): <span class='filter'></span>)</span></h5>
+                <span ng-show="loadingGrafycs_kernel" class="absolute glyphicon glyphicon-refresh glyphicon-refresh-animate animateGrafycs"></span>
+                <header class="panel-heading card-heading">
+                    <h3 class="panel-title">Mapa de Intensidade de Kernel</h3>
+                    <div class="pull-right wrapper-switch-participation">
+                      <label  style="font-size: 2.3em; color: white; font-weight: bold;">Síndrome:</label>
+                      <select aria-invalid="false" class="btn btn-default dropdown-toggle ng-pristine ng-untouched ng-valid"
+                      ng-model="sindrome" style="color: white; background-color: rgb(30, 136, 229);margin-top: -8px;margin-right: 18px;">
+                                    <option class="dash-option" value="">Selecione</option>
+                                    <option class="dash-option" value="DIARREICA">Diarreica</option>
+                                    <option class="dash-option" value="RESPIRATORIA">Respiratoria</option>
+                                    <option class="dash-option" value="EXANTEMATICA">Exantematica</option>
+                      </select>
+                      <button ng-click="createKernel()" style="font-size: 2.2em;border-radius: 0px;">Atualizar</button>
                     </div>
+                </header>
+                <div class="panel-body relative" style="padding:0;padding-left: 20px;min-height: 346px;">
+                  <iframe ng-hide="kernelmsg" id="mkernel" src="http://kernel.dev.guardioesdasaude.org/SAMPA_RESPIRATORIA.html" style="display:none;position:absolute;bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden;"></iframe>
+                  <div ng-show="kernelmsg" style="position: absolute; top: 50%; left: 50%; margin-left: -204.5px; font-size: 3em;">
+                    Selecione a região e a síndrome que deseja visualizar
+                  </div>
                 </div>
             </article>
         </div>
@@ -208,7 +208,7 @@
                     <h3 class="panel-title">Tabela de Dados</h3>
                 </header>
                 <div class="panel-body" style="padding:0;padding-left: 20px;">
-                    <table class="table table-striped" style="font-size:2.5em">
+                    <table id="table_ie" class="table table-striped" style="font-size:2.5em">
                         <thead>
                             <tr>
                                 <th>City</th>
@@ -220,20 +220,40 @@
                                 <th>Symptoms</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr ng-repeat="s in symptomsCases">
-                                <td>{{s.city}}</td>
-                                <td>{{s.age}}</td>
-                                <td>{{s.gender}}</td>
-                                <td>{{s.lat_reported}}</td>
-                                <td>{{s.lng_reported}}</td>
-                                <td>{{s.date_reported | date:"dd/MM/yyyy"}}</td>
-                                <td>{{s.symptom}}</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
             </article>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+$(function() {
+    $('input[name="daterange"]').daterangepicker({
+        "startDate": "01/" + (moment().month() + 1) + "/" + moment().year(),
+        "endDate": "30/" + (moment().month() + 1) + "/" + moment().year(),
+        "opens": "left",
+        applyLabel: 'Consultar',
+        "applyClass": "btn-primary",
+        cancelLabel: 'Fechar',
+        "locale": {
+            "format": "DD/MM/YYYY",
+            "separator": " - ",
+            "applyLabel": "Consultar",
+            "cancelLabel": "Cancelar"
+        }
+    });
+    $('#daterange').on('apply.daterangepicker', function(ev, picker) {
+        console.log(picker.startDate.format('YYYY-MM-DD'));
+        console.log(picker.endDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().setDateMin(picker.startDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().setDateMax(picker.endDate.format('YYYY-MM-DD'));
+        angular.element($("#daterange")).scope().buscar();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
