@@ -157,6 +157,7 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
                             dob: $scope.UTIL.unConvertDate(u.dob),
                             gender: u.gender,
                             email: u.email,
+                            isAdmin: u.isAdmin,
                             race: u.race,
                             picture: u.picture,
                             profile: u.profile,
@@ -165,7 +166,9 @@ angular.module('gdsApp').controller('IndexCtrl', ['$scope', '$translate', 'Local
                         };
                     }
                 });
-            } catch (e) {}
+            } catch (e) {
+              console.log(e);
+            }
         };
         $scope.getUser();
 
