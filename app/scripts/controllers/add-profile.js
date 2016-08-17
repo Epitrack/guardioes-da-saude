@@ -21,6 +21,7 @@ angular.module('gdsApp')
         $scope.isFrance = function(country){
             if (country == 'France') {
                 $scope.fr = true;
+                $scope.houseHold.race = 'france'
             }else{
                 $scope.fr = false;
             }
@@ -36,6 +37,12 @@ angular.module('gdsApp')
                 role: $scope.houseHold.profile,
                 relationship: $scope.houseHold.relationship
             };
+
+            if (params.country == 'France') {
+                params.race = 'France'
+            }
+
+
 
             $scope.checkF = $scope.UTIL.checkForm(params);
             if ($scope.checkF.error === true) {
@@ -56,8 +63,6 @@ angular.module('gdsApp')
             params.dob = $scope.UTIL.convertDate(params.dob);
 
             params.state=$scope.houseHold.state;
-
-            console.log(params);
 
             HouseholdApi.createHousehold(params, function(data) {
                 if (data.data.error === true) {
@@ -94,11 +99,15 @@ angular.module('gdsApp')
                 race: $scope.houseHold.race,
                 country: $scope.houseHold.country,
                 profile: $scope.houseHold.profile,
-                state: $scope.houseHold.state,
                 relationship: $scope.houseHold.relationship
             };
 
-            console.log(params);
+            
+            if (params.state != undefined) {
+                params.state = $scope.houseHold.state
+            }else{
+                params.state = 'Selecione'
+            }
 
             $scope.checkF = $scope.UTIL.checkForm(params);
             if ($scope.checkF.error === true) {
@@ -120,6 +129,8 @@ angular.module('gdsApp')
 
             params.picture = $scope.UTIL.checkAvatar($scope.houseHold);
             params.dob = $scope.UTIL.convertDate(params.dob);
+
+            // console.log(params);
 
             HouseholdApi.createHousehold(params, function(data) {
                 if (data.data.error === true) {

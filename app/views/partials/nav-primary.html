@@ -27,7 +27,7 @@
                     <li ng-if="user.household" ng-repeat="hh in user.household">
                         <a ng-href="/profile/household/{{ hh.id }}" ng-click="goToUrl('/profile/household/{{ hh.id }}');closeNav()">{{ hh.nick }}</a>
                     </li>
-                    <li><a ng-href="/profile/add" ng-click="goToUrl('/profile/add');closeNav()" ng-hide="user.household.length==10">{{"00013"|translate}}</a></li>
+                    <li><a ng-href="/profile/add" ng-click="goToUrl('/profile/add');closeNav()" ng-hide="user.household.length==10" data-target="#modal-add-profile">{{"00013"|translate}}</a></li>
                 </ul>
             </li>
             <li>
