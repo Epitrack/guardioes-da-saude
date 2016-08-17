@@ -31,6 +31,7 @@ angular.module('gdsApp')
             userStorage.createdAt = obj.createdAt;
             userStorage.dob = obj.dob;
             userStorage.email = obj.email;
+            userStorage.isAdmin = obj.isAdmin;
             userStorage.formattedAddress = obj.formattedAddress;
             userStorage.gender = obj.gender;
             userStorage.nick = obj.nick;
