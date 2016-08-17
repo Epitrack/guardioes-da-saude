@@ -505,11 +505,11 @@ module.exports = function(grunt) {
         'wiredep',
         'concurrent:test',
         'autoprefixer',
-        'connect:test',
-        'karma'
+        'connect:test'
+        //'karma'
     ]);
 
-    
+
     grunt.registerTask('build', [
         'clean:dist',
         'wiredep',
@@ -528,7 +528,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
+        //'newer:jshint',
         'test',
         'build'
     ]);

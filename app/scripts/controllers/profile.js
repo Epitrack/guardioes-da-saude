@@ -11,7 +11,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
     function($scope, UserApi, $timeout, $location, $rootScope, Notification) {
 
         $scope.pageClass = 'profile-page';
-      
+
         $scope.deleteUser = function() {
             var u = $rootScope.user;
             UserApi.deleteUser(function(data) {
@@ -36,7 +36,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
         // set user with $rootScope data
         $scope.getUser = function() {
             var u = $rootScope.user;
-            
+
             UserApi.updateUser(u.id, function(data) {
                 if (data.data.error === false) {
                     u = data.data.data[0];
@@ -47,6 +47,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                         gender: u.gender,
                         email: u.email,
                         race: u.race,
+                          isAdmin: u.isAdmin,
                         picture: u.picture,
                         profile: u.profile,
                         state: u.state,
@@ -62,7 +63,7 @@ angular.module('gdsApp').controller('ProfileCtrl', ['$scope', 'UserApi', '$timeo
                     try {
                         $scope._isbrasil = $scope.screen.user.country == 'Brazil';
                     } catch (e) {}
-                    
+
                 } else {
                     Notification.show('error', 'Atenção', data.data.message);
                 }
