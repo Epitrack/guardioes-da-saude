@@ -45,7 +45,7 @@ app.directive('gdsMaps', function() {
                  // anchor: new google.maps.Point(0, info.icon.iconSize[1])
                };
             }
-
+            console.log(info,img);
             var marker = new google.maps.Marker({
                 map: mMap,
                 position: new google.maps.LatLng(info.lat, info.lng),
@@ -58,7 +58,6 @@ app.directive('gdsMaps', function() {
                 scope.$emit('clickMarker.click', {"title":marker.title, "message":marker.content});
             });
             markers.push(marker);
-//            console.log('markers', markers)
             scope.$emit('getMarkers', markers);
             if(info.index) { marker.setZIndex(info.index); }
         };
@@ -119,7 +118,7 @@ app.directive('googlePlusSignin', ['$window', function ($window) {
             lang: value ? value : 'en'
           };
         });
-        
+
         // Asynchronously load the G+ SDK.
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
         po.src = 'https://apis.google.com/js/client:plusone.js';
@@ -143,5 +142,5 @@ app.directive('googlePlusSignin', ['$window', function ($window) {
       } else {
         $rootScope.$broadcast('event:google-plus-signin-failure', authResult);
       }
-    }; 
+    };
 }]);

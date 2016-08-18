@@ -10,12 +10,12 @@
 angular.module('gdsApp')
     .controller('GameCtrl', ['$scope', '$rootScope', '$timeout', '$translate', 'ApiConfig', '$location', '$http', 'Notification', 'LocalStorage', '$window',
         function($scope, $rootScope, $timeout, $translate, ApiConfig, $location, $http, Notification, LocalStorage, $window) {
-        
+
         var url = window.location.href;
 
         if (url.indexOf('tutorial') != -1) {
-            $rootScope.routeClass = 'tutorial';    
-            $rootScope.hiddenClass = 'hidden';    
+            $rootScope.routeClass = 'tutorial';
+            $rootScope.hiddenClass = 'hidden';
         }else{
             $rootScope.routeClass = '';
             $rootScope.hiddenClass = '';
@@ -366,7 +366,7 @@ angular.module('gdsApp')
             "21": 7,
             "22": 8
         };
-        
+
         var count_pin_venceu = 0;
         var ctd; //function counter down
         var title_sem_energia = "Você está <br/> sem energia!"; //00649
@@ -696,7 +696,7 @@ angular.module('gdsApp')
 
         //aki
         $scope.getRanking = function() {
-            $http.get("http://rest.guardioesdasaude.org/game/ranking/").success(function(data, status) {
+            $http.get($scope.url + "/game/ranking/").success(function(data, status) {
                 $scope.countrys = data;
                 console.log(data);
             }).error(function(data, status){
@@ -744,7 +744,7 @@ angular.module('gdsApp')
             }catch(e){
                 // console.log(e);
             }
-           
+
         };
 
         $scope.getLanguage = function() {
@@ -883,6 +883,6 @@ angular.module('gdsApp')
                 $("#game_modal_panel_sem_pontos_title").html(title_sem_energia);
                 $("#game-modal").modal("hide");
                 $("#game_modal_panel_sem_pontos").modal("show");
-            } 
+            }
         }
     }]);

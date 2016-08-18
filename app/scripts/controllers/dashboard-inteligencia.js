@@ -225,7 +225,7 @@ function($scope,$filter, $location, $rootScope, $http, $compile, ApiConfig) {
           $scope.usersByCity['Brasil'][data.data[i].roles[j].role] += data.data[i].roles[j].total;
         }
       }
-      console.log($scope.usersByCity);
+      //console.log($scope.usersByCity);
     }, function(error) {
       console.warn('Error getAllData: ', error);
     });
@@ -326,7 +326,8 @@ $scope.createIdade = function(){
 
 $scope.getSyndrome = function() {
   $http.get(apiUrl + '/ei/syndrome/').success(function(data, status) {
-    $scope.syndromesCases = data
+    $scope.syndromesCases = data;
+    console.log("syndromesCases",$scope.syndromesCases.length);
     for(var i=0; i<$scope.syndromesCases.length; i++){
       if($scope.syndromesCases[i].symptoms[0]===""){
         $scope.syndromesCases[i].symptoms[0] = "Sem sintomas"
