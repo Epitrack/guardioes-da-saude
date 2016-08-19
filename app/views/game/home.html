@@ -16,7 +16,8 @@
             </a>
         </div>
     </div>
-
+    
+    <!-- Modal Trofeu -->
     <div class="modal fade" id="trofeu-modal" tabindex="-1" role="dialog" aria-labelledby="trofeumodal" style="top: 10%;">
         <article class="modal-dialog" role="document" style="margin: 100px auto;">
             <div class="modal-content">
@@ -35,7 +36,13 @@
                                     <div style="width: 67px; border-radius: 100%; height: 67px; overflow: hidden;float: left;">
                                         <img src="../images/game/fases/{{c.name}}/card.png" style="width: 150%; position: relative; left: -15px; top: -15px;">
                                     </div>
-                                    <span style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title}}</span>
+                                        <span ng-if="language == 'pt'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_pt}}</span>
+                                        <span ng-if="language == 'en'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_en}}</span>
+                                        <span ng-if="language == 'es'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_es}}</span>
+                                        <span ng-if="language == 'zh'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_zh}}</span>
+                                        <span ng-if="language == 'ar'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_ar}}</span>
+                                        <span ng-if="language == 'ru'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_ru}}</span>
+                                        <span ng-if="language == 'fr'" style="font-size: 16px; font-weight: bold; color: rgb(155, 155, 155); float: left; margin-top: 24px; margin-left: 16px;">{{c.title_fr}}</span>
                                 </div>
                             </div>
                         </div>
@@ -44,6 +51,8 @@
             </div>
         </article>
     </div>
+
+    <!-- Modal Raking -->
     <div class="modal fade" id="ranking-modal" tabindex="-1" role="dialog" aria-labelledby="rankingmodal" style="top: 10%;">
         <article class="modal-dialog" role="document" style="margin: 100px auto;">
             <div class="modal-content" style="border-radius: 20px;">
@@ -70,6 +79,8 @@
             </div>
         </article>
     </div>
+    
+
     <div class="modal fade" id="game-modal" tabindex="-1" role="dialog" aria-labelledby="game-1gmodal" style="top: 10%; overflow: hidden;z-index: 99999999;">
         <article class="modal-dialog" role="document" style="margin: 40px auto;left: 10px;">
             <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
@@ -174,6 +185,8 @@
             </div>
         </article>
     </div>
+    
+    <!--  -->
     <div class="modal fade" id="game_modal_panel_card" tabindex="-1" role="dialog" aria-labelledby="game_modal_panel_card-1gmodal" style="top: 10%; overflow: hidden;">
         <article class="modal-dialog" role="document" style="margin: 40px auto;">
             <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
@@ -192,6 +205,8 @@
             </div>
         </article>
     </div>
+
+    <!--  -->
     <div class="modal fade" id="game_modal_panel_sem_pontos" tabindex="-1" role="dialog" aria-labelledby="game_modal_panel_card-1gmodal" style="top: 10%;overflow: hidden;">
         <article class="modal-dialog" role="document" style="margin: 100px auto;">
             <div class="modal-content" style="background-color: rgba(255, 255, 255, 0) ! important;border: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5) !important;">
@@ -216,6 +231,7 @@
         </article>
     </div>
 </div>
+
 <div class="wrapper-interna olympics-faixa" style="bottom: 0px;z-index: 0;position: fixed;">
     <img src="../images/olympics-colors-2.svg" style="width: 101%;">
 </div>
