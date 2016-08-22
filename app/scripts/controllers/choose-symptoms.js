@@ -93,8 +93,9 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
                 form.travelLocation = country;
             }
 
+
             // console.log(form);
-            
+
             if (isvalid) {
                 Surveyapi.submitSurvey(form, function(data) {
                     if (data.data.error === true) {
@@ -112,7 +113,7 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
                         }
                     }
                 });
-            }
+            };
         };
 
         $scope.goToUpas = function() {
