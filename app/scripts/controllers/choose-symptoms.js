@@ -94,7 +94,6 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
             }
 
             // console.log(form);
-
             if (isvalid) {
                 Surveyapi.submitSurvey(form, function(data) {
                     if (data.data.error === true) {
