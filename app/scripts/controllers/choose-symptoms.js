@@ -68,9 +68,13 @@ angular.module('gdsApp').controller('ChooseSymptomsCtrl', ['$scope', '$translate
             }
             var isvalid = false;
             angular.forEach($scope.symptoms, function(v, symptom) {
+              console.log(symptom);
                 if (v) {
                     isvalid = true;
                     form[symptom] = "Y";
+                    if(symptom == 'hadHealthCare'){
+                      form[symptom] = true;
+                    }
                 }
             });
             form.ill_date = moment().format('YYYY-MM-DD');
