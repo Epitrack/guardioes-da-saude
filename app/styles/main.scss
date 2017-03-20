@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Reset
 @import '_reset';
 // bower:scss
@@ -40,10 +41,9 @@
 }
 
 .st-content {
-   
+
 }
 .modal-open{
 	overflow: hidden!important;
 	padding-right: 0px!important;
 }
-

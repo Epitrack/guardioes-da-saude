@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // —————————————————————————
 //     General
 // —————————————————————————
@@ -224,7 +225,7 @@ body {
 .select-language-mobile{
     position: absolute;
     top: 0;
-    right: 0;    
+    right: 0;
 }
 
 .btn-survey {
@@ -995,7 +996,7 @@ body {
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center center;
-        
+
     }
     &.upas {
         &::before {
@@ -1479,7 +1480,7 @@ body {
     background-position: center center;
     position: relative;
     font-family: $ff-light;
-    
+
     &.good {
         @include path('icon-survey-good.svg');
     }

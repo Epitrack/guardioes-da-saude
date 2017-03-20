@@ -5,4 +5,4 @@ RUN ["gem", "install", "--no-rdoc", "--no-ri", "compass"]
 RUN ["npm", "install", "-g", "bower", "grunt-cli"]
 RUN ["bower", "install", "--allow-root"]
 EXPOSE 9000
-CMD ["grunt", "serve"]
+CMD ["grunt", "serve", "--force"]
