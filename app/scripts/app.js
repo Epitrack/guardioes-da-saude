@@ -59,7 +59,7 @@ angular
     })
     .run(['$rootScope', 'LocalStorage', 'amMoment', '$location', 'ApiConfig', function($rootScope, LocalStorage, amMoment, $location, ApiConfig) {
 
-        if ($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 || $location.$$host.indexOf('olympics') > -1) {
+        if ($location.$$host.indexOf('localhost') > -1 || $location.$$host.indexOf('dev') > -1 || $location.$$host.indexOf('olympics') > -1 || $location.$$host.indexOf('0') > -1) {
             ApiConfig.API_URL = 'http://0.0.0.0:1337';
             ApiConfig.API_KERNEL='http://kernel.dev.guardioesdasaude.org';
             ApiConfig.ANALYTICS_ID = 'UA-71659608-1';
