@@ -55,8 +55,6 @@ module.exports = function(config) {
       'bower_components/Chart.js/Chart.js',
       'bower_components/d3/d3.js',
       'bower_components/html5shiv/dist/html5shiv.js',
-      'bower_components/webshim/js-webshim/dev/polyfiller.js',
-      'bower_components/webshim/js-webshim/minified/polyfiller.js',
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/crossfilter/crossfilter.js',
       'bower_components/dcjs/dc.js',

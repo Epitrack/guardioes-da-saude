@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="gdsApp" ng-init="onInit()">
+
 <head>
     <base href="/">
     <meta charset="utf-8">
@@ -95,8 +96,10 @@
                     </div>
                     <div class="modal-footer">
                         <a class="pull-right btn btn-default" data-dismiss="modal" style="margin-left: 5px;"> Não</a>
-                        <a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
-                        <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
+                        <!--<a href="https://s3.amazonaws.com/gdsreports/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
+                        <a href="https://s3.amazonaws.com/gdsreports/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>-->
+                        <a href="files_offline/users_report.csv" target="_blank" class="pull-right btn btn-primary">Usuários</a>
+                        <a href="files_offline/surveys_reports.csv" target="_blank" class="pull-right btn btn-primary">Participações</a>
                     </div>
                 </form>
             </div>
@@ -143,8 +146,6 @@
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-    <script src="bower_components/webshim/js-webshim/dev/polyfiller.js"></script>
-    <script src="bower_components/webshim/js-webshim/minified/polyfiller.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/crossfilter/crossfilter.js"></script>
     <script src="bower_components/dcjs/dc.js"></script>
@@ -188,7 +189,7 @@
     <script src="scripts/directives/analytics.js"></script>
     <script src="scripts/directives/removeFirstOptionDirective.js"></script>
     <script src="scripts/directives/selectpickerDirective.js"></script>
-    
+
     <!-- Controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/components.js"></script>
@@ -229,19 +230,19 @@
 
     <!-- endbuild -->
     <script src="bower_components/requirejs/require.js"></script>
-    
+
 
     <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
     <script type="">
         $(document).ready(function () { $('.scrollup').click(function () { $("html, body").animate({ scrollTop: 0 }, 600); return false; }); });
