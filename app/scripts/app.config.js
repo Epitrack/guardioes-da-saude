@@ -6,8 +6,8 @@ angular.module("gdsApp")
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
 }])
 .constant('ApiConfig', {
-    'API_URL': 'https://api.guardioesdasaude.org',
-    'API_KERNEL':'https://guardioesdasaude.org/kernel',
+    'API_URL': 'http://0.0.0.0:1337',
+    'API_KERNEL':'http://0.0.0.0:1337/kernel',
     'APP_TOKEN': 'd41d8cd98f00b204e9800998ecf8427e',
     'PLATFORM': 'web',
     'CLIENT': 'api',
