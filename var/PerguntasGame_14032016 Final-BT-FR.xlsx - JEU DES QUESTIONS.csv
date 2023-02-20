@@ -1,0 +1,303 @@
+ID,THÈME,QUESTION,RÉPONSE A,RÉPONSE B,RÉPONSE C
+1,ABEILLE/GUÊPE,"Je vois une ruche d'abeilles ou de guêpes/frelons, que dois-je faire ?",La détruire,Mettre le feu,Contacter les autorités
+2,ABEILLE/GUÊPE,Lequel de ces symptômes correspond à la piqûre d'abeille ou de guêpe/frelon ?,La somnolence ,Le saignement,Des douleurs intenses
+3,EAU DESTINÉE À LA CONSOMMATION HUMAINE,Qui établit les normes de potabilité de l’eau de consommation humaine au Brésil ?,IBAMA,ANVISA,Ministère de la santé
+4,EAU DESTINÉE À LA CONSOMMATION HUMAINE,Quel service doit être averti en cas de suspicion de contamination de l’eau ?,L’environnement,La Police,La Santé
+5,EAU DESTINÉE À LA CONSOMMATION HUMAINE,Connaissez-vous la fréquence de nettoyage recommandée pour votre réservoir d’eau ?,Tous les 10 ans,Pas besoin de nettoyage,Tous les 6 mois
+6,EAU DESTINÉE À LA CONSOMMATION HUMAINE,Savez-vous ce qu’est une eau destinée à la consommation humaine ?,Toutes les eaux,L’eau pour cuisiner,l’eau potable
+7,ANIMAUX AQUATIQUES,Quelle substance peut être utilisée pour soigner les piqûres de méduses ? ,La bière,L’eau douce,Le vinaigre
+8,ANIMAUX AQUATIQUES,Quels sont les premiers soins en cas de piqûre de méduse ? ,Uriner sur place,Mettre de la glace,Mettre du vinaigre
+9,ANIMAUX AQUATIQUES,Comment soulager la douleur causée par des poissons venimeux ?,Mettre de la pommade,Boire de l'alcool,Passer de l'eau tiède
+10,ANIMAUX AQUATIQUES,Quelle est la couleur du drapeau sur les plages pour signaler la présence d'animaux marins dangereux ?,Rouge,Noir,Violet
+11,AIR CONTAMINÉ,Comment appelle-t-on le brouillard formé par la pollution atmosphérique ?,Canicule,Pluie acide,Smog
+12,AIR CONTAMINÉ,"En général, quel temps est propice à la pollution atmosphérique ?",Ciel nuageux,La neige,Chaleur et pluie
+13,AIR CONTAMINÉ,Quel est le principal polluant responsable de l'effet de serre ?,L’oxygène,L’ammoniac,Le gaz carbonique
+14,AIR CONTAMINÉ,Lequel de ces polluants atmosphériques est dangereux pour la santé ?,L’azote,Le plomb,Le dioxyde de soufre
+15,AIR CONTAMINÉ,Lequel de ces objets est source de pollution atmosphérique en milieu fermé ?,La douche électrique,La télécommande,L’air conditionné
+16,AIR CONTAMINÉ,Quelle recommandation sert à lutter contre les effets de la pollution atmosphérique sur la santé humaine ?,Faire de l’exercice,Le repos,Boire beaucoup d'eau
+17,AIR CONTAMINÉ,Quel est le principal effet de la pollution atmosphérique sur le climat ?,Les tsunamis,Les inondations,Une augmentation de la chaleur
+18,AIR CONTAMINÉ,Lequel de ces effets est celui du monoxyde de carbone sur la santé humaine ?,Le cancer du poumon,La sinusite,Les maux de tête
+19,AIR CONTAMINÉ,En quelle saison le niveau de pollution de l’air est-il le plus élevé ?,L’automne,L’été,L’hiver
+20,AIR CONTAMINÉ,Qui sont les plus grands responsables des émissions de polluants dans les grandes villes ?,Les industries,Les brûlis,Les véhicules
+21,AIR CONTAMINÉ,Dans quels appareils trouve-t-on les gaz CFC ?,Les portables,Les appareils électroménagers,Les réfrigérateurs
+22,AIR CONTAMINÉ,"Parmi ces mesures, lesquelles permettent le mieux de contrôler la qualité de l'air en ce qui concerne les véhicules ?",Une conduite prudente,Changer de carburant,L’utilisation de catalyseurs
+23,AIR CONTAMINÉ,Quel polluant provient de centrales électriques consommant du charbon ou du pétrole ?,L’ozone,L’azote,Le dioxyde de soufre
+24,ARAIGNÉE,Laquelle de ces araignées ne cause pas d'accidents graves au Brésil ?,Les Loxosceles,L’araignée-banane (Phoneutria),La mygale
+25,ARAIGNÉE,Dans quelle région géographique du Brésil trouve-t-on le plus d’accidents causés par des araignées ?,La région Sud-est,La région Nord-est,La région Sud
+26,ARAIGNÉE,Laquelle de ces araignées provoque une morsure presque imperceptible ?,La mygale,L’araignée-banane (Phoneutria),Les Loxosceles
+27,ARAIGNÉE,Que peut-on faire pour aider à soulager la douleur causée par une morsure d’araignée ?,Presser la plaie,La succion avec le bouche,Une compresse tiède
+28,COQUELUCHE,Quelle maladie est caractérisée par une toux longue ?,La rougeole,La méningite,La coqueluche
+29,COQUELUCHE,"Quelle maladie se cache derrière une toux longue, des bruits respiratoires, des vomissements après la toux ?",La grippe,La tuberculose,La coqueluche
+30,COQUELUCHE,Quelle bactérie est à l'origine de la coqueluche ?,C. tetani,C. diphtheriae,B. pertussis
+31,COQUELUCHE,Quel vaccin contre la coqueluche protège les enfants de moins d'un an ?,Le BCG ,Le ROR,Le vaccin pentavalent
+32,COQUELUCHE,Quelle est la principale mesure de prévention contre la coqueluche ?,L’utilisation de préservatifs,Prendre des antibiotiques,Le vaccin
+33,COQUELUCHE,Quel antibiotique est recommandée pour le traitement de la coqueluche ?,La rifampicine,Le Tamiflu,L’azithromycine
+34,DENGUE/ZIKA/CHIK,À quelle fréquence faut-il détruire les sites de reproduction ? ,Tous les jours,Tous les mois,Toutes les semaines
+35,DENGUE/ZIKA/CHIK,Laquelle de ces mesures ne favorise pas la protection des femmes enceintes ? ,Utiliser une moustiquaire,Nettoyer la maison,Passer de l'huile sur la peau
+36,DENGUE/ZIKA/CHIK,Comment se transmet la dengue ?,Les baisers,Les câlins,La piqûre de moustique
+37,DENGUE/ZIKA/CHIK,Est-ce que la climatisation tue le moustique Aedes ?,Le ventilateur seulement,Oui,Non
+38,DENGUE/ZIKA/CHIK,Une personne atteinte de la dengue peut-elle faire usage d’aspirine et d’autres médicaments similaires ?,Oui,Seulement de l'aspirine,Ne doit pas
+39,DENGUE/ZIKA/CHIK,À quelle période de la journée pouvez-vous être piqué pas Aedes aegypti ?,Le matin seulement,Seulement la nuit,"Matin, midi et soir"
+40,DENGUE/ZIKA/CHIK,La climatisation de mon lieu de travail peut-il être un site de reproduction de Aedes aegypti ?,Non,Le ventilateur seulement,Oui
+41,DENGUE/ZIKA/CHIK,Toutes les personnes infectées par le virus Zika développent-elles des symptômes ?,Oui,Seulement les enfants,Non
+42,DENGUE/ZIKA/CHIK,Comment prévenir l'infection à virus Zika ?,Prendre un bain,Prendre des vitamines,Utiliser du répulsif
+43,DENGUE/ZIKA/CHIK,Qu’est-ce que Zika ?,Une maladie,Un moustique,Un virus
+44,DENGUE/ZIKA/CHIK,Lequel de ces symptômes est considéré comme un signe d'alerte pour la femme enceinte ?,Nausées matinales,La congestion nasale,Les taches rouges
+45,DENGUE/ZIKA/CHIK,Laquelle de ces maladies est transmise par les moustiques ? ,La syphilis,La tuberculose,Le chikungunya
+46,DENGUE/ZIKA/CHIK,Quel est le signe de gravité chez la personne souffrant de fièvre ?,La toux,La diarrhée,Les saignements
+47,CATASTROPHES,Qui appeler en cas d'effondrement ou de glissement de terrain ?,SAMU (192),CVV (141),La Défense civile (199)
+48,CATASTROPHES,Quel est le numéro de téléphone des pompiers à appeler en cas d’incendie ?,192,194,193
+49,CATASTROPHES,Que faire en cas d'accidents causés par des animaux venimeux après une inondation ? ,Sucer la plaie,Attraper l’animal,Aller à l’hôpital
+50,CATASTROPHES,"Si vous trouvez des animaux venimeux dans votre maison, quel service devez-vous activer ?",SAMU (192),La Défense civile (199),Les pompiers (193)
+51,CATASTROPHES,Où ne devez-vous pas rester en cas de foudre ?,En voiture ou en bus,Dans une maison ou un immeuble,Sous un arbre
+52,CATASTROPHES,Que peut-il arriver à une personne frappée par la foudre ?,Rien,Uniquement des brûlures,Brûlures et mort
+53,CATASTROPHES,Que faire en cas de forte pluie et de rues inondées ?,Jouer dans l'eau,Traverser la rue inondée,Chercher un abri
+54,CATASTROPHES,Que faire si vous trouvez un sac à dos abandonné ?,L’ouvrir,Ramener à la maison,Contacter les autorités
+55,CATASTROPHES,Que faire si vous trouvez un objet qui possède le symbole de la radioactivité ?,Manipuler l'objet,Ramener à la maison,Contacter les autorités
+56,CATASTROPHES,Que faire si vous recevez un courrier suspect ?,Le rendre,L’ouvrir,Contacter les autorités
+57,CATASTROPHES,Quel service activer si vous constatez une fuite de produits chimiques dans la rue ? ,SAMU (192),La Police civile (197),Les pompiers (193)
+58,CATASTROPHES,Quels dangers cachent les eaux des inondations ?,Aucun,La grippe,La leptospirose
+59,DIPHTÉRIE,Que sait-on de la diphtérie ?,La paralysie flasque ,Toux chronique,Croup
+60,DIPHTÉRIE,"En général, quelle est la durée d'incubation de la diphtérie ?",5 à 15 jours,5 à 10 jours,1 à 6 jours
+61,DIPHTÉRIE,En combien de temps le porteur peut-il éliminer le bacille de la diphtérie ?,1 an,3 mois ou plus,6 mois ou plus
+62,DIPHTÉRIE,Quel vaccin est recommandé pour prévenir la diphtérie chez l’adulte ?,Le ROR,Le BCG,Double adulte
+63,DIPHTÉRIE,Quelle est la mesure thérapeutique la plus efficace pour le traitement de la diphtérie ?,La thérapie antibiotique,Le vaccin,Le sérum antidiphtérique
+64,DIPHTÉRIE,Quelle est la mesure de prévention la plus efficace contre la diphtérie ?,la thérapie antibiotique,L’utilisation de préservatifs,La vaccination
+65,MALADIE DE CHAGAS,Quel est l'agent causal de la maladie de Chagas ?,La bactérie,Un virus,Protozoaire
+66,MALADIE DE CHAGAS,Quel insecte transmet la maladie de Chagas ?,La Guêpe,Les moustiques ,Les punaises
+67,MALADIE DE CHAGAS,Lequel de ces facteurs ne transmet pas la maladie de Chagas ?,La transfusion de sang,Les aliments contaminés,Le contact avec les personnes
+68,MALADIE DE CHAGAS,"Quels types de punaises peuvent, par leur piqûre, transmettre la maladie de Chagas?",Tous,Seulement les femelles,Seulement les personnes infectées
+69,MALADIE DE CHAGAS,Quel est le principal symptôme de la phase aiguë de la maladie de Chagas ?,Les douleurs articulaires,La toux,Une fièvre persistante
+70,MALADIE DE CHAGAS,Quel diagnostic permet de confirmer la maladie de Chagas ?,L’examen urinaire,L’analyse des selles,Le test sanguin
+71,MALADIE DE CHAGAS,Existe-t-il des traitements spécifiques à la maladie de Chagas offerts par le SUS ? ,Oui. Gratuit,Non,"Oui, mais il est payant"
+72,MALADIE DE CHAGAS,Lequel de ces facteurs n'est pas un moyen de prévenir la maladie de Chagas ?,Utiliser une moustiquaire,Nettoyer les cours,Éliminer l'eau stagnante
+73,MALADIE DE CHAGAS,Que faire si une personne a de la fièvre pendant plus de 7 jours ?,Prendre des antibiotiques,Prendre des antipyrétiques,Contacter le SUS
+74,MST/SIDA,Que faire après avoir eu un contact avec du sang ou du sperme qui pourraient être contaminés par le VIH ?,Rien,Prendre un bain,Contacter le SUS
+75,MST/SIDA,Existe-t-il une loi au Brésil qui criminalise la discrimination envers les personnes vivant avec le VIH/SIDA ?,Non,Dépend du motif,Oui
+76,MST/SIDA,Les séropositifs VIH doivent-ils être très malades pour avoir droit au traitement du SUS ?,Oui,Il n'y a pas de traitement,Tous y ont droit
+77,MST/SIDA,Les termes VIH et SIDA signifient-ils la même chose ?,Oui,Le VIH est l'acronyme du sida,Non
+78,MST/SIDA,Le préservatif est-il le seul moyen de prévention du VIH ?,Oui,Non. Seulement le stérilet,Non
+79,MST/SIDA,Pourquoi prendre les médicaments pour traiter le VIH ?,Pour guérir du sida,Pour vivre plus difficilement,Pour vivre mieux
+80,MST/SIDA,"Si je découvre que je suis séropositif VIH, quand dois-je commencer à prendre mes médicaments ?",Quand je me sens mal,Il n'y a aucun médicament,Immédiatement
+81,MST/SIDA,Existe-t-il un vaccin ou une guérison pour le SIDA ?,Oui,Seulement pour les femmes,Non
+82,MST/SIDA, Un séropositif VIH prend-il beaucoup de médicaments chaque jour ?,Oui,Non,C’est au cas par cas
+83,MST/SIDA,Est-ce vrai que les médicaments pour le VIH provoquent des effets secondaires ?,Non. Il s'agit d'un mythe,Seulement chez les enfants,Oui
+84,MST/SIDA,Lesquels de ces effets secondaires concernent le traitement du VIH ?,La dépression,La démence,Les nausées et les vomissements
+85,MST/SIDA,Le HPV est-il une infection sexuellement transmissible qui peut être évitée grâce à un vaccin ?,Seulement chez les enfants,Non,Oui
+86,MST/SIDA,Laquelle de ces options n'est pas une maladie sexuellement transmissible ?,La syphilis,Le papillomavirus humain,La dengue
+87,MST/SIDA,Comment éviter toutes les infections sexuellement transmissibles (IST) ?,L’abstinence sexuelle,La fidélité,Utiliser des préservatifs
+88,MST/SIDA,Il est plus sûr d'utiliser deux préservatifs en même temps ?,Oui,"Oui, 3 maximum",Non
+89,EBOLA,Qu’est-ce qu’Ebola ?,La bactérie,Une malformation fœtale,Un virus
+90,SCORPION,Quel animal venimeux causent le plus grand nombre d'accidents au Brésil ?,Le serpent,L’araignée,Le scorpion
+91,SCORPION,Dans quels endroits trouve-t-on le plus de scorpions ?,Les piscines et les lacs,Dans les arbres,Les ordures et les caniveaux
+92,SCORPION,Quel est le principal symptôme clinique présenté par les piqûres de scorpions ?,Les larmoiements,Le gonflement,Des douleurs intenses
+93,SCORPION,Dans quels cas une victime d’une piqûre de scorpion devrait-elle recevoir du sérum antiscorpionique ?,Dans tous les cas,Seulement les cas graves,Modérés et graves
+94,SCORPION,Que peut-on faire pour aider à soulager une douleur causée par une piqûre de scorpion ?,Presser la plaie,La succion du venin ,Une compresse tiède
+95,BILHARZIOSE,Comment se transmet la bilharziose ?,Par l'éternuement,Par contact avec le sol,Contact avec les escargots
+96,BILHARZIOSE,Comment la bilharziose est-elle diagnostiquée ?,L’examen urinaire,Le test sanguin,L’analyse des selles
+97,BILHARZIOSE,Sous quel terme la bilharziose est-elle également connue ?,Le jaunissement,La maladie des 7 jours,La schistosomiase
+98,BILHARZIOSE,La bilharziose est une maladie :,Bactérienne,Virale,Parasitaire
+99,BILHARZIOSE,L'agent causal de la bilharziose est :,Ascaris lumbricoides,Chlamydia tracomatis,Schistosoma mansoni
+100,EXAMENS DE LABORATOIRE,La déshydratation peut-elle fausser une analyse de sang ?,Non,Oui,Oui
+101,EXAMENS DE LABORATOIRE,Faut-il communiquer l’utilisation de médicaments au laboratoire d’analyses ?,Non,C'est peut être important,Oui
+102,EXAMENS DE LABORATOIRE,Où est-ce que je peux effectuer des analyses de laboratoire ?,Seulement dans le réseau privé,Seulement dans le réseau public,Les deux
+103,EXAMENS DE LABORATOIRE,Que faire pour éviter d’avoir un bleu au bras après une prise de sang ? ,Secouer le bras,Attendre que ça parte,Une compresse
+104,FIÈVRE JAUNE,La fièvre jaune se transmet par :,La morsure de chauve-souris,Les aliments contaminés,La piqûre de moustique
+105,FIÈVRE JAUNE,Quels types de moustiques transmettent la fièvre jaune forestière ?,Aedes,Anopheles,Haemagogus
+106,FIÈVRE JAUNE,Lesquels des symptômes suivants sont caractéristiques de la fièvre jaune :,Les douleurs articulaires,Les maux de tête,Le jaunissement de la peau
+107,FIÈVRE JAUNE,Lequel de ces moyens ne permet pas de prévenir la fièvre jaune ?,Le vaccin,Le répulsif,La protection solaire
+108,FIÈVRE JAUNE,Laquelle de ces activités ne présente aucun risque de fièvre jaune ?,Le camping,La pêche,Les promenades nocturnes
+109,FIÈVRE JAUNE,Quel est le traitement disponible pour la fièvre jaune ?,Les antibiotiques,Les anti-inflammatoires,Il n'y a pas de traitement
+110,FIÈVRE JAUNE,"Au-delà de la dengue, du Zika et du chikungunya, quelle autre maladie est transmise par Aedes aegypti ?",O’Nyong-nyong,La filariose,La fièvre jaune
+111,FIÈVRE JAUNE,Lequel de ces milieux ne présente pas de cycle de transmission de la fièvre jaune ?,Urbain,Forestier,Aquatique
+112,FIÈVRE JAUNE,"En plus de l’homme, quel animal est porteur de la fièvre jaune ?",Les oiseaux,Le chien,Le singe
+113,FIÈVRE JAUNE,La fièvre jaune est causée par un (une),La bactérie,Protozoaire,Un virus
+114,FIÈVRE JAUNE,Avec quelle autre maladie les symptômes de la fièvre jaune peuvent-ils être confondus ?,La maladie de Chagas,La leishmaniose,La dengue
+115,FIÈVRE JAUNE,La mesure la plus importante pour prévenir la fièvre jaune est :,Se laver le visage,Se laver les mains,La vaccination
+116,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Quel est le vecteur de la fièvre pourprée des montagnes Rocheuses ?,Le moustique,Le capybara,La tique
+117,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Lequel de ces animaux est porteur des tiques responsables de la fièvre pourprée des montagnes Rocheuses ?,Le serpent,Le léopard,Le capybara
+118,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Quels sont les foyers d’infection de la fièvre pourprée des montagnes Rocheuses ?,Zones à ordures,Les zones à moustiques,Zones à tiques
+119,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Lesquelles de ces symptômes concernent la fièvre pourprée des montagnes Rocheuses ?,La diarrhée,Les vomissements,La fièvre
+120,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Que faire si vous présentez les symptômes de la fièvre pourprée des montagnes Rocheuses ?,Attendre que ça passe,Prendre des liquides,Contacter un médecin
+121,FIÈVRE POURPRÉE DES MONTAGNES ROCHEUSES,Quelles mesures préventives contre la fièvre pourprée des montagnes Rocheuses pouvez-vous adopter chez vous ?,Éliminer l'eau stagnante,Laver les toilettes,Nettoyer les cours
+122,FILARIOSE LYMPHATIQUE,Quel est le moustique du genre Culex qui transmet la filariose lymphatique ?,Anopheles,Aedes aegypti,Culex quinquefasciatus
+123,FILARIOSE LYMPHATIQUE,Il s’agit d’une complication de la filariose lymphatique :,l’hémorragie digestive,La cécité,L’éléphantiasis
+124,FILARIOSE LYMPHATIQUE,La filariose lymphatique est-elle une infection ?,Virale,Bactérienne,Parasitaire
+125,LÈPRE,Qu’est-ce que la lèpre ?,Un virus,Un protozoaire,Une maladie
+126,LÈPRE,"Faut-il séparer les verres, les couverts et les assiettes d’un patient atteint de la lèpre ?",Oui,Uniquement les assiettes,Non
+127,LÈPRE,Comment attrape-t-on la lèpre ?,Par les poignées de main,Les rapports sexuels,Contact avec les malades
+128,GRIPPE,Quel est le principal symptôme de la grippe ?,Les vomissements,Les douleurs musculaires,La forte fièvre
+129,GRIPPE,Avec quelle autre maladie la grippe peut-elle être confondue ?,La sinusite,L’œsophagite,Le rhume
+130,GRIPPE,De fréquents lavages et désinfections des mains permettent-ils de prévenir la grippe ?,Non,Seulement après les repas,Oui
+131,GRIPPE,Est-il utile d’éviter tout contact direct avec des personnes qui présentent des signes ou des symptômes de grippe ?,Non,À partir de 1 m,Oui
+132,GRIPPE,Est-ce que couvrir le nez et la bouche lorsqu’on tousse ou éternue réduit la transmission de la grippe ?,Non ,Couvrir seulement la bouche,Oui
+133,GRIPPE,Est-ce que le Brésil possède un vaccin contre la grippe ?,Non,Juste pour le virus H1N1,Oui
+134,GRIPPE,Est-ce qu’une femme enceinte peut recevoir le vaccin contre la grippe ?,Non,"Oui, après le 3e mois",Oui
+135,GRIPPE,Est-ce que la grippe circule toute l’année au Brésil ?,Seulement dans le Sud-est,Non,Oui
+136,GRIPPE,Est-ce que la population privée de liberté reçoit le vaccin de la grippe ?,Non,> 5 ans de prison,Oui
+137,GRIPPE,Est-ce que les patients chroniques atteints de maladies non transmissibles peuvent recevoir le vaccin de la grippe ?,Non,Seulement les personnes ayant des problèmes cardiaques,Oui
+138,CHENILLE (LÉPIDOPTÈRE),Quel est le nom de la chenille qui se trouve au Brésil et dont la piqûre provoque une hémorragie ?,Automeris,Hylesia,Lonomia
+139,CHENILLE (LÉPIDOPTÈRE),Comment survient l’empoisonnement par une chenille ?,Par les piqûres,par morsure,Contact avec les poils
+140,CHENILLE (LÉPIDOPTÈRE),Quelles sont les activités qui présentent le plus de risques de piqûres de chenilles du genre Lonomia ?,Se coucher dans l'herbe,Courir dans l'herbe,Grimper aux arbres
+141,LEISHMANIOSE TÉGUMENTAIRES,Qu’est que la leishmaniose tégumentaire ?,Une maladie rare,Une maladie chronique,Une maladie infectieuse
+142,LEISHMANIOSE TÉGUMENTAIRES,Comment se caractérise l’ulcère typique de la leishmaniose tégumentaire cutanée ?,Douloureux,Douleurs à la peau,Indolore pour la peau
+143,LEISHMANIOSE TÉGUMENTAIRES,Quel diagnostic permet de confirmer la leishmaniose tégumentaire ?,Sérologique,Clinique,Parasitologique
+144,LEISHMANIOSE TÉGUMENTAIRES,Dans quels environnements y-a-t-il normalement transmission de leishmaniose tégumentaire ?,Urbains,Régions côtières,Forestier et rural
+145,LEISHMANIOSE TÉGUMENTAIRES,Lesquels de ces insectes transmettent la leishmaniose tégumentaire ?,Aedes aegypti,Les punaises,les phlébotomes
+146,LEISHMANIOSE TÉGUMENTAIRES,Où le vecteur de la leishmaniose tégumentaire se développe-t-il ?,L’eau stagnante,Maisons en torchis,Les endroits humides
+147,LEISHMANIOSE TÉGUMENTAIRES,Lequel de ces moyens ne prévient pas des leishmanioses ?,Maintenir la cour propre,Utiliser du répulsif,Éliminer l'eau stagnante
+148,LEISHMANIOSE VISCÉRALE,Sous quel terme commun la leishmaniose viscérale est-elle connue ?,Le bouton d’Orient,Le larbish,Kala-azar
+149,LEISHMANIOSE VISCÉRALE,"Au Brésil, dans quelle région trouve-t-on la plupart des cas de leishmaniose viscérale ?",la région Sud,La région Nord,La région nord-est
+150,LEISHMANIOSE VISCÉRALE,Est-ce qu’une leishmaniose viscérale non traitée peut mener au décès du patient ?,Non,Seulement pour les personnes âgées,Oui
+151,LEISHMANIOSE VISCÉRALE,Lequel de ces symptômes est celui de la leishmaniose viscérale ?,La cécité,La déshydratation,La fièvre
+152,LEISHMANIOSE VISCÉRALE,Existe-t-il un traitement pour la leishmaniose viscérale ?,Non,Seulement dans le réseau privé,"Oui, par le SUS"
+153,LEISHMANIOSE VISCÉRALE,Quel examen est disponible au SUS pour diagnostiquer la leishmaniose viscérale ?,Le test sanguin,L’échographie,Le test rapide
+154,LEISHMANIOSE VISCÉRALE,Quel est le principal foyer de contamination de leishmaniose en zone urbaine ?,Les poules,l’être humain,Le chien
+155,LEISHMANIOSE VISCÉRALE,Quelle est la principale forme de transmission de leishmaniose viscérale chez les chiens ?,Les morsures,Par contact avec l’urine,Les piqûres d'insectes
+156,LEISHMANIOSE VISCÉRALE,Lequel de ces signes cliniques est le principal chez les chiens atteints de leishmaniose viscérale ?,L’agressivité,Le jaunissement de la peau,Les lésions cutanées
+157,LEISHMANIOSE VISCÉRALE,Lequel de ces insectes transmet la leishmaniose viscérale à l’homme ?,Aedes aegypti,Les punaises,les phlébotomes
+158,LEISHMANIOSE VISCÉRALE,Où se développe l'insecte qui transmet la leishmaniose viscérale ?,L’eau stagnante,Maisons en torchis,Les endroits humides
+159,PALUDISME,Dans quelle région du Brésil sont concentrés plus de 99 % des cas de paludisme ?,La région Sud-est,La région Nord-est,La région Nord
+160,PALUDISME,Comment se transmet le paludisme ?,Par l'eau,Par les aliments,La piqûre de moustique
+161,PALUDISME,Dans lequel de ces endroits trouve-t-on les larves de moustiques qui transmettent le paludisme ?,Dans les réservoirs d'eau,Dans les caniveaux,Dans les lacs
+162,PALUDISME,Laquelle de ces façons est la bonne pour se protéger contre les moustiques du paludisme ?,Prendre des vitamines,Prendre le vaccin,Utiliser une moustiquaire
+163,PALUDISME,Quel est le moustique qui transmet le paludisme ?,Aedes femelle,Anophèle mâle,Anophèle femelle
+164,PALUDISME,"Parmi ces symptômes, lequel concerne le paludisme grave :",La prostration,Les saignements,La forte fièvre >41°C
+165,PALUDISME,Quels sont les moyens les plus appropriés pour interrompre le cycle de transmission du paludisme ?,Les infusions et le repos,Pas d’interruption possible,Le diagnostic opportun
+166,PALUDISME,Quel est le symptôme le plus fréquent du paludisme ?,L’essoufflement,Des taches sur la peau,La forte fièvre
+167,PALUDISME,Existe-t-il des médicaments pour prévenir le paludisme ?,Non,Seulement des médicaments importés,Oui
+168,PALUDISME,Qui peut contracter le paludisme ?,Seulement les hommes,Seulement les enfants,Toutes les personnes
+169,PALUDISME,Quels sont les signes et les symptômes du paludisme les plus courants ?,Des taches sur la peau,Les douleurs articulaires,La fièvre
+170,PALUDISME,Est-il possible d’avoir le paludisme plusieurs fois ?,Non,"Oui, deux fois",Oui
+171,PALUDISME,Existe-t-il un vaccin contre le paludisme ?,Oui,Seulement pour les adultes,Non
+172,PALUDISME,Comment fait-on le diagnostic du paludisme ?,Par la salive,Liqueur,Par le sang
+173,PALUDISME,Le paludisme peut-il être grave ?,Non,Toujours,Oui
+174,PALUDISME,Où se trouve la région du Brésil où le paludisme est endémique ?,La région Sud-est,La région Nord-est,La région Nord
+175,PALUDISME,Qu’est-ce qui cause la malaria ?,Un virus,La bactérie,Le plasmodium
+176,PALUDISME,Le paludisme se transmet-il d’une personne à l’autre ?,"Oui, en serrant quelqu’un dans ses bras","Oui, en embrassant",Non
+177,PALUDISME,Où puis-je faire le diagnostic du paludisme ?,À la pharmacie,Chez le voisin,Au SUS
+178,PALUDISME,Où traiter le paludisme ?,À la pharmacie,Chez le voisin,Au SUS
+179,PALUDISME,Combien coûte le traitement pour le paludisme ?,300 réais,50 réais,Gratuit par le SUS
+180,PALUDISME,Le paludisme est-il présent au Brésil ?,"Non, seulement en Asie","Non, seulement en Afrique",Oui
+181,PALUDISME,Lesquels de ces continents présentent des cas de paludisme ?,L'Amérique et l'Océanie,L'Asie et l'Océanie,L'Amérique et l'Afrique
+182,PALUDISME,Comment on ne contracte pas le paludisme ?,La piqûre de moustique,La transfusion de sang,L’eau contaminée
+183,PALUDISME,Il n’existe qu’un seul traitement pour tous les types de paludismes courants au Brésil (vivax et falciparum) ?,Oui,Il n'y a pas de traitement,Non
+184,PALUDISME,La fièvre est-elle un symptôme du paludisme ?,Non,Seulement la fièvre légère,Oui
+185,PALUDISME,Le moustique qui transmet la dengue transmet-il également le paludisme ?,Oui,Toutes les maladies,Non
+186,PALUDISME,Dans quel organe le parasite du paludisme se reproduit-il avant d'attaquer les globules rouges ?,La peau,La rate,Le foie
+187,PALUDISME,Quelle est la période la plus propice aux piqûres de moustiques qui transmettent le paludisme ?,Au cours de la journée,Quand il pleut,"Matin, midi et soir"
+188,PALUDISME,Le paludisme peut-il causer la mort ?,Ne laisse que des séquelles,Non,Oui
+189,PALUDISME,Les femmes enceintes atteintes de paludisme peuvent-elles prendre les médicaments normalement?,Oui,C’est au cas par cas,Non
+190,PALUDISME,Est-il possible de traiter le paludisme avec des infusions et des plantes ?,Oui,Seulement avec du maté,Non
+191,PALUDISME,Y a-t-il des aliments à éviter à cause des médicaments pour le paludisme ?,Aliments pimentés,Les aliments gras,Non
+192,PALUDISME,Qui sont les porteurs du parasite du paludisme dans son cycle de vie ?,Seulement les humains,Aucun,Les moustiques et les hommes
+193,PALUDISME,Quel est approximativement le pourcentage de la population mondiale exposé au risque d’attraper le paludisme ?,0%,10%,50%
+194,PALUDISME,Combien de temps après la piqûre du moustique la personne infectée commence-t-elle à avoir des symptômes de paludisme ?,1 à 3 jours,30 jours,10 à 15 jours
+195,PALUDISME,Est-ce que tous les moustiques transmettent le paludisme ?,Oui,"Non, seulement l’Aedes","Non, seulement l’anophèle"
+196,PALUDISME,Comment se transmet le paludisme ?,Par les accolades,Par le baiser,La piqûre de moustique
+197,PALUDISME,Que faire pour éviter le paludisme ?,Manger des fruits,En buvant du thé,Éviter les moustiques
+198,PALUDISME,Peut-on guérir du paludisme ?,Dans certains cas,Non,Oui
+199,PALUDISME,Où peut-on se faire vacciner contre le paludisme ?,En hôpital privé,Dans les pharmacies,Il n'y a pas de vaccin
+200,PALUDISME,Existe-t-il un répulsif anti-moustique spécifique au paludisme ?,Oui,Seulement des répulsifs importés,Non
+201,PALUDISME,Est-ce que le moustique du paludisme se reproduit comme celui de la dengue ?,Oui,Ne se reproduit pas,Non
+202,PALUDISME,Quel moustique Anophèle transmet le paludisme ? Mâle ou femelle ?,Tous les deux,Seul le mâle,Femelle seulement 
+203,PALUDISME,"Si une femme enceinte contracte le paludisme, est-ce que le bébé est en danger ?",Seule la mère court le risque,Non,Oui
+204,PALUDISME,"Pour quels groupes d'âge, le paludisme peut-il être le plus dangereux ?",Les adolescents,Les adultes,Les personnes âgées et les enfants
+205,PALUDISME,Est-il recommandé de suivre le traitement du paludisme jusqu'à la fin ?,Non,"Non, jusqu’à mi-traitement seulement",Oui
+206,MÉDICAMENTS,Quelle catégorie de médicaments sont utilisés pour le traitement des infections bactériennes ?,Les antiémétiques,Les antiviraux,Les antibiotiques
+207,MÉDICAMENTS,Quelle catégorie de médicaments sont utilisés pour traiter les douleurs ?,Les antiacides,Les antinéoplasiques,Les analgésiques
+208,MÉDICAMENTS,Quelle catégorie de médicaments sont utilisés pour le traitement du cancer ?,Les médicaments contre les ulcères,Les antispasmodiques,Les antinéoplasiques
+209,MÉDICAMENTS,Où peut-on trouver les informations les plus importantes sur un médicament ?,Sur l’ordonnance,Sur l’emballage primaire,La notice
+210,MÉDICAMENTS,Tout soin permettant de guérir ou de soulager les symptômes d'une maladie s’appelle :,Placebo,Le vaccin,Remède
+211,MÉDICAMENTS,Les médicaments obtenus directement à partir d’extraits de plante sont appelés :,Infusions ou tisanes,Homéopathique,Phytothérapie
+212,MÉNINGITE,Lequel de ces signes et symptômes correspondent à la méningite ?,Les vomissements,La toux,La raideur de la nuque
+213,MÉNINGITE,Quelle est la maladie qui provoque une inflammation des méninges ?,L’accident vasculaire cérébral,La thrombose,La méningite
+214,MÉNINGITE,Le type le plus grave de méningite est causé par quel micro-organisme ?,Un virus,Les champignons,Les bactéries
+215,MICROCÉPHALIE,Qu’est-ce que la microcéphalie ?,La bactérie,Un virus,Une malformation fœtale
+216,ONCHOCERCOSE,Quel est le moustique qui transmet l'onchocercose ?,Aedes aegypti,Culex,Le simulie
+217,ONCHOCERCOSE,Sous quel terme est aussi connu l’onchocercose ?,La maladie de l'escargot,La maladie de la tique,La cécité des rivières
+218,ONCHOCERCOSE,Quels états brésiliens enregistrent des cas d’onchocercose ?,SC et RS,GO et MT,AM et RR
+219,AUTRES ANIMAUX VENIMEUX,Que faire en cas de morsure d’animal venimeux ?,Courir et sauter,Boire du thé,Contacter un médecin
+220,AUTRES ANIMAUX VENIMEUX,Lequel de ces animaux est considéré comme venimeux ?,Le rat,La chauve-souris hématophage,L’araignée-banane (Phoneutria)
+221,AUTRES ANIMAUX VENIMEUX,Lequel de ces animaux est considéré comme venimeux ?,Le chien,Le tétrodon,Le scorpion
+222,AUTRES ANIMAUX VENIMEUX,Lequel de ces animaux est considéré comme venimeux ?,Le gecko,Le trichiurus,Le bothrops jararacussu
+223,AUTRES ANIMAUX VENIMEUX,Lequel de ces animaux est considéré comme venimeux ?,Le serpent de verre,Le pseudoscorpion,La scolopendre
+224,AUTRES ANIMAUX VENIMEUX,Lequel de ces animaux est considéré comme venimeux ?,Le serpent aveugle,Le requin,La méduse
+225,POLIOMYÉLITE,Quel micro-organisme est responsable de la poliomyélite ?,La bactérie,Les champignons,Un virus
+226,POLIOMYÉLITE,Sous quel terme commun la poliomyélite est-elle connue ?,Croup,Toux chronique,La paralysie infantile
+227,POLIOMYÉLITE,"En général, quelle est la durée d'incubation de la poliomyélite ?",1 à 6 jours,5 à 15 jours,7 à 12 jours
+228,POLIOMYÉLITE,Quelle est la principale mesure de prévention contre la poliomyélite ?,La thérapie antibiotique,L’utilisation de préservatifs,La vaccination
+229,POLIOMYÉLITE,Quelle maladie se traduit par une paralysie flasque aiguë chez le moins de 15 ans ?,Le tétanos,La coqueluche,La poliomyélite
+230,RAGE,Qui transmet la rage ?,Les moustiques,Les oiseaux,Les mammifères
+231,RAGE,Lesquels de ces animaux transmettent la rage ?,Les lapins et les hamsters,Les poules et les canards,Les chiens et les chats
+232,RAGE,Laquelle de ces options est un mode de transmission de la rage ?,Le contact avec des ordures,La piqûre de moustique,La morsure
+233,RAGE,Lequel des symptômes ci-dessous est celui de la rage chez l'homme ?,Les taches rouges,La diarrhée,Les contractions musculaires
+234,RAGE,Quels sont les principaux signes et symptômes de la rage chez l'animal (chien ou chat) ?,Remue la queue,La docilité,Ne s’alimente plus
+235,RAGE,Comment prévenir la rage ?,Ne pas sortir de la maison,Éviter les décharges publiques,Vacciner les chiens et les chats
+236,RAGE,Existe-t-il une guérison pour la rage humaine ?,Oui,Parfois,Pas de guérison et peut tuer!
+237,DÉSINFECTANTS,Les produits destinés au nettoyage des sols sont :,Les produits cosmétiques,Les antioxydants,Les désinfectants
+238,DÉSINFECTANTS,En cas d’ingestion ou d’inhalation accidentelle d’un désinfectant vous devez toujours :,Forcer le vomissement,Boire de l'eau,Lire l'étiquette
+239,ROUGEOLE,La rougeole est une maladie infectieuse contagieuse causée par ?,La bactérie,Les protozoaires,Un virus
+240,ROUGEOLE,Le virus de la rougeole se transmet par :,Par voie orale ou fécale,Aedes aegypti,Les voies respiratoires
+241,ROUGEOLE,Lequel de ces signes est caractéristique de la rougeole ?,La conjonctivite,Les maux de tête,Les taches rouges
+242,ROUGEOLE,Quelle est la durée approximative d’incubation de la rougeole ?,5 jours,3 jours,10 jours
+243,ROUGEOLE,Quelle est la forme la plus efficace de prévention contre la rougeole ?,L’utilisation des EPI,L’isolement,Le vaccin
+244,ROUGEOLE,Quel critère permet de confirmer la rougeole ?,La biopsie,Le diagnostic par imagerie,Les analyses de laboratoire
+245,ROUGEOLE,Quelle est la période idéale pour la notification des cas suspects de rougeole ?,Jusqu'à 48 heures,Jusqu'à 72 heures,Jusqu'à 24 heures
+246,ROUGEOLE,Quelle est la période idéale pour effectuer le blocage des vaccins contre la rougeole ?,Jusqu'à 1 mois ,Jusqu'à 96 heures,Jusqu'à 72 heures
+247,ROUGEOLE,Quel public n'est pas indiqué pour recevoir le vaccin ROR ou tétra viral ?,Les personnes âgées,Les enfants de 1 an,Les femmes enceintes  
+248,SANTÉ DES TRAVAILLEURS ET SUS,La garantie du droit à la santé :,N'est pas un droit,N’est pas obligatoire,Est un droit
+249,SANTÉ DES TRAVAILLEURS ET SUS,Quel est l'acronyme du Système Unique de Santé ?,SISU,SINAN,Au SUS
+250,SANTÉ DES TRAVAILLEURS ET SUS,"Dans le système SUS, qui est couvert par le droit à la santé ?",Les travailleurs,Les personnes ayant souscrits une assurance,Tous 
+251,SANTÉ DES TRAVAILLEURS ET SUS,"À partir de combien de mètres, le travail en hauteur exige l’utilisation d’une ceinture de sécurité ?",1 m,3 m,2 m 
+252,SANTÉ DES TRAVAILLEURS ET SUS,Quel produit utiliser en cas d’incendie de liquides inflammables ?,L’eau,CO2,Mousse 
+253,SANTÉ DES TRAVAILLEURS ET SUS,Quelles sont les seuils minimaux et maximaux de tolérance au bruit ?,85 à 110,80 à 115,85 à 115 
+254,SERPENT,Que faut-il faire immédiatement après une morsure de serpent ?,Faire un garrot,Passer de l'alcool,Contacter le SUS
+255,SERPENT,Lequel de ces serpents venimeux cause le plus grand nombre de morsures au Brésil ?,Le serpent à sonnette,Le serpent corail,Le bothrops
+256,SERPENT,Lequel de ces serpents est considéré venimeux ?,L’anaconda,Le boa,Le bothrops
+257,SERPENT,Que faire si vous trouvez un serpent ?,Essayer de l’attraper,Prendre un selfie,Prévenir les autorités
+258,SERPENT,Quels serpents provoquent un état clinique populairement connu sous l’expression «tête d’ivrogne» ?,Les bothrops et les serpents à sonnette,L’anaconda et le serpent à sonnettes,Le serpent à sonnettes et corail
+259,TÉTANOS,Quel vaccin est recommandé pour prévenir le tétanos chez l’adulte ?,Le ROR,Le vaccin VIP,Double adulte
+260,TÉTANOS,Quel vaccin est recommandé pour les femmes enceintes pour prévenir le tétanos néonatal ?,Le BCG,Le ROR,Double adulte
+261,TÉTANOS,Où trouve-t-on la bactérie tétanique ?,Seulement sur les clous,Seulement dans le sol,Dans des environnements divers
+262,TÉTANOS,Comment savoir si on a contracté le tétanos ?,Pseudomembrane,Quintes de toux ,La raideur musculaire
+263,TÉTANOS,Quel micro-organisme est responsable du tétanos ?,Un virus,Les champignons,La bactérie
+264,TÉTANOS ,Quel est l’agent étiologique du tétanos ?,Salmonella enterica,Bordetella pertussis,Clostridium tetani
+265,TRACHOME,Qu’est-ce qui cause le trachome ?,Un virus,Les protozoaires,La bactérie
+266,TRACHOME,Quel organe est affecté par le trachome ?,Les nerfs périphériques,L’appareil digestif,Les yeux
+267,TRACHOME,Comment traite-t-on le trachome ?,Par les analgésiques,Les antiallergiques,Prendre des antibiotiques
+268,TUBERCULOSE,Qu'est-ce que la tuberculose ?,Une maladie virale,Une maladie fongique,Une maladie bactérienne
+269,TUBERCULOSE,Quelle est la bactérie qui cause la tuberculose ?,Treponema pallidum,Bordetella pertusis,Le bacille de Koch
+270,TUBERCULOSE,Quel est le vaccin qui prévient les formes les plus graves de tuberculose ?,La grippe,La rubéole,Le BCG
+271,TUBERCULOSE,Comment attrape-t-on la tuberculose ?,Les rapports sexuels,Par les baisers et les câlins,La toux ou les éternuements
+272,TUBERCULOSE,Quel est l'organe plus souvent touché par la tuberculose ?,Le foie,Le cœur,Les poumons
+273,TUBERCULOSE,"En plus des poumons, quels sont les organes que la tuberculose peut également affecter ?",Seulement les intestins,Seulement les os,Tous
+274,TUBERCULOSE,Toutes les personnes atteintes de tuberculose sont-elles contagieuses ?,Oui,Seulement les fumeurs,Non
+275,TUBERCULOSE,Lequel de ces symptômes est fréquent chez la personne atteinte de tuberculose ?,La diarrhée,Les évanouissements,La toux
+276,TUBERCULOSE,Après une durée de toux de combien de temps devrais-je suspecter la tuberculose ? ,1 semaine,2 semaines,3 semaines
+277,TUBERCULOSE,Quel service de santé doit-on rechercher en cas de suspicion de tuberculose ? ,Le service spécial,Les urgences,UBS (Unité de base de Santé)
+278,TUBERCULOSE,Combien de temps dure le traitement de la tuberculose ?,2 mois,4 mois,Au moins 6 mois
+279,TUBERCULOSE,Quels sont les examens qui permettent d’établir le diagnostic de la tuberculose pulmonaire ?,Le test sanguin,L’examen urinaire,Analyse des crachats
+280,TUBERCULOSE,Combien coûte le traitement contre la tuberculose ?,R$ 20.00,R$ 300.00,Gratuit par le SUS
+281,TUBERCULOSE,Qu’est-ce qui devrait être évité pour prévenir la tuberculose ?,Les câlins,Les baisers,Les lieux fermés
+282,TUBERCULOSE,Qui offre les médicaments pour le traitement de la tuberculose?,Le réseau privé,L’OMS,Au SUS
+283,TUBERCULOSE,"Faut-il séparer les verres, les couverts et les assiettes d’un patient atteint de la tuberculose ?",Oui,Uniquement les assiettes,Non
+284,TUBERCULOSE,Quel maladie doit être dépistée et analysée chez les personnes atteintes de la tuberculose ?,La syphilis,Les oreillons,Le VIH
+285,UVHA,"Dans le traitement de la diarrhée aiguë, il est recommandé :",Prendre des antibiotiques,Prendre des anti-diarrhéiques,Prendre des liquides
+286,UVHA,Lequel de ces facteurs est une cause fréquente de diarrhée ?,L’eau contaminée ,Les aliments contaminés,Toutes les réponses ci-dessus
+287,UVHA,Laquelle de ces maladies est associée à la diarrhée chronique ?,Les maladies virales,La salmonellose,La maladie cœliaque
+288,UVHA,Quelle est la cause de la diarrhée ?,Les bactéries,Un virus,Toutes les réponses ci-dessus
+289,UVHA,"En plus des selles pâteuses, lequel de ces symptômes peut également apparaître lors d’une diarrhée ?",Les douleurs abdominales,Les nausées,Toutes les réponses ci-dessus
+290,UVHA,Lequel de ces liquides est le plus indiqué pour prévenir et traiter la déshydratation ?,Le bouillon de légumes,Le soda,L'eau et le sérum fait-maison
+291,UVHA,Comment s'appelle la diarrhée présentant du sang visible dans les selles ?,La diphtérie,La diarrhée chronique,La dysenterie
+292,UVHA,Qu’est-ce qui est le plus important pour choisir des aliments vendus dans la rue ?,L’hygiène,Les aliments en conserve,Toutes les réponses ci-dessus
+293,UVHA,Quel aliment présente le plus grand risque de botulisme ?,L’eau,Les légumes frais ,Les conserves
+294,UVHA,Comment prévenir la transmission de diarrhée à rotavirus ?,L’hygiène des fruits,L’utilisation de répulsif,L’hygiène des mains
+295,UVHA,Laquelle de ces maladies peut être transmise de la mère à l’enfant pendant la grossesse ?,La grippe,La fièvre typhoïde,La toxoplasmose
+296,UVHA,Quelle maladie risque de contracter les enfants de moins de 2 ans en ingérant du miel ?,La coqueluche ,Le paludisme,Le botulisme
+297,VACCINATION DES VOYAGEURS,Combien de temps avant un voyage devez-vous vérifier si vos vaccinations sont à jour ? ,1 jour,1 semaine,4 à 8 semaines
+298,VACCINATION DES VOYAGEURS,Est-ce qu’au Brésil l'adulte doit aussi recevoir des vaccins périodiquement ?,Non,Uniquement en cas d'urgence,Oui
+299,VACCINATION DES VOYAGEURS,Se faire vacciner contre la fièvre jaune avant de voyager :,N'est pas nécessaire,Varie selon l'âge,N'est pas nécessaire
+300,VACCINATION DES VOYAGEURS,Où peut-on obtenir des informations fiables et complètes sur la vaccination ?,ANVISA,Ministère de la santé,Toutes les options
+301,VIGIPEQ,Que faire en cas d'intoxication par des contaminants chimiques ?,Forcer le vomissement,Boire du lait,Consulter un médecin
+302,VIGIPEQ,Que faire en cas d'intoxication par des pesticides ?,Forcer le vomissement,Boire du lait,Consulter un médecin

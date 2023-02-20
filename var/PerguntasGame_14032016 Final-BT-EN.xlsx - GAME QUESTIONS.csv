@@ -1,0 +1,303 @@
+ID,TOPIC,QUESTION,ALTERNATIVE A,ALTERNATIVE B,ALTERNATIVE C
+1,BEES/WASPS,What should you do after spotting a hive of bees or wasps/hornets?,Knock them down,Set them on fire,Contact authorities
+2,BEES/WASPS,Which of the following is the main symptom of a bee or wasp/hornet sting?,Drowsiness ,Bleeding,Intense pain
+3,WATER FOR HUMAN CONSUMPTION,Who is responsible for the drinking-water standard of water used for human consumption in Brazil?,IBAMA,ANVISA,Department of Health
+4,WATER FOR HUMAN CONSUMPTION,Which authorities must be notified of suspected water contamination?,Environment,Police,Healthcare
+5,WATER FOR HUMAN CONSUMPTION,Do you know how often it is recommended to clean your water tank?,Every 10 years,Cleaning is not required,Every 6 months
+6,WATER FOR HUMAN CONSUMPTION,Do you know what water for human consumption is?,Any water,Cooking water,Drinking water
+7,SEA ANIMALS,Which substance can be used in first-aid procedures in case of jellyfish attacks? ,Beer,Fresh water,Vinegar
+8,SEA ANIMALS,What are the first-aid procedures in case of accidents involving jellyfish or Portuguese man o’ war? ,Urinate on the spot,Apply ice,Apply vinegar
+9,SEA ANIMALS,How can the pain caused by accidents involving venomous fish be relieved?,Apply ointment,Drink alcohol,Apply warm water
+10,SEA ANIMALS,Which flag color is displayed on beaches to indicate the presence of dangerous sea animals?,Red,Black,Purple
+11,CONTAMINATED AIR,What is the fog caused by air pollution called?,Heat waves,Acid rain,Smog
+12,CONTAMINATED AIR,"In general, which climate conditions are most favorable to air pollution?",Cloudy,Snow,Heat and rain
+13,CONTAMINATED AIR,What is the main pollutant responsible for the greenhouse effect?,Oxygen,Ammonia,Carbon dioxide
+14,CONTAMINATED AIR,Which of these is an air pollutant harmful to the population’s health?,Nitrogen,Lead,Sulphur dioxide
+15,CONTAMINATED AIR,Which of the alternatives is a source of indoor air pollution?,Electric shower,Remote control,Air conditioning
+16,CONTAMINATED AIR,Which of the following is recommended to counter the effects of air pollution in human health?,Exercising,Resting,Drinking plenty of water
+17,CONTAMINATED AIR,What is the main effect of air pollution on climate conditions?,Tidal waves,Floods,Increased heat
+18,CONTAMINATED AIR,Which of the following is an effect of carbon monoxide in human health?,Lung cancer,Sinusitis,Headaches
+19,CONTAMINATED AIR,In which season is the level of air pollution usually higher?,Autumn,Summer,Winter
+20,CONTAMINATED AIR,Which of the following emits most pollutants in major cities?,industries,Vegetation fires,Vehicles
+21,CONTAMINATED AIR,Which of these devices contain CFC gases?,Cell phones,Household appliances,Refrigerators
+22,CONTAMINATED AIR,Which of these vehicle-related measures help control air quality?,Defensive driving,Using different fuels,Use of catalytic converters
+23,CONTAMINATED AIR,What are the main pollutants generated in power plants that burn coal or oil?,Ozone,Nitrogen,Sulphur dioxide
+24,SPIDER,Which of these spiders is not the main causes of severe spider accidents in Brazil?,Brown,Brazilian wandering spider,Tarantula
+25,SPIDER,Which Brazilian region concentrates the majority of incidents with spiders?,Southeast,Northeast,South
+26,SPIDER,Which of these spiders has a nearly undetectable bite?,Tarantula,Brazilian wandering spider,Brown
+27,SPIDER,What can be done to help ease the pain caused by spider bites?,Squeeze the spot,Suck the spot,Warm compress
+28,WHOOPING COUGH,What disease is characterized by severe coughing?,Measles,Meningitis,Whooping cough
+29,WHOOPING COUGH,Severe and whooping cough with vomiting are symptoms of which disease?,Influenza,Tuberculosis,Whooping cough
+30,WHOOPING COUGH,Which bacteria causes the whooping cough?,C. tetani,C. diphtheriae,B. pertussis
+31,WHOOPING COUGH,Which vaccine protects children under the age of 1 from whooping cough?,BCG ,Trivalent viral vaccine,Pentavalent vaccine
+32,WHOOPING COUGH,What is the main prophylactic measure for whooping cough?,use of condoms,Antibiotics,Vaccine
+33,WHOOPING COUGH,Which antibiotic is recommended to treat whooping cough?,Rifampin,Tamiflu,Azithromycin
+34,DENGUE FEVER/ZIKA/CHIK,How often must breeding sites be eliminated? ,Daily,Monthly,Weekly
+35,DENGUE FEVER/ZIKA/CHIK,Which of these prophylactic measures do not help protect pregnant women? ,Using mosquito nets,Cleaning the house,Applying oil to skin
+36,DENGUE FEVER/ZIKA/CHIK,How is dengue fever transmitted?,Kissing,Hugging,Mosquito bite
+37,DENGUE FEVER/ZIKA/CHIK,Do air conditioning units kill the Aedes mosquito?,Only fans,Yes,No
+38,DENGUE FEVER/ZIKA/CHIK,Can people with dengue fever take aspirins and other similar medications?,Yes,Only aspirin,"No, they cannot"
+39,DENGUE FEVER/ZIKA/CHIK,At what time of day can people be bitten by the Aedes aegypti mosquito?,Only in the morning,Only at night,"Mornings, afternoons and evenings"
+40,DENGUE FEVER/ZIKA/CHIK,Can the air conditioner in my office be a breeding site for Aedes aegypti mosquitoes?,No,Only fans,Yes
+41,DENGUE FEVER/ZIKA/CHIK,Do all people infected by the Zika virus show symptoms?,Yes,Only children,No
+42,DENGUE FEVER/ZIKA/CHIK,How is Zika virus infection prevented?,Take a bath,Take vitamins,Using bug sprays
+43,DENGUE FEVER/ZIKA/CHIK,What is Zika?,A disease,A mosquito,A virus
+44,DENGUE FEVER/ZIKA/CHIK,Which of the following symptoms are defined as yellow flags for pregnant women?,Morning sickness,Nasal congestion,Red spots
+45,DENGUE FEVER/ZIKA/CHIK,Which of the following diseases are transmitted by mosquitoes? ,Syphilis,Tuberculosis,Chikungunya
+46,DENGUE FEVER/ZIKA/CHIK,Which of the following is an aggravating sign in people with fever?,Coughing,Diarrhea,Bleeding
+47,DISASTERS,How must be called in case of landslides?,SAMU (192),CVV (141),Civil Defense (199)
+48,DISASTERS,What is the Fire Department number to call in case of fires?,192,194,193
+49,DISASTERS,What must be done in case of venomous animal bites after a flood? ,Suck the spot,Capture the animal,Go to a hospital
+50,DISASTERS,Who should you call if you find venomous animals at your home?,SAMU (192),Civil Defense (199),Fire Department (193)
+51,DISASTERS,Which place should you avoid in case of a lightning storm?,In a car or bus,In a house or building,Underneath trees
+52,DISASTERS,What can happen to someone who is struck by lightning?,Nothing,Only burns,Burns and death
+53,DISASTERS,What should you do in case of heavy rainfall and flooded streets?,Play in the water,Cross the flood,Seek shelter
+54,DISASTERS,What should you do if you find an abandoned backpack?,Open it,Take it home,Contact authorities
+55,DISASTERS,What should you do if you come across an object with a radioactive symbol?,Touch the object,Take it home,Contact authorities
+56,DISASTERS,What should you do if you receive suspicious mail?,Return to sender,Open it,Contact authorities
+57,DISASTERS,Who should you call if you see a chemical leak pouring into a street? ,SAMU (192),Civil Police (197),Fire Department (193)
+58,DISASTERS,What are the hidden dangers of flood water?,None,Flu,Leptospirosis
+59,DIPHTHERIA,How is diphtheria popularly known?,Flaccid paralysis ,Heavy coughing,Croup
+60,DIPHTHERIA,What is the general diphtheria incubation period?,5 to 15 days,5 to 10 days,1 to 6 days
+61,DIPHTHERIA,For how long can the carrier eliminate the diphtheria bacillus?,1 year,3 months or more,6 months or more
+62,DIPHTHERIA,Which vaccine is recommended to prevent diphtheria in adults?,Trivalent viral vaccine,BCG,Dual vaccination for adults
+63,DIPHTHERIA,Which therapeutic measure is most effective in the treatment of diphtheria?,Antibiotic therapy,Vaccine,Diphtheria antitoxin
+64,DIPHTHERIA,Which is the most effective prophylactic measure for diphtheria?,antibiotic therapy,Use of condoms,Vaccination
+65,CHAGAS DISEASE,Which agent causes the Chagas Disease?,Bacteria,A virus,Protozoa
+66,CHAGAS DISEASE,Which insect transmits the Chagas Disease?,Wasps,Mosquitoes ,Ticks
+67,CHAGAS DISEASE,In which of the following is Chagas Disease not transmitted?,Blood transfusion,Contaminated food,Contact with others
+68,CHAGAS DISEASE,Which kissing bugs can transmit Chagas Disease through their bite?,All of them,Only females,Only the infected ones
+69,CHAGAS DISEASE,What is the main symptom of the acute phase of the Chagas Disease?,Joint pains,Coughing,Constant fever
+70,CHAGAS DISEASE,How is the confirmatory diagnosis of Chagas Disease obtained?,Urine test,Stool exam,Blood test
+71,CHAGAS DISEASE,Does the SUS provide any specific treatment for Chagas Disease? ,Yes. It is free,No,"Yes, but it is a paid service"
+72,CHAGAS DISEASE,Which of the following is not a prophylactic measure for Chagas Disease?,Using mosquito nets,Keeping yards clean,Eliminating all sources of still water
+73,CHAGAS DISEASE,How should people with fever extending for more than 7 days proceed?,Take antibiotics,Take antipyretic,Seek assistance at SUS
+74,STD/AIDS,What should you do after coming into contact with blood or semen potentially contaminated with HIV?,Nothing,Take a bath,Seek assistance at SUS
+75,STD/AIDS,Is it a crime to discriminate people with HIV/AIDS in Brazil?,No,It depends on the reason,Yes
+76,STD/AIDS,Do HIV carriers have to be really sick in order to get SUS treatment?,Yes,There is no treatment,Everyone is entitled to treatment
+77,STD/AIDS,Is HIV the same thing as AIDS?,Yes,HIV is the acronym of AIDS,No
+78,STD/AIDS,Are condoms the only way to prevent HIV infection?,Yes,No. Only IUDS,No
+79,STD/AIDS,Why should patients take HIV treatment medication?,To cure AIDS,To have worse lives,To have better lives
+80,STD/AIDS,When should I start taking medication after learning that I have HIV?,When I feel bad,There is no medication,Immediately
+81,STD/AIDS,Is there a vaccine or cure for AIDS?,Yes,Only for women,No
+82,STD/AIDS, Do people infected with HIV have to take a lot of medication every day?,Yes,No,It depends on the specific case
+83,STD/AIDS,Is it true that HIV medication has side effects?,No. This is a myth.,Only in children,Yes
+84,STD/AIDS,Which of the following are side effects of the HIV treatment?,Depression,Delirium,Nausea and vomiting
+85,STD/AIDS,Is HPV a sexually transmitted disease preventable by vaccine?,Only in children,No,Yes
+86,STD/AIDS,Which of the following is not a sexually transmitted disease?,Syphilis,HPV,Dengue fever
+87,STD/AIDS,How can we prevent all sexually transmitted infections (STIs)?,Sexual abstinence,Monogamy,Using condoms
+88,STD/AIDS,Is it safer to wear two condoms at the same time?,Yes,"Yes, up to 3 can be used",No
+89,EBOLA,What is Ebola?,Bacteria,Birth defects,A virus
+90,SCORPION,Which venomous animal is responsible for the greatest number of incidents in Brazil?,Snakes,Spiders,Scorpions
+91,SCORPION,Where are scorpions commonly found?,Swimming pools and lakes,Trees,Trash cans and manholes
+92,SCORPION,What is the main clinical symptom of incidents involving scorpions?,Watery eyes,Swelling,Intense pain
+93,SCORPION,In which cases must scorpion victims receive anti-scorpion serum?,All cases,Only severe cases,Moderate and severe cases
+94,SCORPION,What can be done to help relieve the pain of a scorpion sting?,Squeeze the spot,Suck the venom ,Warm compress
+95,SCHISTOSOMIASIS,How is schistosomiasis transmitted?,Sneezing,Contact with earth,Contact with snails
+96,SCHISTOSOMIASIS,How is schistosomiasis diagnosed?,Urine test,Blood test,Stool exam
+97,SCHISTOSOMIASIS,By what name is schistosomiasis also commonly known?,Hookworm disease,Seven-day disease,Snail fever
+98,SCHISTOSOMIASIS,Schistosomiasis is a _____ disease.,Bacterial,Viral,Parasitic
+99,SCHISTOSOMIASIS,The agent that causes schistosomiasis is:,Ascaris lumbricoides,Chlamydia tracomatis,Schistosoma mansoni
+100,LAB TESTS,Can dehydration cause alterations in blood tests?,No,Yes,Yes
+101,LAB TESTS,Must patients always inform the use of medication before lab tests?,No,It might be important,Yes
+102,LAB TESTS,Where can I get lab tests done?,Only in the private healthcare system,Only in the public healthcare system,In both systems
+103,LAB TESTS,What can I do to prevent purple spots in my arm after drawing blood? ,Shake the arm,Wait until it goes away,Apply compress to the spot
+104,YELLOW FEVER,Yellow Fever is transmitted by:,Bat bites,Contaminated food,Mosquito bite
+105,YELLOW FEVER,Which mosquito species transmits Sylvatic Yellow Fever?,Aedes,Anopheles,Haemagogus
+106,YELLOW FEVER,Which of the following are classic Yellow Fever symptoms?,Joint pains,Headache,Yellow skin
+107,YELLOW FEVER,Which if the following is not a prophylactic measure for Yellow Fever?,Vaccine,Bug spray,Sunscreen
+108,YELLOW FEVER,Which if the following is not an activity of risk for Yellow Fever?,Camping,Fishing,Night walks
+109,YELLOW FEVER,What is the treatment available for Yellow Fever?,Antibiotics,Anti-inflammatories,There is no treatment
+110,YELLOW FEVER,"In addition to dengue fever, Zika and chikungunya, which other disease can the Aedes aegypti mosquito transmit?",O’nyong’nyong,Filariasis,Yellow Fever
+111,YELLOW FEVER,Which of the following do not represent one of the potential Yellow Fever transmission cycles?,Urban,Sylvatic,Aquatic
+112,YELLOW FEVER,"What other animal can carry Yellow Fever, besides humans?",Birds,Dogs,Monkeys
+113,YELLOW FEVER,Yellow Fever is caused by a,Bacteria,Protozoa,A virus
+114,YELLOW FEVER,Which disease shares similar symptoms with Yellow Fever?,Chagas Disease,Leishmaniasis,Dengue fever
+115,YELLOW FEVER,The most important Yellow Fever prophylactic measure is:,Washing the face,Washing the hands,Vaccination
+116,ROCKY MOUNTAIN SPOTTED FEVER,What is the vector of Rocky Mountain Spotted Fever?,Mosquito,Capybara,Tick
+117,ROCKY MOUNTAIN SPOTTED FEVER,Which of the following is a tick host of clinical relevance for Rocky Mountain Spotted Fever?,Snake,Cougar,Capybara
+118,ROCKY MOUNTAIN SPOTTED FEVER,What are the infectious environments of Rocky Mountain Spotted Fever?,Garbage deposit areas,Areas with mosquitoes,Areas with ticks
+119,ROCKY MOUNTAIN SPOTTED FEVER,Which of the following is a symptom of Rocky Mountain Spotted Fever?,Diarrhea,Vomiting,Fever
+120,ROCKY MOUNTAIN SPOTTED FEVER,What should you do if you experience Rocky Mountain Spotted Fever symptoms?,Wait it out,Drink liquids,Seek medical assistance
+121,ROCKY MOUNTAIN SPOTTED FEVER,Which Rocky Mountain Spotted Fever prophylactic measures can be used at home?,Eliminate all sources of still water,Clean the toilets,Keeping yards clean
+122,LYMPHATIC FILARIASIS,Which Culex mosquito transmits lymphatic filariasis?,Anopheles,Aedes aegypti,Culex quinquefasciatus
+123,LYMPHATIC FILARIASIS,One of the complications of lymphatic filariasis is:,Gastrointestinal bleeding,Blindness,Elephantiasis
+124,LYMPHATIC FILARIASIS,Lymphatic filariasis is a ________ infection?,Viral,Bacterial,Parasitic
+125,LEPROSY,What is leprosy?,A virus,A protozoa,A disease
+126,LEPROSY,"Must people with leprosy use separate drinking glasses, cutlery and crockery?",Yes,Only dishes,No
+127,LEPROSY,How is leprosy transmitted?,Shaking hands,Sexual intercourse,Contact with infected individuals
+128,INFLUENZA,What is the most important symptom of Influenza?,Vomiting,Muscle pain,High fever
+129,INFLUENZA,Which disease is commonly mistaken for Influenza?,Sinusitis,Esophagitis,Cold
+130,INFLUENZA,Does frequently washing and sanitizing hands prevent Influenza infection?,No,Only after meals,Yes
+131,INFLUENZA,Does it help to avoid close contact with people showing signs or symptoms of Influenza?,No,Only at distances of at least 1 m,Yes
+132,INFLUENZA,Does covering the nose and mouth when sneezing or coughing reduce the chance of transmitting Influenza?,No ,Only covering the mouth,Yes
+133,INFLUENZA,Does Brazil have a vaccine for Influenza?,No,Only for H1N1,Yes
+134,INFLUENZA,Can pregnant women take Influenza vaccines?,No,"Yes, after the 3rd month",Yes
+135,INFLUENZA,Is it possible to have year-round Influenza outbreaks in Brazil?,Only in the Southeast region,No,Yes
+136,INFLUENZA,Do prisoners receive Influenza vaccines?,No,> 5 years of imprisonment,Yes
+137,INFLUENZA,Can patients with non-transmissible chronic diseases take Influenza vaccines?,No,Only cardiac patients,Yes
+138,CATERPILLAR,What is the name of the caterpillar found in Brazil that can cause hemorrhage?,Automeris,Hylesia,Lonomia
+139,CATERPILLAR,How does poisoning by caterpillar occur?,Sting,Bite,Contact with bristles
+140,CATERPILLAR,Which of the following activities entail higher risks of incidents involving caterpillars of the Lonomia genus?,Lying down on the grass,Running on the grass,Climbing trees
+141,TEGUMENTARY LEISHMANIASIS,What is tegumentary leishmaniasis?,A rare disease,Chronic disease,Infectious disease
+142,TEGUMENTARY LEISHMANIASIS,What is the main characteristic of a typical tegumentary leishmaniasis skin ulcer?,Painful,Skin pain,Painless skin ulcer
+143,TEGUMENTARY LEISHMANIASIS,What is the confirmatory diagnosis of tegumentary leishmaniasis?,Serum,Clinical,Parasitological
+144,TEGUMENTARY LEISHMANIASIS,In which areas is tegumentary leishmaniasis usually transmitted?,Urban areas,Coastal areas,Sylvatic and rural
+145,TEGUMENTARY LEISHMANIASIS,Which of these insects transmit tegumentary leishmaniasis?,Aedes aegypti,Ticks,Sand flies
+146,TEGUMENTARY LEISHMANIASIS,Where does the tegumentary leishmaniasis vector develops?,Still water,Wattle houses,Wet environments
+147,TEGUMENTARY LEISHMANIASIS,Which of the following is not a prophylactic measure for leishmaniasis?,Keeping the yard clean,Using bug sprays,Eliminating all sources of still water
+148,VISCERAL LEISHMANIASIS,How is visceral leishmaniasis popularly known?,Oriental Button,Creeping eruption disease,Kala-azar
+149,VISCERAL LEISHMANIASIS,Which Brazilian region has the most cases of visceral leishmaniasis?,Southern Region,Northern Region,Northeastern Region
+150,VISCERAL LEISHMANIASIS,Can untreated visceral leishmaniasis lead to patient death?,No,Only in elderly,Yes
+151,VISCERAL LEISHMANIASIS,Which of the following is a symptom of visceral leishmaniasis?,Blindness,Dehydration,Fever
+152,VISCERAL LEISHMANIASIS,Is there a treatment available for visceral leishmaniasis?,No,Only in the private healthcare system,"Yes, in SUS"
+153,VISCERAL LEISHMANIASIS,Which exam is available in SUS to diagnose visceral leishmaniasis?,Blood test,Ultrasonography,Quick test
+154,VISCERAL LEISHMANIASIS,What is the main visceral leishmaniasis host in urban areas?,Chicken,Human Beings,Dogs
+155,VISCERAL LEISHMANIASIS,What is the main form of visceral leishmaniasis transmission among dogs?,Bites,Contact with urine,Insect bites
+156,VISCERAL LEISHMANIASIS,Which of the following is one of the main clinical signs of visceral leishmaniasis in dogs?,Aggressive behavior,Yellow skin,Skin lesions
+157,VISCERAL LEISHMANIASIS,Which of these insects transmit visceral leishmaniasis to humans?,Aedes aegypti,Ticks,Sand flies
+158,VISCERAL LEISHMANIASIS,Where does the visceral leishmaniasis transmitting insect develop?,Still water,Wattle houses,Wet environments
+159,MALARIA,Which Brazilian region concentrates over 99% of all cases of malaria?,Southeast,Northeast,North
+160,MALARIA,How is malaria transmitted?,By water,By food,Mosquito bite
+161,MALARIA,In which of these locations are the larvae of the mosquito that transmits malaria are found?,Water tanks,Manholes,Lakes
+162,MALARIA,Which of the following is the right way to protect against the malaria mosquito?,Taking vitamins,Taking vaccines,Using mosquito nets
+163,MALARIA,Which mosquito transmits malaria?,Female Aedes,Male Anopheles,Female Anopheles
+164,MALARIA,Which of the following are symptoms of severe malaria?,Prostration,Bleeding,High fever > 41°C
+165,MALARIA,What are the best methods to stop the malaria transmission cycle?,Tea and resting,It is impossible to stop the cycle,Timely diagnosis
+166,MALARIA,What is the most common symptom of malaria?,Shortness of breath,Skin spots,High fever
+167,MALARIA,It is possible to take medication to prevent malaria?,No,Only imported medication,Yes
+168,MALARIA,Who can get malaria?,Only men,Only children,Anyone
+169,MALARIA,What are the most common signs and symptoms of malaria?,Skin spots,Joint pain,Fever
+170,MALARIA,Can I get malaria more than once?,No,"Yes, twice",Yes
+171,MALARIA,Is there a vaccine for malaria?,Yes,Only for adults,No
+172,MALARIA,How is malaria diagnosed?,By saliva,By cerebrospinal fluid,By the blood
+173,MALARIA,Can malaria become a serious problem?,No,It is always serious,Yes
+174,MALARIA,Where is the endemic malaria region in Brazil?,Southeast,Northeast,North
+175,MALARIA,What causes malaria?,A virus,Bacteria,Plasmodium
+176,MALARIA,Can I get malaria from someone else?,"Yes, by hugging others","Yes, by kissing",No
+177,MALARIA,Where should I go to get a malaria diagnosis?,Drugstore,Neighbors,SUS
+178,MALARIA,Where is malaria treated?,At the drugstore,At the neighbor’s house,In SUS
+179,MALARIA,How much does it cost to treat malaria?,300 dollars,50 dollars,Free in SUS
+180,MALARIA,Is there malaria in Brazil?,"No, only in Asia","No, only in Africa",Yes
+181,MALARIA,Which of these continents have cases of malaria?,America and Oceania,Asia and Oceania,America and Africa
+182,MALARIA,How can malaria be avoided?,Mosquito bite,Transfusion,Contaminated water
+183,MALARIA,Is the same treatment applied for the most common types of malaria in Brazil (vivax and falciparum)?,Yes,There is no treatment,No
+184,MALARIA,Is fever one of the symptoms of malaria?,No,Only mild fever,Yes
+185,MALARIA,Does the mosquito that transmits dengue fever also transmit malaria?,Yes,All diseases,No
+186,MALARIA,In which organ does the malaria parasite reproduce before attacking red blood cells?,Skin,Spleen,Liver
+187,MALARIA,In which period is it easier to be bitten by the mosquito that transmits malaria?,During the day,When it rains,"Mornings, afternoons and evenings"
+188,MALARIA,Can malaria kill?,Only sequelae,No,Yes
+189,MALARIA,Can infected pregnant women take malaria medication?,Yes,It depends on the specific case,No
+190,MALARIA,Can malaria be treated with teas and herbs?,Yes,Only with mate tea,No
+191,MALARIA,Should I avoid any specific kind of food when taking malaria medication?,Spicy food,Fatty food,No
+192,MALARIA,Which are the malaria parasite hosts throughout its life cycle?,Only humans,None,Mosquitoes and humans
+193,MALARIA,What approximate percentage of the global population is exposed to risk of malaria infection?,0%,10%,50%
+194,MALARIA,How long after the mosquito bite does the patient start showing symptoms of malaria?,1 to 3 days,30 days,10 to 15 days
+195,MALARIA,Can any mosquito transmit malaria?,Yes,"No, only Aedes","No, only Anopheles"
+196,MALARIA,How is malaria transmitted?,By hugging others,By kissing,Mosquito bite
+197,MALARIA,How can malaria be avoided?,Eating fruit,Drinking tea,Avoiding mosquitoes
+198,MALARIA,Is there a cure for malaria?,In some cases,No,Yes
+199,MALARIA,Where can I get a malaria vaccine?,In private hospitals,In drugstores,There is no vaccine
+200,MALARIA,Is there a special insect repellent against the malaria mosquito?,Yes,"Yes, imported repellents",No
+201,MALARIA,Does the malaria mosquito breed similarly to the dengue fever mosquito?,Yes,It does not breed,No
+202,MALARIA,"Which anopheles mosquito transmits malaria, the male or female?",Both,Only the male,Only the female 
+203,MALARIA,"If a pregnant woman is infected with malaria, is the baby at risk?",Only the mother is at risk,No,Yes
+204,MALARIA,For which age groups can malaria be more dangerous?,Teenagers,Adults,Elderly and children
+205,MALARIA,Is it recommended to finish the malaria treatment?,No,"No, only until half-way",Yes
+206,MEDICATIONS,Which medication category is used to treat bacterial infections?,Antiemetics,Antivirals,Antibiotics
+207,MEDICATIONS,Which medication category is used to treat pain?,Antacids,Antineoplastic agents,Painkillers
+208,MEDICATIONS,Which medication category is used to treat cancer?,Anti-ulcer medications,Antispasmodic agents,Antineoplastic agents
+209,MEDICATIONS,Where can I find the most important information regarding a certain medication?,Medical prescriptions,Packages,Information leaflets
+210,MEDICATIONS,Any treatment applied to cure or relieve the symptoms of a disease is known as:,Placebo,Vaccine,Medicine
+211,MEDICATIONS,Medications obtained directly from plant extracts are called:,Infusions or teas,Homeopathic,Herbal medicine
+212,MENINGITIS,Which of the following are signs and symptoms of meningitis?,Vomiting,Coughing,Stiff neck
+213,MENINGITIS,Which disease causes the inflammation of meninges?,Stroke,Thrombosis,Meningitis
+214,MENINGITIS,Which microorganism causes the most severe kind of meningitis?,A virus,Fungi,Bacteria
+215,MICROCEPHALY,What is microcephaly?,Bacteria,A virus,Birth defects
+216,ONCHOCERCIASIS,Which mosquito transmits onchocerciasis?,Aedes aegypti,Culex,Simulium
+217,ONCHOCERCIASIS,By what name is onchocerciasis also commonly known?,Snail disease,Tick disease,River blindness
+218,ONCHOCERCIASIS,Which Brazilian states have recorded cases of onchocerciasis?,Santa Catarina and Rio Grande do Sul,Goiás and Mato Grosso,Amazonas and Roraima
+219,OTHER VENOMOUS ANIMALS,What is the proper course of action in case of incidents involving venomous animals?,Run and jump,Drink tea,Seek medical assistance
+220,OTHER VENOMOUS ANIMALS,Which of these animals is considered to be venomous?,Rats,Vampire bat,Brazilian wandering spider
+221,OTHER VENOMOUS ANIMALS,Which of these animals is considered to be venomous?,Dogs,Blowfish,Scorpions
+222,OTHER VENOMOUS ANIMALS,Which of these animals is considered to be venomous?,Geckos,Swordfish,Bothrops jararacussu snake
+223,OTHER VENOMOUS ANIMALS,Which of these animals is considered to be venomous?,Glass snake,Pseudoscorpion,Centipede
+224,OTHER VENOMOUS ANIMALS,Which of these animals is considered to be venomous?,Blind snake,Shark,Jellyfish
+225,POLIO,Which microorganism causes polio?,Bacteria,Fungi,A virus
+226,POLIO,How is polio popularly known?,Croup,Heavy coughing,Infantile paralysis
+227,POLIO,What is the general polio incubation period?,1 to 6 days,5 to 15 days,7 to 12 days
+228,POLIO,What is the main prophylactic measure for polio?,Antibiotic therapy,Use of condoms,Vaccination
+229,POLIO,Symptoms of acute flaccid paralysis in children under the age of 15 suggest which disease?,Tetanus,Whooping cough,Polio
+230,RABIES,Who transmits rabies?,Mosquitoes,Birds,Mammals
+231,RABIES,Which of the following transmits rabies?,Rabbits and Hamsters,Chicken and Ducks,Cats and Dogs
+232,RABIES,Which of the following is a rabies transmission method?,Contact with garbage,Mosquito bite,Bites
+233,RABIES,Which of the following is a symptom of rabies in humans?,Red spots,Diarrhea,Muscle spasms
+234,RABIES,What are the main signs and symptoms of rabies in animals (dogs or cats)?,Tail shaking,Meek behavior,Not eating
+235,RABIES,How can rabies be prevented?,Never leave the house,Avoid landfills,Vaccinate cats and dogs
+236,RABIES,Is there a cure for human rabies?,Yes,Sometimes,There is no cure and it is a lethal disease!
+237,CLEANING PRODUCTS,Products used to clean inanimate surfaces are:,Cosmetics,Antioxidants,Cleaning products
+238,CLEANING PRODUCTS,"After accidentally ingesting or inhaling cleaning products, you must always:",Induce vomiting,Drink water,Read the label
+239,MEASLES,Measles is an infectious disease caused by:,Bacteria,Protozoa,A virus
+240,MEASLES,The measles virus is transmitted by:,Oral or fecal,Aedes aegypti,Airways
+241,MEASLES,Which of the following is a characteristic symptom of measles?,Conjunctivitis,Headache,Red spots
+242,MEASLES,What is the approximate measles incubation time?,5 days,3 days,10 days
+243,MEASLES,What is the most effective prevention against measles?,Use of PPEs,Isolation,Vaccine
+244,MEASLES,What is the confirmation criterion for measles cases?,Biopsy,Image Diagnosis,Lab exams
+245,MEASLES,What is the ideal period to notify a suspected case of measles?,Up to 48 hours,Up to 72 hours,Up to 24 hours
+246,MEASLES,What is the ideal period to apply blocking vaccines for measles?,Up to 1 month ,Up to 96 hours,Up to 72 hours
+247,MEASLES,Trivalent and quadrivalent virus vaccines are not recommended for which population group?,Elderly,Children under the age of 1,Pregnant women  
+248,OCCUPATIONAL HEALTH AND SUS,The right to healthcare is:,Not provided by law,Not required,Provided by law
+249,OCCUPATIONAL HEALTH AND SUS,What is the acronym of the Sistema Único de Saúde [Unified Healthcare System]?,SISU,SINAN,SUS
+250,OCCUPATIONAL HEALTH AND SUS,The SUS system provides healthcare to:,Workers,Those who have insurance,All of them 
+251,OCCUPATIONAL HEALTH AND SUS,The use of seat belts is required for works at heights of at least:,1 m,3 m,2 m 
+252,OCCUPATIONAL HEALTH AND SUS,Which of the following must be used in case of fire by flammable liquids?,Water,CO2,Foam 
+253,OCCUPATIONAL HEALTH AND SUS,What are the minimum and maximum noise tolerance limits?,85 to 110,80 to 115,85 to 115 
+254,SNAKES,What must be done immediately after any incident involving snakes?,Make a tourniquet,Apply rubbing alcohol,Seek assistance at SUS
+255,SNAKES,Which of the following venomous snakes is responsible for the highest number of incidents in Brazil?,Rattlesnake,Coral,Pit viper
+256,SNAKES,Which of the following snakes is venomous?,Anaconda,Python,Pit viper
+257,SNAKES,What should I do after coming across a snake?,Try to capture it,Take a selfie with it,Contact authorities
+258,SNAKES,Which snakebites lead to a clinical condition popularly known as “drunk face”?,Pit vipers and rattlesnakes,Pythons and rattlesnakes,Rattlesnake and coral
+259,TETANUS,Which vaccine is recommended to prevent tetanus in adults?,Trivalent viral vaccine,VIP,Dual vaccination for adults
+260,TETANUS,Which vaccine is recommended for pregnant women to prevent neonatal tetanus?,BCG,Trivalent viral vaccine,Dual vaccination for adults
+261,TETANUS,Where is the tetanus bacteria found?,Only in nails,Only in the earth,Several different environments
+262,TETANUS,How can you know if you have tetanus?,Pseudomembrane,Frequent coughing ,Muscle stiffness
+263,TETANUS,Which microorganism causes tetanus?,A virus,Fungi,Bacteria
+264,TETANUS ,What is the causative agent of tetanus?,Salmonella enterica,Bordetella pertussis,Clostridium tetani
+265,TRACHOMA,What causes trachoma?,A virus,Protozoa,Bacteria
+266,TRACHOMA,Trachoma is a disease that affects:,Peripheral nerves,Digestive tract,Eyes
+267,TRACHOMA,How is trachoma treated?,Painkillers,Hypoallergenic,Antibiotics
+268,TUBERCULOSIS,What is tuberculosis?,Viral disease,Fungal disease,Bacterial disease
+269,TUBERCULOSIS,Which bacteria causes tuberculosis?,Treponema pallidum,Bordetella pertussis,Koch’s bacillus
+270,TUBERCULOSIS,Which vaccine prevents the most severe forms of tuberculosis?,Influenza,Rubella,BCG
+271,TUBERCULOSIS,How is tuberculosis transmitted?,Sexual intercourse,Kissing and hugging,Coughing or sneezing
+272,TUBERCULOSIS,Which organ is most commonly affected by tuberculosis?,Liver,Heart,Lungs
+273,TUBERCULOSIS,"Which other organs can also be affected by tuberculosis, besides the lungs?",Only intestines,Only bones,All of them
+274,TUBERCULOSIS,Can anyone with tuberculosis potentially transmit the disease?,Yes,Only smokers,No
+275,TUBERCULOSIS,Which of the following are common tuberculosis symptoms?,Diarrhea,Fainting,Coughing
+276,TUBERCULOSIS,After how much time coughing should I suspect tuberculosis infection? ,1 week,2 weeks,3 weeks
+277,TUBERCULOSIS,Which healthcare service must be sought in case of suspected tuberculosis? ,Special services,Emergency room,UBS
+278,TUBERCULOSIS,How long does the tuberculosis treatment take?,2 months,4 months,At least 6 months
+279,TUBERCULOSIS,Which exams are performed to diagnose pulmonary tuberculosis?,Blood test,Urine test,Sputum tests
+280,TUBERCULOSIS,How much does the tuberculosis treatment cost?,R$ 20.00,R$ 300.00,Free in SUS
+281,TUBERCULOSIS,What should be avoided in order to prevent tuberculosis?,Hugging,Kissing,Closed indoor environments
+282,TUBERCULOSIS,Who provides tuberculosis treatment medications?,Private healthcare system,WHO,SUS
+283,TUBERCULOSIS,"Are tuberculosis patients required to use separate drinking glasses, cutlery and crockery?",Yes,Only dishes,No
+284,TUBERCULOSIS,Which disease must be investigated and tested in tuberculosis patients?,Syphilis,Mumps,HIV
+285,UVHA,The following is recommended when treating Acute Diarrheal Disease:,Taking antibiotics,Taking diarrhea medication,Drink liquids
+286,UVHA,Which of the following is a common cause of diarrhea?,Contaminated water ,Contaminated food,All of the above
+287,UVHA,Which of these diseases is associated to chronic diarrhea?,Virus diseases,Salmonellosis,Celiac disease
+288,UVHA,What can cause diarrhea?,Bacteria,A virus,All of the above
+289,UVHA,"In addition to pasty stool, which of the symptoms can also occur in case of diarrhea?",Abdominal pain,Nausea,All of the above
+290,UVHA,Which of these fluids is the most recommended to avoid and treat dehydration?,Vegetable broth,Soda,Water and homemade saline solution
+291,UVHA,What is the name of diarrhea with visible blood in the stool?,Diphtheria,Chronic diarrhea,Dysentery
+292,UVHA,What is the most important aspect when buying food products sold on the street?,Hygiene,Pickled food,All of the above
+293,UVHA,Which food has a greater risk of Botulism?,Water,Fresh vegetables ,Processed food
+294,UVHA,How can the transmission of diarrhea by Rotavirus be prevented?,Fruit hygiene,Use of insect repellent,Hand hygiene
+295,UVHA,Which of these diseases can be transmitted from the mother to the baby during pregnancy?,Flu,Typhoid fever,Toxoplasmosis
+296,UVHA,Children under the age of 2 must not ingest honey due to the risk of contracting which disease?,Whooping cough ,Malaria,Botulism
+297,TRAVEL VACCINES,How long before travelling are you required to check if your vaccines are up to date? ,1 day,1 week,4 to 8 weeks
+298,TRAVEL VACCINES,Are adults also required to periodically take vaccines in Brazil?,No,Only in case of emergency,Yes
+299,TRAVEL VACCINES,Taking yellow fever vaccines before travelling:,is not required,Depends on the age,is required
+300,TRAVEL VACCINES,Which entity provides complete and reliable information regarding vaccines?,ANVISA,Department of Health,All of the above
+301,VIGIPEQ,What is the proper course of action in case of intoxication by chemical contaminants?,Induce vomiting,Ingest milk,Seek medical assistance
+302,VIGIPEQ,What is the proper course of action in case of intoxication by pesticides?,Induce vomiting,Ingest milk,Seek medical assistance

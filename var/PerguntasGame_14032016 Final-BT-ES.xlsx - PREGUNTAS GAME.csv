@@ -1,0 +1,303 @@
+ID,TEMA,PREGUNTA,ALTERNATIVA A,ALTERNATIVA B,ALTERNATIVA C
+1,ABEJA/AVISPAS,"Al ver una colmena de abejas o avispas/avispones, ¿qué debe hacerse?",Derrumbarlas,Atizar fuego,Contactar a las autoridades
+2,ABEJA/AVISPAS,¿Cuál de estos es el principal síntoma de una picadura de abeja o avispa/avispón?,Somnolencia ,Sangrado,Dolor intenso
+3,AGUA PARA CONSUMO HUMANO,¿Quién es responsable por el estándar de potabilidad del agua de consumo humano en Brasil?,IBAMA,ANVISA,Ministerio de Salud
+4,AGUA PARA CONSUMO HUMANO,¿Qué sector debe ser comunicado a partir de una sospecha de contaminación de agua?,Medio ambiente,Policía,Salud
+5,AGUA PARA CONSUMO HUMANO,¿Usted sabe qué tan frecuentemente se recomienda la limpieza de su caja de agua?,Cada 10 años,No necesita limpiar,Cada 6 meses
+6,AGUA PARA CONSUMO HUMANO,¿Usted sabe qué es agua para consumo humano?,Cualquier agua,Agua para cocinar,Agua potable
+7,ANIMALES ACUÁTICOS,¿Qué sustancia puede ser utilizada durante los primeros auxilios después de ataque de una aguaviva? ,Cerveza,Agua dulce,Vinagre
+8,ANIMALES ACUÁTICOS,¿Cuáles los primeros auxilios en caso de accidente por aguaviva o carabela? ,Orinar en el lugar,Pasar hielo,Aplicar vinagre
+9,ANIMALES ACUÁTICOS,¿Cómo aliviar el dolor ocasionado por accidentes con peces ponzoñosos?,Aplicar pastas,Beber alcohol,Pasar agua tibia
+10,ANIMALES ACUÁTICOS,¿Cuál es el color de la bandera en las playas para señalar la presencia de animales marinos peligrosos?,Roja,Negra,Morada
+11,AIRE CONTAMINADO,¿Cómo se llama la neblina formada por la contaminación atmosférica?,Ondas de calor,Lluvia ácida,Smog
+12,AIRE CONTAMINADO,"En general, ¿qué situaciones climáticas son más favorables para la contaminación del aire?",Nublado,Nieve,Calor y lluvia
+13,AIRE CONTAMINADO,¿Cuál es el principal contaminante responsable por el efecto estufa?,Oxígeno,Amonio,Gas carbónico
+14,AIRE CONTAMINADO,¿Cuál de estos es un contaminante atmosférico perjudicial para la salud de la población?,Nitrógeno,Plomo,Dióxido de Azufre
+15,AIRE CONTAMINADO,¿Cuál de las alternativas es una fuente de contaminación atmosférica en ambientes internos?,Ducha eléctrica,Control remoto,Aire acondicionado
+16,AIRE CONTAMINADO,¿Qué recomendación sirve para combatir los efectos de la contaminación atmosférica en la salud humana?,Realizar ejercicio,Reposo,Beber bastante agua
+17,AIRE CONTAMINADO,¿Cuál es el efecto principal de la contaminación del aire sobre el clima?,Maremotos,Inundaciones,Aumento del calor
+18,AIRE CONTAMINADO,¿Cuál de estos es un efecto del monóxido de carbono en la salud humana?,Cáncer de pulmón,Sinusitis,Dolores de cabeza
+19,AIRE CONTAMINADO,¿El nivel de contaminación del aire acostumbra ser mayor en qué estación del año?,Otoño,Verano,Invierno
+20,AIRE CONTAMINADO,¿Quiénes son los mayores responsables por las emisiones de contaminantes en las grandes ciudades?,industrias,Quemadas,Vehículos
+21,AIRE CONTAMINADO,¿En cuál de estos dispositivos se encuentran los CFC's?,Celulares,Electrodomésticos,Refrigeradores
+22,AIRE CONTAMINADO,¿Cuáles de estas medidas ayuda a controlar mejor la calidad del aire en relación a vehículos?,Conducción defensiva,Cambio de combustible,Uso de catalizadores
+23,AIRE CONTAMINADO,¿Cuál de los contaminantes procede de centrales energéticas que queman carbón o petróleo?,Ozono,Nitrógeno,Dióxido de azufre
+24,ARAÑA,¿Cuál de estas arañas no causa accidentes graves en Brasil?,Marrón,Araña errante brasileña,Tarántula
+25,ARAÑA,¿Cuál es la región geográfica de Brasil donde ocurre la mayoría de los accidentes por arañas?,Sudeste,Nordeste,Sur
+26,ARAÑA,¿Cuál de estas arañas presenta una picadura casi imperceptible?,Tarántula,Araña errante brasileña,Marrón
+27,ARAÑA,¿Qué puede hacerse para ayudar a aliviar el dolor ocasionado por un accidente con araña?,Exprimir el lugar,Succión con la boca,Compresa tibia
+28,TOSFERINA,¿Qué enfermedad se caracteriza por la tos larga?,Sarampión,Meningitis,Tosferina
+29,TOSFERINA,"¿Si se tiene tos larga, chillido y vómitos se sospecha de qué enfermedad?",Influenza,Tuberculosis,Tosferina
+30,TOSFERINA,¿Qué bacteria es causadora de la tosferina?,C. tetani,C. diphtheriae,B. pertussis
+31,TOSFERINA,¿Cuál vacuna protege de la tosferina a los niños menores de 1 año?,BCG ,Triple viral,Pentavalente
+32,TOSFERINA,¿Cuál es la principal medida de prevención de la tosferina?,uso de preservativos,Antibiótico,Vacuna
+33,TOSFERINA,¿Qué antibiótico es recomendado para el tratamiento de la tosferina?,Rifampicina,Tamiflu,Azitromicina
+34,DENGUE/ZIKA/CHIK,¿Con qué periodicidad debe realizarse la eliminación de criaderos? ,Diaria,Mensual,Semanal
+35,DENGUE/ZIKA/CHIK,¿Cuál de las providencias no favorece la protección para las mujeres embarazadas? ,Usar mosquiteros,Limpiar la casa,Pasar aceite en la piel
+36,DENGUE/ZIKA/CHIK,¿Cómo se transmite el dengue?,Besos,Abrazos,Picadura de mosquito
+37,DENGUE/ZIKA/CHIK,¿El uso de aire acondicionado mata el mosquito Aedes?,Sólo ventilador,Sí,No
+38,DENGUE/ZIKA/CHIK,¿Una persona con dengue puede hacer uso de aspirina y otros medicamentos similares?,Sí,Solamente aspirina,No puede
+39,DENGUE/ZIKA/CHIK,¿En qué período del día usted puede ser picado por el Aedes aegypti?,Sólo por la mañana,Sólo por la noche,"Mañana, tarde y noche"
+40,DENGUE/ZIKA/CHIK,¿El aire acondicionado de la mi sala de trabajo puede ser un criadero del Aedes aegypti?,No,Sólo ventiladores,Sí
+41,DENGUE/ZIKA/CHIK,¿Todas las personas infectadas por el virus Zika desarrollan síntomas?,Sí,Solamente niños,No
+42,DENGUE/ZIKA/CHIK,¿Cómo evitar el contagio por el virus Zika?,Tomar baño,Tomar vitaminas,Usar repelentes
+43,DENGUE/ZIKA/CHIK,¿Qué es el Zika?,Una enfermedad,Un mosquito,Un virus
+44,DENGUE/ZIKA/CHIK,¿Cuál de los siguientes síntomas se considera una señal de alerta para gestante?,Mareos matinales,Congestión nasal,Manchas rojas
+45,DENGUE/ZIKA/CHIK,¿Cuál de las siguientes enfermedades es transmitida por mosquitos? ,Sífilis,Tuberculosis,Chikungunya
+46,DENGUE/ZIKA/CHIK,¿Cuál es una señal de gravedad en el individuo con fiebre?,Tos,Diarrea,Sangrados
+47,DESASTRES,"En casos de desmoronamiento o deslizamiento de tierra, ¿a quién llamar?",SAMU (192),CVV (141),Defensa Civil (199)
+48,DESASTRES,"En casos de incendios, ¿el Cuerpo de Bomberos debe ser accionado mediante qué teléfono?",192,194,193
+49,DESASTRES,"¿Qué hacer en caso de accidentes por animales ponzoñosos, después de una inundación? ",Chupar en el lugar,Capturar al animal,Buscar hospital
+50,DESASTRES,"En caso de que encuentre animales ponzoñosos en su residencia, ¿a quién debe accionar?",SAMU (192),Defensa Civil (199),Bomberos (193)
+51,DESASTRES,¿Dónde no debe quedarse usted en caso de incidencias de rayos?,En carro o autobús,En casa o edificio,Abajo de árbol
+52,DESASTRES,"Si una persona es alcanzada por un rayo, ¿qué puede suceder?",Nada,Solamente quemaduras,Quemaduras y muerte
+53,DESASTRES,"En una situación de lluvia fuerte, donde las calles se inundan, ¿qué hacer?",Jugar en el agua,Atravesar la inundación,Buscar abrigo
+54,DESASTRES,"Si usted encuentra una mochila abandonada, ¿qué debe hacer?",Abrir,Llevar a casa,Accionar a las autoridades
+55,DESASTRES,"Al depararse con un objeto que tenga el símbolo radioactivo, ¿qué hacer?",Manipular el objeto,Llevar a casa,Accionar a las autoridades
+56,DESASTRES,¿Qué debe hacer en caso de que reciba alguna correspondencia sospechosa?,Devolver,Abrir,Accionar a las autoridades
+57,DESASTRES,"Se usted está en la calle y se depara con una fuga de producto químico, ¿a quién accionar? ",SAMU (192),Policía Civil (197),Bomberos (193)
+58,DESASTRES,¿Cuáles los peligros que el agua de inundaciones esconde?,Ninguno,Gripe,Leptospirosis
+59,DIFTERIA,¿Cómo se conoce popularmente a la difteria?,Parálisis flácida ,Tos larga,Laringotraqueobronquitis
+60,DIFTERIA,"En general, ¿cuál es el período de incubación para la difteria?",5 a 15 días,5 a 10 días,1 a 6 días
+61,DIFTERIA,¿Por cuánto tiempo el portador puede eliminar el bacilo de la difteria?,1 año,3 meses o más,6 meses o más
+62,DIFTERIA,¿Qué vacuna se recomienda para prevenir difteria en adultos?,Triple viral,BCG,Doble adulto
+63,DIFTERIA,¿Cuál es la medida terapéutica es más eficaz en el tratamiento de la difteria?,Antibioticoterapia,Vacuna,Suero antidiftérico
+64,DIFTERIA,¿Cuál es la medida de prevención más eficaz para la difteria?,antibioticoterapia,Uso de preservativos,Vacunación
+65,ENFERMEDAD DE CHAGAS,¿Cuál es el agente causante de la Enfermedad de Chagas?,Bacteria,Virus,Protozoario
+66,ENFERMEDAD DE CHAGAS,¿Cuál es el insecto transmisor de la Enfermedad de Chagas?,Avispas,Mosquitos ,Chinches
+67,ENFERMEDAD DE CHAGAS,¿Cuál de estas formas no transmite la Enfermedad de Chagas?,Transfusión de sangre,Alimento contaminado,Contacto con personas
+68,ENFERMEDAD DE CHAGAS,"¿Qué chinches, al picar a las personas, pueden transmitir la Enfermedad de Chagas?",Todos,Solamente las hembras,Sólo los infectados
+69,ENFERMEDAD DE CHAGAS,¿Cuál es el principal síntoma de la fase aguda de la Enfermedad de Chagas?,Dolores en las juntas,Tos,Fiebre constante
+70,ENFERMEDAD DE CHAGAS,¿Cómo se realiza el diagnóstico de confirmación de la Enfermedad de Chagas?,Análisis de orina,Análisis de heces,Análisis de sangre
+71,ENFERMEDAD DE CHAGAS,¿La Enfermedad de Chagas tiene tratamiento específico ofrecido por el SUS? ,Sí. Es gratuito,No,"Sí, pero se paga"
+72,ENFERMEDAD DE CHAGAS,¿Cuáles de estas no es una forma de prevenirse contra la Enfermedad de Chagas?,Usar mosquiteros,Limpiar patios,Remover agua estancada
+73,ENFERMEDAD DE CHAGAS,"En caso de que una persona tenga fiebre por más de 7 días, ¿qué debe hacer?",Tomar antibiótico,Tomar antipiréticos,Buscar al SUS
+74,ETS/SIDA,¿Qué hacer después de tener contacto con sangre o semen que puedan estar contaminados por VIH?,Nada,Tomar baño,Buscar al SUS
+75,ETS/SIDA,¿Discriminar a las personas que viven con VIH/sida es un crimen previsto en ley en Brasil?,No,Depende del motivo,Sí
+76,ETS/SIDA,¿Quién tiene VIH necesita estar muy enfermo para tener derecho al tratamiento del SUS?,Sí,No tiene tratamiento,Todos tienen derecho
+77,ETS/SIDA,¿VIH es la misma cosa que SIDA?,Sí,VIH es sigla de sida,No
+78,ETS/SIDA,¿El condón es la única forma de prevención de VIH?,Sí,No. Solamente DIU,No
+79,ETS/SIDA,¿Por qué tomar los medicamentos para tratar el VIH?,Para curar el sida,Para vivir peor,Para vivir mejor
+80,ETS/SIDA,"Si descubro que tengo VIH, ¿cuándo debo comenzar a tomar mis medicinas?",Cuando me sienta mal,No tiene medicina,Inmediatamente
+81,ETS/SIDA,¿Existe vacuna o cura para el SIDA?,Sí,Sólo para mujeres,No
+82,ETS/SIDA, ¿Quién tiene VIH toma muchas medicinas todos los días?,Sí,No,Depende del caso
+83,ETS/SIDA,¿Es verdad que los medicamentos para el VIH causan efectos colaterales?,No. Esto es un mito,Sólo en niños,Sí
+84,ETS/SIDA,¿Cuáles de estos son efectos colaterales del tratamiento de VIH?,Depresión,Delirio,Mareos y vómitos
+85,ETS/SIDA,¿HPV es una infección sexualmente transmisible que puede ser evitada con vacuna?,Sólo en niños,No,Sí
+86,ETS/SIDA,¿Cuál de estas opciones no es una enfermedad sexualmente transmisible?,Sífilis,HPV,Dengue
+87,ETS/SIDA,¿Cómo prevenirse de todas las infecciones sexualmente transmisibles (IST)?,Abstinencia sexual,Fidelidad,Usando condón
+88,ETS/SIDA,¿Es más seguro usar dos condones al mismo tiempo?,Sí,"Sí, como máximo 3",No
+89,ÉBOLA,¿Qué es el ébola?,Bacteria,Malformación fetal,Virus
+90,ESCORPIÓN,¿Qué animal ponzoñoso causa el mayor número de accidentes en Brasil?,Serpiente,Araña,Escorpión
+91,ESCORPIÓN,¿En qué lugares es común la presencia de escorpiones?,Piscinas y lagos,En árboles,Basureros y drenaje
+92,ESCORPIÓN,¿Cuál es el principal síntoma clínico presentado en accidentes por escorpiones?,Lagrimeo,Hinchazón,Dolor intenso
+93,ESCORPIÓN,¿En qué casos una víctima de accidente por escorpión debe recibir suero anti-escorpiónico?,En todos,Solamente en graves,Moderados y graves
+94,ESCORPIÓN,¿Qué puede ser hecho para ayudar a aliviar el dolor después de la picadura de escorpión?,Exprimir el lugar,Succión del veneno ,Compresa tibia
+95,ESQUISTOSOMIASIS,¿Cómo se transmite la esquistosomiasis?,Por el estornudo,Contacto con el suelo,Contacto con caracol
+96,ESQUISTOSOMIASIS,¿Cómo es el diagnóstico de la esquistosomiasis?,Análisis de orina,Análisis de sangre,Análisis de heces
+97,ESQUISTOSOMIASIS,¿Cómo se conoce también a la esquistosomiasis?,Coloración amarillenta,Mal de siete días,Barriga de agua
+98,ESQUISTOSOMIASIS,La esquistosomiasis es una enfermedad:,Bacteriana,Viral,Parasitaria
+99,ESQUISTOSOMIASIS,El agente causante de la esquistosomiasis es:,Ascaris lumbricoides,Clamydia tracomatis,Schistosoma mansoni
+100,PRUEBAS DE LABORATORIO,"En casos de deshidratación, ¿puede haber alteración en los análisis de sangre?",No,Sí,Sí
+101,PRUEBAS DE LABORATORIO,"Al realizar análisis de laboratorio, ¿debemos comunicar el uso de medicinas?",No,Tal vez sea importante,Sí
+102,PRUEBAS DE LABORATORIO,¿Dónde puedo realizar el análisis de laboratorio?,Solamente red privada,Solamente red pública,En ambas
+103,PRUEBAS DE LABORATORIO,¿Qué hacer para el brazo no quede morado después de la recolección de sangre? ,Sacudir el brazo,Esperar desaparecer,Compresa local
+104,FIEBRE AMARILLA,La Fiebre Amarilla es transmitida por:,Mordedura de murciélago,Alimento contaminado,Picadura de mosquito
+105,FIEBRE AMARILLA,¿La Fiebre Amarilla Silvestre es transmitida por mosquitos de que género?,Aedes,Anopheles,Haemagogus
+106,FIEBRE AMARILLA,Cuáles de los siguientes síntomas son clásicos de la Fiebre Amarilla:,Dolor en las articulaciones,Dolor de cabeza,Piel amarillenta
+107,FIEBRE AMARILLA,¿Cuál de estas no es una forma de prevenirse contra la Fiebre Amarilla?,Vacuna,Repelente,Protector solar
+108,FIEBRE AMARILLA,¿Cuál de estas no es una actividad de riesgo para la Fiebre Amarilla?,Camping,Pesca,Caminata nocturna
+109,FIEBRE AMARILLA,¿Cuál es el tratamiento disponible para la Fiebre Amarilla?,Antibióticos,Antiinflamatorios,No existe tratamiento
+110,FIEBRE AMARILLA,"Además del dengue, Zika y chikungunya, ¿qué otra enfermedad puede transmitir el Aedes aegypti?",Nyong-nyong,Filariosis,Fiebre Amarilla
+111,FIEBRE AMARILLA,¿Cuál de estos no representa uno de los posibles ciclos de transmisión de la Fiebre Amarilla?,Urbano,Silvestre,Acuático
+112,FIEBRE AMARILLA,"Además del hombre, ¿qué animal es huésped de la Fiebre Amarilla?",Ave,Perro,Mono
+113,FIEBRE AMARILLA,La Fiebre Amarilla es causada por,Bacteria,Protozoario,Virus
+114,FIEBRE AMARILLA,¿Los síntomas de la Fiebre Amarilla se confunden con los de qué enfermedad?,Enfermedad de Chagas,Leishmaniosis,Dengue
+115,FIEBRE AMARILLA,La medida más importante de prevención contra la Fiebre Amarilla es:,Lavarse el rostro,Lavarse las maños,Vacunación
+116,FIEBRE MACULOSA,¿Cuál es el vector de la fiebre maculosa?,Mosquito,Capibara,Garrapata
+117,FIEBRE MACULOSA,¿Cuáles de estos es un huésped de garrapatas de importancia médica para fiebre maculosa?,Cobra,Jaguar,Capibara
+118,FIEBRE MACULOSA,¿Cuáles son los ambientes de infección para la fiebre maculosa?,Áreas con basura,Áreas con mosquitos,Áreas con garrapatas
+119,FIEBRE MACULOSA,¿Cuáles de estos es un síntoma de la fiebre maculosa?,Diarrea,Vómito,Fiebre
+120,FIEBRE MACULOSA,"En caso de que usted manifieste los síntomas de la fiebre maculosa, ¿qué debe hacer?",Esperar pasar,Tomar líquidos,Buscar médico
+121,FIEBRE MACULOSA,¿Cuáles son las medidas de prevención para la fiebre maculosa que usted puede adoptar en su domicilio?,Eliminar agua estancada,Lavar baños,Limpiar patios
+122,FILARIASIS LINFÁTICA,¿Cuál es el mosquito Culex que transmite la filariasis linfática?,Anopheles,Aedes Aegypti,Culex quinquefasciatus
+123,FILARIASIS LINFÁTICA,Es una complicación de la filariasis linfática:,Sangrado gastrointestinal,Ceguera,Elefantiasis
+124,FILARIASIS LINFÁTICA,¿La filariasis linfática es una infección?,Viral,Bacteriana,Parasitaria
+125,ENFERMEDAD DE HANSEN,¿Qué es la enfermedad de Hansen?,Un virus,Un protozoario,Una enfermedad
+126,ENFERMEDAD DE HANSEN,"¿Es necesario separar los vasos, cubiertos y platos del paciente con enfermedad de Hansen?",Sí,Solamente platos,No
+127,ENFERMEDAD DE HANSEN,¿Cómo se contrae la enfermedad de Hansen?,Apretón de manos,Relación sexual,Contacto con enfermo
+128,INFLUENZA,¿Cuál es el más importante síntoma de la Influenza?,Vómitos,Dolor muscular,Fiebre alta
+129,INFLUENZA,¿Cuál es la enfermedad que es muy confundida con la Influenza?,Sinusitis,Esofagitis,Resfriado
+130,INFLUENZA,"¿El lavado y desinfección frecuentes de las manos, previenen la Influenza?",No,Sólo después de los alimentos,Sí
+131,INFLUENZA,¿Evitar contacto cercano con personas que presenten señales o síntomas de Influenza ayuda?,No,A partir de 1m,Sí
+132,INFLUENZA,"Cubrir nariz y boca cuando se estornuda o tose, ¿reduce la transmisión de la Influenza?",No ,Cubrir sólo la boca,Sí
+133,INFLUENZA,¿Brasil posee vacuna para la Influenza?,No,Sólo para H1N1,Sí
+134,INFLUENZA,¿La gestante puede recibir la vacuna de la Influenza?,No,"Sí, después de 3º mes",Sí
+135,INFLUENZA,¿En Brasil puede haber circulación de Influenza todo el año?,Sólo en el sudeste,No,Sí
+136,INFLUENZA,¿La población privada de libertad recibe la vacuna de Influenza?,No,> 5 años de reclusión,Sí
+137,INFLUENZA,¿Los portadores de enfermedades crónicas no transmisibles pueden recibir la vacuna de la Influenza?,No,Sólo cardiópatas,Sí
+138,ORUGA,¿Cuál es nombre de la oruga encontrada en Brasil cuyo accidente causa hemorragia?,Automeris,Hylesia,Lonomia
+139,ORUGA,¿Cómo sucede el envenenamiento por oruga?,Por la picadura,Por mordida,Contacto con cerdas
+140,ORUGA,¿Cuál de estas actividades lleva a riesgos mayores de accidentes por orugas del género Lonomia?,Acostarse en el césped,Correr en el césped,Subir a árboles
+141,LEISHMANIOSIS TEGUMENTARIA,¿Qué es la leishmaniosis tegumentar?,Enfermedad rara,Enfermedad crónica,Enfermedad infecciosa
+142,LEISHMANIOSIS TEGUMENTARIA,¿Cómo se caracteriza la úlcera típica de la leishmaniosis tegumentar cutánea?,Dolorosa,Dolorosa en la piel,Indoloro en la piel
+143,LEISHMANIOSIS TEGUMENTARIA,¿Cuál es el diagnóstico de confirmación de la leishmaniosis tegumentar?,Serológico,Clínico,Parasitológico
+144,LEISHMANIOSIS TEGUMENTARIA,¿En qué áreas normalmente ocurre la transmisión de leishmaniosis tegumentar?,Urbanizada,Costera,Silvestre y rural
+145,LEISHMANIOSIS TEGUMENTARIA,¿Cuáles de estos insectos transmite la leishmaniosis tegumentar?,Aedes aegypti,Chinches,Mosquito pólvora
+146,LEISHMANIOSIS TEGUMENTARIA,¿Dónde se desarrolla el vector de la leishmaniosis tegumentar?,Agua estancada,Casas bahareque,Lugares húmedos
+147,LEISHMANIOSIS TEGUMENTARIA,¿Cuáles de estas no es una forma de prevenirse de las leishmaniosis?,Mantener el patio limpio,Usar repelentes,Remover agua estancada
+148,LEISHMANIOSIS VISCERAL,¿Cómo se conoce popularmente a la leishmaniosis visceral?,Botón del Oriente,Bicho geográfico,Leishmaniosis
+149,LEISHMANIOSIS VISCERAL,"En Brasil, ¿en qué Región suceden la mayor parte de los casos de leishmaniosis visceral?",Región Sur,Región Norte,Región Nordeste
+150,LEISHMANIOSIS VISCERAL,¿Si no se trata la leishmaniosis visceral puede evolucionar hasta provocar fallecimiento?,No,Sólo en personas de edad avanzada,Sí
+151,LEISHMANIOSIS VISCERAL,¿Cuál de estos es síntomas de la leishmaniosis visceral?,Ceguera,Deshidratación,Fiebre
+152,LEISHMANIOSIS VISCERAL,¿Existe tratamiento para la leishmaniosis visceral?,No,Sólo en la red privada,"Sí, en el SUS"
+153,LEISHMANIOSIS VISCERAL,¿Qué prueba está disponible en el SUS para el diagnóstico de la leishmaniosis visceral?,Análisis de sangre,Ultrasonografía,Prueba rápida
+154,LEISHMANIOSIS VISCERAL,¿Cuál es el principal reservatorio de leishmaniosis en el área urbana?,Gallina,Ser Humano,Perro
+155,LEISHMANIOSIS VISCERAL,¿Cuál es la principal forma de transmisión de la leishmaniosis visceral entre los canes?,Mordedura,Contacto con la orina,Picadura de insectos
+156,LEISHMANIOSIS VISCERAL,¿Cuál de estos es uno de las principales señales clínicas de la leishmaniosis visceral en los canes?,Agresividad,Piel amarillenta,Lesiones en la piel
+157,LEISHMANIOSIS VISCERAL,¿Cuáles de estos insectos transmite la leishmaniosis visceral al hombre?,Aedes aegypti,Chinches,Mosquito pólvora
+158,LEISHMANIOSIS VISCERAL,¿Dónde se desarrolla el insecto que transmite la leishmaniosis visceral?,Agua estancada,Casas bahareque,Lugares húmedos
+159,MALARIA,¿En qué región del Brasil están concentrados más del 99% de los casos de malaria?,Sudeste,Nordeste,Norte
+160,MALARIA,¿Cómo se transmite la malaria?,Mediante el agua,Por alimentos,Picadura de mosquito
+161,MALARIA,¿En cuál de estos lugares se encuentran las larvas del mosquito que transmite la malaria?,En cajas de agua,En desagüe,En lagos
+162,MALARIA,¿Cuál de estas es la manera adecuada de protegerse contra el mosquito de la malaria?,Tomando vitaminas,Tomar la vacuna,Usar mosquiteros
+163,MALARIA,¿Cuál es el mosquito que transmite la malaria?,Hembra del Aedes,Macho del Anopheles,Hembra del Anopheles
+164,MALARIA,"De entre las alternativas, ¿cuáles de estos síntomas son de malaria grave?:",Postración,Sangrados,Fiebre alta >41°C
+165,MALARIA,¿Cuáles son los medios más adecuados para interrumpir el ciclo de transmisión de la malaria?,Té y reposo,Es imposible,Diagnóstico oportuno
+166,MALARIA,¿Cuál es el síntoma más común de la malaria?,Falta de aire,Manchas en la piel,Fiebre alta
+167,MALARIA,¿Es posible tomar medicinas para evitar malaria?,No,Sólo importados,Sí
+168,MALARIA,¿Quién puede contraer malaria?,Solamente hombres,Solamente niños,Cualquier persona
+169,MALARIA,¿Cuáles son las señales y los síntomas más comunes de la malaria?,Manchas en la piel,Dolor en las articulaciones,Fiebre
+170,MALARIA,¿Puedo tener malaria más de una vez?,No,"Sí, dos veces",Sí
+171,MALARIA,¿Existe vacuna para la malaria?,Sí,Sólo para adultos,No
+172,MALARIA,¿Cómo se realiza el diagnóstico de la malaria?,Mediante la saliva,Licor,Por la sangre
+173,MALARIA,¿La malaria puede ser grave?,No,Siempre es grave,Sí
+174,MALARIA,¿Dónde está la región de malaria endémica en Brasil?,Sudeste,Nordeste,Norte
+175,MALARIA,¿Qué causa la malaria?,Virus,Bacteria,Plasmodium
+176,MALARIA,¿Puedo contraer malaria de otra persona?,"Sí, abrazando","Sí, besando",No
+177,MALARIA,¿A dónde debo ir para realizar el diagnóstico de malaria?,Farmacia,Vecino,SUS
+178,MALARIA,¿Dónde se trata malaria?,En la farmacia,En el vecino,En el SUS
+179,MALARIA,¿Cuánto cuesta tratar la malaria?,300 reales,50 reales,Gratuito en el SUS
+180,MALARIA,¿Existe malaria en Brasil?,"No, sólo en Asia","No, sólo en África",Sí
+181,MALARIA,¿Cuáles de estos continentes poseen casos de malaria?,América y Oceanía,Asia y Oceanía,América y África
+182,MALARIA,¿Cómo no se contrae la malaria?,Picadura de mosquito,Transfusión,Agua contaminada
+183,MALARIA,¿El tratamiento es un sólo para los tipos de malaria más comunes en Brasil (vivax y falciparum)?,Sí,No tiene tratamiento,No
+184,MALARIA,¿La fiebre es un síntoma de la malaria?,No,Solamente fiebre baja,Sí
+185,MALARIA,¿El mosquito que transmite dengue también transmite malaria?,Sí,Todas las enfermedades,No
+186,MALARIA,¿En qué órgano se reproduce el parásito de la malaria antes de atacar a los glóbulos rojos?,Piel,Bazo,Hígado
+187,MALARIA,¿Cuál es el período más probable para la picadura del mosquito que transmite la malaria?,Durante el día,Cuando llueve,"Mañana, tarde y noche"
+188,MALARIA,¿La malaria puede matar?,Sólo deja secuelas,No,Sí
+189,MALARIA,¿Las gestantes con malaria pueden tomar medicamentos normalmente?,Sí,Depende del caso,No
+190,MALARIA,¿Puedo tratar la malaria con té y plantas?,Sí,Solamente con té mate,No
+191,MALARIA,¿Debo evitar algún tipo de comida debido a los medicamentos de malaria?,Alimentos picantes,Alimentos grasosos,No
+192,MALARIA,¿Quiénes hospedan al parásito de la malaria en su ciclo de vida?,Solamente humano,Ninguno,Mosquito y humano
+193,MALARIA,¿Qué porcentaje aproximadamente de la población mundial está bajo riesgo de malaria?,0%,10%,50%
+194,MALARIA,¿Cuánto tiempo pasa desde la picadura del mosquito infectado hasta que la persona comienza a tener síntomas de malaria?,1 a 3 días,30 días,10 a 15 días
+195,MALARIA,¿Cualquier mosquito transmite malaria?,Sí,"No, sólo el Aedes","No, sólo el Anopheles"
+196,MALARIA,¿Cómo se transmite la malaria?,Mediante abrazo,Por beso,Picadura de mosquito
+197,MALARIA,¿Qué se puede hacer para evitar la malaria?,Comer frutas,Tomando té,Evitando el mosquito
+198,MALARIA,¿La malaria tiene cura?,En algunos casos,No,Sí
+199,MALARIA,¿Dónde me puedo vacunar contra la malaria?,En hospital privado,En farmacias,No existe vacuna
+200,MALARIA,¿Existe un repelente especial para combatir al mosquito de la malaria?,Sí,"Sí, importados",No
+201,MALARIA,¿El mosquito de la malaria se reproduce como el de la dengue?,Sí,No se reproduce,No
+202,MALARIA,¿Qué mosquito anopheles transmite la malaria? ¿El macho o la hembra?,Ambos,Sólo el macho,Sólo la hembra 
+203,MALARIA,"Si una mujer embarazada contrae malaria, ¿el bebé corre riesgo de vida?",Sólo la madre corre riesgo,No,Sí
+204,MALARIA,¿Para qué rango de edades puede ser más peligrosa la malaria?,Adolescentes,Adultos,Personas de edad avanzada y niños
+205,MALARIA,¿Es recomendable realizar el tratamiento de la malaria hasta el fin?,No,"No, sólo hasta la mitad",Sí
+206,MEDICAMENTOS,¿Cuál es la categoría de los medicamentos usados para tratamiento de infecciones bacterianas?,Antieméticos,Antivirales,Antibióticos
+207,MEDICAMENTOS,¿Cuál es la categoría de los medicamentos usados para tratamiento de dolores?,Antiácidos,Antineoplásicos,Analgésicos
+208,MEDICAMENTOS,¿Cuál es la categoría de los medicamentos usados para tratamiento del cáncer?,Antiulcerosos,Antiespasmódicos,Antineoplásicos
+209,MEDICAMENTOS,¿Dónde se puede encontrar la información más relevante sobre un medicamento?,Prescripción médica,Embalaje primario,Bula
+210,MEDICAMENTOS,Cualquier cuidado utilizado para curar o aliviar síntomas de una enfermedad es llamado:,Placebo,Vacuna,Medicina
+211,MEDICAMENTOS,Los medicamentos obtenidos directamente del extracto de plantas se llaman:,Infusión o té,Homeopáticos,Fitoterápicos
+212,MENINGITIS,¿Cuál de estas señales y síntomas son de meningitis?,Vómito,Tos,Rigidez de nuca
+213,MENINGITIS,¿Cuál es la enfermedad que genera inflamación de las meninges?,Derrame Cerebral,Trombosis,Meningitis
+214,MENINGITIS,¿El tipo más grave de meningitis es causado por qué microorganismo?,Virus,Hongos,Bacterias
+215,MICROCEFALIA,¿Qué es la microcefalia?,Bacteria,Virus,Malformación fetal
+216,ONCOCERCOSIS,¿Cuál es el mosquito que transmite la oncocercosis?,Aedes Aegypti,Culex,Simulium
+217,ONCOCERCOSIS,¿Cómo se conoce también a la oncocercosis?,Enfermedad del caracol,Enfermedad de la garrapata,Ceguera de los ríos
+218,ONCOCERCOSIS,¿Cuáles son los estados brasileños que registran casos de oncocercosis?,SC y RS,GEl y MT,AM y RR
+219,OTROS ANIMALES PONZOÑOSOS,¿Qué hacer en caso de un accidente por animal ponzoñoso?,Correr y saltar,Tomar té,Buscar médico
+220,OTROS ANIMALES PONZOÑOSOS,¿Cuál de estos animales es considerado ponzoñoso?,Rata,Murciélago hematófago,Phoneutria
+221,OTROS ANIMALES PONZOÑOSOS,¿Cuál de estos animales es considerado ponzoñoso?,Perro,Pez globo,Escorpión
+222,OTROS ANIMALES PONZOÑOSOS,¿Cuál de estos animales es considerado ponzoñoso?,Lagartija,Pez espada,Serpiente yararacusú
+223,OTROS ANIMALES PONZOÑOSOS,¿Cuál de estos animales es considerado ponzoñoso?,Serpiente de cristal,Pseudoescorpión,Tijereta
+224,OTROS ANIMALES PONZOÑOSOS,¿Cuál de estos animales es considerado ponzoñoso?,Serpiente ciega,Tiburón,Aguaviva
+225,POLIOMIELITIS,¿La poliomielitis es una enfermedad  causada por qué microorganismo?,Bacteria,Hongos,Virus
+226,POLIOMIELITIS,¿Cómo se conoce popularmente a la poliomielitis?,Laringotraqueobronquitis,Tos larga,Parálisis infantil
+227,POLIOMIELITIS,"En general, ¿cuál es el período de incubación para la poliomielitis?",1 a 6 días,5 a 15 días,7 a 12 días
+228,POLIOMIELITIS,¿Cuál es la principal medida de prevención para la poliomielitis?,Antibioticoterapia,Uso de preservativos,Vacunación
+229,POLIOMIELITIS,¿Los menores de 15 años que presenten parálisis flácida aguda se sospecha de que contrajeron qué enfermedad?,Tétanos,Tosferina,Poliomielitis
+230,RABIA,¿Quién transmite la rabia?,Mosquitos,Aves,Mamíferos
+231,RABIA,¿Cuáles de estos son los transmisores de la rabia?,Conejo y Hámster,Gallina y Pato,Perros y Gatos
+232,RABIA,¿Cuáles de estas opciones es un modo de transmisión de la rabia?,Contacto con basura,Picadura de mosquito,Mordedura
+233,RABIA,¿Cuáles de las opciones de abajo son síntomas de rabia en el hombre?,Manchas rojas,Diarrea,Espasmos musculares
+234,RABIA,¿Cuáles son las principales señales y síntomas de la rabia en el animal (perro o gato)?,Mueve la cola,Se pone manso,No se alimenta
+235,RABIA,¿Cómo prevenir la rabia?,No salir de casa,Evitar vertederos,Vacunar perros y gatos
+236,RABIA,¿La rabia humana tiene cura?,Sí,A veces,¡No tiene cura y mata!
+237,DESINFECTANTES,Los productos destinados a la limpieza de superficies inanimadas son:,Cosméticos,Antioxidantes,Desinfectantes
+238,DESINFECTANTES,Al ingerir o inhalar accidentalmente un producto desinfectante usted siempre debe:,Provocar vómito,Beber agua,Leer el rótulo
+239,SARAMPIÓN,¿El sarampión es una enfermedad infecto-contagiosa causada por?,Bacteria,Protozoarios,Virus
+240,SARAMPIÓN,La transmisión del virus del sarampión ocurre por:,Oral o fecal,Aedes aegypti,Vías respiratorias
+241,SARAMPIÓN,¿Cuál de estas es una señal característica del sarampión?,Conjuntivitis,Dolor de cabeza,Machas rojas
+242,SARAMPIÓN,¿Cuál es el período aproximado de incubación del sarampión?,5 días,3 días,10 días
+243,SARAMPIÓN,¿Cuál es la forma más eficaz de prevención contra el sarampión?,Uso de EPI,Aislamiento,Vacuna
+244,SARAMPIÓN,¿Cuál es el criterio de confirmación de un caso de sarampión?,Biopsia,Diagnóstico Imagen,Pruebas de Laboratorio
+245,SARAMPIÓN,¿Cuál es el plazo ideal para notificar un caso sospechoso de sarampión?,Hasta 48 horas,Hasta 72 horas,Hasta 24 horas
+246,SARAMPIÓN,¿Cuál es el plazo ideal para realizar un bloqueo de vacuna contra sarampión?,Hasta 1 mes ,Hasta 96 horas,Hasta 72 horas
+247,SARAMPIÓN,¿Cuál es el público no indicado para recibir la vacuna triple o tetra viral?,Personas de edad avanzada,Niño de 1 año,Gestantes  
+248,SALUD DEL TRABAJADOR Y SUS,La garantía de los derechos a la salud:,No es ley,No es obligatoria,Es ley
+249,SALUD DEL TRABAJADOR Y SUS,¿Cuál es la sigla del Sistema Único de Salud?,SISU,SINAN,SUS
+250,SALUD DEL TRABAJADOR Y SUS,"Para el SUS, están cubiertos por los derechos a la salud:",Trabajadores,Quien tiene seguro,Todos 
+251,SALUD DEL TRABAJADOR Y SUS,¿El uso del cinturón de seguridad es obligatorio para trabajos en alturas superiores a cuántos metros?,1 m,3 m,2 m 
+252,SALUD DEL TRABAJADOR Y SUS,Es correcto usar en incendio con líquidos inflamables:,Agua,Co2,Espuma 
+253,SALUD DEL TRABAJADOR Y SUS,¿Cuáles son los Límites mínimos y máximos de tolerancia al ruido?,85 a 110,80 a 115,85 a 115 
+254,SERPIENTE,"¿Qué debe hacerse, inmediatamente, en caso de accidente con serpiente?",Usar torniquete,Pasar alcohol,Buscar SUS
+255,SERPIENTE,¿Cuál de estas serpientes ponzoñosas es la que causa el mayor número de accidentes en Brasil?,Serpiente de cascabel,Coral,Yarará
+256,SERPIENTE,¿Cuál de estas serpientes es considerada ponzoñosa?,Anaconda,Boa,Yarará
+257,SERPIENTE,¿Qué debe hacerse al depararse con una serpiente?,Intentar capturar,Tomar una selfie,Llamar a la autoridad
+258,SERPIENTE,"¿Cuáles serpientes llevan a un cuadro clínico conocido popularmente como ""cara de borracho""?",Yarará y serpiente de cascabel,Anaconda y cascabel,Serpiente de cascabel y coral
+259,TÉTANOS,¿Qué vacuna es recomendada para prevenir tétanos en adultos?,Triple viral,VIP,Doble adulto
+260,TÉTANOS,¿Qué vacuna es recomendada para que las gestantes prevengan el tétanos neonatal?,BCG,Triple viral,Doble adulto
+261,TÉTANOS,¿Dónde puede ser encontrada la bacteria de tétanos?,Sólo en clavos,Sólo en el suelo,Diversos ambientes
+262,TÉTANOS,¿Cómo saber si usted tiene tétanos?,Pseudomembrana,Accesos de tos ,Rigidez muscular
+263,TÉTANOS,¿El tétanos es una enfermedad causada por qué microorganismo?,Virus,Hongos,Bacteria
+264,TÉTANOS ,¿Cuál es el agente etiológico del tétanos?,Salmonella entérica,Bordetella pertussis,Clostridium tetani
+265,TRACOMA,¿El tracoma es causado por?,Virus,Protozoarios,Bacteria
+266,TRACOMA,¿El tracoma es una enfermedad que ataca qué?,Nervios periféricos,Aparato digestivo,Los ojos
+267,TRACOMA,¿Cómo se trata el tracoma?,Analgésico,Antialérgico,Antibiótico
+268,TUBERCULOSIS,¿Qué es la tuberculosis?,Enfermedad viral,Enfermedad fúngica,Enfermedad bacteriana
+269,TUBERCULOSIS,¿Cuál es la bacteria que causa la tuberculosis?,Treponema pallidum,Bordetella pertusis,Bacilo de koch
+270,TUBERCULOSIS,¿Cuál es la vacuna que previne las formas más graves de la tuberculosis?,Influenza,Rubéola,BCG
+271,TUBERCULOSIS,¿Cómo se adquiere la tuberculosis?,Relación sexual,Mediante besos y abrazos,Tos o estornudo
+272,TUBERCULOSIS,¿Cuál es el órgano más frecuentemente afectado por la tuberculosis?,Hígado,Corazón,Pulmón
+273,TUBERCULOSIS,"¿Cuáles son los órganos, además del pulmón, que a tuberculosis también puede atacar?",Solamente intestino,Solamente huesos,Todos
+274,TUBERCULOSIS,¿Todas las personas con tuberculosis pueden transmitir la enfermedad?,Sí,Sólo los fumadores,No
+275,TUBERCULOSIS,¿Cuáles de estos son síntomas comunes de tuberculosis?,Diarrea,Desmayo,Tos
+276,TUBERCULOSIS,¿Después de cuánto tiempo de tos debo sospechar de tuberculosis? ,1 semana,2 semanas,3 semanas
+277,TUBERCULOSIS,¿Qué servicio de salud debe ser buscado en el caso de sospecha de tuberculosis? ,Servicio especial,Primeros auxilios,UBS
+278,TUBERCULOSIS,¿Cuánto tiempo dura el tratamiento de la tuberculosis?,2 meses,4 meses,Como mínimo 6 meses
+279,TUBERCULOSIS,¿Cuáles son las pruebas realizadas para el diagnóstico de la tuberculosis pulmonar?,Análisis de sangre,Análisis de orina,Pruebas de esputo
+280,TUBERCULOSIS,¿Cuánto cuesta el tratamiento para quien tiene tuberculosis?,R$ 20.00,R$ 300.00,Es gratuito en SUS
+281,TUBERCULOSIS,¿Qué debe evitar usted para prevenirse contra la tuberculosis?,Abrazos,Besos,Lugares cerrados
+282,TUBERCULOSIS,¿Quién ofrece los medicamentos para el tratamiento de la tuberculosis?,Red privada,OMS,SUS
+283,TUBERCULOSIS,"¿Es necesario separar vasos, cubiertos, platos y otros utensilios del paciente con tuberculosis?",Sí,Solamente platos,No
+284,TUBERCULOSIS,¿Qué enfermedad debe ser investigada y detectada en las personas con tuberculosis?,Sífilis,Paperas,VIH
+285,UVHA,En el tratamiento de la Enfermedad Diarreica Aguda se recomienda:,Iniciar antibiótico,Tomar antidiarreico,Tomar líquidos
+286,UVHA,¿Cuál de estas es una causa común de diarrea?,Agua contaminada ,Alimento contaminado,Todas las de arriba
+287,UVHA,¿Cuál de estas enfermedades está asociada a la diarrea crónica?,Virosis,Salmonelosis,Enfermedad celiaca
+288,UVHA,¿Las diarreas pueden ser causadas por?,Bacterias,Virus,Todas las de arriba
+289,UVHA,"Además de heces pastosas, ¿cuál de estos síntomas también puede ocurrir durante la diarrea?",Dolor abdominal,Náuseas,Todas las de arriba
+290,UVHA,¿Cuál de estos fluidos es el más indicado para evitar y tratar la deshidratación?,Caldo de vegetales,Soda,Agua y suero casero
+291,UVHA,¿Cómo se llama la diarrea con sangre visible en las heces?,Difteria,Diarrea crónica,Disentería
+292,UVHA,¿Qué es más importante para seleccionar alimentos vendidos en la calle?,Higiene,Alimento conservado,Todas las de arriba
+293,UVHA,¿Qué alimento ofrece mayor riesgo para el Botulismo?,Agua,Verduras frescas ,Embutidos
+294,UVHA,¿Cómo prevenir la transmisión de la diarrea por rotavirus?,Higiene de frutas,Uso de repelente,Higiene de las manos
+295,UVHA,¿Cuál de estas enfermedades puede ser transmitida de la madre para el hijo durante la gestación?,Gripe,Fiebre tifoidea,Toxoplasmosis
+296,UVHA,¿Los niños de hasta 2 años no pueden ingerir miel debido al riesgo de adquirir qué enfermedad?,Tosferina ,Malaria,Botulismo
+297,VACUNACIÓN DEL VIAJANTE,¿Cuánto tiempo antes de viajar necesita verificar si sus vacunas están actualizadas? ,1 día,1 semana,4 a 8 semanas
+298,VACUNACIÓN DEL VIAJANTE,¿En Brasil el adulto también debe recibir vacunas periódicamente?,No,Sólo en emergencia,Sí
+299,VACUNACIÓN DEL VIAJANTE,Vacunarse para fiebre amarilla antes de viajar:,No es necesario,Depende de la edad,Es necesario
+300,VACUNACIÓN DEL VIAJANTE,¿En qué sitios puede obtenerse información completa y confiable sobre vacunación?,ANVISA,Ministerio de Salud,Todas las opciones
+301,VIGIPEQ,¿Qué hacer en casos de intoxicaciones por contaminantes químicos?,Inducir vómito,Ingerir leche,Buscar médico
+302,VIGIPEQ,¿Qué hacer en casos de intoxicaciones por agrotóxicos?,Inducir vómito,Ingerir leche,Buscar médico

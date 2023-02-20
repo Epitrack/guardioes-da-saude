@@ -1,0 +1,9 @@
+AWS_ACCESS_KEY_ID="AKIAJAVDJY4Z6NE4KABA"
+AWS_SECRET_ACCESS_KEY="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"
+@reboot /usr/local/bin/forever start /home/ubuntu/forever/production.json
+SHELL=/bin/bash
+*/10 * * * * /usr/bin/python /home/ubuntu/gds-api/usr/export_surveys.py &> /home/ubuntu/gds_report.log
+*/15 * * * * /usr/bin/python /home/ubuntu/gds-api/usr/export_users.py &> /home/ubuntu/gds_users.log
+0 10 * * 2 /usr/bin/python /home/ubuntu/gds-api/usr/gdscrons/reminder.py &> /home/ubuntu/reminder.log
+0 0,12,18 * * * /bin/bash /home/ubuntu/backup/backup.sh -k ABUWBBR432423325 -s fdsfladjfkleiofjiewfjioe432424== -b gdsbkp -r us-east-1
+0 6,12,23 * * * /usr/bin/R --vanilla /home/ubuntu/gds-api/usr/R/alerta_servidor.r &> /home/ubuntu/saida_alerta.lo
