@@ -1,0 +1,332 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Manage Content</h1>
+                <% if (contents.length > 0) { %>
+                <div class="row">
+                    <div class="panel panel-primary filterable">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Existing contents</h1>
+
+                            <div class="pull-right">
+                                <button class="btn btn-default btn-xs btn-filter"><span
+                                        class="glyphicon glyphicon-filter"></span> Filter
+                                </button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <tr class="filters">
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="#"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Title"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Type"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="app"
+                                               disabled></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% for(var i = 0; i < contents.length; i++) { %>
+                                <tr>
+                                    <td><%= contents[i].id %></td>
+                                    <td><%= contents[i].title %></td>
+                                    <td><%= contents[i].type %></td>
+                                    <td><%= contents[i].app %></td>
+                                    <td>
+                                        <a href="contents/edit/<%= contents[i].id %>"
+                                           title="Edit"
+                                           class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="contents/delete/<%= contents[i].id %>"
+                                           title="Delete"
+                                           class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                <div class="row">
+                    <div class="alert alert-info"
+                         role="alert"><strong>Data is empty.</strong> Add some contents first.
+                    </div>
+                </div>
+                <% } %>
+                <%- partial('../partials/flash.ejs') %>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Add Content</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/content/create"
+                                  method="post">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="app_list">App Token</label>
+                                            <select name="app_token"
+                                                    id="app_list"
+                                                    class="form-control dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"><span class="caret"></span>
+                                                <% for (var i = 0;i < apps.length;i++){ %>
+                                                <option value="<%= apps[i].token %>"><%= apps[i].name %></option>
+                                                <% } %>
+                                            </select>
+
+                                            <p class="help-block">Select the app for this page</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="content_title">Title</label>
+                                            <input type="text"
+                                                   name="title"
+                                                   class="form-control"
+                                                   id="content_title"
+                                                   placeholder="Page Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="content_type">Type</label>
+                                            <select name="type"
+                                                    id="content_type"
+                                                    class="form-control dropdown-toggle"
+                                                    disabled
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <option></option>
+                                                <option value="list">List</option>
+                                                <option value="detail">Detail</option>
+                                                <option value="map">Map</option>
+                                            </select>
+                                            <p class="help-block">Select the type of content of the page</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row hidden content_edit"
+                                     style="padding:20px"
+                                     id="content_list">
+                                    <hr/>
+                                    <h4>Select list items</h4>
+                                </div>
+                                <div class="row hidden content_edit"
+                                     style="padding:20px"
+                                     id="content_detail">
+                                    <hr/>
+                                    <h3>Add page content</h3>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="content_body">Content_body</label>
+                                            <textarea class="form-control" name="body" id="content_body"></textarea>
+                                            <span class="help-block">Accepts HTML</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="content_img">Image URL</label>
+                                            <input type="tel"
+                                                   name="image"
+                                                   class="form-control"
+                                                   id="content_img"
+                                                   placeholder="An image for this page">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="col">
+                                            <h4>Page info</h4>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="content_phone">Phone Number</label>
+                                                <input type="tel"
+                                                       name="phone"
+                                                       class="form-control"
+                                                       id="content_phone"
+                                                       placeholder="A phone number for this page">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="app_latitude">Latitude</label>
+                                                <input type="tel"
+                                                       name="body_latitude"
+                                                       class="form-control lat"
+                                                       id="body_latitude"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="app_longitude">Longitude</label>
+                                                <input type="tel"
+                                                       name="body_longitude"
+                                                       class="form-control lon"
+                                                       id="body_longitude"
+                                                       placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button"
+                                                    style="margin-top: 30px"
+                                                    id="location_picker"
+                                                    data-toggle="modal" data-target="#pickerModal2"
+                                                    class="btn btn-info btn-sm btn-block picker_btn">Pick a location
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row hidden content_edit"
+                                     style="padding:20px"
+                                     id="content_map">
+                                    <hr/>
+                                    <h4>Query for map places</h4>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="app_latitude">Latitude</label>
+                                                <input type="tel"
+                                                       name="latitude"
+                                                       class="form-control lat"
+                                                       id="app_latitude"
+                                                       placeholder="Latitude to search places">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="app_longitude">Longitude</label>
+                                                <input type="tel"
+                                                       name="longitude"
+                                                       class="form-control lon"
+                                                       id="app_longitude"
+                                                       placeholder="Longitude to search places">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="button"
+                                                    style="margin-top: 30px"
+                                                    id="location_picker"
+                                                    data-toggle="modal" data-target="#pickerModal"
+                                                    class="btn btn-info btn-sm btn-block picker_btn">Pick a location
+                                            </button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group" id="slider_wrapper">
+                                                <label for="map_radius">Select Search Radius</label>
+                                                <input id="map_radius" class="slider" data-slider-id='radiusSlider' type="text"
+                                                       data-slider-min="1000" data-slider-max="50000" data-slider-step="1"
+                                                       data-slider-value="14"/>
+                                                <span id="rangeLabel"><span id="rangeLabelVal">1000</span>m</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="content_title">Venue type</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="venue_tipe"
+                                                       placeholder="hospital, pharmacy, etc">
+                                                <span class="help-block">Type the category of venue. Click <a
+                                                        href="https://developers.google.com/places/supported_types?hl=en-us">here</a> to see all available types</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row"
+                                    style="padding:20px">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox"
+                                                   name="is_required"
+                                                   value="true"> Show page in the Home Menu
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <button type="submit"
+                                                    class="btn btn-success btn-lg btn-block">Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var current_content;
+        var current_token = $('#app_list').val();
+        var si=0;
+        $('#content_type').prop('disabled', false);
+        $('#content_type').change(function (e) {
+            var type = $('#content_type').val();
+            if (current_content) {
+                current_content.addClass('hidden');
+            }
+            current_content = $('#content_' + type);
+            current_content.removeClass('hidden');
+            if(type =='map' && si==0) {
+                $("input.slider").slider();
+                $("input.slider").on("slide", function(slideEvt) {
+                    $("#rangeLabelVal").text(slideEvt.value);
+                });
+                si = 1;
+            }
+        });
+        $('#app_list').change(function (e) {
+            current_token = $('#app_list').val();
+        });
+    });
+</script>
+<style>
+    #slider_wrapper {
+        border: 1px solid #dce4ec;
+        border-radius: 4px;
+        padding:10px;
+    }
+    #radiusSlider{
+        margin:10px;
+    }
+    #radiusSlider .slider-selection {
+        background: #bababa;
+    }
+</style>

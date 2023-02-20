@@ -1,0 +1,34 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a href="/admin">
+                Admin
+            </a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'admin', null) ? 'active' : 'item' %>">
+            <a href="/admin">Manage Admins</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'app', null) ? 'active' : 'item' %>">
+            <a href="/admin/apps">App configuration</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'user', null) ? 'active' : 'item' %>">
+            <a href="/admin/users">Manage Users</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'diseases', null) ? 'active' : 'item' %>">
+            <a href="/admin/diseases">Manage Diseases</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'symptoms', null) ? 'active' : 'item' %>">
+            <a href="/admin/symptoms">Manage Symptoms</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'translations', 'index') ? 'active' : 'item' %>">
+            <a href="/admin/translations">Manage Translations</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'content', 'index') ? 'active' : 'item' %>">
+            <a href="/admin/content">Manage Content</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'surveys', 'index') ? 'active' : 'item' %>">
+            <a href="/admin/surveys">Query Surveys</a>
+        </li>
+    </ul>
+</div><!-- /#sidebar-wrapper -->

@@ -1,0 +1,147 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Manage Internationalization</h1>
+                <% if (translations.length > 0) { %>
+                <div class="row">
+                    <div class="panel panel-primary filterable">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Existing Translations</h1>
+                            <div class="pull-right">
+                                <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <tr class="filters">
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="#"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Key"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Value"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Group"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Locale"
+                                               disabled></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% for(var i = 0; i < translations.length; i++) { %>
+                                <tr>
+                                    <td><%= translations[i].id %></td>
+                                    <td><%= translations[i].key %></td>
+                                    <td><%= translations[i].value %></td>
+                                    <td><%= translations[i].group %></td>
+                                    <td><%= translations[i].locale %></td>
+                                    <td>
+                                        <a href="translations/edit/<%= translations[i].id %>"
+                                           title="Edit"
+                                           class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="translations/delete/<%= translations[i].id %>"
+                                           title="Delete"
+                                           class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                <div class="row">
+                    <div class="alert alert-info"
+                         role="alert"><strong>Data is empty.</strong> Add some translations first.</div>
+                </div>
+                <% } %>
+                <%- partial('../partials/flash.ejs') %>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Add Translation</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/translations/create"
+                                  method="post">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="translation_key">Key</label>
+                                            <input type="text"
+                                                   name="key"
+                                                   class="form-control"
+                                                   id="translation_key"
+                                                   placeholder="Translation Key">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="translation_value">Value</label>
+                                            <input type="text"
+                                                   name="value"
+                                                   class="form-control"
+                                                   id="translation_value"
+                                                   placeholder="Translation Value">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="locale_list">Default Locale</label>
+                                            <select name="locale"
+                                                    id="locale_list"
+                                                    class="form-control dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"><span class="caret"></span></select>
+                                            <p class="help-block">Default language for this translation</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="translation_group">Group</label>
+                                            <input type="text"
+                                                   name="group"
+                                                   class="form-control"
+                                                   id="translation_group"
+                                                   placeholder="Translation Group">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <button type="submit"
+                                                    class="btn btn-success btn-lg btn-block">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

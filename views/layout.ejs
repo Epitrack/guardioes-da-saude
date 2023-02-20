@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="http://<%=req.headers.host%>/">
+    <title>Epihack :: Platform Admin</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/profile.css">
+    <link rel="stylesheet" href="/styles/simple-sidebar.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <!--STYLES END-->
+    <link rel="stylesheet" href="http://seiyria.com/bootstrap-slider/stylesheets/bootstrap-slider.css">
+</head>
+
+  <body>
+   <%- partial('navbar.ejs') %>
+   <%- body %>
+
+
+
+
+
+         <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+         <!--TEMPLATES-->
+         
+         <!--TEMPLATES END-->
+
+
+         <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+   <script type="text/javascript"
+           src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+         <!--SCRIPTS-->
+         <script src="/js/dependencies/sails.io.js"></script>
+         <script src="/js/dependencies/jquery.js"></script>
+         <script src="/js/dependencies/bootstrap-datepicker.min.js"></script>
+         <script src="/js/dependencies/bootstrap.min.js"></script>
+         <script src="/js/dependencies/jquery-sortable.js"></script>
+         <script src="/js/dependencies/locationpicker.jquery.min.js"></script>
+         <script src="/js/epihack/admin.js"></script>
+         <!--SCRIPTS END-->
+   <script src="http://seiyria.com/bootstrap-slider/javascripts/bootstrap-slider.js"></script>
+   <script>
+       $("#menu-toggle").click(function (e) {
+           e.preventDefault();
+           $("#wrapper").toggleClass("toggled");
+       });
+       var page = '<%=typeof page == 'undefined' ? 'unknown' : page%>';
+   </script>
+   <div class="modal fade"
+                              id="pickerModal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button"
+                           class="close"
+                           data-dismiss="modal"
+                           aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title">Pick a location</h4>
+               </div>
+               <div class="modal-body">
+                   <div id="map_container"
+                        style="width: 560px; height: 400px;"></div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button"
+                           class="btn btn-success"
+                           data-dismiss="modal"
+                           aria-label="Close">Ok</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+   <div class="modal fade"
+        id="pickerModal2">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button"
+                           class="close"
+                           data-dismiss="modal"
+                           aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title">Pick a location</h4>
+               </div>
+               <div class="modal-body">
+                   <div id="map_container2"
+                        style="width: 560px; height: 400px;"></div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button"
+                           class="btn btn-success"
+                           data-dismiss="modal"
+                           aria-label="Close">Ok</button>
+               </div>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+   <div class="modal fade"
+        id="add_symptom_modal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button"
+                           class="close"
+                           data-dismiss="modal"
+                           aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title">Add Symptom</h4>
+               </div>
+               <form action="/symptoms/create"
+                     method="post">
+                   <div class="modal-body">
+                       <input type="hidden"
+                              name="client"
+                              value="dashboard">
+                       <input type="hidden"
+                              name="redirect_to"
+                              value="<%= req.url %>">
+                       <div class="form-group">
+                           <label for="symptom_name">Name</label>
+                           <input type="text"
+                                  name="name"
+                                  class="form-control"
+                                  id="symptom_name"
+                                  placeholder="Symptom Name">
+                       </div>
+                       <div class="form-group">
+                           <label for="symptom_code">Symptom Code</label>
+                           <input type="text"
+                                  name="code"
+                                  class="form-control"
+                                  id="symptom_code"
+                                  placeholder="Symptom Code">
+                           <p class="help-block">An unique code to identify this symptom.</p>
+                       </div>
+                       <div class="form-group checkbox">
+                           <label>
+                               <input type="checkbox"
+                                      name="is_required"
+                                      value="true"> Is required
+                           </label>
+                           <p class="help-block">Check if the symptom is always present in the disease.</p>
+                       </div>
+                       <div class="form-group">
+                           <label for="symptom_priority">Priority</label>
+                           <input type="text"
+                                  name="priority"
+                                  class="form-control"
+                                  id="symptom_priority"
+                                  value="0"
+                                  placeholder="Symptom Priority">
+                           <p class="help-block">A number indicating the priority this of this symptom when related to a disease. A higher value means the user presenting this symptom is more likely to have this disease.</p>
+                       </div>
+
+                   </div>
+                   <div class="modal-footer">
+                       <button type="submit"
+                               class="btn btn-success">Save</button>
+                   </div>
+               </form>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+
+   <% if (typeof(user) != 'undefined') { %>
+   <div class="modal fade"
+        id="add_household_member_modal">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button"
+                           class="close"
+                           data-dismiss="modal"
+                           aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title">Add Household Member</h4>
+               </div>
+               <form action="/household/create"
+                     method="post">
+                   <div class="modal-body">
+                       <input type="hidden"
+                              name="client"
+                              value="dashboard">
+                       <input type="hidden"
+                              name="redirect_to"
+                              value="<%= req.url %>">
+                       <input type="hidden"
+                              name="user"
+                              value="<%= user.id %>">
+                       <div class="form-group">
+                           <label for="household_name">Nickname</label>
+                           <input type="text"
+                                  name="nick"
+                                  class="form-control"
+                                  id="household_name"
+                                  placeholder="Member nickname">
+                       </div>
+                       <div class="form-group">
+                           <label for="user_picture">Picture</label>
+                           <input type="text"
+                                  name="picture"
+                                  class="form-control"
+                                  id="user_picture"
+                                  placeholder="URL for the user picture. Optional">
+                       </div>
+                       <div class="form-group">
+                           <div class="form-group">
+                               <label for="user_gender">Gender</label>
+                           </div>
+                           <label class="radio-inline"><input type="radio"
+                                                              name="gender"
+                                                              value="F">Female</label>
+                           <label class="radio-inline"><input type="radio"
+                                                              name="gender"
+                                                              value="M">Male</label>
+                       </div>
+                       <div class="form-group"
+                            style="margin-bottom: 40px">
+                           <div class="form-group"
+                                style="margin-bottom: 0">
+                               <label for="user_dob">Date of Birth</label>
+                           </div>
+                           <div class="form-group col-md-6"
+                                style="margin-top:0;padding-top:0;margin-left: 0;padding-left: 0">
+                               <select name="dob_month"
+                                       id="user_dob_month"
+                                       class="form-control dropdown-toggle col-md-6"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true"
+                                       aria-expanded="false">
+                                   <span class="caret"></span>
+                                   <option value=''>--Select Month--</option>
+                                   <option selected
+                                           value='01'>Jan</option>
+                                   <option value='02'>Feb</option>
+                                   <option value='03'>Mar</option>
+                                   <option value='04'>Apr</option>
+                                   <option value='05'>May</option>
+                                   <option value='06'>Jun</option>
+                                   <option value='07'>Jul</option>
+                                   <option value='08'>Aug</option>
+                                   <option value='09'>Sep</option>
+                                   <option value='10'>Oct</option>
+                                   <option value='11'>Nov</option>
+                                   <option value='12'>Dec</option>
+                               </select>
+                           </div>
+                           <div class="form-group col-md-6"
+                                style="padding-left:3px;padding-right: 0">
+                               <select name="dob_year"
+                                       id="user_dob_year"
+                                       class="form-control dropdown-toggle"
+                                       data-toggle="dropdown"
+                                       aria-haspopup="true"
+                                       aria-expanded="false"><span class="caret"></span></select>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="submit"
+                               class="btn btn-success">Save</button>
+                   </div>
+               </form>
+           </div><!-- /.modal-content -->
+       </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+   <% } %>
+
+  </body>
+</html>

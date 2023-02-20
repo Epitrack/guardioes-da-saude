@@ -1,0 +1,149 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Edit Configuration</h1>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">App Configuration</h1>
+                    </div>
+                    <div class="panel-body">
+                        <input type="hidden"
+                               id="app_language"
+                               value="<%=app.locale%>">
+                        <form action="/app/update"
+                              method="post">
+                            <input type="hidden"
+                                   name="client"
+                                   value="dashboard">
+                            <input type="hidden"
+                                   name="id"
+                                   value="<%=app.id%>">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="app_name">Name</label>
+                                        <input type="text"
+                                               name="name"
+                                               value="<%=app.name%>"
+                                               class="form-control"
+                                               id="app_name"
+                                               placeholder="App Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="app_url">URL</label>
+                                        <input type="text"
+                                               name="url"
+                                               value="<%=app.url%>"
+                                               class="form-control"
+                                               id="app_url"
+                                               placeholder="Default URL for the app">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="locale_list">Default Locale</label>
+                                        <select name="locale"
+                                                id="locale_list"
+                                                class="form-control dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"><span class="caret"></span></select>
+                                        <p class="help-block">Default language for internationalization</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="app_location">Default Location</label>
+                                        <input type="text"
+                                               name="location"
+                                               class="form-control"
+                                               value="<%=app.location%>"
+                                               id="app_location"
+                                               placeholder="Readable Default Location for the app">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="app_latitude">Latitude</label>
+                                        <input type="tel"
+                                               name="latitude"
+                                               class="form-control"
+                                               value="<%=app.latitude%>"
+                                               id="app_latitude"
+                                               placeholder="Latitude for the center of the map">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="app_longitude">Longitude</label>
+                                        <input type="tel"
+                                               name="longitude"
+                                               value="<%=app.longitude%>"
+                                               class="form-control"
+                                               id="app_longitude"
+                                               placeholder="Longitude for the center of the map">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label for="app_token">App Token</label>
+                                        <input type="text"
+                                               name="token"
+                                               class="form-control"
+                                               value="<%=app.token%>"
+                                               id="app_token"
+                                               placeholder="Security token for API operations">
+                                        <p class="help-block">Client token to protect API operations. All non-public API endpoints must send this token in the header of the request</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" style="margin-top: 30px"
+                                            id="generate_token_hash"
+                                            class="btn btn-info btn-sm btn-block">Generate Hash</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label for="app_secret">App Secret</label>
+                                        <input type="text"
+                                               name="secret"
+                                               class="form-control"
+                                               value="<%=app.secret%>"
+                                               id="app_secret"
+                                               placeholder="Security secret used as salt for password encryption">
+                                        <p class="help-block">This secret is used when encrypting new user's passwords</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" style="margin-top: 30px"
+                                            id="generate_secret_hash"
+                                            class="btn btn-info btn-sm btn-block">Generate Hash</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-success btn-lg btn-block">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,416 @@
+<div class="container" style="margin-top: 60px">
+  <div id="wrapper">
+        <%- partial('sidebar.ejs')%>
+      <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>USER SIGNUP AND LOGIN</h1>
+                        <p>Users are the primary entity of the platform. Each user represents a single individual or a household.
+                            The main purpose of the User in the system is to submit surveys based on it's location and symptoms.</p>
+                        <p>Users are unique in the platform by email, but they are contained within an app. When creating a user, the <code>app_token</code> must be passed bounding this user and all surveys to the target app.</p>
+                        <p class="help-block"><strong>Schema Flexibility:</strong> Even though models have a defined schema, you can extend the model's attributes by passing additional params in the create/update endpoints, ex: role, description, name, etc.</p>
+                        <h3>API Endpoints</h3>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/user/create</span></h4>
+                        <p>Creates a new user. Since most of the data gathering is anonymous, Users don't have names, but they can have nicknames assigned.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>nick</code></td>
+                                <td>The user nickname</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The user's email address.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>The user's password</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>dob</code></td>
+                                <td>The user's date of birth in the MM/YYYY format.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>gender</code></td>
+                                <td>The user's gender. Either 'M' or 'F'</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>picture</code></td>
+                                <td>An URL for the user's picture. If not supplied a default picture will be used based on user's gender.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>client</code></td>
+                                <td>The client requesting the endpoint. Accepted values: 'dashboard' or 'api'. Defaults to 'api'. This influences the response format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <pre><code>{
+    "error": false,
+    "status": true,
+    "message": "User Created",
+    "user": {
+        "nick": "superjg",
+        "email": "superjg@gmail.com",
+        "dob": "08/1988",
+        "gender": "M",
+        "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Male.png",
+        "app": "5595beba1b277bae3a8b6d45",
+        "createdAt": "2015-07-02T23:32:26.158Z",
+        "updatedAt": "2015-07-02T23:32:26.158Z",
+        "id": "5595ca0a596d2a583b5b8e40"
+    }
+}</code></pre>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/user/update</span></h4>
+                        <p>Updates an user's information.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>id</code></td>
+                                <td>The id for the target user</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>nick</code></td>
+                                <td>The user nickname</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The user's email address.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>The user's password</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>dob</code></td>
+                                <td>The user's date of birth in the MM/YYYY format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>gender</code></td>
+                                <td>The user's gender. Either 'M' or 'F'</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>picture</code></td>
+                                <td>An URL for the user's picture. If not supplied a default picture will be used based on user's gender.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>client</code></td>
+                                <td>The client requesting the endpoint. Accepted values: 'dashboard' or 'api'. Defaults to 'api'. This influences the response format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <pre><code>{
+    "error": false,
+    "status": true,
+    "message": "User Updated",
+    "user": [{
+        "email": "email@guinetik.com",
+        "nick": "Guinetiks",
+        "gender": "M",
+        "tw": "",
+        "fb": "",
+        "dob": "08/1988",
+        "app": "558c361e722d7cc32194c01e",
+        "createdAt": "2015-06-25T17:19:32.603Z",
+        "updatedAt": "2015-07-02T23:48:06.213Z",
+        "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Female.png",
+        "id": "558c3824722d7cc32194c025"
+    }]
+}</code></pre>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/users</span></h4>
+                        <p>Returns an array with all users' basic info.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <pre><code>{
+    "error": false,
+    "data": [{
+        "app": "558c361e722d7cc32194c01e",
+        "email": "email@guinetik.com",
+        "nick": "Guinetiks",
+        "gender": "M",
+        "tw": "",
+        "fb": "",
+        "dob": "08/1988",
+        "createdAt": "2015-06-25T17:19:32.603Z",
+        "updatedAt": "2015-07-02T23:48:06.213Z",
+        "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Female.png",
+        "id": "558c3824722d7cc32194c025"
+    },
+    {
+        "app": "558c361e722d7cc32194c01e",
+        "nick": "Guinetik",
+        "email": "guineftik@gmail.comfwf",
+        "dob": "08/1988",
+        "gender": "M",
+        "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Male.png",
+        "createdAt": "2015-07-02T23:30:32.986Z",
+        "updatedAt": "2015-07-02T23:30:32.986Z",
+        "id": "5595c998596d2a583b5b8e3f"
+    },
+    {
+        "app": "5595beba1b277bae3a8b6d45",
+        "nick": "superjg",
+        "email": "superjg@gmail.com",
+        "dob": "08/1988",
+        "gender": "M",
+        "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Male.png",
+        "createdAt": "2015-07-02T23:32:26.158Z",
+        "updatedAt": "2015-07-02T23:32:26.158Z",
+        "id": "5595ca0a596d2a583b5b8e40"
+    }
+    ]
+}</code></pre>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/user/get</span></h4>
+                        <p>Gets an user's information. by id or email. This endpoint aggregates all users's household members and surveys.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Query</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>user_id</code></td>
+                                <td>The id for the target user</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td>The email for the target app</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "data": [
+    {
+        "surveys": [
+        {
+            "symptoms": "fever,cough",
+            "app_token": "d41d8cd98f00b204e9800998ecf8427e",
+            "ill_date": "2015-06-02T00:00:00.000Z",
+            "lat": -7.680952973201468,
+            "lon": -39.97215499999999,
+            "zip": "",
+            "hadTravelledAbroad": false,
+            "travelLocation": "",
+            "hadContagiousContact": false,
+            "user": "558c3824722d7cc32194c025",
+            "household": "55916477ef869f572cce22da",
+            "coordinates": [
+            -39.97215499999999,
+            -7.680952973201468
+            ],
+            "createdAt": "2015-06-29T17:09:19.820Z",
+            "updatedAt": "2015-06-29T17:09:19.820Z",
+            "id": "55917bbfef869f572cce22db"
+        },
+        {
+            "symptoms": "fever,headache,body_aches",
+            "app_token": "d41d8cd98f00b204e9800998ecf8427e",
+            "ill_date": "2015-07-06T00:00:00.000Z",
+            "lat": -10.112092219189984,
+            "lon": -57.90184249999999,
+            "zip": "",
+            "hadTravelledAbroad": false,
+            "travelLocation": "China",
+            "hadContagiousContact": false,
+            "user": "558c3824722d7cc32194c025",
+            "household": "55916477ef869f572cce22da",
+            "coordinates": [
+            -57.90184249999999,
+            -10.112092219189984
+            ],
+            "createdAt": "2015-07-02T17:49:22.101Z",
+            "updatedAt": "2015-07-02T17:49:22.101Z",
+            "id": "559579a2f7ccbe3336e59339"
+        }],
+        "household": [
+            {
+            "user": "558c3824722d7cc32194c025",
+            "nick": "chesecake",
+            "picture": "https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Male.png",
+            "gender": "M",
+            "dob": "05/2005",
+            "createdAt": "2015-06-29T15:29:59.174Z",
+            "updatedAt": "2015-06-29T15:29:59.174Z",
+            "id": "55916477ef869f572cce22da"
+        }],
+        "app": {
+            "name": "Epihack",
+            "language": "pt-BR",
+            "url": "http://epihack.me",
+            "location": "Brazil",
+            "latitude": -15,
+            "longitude": -49,
+            "default": true,
+            "token": "d41d8cd98f00b204e9800998ecf8427e",
+            "id": "558c361e722d7cc32194c01e"
+        },
+        "email": "email@guinetik.com",
+        "nick": "   guinetik    ",
+        "gender": "M",
+        "tw": "",
+        "fb": "",
+        "dob": "08/1988",
+        "createdAt": "2015-06-25T17:19:32.603Z",
+        "updatedAt": "2015-06-29T19:02:22.561Z",
+        "picture": "   https://cdn3.iconfinder.com/data/icons/softicons/PNG/User-Male.png   ",
+        "id": "558c3824722d7cc32194c025"
+    }
+    ]
+}</code></pre></p>
+                        <!--
+                        DELETE
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/user/delete/:user_id</span></h4>
+                        <p>Removes an user from the platform. Only a platform admin or the user himself can execute this endpoint.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>user_token</code> or <code>admin_token</code></td>
+                                <td>The logged user's own JWT token or an admin JWT.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "status": true,
+    "message": "User Removed"
+}</code></pre></p>
+                        <hr/>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- /#page-content-wrapper -->
+  </div>
+</div>

@@ -1,0 +1,170 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <% if(req.session.UserKind == 'admin') { %>
+            <%- partial('../admin/sidebar.ejs') %>
+            <% } else { %>
+            <%- partial('sidebar.ejs') %>
+            <% } %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <div class="row">
+                    <h1 class="page-header">Edit User</h1>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">User</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/user/update"
+                                  method="post">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <input type="hidden"
+                                       name="id"
+                                       value="<%= user.id %>">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="user_email">Email</label>
+                                            <input type="email"
+                                                   name="email"
+                                                   value="<%= user.email %>"
+                                                   class="form-control"
+                                                   id="user_email"
+                                                   placeholder="User E-mail">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="user_password">Password</label>
+                                            <input type="password"
+                                                   name="password"
+                                                   class="form-control"
+                                                   id="user_password"
+                                                   placeholder="User Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="user_gender">Gender</label>
+                                        </div>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="gender"
+                                                <% if (user.gender == 'F') { %>
+                                                                           checked
+                                                <% } %>
+                                                                           value="F">Female</label>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           name="gender"
+                                                <% if (user.gender == 'M') { %>
+                                                                           checked
+                                                <% } %>
+                                                                           value="M">Male</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-bottom: 0">
+                                            <label for="user_gender">Date of Birth</label>
+                                        </div>
+                                        <div class="form-group col-md-6"
+                                             style="margin-top:0;padding-top:0;margin-left: 0;padding-left: 0">
+                                            <select name="dob_month"
+                                                    id="user_dob_month"
+                                                    class="form-control dropdown-toggle col-md-6"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <option value=''>--Select Month--</option>
+                                                <option selected value='01'>Jan</option>
+                                                <option value='02'>Feb</option>
+                                                <option value='03'>Mar</option>
+                                                <option value='04'>Apr</option>
+                                                <option value='05'>May</option>
+                                                <option value='06'>Jun</option>
+                                                <option value='07'>Jul</option>
+                                                <option value='08'>Aug</option>
+                                                <option value='09'>Sep</option>
+                                                <option value='10'>Oct</option>
+                                                <option value='11'>Nov</option>
+                                                <option value='12'>Dec</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6" style="padding-left:3px;padding-right: 0">
+                                            <select name="dob_year"
+                                                    id="user_dob_year"
+                                                    class="form-control dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"><span class="caret"></span></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="user_nick">Nickname</label>
+                                            <input type="text"
+                                                   name="nick"
+                                                   value="<% if(user.nick) { %> <%= user.nick %> <% } %>"
+                                                   class="form-control"
+                                                   id="user_nick"
+                                                   placeholder="Nickname. Optional">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="user_picture">Picture</label>
+                                            <input type="text"
+                                                   name="picture"
+                                                   value="<% if(user.picture) { %> <%= user.picture %> <% } %>"
+                                                   class="form-control"
+                                                   id="user_picture"
+                                                   placeholder="URL for the user picture. Optional">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group col-md-6"
+                                             style="margin-top:0;padding-top:0;margin-left: 0;padding-left: 0">
+                                            <label for="user_twitter">Twitter</label>
+                                            <input type="text"
+                                                   name="tw"
+                                                   class="form-control"
+                                                   id="user_twitter"
+                                                   placeholder="Twitter. Optional">
+                                        </div>
+                                        <div class="form-group col-md-6" style="padding-right: 0">
+                                            <label for="user_facebook">Facebook</label>
+                                            <input type="text"
+                                                   name="fb"
+                                                   class="form-control"
+                                                   id="user_facebook"
+                                                   placeholder="Facebook. Optional">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-success btn-lg btn-block">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var dob_month = '<%=user.dob.split('/')[0]%>';
+    var dob_year = '<%=user.dob.split('/')[1]%>';
+</script>

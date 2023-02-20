@@ -1,0 +1,475 @@
+<div class="container" style="margin-top: 60px">
+  <div id="wrapper">
+        <%- partial('sidebar.ejs')%>
+      <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>SYMPTOMS AND DISEASES</h1>
+                        <p>The platform supports managing symptoms and diseases for advanced epidemiological data.</p>
+                        <p>Diseases are unique collections of multiple symptoms. Each symptom is defined by a name and a code.</p>
+                        <p>The idea is to create a system flexible enough to support multiple scenarios while keeping the survey submission process as simple as possible.</p>
+                        <p>Whenever the user submits a survey, he should submit a list of symptoms, where each item of the list corresponds to a symptom's code.</p>
+                        <p>Defining diseases and symptoms helps filter surveys with greater precision thanks to the symptom's params:</p>
+                        <p>A symptom may have a <code>required</code> property indicating whether this symptom must be present in a survey for the user to be considered ill with that disease. <i>For example, fever is always present in Dengue, so it would be considered required by the system.</i></p>
+                        <p>A symptom can also have a <code>priority</code> indicator indicating how often it manifests in the disease. <i>Continuing with the Dengue example, a fever would be considered priority 100, rash could be priority 50, while 'bleeding in nose and gums' would have priority 20.</i></p>
+                        <p>The same symptom can be applied to multiple diseases, but keep in mind that the priority and required params will also be present to determine survey filters.</p>
+                        <p>You can also create copies of symptoms with different params and assign them to different diseases.</p>
+                        <p>Take a look in this fake scenario:</p>
+                        <table class="table table-user-information text-info">
+                            <thread>
+                                <tr>
+                                    <th>Symptom Name</th>
+                                    <th>Symptom code</th>
+                                    <th>Required</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <th>Sore Throat</th>
+                                <th>sore-throat</th>
+                                <th>No</th>
+                                <th>50</th>
+                            </tr>
+                            <tr>
+                                <th>Coughing</th>
+                                <th>cough</th>
+                                <th>No</th>
+                                <th>100</th>
+                            </tr>
+                            <tr>
+                                <th>Fever</th>
+                                <th>fever-high</th>
+                                <th>Yes</th>
+                                <th>100</th>
+                            </tr>
+                            <tr>
+                                <th>Fever</th>
+                                <th>fever-mild</th>
+                                <th>No</th>
+                                <th>40</th>
+                            </tr>
+                            <tr>
+                                <th>Diarrhea</th>
+                                <th>diarrhea</th>
+                                <th>Yes</th>
+                                <th>100</th>
+                            </tr>
+                            <tr>
+                                <th>Diarrhea</th>
+                                <th>occasional-diarrhea</th>
+                                <th>No</th>
+                                <th>20</th>
+                            </tr>
+                            <tr>
+                                <th>Skin rash</th>
+                                <th>rash</th>
+                                <th>No</th>
+                                <th>40</th>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>Here we have a list os symptoms with different properties. Associating this generic list can be used to create multiple diseases.</p>
+                        <table class="table table-user-information text-primary">
+                            <thread>
+                                <tr>
+                                    <th>Disease Name</th>
+                                    <th>Disease code</th>
+                                    <th>Symptoms</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <th>Flu</th>
+                                <th>common-flu</th>
+                                <th><li>sore-throat</li>
+                                    <li>fever</li>
+                                    <li>cough</li>
+                                    <li>occasional-diarrhea</li>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Common Cold</th>
+                                <th>common-cold</th>
+                                <th><li>sore-throat</li>
+                                    <li>fever-mild</li>
+                                    <li>cough</li>
+                                    <li>occasional-diarrhea</li></th>
+                            </tr>
+                            <tr>
+                                <th>Dengue</th>
+                                <th>dengue</th>
+                                <th>
+                                    <li title="using fever-high a second time">fever-high</li>
+                                    <li>diarrhea</li>
+                                    <li>rash</li>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Swine flu</th>
+                                <th>swine-flu-2015</th>
+                                <th>
+                                    <li title="using fever-high a second time">fever-high</li>
+                                    <li>diarrhea</li>
+                                    <li>sore-throat</li>
+                                    <li>cough</li>
+                                </th>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p>With a flexible collection of symptoms is possible to query surveys for specific diseases and use the already existing symptoms to query for new diseases without having to wait for survey results. For more information on how to query surveys based on diseases and symptoms, refer to the surveys docs.</p>
+                        <h3>API Endpoints</h3>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/symptom/create</span></h4>
+                        <p>Creates a new symptom in the platform.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The symptom's name</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>code</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The symptom's code. The convention is to use hypens and slug syntax. Ex: fever-in-dengue, cough-swine-flu, etc</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>priority</code></td>
+                                <td>A number indicating the priority this of this symptom when related to a disease. A higher value means the user presenting this symptom is more likely to have the disease.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>required</code></td>
+                                <td>Whether the symptom is always present in the diseases</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/symptom/update</span></h4>
+                        <p>Updates a symptom by id.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>id</code></td>
+                                <td>The id for symptom.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The symptom's name</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>code</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The symptom's code. The convention is to use hypens and slug syntax. Ex: fever-in-dengue, cough-swine-flu, etc</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>priority</code></td>
+                                <td>A number indicating the priority this of this symptom when related to a disease. A higher value means the user presenting this symptom is more likely to have the disease.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>required</code></td>
+                                <td>Whether the symptom is always present in the diseases</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/symptoms</span></h4>
+                        <p>Returns an array with all symptoms.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/disease/create</span></h4>
+                        <p>Creates a new disease in the platform.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The disease's name</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>code</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The disease's code. You can use an ICD-10 code, or any slug expression.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/diseases/symptoms/add</span></h4>
+                        <p>Adds a symptom to a disease</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>disease_id</code></td>
+                                <td>The disease's id</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>symptom_id</code></td>
+                                <td>The symptom's id</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/diseases/symptoms/remove</span></h4>
+                        <p>Removes a symptom from a disease</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>disease_id</code></td>
+                                <td>The disease's id</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>symptom_id</code></td>
+                                <td>The symptom's id</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/diseases/symptoms</span></h4>
+                        <p>Updates a disease's symptoms. Requires admin token and client token This endpoint receive a comma-separated list of symptom's ids and updates the disease_id's symptoms. Note that this action overrides any existing symptoms. If you want to just add a new symptom without overriding, use /diseases/symptoms/add. If you want to remove a symptom, use /diseases/symptom/remove</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>disease_id</code></td>
+                                <td>The disease's id</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>symptoms</code></td>
+                                <td>The comma-separated list of symptom's ids</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/diseases/delete/:disease_id</span></h4>
+                        <p>Removes a disease from the platform.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</div>

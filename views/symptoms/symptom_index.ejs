@@ -1,0 +1,91 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Manage Symptoms</h1>
+                <% if (symptoms.length > 0) { %>
+                <div class="row">
+                    <div class="panel panel-primary filterable">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Existing Symptoms</h1>
+                            <div class="pull-right">
+                                <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <tr class="filters">
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="#"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Name"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Code"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Priority"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Required"
+                                               disabled></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% for(var i = 0; i < symptoms.length; i++) { %>
+                                <tr>
+                                    <td><%= symptoms[i].id %></td>
+                                    <td><%= symptoms[i].name %></td>
+                                    <td><%= symptoms[i].code %></td>
+                                    <td><%= symptoms[i].priority %></td>
+                                    <td><%= symptoms[i].is_required %></td>
+                                    <td>
+                                        <a href="symptoms/edit/<%= symptoms[i].id %>"
+                                           title="Edit"
+                                           class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="symptoms/delete/<%= symptoms[i].id %>"
+                                           title="Delete"
+                                           class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-lg"
+                                    data-toggle="modal"
+                                    data-target="#add_symptom_modal">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Add New Symptom
+                            </button>
+                            <a class="btn btn-info btn-lg"
+                               href="admin/diseases">
+                                <i class="glyphicon glyphicon-list-alt"></i>
+                                Manage Diseases
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                <div class="row">
+                    <div class="alert alert-info"
+                         role="alert"><strong>Data is empty.</strong> Add some symptoms first.</div>
+                </div>
+                <% } %>
+                <%- partial('../partials/flash.ejs') %>
+            </div>
+        </div>
+    </div>
+</div>

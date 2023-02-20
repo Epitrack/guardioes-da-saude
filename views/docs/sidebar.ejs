@@ -1,0 +1,32 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'index') ? 'sidebar-brand active' : 'sidebar-brand' %>">
+            <a href="/docs">
+                API Documentation
+            </a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'config') ? 'active' : 'item' %>">
+            <a href="/docs/config">App configuration</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'admin') ? 'active' : 'item' %>">
+            <a href="/docs/admin">Admin creation and login</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'user') ? 'active' : 'item' %>">
+            <a href="/docs/user">User signup and login</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'diseases') ? 'active' : 'item' %>">
+            <a href="/docs/diseases">Adding Diseases/Symptoms</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'surveys') ? 'active' : 'item' %>">
+            <a href="/docs/surveys">Posting User Surveys</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'map') ? 'active' : 'item' %>">
+            <a href="/docs/map">Query Surveys (Map)</a>
+        </li>
+        <li class="<%= Helper.isCurrentPage(req, 'docs', 'other') ? 'active' : 'item' %>">
+            <a href="/docs/other">Other</a>
+        </li>
+    </ul>
+</div>
+<!-- /#sidebar-wrapper -->

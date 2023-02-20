@@ -1,0 +1,299 @@
+<div class="container" style="margin-top: 60px">
+  <div id="wrapper">
+        <%- partial('sidebar.ejs')%>
+      <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>APP CONFIGURATION</h1>
+                        <p>The platform supports different apps as clients to the platform.</p>
+                        <p>Think of an app configuration as a site or a mobile application that consumes the API.</p>
+                        <p>All platform users and surveys must be bound to an app by passing the <code>app_token</code> parameter when creating users/surveys.</p>
+                        <p>Keep in mind that most API calls require a valid <code>app_token</code> parameter in order to retreive the correct information.</p>
+                        <hr/>
+                        <h3>API Endpoints</h3>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/app/create</span></h4>
+                        <p>Creates a new app in the platform.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                                <th>Required</th>
+                            </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The app name</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>url</code></td>
+                                <td>The url for the app. Think of it as a namespace</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>locale</code></td>
+                                <td>The app language locale. Usualy by the ISO standarts, i.e: pt-BR, en-US, es-PR, etc.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>location</code></td>
+                                <td>Human readable location for the app. Ex: Brazil, USA, Portugal.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>latitude</code></td>
+                                <td>The default latitude for the center of the map</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>longitude</code></td>
+                                <td>The default longitude for the center of the map</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The token that will be used to idenfity this app.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_secret</code></td>
+                                <td>Security secret used as salt for password encryption. This secret is used when encrypting new user's passwords and generating JSON Web Tokens. Notice that after creating, this secret should not be updated or else already encrypted user's passwords will stop working.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "status": true,
+    "message": "App Created",
+    "app": {
+        "name": "Guinetik",
+        "url": "http://guinetik.com",
+        "location": "Brazil",
+        "latitude": -444322,
+        "longitude": -3332,
+        "token": "1",
+        "locale": "PT-br",
+        "default": false
+    }
+}</code></pre></p>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/app/update</span></h4>
+                        <p>Updates an app by id</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>id</code></td>
+                                <td>The id for the target app</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The app name</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>url</code></td>
+                                <td>The url for the app. Think of it as a namespace</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>locale</code></td>
+                                <td>The app language locale. Usualy by the ISO standarts, i.e: pt-BR, en-US, es-PR, etc.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>location</code></td>
+                                <td>Human readable location for the app. Ex: Brazil, USA, Portugal.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>latitude</code></td>
+                                <td>The default latitude for the center of the map</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>longitude</code></td>
+                                <td>The default longitude for the center of the map</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "status": true,
+    "message": "Configuration Updated",
+    "config": [
+        {
+        "name": "Epitrack",
+        "url": "http://epitrack.com.br",
+        "location": "Brazil",
+        "latitude": -444322,
+        "longitude": -3332,
+        "token": "fwefwefffwgweffwfeee",
+        "locale": "PT-br",
+        "default": false,
+        "language": "pt-BR",
+        "id": "5595beba1b277bae3a8b6d45"
+        }
+    ]
+}</code></pre></p>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/app/get</span></h4>
+                        <p>Gets an app information. by id or token.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Query</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_id</code></td>
+                                <td>The id for the target app</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>token</code></td>
+                                <td>The token for the target app</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "data": [{
+        "name": "Epihack",
+        "language": "pt-BR",
+        "url": "http://epihack.me",
+        "location": "Brazil",
+        "latitude": -15,
+        "longitude": -49,
+        "default": true,
+        "token": "d41d8cd98f00b204e9800998ecf8427e",
+        "id": "558c361e722d7cc32194c01e"
+    }]
+}</code></pre></p>
+                        <!--
+                        DELETE
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/app/delete/:app_id</span></h4>
+                        <p>Removes an app from the platform</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "status": true,
+    "message": "Configuration Removed"
+}</code></pre></p>
+                        <hr/>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</div>

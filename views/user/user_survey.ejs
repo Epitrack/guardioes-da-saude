@@ -1,0 +1,198 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+          <%- partial('sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Report Symptoms</h1><%- partial('../partials/flash.ejs') %>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Survey</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/survey/create"
+                                  id="survey_form"
+                                  method="post">
+                                <input type="hidden"
+                                       name="redirect_to"
+                                       value="<%= req.url %>">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <input type="hidden"
+                                       id="survey_symptoms"
+                                       name="symptoms">
+                                <input type="hidden"
+                                       name="user_id"
+                                       value="<%= session.User.id %>">
+                                <fieldset>
+                                    <legend>Survey details</legend>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="app_list">App Token</label>
+                                            <select name="app_token"
+                                                    id="app_list"
+                                                    class="form-control dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"><span class="caret"></span>
+                                                <% for (var i = 0;i < apps.length;i++){ %>
+                                                <option value="<%= apps[i].token %>"><%= apps[i].name %></option>
+                                                <% } %>
+                                            </select>
+                                            <p class="help-block">Select the app for this survey</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="household_list">Household Member</label>
+                                            <select name="household_id"
+                                                    id="household_list"
+                                                    class="form-control dropdown-toggle"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"><span class="caret"></span>
+                                                <option>Me</option>
+                                                <% for (var i = 0;i < user.household.length;i++){ %>
+                                                <option value="<%= user.household[i].id %>"><%= user.household[i].nick %></option>
+                                                <% } %>
+                                            </select>
+                                            <p class="help-block">Select the target household member</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="ill_date">Ill date</label>
+                                            <input type="text"
+                                                   name="ill_date"
+                                                   class="form-control"
+                                                   id="ill_date"
+                                                   placeholder="When did you start feeling ill?">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="app_latitude">Latitude</label>
+                                        <input type="tel"
+                                               name="lat"
+                                               class="form-control"
+                                               id="app_latitude"
+                                               placeholder="User's Location">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="app_longitude">Longitude</label>
+                                        <input type="tel"
+                                               name="lon"
+                                               class="form-control"
+                                               id="app_longitude"
+                                               placeholder="User's Location">
+                                    </div>
+                                </div>
+                                    <div class="col-md-2">
+                                        <button type="button"
+                                                style="margin-top: 30px"
+                                                id="location_picker"
+                                                data-toggle="modal"
+                                                data-target="#pickerModal"
+                                                class="btn btn-info btn-sm btn-block">Pick a location</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="survey_zip">Zip code</label>
+                                            <input type="tel"
+                                                   name="zip"
+                                                   class="form-control"
+                                                   id="zip"
+                                                   placeholder="Zip code. Optional">
+                                        </div>
+                                    </div>
+                                </div>
+                                    </fieldset>
+                                <hr/>
+                                <fieldset style="margin-bottom: 20px">
+                                    <legend>Symptoms</legend>
+                                    <ul class="list-group">
+                                        <% for(var i = 0;i < symptoms.length;i++) { %>
+                                        <li class="list-group-item col-xs-6">
+                                                <label for="symptom_<%= symptoms[i].id %>"
+                                                       style="font-size: 18px">
+                                                    <input type="checkbox"
+                                                           class="item_symptom"
+                                                           id="symptom_<%= symptoms[i].id %>"
+                                                           value="<%= symptoms[i].code %>"
+                                                           name="symptom_<%= symptoms[i].code %>"> <%= symptoms[i].name %>
+                                                </label>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                </fieldset>
+                                <hr/>
+                                <fieldset style="margin-bottom: 20px">
+                                    <legend>Other</legend>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Have you traveled abroad?</label>
+                                        </div>
+                                        <label for="hadTravelledAbroad_Y"><input type="radio"
+                                                                                 name="hadTravelledAbroad"
+                                                                                 id="hadTravelledAbroad_Y"
+                                                                                 value="Y"><span style="padding: 5px">Yes</span></label>
+                                        <label for="hadTravelledAbroad_N"
+                                               style="margin-left: 10px"><input type="radio"
+                                                                                id="hadTravelledAbroad_N"
+                                                                                name="hadTravelledAbroad"
+                                                                                value="N"><span style="padding: 5px">No</span></label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="survey_travel_location">Where did you travel to?</label>
+                                            <input type="text"
+                                                   name="travelLocation"
+                                                   class="form-control"
+                                                   id="survey_travel_location"
+                                                   placeholder="Where did you travel to?">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Did you have contact with contagious people?</label>
+                                        </div>
+                                        <label for="hadContagiousContact_Y"><input type="radio"
+                                                                                   name="hadContagiousContact"
+                                                                                   id="hadContagiousContact_Y"
+                                                                                   value="Y"><span style="padding: 5px">Yes</span></label>
+                                        <label for="hadContagiousContact_N"
+                                               style="margin-left: 10px"><input type="radio"
+                                                                                id="hadContagiousContact_N"
+                                                                                name="hadContagiousContact"
+                                                                                value="N"><span style="padding: 5px">No</span></label>
+                                    </div>
+                                </div>
+                                    </fieldset>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-success btn-lg btn-block">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                            Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

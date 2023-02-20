@@ -1,0 +1,337 @@
+<div class="container" style="margin-top: 60px">
+  <div id="wrapper">
+        <%- partial('sidebar.ejs')%>
+      <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>APP ADMIN</h1>
+                        <p>An app admin is a user that has access to the platforms' dashboard. For now, there's no permission sets and all admins have access to all dashboard's features.</p>
+                        <p>New admins can be created using the <a href="/admin">platform dashboard</a>
+                            or API. Keep in mind that only admins can create new admins. If you are creating admins via API, you should pass an <code>admin_token</code> parameter in order to validate your request.</p>
+                        <hr/>
+                        <h3>API Endpoints</h3>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/admin/create</span></h4>
+                        <p>Creates a new admin</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The admin name</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>role</code></td>
+                                <td>The role to identify this admin. This parameter is purely cosmetic (for now), but still required.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td><span class="badge badge-info">UNIQUE</span> The user's email address.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>The user's password</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>client</code></td>
+                                <td>The client requesting the endpoint. Accepted values: 'dashboard' or 'api'. Defaults to 'api'. This influences the response format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "status": true,
+    "message": "User Created",
+    "user": {
+        "name": "Guinetik",
+        "role": "Admin",
+        "email": "email@guinetik.comf",
+        "id": "5595a49dbe1de89739430c3b"
+    }
+}
+</code></pre></p>
+                        <!--
+                        UPDATE
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/admin/update</span></h4>
+                        <p>Updates admin info.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>id</code></td>
+                                <td>The id for the target admin</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>name</code></td>
+                                <td>The admin name</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>role</code></td>
+                                <td>The role to identify this admin. This parameter is purely cosmetic (for now), but still required.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td>The user's email address.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>The user's password</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>client</code></td>
+                                <td>The client requesting the endpoint. Accepted values: 'dashboard' or 'api'. Defaults to 'api'. This influences the response format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "status": true,
+    "message": "User Created",
+    "user": {
+        "name": "Guinetik",
+        "role": "Admin",
+        "email": "email@guinetik.comf",
+        "id": "5595a49dbe1de89739430c3b"
+    }
+}</code></pre></p>
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">POST</i><span>/admin/login</span></h4>
+                        <p>This endpoint performs an admin log in to the platform and returns a JWT <code>token</code> for the logged user. This token should be passed as <code>admin_token</code> to all requests that requires it. Once created the token will expire in 24 hours.</p>
+                        <h4>Request Body</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td>The user's email address.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>The user's password</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>client</code></td>
+                                <td>The client requesting the endpoint. Accepted values: 'dashboard' or 'api'. Defaults to 'api'. This influences the response format.</td>
+                                <td class="text-warning"><i class="glyphicon glyphicon-remove"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "user": {
+        "name": "epihack",
+        "email": "admin@epihack.me",
+        "role": "Default Admin",
+        "id": "558c361e722d7cc32194c01d"
+    },
+    "message": "Welcome, epihack",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1NThjMzYxZTcyMmQ3Y2MzMjE5NGMwMWQiLCJleHAiOjE0MzY3MzQ1OTJ9.fygIuRZ69HIHZ0FBpe2K5Eb3H3UgOhik5FjRIgvCMik"
+}
+    </code></pre>
+                        </p>
+                        <!--
+                        LIST
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/admin/list</span></h4>
+                        <p>List all platform admins.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "data": [
+        {
+            "name": "epihack",
+            "email": "admin@epihack.me",
+            "role": "Default Admin",
+            "id": "558c361e722d7cc32194c01d"
+        },
+        {
+            "name": "Guinetik",
+            "role": "Admin",
+            "email": "email@guinetik.com",
+            "id": "5595a383be1de89739430c38"
+        },
+        {
+            "name": "Guinetik",
+            "role": "Admin",
+            "email": "email@guinetik.comf",
+            "id": "5595a49dbe1de89739430c3b"
+        }
+    ]
+}</code></pre></p>
+                        <!--
+                        READ
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/admin/get/:admin_id OR /admin/get?email=QUERY</span></h4>
+                        <p>Gets admin information. by id or email.</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "error": false,
+    "data": [
+        {
+            "name": "epihack",
+            "email": "admin@epihack.me",
+            "role": "Default Admin",
+            "id": "558c361e722d7cc32194c01d"
+        }
+    ]
+}</code></pre></p>
+                        <!--
+                        DELETE
+                        -->
+                        <h4 class="docs_endpoint_header text-info"><i class="badge badge-info pull-right">GET</i><span>/admin/delete/:admin_id</span></h4>
+                        <p>Removes an admin from the platform</p>
+                        <h4>Request Headers</h4>
+                        <table class="table table-user-information">
+                            <thread>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Required</th>
+                                </tr>
+                            </thread>
+                            <tbody>
+                            <tr>
+                                <td><code>app_token</code></td>
+                                <td>A valid app token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            <tr>
+                                <td><code>admin_token</code></td>
+                                <td>The logged admin JSON web token.</td>
+                                <td class="text-success"><i class="glyphicon glyphicon-ok"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <h4>Response</h4>
+                        <p>
+<pre><code>{
+    "status": true,
+    "message": "User Deleted"
+}</code></pre></p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <div class="row">
+                    <h1 class="page-header">Edit Symptom</h1>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">User</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/symptoms/update"
+                                  method="post">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <input type="hidden"
+                                       name="id"
+                                       value="<%= symptom.id %>">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="symptom_name">Name</label>
+                                            <input type="text"
+                                                   name="name"
+                                                   value="<%= symptom.name %>"
+                                                   class="form-control"
+                                                   id="symptom_name"
+                                                   placeholder="Symptom name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="symptom_code">Code</label>
+                                            <input type="text"
+                                                   name="code"
+                                                   value="<%= symptom.code %>"
+                                                   class="form-control"
+                                                   id="symptom_name"
+                                                   placeholder="Symptom code">
+                                            <p class="help-block">An unique code to identify this symptom.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="symptom_p">Priority</label>
+                                            <input type="tel"
+                                                   name="priority"
+                                                   value="<%= symptom.priority %>"
+                                                   class="form-control"
+                                                   id="symptom_p"
+                                                   placeholder="Symptom priority">
+                                            <p class="help-block">A number indicating the priority this of this symptom when related to a disease. A higher value means the user presenting this symptom is more likely to have this disease.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"
+                                         style="margin-top: 10px">
+                                        <div class="form-group checkbox">
+                                            <label>
+                                                <input type="checkbox"
+                                                       name="is_required"
+                                                       value="true"> Is required
+                                            </label>
+                                            <p class="help-block">Check if the symptom is always present in the disease.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-success btn-lg btn-block">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                            Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

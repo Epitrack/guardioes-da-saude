@@ -1,0 +1,137 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Manage Diseases</h1>
+                <% if (diseases.length > 0) { %>
+                <div class="row">
+                    <div class="panel panel-primary filterable">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Diseases</h1>
+                            <div class="pull-right">
+                                <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <tr class="filters">
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="#"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Name"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Code"
+                                               disabled></th>
+                                    <th><input type="text"
+                                               class="form-control"
+                                               placeholder="Symptoms"
+                                               disabled></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% for(var i = 0; i < diseases.length; i++) { %>
+                                <tr>
+                                    <td><%= diseases[i].id %></td>
+                                    <td><%= diseases[i].name %></td>
+                                    <td><%= diseases[i].code %></td>
+                                    <td>
+                                        <ul class="list-group"
+                                            style="padding:5px; min-height: 50px;background: #eeeeee">
+                                            <% for (var k = 0;k < diseases[i].symptoms.length;k++){ %>
+                                            <li class="list-group-item"
+                                                data-id="<%= diseases[i].symptoms[k].id %>">
+                                                <span class="badge"
+                                                      style="background: #2F6FAD;font-weight: normal"
+                                                      title="Symptom priority"><i class="glyphicon glyphicon-signal"></i>: <%= diseases[i].symptoms[k].priority %></span>
+                                                <% if(diseases[i].symptoms[k].is_required == true) { %>
+                                                <span class="badge"
+                                                      style="background: #f39c12"
+                                                      title="This Symptom is required"><i class='glyphicon glyphicon-exclamation-sign'></i></span>
+                                                <% } %>
+                                                <span title="Symptom code: <%= diseases[i].symptoms[k].code %>"><%= diseases[i].symptoms[k].name %></span>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <a href="diseases/edit/<%= diseases[i].id %>"
+                                           title="Edit"
+                                           class="btn btn-info btn-sm"><i class="glyphicon glyphicon-edit"></i></a>
+                                        <a href="diseases/delete/<%= diseases[i].id %>"
+                                           title="Delete"
+                                           class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove-sign"></i></a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                <div class="row">
+                    <div class="alert alert-info"
+                         role="alert"><strong>Data is empty.</strong> Add a disease below.</div>
+                </div>
+                <% } %>
+                <%- partial('../partials/flash.ejs') %>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Add Disease</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/diseases/create"
+                                  method="post">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="disease_name">Name</label>
+                                            <input type="text"
+                                                   name="name"
+                                                   class="form-control"
+                                                   id="disease_name"
+                                                   placeholder="Disease Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="disease_cid">CID</label>
+                                            <input type="text"
+                                                   name="code"
+                                                   class="form-control"
+                                                   id="disease_cid"
+                                                   placeholder="Disease Code">
+                                            <p class="help-block">This should be an ICD-10 code, but any unique code is accepted</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <button type="submit"
+                                                    class="btn btn-success btn-lg btn-block">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

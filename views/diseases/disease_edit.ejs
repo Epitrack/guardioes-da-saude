@@ -1,0 +1,148 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Edit Disease</h1>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Disease Info</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form action="diseases/update"
+                                  method="POST">
+                                <input type="hidden"
+                                       name="client"
+                                       value="dashboard">
+                                <input type="hidden"
+                                       name="id"
+                                       id="disease_id"
+                                       value="<%= disease.id %>">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="disease_name">Name</label>
+                                            <input type="text"
+                                                   name="name"
+                                                   class="form-control"
+                                                   id="disease_name"
+                                                   placeholder="Disease Name"
+                                                   value="<%= disease.name %>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="disease_code">Code</label>
+                                            <input type="text"
+                                                   name="code"
+                                                   class="form-control"
+                                                   id="disease_code"
+                                                   placeholder="Disease Code"
+                                                   value="<%= disease.code %>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <button type="submit"
+                                                    class="btn btn-success btn-lg btn-block">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Disease's Symptoms</h1>
+                        </div>
+                        <div class="panel-body">
+                            <p class="help-block">Drag a symptom from the existing list to the <%= disease.name %>'s Symptoms list.</p>
+                            <div class="row">
+                                <div class="col-md-4"
+                                     style="border-right: 1px solid;">
+                                    <h4>Existing Symptoms</h4>
+                                    <ul class="symptoms_list vertical list-group"
+                                        style="padding:5px;min-height: 50px;background: #eeeeee">
+                                        <% for (var i = 0;i < symptoms.length;i++){ %>
+                                        <% if(disease_symptoms.indexOf(symptoms[i].id) < 0) {%>
+                                        <li class="list-group-item"
+                                            data-id="<%= symptoms[i].id %>">
+                                            <span class="badge"
+                                                  style="background: #2F6FAD;font-weight: normal"
+                                                  title="Symptom priority"><i class="glyphicon glyphicon-signal"></i>: <%= symptoms[i].priority %></span>
+                                            <% if(symptoms[i].is_required == true) { %>
+                                            <span class="badge" style="background: #f39c12" title="This Symptom is required"><i class='glyphicon glyphicon-exclamation-sign'></i></span>
+                                            <% } %>
+                                            <span title="Symptom code: <%= symptoms[i].code %>"><%= symptoms[i].name %></span>
+                                        </li>
+                                        <%}}%>
+                                    </ul>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><%= disease.name %>'s Symptoms</h4>
+                                    <ul class="disease_symptoms vertical list-group"
+                                        style="padding:5px; min-height: 50px;background: #eeeeee">
+                                        <% for (var i = 0;i < disease.symptoms.length;i++){ %>
+                                        <li class="list-group-item"
+                                            data-id="<%= disease.symptoms[i].id %>">
+                                            <span class="badge"
+                                                  style="background: #2F6FAD;font-weight: normal"
+                                                  title="Symptom priority"><i class="glyphicon glyphicon-signal"></i>: <%= symptoms[i].priority %></span>
+                                            <% if(disease.symptoms[i].is_required == true) { %>
+                                            <span class="badge"
+                                                  style="background: #f39c12"
+                                                  title="This Symptom is required"><i class='glyphicon glyphicon-exclamation-sign'></i></span>
+                                            <% } %>
+                                            <span title="Symptom code: <%= disease.symptoms[i].code %>"><%= disease.symptoms[i].name %></span>
+                                        </li>
+                                        <% } %>
+                                    </ul>
+                                    <% if (disease.symptoms.length == 0) { %>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-info"
+                                                 role="alert"><strong>No Symptoms yet.</strong> Add some symptoms to the disease</div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-lg"
+                                    data-toggle="modal"
+                                    data-target="#add_symptom_modal">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Add New Symptom
+                            </button>
+                            <button class="btn btn-warning btn-lg">
+                                <i class="glyphicon glyphicon-refresh"></i>
+                                Reset <%= disease.name %>'s Symptoms
+                            </button>
+                            <a class="btn btn-info btn-lg"
+                               href="admin/symptoms">
+                                <i class="glyphicon glyphicon-list-alt"></i>
+                                Manage Symptoms
+                            </a>
+                            <button class="btn btn-success btn-lg"
+                                    id="save_disease_symptoms">
+                                <i class="glyphicon glyphicon-ok"></i>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

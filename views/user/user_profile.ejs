@@ -1,0 +1,129 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+          <%- partial('sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div class="toppad">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">User Profile</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 "
+                                 align="center"> <img alt="User Pic"
+                                                      src="<%= user.picture %>"
+                                                      class="img-circle"> </div>
+                            <div class=" col-md-9 col-lg-9 ">
+                                <table class="table table-user-information">
+                                    <tbody>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td><a href="mailto:<%= user.email %>"><%= user.email %></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nickname</td>
+                                        <td><%= user.nick || '' %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Default App:</td>
+                                        <td><%= user.app.name %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Reports</td>
+                                        <td><%= user.surveys.length %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Default Location</td>
+                                        <td>Metro Manila,Philippines</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date of Birth</td>
+                                        <td><%= user.dob %></td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td><%= user.gender == 'M' ? 'Male' : 'Female' %></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Created At:</td>
+                                        <td><%= user.createdAt %></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <hr/>
+                                <h3>Household Members</h3>
+                                <% if(user.household.length > 0) { %>
+                                <table class="table table-user-information">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Date of Birth</th>
+                                            <th>Gender</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <% for (var i = 0;i < user.household.length;i++) {
+                                        var hm = user.household[i]; %>
+                                    <tr>
+                                        <td><%= hm.nick %></td>
+                                        <td><%= hm.dob %></td>
+                                        <td><%= hm.gender %></td>
+                                        <td>
+                                            <a href="household/edit/<%= hm.id %>"
+                                               title="Edit this member"
+                                               data-toggle="tooltip"
+                                               type="button"
+                                               class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                                            <a title="Remove this member"
+                                               data-toggle="tooltip"
+                                               href="/household/delete/<%= hm.id %>?redirect_to=<%= req.url %>"
+                                               type="button"
+                                               class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                    </tbody>
+                                </table>
+                                <% } else { %>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="alert alert-info"
+                                             role="alert"><strong>No household:</strong> Add some members below</div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a data-original-title="Report Symptoms"
+                               title="Report Symptoms"
+                               href="/user/report"
+                               data-toggle="tooltip"
+                               type="button"
+                               class="btn btn-lg btn-success"><i class="glyphicon glyphicon-pencil"></i> Report Symptoms</a>
+                            <a class="btn btn-lg btn-primary"
+                               data-toggle="modal"
+                               data-target="#add_household_member_modal"><i class="glyphicon glyphicon-plus"></i>Add Household Member</a>
+                            <span class="pull-right">
+                                <a href="user/edit/<%= user.id %>"
+                                   data-original-title="Edit this user"
+                                   data-toggle="tooltip"
+                                   type="button"
+                                   class="btn btn-lg btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                                <a data-original-title="Remove this user"
+                                   data-toggle="tooltip"
+                                   type="button"
+                                   class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            </span>
+                        </div>
+
+                    </div>
+                </div><%- partial('../partials/flash.ejs') %>
+            </div>
+        </div>
+    </div>
+</div>

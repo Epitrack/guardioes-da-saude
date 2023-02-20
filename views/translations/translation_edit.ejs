@@ -1,0 +1,89 @@
+<div style="margin-top: 60px">
+    <div class="row"
+         style="padding: 0;margin: 0">
+        <div class="col-md-2 sidebar">
+            <%- partial('../admin/sidebar.ejs') %>
+        </div>
+        <div class="col-md-10">
+            <div style="margin-left: 50px;margin-right: 50px">
+                <h1 class="page-header">Edit Translation</h1>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Translation</h1>
+                    </div>
+                    <div class="panel-body">
+                        <input type="hidden"
+                               id="app_language"
+                               value="<%=translation.locale%>">
+                        <form action="/translations/update"
+                              method="post">
+                            <input type="hidden"
+                                   name="client"
+                                   value="dashboard">
+                            <input type="hidden"
+                                   name="id"
+                                   value="<%=translation.id%>">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="translation_key">Key</label>
+                                        <input type="text"
+                                               name="key"
+                                               value="<%=translation.key%>"
+                                               class="form-control"
+                                               id="translation_key"
+                                               placeholder="Translation Key">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="translation_value">Value</label>
+                                        <input type="text"
+                                               name="value"
+                                               value="<%=translation.value%>"
+                                               class="form-control"
+                                               id="translation_value"
+                                               placeholder="Default URL for the app">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="locale_list">Default Locale</label>
+                                        <select name="locale"
+                                                id="locale_list"
+                                                class="form-control dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"><span class="caret"></span></select>
+                                        <p class="help-block">Default language for this translation</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="translation_group">Group</label>
+                                        <input type="text"
+                                               name="group"
+                                               value="<%=translation.group%>"
+                                               class="form-control"
+                                               id="translation_group"
+                                               placeholder="Translation Group">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit"
+                                                class="btn btn-success btn-lg btn-block">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

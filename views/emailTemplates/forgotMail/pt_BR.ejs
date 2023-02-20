@@ -1,0 +1,44 @@
+<tbody style="margin: 20px; display: block; color: #1E88E5 ; font-family: Helvetica; font-size:12px;">
+ <tr>
+   <td>
+     <h3 style="font-family: Helvetica; font-size: 24px; color: #1976D2 ;">Caro usuário do Guardiões da Saúde,</h3>
+   </td>
+ </tr>
+
+ <tr>
+   <td>
+     <p>Obrigado por fazer uma solicitação para resetar sua senha. Por favor clique neste link para completar o processo.</p>
+   </td>
+ </tr>
+
+ <tr>
+   <td>
+     <a style="background-color: #1E88E5 ; width: 135px; height: 48px; border-radius: 24px; display: block; text-align: center; padding-top: 16px; color: #FFFFFF ;" href="<%=sails.config.url_base%>/#/esqueci-minha-senha?hash=<%=hash%>">
+       Resetar senha
+     </a>
+   </td>
+ </tr>
+
+ <tr>
+   <td>
+     <p>Ou copie o link abaixo:</p>
+   </td>
+ </tr>
+ <tr>
+   <td>
+     <a href="<%=sails.config.url_base%>/#/esqueci-minha-senha?hash=<%=hash%>"><%=sails.config.url_base%>/#/esqueci-minha-senha?hash=<%=hash%></a>
+   </td>
+ </tr>
+
+
+ <tr>
+   <td>
+     <p>
+       <br>
+       Atenciosamente,
+       <br>
+       Guardiões da Saúde.
+     </p>
+   </td>
+ </tr>
+</tbody>
